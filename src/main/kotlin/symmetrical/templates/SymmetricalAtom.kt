@@ -6,7 +6,8 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
 
-class SymmetricalAtom : Particle {
+class SymmetricalAtom : Particle   {    // 3
+
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
