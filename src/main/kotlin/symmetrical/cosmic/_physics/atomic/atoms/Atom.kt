@@ -91,7 +91,7 @@ open class Atom(
             nucleons.setAtom(this)
             colorCharges.setAtom(this)
             quarkValue.setAtom(this)
-            particle.setParent(this)
+            particle.setSelf(this)
             return this
         }
         fun setFieldName(name:String) : Atom {

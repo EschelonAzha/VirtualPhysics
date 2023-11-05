@@ -17,7 +17,7 @@ open class ParticleBeam(size:Int, private var particle: Particle = Particle(), p
         const val LAST      : Int = -1
     }
     constructor() : this(0) {
-        particle.setParent(this)
+        particle.setSelf(this)
     }
     public open fun getIlluminations() : ParticleBeam {
         return Illuminations.beam

@@ -17,7 +17,7 @@ open class Particle : IParticle, Emitter {
         const val UNIQUE_ID_LENGTH = 1
     }
     private var uniqueId = ""
-    private lateinit var parent : IParticle
+    private lateinit var self : IParticle
     constructor() {
 
     }
@@ -56,16 +56,20 @@ open class Particle : IParticle, Emitter {
     }
     override fun createUniqueId(): IParticle {
         uniqueId = Keys.getUniqueId()
-        return parent
+        return self
+    }
+
+    override fun getSelf() : IParticle {
+        return self
     }
 
     override fun getUniqueId(): String {
         return uniqueId
     }
 
-    override fun setParent(parent: IParticle) : IParticle {
-        this.parent = parent
-        return parent
+    override fun setSelf(self: IParticle) : IParticle {
+        this.self = self
+        return self
     }
     fun setUniqueId(id:String) : Particle {
         this.uniqueId = id
