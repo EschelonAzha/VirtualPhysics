@@ -87,6 +87,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.color.ChromoCharge
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
 import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
@@ -121,6 +122,7 @@ object Absorber {
     val beam: Beam = Beam(500)
     init {
         beam.add(EntityId(Base52.classId(), Alloy::class))
+        beam.add(EntityId(Base52.classId(), AngularMomentum::class))
         beam.add(EntityId(Base52.classId(), Anion::class))
         beam.add(EntityId(Base52.classId(), AntiColor::class))
         beam.add(EntityId(Base52.classId(), AntiBlue::class))
@@ -278,6 +280,7 @@ object Absorber {
     fun newInstance(kClass:KClass<*>) : Any? {
         val result = when {
             kClass == Alloy::class                  -> Alloy()
+            kClass == AngularMomentum::class        -> AngularMomentum()
             kClass == Anion::class                  -> Anion()
             kClass == AntiColor::class              -> AntiColor()
             kClass == AntiBlue::class               -> AntiBlue()
