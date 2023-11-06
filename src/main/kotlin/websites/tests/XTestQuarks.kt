@@ -1,6 +1,5 @@
 package websites.tests
 
-import symmetrical.cosmic._physics._subatomic.matter.colors.manifestations.CRLFTerminatedColor
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
@@ -48,7 +47,7 @@ object XTestQuarks {
 
 
         var qInt   = QInt()
-        qInt.setGreen(CRLFTerminatedColor())
+  //      qInt.setGreen(CRLFTerminatedColor())
         qInt.setInt(2020)
         var red    = qInt.red()
         var blue   = qInt.blue()

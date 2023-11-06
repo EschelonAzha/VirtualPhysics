@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.strings.phases
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.matter.colors.manifestations.CRLFTerminatedColor
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.CRLFTerminatedSpin
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 
 class CrLfTerminatedString : QString {
     constructor() {
-        setGreen(CRLFTerminatedColor())
+ //       setGreen(CRLFTerminatedColor())
         setQuarkSpin(CRLFTerminatedSpin())
     }
     constructor(value:String) : super(value) {
-        setGreen(CRLFTerminatedColor())
+   //     setGreen(CRLFTerminatedColor())
         setQuarkSpin(CRLFTerminatedSpin())
     }
 

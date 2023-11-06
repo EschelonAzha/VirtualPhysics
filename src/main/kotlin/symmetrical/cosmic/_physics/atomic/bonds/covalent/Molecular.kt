@@ -3,8 +3,6 @@ package symmetrical.cosmic._physics.atomic.bonds.covalent
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.matter.colors.Color
-import symmetrical.cosmic._physics._subatomic.matter.colors.manifestations.CRLFTerminatedColor
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.CRLFTerminatedSpin
 import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
