@@ -14,7 +14,6 @@ class JSWriter : FileServer {
     override fun run() : Boolean {
         val filePath:String = (path.get(0) as QString).quarkValueStr()
         val lines: Compound = loadFile(QString(filePath))
-        lines.applyGreen(CRLFTerminatedColor())
         lines.applyQuarkSpin(CRLFTerminatedSpin())
         lines.applyElectronSpin(CRLFTerminatedSpin())
 

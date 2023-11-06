@@ -73,14 +73,6 @@ open class Molecular(private var particleBeam:ParticleBeam=ParticleBeam()) : Ato
         return this
     }
 
-    fun applyGreen(color: Color) : Molecular {
-        for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
-            atom.setGreen(CRLFTerminatedColor())
-        }
-        return this
-    }
-
     fun applyQuarkSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom

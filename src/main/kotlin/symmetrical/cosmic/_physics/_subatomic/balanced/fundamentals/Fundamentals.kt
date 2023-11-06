@@ -3,6 +3,7 @@ package symmetrical.cosmic._physics._subatomic.balanced.fundamentals
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
@@ -13,8 +14,9 @@ class Fundamentals(private val particle: Particle = Particle()) : IParticle by p
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
-    private var spin        : Spin = Spin()
-    private var wavelength  : Wavelength = Wavelength()
+    private var angularMomentum : AngularMomentum = AngularMomentum()
+    private var spin            : Spin            = Spin()
+    private var wavelength      : Wavelength      = Wavelength()
     constructor() : this(Particle()) {
     }
     public fun getIlluminations() : ParticleBeam {
@@ -50,6 +52,9 @@ class Fundamentals(private val particle: Particle = Particle()) : IParticle by p
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Fundamentals::class)
+    }
+    fun getAngularMomentum() : AngularMomentum {
+        return angularMomentum
     }
     override fun getClassId() : String {
         return getLocalClassId()
