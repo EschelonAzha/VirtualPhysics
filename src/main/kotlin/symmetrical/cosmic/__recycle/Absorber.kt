@@ -88,6 +88,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.color.ChromoCharge
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
 import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
@@ -171,6 +172,7 @@ object Absorber {
         beam.add(EntityId(Base52.classId(), Composition::class))
         beam.add(EntityId(Base52.classId(), Compound::class))
         beam.add(EntityId(Base52.classId(), CRLFTerminatedColor::class))
+        beam.add(EntityId(Base52.classId(), CRLFTerminatedMomentum::class))
         beam.add(EntityId(Base52.classId(), CRLFTerminatedSpin::class))
         beam.add(EntityId(Base52.classId(), CrLfTerminatedString::class))
         beam.add(EntityId(Base52.classId(), DeviceInput::class))
@@ -329,6 +331,7 @@ object Absorber {
             kClass == Composition::class            -> Composition()
             kClass == Compound::class               -> Compound()
             kClass == CRLFTerminatedColor::class    -> CRLFTerminatedColor()
+            kClass == CRLFTerminatedMomentum::class -> CRLFTerminatedMomentum()
             kClass == CRLFTerminatedSpin::class     -> CRLFTerminatedSpin()
             kClass == CrLfTerminatedString::class   -> CrLfTerminatedString()
             kClass == DeviceInput::class            -> DeviceInput()

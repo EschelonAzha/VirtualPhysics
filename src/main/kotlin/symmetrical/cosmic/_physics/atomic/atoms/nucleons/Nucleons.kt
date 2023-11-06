@@ -16,7 +16,7 @@ class Nucleons(
     var protons :Protons  = Protons(),
     private var neutrons:Neutrons = Neutrons())
     :   INucleons,
-    Emitter,
+        Emitter,
         IProtons by protons,
         INeutrons by neutrons {
 

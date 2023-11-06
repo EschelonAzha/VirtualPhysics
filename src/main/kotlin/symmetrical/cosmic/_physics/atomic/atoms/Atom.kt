@@ -31,9 +31,9 @@ open class Atom(
         Emitter,
         IOrbitals       by orbitals,
         INucleons       by nucleons,
-        IParticle by particle,
-        IColorCharges by colorCharges,
-        IQuarkValue by quarkValue
+        IParticle       by particle,
+        IColorCharges   by colorCharges,
+        IQuarkValue     by quarkValue
     {
         object Illuminations {
             public val beam: ParticleBeam = ParticleBeam()

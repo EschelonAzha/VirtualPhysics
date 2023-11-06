@@ -68,6 +68,10 @@ class Fundamentals(private val particle: Particle = Particle()) : IParticle by p
     fun getWavelength() : Wavelength {
         return wavelength
     }
+    fun setMomentum(momentum: AngularMomentum) : Fundamentals {
+        this.angularMomentum = momentum;
+        return this
+    }
     fun setSpin(spin: Spin) : Fundamentals {
         this.spin = spin;
         return this

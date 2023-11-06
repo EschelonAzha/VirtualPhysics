@@ -10,6 +10,7 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
@@ -97,6 +98,10 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
     }
     fun setSpin(spin: Spin) : Quark {
         this.fundamentalParticleProperties.setSpin(spin)
+        return this
+    }
+    fun setMomentum(momentum: AngularMomentum) : Quark {
+        this.fundamentalParticleProperties.setMomentum(momentum)
         return this
     }
     fun setValue(value:Any?) : Quark {
