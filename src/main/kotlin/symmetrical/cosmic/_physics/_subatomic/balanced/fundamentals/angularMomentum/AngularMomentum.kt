@@ -44,7 +44,7 @@ open class AngularMomentum : Particle, Emitter {
     override fun getClassId() : String {
         return getLocalClassId()
     }
-    open fun format(angularMomentum: AngularMomentum) : String {
-        return angularMomentum.toString()
+    open fun format(wavelength: Wavelength) : String {
+        return wavelength.toString()
     }
 }

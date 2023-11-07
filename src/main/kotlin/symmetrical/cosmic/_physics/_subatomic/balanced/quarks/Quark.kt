@@ -90,6 +90,9 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
     fun getPhoton() : Photon {
         return fundamentalParticleProperties.getPhoton()
     }
+    fun getMomentum() : AngularMomentum {
+        return fundamentalParticleProperties.getAngularMomentum()
+    }
     fun getSpin() : Spin {
         return fundamentalParticleProperties.getSpin()
     }
@@ -111,6 +114,9 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
     fun setWavelength(value:Any?) : Quark {
         this.getWavelength().setWavelength(value)
         return this
+    }
+    fun momentum() : String {
+        return getMomentum().format(getWavelength())
     }
     fun spin() : String {
         return getSpin().format(getWavelength())

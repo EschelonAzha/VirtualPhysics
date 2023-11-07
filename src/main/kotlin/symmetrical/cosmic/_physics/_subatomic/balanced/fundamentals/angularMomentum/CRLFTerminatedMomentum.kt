@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMome
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 
 class CRLFTerminatedMomentum : AngularMomentum {
@@ -20,7 +21,7 @@ class CRLFTerminatedMomentum : AngularMomentum {
     override fun getClassId() : String {
         return getLocalClassId()
     }
-    override fun format(angularMomentum: AngularMomentum) : String {
-        return Strings.crlfTerminated(angularMomentum.toString())
+    override fun format(wavelength: Wavelength) : String {
+        return Strings.crlfTerminated(wavelength.toString())
     }
 }

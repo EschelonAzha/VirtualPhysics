@@ -16,7 +16,7 @@ class JSWriter : FileServer {
         val lines: Compound = loadFile(QString(filePath))
         lines.applyQuarkMomentum(CRLFTerminatedMomentum())
         lines.applyQuarkSpin(CRLFTerminatedSpin())
-        lines.applyElectronSpin(CRLFTerminatedSpin())
+      //  lines.applyElectronSpin(CRLFTerminatedSpin())
 
         writeResponse(Success(lines))
         println("JS Script Written")
