@@ -8,7 +8,8 @@ class SpinWriter : FundamentalPropertyWriter {
     }
 
     override fun write(atom: Atom) : SpinWriter {
-        outlet.write(atom.quarkSpin())
+        outlet.write(atom.quarkMomentum())
+    //    outlet.write(atom.quarkSpin())
         return this;
     }
 }
