@@ -8,7 +8,7 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 interface IOrbitals {
     fun getElectronValue        ()              : Electron
-    fun electronSpin            ()              : String
+    fun electronSpin            ()              : Boolean
     fun electronValue           ()              : Any?
     fun electronValueStr        ()              : String
     fun getClassId              ()              : String

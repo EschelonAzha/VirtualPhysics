@@ -80,8 +80,8 @@ open class Lepton(private val particle: Particle = Particle()) : IParticle by pa
         this.getWavelength().setWavelength(value)
         return this
     }
-    fun spin() : String {
-        return getSpin().format(getWavelength())
+    fun spin() : Boolean {
+        return getSpin().isPlus()
     }
     fun wavelength() : Any? {
         return getWavelength().wavelength()

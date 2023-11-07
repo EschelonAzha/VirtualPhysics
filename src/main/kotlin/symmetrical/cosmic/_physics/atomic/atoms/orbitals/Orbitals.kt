@@ -66,7 +66,7 @@ open class Orbitals : ParticleBeam, IOrbitals {
         }
         return get(Static.VALUE) as Electron
     }
-    override fun electronSpin() : String {
+    override fun electronSpin() : Boolean {
 
         return getElectronValue().spin()
     }

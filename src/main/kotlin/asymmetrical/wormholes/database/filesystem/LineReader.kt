@@ -8,7 +8,7 @@ class LineReader : Compound {
     private val lines : Compound
     constructor(fileName: QString) {
      //   lines = Compound().materialize(File(fileName.quarkSpin()).readLines()) as Compound
-        lines = Compound().materialize(File(fileName.quarkSpin()).readLines()) as Compound
+        lines = Compound().materialize(File(fileName.quarkMomentum()).readLines()) as Compound
 
     }
 
