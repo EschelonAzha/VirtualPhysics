@@ -80,8 +80,8 @@ open class AntiLepton(private val particle: Particle = Particle()) : IParticle b
         this.getWavelength().setWavelength(value)
         return this
     }
-    fun spin() : String {
-        return getSpin().format(getWavelength())
+    fun spin() : Boolean {
+        return getSpin().isPlus()
     }
     fun wavelength() : Any? {
         return getWavelength().wavelength()

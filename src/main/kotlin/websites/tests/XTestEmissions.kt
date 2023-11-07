@@ -1,7 +1,7 @@
 package websites.tests
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.CRLFTerminatedSpin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 object XTestEmissions {
@@ -10,9 +10,9 @@ object XTestEmissions {
     fun main(args: Array<String>) {
 
         val emitter = Atom()
-        emitter.setQuarkSpin(CRLFTerminatedSpin())
+        emitter.setQuarkSpin(Spin())
         emitter.setQuarkValue(2022.22)
-        emitter.setElectronSpin(CRLFTerminatedSpin())
+        emitter.setElectronSpin(Spin())
         emitter.setElectronValue(33.33)
         val emission = emitter.emit().radiate()
         val (clone, remainder) = Absorber.materialize(emission)

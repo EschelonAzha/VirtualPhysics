@@ -118,8 +118,8 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
     fun momentum() : String {
         return getMomentum().format(getWavelength())
     }
-    fun spin() : String {
-        return getSpin().format(getWavelength())
+    fun spin() : Boolean {
+        return getSpin().isPlus()
     }
     fun wavelength() : Any? {
         return getWavelength().wavelength()

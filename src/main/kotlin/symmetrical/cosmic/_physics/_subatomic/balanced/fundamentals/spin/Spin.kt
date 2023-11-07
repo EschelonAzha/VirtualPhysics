@@ -5,10 +5,18 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 
 
 open class Spin : Particle, Emitter {
+    object Static {
+        const val PLUS :Int      = +1
+        const val MINUS:Int      = -1
+    }
+
+    val field:Field = Field(Spin.Static.PLUS)
+
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
@@ -46,7 +54,20 @@ open class Spin : Particle, Emitter {
     override fun getClassId() : String {
         return getLocalClassId()
     }
-    open fun format(wavelength: Wavelength) : String {
-        return wavelength.toString()
+
+    fun isPlus() : Boolean {
+        return field.toBoolean()
+    }
+    fun isMinus() : Boolean {
+        return field.toBoolean()
+    }
+
+    fun spinPlus() : Spin {
+        field.setValue(Spin.Static.PLUS)
+        return this
+    }
+    fun spinMinus() : Spin {
+        field.setValue(Static.MINUS)
+        return this
     }
 }

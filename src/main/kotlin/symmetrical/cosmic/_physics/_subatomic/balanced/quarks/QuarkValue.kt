@@ -35,7 +35,7 @@ class QuarkValue  : IQuarkValue {
         val quark   = atom.nucleons.getValueProton().get(0) as Quark
         return quark.momentum()
     }
-    override fun quarkSpin() : String {
+    override fun quarkSpin() : Boolean {
         val quark   = atom.nucleons.getValueProton().get(0) as Quark
         return quark.spin()
     }

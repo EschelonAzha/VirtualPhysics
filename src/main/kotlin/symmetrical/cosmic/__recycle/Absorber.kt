@@ -50,7 +50,6 @@ import symmetrical.cosmic._physics.atomic.substance.ions.Ion
 import symmetrical.cosmic._physics.atomic.substance.metals.Metal
 import symmetrical.cosmic._physics.atomic.substance.molecules.Molecule
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.CRLFTerminatedSpin
 import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharges
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
@@ -173,7 +172,6 @@ object Absorber {
         beam.add(EntityId(Base52.classId(), Compound::class))
         beam.add(EntityId(Base52.classId(), CRLFTerminatedColor::class))
         beam.add(EntityId(Base52.classId(), CRLFTerminatedMomentum::class))
-        beam.add(EntityId(Base52.classId(), CRLFTerminatedSpin::class))
         beam.add(EntityId(Base52.classId(), CrLfTerminatedString::class))
         beam.add(EntityId(Base52.classId(), DeviceInput::class))
         beam.add(EntityId(Base52.classId(), Diatomic::class))
@@ -332,7 +330,6 @@ object Absorber {
             kClass == Compound::class               -> Compound()
             kClass == CRLFTerminatedColor::class    -> CRLFTerminatedColor()
             kClass == CRLFTerminatedMomentum::class -> CRLFTerminatedMomentum()
-            kClass == CRLFTerminatedSpin::class     -> CRLFTerminatedSpin()
             kClass == CrLfTerminatedString::class   -> CrLfTerminatedString()
             kClass == DeviceInput::class            -> DeviceInput()
             kClass == Diatomic::class               -> Diatomic()
