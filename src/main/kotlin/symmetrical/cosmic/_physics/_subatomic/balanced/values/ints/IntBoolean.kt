@@ -8,7 +8,7 @@ class IntBoolean {
     fun asBoolean() : Boolean? {
         if (value == null)
             return null
-        val byteVal = value as Byte
+        val byteVal = value as Int
         return value != 0
     }
     fun toBoolean() : Boolean {

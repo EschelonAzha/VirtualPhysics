@@ -14,8 +14,6 @@ class LoadHomePage : FileServer {
     override fun run() : Boolean {
         val lines: Compound = loadFile(QString("index.html"))
 
-    //    lines.applyElectronSpin(CRLFTerminatedSpin())
-
         writeResponse(Success(lines))
         println("Home Page Written")
         return true  // close this socket

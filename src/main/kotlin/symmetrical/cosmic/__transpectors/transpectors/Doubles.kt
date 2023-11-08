@@ -9,7 +9,8 @@ object Doubles {
         if (value is Double)
             return value.toString().contains(".")
         if (value is Int) {
-            return !value.toString().contains(".")
+            val containsDot = value.toString().contains(".")
+            return containsDot
         }
         return false
     }
