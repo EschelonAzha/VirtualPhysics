@@ -140,6 +140,11 @@ class Wavelength : Particle, Emitter {
         return field.getValue()
     }
 
+    fun setField(field:Field) : Wavelength {
+        this.field = field
+        return this
+    }
+
     fun setWavelength(value:Any?) : Wavelength {
         field.setValue(value)
         return this
