@@ -1,7 +1,8 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.balanced.quarks.Quark
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
@@ -26,7 +27,7 @@ open class NeutralUpPion : Hadron {
         val up0 = get(0) as Up
         val up1 = get(1) as AntiUp
         up0.z(Quark.Args(proton))
-        up1.z(Quark.Args(neutron))
+        up1.z(AntiQuark.Args(neutron))
 
         nuclearForce()
     }

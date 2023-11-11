@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.balanced.quarks
+package symmetrical.cosmic._physics._subatomic.matter.quarks
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic.__recycle.Absorber

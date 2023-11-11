@@ -91,7 +91,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics._subatomic.balanced.quarks.Quark
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic.dictionary.PasswordFld
@@ -134,6 +134,7 @@ object Absorber {
         beam.add(EntityId(Base52.classId(), AntiMuon::class))
         beam.add(EntityId(Base52.classId(), AntiMuonNeutrino::class))
         beam.add(EntityId(Base52.classId(), AntiNeutrino::class))
+        beam.add(EntityId(Base52.classId(), AntiQuark::class))
         beam.add(EntityId(Base52.classId(), AntiRed::class))
         beam.add(EntityId(Base52.classId(), AntiStrange::class))
         beam.add(EntityId(Base52.classId(), AntiTau::class))
@@ -292,6 +293,7 @@ object Absorber {
             kClass == AntiMuon::class               -> AntiMuon()
             kClass == AntiMuonNeutrino::class       -> AntiMuonNeutrino()
             kClass == AntiNeutrino::class           -> AntiNeutrino()
+            kClass == AntiQuark::class              -> AntiQuark()
             kClass == AntiRed::class                -> AntiRed()
             kClass == AntiStrange::class            -> AntiStrange()
             kClass == AntiTau::class                -> AntiTau()
