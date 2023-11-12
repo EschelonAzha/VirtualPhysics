@@ -5,6 +5,8 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 class Protons : ParticleBeam, IProtons {
     object Illuminations {
@@ -57,6 +59,7 @@ class Protons : ParticleBeam, IProtons {
     override fun getClassId() : String {
         return getLocalClassId()
     }
+
     override fun addProton(proton: Proton) : Proton {
         add(proton)
         return proton
@@ -73,6 +76,10 @@ class Protons : ParticleBeam, IProtons {
 //        }
 //        return -1
 //    }
+
+    fun getAtom() : Atom {
+        return __nucleons.getAtom()
+    }
     override fun getAtomicNumber() : Int {
         return size()
     }
@@ -104,5 +111,10 @@ class Protons : ParticleBeam, IProtons {
             i++
         }
         return __nucleons as Nucleons
+    }
+
+    fun getElectron(proton: Proton) : Electron {
+        val electronNum = beam.find(proton)
+        return getAtom().getElectron(electronNum)
     }
 }

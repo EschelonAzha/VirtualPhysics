@@ -16,6 +16,7 @@ import symmetrical.cosmic._physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.IQuarkValue
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.QuarkValue
+import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 
 
 open class Atom(
@@ -85,6 +86,9 @@ open class Atom(
         }
         fun getFieldName() : String {
             return getValueProton().getFieldName()
+        }
+        fun getElectron(pos:Int) : Electron {
+            return orbitals.get(pos) as Electron
         }
         final override fun setAtom(atom:Atom) : Atom {
             orbitals.setAtom(this)

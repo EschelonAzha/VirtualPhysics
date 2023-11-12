@@ -9,7 +9,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 
-open class ParticleBeam(size:Int, private var particle: Particle = Particle(), private val beam:Beam=Beam(size)) : IBeam by beam, IParticle by particle, IParticleBeam, Emitter {
+open class ParticleBeam(size:Int, private var particle: Particle = Particle(), protected val beam:Beam=Beam(size)) : IBeam by beam, IParticle by particle, IParticleBeam, Emitter {
     object Illuminations {
         public val beam:ParticleBeam = ParticleBeam()
     }
@@ -77,6 +77,7 @@ open class ParticleBeam(size:Int, private var particle: Particle = Particle(), p
     override fun add(particle: IParticle) : IParticle {
         return beam.add(particle) as IParticle
     }
+
     override operator fun get(pos:Int): IParticle {
         val result = beam.get(pos)
         return result as IParticle

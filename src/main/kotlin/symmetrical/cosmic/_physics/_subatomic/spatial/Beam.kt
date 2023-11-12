@@ -113,6 +113,14 @@ open class Beam : IBeam {
         compress()
         return value
     }
+    fun find(item:Any) : Int {
+        for (i:Int in 0 until count) {
+            if (get(i)==item) {
+                return i
+            }
+        }
+        return -1
+    }
     override fun remove(item:Any) : Any {
         for (i in 0 until count) {
             if (item == get(i)) {

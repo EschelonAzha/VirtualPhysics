@@ -1,7 +1,10 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
@@ -14,17 +17,23 @@ open class Proton : Baryon {
         public val beam: ParticleBeam = ParticleBeam()
     }
     object Static {
-        const val VALUE_QUARK : Int = Baryon.Static.LAST + 1
-        const val FIELD_NAME  : Int = VALUE_QUARK        + 1
-        const val LAST        : Int = FIELD_NAME         + 1
+        const val VALUE_QUARK   : Int = Baryon.Static.LAST + 1
+        const val FIELD_NAME    : Int = VALUE_QUARK        + 1
+        const val LAST          : Int = FIELD_NAME         + 1
     }
 
-    private lateinit var __protons: Protons
+    private var __protons       : Protons? = null
+    private var autoFlow        : Boolean  = true
+    private var flowing         : Boolean  = false
     constructor()  {
        this.Proton()
     // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
     // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
     // -1/3 wavelength(Type Of Proton),        Spin(?),
+    }
+    fun i(protons:Protons) : Proton {
+        this.__protons = protons
+        return this
     }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
@@ -82,4 +91,33 @@ open class Proton : Baryon {
         this.__protons = protons
         return this
     }
+
+//    fun covalentBond(proton: Proton, autoFlow:Boolean = true) : Proton {
+//        proton.autoFlow = autoFlow
+//        val myElectron  = getElectron()
+//        val youElectron = proton.getElectron()
+//        if (myElectron == null)
+//            return this
+//        if (youElectron ==  null)
+//            return this
+//        myElectron.covalentBond(youElectron)
+//        return this
+//    }
+//    fun ionicBond(proton: Proton) : Proton {
+//        val myElectron  = getElectron()
+//        val youElectron = proton.getElectron()
+//        if (myElectron == null)
+//            return this
+//        if (youElectron ==  null)
+//            return this
+//        myElectron.ionicBond(youElectron)
+//        return this
+//    }
+//    private fun getElectron() : Electron? {
+//        val electron : Electron = __protons?.getElectron(this) ?: return null
+//
+//        electron.setProton(this)
+//
+//        return electron
+//    }
 }

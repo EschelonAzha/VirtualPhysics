@@ -68,6 +68,10 @@ class Nucleons(
         return getLocalClassId()
     }
 
+    fun getAtom() : Atom {
+        return this.__atom
+    }
+
     override fun setAtom(atom:Atom) : Atom {
         this.__atom = atom
         return atom
