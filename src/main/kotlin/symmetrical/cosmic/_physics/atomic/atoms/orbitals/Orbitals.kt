@@ -20,7 +20,7 @@ open class Orbitals : ParticleBeam, IOrbitals {
     private lateinit var __atom: Atom
 
     constructor() : super(0) {
-
+//        add(Electron())
     }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
