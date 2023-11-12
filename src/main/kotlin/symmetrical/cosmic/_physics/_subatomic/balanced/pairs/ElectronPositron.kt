@@ -19,8 +19,8 @@ class ElectronPositron : LeptonPair {
     constructor() {
 
     }
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : super(lepton, antiLepton) {
-
+    constructor(lepton: Lepton, antiLepton: AntiLepton)  {
+        i(lepton, antiLepton)
     }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam

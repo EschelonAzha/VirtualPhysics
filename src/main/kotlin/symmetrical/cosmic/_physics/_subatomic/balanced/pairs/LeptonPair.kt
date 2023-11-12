@@ -16,9 +16,9 @@ open class LeptonPair : Particle {
 
     constructor() {
     }
-    constructor(lepton:Lepton, antiLepton:AntiLepton) {
-        i(lepton, antiLepton)
-    }
+//    constructor(lepton:Lepton, antiLepton:AntiLepton) {
+//        i(lepton, antiLepton)
+//    }
 
     fun i(lepton:Lepton, antiLepton:AntiLepton) : LeptonPair {
         this.lepton     = lepton;
