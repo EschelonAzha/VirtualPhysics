@@ -56,10 +56,10 @@ open class Spin : Particle, Emitter {
     }
 
     fun isPlus() : Boolean {
-        return field.toBoolean()
+        return field.toInt() > 0
     }
     fun isMinus() : Boolean {
-        return field.toBoolean()
+        return field.toInt() < 0
     }
 
     fun setSpin(value:Int) : Spin {
