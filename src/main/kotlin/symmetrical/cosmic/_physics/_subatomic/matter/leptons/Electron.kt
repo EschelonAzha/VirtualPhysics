@@ -35,7 +35,7 @@ class Electron : Lepton {
     }
     override fun absorb(photon: Photon) : Photon {
         check(photon);
-        return super.absorb(photon)
+        return super.absorb(photon.propagate())
     }
     override fun emit() : Photon {
         return Photon(radiate())
