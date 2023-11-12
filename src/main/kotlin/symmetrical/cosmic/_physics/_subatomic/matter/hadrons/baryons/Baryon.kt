@@ -53,9 +53,9 @@ open class Baryon : Hadron {
         return getLocalClassId()
     }
     fun Proton() : Baryon {
-        this.add(Down())  // type
         this.add(Up())    // value
         this.add(Up())    // When Up Points to Neutron
+        this.add(Down())  // type
         shrink()
         return this
     }

@@ -11,7 +11,7 @@ import kotlin.reflect.KClass
 fun main(args: Array<String>) {
     Absorber.initialize()    // <######### FIRST!!!!!!
 
-//testDiodes()
+    testDiodes()
 
     println("Start="+System.currentTimeMillis())
     for (i in 0 until 1) {
