@@ -26,7 +26,7 @@ class TauAntiTauPair : LeptonPair {
         i(lepton, antiLepton)
     }
     fun i(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
-     //   super.i(Tau(newValue), AntiTau(oldValue))
+        super.i(Tau(newValue), AntiTau(oldValue))
         this.accepted       = accepted
         this.reasonCode     = reasonCode
         this.reason         = reason
