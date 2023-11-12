@@ -19,9 +19,9 @@ open class Proton : Baryon {
     }
 
     enum class QuarkType(val value:Int) {
-        TYPE(0),
-        VALUE(1),
-        VALIDATOR(2),
+        VALUE(0),
+        VALIDATOR(1),
+        TYPE(2),
 
     }
 
