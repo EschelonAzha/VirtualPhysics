@@ -16,7 +16,7 @@ open class Lepton(private val particle: Particle = Particle()) : IParticle by pa
         public val beam: ParticleBeam = ParticleBeam()
     }
 
-    private var fundamentalParticleProperties: Fundamentals = Fundamentals()
+    protected var fundamentals: Fundamentals = Fundamentals()
 
     constructor() : this(Particle()) {
     }
@@ -36,7 +36,7 @@ open class Lepton(private val particle: Particle = Particle()) : IParticle by pa
         check(photon);
 
         val (clone, remainder) = Absorber.materialize(photon.propagate())
-        this.fundamentalParticleProperties = clone as Fundamentals
+        this.fundamentals = clone as Fundamentals
         return Photon(remainder)
     }
 
@@ -44,7 +44,7 @@ open class Lepton(private val particle: Particle = Particle()) : IParticle by pa
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+fundamentalParticleProperties.emit().radiate()
+        return getLocalClassId()+fundamentals.emit().radiate()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Lepton::class)
@@ -60,16 +60,16 @@ open class Lepton(private val particle: Particle = Particle()) : IParticle by pa
 //        return wavelength.wavelength()
 //    }
     fun getPhoton() : Photon {
-        return fundamentalParticleProperties.getPhoton()
+        return fundamentals.getPhoton()
     }
     fun getSpin() : Spin {
-        return fundamentalParticleProperties.getSpin()
+        return fundamentals.getSpin()
     }
     fun getWavelength() : Wavelength {
-        return fundamentalParticleProperties.getWavelength()
+        return fundamentals.getWavelength()
     }
     fun setSpin(spin: Spin) : Lepton {
-        this.fundamentalParticleProperties.setSpin(spin)
+        this.fundamentals.setSpin(spin)
         return this
     }
     fun setValue(value:Any?) : Lepton {
