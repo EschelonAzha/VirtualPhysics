@@ -22,12 +22,12 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
     }
     lateinit var gluon       : Gluon
 
-    private lateinit var fundamentalParticleProperties: Fundamentals
+    private lateinit var fundamentals: Fundamentals
 
 
     constructor() : this(Particle()) {
         this.gluon                          = Red_AntiRed()
-        this.fundamentalParticleProperties  = Fundamentals()
+        this.fundamentals  = Fundamentals()
     }
     public open fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
@@ -46,7 +46,7 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
 
         this.gluon                          = Red_AntiRed()  // this is need for JS Bug
         val (clone, remainder) = Absorber.materialize(photon.propagate())
-        this.fundamentalParticleProperties = clone as Fundamentals
+        this.fundamentals = clone as Fundamentals
         return Photon(remainder)
     }
 
@@ -54,7 +54,7 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+fundamentalParticleProperties.emit().radiate()
+        return getLocalClassId()+fundamentals.emit().radiate()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Quark::class)
@@ -88,23 +88,23 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
         return getWavelength()
     }
     fun getPhoton() : Photon {
-        return fundamentalParticleProperties.getPhoton()
+        return fundamentals.getPhoton()
     }
     fun getMomentum() : AngularMomentum {
-        return fundamentalParticleProperties.getAngularMomentum()
+        return fundamentals.getAngularMomentum()
     }
     fun getSpin() : Spin {
-        return fundamentalParticleProperties.getSpin()
+        return fundamentals.getSpin()
     }
     fun getWavelength() : Wavelength {
-        return fundamentalParticleProperties.getWavelength()
+        return fundamentals.getWavelength()
     }
     fun setSpin(spin: Spin) : Quark {
-        this.fundamentalParticleProperties.setSpin(spin)
+        this.fundamentals.setSpin(spin)
         return this
     }
     fun setMomentum(momentum: AngularMomentum) : Quark {
-        this.fundamentalParticleProperties.setMomentum(momentum)
+        this.fundamentals.setMomentum(momentum)
         return this
     }
     fun setValue(value:Any?) : Quark {
@@ -173,6 +173,6 @@ open class Quark(private val particle: Particle = Particle()) : IParticle by par
         return this
     }
     override fun toString() : String {
-        return fundamentalParticleProperties.toString()
+        return fundamentals.toString()
     }
 }

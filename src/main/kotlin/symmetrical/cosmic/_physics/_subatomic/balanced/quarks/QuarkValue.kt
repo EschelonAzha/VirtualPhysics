@@ -41,7 +41,7 @@ class QuarkValue  : IQuarkValue {
     }
     override fun quarkValue() : Any? {
         val nucleons: Nucleons = atom.nucleons
-        val protons : Protons = nucleons.protons
+        val protons : Protons = nucleons.getProtons()
         val quark   = protons.getValueProton().get(0) as Quark
         return quark.getValue()
     }

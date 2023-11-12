@@ -107,6 +107,13 @@ class Wavelength : Particle, Emitter {
     override fun emit() : Photon {
         return Photon(radiate())
     }
+
+    fun getField() : Field {
+        return field
+    }
+    fun getValue() : Any? {
+        return getField().getValue()
+    }
     private fun radiate() : String {
         val prefix = getLocalClassId()+field.getType()
         if (field.getType() == Static.NULL)
@@ -145,13 +152,15 @@ class Wavelength : Particle, Emitter {
         return this
     }
 
-    fun setWavelength(value:Any?) : Wavelength {
-        field.setValue(value)
-        return this
+    fun setWavelength(value:Any?) : Any? {
+        return field.setValue(value)
     }
 
     override fun toString() : String {
         return field.toString()
+    }
+    fun isChange(value:Any?) : Boolean {
+        return field.isChange(value)
     }
 
 }

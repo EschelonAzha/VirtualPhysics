@@ -13,7 +13,7 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 
 class Nucleons(
-    var protons :Protons  = Protons(),
+    private var protons :Protons  = Protons(),
     private var neutrons:Neutrons = Neutrons())
     :   INucleons,
         Emitter,
@@ -70,6 +70,9 @@ class Nucleons(
 
     fun getAtom() : Atom {
         return this.__atom
+    }
+    fun getProtons() : Protons {
+        return protons
     }
 
     override fun setAtom(atom:Atom) : Atom {

@@ -36,6 +36,8 @@ open class ZBoson : Particle, Weak {
         return getLocalClassId()
     }
     fun i(newValue: Field, constructing:Boolean = false) : ZBoson {
+        this.newValue     = newValue
+        this.constructing = constructing
         return this
     }
     fun decay() : TauAntiTauPair {

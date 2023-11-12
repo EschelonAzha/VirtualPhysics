@@ -2,10 +2,12 @@ package symmetrical.cosmic._physics.atomic.atoms.nucleons
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 class Protons : ParticleBeam, IProtons {
@@ -15,6 +17,10 @@ class Protons : ParticleBeam, IProtons {
     object Static {
         const val VALUE_PROTON  : Int  = ParticleBeam.Static.LAST + 1
         const val LAST          : Int  = VALUE_PROTON + 1
+    }
+
+    enum class ProtonType(val value:Int) {
+        CURRENT_VALUE(0),
     }
 
     private lateinit var __nucleons   : Nucleons
@@ -116,5 +122,24 @@ class Protons : ParticleBeam, IProtons {
     fun getElectron(proton: Proton) : Electron {
         val electronNum = beam.find(proton)
         return getAtom().getElectron(electronNum)
+    }
+    fun getCurrentValue() : Any? {
+        return getCurrentValueProton().getValue()
+    }
+    fun setCurrentValue(zBoson: ZBoson) : ZBoson {
+        getCurrentValueProton().interact(zBoson)
+        return zBoson
+    }
+    fun getCurrentValueProton() : Proton {
+        return getProton(ProtonType.CURRENT_VALUE)
+    }
+    private fun getProton(type: ProtonType) : Proton {
+        return get(type.value) as Proton
+    }
+    fun capacitanceChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+        return getAtom().capacitanceChange(proton, valueQuark, zBoson)
+    }
+    fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+        return getAtom().valueChange(proton, valueQuark, zBoson)
     }
 }

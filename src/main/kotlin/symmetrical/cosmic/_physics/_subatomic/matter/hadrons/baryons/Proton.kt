@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -16,6 +17,13 @@ open class Proton : Baryon {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
+
+    enum class QuarkType(val value:Int) {
+        VALUE(0),
+        VALIDATOR(1),
+        TYPE(2)
+    }
+
     object Static {
         const val VALUE_QUARK   : Int = Baryon.Static.LAST + 1
         const val FIELD_NAME    : Int = VALUE_QUARK        + 1
@@ -79,8 +87,12 @@ open class Proton : Baryon {
     private fun getFieldNameQuark() : Quark {
         return (get(Static.FIELD_NAME) as Quark)
     }
-    private fun getValueQuark() : Quark {
-        return (get(Static.VALUE_QUARK) as Quark)
+//    private fun getValueQuark() : Quark {
+//        return (get(Static.VALUE_QUARK) as Quark)
+//    }
+
+    fun getField() : Field {
+        return getValueQuark().getWavelength().getField()
     }
 
     fun setFieldName(name:String) : Proton {
@@ -103,21 +115,93 @@ open class Proton : Baryon {
         myElectron.covalentBond(youElectron)
         return this
     }
-//    fun ionicBond(proton: Proton) : Proton {
-//        val myElectron  = getElectron()
-//        val youElectron = proton.getElectron()
-//        if (myElectron == null)
-//            return this
-//        if (youElectron ==  null)
-//            return this
-//        myElectron.ionicBond(youElectron)
-//        return this
-//    }
+    fun ionicBond(proton: Proton) : Proton {
+        val myElectron  = getElectron()
+        val youElectron = proton.getElectron()
+        if (myElectron == null)
+            return this
+        if (youElectron ==  null)
+            return this
+        myElectron.ionicBond(youElectron)
+        return this
+    }
     private fun getElectron() : Electron? {
         val electron : Electron = __protons?.getElectron(this) ?: return null
 
         electron.setProton(this)
 
         return electron
+    }
+    fun isType(type: QuarkType) : Boolean {
+        val protonType = getTypeQuark().getWavelength().getField().toInt()
+        return protonType == type.value
+    }
+    fun setType(protonType: Protons.ProtonType) : Proton {
+        val wavelength: Wavelength = getTypeQuark().getWavelength()
+        val changed = wavelength.setWavelength(protonType.value.toString())
+        return this
+    }
+    fun getValue() : Any? {
+        return getField().getValue()
+    }
+
+    fun interact(zBoson: ZBoson) : ZBoson {
+        if (flowing)
+            return zBoson
+
+        val newValue  : Field      = zBoson.getNewField()
+        val valueQuark: Up         = getValueQuark()
+        val wavelength: Wavelength = valueQuark.getWavelength()
+        zBoson.setOldValue(wavelength.getValue())
+
+        if (!noChange(zBoson).isAccepted())
+            return zBoson // not accepted, nothing changed
+
+        var accept = valueChange(valueQuark, zBoson)
+        if (!zBoson.isAccepted()) {
+            return zBoson  // preValueChange rejected change
+        }
+
+        if (autoFlow) {
+            flowing = true
+            val beam:ParticleBeam = flow() // beam has the remote changes.   Not being used yet
+            flowing = false
+        }
+
+        return zBoson  // this returns only the local changes
+    }
+    private fun getValueQuark() : Up {
+        return get(QuarkType.VALUE.value) as Up
+    }
+    fun getValidatorQuark() : Up {
+        return get(QuarkType.VALIDATOR.value) as Up
+    }
+    private fun getTypeQuark() : Down {
+        return get(QuarkType.TYPE.value) as Down
+    }
+    fun capacitanceChange(zBoson:ZBoson) : ZBoson {
+        if (__protons != null)
+            __protons!!.capacitanceChange(this, getValueQuark(), zBoson)
+
+        return zBoson
+    }
+    private fun valueChange(valueQuark:Up, zBoson:ZBoson) : ZBoson {
+        if (__protons != null)
+            __protons!!.valueChange(this, valueQuark, zBoson)
+        return zBoson
+    }
+    private fun flow() : ParticleBeam {
+        val electron: Electron = getElectron() ?: return ParticleBeam()
+        return electron.flow()
+    }
+    private fun noChange(zBoson:ZBoson) : ZBoson {
+        val newValue  : Field      = zBoson.getNewField()
+        val valueQuark: Up         = getValueQuark()
+        val wavelength: Wavelength = valueQuark.getWavelength()
+        if (!wavelength.isChange(newValue)) {
+            zBoson.setAccepted(false)
+        }
+        zBoson.setAccepted(true)
+        return zBoson
     }
 }

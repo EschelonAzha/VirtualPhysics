@@ -10,13 +10,19 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharges
 import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharges
+import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.INucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.IQuarkValue
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.QuarkValue
+import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
+import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 
 
 open class Atom(
@@ -90,6 +96,9 @@ open class Atom(
         fun getElectron(pos:Int) : Electron {
             return orbitals.get(pos) as Electron
         }
+        fun getProtons() : Protons {
+            return nucleons.getProtons()
+        }
         final override fun setAtom(atom:Atom) : Atom {
             orbitals.setAtom(this)
             nucleons.setAtom(this)
@@ -107,4 +116,64 @@ open class Atom(
             val value:Any? = down.getValue()
             return value.toString()
         }
-}
+        fun capacitor_(atom: Atom) : Atom {
+            capacitor(atom);
+            return atom
+        }
+        fun _capacitor(atom: Atom) : Atom {
+            capacitor(atom);
+            return this
+        }
+        fun conductor_(atom: Atom, autoFlow:Boolean=true) : Atom {
+            conductor(atom, autoFlow);
+            return atom
+        }
+        fun _conductor(atom: Atom, autoFlow:Boolean=true) : Atom {
+            conductor(atom, autoFlow);
+            return this
+        }
+        fun diode_(atom: Atom, autoFlow:Boolean=true) : Atom {
+            diode(atom, autoFlow)
+            return atom
+        }
+        fun _diode(atom: Atom, autoFlow:Boolean=true) : Atom {
+            diode(atom, autoFlow)
+            return this
+        }
+        fun diode(atom: Atom, autoFlow:Boolean=true) : Unit {
+            val me : Proton = getCurrentValueProton()
+            val you: Proton = atom.getCurrentValueProton()
+
+            me.covalentBond(you, autoFlow)
+        }
+        fun conductor(atom: Atom, autoFlow:Boolean=true) : Unit {
+            diode(atom, autoFlow)
+            atom.diode(this, autoFlow)
+        }
+        fun capacitor(atom: Atom) : Unit {
+            val me : Proton = getCurrentValueProton()
+            val you: Proton = atom.getCurrentValueProton()
+
+            me.ionicBond(you)
+        }
+        fun getCurrentValue() : Any? {
+            return nucleons.getProtons().getCurrentValue()
+        }
+        private fun getCurrentValueProton() : Proton {
+            return getProtons().getCurrentValueProton()
+        }
+
+        fun setCurrentValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
+            return getProtons().setCurrentValue(ZBoson().i(Field(value), constructing)).decay()
+        }
+        open fun capacitanceChange(me: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+            return zBoson
+        }
+        open fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+            valueQuark.getWavelength().setWavelength(zBoson.getNewValue())
+            zBoson.setAccepted(true)
+            return zBoson
+        }
+
+
+    }
