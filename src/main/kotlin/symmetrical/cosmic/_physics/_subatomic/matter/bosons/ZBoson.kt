@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics._subatomic.matter.bosons
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.forces.weak_force.Weak
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
@@ -14,8 +15,6 @@ open class ZBoson : Particle, Weak {
     // Neutral Charge
     // Spin 1
     // This boson transfers its spin, momentum and energy
-
- //   var result:Any? = null
 
     private var accepted     :Boolean   = true
     private var constructing :Boolean   = false
@@ -37,6 +36,48 @@ open class ZBoson : Particle, Weak {
         return getLocalClassId()
     }
     fun i(newValue: Field, constructing:Boolean = false) : ZBoson {
+        return this
+    }
+    fun decay() : TauAntiTauPair {
+        return TauAntiTauPair().i(accepted, reasonCode, reason, newValue, oldValue)
+    }
+    fun getNewField() : Field {
+        return this.newValue;
+    }
+    fun getNewValue() : Any? {
+        return getNewField().getValue()
+    }
+
+    fun getOldField() : Field {
+        return this.oldValue
+    }
+    fun getOldValue() : Any? {
+        return getOldField().getValue()
+    }
+    fun isAccepted() : Boolean {
+        return accepted
+    }
+    fun isConstructing() : Boolean {
+        return constructing
+    }
+    fun setAccepted(accepted:  Boolean) : ZBoson {
+        this.accepted = accepted
+        return this
+    }
+    fun setNewValue(value:Any?) : ZBoson {
+        this.newValue.setValue(value)
+        return this
+    }
+    fun setOldValue(value:Any?) : ZBoson {
+        this.oldValue.setValue(value)
+        return this
+    }
+    fun setReason(reason:String) : ZBoson {
+        this.reason = reason
+        return this
+    }
+    fun setReasonCode(code:Int) : ZBoson {
+        this.reasonCode = code
         return this
     }
 }
