@@ -4,6 +4,7 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 
@@ -21,6 +22,9 @@ open class Proton : Baryon {
     private lateinit var __protons: Protons
     constructor()  {
        this.Proton()
+    // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
+    // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
+    // -1/3 wavelength(Type Of Proton),        Spin(?),
     }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
