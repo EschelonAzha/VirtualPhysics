@@ -77,7 +77,7 @@ open class ParticleBeam(size:Int, private var particle: Particle = Particle(), p
     override fun add(particle: IParticle) : IParticle {
         return beam.add(particle) as IParticle
     }
-    fun find(particle:Particle) : Int {
+    fun find(particle:IParticle) : Int {
         return beam.find(particle)
     }
 

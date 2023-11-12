@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
@@ -90,7 +91,8 @@ class Electron : Lepton {
         return this
     }
     private fun setElectron(electron:Electron) : Electron {
-        val pos = particleBeam.find(electron as Particle)
+        val particle: IParticle = electron as IParticle
+        val pos = particleBeam.find(electron as IParticle)
         if (pos == -1)
             particleBeam.add(electron)
 
