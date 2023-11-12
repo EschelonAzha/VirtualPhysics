@@ -7,13 +7,12 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 
-
-class WBoson(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
+class WBosonPlus (private val particle: Particle = Particle()) : IParticle by particle, Emitter {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
     // Carries the weak force
-    // Spin 1
+    // Spin -1
     constructor() : this(Particle()) {
     }
     public fun getIlluminations() : ParticleBeam {
@@ -41,12 +40,12 @@ class WBoson(private val particle: Particle = Particle()) : IParticle by particl
         return getLocalClassId()
     }
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(WBoson::class)
+        return Absorber.getClassId(WBosonPlus::class)
     }
     override fun getClassId() : String {
         return getLocalClassId()
     }
-    fun i() : WBoson {
+    fun i() : WBosonPlus {
         return this
     }
 }

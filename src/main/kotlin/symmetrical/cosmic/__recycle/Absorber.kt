@@ -15,7 +15,7 @@ import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.colors.Red
 import symmetrical.cosmic._physics._subatomic.matter.colors.manifestations.CRLFTerminatedColor
 import symmetrical.cosmic._physics._subatomic.forces.weak_force.ChargedWeak
-import symmetrical.cosmic._physics._subatomic.matter.bosons.WBoson
+import symmetrical.cosmic._physics._subatomic.matter.bosons.WBosonMinus
 import symmetrical.cosmic._physics._subatomic.forces.weak_force.neutral.ChargedWeakForce
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.spatial.Beam
@@ -90,6 +90,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic._physics._subatomic.matter.bosons.WBosonPlus
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
@@ -256,7 +257,8 @@ object Absorber {
         beam.add(EntityId(Base52.classId(), UpperCase::class))
         beam.add(EntityId(Base52.classId(), UseridFld::class))
         beam.add(EntityId(Base52.classId(), Wavelength::class))
-        beam.add(EntityId(Base52.classId(), WBoson::class))
+        beam.add(EntityId(Base52.classId(), WBosonMinus::class))
+        beam.add(EntityId(Base52.classId(), WBosonPlus::class))
         beam.add(EntityId(Base52.classId(), ZBoson::class))
         /************************/
         beam.add(EntityId(Base52.classId(), AppendMSG::class))
@@ -415,7 +417,8 @@ object Absorber {
             kClass == UpperCase::class              -> UpperCase()
             kClass == UseridFld::class              -> UseridFld()
             kClass == Wavelength::class             -> Wavelength()
-            kClass == WBoson::class                 -> WBoson()
+            kClass == WBosonMinus::class            -> WBosonMinus()
+            kClass == WBosonPlus::class             -> WBosonPlus()
             kClass == ZBoson::class                 -> ZBoson()
             /*****************/
             kClass == AppendMSG::class              -> AppendMSG()
