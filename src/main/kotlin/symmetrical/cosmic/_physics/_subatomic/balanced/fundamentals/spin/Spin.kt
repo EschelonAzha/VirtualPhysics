@@ -62,6 +62,11 @@ open class Spin : Particle, Emitter {
         return field.toBoolean()
     }
 
+    fun setSpin(value:Int) : Spin {
+        field.setValue(value)
+        return this
+    }
+
     fun spinPlus() : Spin {
         field.setValue(Spin.Static.PLUS)
         return this

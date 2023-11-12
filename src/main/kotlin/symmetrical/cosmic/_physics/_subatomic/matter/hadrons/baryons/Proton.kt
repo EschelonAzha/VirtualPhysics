@@ -92,17 +92,17 @@ open class Proton : Baryon {
         return this
     }
 
-//    fun covalentBond(proton: Proton, autoFlow:Boolean = true) : Proton {
-//        proton.autoFlow = autoFlow
-//        val myElectron  = getElectron()
-//        val youElectron = proton.getElectron()
-//        if (myElectron == null)
-//            return this
-//        if (youElectron ==  null)
-//            return this
-//        myElectron.covalentBond(youElectron)
-//        return this
-//    }
+    fun covalentBond(proton: Proton, autoFlow:Boolean = true) : Proton {
+        proton.autoFlow = autoFlow
+        val myElectron  = getElectron()
+        val youElectron = proton.getElectron()
+        if (myElectron == null)
+            return this
+        if (youElectron ==  null)
+            return this
+        myElectron.covalentBond(youElectron)
+        return this
+    }
 //    fun ionicBond(proton: Proton) : Proton {
 //        val myElectron  = getElectron()
 //        val youElectron = proton.getElectron()
@@ -113,11 +113,11 @@ open class Proton : Baryon {
 //        myElectron.ionicBond(youElectron)
 //        return this
 //    }
-//    private fun getElectron() : Electron? {
-//        val electron : Electron = __protons?.getElectron(this) ?: return null
-//
-//        electron.setProton(this)
-//
-//        return electron
-//    }
+    private fun getElectron() : Electron? {
+        val electron : Electron = __protons?.getElectron(this) ?: return null
+
+        electron.setProton(this)
+
+        return electron
+    }
 }

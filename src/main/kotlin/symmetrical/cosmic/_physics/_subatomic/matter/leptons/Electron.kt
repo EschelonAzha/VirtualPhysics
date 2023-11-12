@@ -1,6 +1,8 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
@@ -61,26 +63,26 @@ class Electron : Lepton {
 //        return fundamentals.spin.spin
 //    }
 //
-//    fun setProton(proton: Proton) : Electron {
-//        this.proton = proton
-//        return this
-//    }
+    fun setProton(proton: Proton) : Electron {
+        this.proton = proton
+        return this
+    }
 //    fun setSpin(spin:Int) : Electron {
 //        fundamentals.spin.spin = spin
 //        return this
 //    }
-//    private fun setElectron(electron:Electron) : Electron {
-//        val pos = particleBeam.find(electron)
-//        if (pos == -1)
-//            particleBeam.add(electron)
-//
-//        return this
-//    }
-//    fun covalentBond(you:Electron) : Electron {
-//        you.setElectron(this)
-//        this.setSpin(Spin.Static.PLUS)
-//        return this
-//    }
+    private fun setElectron(electron:Electron) : Electron {
+        val pos = particleBeam.find(electron as Particle)
+        if (pos == -1)
+            particleBeam.add(electron)
+
+        return this
+    }
+    fun covalentBond(you:Electron) : Electron {
+        you.setElectron(this)
+        this.getSpin().setSpin(Spin.Static.PLUS)
+        return this
+    }
 //    fun ionicBond(you:Electron) : Electron {
 //        you.setElectron(this)
 //        this.setSpin(Spin.Static.MINUS)
