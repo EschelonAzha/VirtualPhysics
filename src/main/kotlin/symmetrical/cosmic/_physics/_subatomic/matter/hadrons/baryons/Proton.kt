@@ -77,7 +77,7 @@ open class Proton : Baryon {
         return getLocalClassId()
     }
     fun getDown() : Down {
-        return get(0) as Down
+        return get(QuarkType.TYPE.value) as Down
     }
     fun getQuarkValue() : Any? {
         return getValueQuark().wavelength()
