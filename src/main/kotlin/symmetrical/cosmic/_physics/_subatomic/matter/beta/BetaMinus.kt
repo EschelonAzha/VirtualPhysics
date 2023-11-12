@@ -40,17 +40,17 @@ class BetaMinus() : LeptonPair() {
         return Up()
     }
     fun getAntiNeutrino() : AntiNeutrino {
-        return leptons[1] as AntiNeutrino
+        return antiLepton as AntiNeutrino
     }
     fun getElectron() : Electron {
-        return leptons[0] as Electron
+        return lepton as Electron
     }
     private fun setAntiNeutrino(antiNeutrino: AntiNeutrino) : BetaMinus {
-        this.leptons[1] = antiNeutrino as Particle
+        this.antiLepton = antiNeutrino
         return this
     }
     private fun setElectron(electron: Electron) : BetaMinus {
-        this.leptons[0] = electron as Particle
+        this.lepton = electron
         return this
     }
 }

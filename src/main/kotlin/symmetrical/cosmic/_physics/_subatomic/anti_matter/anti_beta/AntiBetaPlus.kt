@@ -49,17 +49,17 @@ class AntiBetaPlus() : LeptonPair() {
         return Down()
     }
     fun getNeutrino() : Neutrino {
-        return leptons[1] as Neutrino
+        return lepton as Neutrino
     }
     fun getPositron() : Positron {
-        return leptons[0] as Positron
+        return antiLepton as Positron
     }
     private fun setNeutrino(neutrino: Neutrino) : AntiBetaPlus {
-        this.leptons[1] = neutrino  as Particle
+        this.lepton = neutrino
         return this
     }
     private fun setPositron(positron: Positron) : AntiBetaPlus {
-        this.leptons[0] = positron  as Particle
+        this.antiLepton = positron
         return this
     }
 

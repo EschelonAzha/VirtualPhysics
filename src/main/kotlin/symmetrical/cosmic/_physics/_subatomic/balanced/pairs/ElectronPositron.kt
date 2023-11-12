@@ -1,11 +1,13 @@
 package symmetrical.cosmic._physics._subatomic.balanced.pairs
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
+import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 
 
 //class ElectronPositron<PlusPion> : LeptonPair {
@@ -13,7 +15,11 @@ class ElectronPositron : LeptonPair {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
+
     constructor() {
+
+    }
+    constructor(lepton: Lepton, antiLepton: AntiLepton) : super(lepton, antiLepton) {
 
     }
     public override fun getIlluminations() : ParticleBeam {
@@ -33,10 +39,10 @@ class ElectronPositron : LeptonPair {
     }
 
     fun getElectron() : Electron {
-        return leptons[0] as Electron
+        return lepton as Electron
     }
     fun getPositron() : Positron {
-        return leptons[1] as Positron
+        return antiLepton as Positron
     }
 //    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
 //        this.leptons[0] = electron
@@ -47,11 +53,11 @@ class ElectronPositron : LeptonPair {
 //        return this
 //    }
     private fun setElectron(electron: Electron) : ElectronPositron {
-        this.leptons[0] = electron as Particle
+        this.lepton = electron
         return this
     }
     private fun setPositron(positron: Positron) : ElectronPositron {
-        this.leptons[1] = positron  as Particle
+        this.antiLepton = positron
         return this
     }
 
