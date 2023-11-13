@@ -27,6 +27,8 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 
 open class Atom(
 
+
+
     private   var orbitals      : Orbitals     = Orbitals(),
     public    var nucleons      : Nucleons     = Nucleons(),
     private   var particle      : Particle     = Particle(),
@@ -40,7 +42,8 @@ open class Atom(
         INucleons       by nucleons,
         IParticle       by particle,
         IColorCharges   by colorCharges,
-        IQuarkValue     by quarkValue
+        IQuarkValue     by quarkValue,
+        IAtom
     {
         object Illuminations {
             public val beam: ParticleBeam = ParticleBeam()
