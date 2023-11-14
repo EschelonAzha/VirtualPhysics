@@ -7,7 +7,6 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharges
 import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharges
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
@@ -23,31 +22,33 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 
 
 open class Atom(
 
 
 
-    private   var orbitals      : Orbitals     = Orbitals(),
-    public    var nucleons      : Nucleons     = Nucleons(),
-    private   var particle      : Particle     = Particle(),
-    private   val colorCharges  : ColorCharges = ColorCharges(),
-    private   val quarkValue    : QuarkValue   = QuarkValue()
+    private   var orbitals      : Orbitals              = Orbitals(),
+    public    var nucleons      : Nucleons              = Nucleons(),
+    private   var particle      : Particle              = Particle(),
+    private   val colorCharges  : ColorCharges          = ColorCharges(),
+    private   val quarkValue    : QuarkValue            = QuarkValue(),
+    private   val entanglement  : QuantumEntanglement   = QuantumEntanglement()
         )
     :
         Element,
         Emitter,
-        IOrbitals       by orbitals,
-        INucleons       by nucleons,
-        IParticle       by particle,
-        IColorCharges   by colorCharges,
-        IQuarkValue     by quarkValue,
+        IOrbitals               by orbitals,
+        INucleons               by nucleons,
+        IParticle               by particle,
+        IColorCharges           by colorCharges,
+        IQuarkValue             by quarkValue,
+        IQuantumEntanglement    by entanglement,
         IAtom
     {
-        object Illuminations {
-            public val beam: ParticleBeam = ParticleBeam()
-        }
+
         init {
             setAtom(this)
         }
@@ -58,9 +59,7 @@ open class Atom(
         constructor(value:String) : this() {
             setQuarkValue(value)
         }
-        public open fun getIlluminations() : ParticleBeam {
-            return Illuminations.beam
-        }
+
         private fun check(photon: Photon) : Unit {
             val classId = getLocalClassId()
 
