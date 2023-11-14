@@ -4,15 +4,13 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class ColorCharges : IColorCharges {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class ColorCharges(private val entanglement: IQuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement, IColorCharges {
+
     lateinit var atom     : Atom
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ColorCharges::class)
     }

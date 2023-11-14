@@ -6,18 +6,14 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.W
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class AngularMomentum : Particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
+open class AngularMomentum(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+
+    constructor() : this(QuantumEntanglement()) {
     }
 
-    constructor() {
-
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

@@ -8,11 +8,11 @@ import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Wavelength : Particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class Wavelength(private val entanglement: IQuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement,  Emitter {
+
     object Static {
         const val NULL      = "0"
         const val BOOLEAN   = "B"
@@ -34,12 +34,10 @@ class Wavelength : Particle, Emitter {
 
     private var field      : Field   = Field()
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     fun isNull() : Boolean {
         return field.isNull()
     }

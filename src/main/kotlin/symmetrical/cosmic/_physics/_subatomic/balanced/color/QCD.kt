@@ -2,11 +2,11 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class QCD {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class QCD (private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+
     /*
         ARRAY      A-???
         BOOLEAN    T-0/1
@@ -16,11 +16,10 @@ class QCD {
         STRING     S-nnnnnnnn-value
      */
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
+
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(QCD::class)
     }

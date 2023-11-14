@@ -4,17 +4,15 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class CRLFTerminatedMomentum : AngularMomentum {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    constructor() {
+class CRLFTerminatedMomentum(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : AngularMomentum(), IQuantumEntanglement by entanglement  {
+
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(CRLFTerminatedMomentum::class)
     }

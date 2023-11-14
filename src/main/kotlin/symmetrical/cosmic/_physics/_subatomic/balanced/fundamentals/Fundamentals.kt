@@ -9,19 +9,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Fundamentals(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class Fundamentals(private val entanglement: IQuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+
     private var angularMomentum : AngularMomentum = AngularMomentum()
     private var spin            : Spin            = Spin()
     private var wavelength      : Wavelength      = Wavelength()
     constructor() : this(Particle()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
