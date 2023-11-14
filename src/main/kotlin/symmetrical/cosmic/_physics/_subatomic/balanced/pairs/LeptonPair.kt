@@ -5,16 +5,16 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepto
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class LeptonPair : Particle {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class LeptonPair(open val entanglement:QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement {
+
 
     public lateinit var lepton     : Lepton
     public lateinit var antiLepton : AntiLepton
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
 //    constructor(lepton:Lepton, antiLepton:AntiLepton) {
 //        i(lepton, antiLepton)
@@ -26,9 +26,6 @@ open class LeptonPair : Particle {
         return this
     }
 
-    public override fun getIlluminations() : ParticleBeam {
-        return LeptonPair.Illuminations.beam
-    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(LeptonPair::class)
     }

@@ -10,15 +10,12 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class AntiBetaPlus() : LeptonPair() {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+class AntiBetaPlus(override val entanglement: QuantumEntanglement = QuantumEntanglement()) : LeptonPair(), IQuantumEntanglement by entanglement {
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(AntiBetaPlus::class)
     }
