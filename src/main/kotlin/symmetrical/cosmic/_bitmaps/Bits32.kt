@@ -3,15 +3,15 @@ package symmetrical.cosmic._bitmaps
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Ints
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Bits32 {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    private val high   : Bits16
-    private val low    : Bits16
+open class Bits32 (private val entanglement  : QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
 
-    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte) {
+    private var high   : Bits16 = Bits16()
+    private var low    : Bits16 = Bits16()
+
+    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte) : this(QuantumEntanglement()) {
         high  = Bits16(byte1, byte2)
         low   = Bits16(byte3, byte4)
 
@@ -21,14 +21,12 @@ open class Bits32 {
     }
     constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte(),byteArray[2].toUByte(), byteArray[3].toUByte()) {
     }
-    constructor(value:Int) {
+    constructor(value:Int) : this(QuantumEntanglement()) {
         val byteArray = Ints.toByteArray(value)
         high = Bits16(byteArray[0].toUByte(), byteArray[1].toUByte())
         low  = Bits16(byteArray[2].toUByte(), byteArray[3].toUByte())
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Bits32::class)
     }

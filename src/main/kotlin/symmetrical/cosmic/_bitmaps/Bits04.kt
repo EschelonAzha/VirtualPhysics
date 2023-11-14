@@ -2,21 +2,21 @@ package symmetrical.cosmic._bitmaps
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Bits04 {
-    object Illuminations {
-        public val beam:ParticleBeam = ParticleBeam()
-    }
+open class Bits04(private val entanglement  : QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+
 
     var b00:Short = 0
     var b01:Short = 0
     var b02:Short = 0
     var b03:Short = 0
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(byte:UByte) {
+    constructor(byte:UByte) : this() {
 
         var opCode = byte and 8u
         if (opCode.toUInt() > 0u)
@@ -36,9 +36,7 @@ open class Bits04 {
 
         return
     }
-    public fun getBeam() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Bits04::class)
     }

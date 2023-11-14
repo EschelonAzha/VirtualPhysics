@@ -2,26 +2,26 @@ package symmetrical.cosmic._bitmaps
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Bits64 {
+class Bits64 (private val entanglement  : QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
-    private val high   : Bits32
-    private val low    : Bits32
+    private var high   : Bits32 = Bits32()
+    private var low    : Bits32 = Bits32()
 
     constructor() : this(0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte()){
 
     }
-    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte, byte5:UByte, byte6:UByte, byte7:UByte, byte8:UByte) {
+    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte, byte5:UByte, byte6:UByte, byte7:UByte, byte8:UByte) : this(QuantumEntanglement()) {
         high  = Bits32(byte1, byte2, byte3, byte4)
         low   = Bits32(byte5, byte6, byte7, byte8)
     }
     constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte(),byteArray[2].toUByte(), byteArray[3].toUByte(),byteArray[4].toUByte(), byteArray[5].toUByte(),byteArray[6].toUByte(), byteArray[7].toUByte()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Bits64::class)
     }
