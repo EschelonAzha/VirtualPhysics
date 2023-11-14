@@ -9,14 +9,16 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.W
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class AntiLepton : Particle, Emitter {
+open class AntiLepton(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
 
 
     protected var fundamentals: Fundamentals = Fundamentals()
 
-    constructor()  {
+    constructor() : this(QuantumEntanglement()) {
     }
 
     private fun check(photon: Photon) : Unit {

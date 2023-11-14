@@ -3,16 +3,14 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class AntiMuon : AntiLepton {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
+open class AntiMuon(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : AntiLepton(), IQuantumEntanglement by entanglement {
+
+    constructor() : this(QuantumEntanglement()) {
     }
-    constructor() {
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(AntiMuon::class)
     }
