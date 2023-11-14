@@ -5,26 +5,24 @@ import asymmetrical.machine.threads.Cores
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._bitmaps.Bits64
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class BigBang {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    private lateinit var universe       : symmetrical.cosmic._physics._creation.Universe
+class BigBang (private val entanglement  : QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+
+    private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(symmetrical.cosmic._physics._creation.BigBang::class)
+        return Absorber.getClassId(BigBang::class)
     }
     open fun getClassId() : String {
         return getLocalClassId()
     }
-    fun i(universe: symmetrical.cosmic._physics._creation.Universe) : symmetrical.cosmic._physics._creation.BigBang {
+    fun i(universe: Universe) : BigBang {
         this.universe = universe;
         //  BootConfig.UNIVERSE = universe
         return this;
