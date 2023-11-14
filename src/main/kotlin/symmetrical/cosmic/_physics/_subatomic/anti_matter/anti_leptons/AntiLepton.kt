@@ -11,18 +11,14 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 
 
-open class AntiLepton(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class AntiLepton : Particle, Emitter {
+
 
     protected var fundamentals: Fundamentals = Fundamentals()
 
-    constructor() : this(Particle()) {
+    constructor()  {
     }
-    public open fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

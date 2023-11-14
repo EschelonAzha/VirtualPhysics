@@ -7,23 +7,21 @@ import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Particle : IParticle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Particle(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : IQuantumEntanglement by entanglement, IParticle, Emitter {
+
     object Static {
         const val UNIQUE_ID_LENGTH = 1
     }
     private var uniqueId = ""
     private lateinit var self : IParticle
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    public open fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
