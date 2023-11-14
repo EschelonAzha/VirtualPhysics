@@ -11,7 +11,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Particle(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : IQuantumEntanglement by entanglement, IParticle, Emitter {
+open class Particle(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement, IParticle, Emitter {
 
     object Static {
         const val UNIQUE_ID_LENGTH = 1

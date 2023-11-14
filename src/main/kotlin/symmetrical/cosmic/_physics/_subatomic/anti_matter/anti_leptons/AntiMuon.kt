@@ -6,7 +6,7 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class AntiMuon(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : AntiLepton(), IQuantumEntanglement by entanglement {
+open class AntiMuon(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : AntiLepton(), IQuantumEntanglement by entanglement {
 
     constructor() : this(QuantumEntanglement()) {
     }

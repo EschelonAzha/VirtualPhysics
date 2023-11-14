@@ -14,22 +14,18 @@ import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class AntiQuark(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class AntiQuark(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+
     lateinit var gluon       : Gluon
 
     private lateinit var fundamental: Fundamentals
 
-
-    constructor() : this(Particle()) {
+    constructor() : this(QuantumEntanglement()) {
         this.gluon        = Red_AntiRed()
         this.fundamental  = Fundamentals()
-    }
-    public open fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
     }
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

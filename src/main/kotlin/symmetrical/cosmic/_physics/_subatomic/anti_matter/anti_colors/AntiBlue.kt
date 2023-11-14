@@ -6,7 +6,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // ORIGINAL VALUE
-open class AntiBlue(override val entanglement: QuantumEntanglement = QuantumEntanglement()) : AntiColor(), IQuantumEntanglement by entanglement {  // String
+open class AntiBlue(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : AntiColor(), IQuantumEntanglement by entanglement {  // String
 
     init {
         color = ANTI_BLUE

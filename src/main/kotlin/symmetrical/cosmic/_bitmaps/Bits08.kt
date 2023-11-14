@@ -5,11 +5,7 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Bits08 (private val entanglement  : QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
-
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Bits08 (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement {
 
     lateinit var high: Bits04
     lateinit var low: Bits04

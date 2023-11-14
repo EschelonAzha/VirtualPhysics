@@ -8,7 +8,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class AntiTau(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : AntiLepton(), IQuantumEntanglement by entanglement {
+class AntiTau(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : AntiLepton(), IQuantumEntanglement by entanglement {
 
     constructor() : this(QuantumEntanglement()) {
 

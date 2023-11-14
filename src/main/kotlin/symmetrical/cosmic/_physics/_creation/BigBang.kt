@@ -9,7 +9,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class BigBang (private val entanglement  : QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+class BigBang (private val entanglement:QuantumEntanglement = QuantumEntanglement()):IQuantumEntanglement by entanglement {
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
