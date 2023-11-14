@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class ChromoCharge(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class ChromoCharge(open val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+
     public var _value: Any? = null
 
     protected var color :Short = COLORLESS
@@ -26,11 +26,9 @@ open class ChromoCharge(private val particle: Particle = Particle()) : IParticle
         const val ANTI_BLUE :Short   = -2
         const val ANTI_GREEN:Short   = -3
     }
-    constructor() : this(Particle()) {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public open fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

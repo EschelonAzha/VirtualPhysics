@@ -2,20 +2,18 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // ORIGINAL VALUE
-open class AntiGreen : AntiColor { // Char
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class AntiGreen (override val entanglement: QuantumEntanglement = QuantumEntanglement()) : AntiColor(), IQuantumEntanglement by entanglement { // Char
+
     init {
         color = ANTI_GREEN
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(AntiGreen::class)
     }
