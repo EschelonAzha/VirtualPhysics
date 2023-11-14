@@ -4,31 +4,31 @@ import asymmetrical.machine.time.RequestAnimationFrame
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._creation.Universe
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Strobe {
+class Strobe (private val entanglement  : QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
     private val requestAnimationFrame = RequestAnimationFrame().i(this)
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(symmetrical.cosmic._physics._dimensions.time.Strobe::class)
+        return Absorber.getClassId(Strobe::class)
     }
     open fun getClassId() : String {
         return getLocalClassId()
     }
-    fun i() : symmetrical.cosmic._physics._dimensions.time.Strobe {
+    fun i() : Strobe {
         return this
     }
     fun frame(timestamp:Double): Unit {
         return
     }
-    fun start() : symmetrical.cosmic._physics._dimensions.time.Strobe {
+    fun start() : Strobe {
         requestAnimationFrame.start()
         return this
     }
