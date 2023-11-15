@@ -3,8 +3,9 @@ package symmetrical.cosmic._physics._subatomic.spatial
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Composition : ParticleBeam {
+open class Composition(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : ParticleBeam() {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
@@ -12,10 +13,10 @@ open class Composition : ParticleBeam {
         const val FIRST  = ParticleBeam.Static.LAST + 1
         const val LAST  = ParticleBeam.Static.LAST + 2
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(first: IParticle, last: IParticle) : super(2) {
+    constructor(first: IParticle, last: IParticle) : this() {
         add(first)
         add(last)
     }
