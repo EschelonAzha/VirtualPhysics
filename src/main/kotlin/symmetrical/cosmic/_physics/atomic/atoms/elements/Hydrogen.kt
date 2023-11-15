@@ -4,26 +4,25 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Hydrogen {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class Hydrogen(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+
     lateinit var atom : Atom
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(atom: Atom) {
+    constructor(atom: Atom) : this(QuantumEntanglement()) {
+        this.atom = atom
     }
     fun i(atom: Atom) : Hydrogen {
         this.atom = atom
         atom.setAtomicNumber(1)
         return this
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Hydrogen::class)
     }

@@ -6,19 +6,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Neutrons : ParticleBeam, INeutrons {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class Neutrons(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, INeutrons {
+
 
     lateinit var __nucleons:Nucleons
 
-    constructor() : super(0) {
+    constructor()  : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

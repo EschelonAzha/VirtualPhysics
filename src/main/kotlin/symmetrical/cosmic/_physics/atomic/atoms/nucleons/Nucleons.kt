@@ -10,11 +10,14 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralUpPion
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class Nucleons(
-    private var protons :Protons  = Protons(),
-    private var neutrons:Neutrons = Neutrons())
+    private var protons     :Protons                = Protons(),
+    private var neutrons    :Neutrons               = Neutrons(),
+    private val entanglement:QuantumEntanglement    = QuantumEntanglement(),
+    )
     :   INucleons,
         Emitter,
         IProtons by protons,

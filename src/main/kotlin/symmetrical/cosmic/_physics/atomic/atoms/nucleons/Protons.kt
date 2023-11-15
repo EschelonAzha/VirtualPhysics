@@ -9,11 +9,11 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Protons : ParticleBeam, IProtons {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class Protons(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, IProtons {
+
     object Static {
         const val VALUE_PROTON  : Int  = ParticleBeam.Static.LAST + 1
         const val LAST          : Int  = VALUE_PROTON + 1
@@ -25,12 +25,10 @@ class Protons : ParticleBeam, IProtons {
 
     private lateinit var __nucleons   : Nucleons
 
-    constructor() : super(1) {
-        set(0, Proton().setProtons(this))
+    constructor() : this(QuantumEntanglement()) {
+        add(Proton().setProtons(this))
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
