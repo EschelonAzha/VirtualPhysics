@@ -4,12 +4,13 @@ import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class DbKey : Compound {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
-    constructor() : super(1){
+    constructor() : super(QuantumEntanglement()){
 
     }
     public override fun getIlluminations() : ParticleBeam {
