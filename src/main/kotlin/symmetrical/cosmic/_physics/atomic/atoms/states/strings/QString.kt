@@ -4,23 +4,21 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class QString : Atom {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class QString(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement {
+
     init {
         setString("")
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
     constructor(value:String) : this() {
         setString(value)
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())
     }

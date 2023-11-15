@@ -4,17 +4,15 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class QByte() : Atom() {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class QByte(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement {
+
     init {
         setByte(" ".toByte())
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(QByte::class)
     }

@@ -8,23 +8,21 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Orbitals : ParticleBeam, IOrbitals {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Orbitals(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, IOrbitals {
+
     object Static {
         const val VALUE     : Int = ParticleBeam.Static.LAST+1
         const val LAST      : Int = VALUE
     }
     private lateinit var __atom: Atom
 
-    constructor() : super(0) {
+    constructor() : this(QuantumEntanglement()) {
         add(Electron())
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
