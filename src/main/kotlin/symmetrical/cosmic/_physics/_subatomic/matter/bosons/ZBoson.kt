@@ -4,14 +4,15 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.forces.weak_force.Weak
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class ZBoson : Particle, Weak {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class ZBoson(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+
     // Neutral Charge
     // Spin 1
     // This boson transfers its spin, momentum and energy
@@ -23,12 +24,10 @@ open class ZBoson : Particle, Weak {
     private var reasonCode   :Int       = 0
     private var reason       :String    = ""
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
 
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ZBoson::class)
     }
