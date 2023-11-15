@@ -7,15 +7,11 @@ import websites._phases.LoginPhase
 
 
 open class NebulaPhases : Nebula {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+
     private var phase: INebula = LoginPhase(this)
     constructor() {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     override fun onOpen() : Unit {
         phase.onOpen()
     }

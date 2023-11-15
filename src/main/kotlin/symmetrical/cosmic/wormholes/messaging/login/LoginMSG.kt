@@ -6,18 +6,18 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic.dictionary.PasswordFld
 import symmetrical.cosmic.dictionary.UseridFld
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class LoginMSG : Message {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class LoginMSG(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : Message(), IQuantumEntanglement by entanglement {
+
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1
         const val PASSWORD  : Int = Message.Static.LAST + 2
         const val LAST      : Int = PASSWORD
 
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
     override fun i() : LoginMSG {
         super.i()
@@ -25,9 +25,7 @@ class LoginMSG : Message {
         add(PasswordFld())
         return this
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

@@ -5,25 +5,25 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class KeyValue : Diatomic {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class KeyValue(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Diatomic(), IQuantumEntanglement by entanglement {
+
     object Static {
         const val KEY       : Int = Diatomic.Static.LAST+1
         const val VALUE     : Int = Diatomic.Static.LAST+2
 
         const val LAST      : Int = VALUE
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    constructor(key: Atom, value:Atom) : super(key, value){
+    constructor(key: Atom, value:Atom) : this(){
+        add(key)
+        add(value)
         val size = size();
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

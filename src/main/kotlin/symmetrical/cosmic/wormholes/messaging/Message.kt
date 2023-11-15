@@ -3,19 +3,17 @@ package symmetrical.cosmic.wormholes.messaging
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Message : ParticleBeam {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Message(private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement {
+
     object Static {
         const val LAST      : Int = ParticleBeam.Static.LAST
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
