@@ -3,19 +3,16 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Tau : Lepton {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
+class Tau(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Lepton(), IQuantumEntanglement by entanglement {
+
+    constructor() : this(QuantumEntanglement()) {
     }
-    constructor() {
-    }
-    constructor(newValue : Field) {
+    constructor(newValue : Field) : this() {
         fundamentals.getWavelength().setField(newValue)
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Tau::class)

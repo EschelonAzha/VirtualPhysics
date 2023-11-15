@@ -10,19 +10,16 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Lepton(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Lepton(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
 
     protected var fundamentals: Fundamentals = Fundamentals()
 
-    constructor() : this(Particle()) {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public open fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

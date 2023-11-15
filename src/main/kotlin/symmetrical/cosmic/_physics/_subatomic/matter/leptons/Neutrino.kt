@@ -2,22 +2,19 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
+class Neutrino(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Lepton(), IQuantumEntanglement by entanglement {
 
-class Neutrino : Lepton {
-    object Illuminations {
-        public val beam:ParticleBeam = ParticleBeam()
-    }
     lateinit var __beam: ParticleBeam
     // lateinit var weakRef: WeakRef<Particle>
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId(): String {
         return Absorber.getClassId(Neutrino::class)
     }

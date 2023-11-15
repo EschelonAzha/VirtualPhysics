@@ -10,21 +10,19 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Electron : Lepton {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class Electron(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Lepton(), IQuantumEntanglement by entanglement {
+
     lateinit var orbitals : Orbitals
 
     private lateinit var proton         : Proton
     private          var particleBeam   : ParticleBeam = ParticleBeam()
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
