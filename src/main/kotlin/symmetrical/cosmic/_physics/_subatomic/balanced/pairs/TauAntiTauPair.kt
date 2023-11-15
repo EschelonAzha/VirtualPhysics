@@ -10,8 +10,10 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Tau
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class TauAntiTauPair : LeptonPair {
+class TauAntiTauPair(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : LeptonPair(), IQuantumEntanglement by entanglement {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
@@ -19,10 +21,10 @@ class TauAntiTauPair : LeptonPair {
     var reason     : String     = ""
     var accepted   : Boolean    = true
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(lepton: Lepton, antiLepton: AntiLepton)  {
+    constructor(lepton: Lepton, antiLepton: AntiLepton) : this(QuantumEntanglement()) {
         i(lepton, antiLepton)
     }
     fun i(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {

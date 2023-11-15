@@ -3,12 +3,12 @@ package symmetrical.cosmic._physics._subatomic.balanced
 import asymmetrical.machine.threads.Energy
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class HiggsField : Energy {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class HiggsField(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Energy(), IQuantumEntanglement by entanglement {
+
     // Spin 0
     companion object {
         lateinit var higgsField : HiggsField
@@ -18,11 +18,9 @@ open class HiggsField : Energy {
             return higgs
         }
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(HiggsField::class)
     }

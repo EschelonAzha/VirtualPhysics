@@ -8,23 +8,21 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 //class ElectronPositron<PlusPion> : LeptonPair {
-class ElectronPositron : LeptonPair {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class ElectronPositron(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : LeptonPair(), IQuantumEntanglement by entanglement {
 
-    constructor() {
+
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(lepton: Lepton, antiLepton: AntiLepton)  {
+    constructor(lepton: Lepton, antiLepton: AntiLepton) : this(QuantumEntanglement()) {
         i(lepton, antiLepton)
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ElectronPositron::class)
     }

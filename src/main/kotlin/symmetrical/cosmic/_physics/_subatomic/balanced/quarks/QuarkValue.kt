@@ -9,18 +9,16 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class QuarkValue  : IQuarkValue {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class QuarkValue(private val entanglement:QuantumEntanglement=QuantumEntanglement())  : IQuantumEntanglement by entanglement, IQuarkValue {
+
     lateinit var atom:Atom
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(QuarkValue::class)
     }

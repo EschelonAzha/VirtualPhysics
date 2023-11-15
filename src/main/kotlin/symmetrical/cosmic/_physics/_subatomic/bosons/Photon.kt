@@ -7,11 +7,11 @@ import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Photon(private val particle: Particle = Particle()) : IParticle by particle {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Photon(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement {
+
     companion object {
         fun toPhoton(value:Any?, lth:Int=Config.getPhotonLength()) : String {
             if (value == null)
@@ -49,13 +49,11 @@ open class Photon(private val particle: Particle = Particle()) : IParticle by pa
                 var radiation   : String = ""
 
     // Spin 1
-    constructor(radiation:String) : this(Particle()) {
+    constructor(radiation:String) : this(QuantumEntanglement()) {
         this.radiation = radiation;
         return
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Photon::class)
     }

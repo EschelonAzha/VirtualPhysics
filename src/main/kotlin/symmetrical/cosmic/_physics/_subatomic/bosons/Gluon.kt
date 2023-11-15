@@ -4,15 +4,16 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiColor
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
-open class Gluon  {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Gluon(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement  {
+
     // Gluons are confined within
     // Spin 1
     lateinit var color      : Color
@@ -20,15 +21,13 @@ open class Gluon  {
 
     var manifestation : Green = Green()
 
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public open fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Gluon::class)
     }
-    open fun getClassId() : String {
+    override fun getClassId() : String {
         return getLocalClassId()
     }
     open fun i() : Gluon {

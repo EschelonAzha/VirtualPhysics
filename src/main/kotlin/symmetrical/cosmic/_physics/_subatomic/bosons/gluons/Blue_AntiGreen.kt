@@ -6,18 +6,15 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiGreen
 import symmetrical.cosmic._physics._subatomic.matter.colors.Blue
 import symmetrical.cosmic._physics._subatomic.matter.colors.Red
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Blue_AntiGreen : Gluon {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    constructor() {
+class Blue_AntiGreen (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Gluon(), IQuantumEntanglement by entanglement {
+
+    constructor() : this(QuantumEntanglement()) {
         color       = Blue()
         antiColor   = AntiGreen()
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Blue_AntiGreen::class)
