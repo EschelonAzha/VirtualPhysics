@@ -4,12 +4,12 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.substance.Substance
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Alloy(vararg mixtures: Substance) {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Alloy(vararg mixtures: Substance, private val entanglement: QuantumEntanglement= QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()
 
@@ -19,9 +19,7 @@ open class Alloy(vararg mixtures: Substance) {
             mixture.add(substance)
         }
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Alloy::class)
     }

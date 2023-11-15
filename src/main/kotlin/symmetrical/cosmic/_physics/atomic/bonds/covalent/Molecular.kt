@@ -10,23 +10,21 @@ import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Molecular(private var particleBeam:ParticleBeam=ParticleBeam()) : Atom(), IParticle, IParticleBeam by particleBeam {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Molecular(private var particleBeam:ParticleBeam=ParticleBeam(), private val entanglement:QuantumEntanglement= QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement, IParticleBeam by particleBeam, IParticle {
+
     object Static {
         const val LAST      : Int = -1
     }
-    constructor() : this(ParticleBeam()) {
+    constructor() : this(ParticleBeam(), QuantumEntanglement()) {
 
     }
-    constructor(size: Int) : this(ParticleBeam(size)) {
+    constructor(size: Int) : this(ParticleBeam(size), QuantumEntanglement()) {
 
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

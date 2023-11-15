@@ -6,19 +6,18 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic._physics.atomic.bonds.ionic.Ionic
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Compound : Molecular, Ionic {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Compound(private val entanglement: IQuantumEntanglement=QuantumEntanglement()) : Molecular(), IQuantumEntanglement by entanglement,  Ionic {
+
     object Static {
         const val LAST      : Int = -1
     }
-    constructor() : super() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(size:Int) : super(size) {
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
