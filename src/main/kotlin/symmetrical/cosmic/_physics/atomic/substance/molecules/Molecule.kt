@@ -6,21 +6,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Covalent
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Molecule : Molecular, Covalent {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Molecule(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : Molecular(), IQuantumEntanglement by entanglement, Covalent {
+
     object Static {
         const val LAST      : Int = -1
     }
-    constructor() : super() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    constructor(size:Int=0) : super(size) {
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
