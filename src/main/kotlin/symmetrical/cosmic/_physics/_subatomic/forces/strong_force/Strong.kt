@@ -4,12 +4,12 @@ import asymmetrical.machine.threads.Energy
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Strong : Energy {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Strong(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Energy(), IQuantumEntanglement by entanglement {
+
     companion object {
         lateinit var strong : Strong
 
@@ -18,11 +18,9 @@ open class Strong : Energy {
             return strong
         }
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Strong::class)
     }

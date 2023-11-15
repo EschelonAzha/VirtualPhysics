@@ -6,16 +6,14 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Charge(private val particle: Particle = Particle())  : IParticle by particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
+class Charge(private val entanglement: QuantumEntanglement = QuantumEntanglement())  : Particle(), IQuantumEntanglement by entanglement, Emitter {
+
+    constructor() : this(QuantumEntanglement()) {
     }
-    constructor() : this(Particle()) {
-    }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

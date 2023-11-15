@@ -1,24 +1,23 @@
 package symmetrical.cosmic._physics._subatomic.forces.weak_force
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class ChargedWeak {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class ChargedWeak(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement {
+
     // can emit a charged W Boson that can alter the charge of a Proton by
     // altering the structure of its quarks
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ChargedWeak::class)
     }
-    open fun getClassId() : String {
+    override fun getClassId() : String {
         return getLocalClassId()
     }
     fun i() : ChargedWeak {
