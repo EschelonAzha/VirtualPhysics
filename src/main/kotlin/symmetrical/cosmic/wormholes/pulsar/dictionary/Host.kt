@@ -5,20 +5,19 @@ import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Host : KeyValue {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
+class Host(private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : KeyValue(), IQuantumEntanglement by entanglement {
+
+
+    constructor() : this(QuantumEntanglement()) {
+
     }
-
-    constructor() {
-
-    }
-    constructor(key: QString, value: QString) : super(key, value) {
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
+    constructor(key: QString, value: QString) : this() {
+        add(key)
+        add(value)
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Host::class)

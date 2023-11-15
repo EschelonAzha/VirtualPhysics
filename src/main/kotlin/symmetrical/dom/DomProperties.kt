@@ -4,16 +4,14 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class DomProperties : Molecular {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
+class DomProperties(private val entanglement:IQuantumEntanglement= QuantumEntanglement()) : Molecular(), IQuantumEntanglement by entanglement {
+
+    constructor() : this(QuantumEntanglement()) {
     }
-    constructor() {
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

@@ -5,19 +5,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Dom : Atom {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Dom(private val entanglement:IQuantumEntanglement= QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement  {
+
     private var children  :Molecular     = Molecular()
     private var properties:DomProperties = DomProperties()
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

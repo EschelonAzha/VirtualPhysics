@@ -5,21 +5,23 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class DomProperty : KeyValue {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    constructor() {
+open class DomProperty(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : KeyValue(), IQuantumEntanglement by entanglement {
+
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(propertyName:String) : super(QString(propertyName), QString("")) {
+    constructor(propertyName:String) : this() {
+        add(QString(propertyName))
+        add(QString(""))
     }
-    constructor(propertyName:String, value:String) : super(QString(propertyName), QString(value)) {
+    constructor(propertyName:String, value:String) : this() {
+        add(QString(propertyName))
+        add(QString(value))
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
