@@ -8,18 +8,18 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class NeutralUpPion : Hadron {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class NeutralUpPion(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Hadron(), IQuantumEntanglement by entanglement {
+
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
 
     }
-    constructor(proton: Baryon, neutron: Baryon)  {
+    constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)
         this.add(Up())
         this.add(AntiUp())
@@ -31,9 +31,7 @@ open class NeutralUpPion : Hadron {
 
         nuclearForce()
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(NeutralUpPion::class)
     }
