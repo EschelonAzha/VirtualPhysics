@@ -14,24 +14,22 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Quark(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Quark(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+
     lateinit var gluon       : Gluon
 
     private lateinit var fundamentals: Fundamentals
 
 
-    constructor() : this(Particle()) {
+    constructor() : this(QuantumEntanglement()) {
         this.gluon                          = Red_AntiRed()
         this.fundamentals  = Fundamentals()
     }
-    public open fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

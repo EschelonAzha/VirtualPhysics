@@ -4,22 +4,20 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__recycle.Recycler
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Down : Quark {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+class Down(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Quark(), IQuantumEntanglement by entanglement {
+
     companion object {
         const val VALUE            = "VALUE"
         const val FIELD_NAME       = "FIELD-NAME"
         const val TEST_PROPERTY    = "TEST_PROPERTY"
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())
     }
