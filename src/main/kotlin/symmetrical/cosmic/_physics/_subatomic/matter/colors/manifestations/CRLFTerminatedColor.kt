@@ -2,18 +2,17 @@ package symmetrical.cosmic._physics._subatomic.matter.colors.manifestations
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
+import symmetrical.cosmic._physics._subatomic.balanced.color.ChromoCharge
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class CRLFTerminatedColor : Green {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
+class CRLFTerminatedColor(private val entanglement: QuantumEntanglement = QuantumEntanglement()): Green(), IQuantumEntanglement by entanglement {
+
+    constructor() : this(QuantumEntanglement()) {
     }
-    constructor() {
-    }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(CRLFTerminatedColor::class)
     }

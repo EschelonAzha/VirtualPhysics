@@ -5,21 +5,19 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Hadron : ParticleBeam, IParticle, Emitter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Hadron(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, Emitter {
+
     object Static {
         const val LAST : Int = ParticleBeam.Static.LAST
 
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

@@ -5,20 +5,18 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Green_AntiGreen
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // FORMATTED VALUE
-open class Green : Color {  // Int
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Green (private val entanglement: QuantumEntanglement = QuantumEntanglement()): Color(), IQuantumEntanglement by entanglement {  // Int
+
     init {
         color = GREEN
     }
-    constructor() {
+    constructor() : this(QuantumEntanglement()) {
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Green::class)
     }

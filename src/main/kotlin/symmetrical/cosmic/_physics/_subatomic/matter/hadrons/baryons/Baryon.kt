@@ -10,21 +10,19 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Baryon : Hadron {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Baryon(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Hadron(), IQuantumEntanglement by entanglement {
+
     object Static {
         const val LAST : Int = Hadron.Static.LAST
     }
-    constructor() : super() {
+    constructor() : this(QuantumEntanglement()) {
         super.i(3)
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

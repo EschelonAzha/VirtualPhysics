@@ -11,12 +11,12 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Proton : Baryon {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+open class Proton(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Baryon(), IQuantumEntanglement by entanglement {
+
 
     enum class QuarkType(val value:Int) {
         VALUE(0),
@@ -34,7 +34,7 @@ open class Proton : Baryon {
     private var __protons       : Protons? = null
     private var autoFlow        : Boolean  = true
     private var flowing         : Boolean  = false
-    constructor()  {
+    constructor() : this(QuantumEntanglement()) {
        this.Proton()
     // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
     // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
@@ -44,9 +44,7 @@ open class Proton : Baryon {
         this.__protons = protons
         return this
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
