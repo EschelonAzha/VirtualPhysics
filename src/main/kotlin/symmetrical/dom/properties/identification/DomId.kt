@@ -9,7 +9,9 @@ import symmetrical.dom.DomProperty
 
 class DomId(private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : DomProperty(), IQuantumEntanglement by entanglement {
 
-    constructor() : this(QuantumEntanglement())
+    constructor() : this(QuantumEntanglement()) {
+        setProperty("id")
+    }
     constructor(height:Int) : this() {
         setProperty("id", height.toString())
     }

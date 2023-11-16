@@ -3,22 +3,20 @@ package symmetrical.dom.properties.region
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 import symmetrical.dom.DomProperty
 import symmetrical.dom.properties.style.DomStyle
 
-class DomTop : DomProperty {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    constructor() : super("top") {
+class DomTop(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : DomProperty(), IQuantumEntanglement by entanglement {
 
+    constructor() : this(QuantumEntanglement()) {
+        setProperty("top")
     }
     constructor(height:Int) : this() {
-        getValue()!!.setQuarkValue(height.toString())
+        setProperty("top", height.toString())
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

@@ -4,21 +4,19 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 import symmetrical.dom.DomProperty
 
-class DomStyle : DomProperty {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-    constructor() : super("style") {
+class DomStyle(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : DomProperty(), IQuantumEntanglement by entanglement {
 
+    constructor() : this(QuantumEntanglement()) {
+        setProperty("style")
     }
-    constructor(height:Int) : this() {
-        getValue()!!.setQuarkValue(height.toString())
+    constructor(style:Int) : this() {
+        setProperty("style", style.toString())
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
