@@ -9,12 +9,17 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class BigBang (private val entanglement:QuantumEntanglement = QuantumEntanglement()):IQuantumEntanglement by entanglement {
+class BigBang (
+    private val entanglement:IQuantumEntanglement
+):
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
-    constructor() : this(QuantumEntanglement()) {
-    }
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(BigBang::class)

@@ -7,12 +7,17 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Strobe (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+class Strobe (
+    private val entanglement:IQuantumEntanglement
+
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     private val requestAnimationFrame = RequestAnimationFrame().i(this)
-
-    constructor() : this(QuantumEntanglement()) {
-    }
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Strobe::class)

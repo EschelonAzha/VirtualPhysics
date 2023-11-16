@@ -6,10 +6,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Time (private val entanglement: QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
-    }
+class Time (
+    private val entanglement: IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(symmetrical.cosmic._physics._dimensions.time.Time::class)
