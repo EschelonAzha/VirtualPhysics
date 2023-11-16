@@ -8,14 +8,19 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class LeptonPair(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement {
-
+open class LeptonPair(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     public lateinit var lepton     : Lepton
     public lateinit var antiLepton : AntiLepton
 
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 //    constructor(lepton:Lepton, antiLepton:AntiLepton) {
 //        i(lepton, antiLepton)
 //    }

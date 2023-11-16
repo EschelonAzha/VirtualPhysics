@@ -12,8 +12,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-
-class AntiBetaMinus(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : LeptonPair(), IQuantumEntanglement by entanglement {
+class AntiBetaMinus(
+    private val entanglement:IQuantumEntanglement
+) : LeptonPair(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
 
     private fun getLocalClassId() : String {
