@@ -11,7 +11,15 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class ChromoCharge(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+open class ChromoCharge(
+    private val entanglement: IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     public var _value: Any? = null
 
@@ -26,8 +34,7 @@ open class ChromoCharge(private val entanglement: QuantumEntanglement = QuantumE
         const val ANTI_BLUE :Short   = -2
         const val ANTI_GREEN:Short   = -3
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

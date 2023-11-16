@@ -6,13 +6,19 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // ORIGINAL VALUE
-open class AntiRed (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : AntiColor(), IQuantumEntanglement by entanglement {  // Byte
+open class AntiRed (
+    private val entanglement:IQuantumEntanglement
+) : AntiColor(entanglement),
+    IQuantumEntanglement by entanglement
+{  // Byte
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     init {
         color = ANTI_RED
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(AntiRed::class)

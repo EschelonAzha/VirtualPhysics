@@ -1,4 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_bosons
 
-class AntiWBosonMinus {
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
+
+class AntiWBosonMinus : Particle() {
 }
