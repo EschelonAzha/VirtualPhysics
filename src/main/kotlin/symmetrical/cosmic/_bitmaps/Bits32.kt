@@ -6,22 +6,26 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Bits32 (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+open class Bits32 (
+    private val entanglement:IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     private var high   : Bits16 = Bits16()
     private var low    : Bits16 = Bits16()
 
-    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte) : this(QuantumEntanglement()) {
+    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte) : this() {
         high  = Bits16(byte1, byte2)
         low   = Bits16(byte3, byte4)
 
     }
-    constructor() : this(0) {
-
-    }
     constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte(),byteArray[2].toUByte(), byteArray[3].toUByte()) {
     }
-    constructor(value:Int) : this(QuantumEntanglement()) {
+    constructor(value:Int=0) : this() {
         val byteArray = Ints.toByteArray(value)
         high = Bits16(byteArray[0].toUByte(), byteArray[1].toUByte())
         low  = Bits16(byteArray[2].toUByte(), byteArray[3].toUByte())

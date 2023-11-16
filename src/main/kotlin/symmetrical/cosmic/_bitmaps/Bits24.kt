@@ -5,16 +5,19 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Bits24 (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+class Bits24 (
+    private val entanglement:IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {}
 
     var top     : Bits08 = Bits08()
     var middle  : Bits08 = Bits08()
     var bottom  : Bits08 = Bits08()
-    constructor() : this(QuantumEntanglement()) {
-        top    = Bits08()
-        middle = Bits08()
-        bottom = Bits08()
-    }
+
     constructor(byte1:UByte, byte2:UByte, byte3:UByte) : this() {
         top     = Bits08(byte1)
         middle  = Bits08(byte2)

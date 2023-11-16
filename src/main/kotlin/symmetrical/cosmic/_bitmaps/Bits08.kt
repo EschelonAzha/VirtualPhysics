@@ -5,16 +5,21 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Bits08 (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+open class Bits08 (
+    private val entanglement:IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement(),
+    ) {}
 
     lateinit var high: Bits04
     lateinit var low: Bits04
 
     private var byte: UByte = 0u
 
-    constructor() : this(QuantumEntanglement()) {
-        this.byte = 0.toUByte()
-    }
+
     constructor(byte: UByte) : this() {
         this.byte = byte
         setDecimal(byte)
