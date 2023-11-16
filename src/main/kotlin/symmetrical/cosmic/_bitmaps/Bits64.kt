@@ -10,14 +10,19 @@ class Bits64 (
 ) :
     IQuantumEntanglement by entanglement
 {
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private var high   : Bits32 = Bits32()
     private var low    : Bits32 = Bits32()
 
-    constructor() : this(0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte()){
-
+    init {
+        high  = Bits32(0u, 0u, 0u, 0u)
+        low   = Bits32(0u, 0u, 0u, 0u)
     }
-    constructor(byte1:UByte=0u, byte2:UByte=0u, byte3:UByte=0u, byte4:UByte=0u, byte5:UByte=0u, byte6:UByte=0u, byte7:UByte=0u, byte8:UByte=0u) : this(QuantumEntanglement()) {
+
+    constructor(byte1:UByte=0u, byte2:UByte=0u, byte3:UByte=0u, byte4:UByte=0u, byte5:UByte=0u, byte6:UByte=0u, byte7:UByte=0u, byte8:UByte=0u) : this() {
         high  = Bits32(byte1, byte2, byte3, byte4)
         low   = Bits32(byte5, byte6, byte7, byte8)
     }
