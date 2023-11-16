@@ -14,7 +14,7 @@ open class AntiColor(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

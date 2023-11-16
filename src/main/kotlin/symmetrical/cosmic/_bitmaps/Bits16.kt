@@ -13,7 +13,7 @@ open class Bits16 (
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     private var high: Bits08 = Bits08()
     private var low : Bits08 = Bits08()

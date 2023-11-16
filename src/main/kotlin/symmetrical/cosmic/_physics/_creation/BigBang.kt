@@ -16,7 +16,7 @@ class BigBang (
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()

@@ -12,7 +12,7 @@ class Bits24 (
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     var top     : Bits08 = Bits08()
     var middle  : Bits08 = Bits08()

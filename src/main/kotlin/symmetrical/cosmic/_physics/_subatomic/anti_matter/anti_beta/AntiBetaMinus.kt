@@ -19,7 +19,7 @@ class AntiBetaMinus(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
 
     private fun getLocalClassId() : String {

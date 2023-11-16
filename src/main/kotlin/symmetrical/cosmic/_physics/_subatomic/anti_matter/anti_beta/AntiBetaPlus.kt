@@ -21,7 +21,7 @@ class AntiBetaPlus(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(AntiBetaPlus::class)

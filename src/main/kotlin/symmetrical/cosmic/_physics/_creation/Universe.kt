@@ -13,7 +13,7 @@ open class Universe (
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Universe::class)

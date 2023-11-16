@@ -13,7 +13,7 @@ class Temperature (
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Temperature::class)

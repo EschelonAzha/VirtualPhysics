@@ -12,7 +12,7 @@ open class Bits08 (
 {
     constructor() : this(
         QuantumEntanglement(),
-    ) {}
+    )
 
     lateinit var high: Bits04
     lateinit var low: Bits04

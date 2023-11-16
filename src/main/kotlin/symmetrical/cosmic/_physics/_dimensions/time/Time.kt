@@ -13,7 +13,7 @@ class Time (
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(symmetrical.cosmic._physics._dimensions.time.Time::class)

@@ -13,7 +13,7 @@ open class AntiBlue(
 {  // String
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
     init {
         color = ANTI_BLUE
     }

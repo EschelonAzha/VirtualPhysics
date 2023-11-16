@@ -12,7 +12,7 @@ open class Bits04(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
 
     var b00:Short = 0

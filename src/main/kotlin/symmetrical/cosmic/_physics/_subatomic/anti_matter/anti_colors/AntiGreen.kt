@@ -13,7 +13,7 @@ open class AntiGreen (
 { // Char
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     init {
         color = ANTI_GREEN

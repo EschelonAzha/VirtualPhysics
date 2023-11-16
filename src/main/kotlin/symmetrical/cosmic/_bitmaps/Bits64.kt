@@ -17,7 +17,7 @@ class Bits64 (
     constructor() : this(0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte(), 0.toUByte()){
 
     }
-    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte, byte5:UByte, byte6:UByte, byte7:UByte, byte8:UByte) : this(QuantumEntanglement()) {
+    constructor(byte1:UByte=0u, byte2:UByte=0u, byte3:UByte=0u, byte4:UByte=0u, byte5:UByte=0u, byte6:UByte=0u, byte7:UByte=0u, byte8:UByte=0u) : this(QuantumEntanglement()) {
         high  = Bits32(byte1, byte2, byte3, byte4)
         low   = Bits32(byte5, byte6, byte7, byte8)
     }

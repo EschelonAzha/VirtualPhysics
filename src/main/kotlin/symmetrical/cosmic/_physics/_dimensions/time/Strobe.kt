@@ -15,7 +15,7 @@ class Strobe (
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     private val requestAnimationFrame = RequestAnimationFrame().i(this)
 

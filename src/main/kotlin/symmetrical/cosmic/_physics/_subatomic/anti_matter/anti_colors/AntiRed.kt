@@ -13,7 +13,7 @@ open class AntiRed (
 {  // Byte
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     init {
         color = ANTI_RED
