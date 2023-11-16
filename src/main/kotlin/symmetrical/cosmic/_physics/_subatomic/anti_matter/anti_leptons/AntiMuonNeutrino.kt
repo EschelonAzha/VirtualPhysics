@@ -6,10 +6,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class AntiMuonNeutrino(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : AntiLepton(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
-    }
+class AntiMuonNeutrino(
+    private val entanglement:IQuantumEntanglement
+) : AntiLepton(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(AntiMuonNeutrino::class)
