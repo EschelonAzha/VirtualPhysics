@@ -14,9 +14,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class TauAntiTauPair(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : LeptonPair(), IQuantumEntanglement by entanglement {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+
     var reasonCode : Int        = 0
     var reason     : String     = ""
     var accepted   : Boolean    = true
@@ -34,9 +32,7 @@ class TauAntiTauPair(private val entanglement:QuantumEntanglement=QuantumEntangl
         this.reason         = reason
         return this
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ElectronPositron::class)
     }

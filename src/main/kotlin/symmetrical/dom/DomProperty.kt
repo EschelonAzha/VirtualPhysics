@@ -14,12 +14,10 @@ open class DomProperty(private val entanglement:QuantumEntanglement=QuantumEntan
 
     }
     constructor(propertyName:String) : this() {
-        add(QString(propertyName))
-        add(QString(""))
+        setProperty(propertyName);
     }
     constructor(propertyName:String, value:String) : this() {
-        add(QString(propertyName))
-        add(QString(value))
+       setProperty(propertyName, value)
     }
 
     private fun check(photon: Photon) : Unit {
@@ -48,5 +46,11 @@ open class DomProperty(private val entanglement:QuantumEntanglement=QuantumEntan
     }
     override fun getClassId() : String {
         return getLocalClassId()
+    }
+
+    fun setProperty(propertyName:String, value:String="") : DomProperty {
+        add(QString(propertyName))
+        add(QString(value))
+        return this
     }
 }

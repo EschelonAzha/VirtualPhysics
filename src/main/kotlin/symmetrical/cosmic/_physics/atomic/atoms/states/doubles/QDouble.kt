@@ -9,15 +9,11 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class QDouble(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+
     init {
         setDouble(0.0)
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(QDouble::class)
     }

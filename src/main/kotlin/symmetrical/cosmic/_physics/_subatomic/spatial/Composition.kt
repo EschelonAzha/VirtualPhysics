@@ -6,9 +6,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class Composition(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : ParticleBeam() {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+
     object Static {
         const val FIRST  = ParticleBeam.Static.LAST + 1
         const val LAST  = ParticleBeam.Static.LAST + 2
@@ -20,9 +18,7 @@ open class Composition(private val entanglement:QuantumEntanglement= QuantumEnta
         add(first)
         add(last)
     }
-    public override fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())
     }

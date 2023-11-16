@@ -24,18 +24,14 @@ class Nucleons(
         INeutrons by neutrons {
 
 
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+
     private lateinit var __atom: Atom
     init {
         setNucleons(this)
     }
     constructor() : this(Protons(), Neutrons()) {
     }
-    public fun getIlluminations() : ParticleBeam {
-        return Illuminations.beam
-    }
+
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 
