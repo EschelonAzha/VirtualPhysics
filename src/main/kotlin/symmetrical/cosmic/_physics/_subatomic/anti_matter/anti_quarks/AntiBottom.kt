@@ -7,7 +7,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class AntiBottom(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : AntiQuark(), IQuantumEntanglement by entanglement {
+class AntiBottom(
+    private val entanglement:IQuantumEntanglement
+) : AntiQuark(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(AntiBottom::class)

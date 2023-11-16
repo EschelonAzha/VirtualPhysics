@@ -17,16 +17,20 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class AntiQuark(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+open class AntiQuark(
+    private val entanglement:IQuantumEntanglement
+) : Particle(),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
-    lateinit var gluon       : Gluon
+    private var gluon       : Gluon         = Red_AntiRed()
+    private var fundamental : Fundamentals  = Fundamentals()
 
-    private lateinit var fundamental: Fundamentals
 
-    constructor() : this(QuantumEntanglement()) {
-        this.gluon        = Red_AntiRed()
-        this.fundamental  = Fundamentals()
-    }
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
 

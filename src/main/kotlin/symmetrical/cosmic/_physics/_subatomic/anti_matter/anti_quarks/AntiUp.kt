@@ -6,7 +6,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class AntiUp(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : AntiQuark(), IQuantumEntanglement by entanglement {
+class AntiUp(
+    private val entanglement:IQuantumEntanglement
+) : AntiQuark(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
 
     private fun getLocalClassId() : String {
