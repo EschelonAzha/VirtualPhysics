@@ -6,10 +6,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Strange(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Quark(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
-    }
+class Strange(
+    private val entanglement:IQuantumEntanglement = QuantumEntanglement()
+) : Quark(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())

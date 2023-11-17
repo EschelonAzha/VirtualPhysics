@@ -8,15 +8,20 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Down(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Quark(), IQuantumEntanglement by entanglement {
-
+class Down(
+    private val entanglement:IQuantumEntanglement = QuantumEntanglement()
+) : Quark(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     companion object {
         const val VALUE            = "VALUE"
         const val FIELD_NAME       = "FIELD-NAME"
         const val TEST_PROPERTY    = "TEST_PROPERTY"
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())
