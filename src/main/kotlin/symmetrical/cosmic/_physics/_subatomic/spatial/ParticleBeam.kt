@@ -11,14 +11,25 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class ParticleBeam(size:Int, private var particle: Particle = Particle(), protected val beam:Beam=Beam(size), private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : IBeam by beam, IParticle by particle, IParticleBeam, IQuantumEntanglement by entanglement, Emitter {
-
-    object Static {
-        const val LAST      : Int = -1
-    }
+open class ParticleBeam(
+    size                        : Int,
+    private   var particle      : Particle              = Particle(),
+    protected val beam          : Beam                  = Beam(size),
+    private   val entanglement  : IQuantumEntanglement   = QuantumEntanglement()
+) :
+    IParticle by particle,
+    IBeam by beam,
+    IQuantumEntanglement by entanglement,
+    IParticleBeam,
+    Emitter
+{
     constructor() : this(0) {
         particle.setSelf(this)
     }
+    object Static {
+        const val LAST      : Int = -1
+    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
