@@ -13,18 +13,15 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class ParticleBeam(
     size                        : Int,
-    private   var particle      : Particle              = Particle(),
-    protected val beam          : Beam                  = Beam(size),
+    protected val beam          : Beam                   = Beam(size),
     private   val entanglement  : IQuantumEntanglement   = QuantumEntanglement()
-) :
-    IParticle by particle,
+) : Particle(),
     IBeam by beam,
     IQuantumEntanglement by entanglement,
     IParticleBeam,
     Emitter
 {
     constructor() : this(0) {
-        particle.setSelf(this)
     }
     object Static {
         const val LAST      : Int = -1
@@ -43,7 +40,7 @@ open class ParticleBeam(
     override fun absorb(photon: Photon) : Photon {
         check(photon);
 
-        val particleRemainder = particle.absorb(photon.propagate())
+        val particleRemainder = super.absorb(photon.propagate())
         val (size52, line) = Strings.remainder(3, particleRemainder.radiate())
         val size = Base52.toInt(size52)
         var remainder = line
@@ -62,7 +59,7 @@ open class ParticleBeam(
     }
     private fun radiate() : String {
         val classId     :String = getLocalClassId()
-        val particle    :String = particle.emit().radiate()
+        val particle    :String = super.emit().radiate()
         val base52Size  :String = Base52.toFixedBase52(Config.getBase52ArraySize(), size())
 
         var emission = classId+particle+base52Size

@@ -60,11 +60,13 @@ open class Particle(
     }
     override fun createUniqueId(): IParticle {
         uniqueId = Keys.getUniqueId()
-        return self
+        return getSelf()
     }
 
     override fun getSelf() : IParticle {
-        return self
+        if (::self.isInitialized)
+            return self
+        else return this
     }
 
     override fun getUniqueId(): String {
@@ -73,11 +75,11 @@ open class Particle(
 
     override fun setSelf(self: IParticle) : IParticle {
         this.self = self
-        return self
+        return getSelf()
     }
-    fun setUniqueId(id:String) : Particle {
+    fun setUniqueId(id:String) : IParticle {
         this.uniqueId = id
-        return this
+        return getSelf()
     }
 
 }
