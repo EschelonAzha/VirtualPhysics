@@ -3,17 +3,22 @@ package symmetrical.cosmic._physics._subatomic.spatial
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Composition(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : ParticleBeam() {
+open class Composition(
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+) : ParticleBeam()
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     object Static {
         const val FIRST  = ParticleBeam.Static.LAST + 1
         const val LAST  = ParticleBeam.Static.LAST + 2
     }
-    constructor() : this(QuantumEntanglement()) {
 
-    }
     constructor(first: IParticle, last: IParticle) : this() {
         add(first)
         add(last)
