@@ -9,14 +9,22 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Hadron(private val entanglement:IQuantumEntanglement= QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, Emitter {
+open class Hadron(
+    private val entanglement:IQuantumEntanglement
+) : ParticleBeam(),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
+
 
     object Static {
         const val LAST : Int = ParticleBeam.Static.LAST
 
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

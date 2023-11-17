@@ -10,12 +10,16 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class PlusPion(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Hadron(), IQuantumEntanglement by entanglement {
-
+open class PlusPion(
+    private val entanglement:IQuantumEntanglement
+) : Hadron(entanglement),
+    IQuantumEntanglement by entanglement
+{
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
-
-    constructor() : this(QuantumEntanglement()) {
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         super.i(2)
         this.set(0, Up())
         this.set(1, AntiDown())

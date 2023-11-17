@@ -8,9 +8,15 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class MinusPion(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Hadron(), IQuantumEntanglement by entanglement {
+open class MinusPion(
+    private val entanglement:IQuantumEntanglement
+) : Hadron(entanglement),
+    IQuantumEntanglement by entanglement
+{
 
-    constructor() : this(QuantumEntanglement()) {
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         super.i(2);
         this.set(0, Down())
         this.set(1, AntiUp())

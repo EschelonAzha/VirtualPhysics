@@ -6,14 +6,19 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Neutrino(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Lepton(), IQuantumEntanglement by entanglement {
+class Neutrino(
+    private val entanglement:IQuantumEntanglement
+) : Lepton(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     lateinit var __beam: ParticleBeam
     // lateinit var weakRef: WeakRef<Particle>
 
-    constructor() : this(QuantumEntanglement()) {
 
-    }
 
     private fun getLocalClassId(): String {
         return Absorber.getClassId(Neutrino::class)

@@ -13,12 +13,19 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Lepton(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+open class Lepton(
+    private val entanglement:IQuantumEntanglement
+) : Particle(),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     protected var fundamentals: Fundamentals = Fundamentals()
 
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

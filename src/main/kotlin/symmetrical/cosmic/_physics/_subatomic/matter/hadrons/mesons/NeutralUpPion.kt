@@ -12,13 +12,16 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class NeutralUpPion(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Hadron(), IQuantumEntanglement by entanglement {
-
+open class NeutralUpPion(
+    private val entanglement:IQuantumEntanglement
+) : Hadron(entanglement),
+    IQuantumEntanglement by entanglement
+{
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
-    constructor() : this(QuantumEntanglement()) {
-
-    }
+    constructor() : this(
+        QuantumEntanglement()
+    )
     constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)
         this.add(Up())

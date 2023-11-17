@@ -9,7 +9,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Kaon(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Hadron(), IQuantumEntanglement by entanglement {
+open class Kaon(
+    private val entanglement:IQuantumEntanglement
+) : Hadron(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     lateinit var quark      : Strange
     lateinit var antiQuark  : AntiUp

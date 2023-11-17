@@ -13,15 +13,21 @@ import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Electron(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Lepton(), IQuantumEntanglement by entanglement {
+class Electron(
+    private val entanglement:IQuantumEntanglement
+) : Lepton(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     lateinit var orbitals : Orbitals
 
     private lateinit var proton         : Proton
     private          var particleBeam   : ParticleBeam = ParticleBeam()
 
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

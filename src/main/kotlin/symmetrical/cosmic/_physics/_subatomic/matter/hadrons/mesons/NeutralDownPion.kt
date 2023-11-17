@@ -9,9 +9,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class NeutralDownPion(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Hadron(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
+open class NeutralDownPion(
+    private val entanglement:IQuantumEntanglement
+) : Hadron(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         super.i(2)
         this.set(0, Down())
         this.set(1, AntiDown())
