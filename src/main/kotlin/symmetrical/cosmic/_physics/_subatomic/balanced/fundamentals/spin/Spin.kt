@@ -1,5 +1,4 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin
-
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
@@ -10,8 +9,16 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
+open class Spin(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()) {
+    }
 
-open class Spin(private val entanglement: IQuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
     object Static {
         const val PLUS :Int      = +1
         const val MINUS:Int      = -1
@@ -19,11 +26,6 @@ open class Spin(private val entanglement: IQuantumEntanglement=QuantumEntangleme
 
     val field:Field = Field(Spin.Static.PLUS)
 
-
-
-    constructor() : this(QuantumEntanglement()) {
-
-    }
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

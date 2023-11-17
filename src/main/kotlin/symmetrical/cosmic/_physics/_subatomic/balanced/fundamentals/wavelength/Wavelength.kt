@@ -11,8 +11,15 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Wavelength(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement,  Emitter {
-
+class Wavelength(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     object Static {
         const val NULL      = "0"
         const val BOOLEAN   = "B"
@@ -33,10 +40,6 @@ class Wavelength(private val entanglement:QuantumEntanglement=QuantumEntanglemen
     }
 
     private var field      : Field   = Field()
-
-    constructor() : this(QuantumEntanglement()) {
-
-    }
 
     fun isNull() : Boolean {
         return field.isNull()

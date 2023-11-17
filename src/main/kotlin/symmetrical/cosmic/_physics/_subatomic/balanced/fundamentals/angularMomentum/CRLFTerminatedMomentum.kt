@@ -7,12 +7,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class CRLFTerminatedMomentum(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : AngularMomentum(), IQuantumEntanglement by entanglement  {
-
-    constructor() : this(QuantumEntanglement()) {
-
-    }
-
+class CRLFTerminatedMomentum(
+    private val entanglement: IQuantumEntanglement
+) : AngularMomentum(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     private fun getLocalClassId() : String {
         return Absorber.getClassId(CRLFTerminatedMomentum::class)
     }

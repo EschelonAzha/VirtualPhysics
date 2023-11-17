@@ -9,10 +9,15 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class AngularMomentum(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+open class AngularMomentum(
+    private val entanglement: IQuantumEntanglement
+) : Particle(),
+    IQuantumEntanglement by entanglement,
+    Emitter {
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
-    constructor() : this(QuantumEntanglement()) {
-    }
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

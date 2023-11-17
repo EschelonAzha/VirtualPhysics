@@ -5,8 +5,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class QCD (private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement {
-
+class QCD (
+    private val entanglement:IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     /*
         ARRAY      A-???
         BOOLEAN    T-0/1
@@ -16,9 +22,7 @@ class QCD (private val entanglement:IQuantumEntanglement=QuantumEntanglement()) 
         STRING     S-nnnnnnnn-value
      */
 
-    constructor() : this(QuantumEntanglement()) {
 
-    }
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(QCD::class)

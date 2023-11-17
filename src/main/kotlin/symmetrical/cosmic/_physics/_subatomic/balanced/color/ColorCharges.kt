@@ -7,7 +7,15 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class ColorCharges(private val entanglement: IQuantumEntanglement=QuantumEntanglement()) : IQuantumEntanglement by entanglement, IColorCharges {
+class ColorCharges(
+    private val entanglement: IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement,
+    IColorCharges
+{
+    constructor() : this (
+        QuantumEntanglement()
+    )
 
     lateinit var atom     : Atom
 

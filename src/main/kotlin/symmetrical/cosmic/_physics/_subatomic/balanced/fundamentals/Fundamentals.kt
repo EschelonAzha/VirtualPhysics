@@ -12,13 +12,18 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Fundamentals(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
-
+class Fundamentals(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     private var angularMomentum : AngularMomentum = AngularMomentum()
     private var spin            : Spin            = Spin()
     private var wavelength      : Wavelength      = Wavelength()
-    constructor() : this(QuantumEntanglement()) {
-    }
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
