@@ -8,12 +8,16 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Helium(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
-
+class Helium(private val entanglement:IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     lateinit var atom : Atom
 
-    constructor() : this(QuantumEntanglement()) {
-    }
+
     fun i(atom: Atom) : Helium {
         this.atom = atom
         atom.setAtomicNumber(2)

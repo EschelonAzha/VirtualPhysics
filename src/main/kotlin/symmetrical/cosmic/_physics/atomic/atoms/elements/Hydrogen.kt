@@ -7,13 +7,17 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Hydrogen(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+class Hydrogen(private val entanglement:IQuantumEntanglement
+) :
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     lateinit var atom : Atom
 
-    constructor() : this(QuantumEntanglement()) {
 
-    }
     constructor(atom: Atom) : this(QuantumEntanglement()) {
         this.atom = atom
     }

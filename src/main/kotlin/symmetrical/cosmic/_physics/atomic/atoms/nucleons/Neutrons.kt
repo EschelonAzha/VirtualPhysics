@@ -9,13 +9,19 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Neutrons(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, INeutrons {
-
+class Neutrons(
+    private val entanglement:IQuantumEntanglement
+) : ParticleBeam(),
+    IQuantumEntanglement by entanglement,
+    INeutrons
+{
+    constructor()  : this(
+        QuantumEntanglement()
+    )
 
     lateinit var __nucleons:Nucleons
 
-    constructor()  : this(QuantumEntanglement()) {
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
