@@ -8,7 +8,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Strong(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Energy(), IQuantumEntanglement by entanglement {
+open class Strong(
+    private val entanglement:IQuantumEntanglement
+) : Energy(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     companion object {
         lateinit var strong : Strong
@@ -18,8 +25,7 @@ open class Strong(private val entanglement: QuantumEntanglement = QuantumEntangl
             return strong
         }
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Strong::class)

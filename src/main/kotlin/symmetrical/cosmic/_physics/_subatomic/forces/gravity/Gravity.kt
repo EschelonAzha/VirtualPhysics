@@ -8,7 +8,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Gravity(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Energy(), IQuantumEntanglement by entanglement {
+open class Gravity(
+    private val entanglement:IQuantumEntanglement
+) : Energy(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     // Spin 2
 
@@ -22,8 +29,7 @@ open class Gravity(private val entanglement:QuantumEntanglement=QuantumEntanglem
             return gravity
         }
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Gravity::class)

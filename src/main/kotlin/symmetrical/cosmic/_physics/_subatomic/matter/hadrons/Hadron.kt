@@ -9,7 +9,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Hadron(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, Emitter {
+open class Hadron(private val entanglement:IQuantumEntanglement= QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, Emitter {
 
     object Static {
         const val LAST : Int = ParticleBeam.Static.LAST

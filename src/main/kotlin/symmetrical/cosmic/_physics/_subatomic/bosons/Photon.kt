@@ -10,8 +10,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Photon(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement {
-
+open class Photon(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     companion object {
         fun toPhoton(value:Any?, lth:Int=Config.getPhotonLength()) : String {
             if (value == null)
@@ -49,7 +55,7 @@ open class Photon(private val entanglement: QuantumEntanglement = QuantumEntangl
                 var radiation   : String = ""
 
     // Spin 1
-    constructor(radiation:String) : this(QuantumEntanglement()) {
+    constructor(radiation:String) : this() {
         this.radiation = radiation;
         return
     }

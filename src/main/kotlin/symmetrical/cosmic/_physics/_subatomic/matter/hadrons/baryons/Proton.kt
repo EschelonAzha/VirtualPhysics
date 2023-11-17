@@ -15,8 +15,19 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Proton(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Baryon(), IQuantumEntanglement by entanglement {
-
+open class Proton(
+    private val entanglement:IQuantumEntanglement
+) : Baryon(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
+        this.Proton()
+        // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
+        // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
+        // -1/3 wavelength(Type Of Proton),        Spin(?),
+    }
 
     enum class QuarkType(val value:Int) {
         VALUE(0),
@@ -34,12 +45,7 @@ open class Proton(private val entanglement: QuantumEntanglement = QuantumEntangl
     private var __protons       : Protons? = null
     private var autoFlow        : Boolean  = true
     private var flowing         : Boolean  = false
-    constructor() : this(QuantumEntanglement()) {
-       this.Proton()
-    // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
-    // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
-    // -1/3 wavelength(Type Of Proton),        Spin(?),
-    }
+
     fun i(protons:Protons) : Proton {
         this.__protons = protons
         return this

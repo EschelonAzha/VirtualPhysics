@@ -10,13 +10,17 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // PHOTON VALUE
-open class Blue(private val entanglement: QuantumEntanglement = QuantumEntanglement()): Color(), IQuantumEntanglement by entanglement {// Double
-
-    init {
+open class Blue(
+    private val entanglement:IQuantumEntanglement
+): Color(entanglement),
+    IQuantumEntanglement by entanglement
+{ // Double
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         color = BLUE
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Blue::class)

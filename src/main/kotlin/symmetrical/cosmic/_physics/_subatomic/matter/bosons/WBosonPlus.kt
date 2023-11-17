@@ -9,12 +9,17 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class WBosonPlus (private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
-
+class WBosonPlus (
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
     // Carries the weak force
     // Spin -1
-    constructor() : this(QuantumEntanglement()) {
-    }
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

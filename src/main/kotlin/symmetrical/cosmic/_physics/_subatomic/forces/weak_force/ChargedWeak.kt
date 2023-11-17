@@ -7,12 +7,16 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class ChargedWeak(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement {
-
+class ChargedWeak(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement
+{
     // can emit a charged W Boson that can alter the charge of a Proton by
     // altering the structure of its quarks
-    constructor() : this(QuantumEntanglement()) {
-    }
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ChargedWeak::class)

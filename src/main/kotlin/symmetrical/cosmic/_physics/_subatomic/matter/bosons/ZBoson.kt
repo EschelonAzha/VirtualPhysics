@@ -11,7 +11,15 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class ZBoson(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+open class ZBoson(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     // Neutral Charge
     // Spin 1
@@ -23,9 +31,6 @@ open class ZBoson(private val entanglement: QuantumEntanglement = QuantumEntangl
     private var oldValue     :Field     = Field()
     private var reasonCode   :Int       = 0
     private var reason       :String    = ""
-
-    constructor() : this(QuantumEntanglement()) {
-    }
 
 
     private fun getLocalClassId() : String {

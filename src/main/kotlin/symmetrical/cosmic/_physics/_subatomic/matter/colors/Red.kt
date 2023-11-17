@@ -8,9 +8,15 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // ACTUAL VALUE
-open class Red(private val entanglement: QuantumEntanglement = QuantumEntanglement()): Color(), IQuantumEntanglement by entanglement {  // Boolean
+open class Red(
+    private val entanglement:IQuantumEntanglement
+): Color(entanglement),
+    IQuantumEntanglement by entanglement
+{  // Boolean
 
-    init {
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         color = RED
     }
 

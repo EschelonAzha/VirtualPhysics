@@ -8,10 +8,15 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class CRLFTerminatedColor(private val entanglement: QuantumEntanglement = QuantumEntanglement()): Green(), IQuantumEntanglement by entanglement {
+class CRLFTerminatedColor(
+    private val entanglement:IQuantumEntanglement
+): Green(entanglement),
+    IQuantumEntanglement by entanglement
+{
 
-    constructor() : this(QuantumEntanglement()) {
-    }
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(CRLFTerminatedColor::class)

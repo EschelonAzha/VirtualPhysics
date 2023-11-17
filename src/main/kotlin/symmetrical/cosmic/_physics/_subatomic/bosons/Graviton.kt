@@ -8,14 +8,19 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Graviton(private val entanglement: QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
+class Graviton(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     var center      : Graviton? = null
     var _attract    : Unit?     = null
     var radial      : Graviton? = null
-
-    constructor() : this(QuantumEntanglement()) {
-    }
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()
