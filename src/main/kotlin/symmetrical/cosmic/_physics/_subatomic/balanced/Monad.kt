@@ -8,10 +8,15 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Monad(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement, Emitter {
-
-    constructor() : this(QuantumEntanglement()) {
-    }
+open class Monad(
+    private val entanglement:IQuantumEntanglement
+) : Particle(entanglement),
+    IQuantumEntanglement by entanglement,
+    Emitter
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

@@ -7,8 +7,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class HiggsField(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Energy(), IQuantumEntanglement by entanglement {
-
+open class HiggsField(
+    private val entanglement:IQuantumEntanglement
+) : Energy(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     // Spin 0
     companion object {
         lateinit var higgsField : HiggsField
@@ -18,8 +24,7 @@ open class HiggsField(private val entanglement:QuantumEntanglement=QuantumEntang
             return higgs
         }
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(HiggsField::class)

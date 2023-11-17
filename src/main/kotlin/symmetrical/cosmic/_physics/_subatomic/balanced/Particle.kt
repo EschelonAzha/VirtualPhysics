@@ -20,7 +20,7 @@ open class Particle(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
     object Static {
         const val UNIQUE_ID_LENGTH = 1
     }

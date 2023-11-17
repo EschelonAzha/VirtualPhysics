@@ -9,9 +9,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Red_AntiGreen (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Gluon(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
+class Red_AntiGreen (
+    private val entanglement:IQuantumEntanglement
+) : Gluon(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         color       = Red()
         antiColor   = AntiGreen()
     }

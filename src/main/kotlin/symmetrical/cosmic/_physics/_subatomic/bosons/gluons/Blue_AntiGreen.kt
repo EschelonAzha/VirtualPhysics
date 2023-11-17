@@ -10,9 +10,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Blue_AntiGreen (private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Gluon(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
+class Blue_AntiGreen (
+    private val entanglement:IQuantumEntanglement
+) : Gluon(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         color       = Blue()
         antiColor   = AntiGreen()
     }

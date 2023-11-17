@@ -13,12 +13,15 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 //class ElectronPositron<PlusPion> : LeptonPair {
-class ElectronPositron(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : LeptonPair(), IQuantumEntanglement by entanglement {
+class ElectronPositron(
+    private val entanglement:IQuantumEntanglement
+) : LeptonPair(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
-
-    constructor() : this(QuantumEntanglement()) {
-
-    }
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this(QuantumEntanglement()) {
         i(lepton, antiLepton)
     }

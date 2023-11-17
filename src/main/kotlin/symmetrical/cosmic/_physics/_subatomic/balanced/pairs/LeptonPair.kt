@@ -15,7 +15,7 @@ open class LeptonPair(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {}
+    )
 
     public lateinit var lepton     : Lepton
     public lateinit var antiLepton : AntiLepton

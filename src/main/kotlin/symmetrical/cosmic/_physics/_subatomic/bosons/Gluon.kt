@@ -12,8 +12,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
-open class Gluon(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Particle(), IQuantumEntanglement by entanglement  {
-
+open class Gluon(
+    private val entanglement:IQuantumEntanglement
+) : Particle(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     // Gluons are confined within
     // Spin 1
     lateinit var color      : Color
@@ -21,8 +27,7 @@ open class Gluon(private val entanglement:QuantumEntanglement=QuantumEntanglemen
 
     var manifestation : Green = Green()
 
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Gluon::class)

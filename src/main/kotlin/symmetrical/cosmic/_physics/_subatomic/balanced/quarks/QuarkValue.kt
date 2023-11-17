@@ -12,12 +12,17 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class QuarkValue(private val entanglement:QuantumEntanglement=QuantumEntanglement())  : IQuantumEntanglement by entanglement, IQuarkValue {
-
+class QuarkValue(
+    private val entanglement:IQuantumEntanglement
+)  :
+    IQuantumEntanglement by entanglement,
+    IQuarkValue
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     lateinit var atom:Atom
-    constructor() : this(QuantumEntanglement()) {
 
-    }
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(QuarkValue::class)

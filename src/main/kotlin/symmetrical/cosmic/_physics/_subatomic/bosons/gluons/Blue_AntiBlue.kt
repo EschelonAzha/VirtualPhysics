@@ -8,13 +8,19 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
+class Blue_AntiBlue(
+    private val entanglement:IQuantumEntanglement
+) : Gluon(entanglement),
+    IQuantumEntanglement by entanglement
+{
 
-class Blue_AntiBlue(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Gluon(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         color       = Blue()
         antiColor   = AntiBlue()
     }
+
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Blue_AntiBlue::class)

@@ -13,15 +13,20 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class TauAntiTauPair(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : LeptonPair(), IQuantumEntanglement by entanglement {
+class TauAntiTauPair(
+    private val entanglement:IQuantumEntanglement
+) : LeptonPair(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     var reasonCode : Int        = 0
     var reason     : String     = ""
     var accepted   : Boolean    = true
 
-    constructor() : this(QuantumEntanglement()) {
 
-    }
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this(QuantumEntanglement()) {
         i(lepton, antiLepton)
     }
