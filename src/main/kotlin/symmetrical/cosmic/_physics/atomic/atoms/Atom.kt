@@ -27,12 +27,12 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 
 
 open class Atom(
-    private   val entanglement  : QuantumEntanglement   = QuantumEntanglement(),
-    private   var orbitals      : Orbitals              = Orbitals(),
-    public    var nucleons      : Nucleons              = Nucleons(),
-    private   var particle      : Particle              = Particle(),
-    private   val colorCharges  : ColorCharges          = ColorCharges(),
-    private   val quarkValue    : QuarkValue            = QuarkValue(),
+    private   val entanglement  : QuantumEntanglement,
+    private   var orbitals      : Orbitals,
+    public    var nucleons      : Nucleons,
+    private   var particle      : Particle,
+    private   val colorCharges  : ColorCharges,
+    private   val quarkValue    : QuarkValue,
 
         )
     :
@@ -46,16 +46,22 @@ open class Atom(
         Emitter,
         IAtom
     {
-
-        init {
-            setAtom(this)
-        }
         constructor() : this(
-            QuantumEntanglement(), Orbitals(), Nucleons(), Particle(), ColorCharges(), QuarkValue()
+            QuantumEntanglement(),
+            Orbitals(),
+            Nucleons(),
+            Particle(),
+            ColorCharges(),
+            QuarkValue()
         ) {
             this.orbitals.setAtom(this)
             this.nucleons.setAtom(this)
         }
+
+        init {
+            setAtom(this)
+        }
+
         constructor(value:String) : this() {
             setQuarkValue(value)
         }
