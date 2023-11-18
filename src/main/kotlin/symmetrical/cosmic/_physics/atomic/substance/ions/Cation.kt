@@ -6,8 +6,14 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Cation(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Ion(), IQuantumEntanglement by entanglement {
-
+class Cation(
+    private val entanglement:IQuantumEntanglement = QuantumEntanglement()
+) : Ion(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Cation::class)
     }

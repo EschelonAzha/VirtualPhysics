@@ -9,13 +9,19 @@ import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Molecule(private val entanglement:QuantumEntanglement= QuantumEntanglement()) : Molecular(), IQuantumEntanglement by entanglement, Covalent {
-
+open class Molecule(
+    private val entanglement:IQuantumEntanglement = QuantumEntanglement()
+) : Molecular(entanglement),
+    IQuantumEntanglement by entanglement,
+    Covalent
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     object Static {
         const val LAST      : Int = -1
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

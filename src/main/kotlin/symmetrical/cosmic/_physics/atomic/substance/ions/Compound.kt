@@ -9,14 +9,19 @@ import symmetrical.cosmic._physics.atomic.bonds.ionic.Ionic
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Compound(private val entanglement: IQuantumEntanglement=QuantumEntanglement()) : Molecular(), IQuantumEntanglement by entanglement,  Ionic {
-
+open class Compound(
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement()
+) : Molecular(),
+    IQuantumEntanglement by entanglement,
+    Ionic
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     object Static {
         const val LAST      : Int = -1
     }
-    constructor() : this(QuantumEntanglement()) {
 
-    }
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

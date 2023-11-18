@@ -7,11 +7,14 @@ import symmetrical.cosmic._physics.atomic.substance.ions.Compound
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class DbKey(private val entanglement: QuantumEntanglement= QuantumEntanglement()) : Compound(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()){
-
-    }
+class DbKey(
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement()
+) : Compound(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     fun addKey(atom: Atom) : DbKey {
         add(atom)

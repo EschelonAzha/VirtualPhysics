@@ -14,10 +14,10 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class Molecular(
-    private val entanglement:QuantumEntanglement=QuantumEntanglement(),
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
     private var particleBeam:ParticleBeam=ParticleBeam(),
 
-) : Atom(),
+) : Atom(entanglement),
     IQuantumEntanglement by entanglement,
     IParticleBeam by particleBeam,
     IParticle

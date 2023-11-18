@@ -8,7 +8,11 @@ import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class KeyValue(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : Diatomic(), IQuantumEntanglement by entanglement {
+open class KeyValue(
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement()
+) : Diatomic(entanglement),
+    IQuantumEntanglement by entanglement
+{
 
     object Static {
         const val KEY       : Int = Diatomic.Static.LAST+1
