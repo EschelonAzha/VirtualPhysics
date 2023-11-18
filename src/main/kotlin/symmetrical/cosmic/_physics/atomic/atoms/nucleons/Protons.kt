@@ -20,7 +20,7 @@ class Protons(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {
+    ) init {
         add(Proton().setProtons(this))
     }
     object Static {
