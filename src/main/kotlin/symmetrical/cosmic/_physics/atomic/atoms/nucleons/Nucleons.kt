@@ -15,25 +15,29 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class Nucleons(
+    private val entanglement:IQuantumEntanglement   = QuantumEntanglement(),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
-    private val entanglement:IQuantumEntanglement    = QuantumEntanglement(),
+
     ) :
+        IQuantumEntanglement by entanglement,
         IProtons             by protons,
         INeutrons            by neutrons,
-        IQuantumEntanglement by entanglement,
         INucleons,
         Emitter
 {
 
-
-
-    private lateinit var __atom: Atom
-    init {
+    constructor() : this(
+        QuantumEntanglement(),
+        Protons(),
+        Neutrons()
+    ) init {
         setNucleons(this)
     }
-    constructor() : this(Protons(), Neutrons()) {
-    }
+
+    private lateinit var __atom: Atom
+
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

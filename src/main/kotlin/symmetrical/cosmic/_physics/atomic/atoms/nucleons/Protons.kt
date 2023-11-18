@@ -12,8 +12,17 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Protons(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : ParticleBeam(), IQuantumEntanglement by entanglement, IProtons {
-
+class Protons(
+    private val entanglement: QuantumEntanglement
+) : ParticleBeam(entanglement),
+    IQuantumEntanglement by entanglement,
+    IProtons
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {
+        add(Proton().setProtons(this))
+    }
     object Static {
         const val VALUE_PROTON  : Int  = ParticleBeam.Static.LAST + 1
         const val LAST          : Int  = VALUE_PROTON + 1
@@ -25,9 +34,7 @@ class Protons(private val entanglement: QuantumEntanglement = QuantumEntanglemen
 
     private lateinit var __nucleons   : Nucleons
 
-    constructor() : this(QuantumEntanglement()) {
-        add(Proton().setProtons(this))
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

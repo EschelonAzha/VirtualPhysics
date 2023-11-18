@@ -11,7 +11,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class Neutrons(
     private val entanglement:IQuantumEntanglement
-) : ParticleBeam(),
+) : ParticleBeam(entanglement),
     IQuantumEntanglement by entanglement,
     INeutrons
 {
