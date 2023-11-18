@@ -15,17 +15,14 @@ class Path(
 ) : Molecule(entanglement),
     IQuantumEntanglement by entanglement
 {
-
-    constructor() : this("") {
-
+    constructor() : this(
+        QuantumEntanglement()
+    )
+    init {
+        parsePath("")
     }
     constructor(value:String) : this(QuantumEntanglement()) {
-        var tokens = value.split("/")
-        for (i in 1 until tokens.size) {
-            if (tokens[i]!= "")
-                add(QString(tokens[i]))
-        }
-        shrink()
+        parsePath(value)
     }
 
     private fun getLocalClassId() : String {
@@ -33,5 +30,14 @@ class Path(
     }
     override fun getClassId() : String {
         return getLocalClassId()
+    }
+    private fun parsePath(value:String) : Path {
+        var tokens = value.split("/")
+        for (i in 1 until tokens.size) {
+            if (tokens[i]!= "")
+                add(QString(tokens[i]))
+        }
+        shrink()
+        return this
     }
 }
