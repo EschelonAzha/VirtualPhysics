@@ -7,7 +7,8 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Hydrogen(private val entanglement:IQuantumEntanglement
+class Hydrogen(
+    private val entanglement:IQuantumEntanglement
 ) :
     IQuantumEntanglement by entanglement
 {

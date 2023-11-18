@@ -8,7 +8,8 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Helium(private val entanglement:IQuantumEntanglement
+class Helium(
+    private val entanglement:IQuantumEntanglement
 ) :
     IQuantumEntanglement by entanglement
 {
