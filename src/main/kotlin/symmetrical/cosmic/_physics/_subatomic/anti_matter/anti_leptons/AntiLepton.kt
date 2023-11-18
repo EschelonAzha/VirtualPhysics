@@ -14,7 +14,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 open class AntiLepton(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : Particle(entanglement),
     IQuantumEntanglement by entanglement,
     Emitter

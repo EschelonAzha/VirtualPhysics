@@ -7,9 +7,14 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class Blackhole(private val entanglement: QuantumEntanglement = QuantumEntanglement()) :  IQuantumEntanglement by entanglement {
+class Blackhole(
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+) :  IQuantumEntanglement by entanglement
+{
 
-
+    constructor() : this(
+        QuantumEntanglement()
+    )
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Blackhole::class)
     }

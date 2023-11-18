@@ -13,7 +13,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class AntiBetaMinus(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : LeptonPair(entanglement),
     IQuantumEntanglement by entanglement
 {

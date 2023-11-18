@@ -10,7 +10,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class BigBang (
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ):
     IQuantumEntanglement by entanglement
 {

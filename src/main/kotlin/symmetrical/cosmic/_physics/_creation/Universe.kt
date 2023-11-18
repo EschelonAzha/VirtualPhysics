@@ -7,7 +7,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class Universe (
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) :
     IQuantumEntanglement by entanglement
 {

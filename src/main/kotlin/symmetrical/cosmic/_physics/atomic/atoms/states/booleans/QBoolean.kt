@@ -8,7 +8,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class QBoolean(
-    private val entanglement: QuantumEntanglement
+    private val entanglement: QuantumEntanglement=QuantumEntanglement(),
 ) : Atom(entanglement),
     IQuantumEntanglement by entanglement
 {

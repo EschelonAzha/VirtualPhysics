@@ -8,7 +8,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class ColorCharges(
-    private val entanglement: IQuantumEntanglement
+    private val entanglement: IQuantumEntanglement=QuantumEntanglement(),
 ) :
     IQuantumEntanglement by entanglement,
     IColorCharges

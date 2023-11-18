@@ -13,14 +13,23 @@ import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class Molecular(private var particleBeam:ParticleBeam=ParticleBeam(), private val entanglement:QuantumEntanglement= QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement, IParticleBeam by particleBeam, IParticle {
+open class Molecular(
+    private val entanglement:QuantumEntanglement=QuantumEntanglement(),
+    private var particleBeam:ParticleBeam=ParticleBeam(),
 
+) : Atom(),
+    IQuantumEntanglement by entanglement,
+    IParticleBeam by particleBeam,
+    IParticle
+{
+    constructor() : this(
+        QuantumEntanglement(),
+        ParticleBeam(),
+    )
     object Static {
         const val LAST      : Int = -1
     }
-    constructor() : this(ParticleBeam(), QuantumEntanglement()) {
 
-    }
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

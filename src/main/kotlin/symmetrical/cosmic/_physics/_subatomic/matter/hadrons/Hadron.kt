@@ -10,7 +10,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 open class Hadron(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : ParticleBeam(),
     IQuantumEntanglement by entanglement,
     Emitter

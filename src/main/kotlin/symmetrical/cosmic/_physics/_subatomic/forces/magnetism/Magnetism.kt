@@ -9,7 +9,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 open class Magnetism(
-    private val entanglement: IQuantumEntanglement
+    private val entanglement: IQuantumEntanglement=QuantumEntanglement(),
 ) : Energy()
 {
     constructor() : this(

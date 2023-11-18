@@ -10,7 +10,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 open class Neutron(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : Baryon(entanglement),
     IQuantumEntanglement by entanglement
 {

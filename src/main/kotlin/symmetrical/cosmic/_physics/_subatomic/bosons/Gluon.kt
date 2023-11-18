@@ -13,7 +13,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
 open class Gluon(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : Particle(),
     IQuantumEntanglement by entanglement
 {

@@ -6,8 +6,13 @@ import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class EventHorizon (private val entanglement: QuantumEntanglement = QuantumEntanglement()) :  IQuantumEntanglement by entanglement {
-
+class EventHorizon (
+    private val entanglement:IQuantumEntanglement = QuantumEntanglement()
+) : IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(EventHorizon::class)

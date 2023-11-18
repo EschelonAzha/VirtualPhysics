@@ -11,7 +11,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class Blue_AntiGreen (
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : Gluon(entanglement),
     IQuantumEntanglement by entanglement
 {

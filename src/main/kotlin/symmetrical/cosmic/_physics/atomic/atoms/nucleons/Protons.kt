@@ -13,7 +13,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class Protons(
-    private val entanglement: QuantumEntanglement
+    private val entanglement: QuantumEntanglement=QuantumEntanglement(),
 ) : ParticleBeam(entanglement),
     IQuantumEntanglement by entanglement,
     IProtons

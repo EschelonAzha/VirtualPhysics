@@ -15,7 +15,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class BetaPlus(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : LeptonPair(entanglement),
     IQuantumEntanglement by entanglement
 {

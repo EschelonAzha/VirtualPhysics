@@ -32,9 +32,7 @@ open class Atom(
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharges         = ColorCharges(),
     private   val quarkValue    : QuarkValue           = QuarkValue(),
-
-        )
-    :   Particle(entanglement),
+    ) : Particle(entanglement),
         IQuantumEntanglement    by entanglement,
         IOrbitals               by orbitals,
         INucleons               by nucleons,

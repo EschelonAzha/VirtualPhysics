@@ -8,7 +8,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class AntiBottom(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : AntiQuark(entanglement),
     IQuantumEntanglement by entanglement
 {

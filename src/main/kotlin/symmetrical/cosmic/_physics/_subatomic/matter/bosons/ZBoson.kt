@@ -12,7 +12,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 open class ZBoson(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : Particle(entanglement),
     IQuantumEntanglement by entanglement,
     Emitter

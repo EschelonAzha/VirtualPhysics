@@ -6,7 +6,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class Bits04(
-    private val entanglement:IQuantumEntanglement,
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) :
     IQuantumEntanglement by entanglement
 {

@@ -7,7 +7,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 class Neutrino(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : Lepton(entanglement),
     IQuantumEntanglement by entanglement
 {

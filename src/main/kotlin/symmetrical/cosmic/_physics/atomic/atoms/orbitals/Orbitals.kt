@@ -12,7 +12,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class Orbitals(
-    private val entanglement: QuantumEntanglement
+    private val entanglement: QuantumEntanglement=QuantumEntanglement(),
 ) : ParticleBeam(entanglement),
     IQuantumEntanglement by entanglement,
     IOrbitals

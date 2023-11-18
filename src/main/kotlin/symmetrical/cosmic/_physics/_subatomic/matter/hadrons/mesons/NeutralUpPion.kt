@@ -13,7 +13,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
 open class NeutralUpPion(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
 ) : Hadron(entanglement),
     IQuantumEntanglement by entanglement
 {

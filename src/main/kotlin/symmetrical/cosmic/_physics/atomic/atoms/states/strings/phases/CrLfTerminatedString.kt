@@ -8,7 +8,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class CrLfTerminatedString(
-    private val entanglement: IQuantumEntanglement
+    private val entanglement: IQuantumEntanglement=QuantumEntanglement(),
 ) : QString(entanglement) {
     constructor() : this(
         QuantumEntanglement()

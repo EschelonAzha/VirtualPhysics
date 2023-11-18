@@ -8,7 +8,11 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Alloy(vararg mixtures: Substance, private val entanglement: QuantumEntanglement= QuantumEntanglement()) : IQuantumEntanglement by entanglement {
+open class Alloy(
+    vararg mixtures: Substance,
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement()
+) : IQuantumEntanglement by entanglement
+{
 
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()
