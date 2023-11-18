@@ -8,9 +8,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class QDouble(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement {
-
-    init {
+class QDouble(
+    private val entanglement: QuantumEntanglement = QuantumEntanglement()
+) : Atom(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         setDouble(0.0)
     }
 

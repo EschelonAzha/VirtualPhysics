@@ -8,13 +8,17 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class QString(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement {
-
-    init {
+open class QString(
+    private val entanglement:IQuantumEntanglement = QuantumEntanglement()
+) : Atom(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         setString("")
     }
-    constructor() : this(QuantumEntanglement()) {
-    }
+
     constructor(value:String) : this() {
         setString(value)
     }

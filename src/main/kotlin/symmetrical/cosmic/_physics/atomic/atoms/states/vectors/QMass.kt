@@ -9,9 +9,14 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class QMass(private val entanglement: QuantumEntanglement = QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement {
-
-    init {
+open class QMass(
+    private val entanglement: QuantumEntanglement = QuantumEntanglement()
+) : Atom(),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         setMass(Beam(0))
     }
 
