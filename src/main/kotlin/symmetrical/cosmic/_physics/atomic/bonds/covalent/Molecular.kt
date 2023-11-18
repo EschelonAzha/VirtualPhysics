@@ -21,9 +21,6 @@ open class Molecular(private var particleBeam:ParticleBeam=ParticleBeam(), priva
     constructor() : this(ParticleBeam(), QuantumEntanglement()) {
 
     }
-    constructor(size: Int) : this(ParticleBeam(size), QuantumEntanglement()) {
-
-    }
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

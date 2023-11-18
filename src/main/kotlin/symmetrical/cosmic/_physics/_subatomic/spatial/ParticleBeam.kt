@@ -12,8 +12,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class ParticleBeam(
-    size                        : Int,
-    protected val beam          : Beam                   = Beam(size),
+    protected val beam          : Beam                   = Beam(),
     private   val entanglement  : IQuantumEntanglement   = QuantumEntanglement()
 ) : Particle(),
     IBeam by beam,
@@ -21,7 +20,7 @@ open class ParticleBeam(
     IParticleBeam,
     Emitter
 {
-    constructor() : this(0) {
+    constructor() : this(Beam(), QuantumEntanglement()) {
     }
     object Static {
         const val LAST      : Int = -1

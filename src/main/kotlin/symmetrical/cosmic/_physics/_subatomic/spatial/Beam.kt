@@ -19,7 +19,7 @@ open class Beam : IBeam {
     private var expandMode :Int = Static.NORMAL
 
     private var capacity   :Int = 0
-    constructor(capacity:Int=0)  {
+    constructor(capacity:Int=1)  {
         memoryBlock     = createBlock(capacity)
         this.capacity   = capacity
     }
