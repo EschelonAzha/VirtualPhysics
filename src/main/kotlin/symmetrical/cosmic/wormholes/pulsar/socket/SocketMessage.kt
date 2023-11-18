@@ -15,7 +15,7 @@ open class SocketMessage(
 {
     constructor() : this(
         QuantumEntanglement()
-    ) {
+    )  {
         bytes = ByteArray(0)
     }
 
