@@ -1,7 +1,10 @@
 package symmetrical.cosmic._physics._subatomic.fermion
 
-interface IFermion {
+import kotlin.reflect.KClass
 
-    fun getClassId      () : String
+interface IFermion {
+    fun getAbsorberId() : String
+    fun getKClass() : KClass<*>
+
 
 }

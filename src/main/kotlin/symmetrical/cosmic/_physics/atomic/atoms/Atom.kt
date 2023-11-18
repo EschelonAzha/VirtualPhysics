@@ -17,6 +17,8 @@ import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.IQuarkValue
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.QuarkValue
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics._subatomic.fermion.Fermion
+import symmetrical.cosmic._physics._subatomic.fermion.IFermion
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
@@ -32,12 +34,14 @@ open class Atom(
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharges         = ColorCharges(),
     private   val quarkValue    : QuarkValue           = QuarkValue(),
+    private   val fermion       : IFermion             = Fermion()
     ) : Particle(entanglement),
         IQuantumEntanglement    by entanglement,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharges           by colorCharges,
         IQuarkValue             by quarkValue,
+        IFermion                by fermion,
         Element,
         Emitter,
         IAtom
@@ -47,7 +51,8 @@ open class Atom(
             Orbitals(),
             Nucleons(),
             ColorCharges(),
-            QuarkValue()
+            QuarkValue(),
+            Fermion(),
         ) init {
             setAtom(this)
             this.orbitals.setAtom(this)
@@ -59,7 +64,7 @@ open class Atom(
         }
 
         private fun check(photon: Photon) : Unit {
-            val classId = getLocalClassId()
+            val classId = getClassId()
 
             val radiation = photon.radiate()
             if (radiation.startsWith(classId))
@@ -82,14 +87,13 @@ open class Atom(
             return Photon(radiate())
         }
         private fun radiate() : String {
-            return getLocalClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+            return getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
-        private fun getLocalClassId(): String {
-            return Absorber.getClassId(Atom::class)
-        }
+
         override fun getClassId() : String {
-            return getLocalClassId()
+            return getAbsorberId()
         }
+
         fun getFieldName() : String {
             return getValueProton().getFieldName()
         }
