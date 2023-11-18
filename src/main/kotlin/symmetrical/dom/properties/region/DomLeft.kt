@@ -7,9 +7,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 import symmetrical.dom.DomProperty
 
-class DomLeft(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : DomProperty(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
+class DomLeft(
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+) : DomProperty(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         setProperty("left")
     }
     constructor(height:Int) : this() {

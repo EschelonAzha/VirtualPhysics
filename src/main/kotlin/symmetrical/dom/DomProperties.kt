@@ -7,10 +7,14 @@ import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class DomProperties(private val entanglement:IQuantumEntanglement= QuantumEntanglement()) : Molecular(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
-    }
+class DomProperties(
+    private val entanglement:IQuantumEntanglement= QuantumEntanglement()
+) : Molecular(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

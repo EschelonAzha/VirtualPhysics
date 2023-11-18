@@ -8,9 +8,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 import symmetrical.dom.DomProperty
 import symmetrical.dom.properties.style.DomStyle
 
-class DomTop(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : DomProperty(), IQuantumEntanglement by entanglement {
-
-    constructor() : this(QuantumEntanglement()) {
+class DomTop(
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+) : DomProperty(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         setProperty("top")
     }
     constructor(height:Int) : this() {

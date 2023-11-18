@@ -9,7 +9,11 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
-class DeviceInput(private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : Compound(), IQuantumEntanglement by entanglement {
+class DeviceInput(
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement()
+) : Compound(entanglement),
+    IQuantumEntanglement by entanglement
+{
 
     object Static {
         const val CURRENT_SIZE   = Compound.Static.LAST+1
@@ -20,9 +24,9 @@ class DeviceInput(private val entanglement:IQuantumEntanglement=QuantumEntanglem
 
         const val LAST           = Static.NETWORK_ARRAY;
     }
-    constructor() : this(QuantumEntanglement()) {
-
-    }
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(DeviceInput::class)

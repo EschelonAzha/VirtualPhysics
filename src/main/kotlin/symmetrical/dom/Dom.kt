@@ -9,12 +9,18 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-open class Dom(private val entanglement:IQuantumEntanglement= QuantumEntanglement()) : Atom(), IQuantumEntanglement by entanglement  {
+open class Dom(
+    private val entanglement:IQuantumEntanglement= QuantumEntanglement()
+) : Atom(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
 
     private var children  :Molecular     = Molecular()
     private var properties:DomProperties = DomProperties()
-    constructor() : this(QuantumEntanglement()) {
-    }
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

@@ -9,11 +9,17 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 import symmetrical.dom.Dom
 
-open class Body(private val entanglement:IQuantumEntanglement= QuantumEntanglement()) : Dom(), IQuantumEntanglement by entanglement {
-
+open class Body(
+    private val entanglement:IQuantumEntanglement= QuantumEntanglement()
+) : Dom(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     val peer: HtmlPeer = HtmlPeer(Document.getElementById("body"))
 
-    constructor() : this(QuantumEntanglement())
+
 
     private fun check(photon: Photon) : Unit {
         val classId = getLocalClassId()

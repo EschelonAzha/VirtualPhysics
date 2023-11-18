@@ -8,7 +8,16 @@ import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class SocketMessage(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : Compound(), IQuantumEntanglement by entanglement {
+open class SocketMessage(
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+) : Compound(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    ) {
+        bytes = ByteArray(0)
+    }
 
     object Static {
         const val LAST = Compound.Static.LAST
@@ -16,9 +25,7 @@ open class SocketMessage(private val entanglement: IQuantumEntanglement = Quantu
 
     private lateinit var bytes:ByteArray
 
-    constructor() : this(QuantumEntanglement()) {
-        bytes = ByteArray(0)
-    }
+
     constructor(bytes:ByteArray) : this() {
         this.bytes = bytes
     }

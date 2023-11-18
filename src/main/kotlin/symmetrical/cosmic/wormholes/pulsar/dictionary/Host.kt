@@ -9,12 +9,14 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Host(private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : KeyValue(), IQuantumEntanglement by entanglement {
-
-
-    constructor() : this(QuantumEntanglement()) {
-
-    }
+class Host(
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement()
+) : KeyValue(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     constructor(key: QString, value: QString) : this() {
         add(key)
         add(value)

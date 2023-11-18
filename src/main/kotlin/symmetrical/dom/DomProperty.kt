@@ -8,7 +8,7 @@ import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-open class DomProperty(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : KeyValue(), IQuantumEntanglement by entanglement {
+open class DomProperty(private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : KeyValue(), IQuantumEntanglement by entanglement {
 
     constructor() : this(QuantumEntanglement()) {
 

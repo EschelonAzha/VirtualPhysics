@@ -7,14 +7,19 @@ import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class AppendMSG(private val entanglement:IQuantumEntanglement=QuantumEntanglement()) : Message(), IQuantumEntanglement by entanglement {
-
+class AppendMSG(
+    private val entanglement:IQuantumEntanglement=QuantumEntanglement()
+) : Message(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     object Static {
         const val LAST      : Int = Message.Static.LAST
     }
 
-    constructor() : this(QuantumEntanglement()) {
-    }
+
     override fun i() : AppendMSG {
         super.i()
         return this

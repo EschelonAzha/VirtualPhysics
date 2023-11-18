@@ -10,7 +10,11 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 
-class Path(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : Molecule(), IQuantumEntanglement by entanglement {
+class Path(
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+) : Molecule(entanglement),
+    IQuantumEntanglement by entanglement
+{
 
     constructor() : this("") {
 

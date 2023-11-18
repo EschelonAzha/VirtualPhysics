@@ -7,9 +7,15 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 import symmetrical.dom.DomProperty
 
-class BackgroundColor(private val entanglement:QuantumEntanglement=QuantumEntanglement()) : DomProperty(), IQuantumEntanglement by entanglement {
+class BackgroundColor(
+    private val entanglement:QuantumEntanglement=QuantumEntanglement()
+) : DomProperty(entanglement),
+    IQuantumEntanglement by entanglement
+{
 
-    constructor() : this(QuantumEntanglement()) {
+    constructor() : this(
+        QuantumEntanglement()
+    ) init {
         setProperty("backgroundColor")
     }
     constructor(height:Int) : this() {

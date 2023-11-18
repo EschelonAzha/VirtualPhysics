@@ -9,15 +9,19 @@ import symmetrical.cosmic.dictionary.UseridFld
 import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
-class LoginMSG(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : Message(), IQuantumEntanglement by entanglement {
-
+class LoginMSG(
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+) : Message(entanglement),
+    IQuantumEntanglement by entanglement
+{
+    constructor() : this(
+        QuantumEntanglement()
+    )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1
         const val PASSWORD  : Int = Message.Static.LAST + 2
         const val LAST      : Int = PASSWORD
 
-    }
-    constructor() : this(QuantumEntanglement()) {
     }
     override fun i() : LoginMSG {
         super.i()
