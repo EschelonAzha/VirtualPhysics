@@ -30,16 +30,14 @@ open class Atom(
     private   val entanglement  : QuantumEntanglement,
     private   var orbitals      : Orbitals,
     public    var nucleons      : Nucleons,
-    private   var particle      : Particle,
     private   val colorCharges  : ColorCharges,
     private   val quarkValue    : QuarkValue,
 
         )
-    :
+    :   Particle(entanglement),
         IQuantumEntanglement    by entanglement,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
-        IParticle               by particle,
         IColorCharges           by colorCharges,
         IQuarkValue             by quarkValue,
         Element,
@@ -50,19 +48,12 @@ open class Atom(
             QuantumEntanglement(),
             Orbitals(),
             Nucleons(),
-            Particle(),
             ColorCharges(),
             QuarkValue()
-        ) {
-//            this.orbitals.setAtom(this)
-//            this.nucleons.setAtom(this)
-        }
-
-        init {
+        ) init {
             setAtom(this)
             this.orbitals.setAtom(this)
             this.nucleons.setAtom(this)
-
         }
 
         constructor(value:String) : this() {
@@ -81,7 +72,7 @@ open class Atom(
         override fun absorb(photon: Photon) : Photon {
             check(photon);
 
-            val remainder = particle.absorb(photon.propagate())
+            val remainder = super.absorb(photon.propagate())
             var (orbitals, orbitalsRemainder) = Absorber.materialize(remainder.radiate())
             var (nucleons, nucleonsRemainder) = Absorber.materialize(orbitalsRemainder)
             this.orbitals   = orbitals as Orbitals
@@ -93,7 +84,7 @@ open class Atom(
             return Photon(radiate())
         }
         private fun radiate() : String {
-            return getLocalClassId()+particle.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+            return getLocalClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
         private fun getLocalClassId(): String {
             return Absorber.getClassId(Atom::class)
@@ -115,7 +106,6 @@ open class Atom(
             nucleons.setAtom(this)
             colorCharges.setAtom(this)
             quarkValue.setAtom(this)
-            particle.setSelf(this)
             return this
         }
         fun setFieldName(name:String) : Atom {
