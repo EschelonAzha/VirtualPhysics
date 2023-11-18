@@ -10,7 +10,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 class QDouble(
     private val entanglement: QuantumEntanglement = QuantumEntanglement()
-) : Atom(),
+) : Atom(entanglement),
     IQuantumEntanglement by entanglement
 {
     constructor() : this(

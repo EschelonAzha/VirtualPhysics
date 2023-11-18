@@ -7,8 +7,8 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class Composition(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : ParticleBeam()
+    private val entanglement: IQuantumEntanglement
+) : ParticleBeam(entanglement)
 {
     constructor() : this(
         QuantumEntanglement()

@@ -11,7 +11,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 // Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
     private val entanglement: QuantumEntanglement = QuantumEntanglement()
-) : Atom(),
+) : Atom(entanglement),
     IQuantumEntanglement by entanglement
 {
 

@@ -11,7 +11,7 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class QMass(
     private val entanglement: QuantumEntanglement = QuantumEntanglement()
-) : Atom(),
+) : Atom(entanglement),
     IQuantumEntanglement by entanglement
 {
     constructor() : this(

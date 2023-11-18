@@ -27,11 +27,11 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 
 
 open class Atom(
-    private   val entanglement  : QuantumEntanglement,
-    private   var orbitals      : Orbitals,
-    public    var nucleons      : Nucleons,
-    private   val colorCharges  : ColorCharges,
-    private   val quarkValue    : QuarkValue,
+    private   val entanglement  : IQuantumEntanglement = QuantumEntanglement(),
+    private   var orbitals      : Orbitals             = Orbitals(),
+    public    var nucleons      : Nucleons             = Nucleons(),
+    private   val colorCharges  : ColorCharges         = ColorCharges(),
+    private   val quarkValue    : QuarkValue           = QuarkValue(),
 
         )
     :   Particle(entanglement),
