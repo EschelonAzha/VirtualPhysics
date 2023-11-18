@@ -12,9 +12,9 @@ import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
 import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 
 open class ParticleBeam(
-    protected val beam          : Beam                   = Beam(),
-    private   val entanglement  : IQuantumEntanglement   = QuantumEntanglement()
-) : Particle(),
+    protected val beam          : Beam,
+    private   val entanglement  : IQuantumEntanglement
+) : Particle(entanglement),
     IBeam by beam,
     IQuantumEntanglement by entanglement,
     IParticleBeam,
