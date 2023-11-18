@@ -54,12 +54,15 @@ open class Atom(
             ColorCharges(),
             QuarkValue()
         ) {
-            this.orbitals.setAtom(this)
-            this.nucleons.setAtom(this)
+//            this.orbitals.setAtom(this)
+//            this.nucleons.setAtom(this)
         }
 
         init {
             setAtom(this)
+            this.orbitals.setAtom(this)
+            this.nucleons.setAtom(this)
+
         }
 
         constructor(value:String) : this() {
