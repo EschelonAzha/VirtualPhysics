@@ -2,7 +2,7 @@ package symmetrical.cosmic._physics.atomic.atoms
 
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
+import symmetrical.cosmic._bitmaps.Bits04
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -17,8 +17,6 @@ import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.IQuarkValue
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.QuarkValue
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.fermion.Fermion
-import symmetrical.cosmic._physics._subatomic.fermion.IFermion
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
@@ -33,15 +31,14 @@ open class Atom(
     private   var orbitals      : Orbitals             = Orbitals(),
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharges         = ColorCharges(),
-    private   val quarkValue    : QuarkValue           = QuarkValue(),
-    private   val fermion       : IFermion             = Fermion()
+    private   val quarkValue    : QuarkValue           = QuarkValue()
+
     ) : Particle(entanglement),
         IQuantumEntanglement    by entanglement,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharges           by colorCharges,
         IQuarkValue             by quarkValue,
-        IFermion                by fermion,
         Element,
         Emitter,
         IAtom
@@ -52,7 +49,6 @@ open class Atom(
             Nucleons(),
             ColorCharges(),
             QuarkValue(),
-            Fermion(),
         ) init {
             setAtom(this)
             this.orbitals.setAtom(this)
@@ -90,8 +86,11 @@ open class Atom(
             return getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
 
+        private fun getLocalClassId() : String {
+            return Absorber.getClassId(Bits04::class)
+        }
         override fun getClassId() : String {
-            return getAbsorberId()
+            return getLocalClassId()
         }
 
         fun getFieldName() : String {
