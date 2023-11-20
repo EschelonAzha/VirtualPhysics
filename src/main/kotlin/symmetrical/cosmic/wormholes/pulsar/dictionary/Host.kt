@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 class Host(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : KeyValue(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : KeyValue(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

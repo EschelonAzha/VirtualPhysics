@@ -9,9 +9,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 // PHOTON VALUE
 open class Blue(
-    private val entanglement: IQuantumEntanglement
-): Color(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement
+): Color(),
+    IQuantumEntanglement by fermion
 { // Double
     constructor() : this(
         QuantumEntanglement()

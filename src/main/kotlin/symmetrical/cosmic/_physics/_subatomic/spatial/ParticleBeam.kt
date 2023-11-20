@@ -12,11 +12,11 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class ParticleBeam(
-    private   val entanglement  : IQuantumEntanglement = QuantumEntanglement(),
-    protected val beam          : Beam = Beam()
-) : Particle(entanglement),
+    private   val fermion  : IQuantumEntanglement = QuantumEntanglement(),
+    protected val beam     : Beam = Beam()
+) : Particle(),
+    IQuantumEntanglement by fermion,
     IBeam by beam,
-    IQuantumEntanglement by entanglement,
     IParticleBeam,
     Emitter
 {

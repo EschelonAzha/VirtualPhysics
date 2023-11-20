@@ -14,9 +14,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 open class Baryon(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : Hadron(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : Hadron(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

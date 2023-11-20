@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class KeyValue(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : Diatomic(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : Diatomic(),
+    IQuantumEntanglement by fermion
 {
 
     object Static {

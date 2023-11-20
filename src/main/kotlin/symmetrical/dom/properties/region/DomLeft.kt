@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 import symmetrical.dom.DomProperty
 
 class DomLeft(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : DomProperty(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : DomProperty(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

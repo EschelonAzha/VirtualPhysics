@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class ChargedWeak(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : Particle(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : Particle(),
+    IQuantumEntanglement by fermion
 {
     // can emit a charged W Boson that can alter the charge of a Proton by
     // altering the structure of its quarks

@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class Orbitals(
-    private val entanglement: QuantumEntanglement = QuantumEntanglement(),
-) : ParticleBeam(entanglement),
-    IQuantumEntanglement by entanglement,
+    private val fermion: QuantumEntanglement = QuantumEntanglement(),
+) : ParticleBeam(),
+    IQuantumEntanglement by fermion,
     IOrbitals
 {
     constructor() : this(

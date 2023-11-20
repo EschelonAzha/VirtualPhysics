@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 class Path(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : Molecule(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : Molecule(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

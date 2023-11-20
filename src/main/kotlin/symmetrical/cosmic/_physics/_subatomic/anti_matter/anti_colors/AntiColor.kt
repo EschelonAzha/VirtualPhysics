@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class AntiColor(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : ChromoCharge(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : ChromoCharge(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

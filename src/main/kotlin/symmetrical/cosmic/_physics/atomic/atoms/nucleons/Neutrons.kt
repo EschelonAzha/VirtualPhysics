@@ -10,9 +10,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class Neutrons(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : ParticleBeam(entanglement),
-    IQuantumEntanglement by entanglement,
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : ParticleBeam(),
+    IQuantumEntanglement by fermion,
     INeutrons
 {
     constructor()  : this(

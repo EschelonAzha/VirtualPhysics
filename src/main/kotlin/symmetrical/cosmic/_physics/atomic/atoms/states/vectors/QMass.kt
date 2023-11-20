@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class QMass(
-    private val entanglement: QuantumEntanglement = QuantumEntanglement()
-) : Atom(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: QuantumEntanglement = QuantumEntanglement()
+) : Atom(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

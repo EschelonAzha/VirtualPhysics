@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class Anion(
-    val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : Ion(entanglement),
-    IQuantumEntanglement by entanglement
+    val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : Ion(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

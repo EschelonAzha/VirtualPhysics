@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 // ORIGINAL VALUE
 open class AntiGreen (
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : AntiColor(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : AntiColor(),
+    IQuantumEntanglement by fermion
 { // Char
     constructor() : this(
         QuantumEntanglement()

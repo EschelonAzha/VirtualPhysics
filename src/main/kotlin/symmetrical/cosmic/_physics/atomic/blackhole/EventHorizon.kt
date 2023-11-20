@@ -5,8 +5,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class EventHorizon (
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) :
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

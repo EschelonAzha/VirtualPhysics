@@ -7,7 +7,7 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 open class Magnetism(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
 ) : Energy()
 {
     constructor() : this(

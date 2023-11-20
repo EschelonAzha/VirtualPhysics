@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class AntiStrange(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : AntiQuark(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : AntiQuark(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

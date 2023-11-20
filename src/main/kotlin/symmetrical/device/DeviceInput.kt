@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
 class DeviceInput(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : Compound(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : Compound(),
+    IQuantumEntanglement by fermion
 {
 
     object Static {

@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class Blue_AntiRed  (
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : Gluon(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : Gluon(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

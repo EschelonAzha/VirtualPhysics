@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class QuarkValue(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
 )  :
-    IQuantumEntanglement by entanglement,
+    IQuantumEntanglement by fermion,
     IQuarkValue
 {
     constructor() : this(

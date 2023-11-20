@@ -14,12 +14,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 class Nucleons(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion     : IQuantumEntanglement = QuantumEntanglement(),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
 
     ) :
-        IQuantumEntanglement by entanglement,
+        IQuantumEntanglement by fermion,
         IProtons             by protons,
         INeutrons            by neutrons,
         INucleons,

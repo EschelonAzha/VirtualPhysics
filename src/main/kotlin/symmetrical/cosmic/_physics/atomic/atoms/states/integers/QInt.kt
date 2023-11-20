@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 // Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
-    private val entanglement: QuantumEntanglement = QuantumEntanglement()
-) : Atom(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: QuantumEntanglement = QuantumEntanglement()
+) : Atom(),
+    IQuantumEntanglement by fermion
 {
 
     constructor() : this(

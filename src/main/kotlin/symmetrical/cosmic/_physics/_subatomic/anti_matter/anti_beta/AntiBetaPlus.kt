@@ -13,9 +13,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 class AntiBetaPlus(
-    private val entanglement: QuantumEntanglement = QuantumEntanglement(),
-) : LeptonPair(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: QuantumEntanglement = QuantumEntanglement(),
+) : LeptonPair(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 // ACTUAL VALUE
 open class Red(
-    private val entanglement: IQuantumEntanglement
-): Color(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement
+): Color(),
+    IQuantumEntanglement by fermion
 {  // Boolean
 
     constructor() : this(

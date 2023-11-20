@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class SocketMessage(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : Compound(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : Compound(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

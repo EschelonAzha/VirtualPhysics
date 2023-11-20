@@ -9,9 +9,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 class WBosonMinus(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : Particle(entanglement),
-    IQuantumEntanglement by entanglement,
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : Particle(),
+    IQuantumEntanglement by fermion,
     Emitter
 {
     // Carries the weak force

@@ -7,7 +7,10 @@ import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
-open class DomProperty(private val entanglement: IQuantumEntanglement = QuantumEntanglement()) : KeyValue(), IQuantumEntanglement by entanglement {
+open class DomProperty(
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : KeyValue(),
+    IQuantumEntanglement by fermion {
 
     constructor() : this(QuantumEntanglement()) {
 

@@ -8,8 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class Alloy(
     vararg mixtures: Substance,
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) :
+    IQuantumEntanglement by fermion
 {
 
     var derived = ArrayList<Substance>()

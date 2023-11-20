@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 open class NeutralUpPion(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : Hadron(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : Hadron(),
+    IQuantumEntanglement by fermion
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together

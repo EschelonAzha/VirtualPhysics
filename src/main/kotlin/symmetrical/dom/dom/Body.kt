@@ -9,9 +9,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 import symmetrical.dom.Dom
 
 open class Body(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : Dom(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : Dom(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

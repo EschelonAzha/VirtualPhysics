@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class CRLFTerminatedColor(
-    private val entanglement: IQuantumEntanglement
-): Green(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement
+): Green(),
+    IQuantumEntanglement by fermion
 {
 
     constructor() : this(

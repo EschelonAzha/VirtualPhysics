@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 //class ElectronPositron<PlusPion> : LeptonPair {
 class ElectronPositron(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : LeptonPair(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : LeptonPair(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

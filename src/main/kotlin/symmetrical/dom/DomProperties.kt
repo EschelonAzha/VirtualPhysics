@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class DomProperties(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : Molecular(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : Molecular(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

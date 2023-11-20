@@ -14,11 +14,11 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class Molecular(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
     private var particleBeam:ParticleBeam=ParticleBeam(),
 
-    ) : Atom(entanglement),
-    IQuantumEntanglement by entanglement,
+    ) : Atom(fermion),
+    IQuantumEntanglement by fermion,
     IParticleBeam by particleBeam,
     IParticle
 {

@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 open class Gravity(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
 ) : Energy(),
-    IQuantumEntanglement by entanglement
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

@@ -10,9 +10,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 open class PlusPion(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
-) : Hadron(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+) : Hadron(),
+    IQuantumEntanglement by fermion
 {
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other

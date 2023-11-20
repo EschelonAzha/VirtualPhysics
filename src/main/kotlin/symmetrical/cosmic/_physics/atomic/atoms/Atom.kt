@@ -27,14 +27,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 
 
 open class Atom(
-    private   val entanglement  : IQuantumEntanglement = QuantumEntanglement(),
+    private   val fermion       : IQuantumEntanglement = QuantumEntanglement(),
     private   var orbitals      : Orbitals             = Orbitals(),
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharges         = ColorCharges(),
     private   val quarkValue    : QuarkValue           = QuarkValue()
 
-    ) : Particle(entanglement),
-        IQuantumEntanglement by entanglement,
+    ) : Particle(),
+        IQuantumEntanglement    by fermion,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharges           by colorCharges,

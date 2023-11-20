@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 class QDouble(
-    private val entanglement: QuantumEntanglement = QuantumEntanglement()
-) : Atom(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: QuantumEntanglement = QuantumEntanglement()
+) : Atom(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

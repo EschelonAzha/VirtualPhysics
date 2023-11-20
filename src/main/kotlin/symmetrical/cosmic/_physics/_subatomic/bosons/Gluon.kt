@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
 open class Gluon(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
 ) : Particle(),
-    IQuantumEntanglement by entanglement
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

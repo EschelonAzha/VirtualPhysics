@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 import symmetrical.dom.DomProperty
 
 class BackgroundColor(
-    private val entanglement: QuantumEntanglement = QuantumEntanglement()
-) : DomProperty(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: QuantumEntanglement = QuantumEntanglement()
+) : DomProperty(),
+    IQuantumEntanglement by fermion
 {
 
     constructor() : this(

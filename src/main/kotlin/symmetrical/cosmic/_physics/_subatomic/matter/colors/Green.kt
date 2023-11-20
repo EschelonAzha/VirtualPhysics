@@ -9,9 +9,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 // FORMATTED VALUE
 open class Green (
-    private val entanglement: IQuantumEntanglement
+    private val fermion: IQuantumEntanglement
 ):Color(),
-    IQuantumEntanglement by entanglement
+    IQuantumEntanglement by fermion
 {  // Int
     constructor() : this(
         QuantumEntanglement()

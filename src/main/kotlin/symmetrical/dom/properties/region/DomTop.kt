@@ -8,9 +8,9 @@ import symmetrical.dom.DomProperty
 import symmetrical.dom.properties.style.DomStyle
 
 class DomTop(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
-) : DomProperty(entanglement),
-    IQuantumEntanglement by entanglement
+    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+) : DomProperty(),
+    IQuantumEntanglement by fermion
 {
     constructor() : this(
         QuantumEntanglement()

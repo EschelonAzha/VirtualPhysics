@@ -13,9 +13,9 @@ import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class Protons(
-    private val entanglement: QuantumEntanglement = QuantumEntanglement(),
-) : ParticleBeam(entanglement),
-    IQuantumEntanglement by entanglement,
+    private val fermion: QuantumEntanglement = QuantumEntanglement(),
+) : ParticleBeam(),
+    IQuantumEntanglement by fermion,
     IProtons
 {
     constructor() : this(
