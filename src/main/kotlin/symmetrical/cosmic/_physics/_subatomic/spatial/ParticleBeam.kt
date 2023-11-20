@@ -8,8 +8,8 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class ParticleBeam(
     private   val entanglement  : IQuantumEntanglement = QuantumEntanglement(),

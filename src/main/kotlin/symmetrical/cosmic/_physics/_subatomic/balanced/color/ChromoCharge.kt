@@ -1,18 +1,16 @@
 package symmetrical.cosmic._physics._subatomic.balanced.color
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 open class ChromoCharge(
-    private val entanglement: IQuantumEntanglement=QuantumEntanglement(),
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
 ) : Particle(entanglement),
     IQuantumEntanglement by entanglement,
     Emitter

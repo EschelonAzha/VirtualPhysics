@@ -1,4 +1,4 @@
-package symmetrical.cosmic.wormholes.messaging.entanglement
+package symmetrical.cosmic._physics._subatomic.fermions
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
@@ -21,9 +21,9 @@ class QuantumEntanglement : IQuantumEntanglement {
         return Absorber.getClassId(getKClass())
     }
 
-    override fun getClassId() : String {
-        return Absorber.getClassId(getKClass())
-    }
+//    override fun getClassId() : String {
+//        return Absorber.getClassId(getKClass())
+//    }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
     }

@@ -1,9 +1,5 @@
 package symmetrical.cosmic.cosmology
 
-import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
 import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 
 open class NebulaPhase : INebula   {

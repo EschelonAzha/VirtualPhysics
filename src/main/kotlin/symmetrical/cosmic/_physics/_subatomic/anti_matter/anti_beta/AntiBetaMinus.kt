@@ -2,18 +2,16 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_beta
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiNeutrino
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class AntiBetaMinus(
-    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
 ) : LeptonPair(entanglement),
     IQuantumEntanglement by entanglement
 {

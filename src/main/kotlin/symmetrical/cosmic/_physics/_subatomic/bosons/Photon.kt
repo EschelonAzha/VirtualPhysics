@@ -4,14 +4,12 @@ import asymmetrical.machine.config.Config
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Photons
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 open class Photon(
-    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
 ) : Particle(entanglement),
     IQuantumEntanglement by entanglement
 {

@@ -3,13 +3,12 @@ package symmetrical.cosmic._physics._subatomic.matter.colors
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Red_AntiRed
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 // ACTUAL VALUE
 open class Red(
-    private val entanglement:IQuantumEntanglement
+    private val entanglement: IQuantumEntanglement
 ): Color(entanglement),
     IQuantumEntanglement by entanglement
 {  // Boolean

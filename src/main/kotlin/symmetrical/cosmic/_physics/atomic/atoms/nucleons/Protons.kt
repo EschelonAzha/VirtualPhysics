@@ -9,11 +9,11 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 class Protons(
-    private val entanglement: QuantumEntanglement=QuantumEntanglement(),
+    private val entanglement: QuantumEntanglement = QuantumEntanglement(),
 ) : ParticleBeam(entanglement),
     IQuantumEntanglement by entanglement,
     IProtons

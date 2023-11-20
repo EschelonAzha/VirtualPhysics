@@ -3,14 +3,12 @@ package symmetrical.cosmic._physics._creation
 
 import asymmetrical.machine.threads.Cores
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._bitmaps.Bits64
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
 
 
 class BigBang (
-    private val entanglement:IQuantumEntanglement=QuantumEntanglement(),
+    private val entanglement: IQuantumEntanglement = QuantumEntanglement(),
 ):
     IQuantumEntanglement by entanglement
 {

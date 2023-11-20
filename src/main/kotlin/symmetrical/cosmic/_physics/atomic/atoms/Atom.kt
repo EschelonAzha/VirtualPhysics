@@ -22,8 +22,8 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic.wormholes.messaging.entanglement.QuantumEntanglement
-import symmetrical.cosmic.wormholes.messaging.entanglement.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
 
 
 open class Atom(
@@ -34,7 +34,7 @@ open class Atom(
     private   val quarkValue    : QuarkValue           = QuarkValue()
 
     ) : Particle(entanglement),
-        IQuantumEntanglement    by entanglement,
+        IQuantumEntanglement by entanglement,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharges           by colorCharges,
