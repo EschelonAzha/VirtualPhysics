@@ -33,15 +33,13 @@ open class Atom(
     private   var orbitals      : Orbitals             = Orbitals(),
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharges         = ColorCharges(),
-    private   val quarkValue    : QuarkValue           = QuarkValue(),
-    private   val fermion       : IFermion             = Fermion()
+    private   val quarkValue    : QuarkValue           = QuarkValue()
     ) : Particle(entanglement),
         IQuantumEntanglement    by entanglement,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharges           by colorCharges,
         IQuarkValue             by quarkValue,
-        IFermion                by fermion,
         Element,
         Emitter,
         IAtom
@@ -52,7 +50,6 @@ open class Atom(
             Nucleons(),
             ColorCharges(),
             QuarkValue(),
-            Fermion(),
         ) init {
             setAtom(this)
             this.orbitals.setAtom(this)
@@ -90,8 +87,11 @@ open class Atom(
             return getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
 
+        private fun getLocalClassId() : String {
+            return Absorber.getClassId(Orbitals::class)
+        }
         override fun getClassId() : String {
-            return getAbsorberId()
+            return getLocalClassId()
         }
 
         fun getFieldName() : String {
