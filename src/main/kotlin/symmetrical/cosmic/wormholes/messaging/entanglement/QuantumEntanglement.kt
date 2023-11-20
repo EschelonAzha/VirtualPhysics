@@ -21,9 +21,9 @@ class QuantumEntanglement : IQuantumEntanglement {
         return Absorber.getClassId(getKClass())
     }
 
-//    override fun getClassId() : String {
-//        return Absorber.getClassId(getKClass())
-//    }
+    override fun getClassId() : String {
+        return Absorber.getClassId(getKClass())
+    }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
     }
