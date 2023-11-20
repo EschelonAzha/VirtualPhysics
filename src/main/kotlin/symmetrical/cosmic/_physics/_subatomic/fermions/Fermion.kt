@@ -12,10 +12,6 @@ class Fermion : IFermion {
 
     var self:Any? = null
 
-    override fun setSelf(self: Particle) : Fermion {
-        this.self = self
-        return this
-    }
     override fun getAbsorberId() : String {
         return Absorber.getClassId(getKClass())
     }
@@ -25,6 +21,14 @@ class Fermion : IFermion {
 //    }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
+    }
+
+    override fun setKClass(kClass: KClass<*>) : IFermion {
+        return this
+    }
+    override fun setSelf(self: Particle) : Fermion {
+        this.self = self
+        return this
     }
 
     private  fun getKClass() : KClass<*> {
