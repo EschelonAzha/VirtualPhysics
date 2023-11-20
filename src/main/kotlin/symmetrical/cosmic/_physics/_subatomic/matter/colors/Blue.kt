@@ -4,17 +4,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Blue_AntiBlue
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 // PHOTON VALUE
 open class Blue(
-    private val fermion: IQuantumEntanglement
+    private val fermion: IFermion
 ): Color(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 { // Double
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         color = BLUE
     }

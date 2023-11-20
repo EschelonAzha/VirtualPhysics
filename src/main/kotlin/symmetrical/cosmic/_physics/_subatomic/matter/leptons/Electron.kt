@@ -8,16 +8,16 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Electron(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Lepton(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     lateinit var orbitals : Orbitals

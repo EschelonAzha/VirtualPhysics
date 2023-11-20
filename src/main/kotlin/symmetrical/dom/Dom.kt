@@ -4,17 +4,17 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Dom(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : Atom(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private var children  :Molecular     = Molecular()

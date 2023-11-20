@@ -6,19 +6,19 @@ import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Particle(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) :
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     IParticle,
     Emitter
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
     object Static {
         const val UNIQUE_ID_LENGTH = 1

@@ -5,18 +5,18 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class ChromoCharge(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Particle(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) {}
 
     public var _value: Any? = null

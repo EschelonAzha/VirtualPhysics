@@ -5,17 +5,17 @@ import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Covalent
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Molecule(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : Molecular(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     Covalent
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
     object Static {
         const val LAST      : Int = -1

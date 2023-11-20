@@ -3,17 +3,17 @@ package symmetrical.cosmic.wormholes.pulsar.dictionary
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Host(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : KeyValue(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
     constructor(key: QString, value: QString) : this() {
         add(key)

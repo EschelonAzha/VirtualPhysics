@@ -2,17 +2,17 @@ package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Neutron(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Baryon(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

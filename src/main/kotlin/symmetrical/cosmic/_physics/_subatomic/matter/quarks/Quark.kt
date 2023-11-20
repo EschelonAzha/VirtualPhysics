@@ -12,18 +12,18 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Quark(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Particle(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) {
         this.gluon         = Red_AntiRed()
         this.fundamentals  = Fundamentals()

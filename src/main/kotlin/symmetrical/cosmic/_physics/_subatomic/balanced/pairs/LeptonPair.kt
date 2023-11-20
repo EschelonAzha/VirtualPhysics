@@ -4,16 +4,16 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class LeptonPair(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Particle(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     public lateinit var lepton     : Lepton

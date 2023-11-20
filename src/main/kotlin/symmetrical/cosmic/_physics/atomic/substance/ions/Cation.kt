@@ -1,16 +1,16 @@
 package symmetrical.cosmic._physics.atomic.substance.ions
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Cation(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : Ion(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Cation::class)

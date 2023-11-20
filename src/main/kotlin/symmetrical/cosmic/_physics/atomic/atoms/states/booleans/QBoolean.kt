@@ -2,16 +2,16 @@ package symmetrical.cosmic._physics.atomic.atoms.states.booleans
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class QBoolean(
-    private val fermion: QuantumEntanglement = QuantumEntanglement(),
+    private val fermion: Fermion = Fermion(),
 ) : Atom(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         setBoolean(false)
     }

@@ -11,17 +11,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Proton(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Baryon(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

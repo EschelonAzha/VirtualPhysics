@@ -3,16 +3,16 @@ package symmetrical.cosmic.wormholes.messaging
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Message(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : ParticleBeam(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     object Static {

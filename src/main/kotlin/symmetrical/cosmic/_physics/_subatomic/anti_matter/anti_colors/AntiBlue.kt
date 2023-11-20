@@ -1,17 +1,17 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 // ORIGINAL VALUE
 open class AntiBlue(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : AntiColor(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {  // String
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
     init {
         color = ANTI_BLUE

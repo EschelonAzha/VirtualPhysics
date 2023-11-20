@@ -9,17 +9,17 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralUpPion
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Nucleons(
-    private val fermion     : IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion     : IFermion = Fermion(),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
 
     ) :
-        IQuantumEntanglement by fermion,
+        IFermion by fermion,
         IProtons             by protons,
         INeutrons            by neutrons,
         INucleons,
@@ -27,7 +27,7 @@ class Nucleons(
 {
 
     constructor() : this(
-        QuantumEntanglement(),
+        Fermion(),
         Protons(),
         Neutrons()
     ) init {

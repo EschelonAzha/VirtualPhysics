@@ -5,15 +5,14 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import kotlin.reflect.KClass
 
-class QuantumEntanglement : IQuantumEntanglement {
+class Fermion : IFermion {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
 
-
     var self:Any? = null
 
-    override fun setSelf(self: Particle) : QuantumEntanglement {
+    override fun setSelf(self: Particle) : Fermion {
         this.self = self
         return this
     }

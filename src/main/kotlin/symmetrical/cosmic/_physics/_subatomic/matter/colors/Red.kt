@@ -3,18 +3,18 @@ package symmetrical.cosmic._physics._subatomic.matter.colors
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Red_AntiRed
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 // ACTUAL VALUE
 open class Red(
-    private val fermion: IQuantumEntanglement
+    private val fermion: IFermion
 ): Color(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {  // Boolean
 
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         color = RED
     }

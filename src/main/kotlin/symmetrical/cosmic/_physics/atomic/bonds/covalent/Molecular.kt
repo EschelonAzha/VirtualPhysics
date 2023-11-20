@@ -10,20 +10,20 @@ import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Molecular(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
     private var particleBeam:ParticleBeam=ParticleBeam(),
 
     ) : Atom(fermion),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     IParticleBeam by particleBeam,
     IParticle
 {
     constructor() : this(
-        QuantumEntanglement(),
+        Fermion(),
         ParticleBeam(),
     )
     object Static {

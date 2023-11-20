@@ -9,17 +9,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Baryon(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Hadron(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         super.i(3)
     }

@@ -2,18 +2,18 @@ package symmetrical.cosmic._physics._subatomic.forces.weak_force
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class ChargedWeak(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Particle(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     // can emit a charged W Boson that can alter the charge of a Proton by
     // altering the structure of its quarks
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private fun getLocalClassId() : String {

@@ -2,16 +2,16 @@ package symmetrical.cosmic._bitmaps
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Shorts
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Bits16 (
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) :
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private var high: Bits08 = Bits08()

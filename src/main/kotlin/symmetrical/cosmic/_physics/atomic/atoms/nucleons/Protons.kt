@@ -9,17 +9,17 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Protons(
-    private val fermion: QuantumEntanglement = QuantumEntanglement(),
+    private val fermion: Fermion = Fermion(),
 ) : ParticleBeam(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     IProtons
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         add(Proton().setProtons(this))
     }

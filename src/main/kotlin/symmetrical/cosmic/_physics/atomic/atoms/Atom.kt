@@ -22,19 +22,19 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 
 
 open class Atom(
-    private   val fermion       : IQuantumEntanglement = QuantumEntanglement(),
+    private   val fermion       : IFermion = Fermion(),
     private   var orbitals      : Orbitals             = Orbitals(),
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharges         = ColorCharges(),
     private   val quarkValue    : QuarkValue           = QuarkValue()
 
     ) : Particle(),
-        IQuantumEntanglement    by fermion,
+        IFermion    by fermion,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharges           by colorCharges,
@@ -44,7 +44,7 @@ open class Atom(
         IAtom
     {
         constructor() : this(
-            QuantumEntanglement(),
+            Fermion(),
             Orbitals(),
             Nucleons(),
             ColorCharges(),

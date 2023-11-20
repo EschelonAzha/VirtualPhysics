@@ -8,17 +8,17 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class AntiBetaPlus(
-    private val fermion: QuantumEntanglement = QuantumEntanglement(),
+    private val fermion: Fermion = Fermion(),
 ) : LeptonPair(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private fun getLocalClassId() : String {

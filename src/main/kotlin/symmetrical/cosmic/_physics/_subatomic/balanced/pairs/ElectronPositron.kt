@@ -6,21 +6,21 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 //class ElectronPositron<PlusPion> : LeptonPair {
 class ElectronPositron(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : LeptonPair(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : this(QuantumEntanglement()) {
+    constructor(lepton: Lepton, antiLepton: AntiLepton) : this(Fermion()) {
         i(lepton, antiLepton)
     }
 

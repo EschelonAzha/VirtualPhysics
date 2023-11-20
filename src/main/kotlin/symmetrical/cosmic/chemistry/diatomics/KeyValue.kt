@@ -4,13 +4,13 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class KeyValue(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : Diatomic(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
 
     object Static {
@@ -19,7 +19,7 @@ open class KeyValue(
 
         const val LAST      : Int = VALUE
     }
-    constructor() : this(QuantumEntanglement()) {
+    constructor() : this(Fermion()) {
     }
     constructor(key: Atom, value:Atom) : this(){
         add(key)

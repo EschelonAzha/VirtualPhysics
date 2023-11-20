@@ -8,17 +8,17 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Orbitals(
-    private val fermion: QuantumEntanglement = QuantumEntanglement(),
+    private val fermion: Fermion = Fermion(),
 ) : ParticleBeam(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     IOrbitals
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     ) init {
         add(Electron())
     }

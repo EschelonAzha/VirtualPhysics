@@ -2,16 +2,16 @@ package symmetrical.cosmic._physics.atomic.bonds.mixtures
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.matter.Matter
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Mixture(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : Matter(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
     // mixtures may be regular classes with all kinds of things
     // mixed together that are other classes but not Atoms or Molecules

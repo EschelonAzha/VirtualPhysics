@@ -12,17 +12,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class AntiQuark(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Particle(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private var gluon       : Gluon         = Red_AntiRed()

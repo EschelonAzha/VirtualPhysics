@@ -2,16 +2,16 @@ package symmetrical.cosmic._physics._subatomic.forces.magnetism
 
 import asymmetrical.machine.threads.Energy
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Magnetism(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Energy()
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     // Spin 2

@@ -6,17 +6,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Neutrons(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : ParticleBeam(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     INeutrons
 {
     constructor()  : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     lateinit var __nucleons:Nucleons

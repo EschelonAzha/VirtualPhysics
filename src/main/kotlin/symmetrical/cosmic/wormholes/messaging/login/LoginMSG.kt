@@ -5,16 +5,16 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic.dictionary.PasswordFld
 import symmetrical.cosmic.dictionary.UseridFld
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class LoginMSG(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement()
+    private val fermion: IFermion = Fermion()
 ) : Message(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1

@@ -3,17 +3,17 @@ package symmetrical.cosmic._physics._subatomic.matter.colors.manifestations
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class CRLFTerminatedColor(
-    private val fermion: IQuantumEntanglement
+    private val fermion: IFermion
 ): Green(),
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
 
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private fun getLocalClassId() : String {

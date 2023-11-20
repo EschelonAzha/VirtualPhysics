@@ -4,20 +4,20 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class WBosonMinus(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) : Particle(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     Emitter
 {
     // Carries the weak force
     // Spin 1
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private fun check(photon: Photon) : Unit {

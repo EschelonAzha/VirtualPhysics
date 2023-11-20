@@ -8,19 +8,19 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class ParticleBeam(
-    private   val fermion  : IQuantumEntanglement = QuantumEntanglement(),
+    private   val fermion  : IFermion = Fermion(),
     protected val beam     : Beam = Beam()
 ) : Particle(),
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     IBeam by beam,
     IParticleBeam,
     Emitter
 {
-    constructor() : this(QuantumEntanglement(), Beam()) {
+    constructor() : this(Fermion(), Beam()) {
     }
     object Static {
         const val LAST      : Int = -1

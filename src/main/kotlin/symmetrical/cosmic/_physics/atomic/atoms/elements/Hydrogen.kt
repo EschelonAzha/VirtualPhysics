@@ -2,22 +2,22 @@ package symmetrical.cosmic._physics.atomic.atoms.elements
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Hydrogen(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) :
-    IQuantumEntanglement by fermion
+    IFermion by fermion
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     lateinit var atom : Atom
 
 
-    constructor(atom: Atom) : this(QuantumEntanglement()) {
+    constructor(atom: Atom) : this(Fermion()) {
         this.atom = atom
     }
     fun i(atom: Atom) : Hydrogen {

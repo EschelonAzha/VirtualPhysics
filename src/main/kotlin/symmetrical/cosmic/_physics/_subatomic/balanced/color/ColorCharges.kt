@@ -3,17 +3,17 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class ColorCharges(
-    private val fermion: IQuantumEntanglement = QuantumEntanglement(),
+    private val fermion: IFermion = Fermion(),
 ) :
-    IQuantumEntanglement by fermion,
+    IFermion by fermion,
     IColorCharges
 {
     constructor() : this (
-        QuantumEntanglement()
+        Fermion()
     )
 
     lateinit var atom     : Atom

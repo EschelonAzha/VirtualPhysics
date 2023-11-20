@@ -2,16 +2,16 @@ package symmetrical.cosmic.dictionary
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.fermions.IQuantumEntanglement
-import symmetrical.cosmic._physics._subatomic.fermions.QuantumEntanglement
+import symmetrical.cosmic._physics._subatomic.fermions.IFermion
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class UseridFld(
-    private val entanglement: IQuantumEntanglement = QuantumEntanglement()
+    private val entanglement: IFermion = Fermion()
 ) : QString(entanglement),
-    IQuantumEntanglement by entanglement
+    IFermion by entanglement
 {
     constructor() : this(
-        QuantumEntanglement()
+        Fermion()
     )
 
     private fun getLocalClassId() : String {
