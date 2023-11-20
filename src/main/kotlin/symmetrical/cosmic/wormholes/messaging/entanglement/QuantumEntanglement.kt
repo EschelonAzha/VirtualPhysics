@@ -2,7 +2,6 @@ package symmetrical.cosmic.wormholes.messaging.entanglement
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.fermion.Fermion
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import kotlin.reflect.KClass
 
