@@ -23,17 +23,9 @@ class Fundamentals(
     private var spin            : Spin            = Spin()
     private var wavelength      : Wavelength      = Wavelength()
 
-    private fun check(photon: Photon) : Unit {
-        val classId = fermion.getClassId()
 
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName)
-        return;
-    }
     override fun absorb(photon: Photon) : Photon {
-        check(photon);
+        fermion.check(photon);
 
         var (spin, spinRemainder) = Absorber.materialize(photon.propagate())
         setSpin(spin as Spin)

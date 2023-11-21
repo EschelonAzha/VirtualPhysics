@@ -23,15 +23,7 @@ class SymmetricalAtom : Particle   {    // 3
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
     }
-    private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
 
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName)
-        return;
-    }
     override fun absorb(photon: Photon) : Photon {
         check(photon);
 

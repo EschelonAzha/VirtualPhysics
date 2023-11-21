@@ -5,6 +5,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
@@ -31,6 +32,9 @@ open class ZBoson(
     private var reason       :String    = ""
 
 
+    override fun check(photon: Photon) : Unit {
+        return fermion.check(photon)
+    }
     override fun getClassId() : String {
         return fermion.getClassId()
     }

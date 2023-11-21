@@ -60,17 +60,9 @@ open class Atom(
             setQuarkValue(value)
         }
 
-        private fun check(photon: Photon) : Unit {
-            val classId = fermion.getClassId()
 
-            val radiation = photon.radiate()
-            if (radiation.startsWith(classId))
-                return
-            println("Radiation Leak in: "+this::class.simpleName)
-            return;
-        }
         override fun absorb(photon: Photon) : Photon {
-            check(photon);
+            fermion.check(photon);
 
             val remainder = super.absorb(photon.propagate())
             var (orbitals, orbitalsRemainder) = Absorber.materialize(remainder.radiate())

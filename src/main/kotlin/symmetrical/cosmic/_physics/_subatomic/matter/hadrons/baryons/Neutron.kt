@@ -23,17 +23,9 @@ open class Neutron(
 
     lateinit var __neutrons: Neutrons
 
-    private fun check(photon: Photon) : Unit {
-        val classId = fermion.getClassId()
 
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName)
-        return;
-    }
     override fun absorb(photon: Photon) : Photon {
-        check(photon);
+        fermion.check(photon);
 
         return super.absorb(photon.propagate())
     }

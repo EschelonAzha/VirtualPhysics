@@ -27,17 +27,9 @@ open class Particle(
     private lateinit var self : IParticle
 
 
-    private fun check(photon: Photon) : Unit {
-        val classId = fermion.getClassId()
 
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName);
-        return;
-    }
     override fun absorb(photon: Photon) : Photon {
-        check(photon);
+        fermion.check(photon);
 
         val (uniqueId, remainder) = Photons.parse(Static.UNIQUE_ID_LENGTH, photon.propagate().radiate())
         this.uniqueId = uniqueId

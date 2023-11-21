@@ -43,17 +43,9 @@ class Wavelength(
     fun isNull() : Boolean {
         return field.isNull()
     }
-    private fun check(photon: Photon) : Unit {
-        val classId = fermion.getClassId()
 
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName)
-        return;
-    }
     override fun absorb(photon: Photon) : Photon {
-        check(photon);
+        fermion.check(photon);
 
         var (type, lthValue) = Strings.remainder(Static.NUMBERS_LTH, photon.propagate().radiate())
         if (type == Static.NULL) {
