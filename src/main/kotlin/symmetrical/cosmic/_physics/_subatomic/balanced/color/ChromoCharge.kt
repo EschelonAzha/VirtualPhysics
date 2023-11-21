@@ -10,14 +10,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class ChromoCharge(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(ChromoCharge::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
-    ) {}
+        Fermion(ChromoCharge::class),
+    )
 
     public var _value: Any? = null
 
@@ -35,7 +35,7 @@ open class ChromoCharge(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -52,13 +52,10 @@ open class ChromoCharge(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(ChromoCharge::class)
+        return fermion.getClassId()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     open fun i() : ChromoCharge {
         return this

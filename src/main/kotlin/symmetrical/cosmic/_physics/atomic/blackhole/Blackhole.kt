@@ -5,19 +5,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Blackhole(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Blackhole::class),
 ) :
     IFermion by fermion
 {
 
     constructor() : this(
-        Fermion()
+        Fermion(Blackhole::class),
     )
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Blackhole::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     // black holes encompass all external libraries and frameworks
 }

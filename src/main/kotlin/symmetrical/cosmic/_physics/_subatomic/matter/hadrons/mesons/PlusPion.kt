@@ -10,25 +10,22 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class PlusPion(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(PlusPion::class),
 ) : Hadron(),
     IFermion by fermion
 {
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(PlusPion::class),
+    )    init {
         super.i(2)
         this.set(0, Up())
         this.set(1, AntiDown())
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(PlusPion::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 //    fun decay() : ElectronPositron<PlusPion> {
 //        return ElectronPositron<PlusPion>().decay(this)

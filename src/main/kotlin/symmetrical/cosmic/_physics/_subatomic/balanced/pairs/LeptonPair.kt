@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class LeptonPair(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(LeptonPair::class),
 ) : Particle(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(LeptonPair::class),
     )
 
     public lateinit var lepton     : Lepton
@@ -30,10 +30,7 @@ open class LeptonPair(
         return this
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(LeptonPair::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

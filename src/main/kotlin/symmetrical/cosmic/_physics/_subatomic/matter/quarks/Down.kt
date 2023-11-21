@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Down(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Down::class),
 ) : Quark(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Down::class),
     )
     companion object {
         const val VALUE            = "VALUE"
@@ -29,13 +29,10 @@ class Down(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Down::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : Down {
         super.i()

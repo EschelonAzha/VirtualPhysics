@@ -9,23 +9,20 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class NeutralDownPion(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(NeutralDownPion::class),
 ) : Hadron(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(NeutralDownPion::class),
+    )   init {
         super.i(2)
         this.set(0, Down())
         this.set(1, AntiDown())
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(NeutralDownPion::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 //    fun decay() : ElectronPositron {
 //        return ElectronPositron().decay(this)

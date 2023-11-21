@@ -12,23 +12,20 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 //class ElectronPositron<PlusPion> : LeptonPair {
 class ElectronPositron(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(ElectronPositron::class),
 ) : LeptonPair(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(ElectronPositron::class),
     )
 
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : this(Fermion()) {
+    constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
         i(lepton, antiLepton)
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(ElectronPositron::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 //    fun decay(pion: PlusPion) : ElectronPositron<PlusPion> {
 //        return this

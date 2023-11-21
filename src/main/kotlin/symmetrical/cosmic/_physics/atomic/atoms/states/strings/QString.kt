@@ -8,40 +8,47 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class QString(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(QString::class),
 ) : Atom(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(QString::class),
+    )   init {
         setString("")
     }
 
     constructor(value:String) : this() {
         setString(value)
     }
+    private fun check(photon: Photon) : Unit {
+        val classId = fermion.getClassId()
+
+        val radiation = photon.radiate()
+        if (radiation.startsWith(classId))
+            return
+        println("Radiation Leak in: "+this::class.simpleName)
+        return;
+    }
 
     override fun absorb(photon: Photon) : Photon {
+        check(photon)
         return super.absorb(photon.propagate())
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(QString::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun red() : String {
         return nucleons.getValueProton().red() as String
     }
     fun setString(value:String) : QString {
+
         setQuarkValue(value)
         return this
     }

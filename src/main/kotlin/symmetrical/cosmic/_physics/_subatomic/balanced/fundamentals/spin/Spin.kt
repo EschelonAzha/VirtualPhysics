@@ -8,15 +8,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Spin(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Spin::class),
 ) : Particle(fermion),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
-    ) {
-    }
+        Fermion(Spin::class),
+    )
 
     object Static {
         const val PLUS :Int      = +1
@@ -27,7 +26,7 @@ open class Spin(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -44,14 +43,11 @@ open class Spin(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()  // spin has no fields, we only need to know the
+        return fermion.getClassId()  // spin has no fields, we only need to know the
                              // type of spin
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Spin::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun isPlus() : Boolean {

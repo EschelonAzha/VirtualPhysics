@@ -6,20 +6,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Color(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Color::class),
 ): ChromoCharge(),
     IFermion by fermion {
 
     constructor() : this(
-        Fermion()
-    ) {
-    }
+        Fermion(Color::class),
+    )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Color::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : Color {
         super.i()

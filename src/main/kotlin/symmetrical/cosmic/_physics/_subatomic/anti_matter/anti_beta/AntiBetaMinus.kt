@@ -11,20 +11,17 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class AntiBetaMinus(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(AntiBetaMinus::class),
 ) : LeptonPair(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(AntiBetaMinus::class),
     )
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiBetaMinus::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun decay(baryon: Baryon) : Up {

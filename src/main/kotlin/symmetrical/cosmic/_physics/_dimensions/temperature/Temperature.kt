@@ -5,19 +5,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Temperature (
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Temperature::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    )
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Temperature::class)
+        Fermion(Temperature::class),
+    ) {
+        fermion.setKClass(Temperature::class)
     }
-    open fun getClassId() : String {
-        return getLocalClassId()
+
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     fun i() : Temperature {
         return this

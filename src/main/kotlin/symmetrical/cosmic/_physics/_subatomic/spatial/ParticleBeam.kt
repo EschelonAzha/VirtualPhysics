@@ -12,7 +12,7 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class ParticleBeam(
-    private   val fermion  : IFermion = Fermion(),
+    private   val fermion  : IFermion = Fermion(ParticleBeam::class),
     protected val beam     : Beam = Beam()
 ) : Particle(),
     IFermion by fermion,
@@ -20,15 +20,17 @@ open class ParticleBeam(
     IParticleBeam,
     Emitter
 {
-    constructor() : this(Fermion(), Beam()) {
-    }
+    constructor() : this(
+        Fermion(ParticleBeam::class),
+        Beam()
+    )
     object Static {
         const val LAST      : Int = -1
     }
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -57,7 +59,7 @@ open class ParticleBeam(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId     :String = getLocalClassId()
+        val classId     :String = fermion.getClassId()
         val particle    :String = super.emit().radiate()
         val base52Size  :String = Base52.toFixedBase52(Config.getBase52ArraySize(), size())
 
@@ -69,11 +71,8 @@ open class ParticleBeam(
 
         return emission
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(ParticleBeam::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     open fun i() : ParticleBeam {
         beam.i()

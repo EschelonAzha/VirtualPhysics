@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Dom(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Dom::class),
 ) : Atom(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Dom::class),
     )
 
     private var children  :Molecular     = Molecular()
@@ -22,7 +22,7 @@ open class Dom(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -45,13 +45,11 @@ open class Dom(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
+        return fermion.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
     }
-    private fun getLocalClassId(): String {
-        return Absorber.getClassId(Dom::class)
-    }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun append(dom:Dom) : Dom {

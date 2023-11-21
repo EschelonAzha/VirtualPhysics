@@ -27,14 +27,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 
 
 open class Atom(
-    private   val fermion       : IFermion = Fermion(),
+    private   val fermion       : IFermion             = Fermion(Atom::class),
     private   var orbitals      : Orbitals             = Orbitals(),
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharges         = ColorCharges(),
     private   val quarkValue    : QuarkValue           = QuarkValue()
 
     ) : Particle(),
-        IFermion    by fermion,
+        IFermion                by fermion,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharges           by colorCharges,
@@ -44,12 +44,13 @@ open class Atom(
         IAtom
     {
         constructor() : this(
-            Fermion(),
+            Fermion(Atom::class),
             Orbitals(),
             Nucleons(),
             ColorCharges(),
             QuarkValue(),
-        ) init {
+        )
+        init {
             setAtom(this)
             this.orbitals.setAtom(this)
             this.nucleons.setAtom(this)
@@ -60,7 +61,7 @@ open class Atom(
         }
 
         private fun check(photon: Photon) : Unit {
-            val classId = getClassId()
+            val classId = fermion.getClassId()
 
             val radiation = photon.radiate()
             if (radiation.startsWith(classId))
@@ -83,14 +84,12 @@ open class Atom(
             return Photon(radiate())
         }
         private fun radiate() : String {
-            return getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+            return fermion.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
 
-        private fun getLocalClassId() : String {
-            return Absorber.getClassId(Bits04::class)
-        }
+
         override fun getClassId() : String {
-            return getLocalClassId()
+            return fermion.getClassId()
         }
 
         fun getFieldName() : String {

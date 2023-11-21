@@ -7,20 +7,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class CRLFTerminatedColor(
-    private val fermion: IFermion
+    private val fermion: IFermion = Fermion(CRLFTerminatedColor::class),
 ): Green(),
     IFermion by fermion
 {
 
     constructor() : this(
-        Fermion()
-    )
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(CRLFTerminatedColor::class)
+        Fermion(CRLFTerminatedColor::class),
+    ) {
+        fermion.setKClass(CRLFTerminatedColor::class)
     }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun clone() : CRLFTerminatedColor {
         var result      = CRLFTerminatedColor()

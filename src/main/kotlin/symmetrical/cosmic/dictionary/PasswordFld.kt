@@ -4,21 +4,19 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics.atomic.atoms.states.strings.phases.CrLfTerminatedString
 
 class PasswordFld(
-    private val entanglement: IFermion = Fermion()
-) : QString(entanglement),
-    IFermion by entanglement
+    private val fermion: IFermion = Fermion(PasswordFld::class),
+) : QString(),
+    IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(PasswordFld::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(PasswordFld::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
 }

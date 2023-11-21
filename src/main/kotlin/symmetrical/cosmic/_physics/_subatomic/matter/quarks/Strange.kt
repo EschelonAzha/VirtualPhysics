@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Strange(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Strange::class),
 ) : Quark(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Strange::class),
     )
 
     override fun absorb(photon: Photon) : Photon {
@@ -21,13 +21,10 @@ class Strange(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Strange::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : Strange {
         super.i()

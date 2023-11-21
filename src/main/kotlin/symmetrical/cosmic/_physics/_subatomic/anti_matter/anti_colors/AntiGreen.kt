@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 // ORIGINAL VALUE
 open class AntiGreen (
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(AntiGreen::class),
 ) : AntiColor(),
     IFermion by fermion
 { // Char
     constructor() : this(
-        Fermion()
+        Fermion(AntiGreen::class),
     )
 
     init {
@@ -19,11 +19,8 @@ open class AntiGreen (
     }
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiGreen::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : AntiGreen {
         super.i()

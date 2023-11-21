@@ -11,20 +11,20 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Fundamentals(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Fundamentals::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Fundamentals::class),
     )
     private var angularMomentum : AngularMomentum = AngularMomentum()
     private var spin            : Spin            = Spin()
     private var wavelength      : Wavelength      = Wavelength()
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -46,20 +46,16 @@ class Fundamentals(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val propsId     :String                 = getLocalClassId()
+        val propsId     :String                 = fermion.getClassId()
         val spinId      :String                 = getSpin().emit().radiate()
         val wavelength  :String                 = getWavelength().emit().radiate()
         return propsId+spinId+wavelength
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Fundamentals::class)
-    }
+
     fun getAngularMomentum() : AngularMomentum {
         return angularMomentum
     }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun getPhoton() : Photon {
         return Photon()
     }

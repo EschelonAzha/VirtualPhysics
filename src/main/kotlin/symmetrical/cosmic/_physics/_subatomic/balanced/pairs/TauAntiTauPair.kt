@@ -13,12 +13,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class TauAntiTauPair(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(TauAntiTauPair::class),
 ) : LeptonPair(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(TauAntiTauPair::class),
     )
 
     var reasonCode : Int        = 0
@@ -26,7 +26,7 @@ class TauAntiTauPair(
     var accepted   : Boolean    = true
 
 
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : this(Fermion()) {
+    constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
         i(lepton, antiLepton)
     }
     fun i(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
@@ -37,11 +37,8 @@ class TauAntiTauPair(
         return this
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(ElectronPositron::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun decay(pion: PlusPion) : TauAntiTauPair {

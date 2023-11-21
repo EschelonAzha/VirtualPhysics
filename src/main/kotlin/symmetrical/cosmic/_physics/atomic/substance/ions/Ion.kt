@@ -5,18 +5,15 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Ion(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Ion::class),
 ) :
     IFermion by fermion
 {
 
     constructor() : this(
-        Fermion()
+        Fermion(Ion::class),
     )
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Ion::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 }

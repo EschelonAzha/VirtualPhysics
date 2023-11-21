@@ -6,18 +6,15 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class AntiBottom(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(AntiBottom::class),
 ) : AntiQuark(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(AntiBottom::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiBottom::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

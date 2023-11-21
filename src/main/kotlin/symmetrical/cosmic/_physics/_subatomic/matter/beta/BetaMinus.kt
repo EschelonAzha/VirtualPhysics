@@ -12,19 +12,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class BetaMinus(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(BetaMinus::class),
 ) : LeptonPair(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(BetaMinus::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(BetaMinus::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun decay(baryon: Baryon) : Up {

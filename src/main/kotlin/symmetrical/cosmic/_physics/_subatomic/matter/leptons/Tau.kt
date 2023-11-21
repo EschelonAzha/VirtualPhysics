@@ -7,21 +7,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Tau(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Tau::class),
 ) : Lepton(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Tau::class),
     )
     constructor(newValue : Field) : this() {
         fundamentals.getWavelength().setField(newValue)
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Tau::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : Tau {
         super.i()

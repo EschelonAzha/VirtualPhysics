@@ -7,27 +7,27 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Alloy(
-    vararg mixtures: Substance,
-    private val fermion: IFermion = Fermion(),
+    val mixtures: Substance? = null,
+    private val fermion: IFermion = Fermion(Alloy::class),
 ) :
     IFermion by fermion
 {
-
+    constructor() : this(
+        null,
+        Fermion(Alloy::class),
+    )
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()
 
     init {
-        for (substance in mixtures) {
-            substance.addDerived(substance)
-            mixture.add(substance)
-        }
+//        for (substance in mixtures) {
+//            substance.addDerived(substance)
+//            mixture.add(substance)
+//        }
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Alloy::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 
     fun getSubstance(pos:Int) : Substance {

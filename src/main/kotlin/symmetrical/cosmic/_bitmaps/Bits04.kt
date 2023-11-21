@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Bits04(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Bits04::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Bits04::class)
     )
 
 
@@ -40,12 +40,8 @@ open class Bits04(
 
         return
     }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Bits04::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 
     fun toDecimal() : Int {

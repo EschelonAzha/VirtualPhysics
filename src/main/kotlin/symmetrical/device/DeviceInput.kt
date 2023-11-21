@@ -8,10 +8,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
 class DeviceInput(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(DeviceInput::class),
 ) : Compound(),
     IFermion by fermion
 {
+    constructor() : this(
+        Fermion(DeviceInput::class),
+    )
 
     object Static {
         const val CURRENT_SIZE   = Compound.Static.LAST+1
@@ -22,15 +25,9 @@ class DeviceInput(
 
         const val LAST           = Static.NETWORK_ARRAY;
     }
-    constructor() : this(
-        Fermion()
-    )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(DeviceInput::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : DeviceInput {
         super.i()

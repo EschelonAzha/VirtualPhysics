@@ -8,17 +8,17 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Monad(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Monad::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Monad::class),
     )
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -36,14 +36,12 @@ open class Monad(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Monad::class)
+        return fermion.getClassId()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
+
     fun i() : Monad {
         return this
     }

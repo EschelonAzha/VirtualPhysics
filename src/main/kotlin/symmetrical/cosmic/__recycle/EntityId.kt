@@ -9,4 +9,8 @@ class EntityId {
         this.id = id
         this.kClass = kClass
     }
+
+    override fun toString() : String {
+        return "["+id+":"+kClass.simpleName+"]"
+    }
 }

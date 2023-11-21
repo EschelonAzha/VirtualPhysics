@@ -7,22 +7,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class AntiTau(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(AntiTau::class),
 ) : AntiLepton(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(AntiTau::class),
     )
     constructor(oldValue : Field) : this() {
         fundamentals.getWavelength().setField(oldValue)
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiTau::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : AntiTau {
         super.i()

@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Gravity(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Gravity::class),
 ) : Energy(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Gravity::class),
     )
 
     // Spin 2
@@ -30,11 +30,8 @@ open class Gravity(
     }
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Gravity::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 //    fun run() : Unit {
 //        for (graviton in gravitons) {

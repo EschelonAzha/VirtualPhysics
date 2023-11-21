@@ -8,22 +8,20 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 // ACTUAL VALUE
 open class Red(
-    private val fermion: IFermion
+    private val fermion: IFermion = Fermion(Red::class),
 ): Color(),
     IFermion by fermion
 {  // Boolean
 
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(Red::class),
+    )
+    init {
         color = RED
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Red::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun clone() : Red {
         var result      = Red()

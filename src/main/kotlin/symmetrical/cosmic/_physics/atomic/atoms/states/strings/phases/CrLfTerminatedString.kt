@@ -8,10 +8,10 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class CrLfTerminatedString(
-    private val entanglement: IFermion = Fermion(),
-) : QString(entanglement) {
+    private val fermion: IFermion = Fermion(CrLfTerminatedString::class),
+) : QString() {
     constructor() : this(
-        Fermion()
+        Fermion(CrLfTerminatedString::class),
     ) {
         setQuarkMomentum(CRLFTerminatedMomentum())
         setQuarkSpin(Spin())
@@ -22,11 +22,9 @@ class CrLfTerminatedString(
         setQuarkSpin(Spin())
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(CrLfTerminatedString::class)
-    }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
 }

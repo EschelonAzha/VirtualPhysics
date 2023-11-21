@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Composition(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Composition::class),
 ) : ParticleBeam(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Composition::class),
     )
 
     object Static {
@@ -32,13 +32,10 @@ open class Composition(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Composition::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun getFirst() : IParticle {
         return get(Static.FIRST) as IParticle

@@ -8,21 +8,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Host(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Host::class),
 ) : KeyValue(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Host::class),
     )
     constructor(key: QString, value: QString) : this() {
         add(key)
         add(value)
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Host::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
 }

@@ -16,12 +16,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Proton(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Proton::class),
 ) : Baryon(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Proton::class),
     ) init {
         this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -52,7 +52,7 @@ open class Proton(
     }
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -67,18 +67,15 @@ open class Proton(
     }
 
     override fun emit() : Photon {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate();
+        return fermion.getClassId()+super.emit().radiate();
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Proton::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun getDown() : Down {
         return get(QuarkType.TYPE.value) as Down

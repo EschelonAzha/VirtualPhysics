@@ -6,17 +6,17 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Higgs(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Higgs::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Higgs::class),
     )
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -33,13 +33,10 @@ class Higgs(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Higgs::class)
+        return fermion.getClassId()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun i() : Higgs {
         return this

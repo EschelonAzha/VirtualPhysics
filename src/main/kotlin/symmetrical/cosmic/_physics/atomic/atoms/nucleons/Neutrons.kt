@@ -10,13 +10,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Neutrons(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Neutrons::class),
 ) : ParticleBeam(),
     IFermion by fermion,
     INeutrons
 {
     constructor()  : this(
-        Fermion()
+        Fermion(Neutrons::class),
     )
 
     lateinit var __nucleons:Nucleons
@@ -24,7 +24,7 @@ class Neutrons(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -48,13 +48,10 @@ class Neutrons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Neutrons::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun addNeutron(neutron: Neutron) : Neutron {
         add(neutron)

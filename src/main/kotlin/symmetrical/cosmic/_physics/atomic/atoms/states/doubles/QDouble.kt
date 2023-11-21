@@ -7,21 +7,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class QDouble(
-    private val fermion: Fermion = Fermion()
+    private val fermion: Fermion = Fermion(QDouble::class),
 ) : Atom(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(QDouble::class),
     ) init {
         setDouble(0.0)
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(QDouble::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun red() : Double {
         return nucleons.getValueProton().red() as Double

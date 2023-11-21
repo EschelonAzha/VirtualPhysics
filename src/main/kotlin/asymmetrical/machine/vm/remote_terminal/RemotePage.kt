@@ -20,4 +20,6 @@ class RemotePage : Body {
     private fun getLocalClassId() : String {
         return Absorber.getClassId(RemotePage::class)
     }
+
+
 }

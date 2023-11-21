@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class HiggsField(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(HiggsField::class),
 ) : Energy(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(HiggsField::class),
     )
     // Spin 0
     companion object {
@@ -24,12 +24,8 @@ open class HiggsField(
         }
     }
 
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(HiggsField::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     open fun materialize() : HiggsField {
         println("Higgs")

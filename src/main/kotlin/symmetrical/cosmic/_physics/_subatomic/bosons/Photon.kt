@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Photon(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Photon::class),
 ) : Particle(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Photon::class),
     )
     companion object {
         fun toPhoton(value:Any?, lth:Int=Config.getPhotonLength()) : String {
@@ -58,11 +58,8 @@ open class Photon(
         return
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Photon::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun i() : Photon {
         return this

@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Neutrino(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Neutrino::class),
 ) : Lepton(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Neutrino::class),
     )
 
     lateinit var __beam: ParticleBeam
@@ -20,12 +20,8 @@ class Neutrino(
 
 
 
-    private fun getLocalClassId(): String {
-        return Absorber.getClassId(Neutrino::class)
-    }
-
-    override fun getClassId(): String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 
 //    fun getOrigin(): Particle? {

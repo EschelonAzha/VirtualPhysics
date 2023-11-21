@@ -7,13 +7,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Graviton(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Graviton::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Graviton::class),
     )
 
     var center      : Graviton? = null
@@ -21,7 +21,7 @@ class Graviton(
     var radial      : Graviton? = null
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -39,13 +39,10 @@ class Graviton(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Graviton::class)
+        return fermion.getClassId()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun i(center: Graviton, attract:Unit, radial: Graviton) : Graviton {
         this.center     = center

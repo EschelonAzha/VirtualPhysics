@@ -8,24 +8,22 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Blue_AntiBlue(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Blue_AntiBlue::class),
 ) : Gluon(),
     IFermion by fermion
 {
 
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(Blue_AntiBlue::class),
+    )
+    init {
         color       = Blue()
         antiColor   = AntiBlue()
     }
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Blue_AntiBlue::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : Blue_AntiBlue {
         super.i()

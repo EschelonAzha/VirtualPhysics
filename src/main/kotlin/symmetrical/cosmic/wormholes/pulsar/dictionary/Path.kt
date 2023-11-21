@@ -8,26 +8,21 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Path(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Path::class),
 ) : Molecule(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Path::class),
     )
     init {
         parsePath("")
     }
-    constructor(value:String) : this(Fermion()) {
+    constructor(value:String) : this() {
         parsePath(value)
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Path::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     private fun parsePath(value:String) : Path {
         var tokens = value.split("/")
         for (i in 1 until tokens.size) {

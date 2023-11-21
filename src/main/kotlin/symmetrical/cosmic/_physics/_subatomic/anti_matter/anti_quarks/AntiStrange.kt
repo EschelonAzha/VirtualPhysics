@@ -5,18 +5,15 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class AntiStrange(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(AntiStrange::class),
 ) : AntiQuark(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(AntiStrange::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiStrange::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

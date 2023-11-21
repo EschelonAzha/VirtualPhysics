@@ -13,19 +13,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class AntiBetaPlus(
-    private val fermion: Fermion = Fermion(),
+    private val fermion: Fermion = Fermion(AntiBetaPlus::class),
 ) : LeptonPair(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    )
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiBetaPlus::class)
+        Fermion(AntiBetaPlus::class),
+    ) {
+        fermion.setKClass(AntiBetaPlus::class)
     }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down

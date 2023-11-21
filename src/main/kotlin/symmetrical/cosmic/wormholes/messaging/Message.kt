@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Message(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Message::class),
 ) : ParticleBeam(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Message::class),
     )
 
     object Static {
@@ -21,7 +21,7 @@ open class Message(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -39,13 +39,10 @@ open class Message(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Message::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : Message {
         super.i()

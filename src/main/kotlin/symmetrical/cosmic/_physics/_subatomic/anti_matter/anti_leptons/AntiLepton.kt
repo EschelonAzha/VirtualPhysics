@@ -12,19 +12,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class AntiLepton(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(AntiLepton::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(AntiLepton::class),
     )
 
     protected var fundamentals: Fundamentals = Fundamentals()
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -44,13 +44,10 @@ open class AntiLepton(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+fundamentals.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiLepton::class)
+        return fermion.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     open fun i() : AntiLepton {
         return this

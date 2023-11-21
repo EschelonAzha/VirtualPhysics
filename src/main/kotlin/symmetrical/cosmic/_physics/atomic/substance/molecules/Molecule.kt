@@ -9,21 +9,23 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Molecule(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Molecule::class),
 ) : Molecular(),
     IFermion by fermion,
     Covalent
 {
     constructor() : this(
-        Fermion()
-    )
+        Fermion(Molecule::class),
+    )  {
+        fermion.setKClass(Molecule::class)
+    }
     object Static {
         const val LAST      : Int = -1
     }
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -42,12 +44,9 @@ open class Molecule(
     }
     private fun radiate() : String {
         val (molecularId, remainder) = Strings.remainder(2, super.emit().radiate())
-        return getLocalClassId()+remainder
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Molecule::class)
+        return fermion.getClassId()+remainder
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

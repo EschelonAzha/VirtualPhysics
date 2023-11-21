@@ -6,16 +6,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class DbKey(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(DbKey::class),
 ) : Compound(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(DbKey::class),
     )
 
     fun addKey(atom: Atom) : DbKey {
         add(atom)
         return this;
+    }
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 }

@@ -8,13 +8,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 import symmetrical.dom.DomProperty
 
 class DomStyle(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(DomStyle::class),
 ) : DomProperty(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(DomStyle::class),
+    )
+    init {
         setProperty("style")
     }
     constructor(style:Int) : this() {
@@ -22,7 +23,7 @@ class DomStyle(
     }
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -41,12 +42,10 @@ class DomStyle(
     }
     private fun radiate() : String {
         val (domPropertyId, remainder) = Strings.remainder(2, super.emit().radiate())
-        return getLocalClassId()+remainder
+        return fermion.getClassId()+remainder
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(DomStyle::class)
-    }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

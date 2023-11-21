@@ -5,19 +5,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class EventHorizon (
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(EventHorizon::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(EventHorizon::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(EventHorizon::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     // Event horizon is the API to external libraries and frameworks
 }

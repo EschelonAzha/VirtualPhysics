@@ -8,22 +8,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class BigBang (
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(BigBang::class),
 ):
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(BigBang::class),
     )
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(BigBang::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     fun i(universe: Universe) : BigBang {
         this.universe = universe;

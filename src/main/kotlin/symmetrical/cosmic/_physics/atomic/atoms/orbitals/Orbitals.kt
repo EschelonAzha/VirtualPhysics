@@ -12,13 +12,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Orbitals(
-    private val fermion: Fermion = Fermion(),
+    private val fermion: Fermion = Fermion(Orbitals::class),
 ) : ParticleBeam(),
     IFermion by fermion,
     IOrbitals
 {
     constructor() : this(
-        Fermion()
+        Fermion(Orbitals::class),
     ) init {
         add(Electron())
     }
@@ -32,7 +32,7 @@ open class Orbitals(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -56,13 +56,10 @@ open class Orbitals(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Orbitals::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun getElectronValue() : Electron {
         if (size() == 0) {

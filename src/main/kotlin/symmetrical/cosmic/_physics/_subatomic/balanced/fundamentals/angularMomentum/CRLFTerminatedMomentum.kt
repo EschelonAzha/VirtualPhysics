@@ -7,18 +7,15 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class CRLFTerminatedMomentum(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(CRLFTerminatedMomentum::class),
 ) : AngularMomentum(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(CRLFTerminatedMomentum::class),
     )
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(CRLFTerminatedMomentum::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun format(wavelength: Wavelength) : String {
         return Strings.crlfTerminated(wavelength.toString())

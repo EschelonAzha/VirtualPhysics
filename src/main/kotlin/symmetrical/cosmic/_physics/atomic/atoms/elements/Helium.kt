@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Helium(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Helium::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Helium::class),
     )
     lateinit var atom : Atom
 
@@ -23,10 +23,7 @@ class Helium(
         return this
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Helium::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 }

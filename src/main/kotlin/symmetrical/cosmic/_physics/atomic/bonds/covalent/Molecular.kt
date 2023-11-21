@@ -14,7 +14,7 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Molecular(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Molecular::class),
     private var particleBeam:ParticleBeam=ParticleBeam(),
 
     ) : Atom(fermion),
@@ -23,7 +23,7 @@ open class Molecular(
     IParticle
 {
     constructor() : this(
-        Fermion(),
+        Fermion(Molecular::class),
         ParticleBeam(),
     )
     object Static {
@@ -32,7 +32,7 @@ open class Molecular(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -63,13 +63,10 @@ open class Molecular(
     }
     private fun radiate() : String {
         val particleBeamEmission = particleBeam.emit().radiate()
-        return getLocalClassId()+super.emit().radiate()+particleBeamEmission
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Molecular::class)
+        return fermion.getClassId()+super.emit().radiate()+particleBeamEmission
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     open fun i() : Molecular {
         particleBeam.i()

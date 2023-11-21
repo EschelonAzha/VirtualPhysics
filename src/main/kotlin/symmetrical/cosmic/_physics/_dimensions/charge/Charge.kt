@@ -5,19 +5,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Charge (
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Charge::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Charge::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Charge::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     fun i() : Charge {
         return this

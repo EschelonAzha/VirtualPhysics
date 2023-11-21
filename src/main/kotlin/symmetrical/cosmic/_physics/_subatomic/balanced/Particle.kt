@@ -11,14 +11,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Particle(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Particle::class),
 ) :
     IFermion by fermion,
     IParticle,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Particle::class),
     )
     object Static {
         const val UNIQUE_ID_LENGTH = 1
@@ -28,7 +28,7 @@ open class Particle(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -49,13 +49,11 @@ open class Particle(
     }
     private fun radiate() : String {
         val base52Lth = Base52.toFixedBase52(Static.UNIQUE_ID_LENGTH, uniqueId.length)
-        return getLocalClassId()+base52Lth+uniqueId
+        return fermion.getClassId()+base52Lth+uniqueId
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Particle::class)
-    }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun createUniqueId(): IParticle {
         uniqueId = Keys.getUniqueId()

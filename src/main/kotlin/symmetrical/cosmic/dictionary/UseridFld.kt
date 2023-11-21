@@ -6,18 +6,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class UseridFld(
-    private val entanglement: IFermion = Fermion()
-) : QString(entanglement),
-    IFermion by entanglement
+    private val fermion: IFermion = Fermion(UseridFld::class),
+) : QString(),
+    IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(UseridFld::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(UseridFld::class)
-    }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

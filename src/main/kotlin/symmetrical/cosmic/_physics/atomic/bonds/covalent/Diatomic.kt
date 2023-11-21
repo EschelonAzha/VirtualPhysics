@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class Diatomic(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Diatomic::class),
 ) : Molecular(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Diatomic::class),
     )
     object Static {
         const val LAST      : Int = -1
@@ -24,7 +24,7 @@ open class Diatomic(
     }
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -42,12 +42,9 @@ open class Diatomic(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Diatomic::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

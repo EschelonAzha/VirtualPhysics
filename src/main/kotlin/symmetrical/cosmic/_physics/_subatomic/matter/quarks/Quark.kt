@@ -17,13 +17,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Quark(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Quark::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Quark::class),
     ) {
         this.gluon         = Red_AntiRed()
         this.fundamentals  = Fundamentals()
@@ -37,7 +37,7 @@ open class Quark(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -58,13 +58,10 @@ open class Quark(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+fundamentals.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Quark::class)
+        return fermion.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     open fun i() : Quark {
         return this

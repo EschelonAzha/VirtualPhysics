@@ -10,31 +10,29 @@ class Fermion : IFermion {
         public val beam: ParticleBeam = ParticleBeam()
     }
 
-    var self:Any? = null
+    private lateinit var kClass:KClass<*>
 
-    override fun getAbsorberId() : String {
+    constructor(kClass:KClass<*>) {
+        setKClass(kClass)
+
+    }
+    override fun getClassId() : String {
         return Absorber.getClassId(getKClass())
     }
-
-//    override fun getClassId() : String {
-//        return Absorber.getClassId(getKClass())
-//    }
     public override fun getIlluminations() : ParticleBeam {
         return Illuminations.beam
     }
 
     override fun setKClass(kClass: KClass<*>) : IFermion {
-        return this
-    }
-    override fun setSelf(self: Particle) : Fermion {
-        this.self = self
+        this.kClass = kClass
         return this
     }
 
-    private  fun getKClass() : KClass<*> {
-        if (self == null) {
-            return this::class
-        }
-        return (self as Particle)::class
+
+    private fun getKClass() : KClass<*> {
+        if (::kClass.isInitialized)
+            return kClass
+        return Fermion::class
     }
+
 }

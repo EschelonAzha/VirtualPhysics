@@ -7,22 +7,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class ColorCharges(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(ColorCharges::class),
 ) :
     IFermion by fermion,
     IColorCharges
 {
     constructor() : this (
-        Fermion()
+        Fermion(ColorCharges::class),
     )
 
     lateinit var atom     : Atom
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(ColorCharges::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     override fun setAtom(atom: Atom) : Atom {

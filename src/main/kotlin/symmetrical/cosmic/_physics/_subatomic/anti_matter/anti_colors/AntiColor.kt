@@ -7,15 +7,15 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class AntiColor(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(AntiColor::class),
 ) : ChromoCharge(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(AntiColor::class),
     )
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -32,13 +32,10 @@ open class AntiColor(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AntiColor::class)
+        return fermion.getClassId()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : AntiColor {
         super.i()

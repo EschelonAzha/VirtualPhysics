@@ -6,20 +6,17 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Mixture(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Mixture::class),
 ) : Matter(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Mixture::class),
     )
     // mixtures may be regular classes with all kinds of things
     // mixed together that are other classes but not Atoms or Molecules
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Mixture::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

@@ -9,21 +9,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Kaon(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Kaon::class),
 ) : Hadron(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Kaon::class),
     )
 
     lateinit var quark      : Strange
     lateinit var antiQuark  : AntiUp
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Kaon::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 }

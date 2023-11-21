@@ -113,6 +113,13 @@ open class Beam : IBeam {
         compress()
         return value
     }
+
+    fun print() : Beam {
+        for (i:Int in 0 until count) {
+            println(get(i).toString())
+        }
+        return this
+    }
     fun find(item:Any) : Int {
         for (i:Int in 0 until count) {
             if (get(i)==item) {

@@ -6,21 +6,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class QBoolean(
-    private val fermion: Fermion = Fermion(),
+    private val fermion: Fermion = Fermion(QBoolean::class),
 ) : Atom(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(QBoolean::class),
+    )  init {
         setBoolean(false)
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(QBoolean::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun red() : Boolean {
         return nucleons.getValueProton().red() as Boolean

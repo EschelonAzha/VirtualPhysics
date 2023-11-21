@@ -14,7 +14,7 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class Nucleons(
-    private val fermion     : IFermion = Fermion(),
+    private val fermion     : IFermion = Fermion(Nucleons::class),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
 
@@ -27,10 +27,10 @@ class Nucleons(
 {
 
     constructor() : this(
-        Fermion(),
+        Fermion(Nucleons::class),
         Protons(),
         Neutrons()
-    ) init {
+    )   init {
         setNucleons(this)
     }
 
@@ -39,7 +39,7 @@ class Nucleons(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -64,13 +64,10 @@ class Nucleons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Nucleons::class)
+        return fermion.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun getAtom() : Atom {

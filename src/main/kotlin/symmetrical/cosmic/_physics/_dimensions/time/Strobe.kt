@@ -6,22 +6,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Strobe (
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Strobe::class),
 
     ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Strobe::class),
     )
 
     private val requestAnimationFrame = RequestAnimationFrame().i(this)
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Strobe::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     fun i() : Strobe {
         return this

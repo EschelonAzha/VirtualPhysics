@@ -5,19 +5,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Time (
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Time::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Time::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(symmetrical.cosmic._physics._dimensions.time.Time::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
     fun i() : symmetrical.cosmic._physics._dimensions.time.Time {
         return this

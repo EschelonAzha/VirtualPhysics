@@ -9,22 +9,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 // PHOTON VALUE
 open class Blue(
-    private val fermion: IFermion
+    private val fermion: IFermion = Fermion(Blue::class),
 ): Color(),
     IFermion by fermion
 { // Double
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(Blue::class),
+    )  init {
         color = BLUE
     }
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Blue::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : Blue {
         super.i()

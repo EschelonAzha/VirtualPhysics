@@ -12,14 +12,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class NeutralUpPion(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(NeutralUpPion::class),
 ) : Hadron(),
     IFermion by fermion
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
     constructor() : this(
-        Fermion()
+        Fermion(NeutralUpPion::class),
     )
     constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)
@@ -34,11 +34,8 @@ open class NeutralUpPion(
         nuclearForce()
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(NeutralUpPion::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun nuclearForce() : NeutralUpPion {

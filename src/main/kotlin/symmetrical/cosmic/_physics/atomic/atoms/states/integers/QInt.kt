@@ -8,22 +8,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 // Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
-    private val fermion: Fermion = Fermion()
+    private val fermion: Fermion = Fermion(QInt::class),
 ) : Atom(),
     IFermion by fermion
 {
 
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(QInt::class),
+    )   init {
         setInt(0)
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(QInt::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun red() : Int {
         return nucleons.getValueProton().red() as Int

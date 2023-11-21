@@ -6,18 +6,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Hydrogen(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Hydrogen::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Hydrogen::class),
     )
 
     lateinit var atom : Atom
 
 
-    constructor(atom: Atom) : this(Fermion()) {
+    constructor(atom: Atom) : this() {
         this.atom = atom
     }
     fun i(atom: Atom) : Hydrogen {
@@ -26,10 +26,7 @@ class Hydrogen(
         return this
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Hydrogen::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 }

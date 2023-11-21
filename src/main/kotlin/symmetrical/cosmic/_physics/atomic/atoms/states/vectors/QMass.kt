@@ -8,21 +8,19 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class QMass(
-    private val fermion: Fermion = Fermion()
+    private val fermion: Fermion = Fermion(QMass::class),
 ) : Atom(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(QMass::class),
+    )
+    init {
         setMass(Beam(0))
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(QMass::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun red() : IBeam {
         return nucleons.getValueProton().red() as IBeam

@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class LoginMSG(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(LoginMSG::class),
 ) : Message(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(LoginMSG::class),
     )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1
@@ -30,7 +30,7 @@ class LoginMSG(
     }
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -48,13 +48,10 @@ class LoginMSG(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(LoginMSG::class)
+        return fermion.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun getUserId() : UseridFld {
         return get(Static.USERID) as UseridFld

@@ -6,13 +6,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 open class SocketMessage(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(SocketMessage::class),
 ) : Compound(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
-    )  {
+        Fermion(SocketMessage::class),
+    ) {
         bytes = ByteArray(0)
     }
 
@@ -27,12 +27,7 @@ open class SocketMessage(
         this.bytes = bytes
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(SocketMessage::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun getByteArray() : ByteArray {
         return bytes
     }

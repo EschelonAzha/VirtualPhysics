@@ -10,13 +10,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class ZBoson(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(ZBoson::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(ZBoson::class),
     )
 
     // Neutral Charge
@@ -31,11 +31,8 @@ open class ZBoson(
     private var reason       :String    = ""
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(ZBoson::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun i(newValue: Field, constructing:Boolean = false) : ZBoson {
         this.newValue     = newValue

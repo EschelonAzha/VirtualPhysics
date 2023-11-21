@@ -13,14 +13,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Protons(
-    private val fermion: Fermion = Fermion(),
+    private val fermion: Fermion = Fermion(Protons::class),
 ) : ParticleBeam(),
     IFermion by fermion,
     IProtons
 {
     constructor() : this(
-        Fermion()
-    ) init {
+        Fermion(Protons::class),
+    )    init {
         add(Proton().setProtons(this))
     }
     object Static {
@@ -37,7 +37,7 @@ class Protons(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -61,14 +61,11 @@ class Protons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
+        return fermion.getClassId()+super.emit().radiate()
     }
-    private fun getLocalClassId() : String {
-        val classId = Absorber.getClassId(Protons::class)
-        return classId
-    }
+
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     override fun addProton(proton: Proton) : Proton {

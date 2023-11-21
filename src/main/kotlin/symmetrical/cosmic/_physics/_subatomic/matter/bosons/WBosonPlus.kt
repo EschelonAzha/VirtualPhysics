@@ -8,7 +8,7 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class WBosonPlus (
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(WBosonPlus::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
@@ -16,11 +16,11 @@ class WBosonPlus (
     // Carries the weak force
     // Spin -1
     constructor() : this(
-        Fermion()
+        Fermion(WBosonPlus::class),
     )
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -38,13 +38,10 @@ class WBosonPlus (
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return getLocalClassId()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(WBosonPlus::class)
+        return fermion.getClassId()
     }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun i() : WBosonPlus {
         return this

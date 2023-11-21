@@ -13,20 +13,17 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 class BetaPlus(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(BetaPlus::class),
 ) : LeptonPair(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(BetaPlus::class),
     )
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(BetaPlus::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down

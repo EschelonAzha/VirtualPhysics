@@ -5,19 +5,16 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class MuonNeutrino(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(MuonNeutrino::class),
 ) : Lepton(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(MuonNeutrino::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(MuonNeutrino::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     override fun i() : MuonNeutrino {
         super.i()

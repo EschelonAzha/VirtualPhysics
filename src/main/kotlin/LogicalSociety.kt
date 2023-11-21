@@ -4,6 +4,8 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.cosmology.INebula
+import symmetrical.dom.Dom
+import symmetrical.dom.properties.region.DomHeight
 import websites.logical_society.LogicalSocietyGalaxy
 import websites.logical_society.LogicalSocietyNebula
 import kotlin.reflect.KClass
@@ -11,6 +13,8 @@ import kotlin.reflect.KClass
 fun main(args: Array<String>) {
     Absorber.initialize()    // <######### FIRST!!!!!!
 
+    simpleEmissionTest()
+    testEmissions()
     testDiodes()
 
     println("Start="+System.currentTimeMillis())
@@ -38,3 +42,28 @@ fun testDiodes() : Unit {
 
     return;
 }
+fun testEmissions() {
+    val property = DomHeight(99999999)
+    val child = Dom()
+    val parent = Dom()
+    parent.addProperty(property)
+    parent.append(child)
+
+    val emission = parent.emit().radiate()
+
+    val (emitter, remainder) = Absorber.materialize(emission)
+
+    val clone:Dom = emitter as Dom
+    return
+}
+
+fun simpleEmissionTest() {
+    val atom = Atom("Hello World")
+    val emission = atom.emit().radiate()
+
+    val (clone, remainder) = Absorber.materialize(emission)
+
+    return
+}
+
+

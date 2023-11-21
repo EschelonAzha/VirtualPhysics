@@ -5,17 +5,14 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Material(
-    private val fermion: IFermion = Fermion()
+    private val fermion: IFermion = Fermion(Material::class),
 ) :
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Material::class),
     )
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Material::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 }

@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Strong(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Strong::class),
 ) : Energy(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Strong::class),
     )
 
     companion object {
@@ -25,11 +25,8 @@ open class Strong(
     }
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Strong::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 //    fun run() : Unit {
 //        println("StrongForce")

@@ -9,13 +9,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Hadron(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Hadron::class),
 ) : ParticleBeam(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Hadron::class),
     )
 
 
@@ -26,7 +26,7 @@ open class Hadron(
 
 
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -47,14 +47,11 @@ open class Hadron(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
         return classId+super.emit().radiate()
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Hadron::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun i(size:Int) : Hadron {
         return this

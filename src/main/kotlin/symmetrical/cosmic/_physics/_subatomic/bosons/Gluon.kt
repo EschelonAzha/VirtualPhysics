@@ -12,12 +12,12 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
 open class Gluon(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Gluon::class),
 ) : Particle(),
     IFermion by fermion
 {
     constructor() : this(
-        Fermion()
+        Fermion(Gluon::class),
     )
     // Gluons are confined within
     // Spin 1
@@ -28,11 +28,8 @@ open class Gluon(
 
 
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Gluon::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     open fun i() : Gluon {
         return this

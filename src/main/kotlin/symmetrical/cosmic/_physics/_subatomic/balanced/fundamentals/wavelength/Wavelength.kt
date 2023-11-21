@@ -11,13 +11,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class Wavelength(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(Wavelength::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion()
+        Fermion(Wavelength::class),
     )
     object Static {
         const val NULL      = "0"
@@ -44,7 +44,7 @@ class Wavelength(
         return field.isNull()
     }
     private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
+        val classId = fermion.getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
@@ -115,7 +115,7 @@ class Wavelength(
         return getField().getValue()
     }
     private fun radiate() : String {
-        val prefix = getLocalClassId()+field.getType()
+        val prefix = fermion.getClassId()+field.getType()
         if (field.getType() == Static.NULL)
             return prefix
         if (field.getType() == Static.BOOLEAN)
@@ -136,11 +136,8 @@ class Wavelength(
         return prefix+ Photon.toPhoton3(field.getValue())
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Wavelength::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
 
     fun wavelength() : Any? {

@@ -90,6 +90,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 import symmetrical.cosmic._physics._subatomic.matter.bosons.WBosonPlus
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -276,6 +277,8 @@ object Absorber {
         beam.add(EntityId(Base52.classId(), HtmlPeer::class))
         beam.add(EntityId(Base52.classId(), LoginMSG::class))
         beam.add(EntityId(Base52.classId(), ReadyMSG::class))
+
+        beam.print()
     }
     fun initialize() : Absorber {
         return this
@@ -461,6 +464,7 @@ object Absorber {
         return Pair<Emitter, String>(clone, remainderPhoton.radiate())
     }
     fun getClassId(kClass: KClass<*>) : String {
+
         for (i in 0 until beam.size()) {
             val entityId = beam.get(i) as EntityId
             if (entityId.kClass == kClass)

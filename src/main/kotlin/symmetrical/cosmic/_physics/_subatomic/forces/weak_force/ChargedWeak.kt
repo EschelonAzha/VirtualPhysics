@@ -6,21 +6,18 @@ import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 class ChargedWeak(
-    private val fermion: IFermion = Fermion(),
+    private val fermion: IFermion = Fermion(ChargedWeak::class),
 ) : Particle(),
     IFermion by fermion
 {
     // can emit a charged W Boson that can alter the charge of a Proton by
     // altering the structure of its quarks
     constructor() : this(
-        Fermion()
+        Fermion(ChargedWeak::class),
     )
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(ChargedWeak::class)
-    }
     override fun getClassId() : String {
-        return getLocalClassId()
+        return fermion.getClassId()
     }
     fun i() : ChargedWeak {
         return this

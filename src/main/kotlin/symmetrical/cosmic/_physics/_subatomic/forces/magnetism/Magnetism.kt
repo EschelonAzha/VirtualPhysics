@@ -7,11 +7,13 @@ import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
 
 open class Magnetism(
-    private val fermion: IFermion = Fermion(),
-) : Energy()
+    private val fermion: IFermion = Fermion(Magnetism::class),
+) : Energy(),
+    IFermion by fermion
+
 {
     constructor() : this(
-        Fermion()
+        Fermion(Magnetism::class),
     )
 
     // Spin 2
@@ -24,11 +26,8 @@ open class Magnetism(
         }
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Magnetism::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
+    override fun getClassId() : String {
+        return fermion.getClassId()
     }
 //    fun run() : Unit {
 //        println("Magnetism")
