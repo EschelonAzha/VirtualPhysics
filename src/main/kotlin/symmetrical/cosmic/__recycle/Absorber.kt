@@ -4,6 +4,8 @@ import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import asymmetrical.machine.config.Config
 import asymmetrical.machine.dom.peers.HtmlPeer
 import asymmetrical.machine.vm.Classes
+import symmetrical.cosmic.__recycle.class_groups.Fermions
+import symmetrical.cosmic.__recycle.class_groups.Other
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._bitmaps.*
 import symmetrical.cosmic._physics._subatomic.forces.strong_force.*
@@ -122,6 +124,11 @@ import kotlin.reflect.KClass
 
 object Absorber {
     val beam: ClassGroup = ClassGroup()
+    init {
+        beam.addAll(Fermions())
+        beam.addAll(Other())
+        beam.print()
+    }
 
     fun initialize() : Absorber {
         return this
