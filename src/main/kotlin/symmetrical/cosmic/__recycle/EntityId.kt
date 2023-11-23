@@ -1,5 +1,6 @@
 package symmetrical.cosmic.__recycle
 
+import asymmetrical.machine.vm.Classes
 import kotlin.reflect.KClass
 
 class EntityId {
@@ -12,5 +13,13 @@ class EntityId {
 
     override fun toString() : String {
         return "["+id+":"+kClass.simpleName+"]"
+    }
+
+    fun has(kClass:KClass<*>) : Boolean {
+        return this.kClass == kClass
+    }
+
+    fun newInstance() : Any? {
+        return Classes.createInstance(kClass)
     }
 }
