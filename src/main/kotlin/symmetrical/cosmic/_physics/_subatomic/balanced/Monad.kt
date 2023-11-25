@@ -1,25 +1,24 @@
 package symmetrical.cosmic._physics._subatomic.balanced
 
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Monad(
-    private val fermion: IFermion = Fermion(Monad::class),
+    private val luminescent: ILuminescent = Luminescent(Monad::class),
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
-        Fermion(Monad::class),
+        Luminescent(Monad::class),
     )
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return photon.propagate()
     }
@@ -28,10 +27,10 @@ open class Monad(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun i() : Monad {

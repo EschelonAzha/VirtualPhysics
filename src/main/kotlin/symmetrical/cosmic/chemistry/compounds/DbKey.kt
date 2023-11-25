@@ -2,16 +2,16 @@ package symmetrical.cosmic.chemistry.compounds
 
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class DbKey(
-    private val fermion: IFermion = Fermion(DbKey::class),
+    private val fermion: ILuminescent = Luminescent(DbKey::class),
 ) : Compound(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(DbKey::class),
+        Luminescent(DbKey::class),
     )
 
     fun addKey(atom: Atom) : DbKey {

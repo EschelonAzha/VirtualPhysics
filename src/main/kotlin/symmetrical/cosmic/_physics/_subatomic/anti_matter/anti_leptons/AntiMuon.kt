@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class AntiMuon(
-    private val fermion: IFermion = Fermion(AntiMuon::class),
+    private val luminescent: ILuminescent = Luminescent(AntiMuon::class),
 ) : AntiLepton(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(AntiMuon::class),
+        Luminescent(AntiMuon::class),
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : AntiMuon {
         super.i()

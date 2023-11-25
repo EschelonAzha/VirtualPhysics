@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics.atomic.bonds.alloys
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.substance.Substance
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Alloy(
     val mixtures: Substance? = null,
-    private val fermion: IFermion = Fermion(Alloy::class),
+    private val fermion: ILuminescent = Luminescent(Alloy::class),
 ) :
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
         null,
-        Fermion(Alloy::class),
+        Luminescent(Alloy::class),
     )
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()

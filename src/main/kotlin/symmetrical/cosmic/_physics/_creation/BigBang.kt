@@ -2,25 +2,24 @@ package symmetrical.cosmic._physics._creation
 
 
 import asymmetrical.machine.threads.Cores
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class BigBang (
-    private val fermion: IFermion = Fermion(BigBang::class),
+    private val luminescent: ILuminescent = Luminescent(BigBang::class),
 ):
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(BigBang::class),
+        Luminescent(BigBang::class),
     )
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i(universe: Universe) : BigBang {
         this.universe = universe;

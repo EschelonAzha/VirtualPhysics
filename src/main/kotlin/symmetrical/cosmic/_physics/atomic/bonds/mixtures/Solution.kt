@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.bonds.mixtures
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.matter.Matter
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Solution(
-    private val fermion: IFermion = Fermion(Solution::class),
+    private val fermion: ILuminescent = Luminescent(Solution::class),
 ) : Matter(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Solution::class),
+        Luminescent(Solution::class),
     )
 
     override fun getClassId() : String {

@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.booleans
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class QBoolean(
-    private val fermion: Fermion = Fermion(QBoolean::class),
+    private val fermion: Luminescent = Luminescent(QBoolean::class),
 ) : Atom(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(QBoolean::class),
+        Luminescent(QBoolean::class),
     )  init {
         setBoolean(false)
     }

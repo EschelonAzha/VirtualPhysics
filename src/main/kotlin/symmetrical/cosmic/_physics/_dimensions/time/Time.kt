@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics._dimensions.time
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Time (
-    private val fermion: IFermion = Fermion(Time::class),
+    private val luminescent: ILuminescent = Luminescent(Time::class),
 ) :
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(Time::class),
+        Luminescent(Time::class),
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : symmetrical.cosmic._physics._dimensions.time.Time {
         return this

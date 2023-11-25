@@ -1,6 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -9,17 +8,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Baryon(
-    private val fermion: IFermion = Fermion(Baryon::class),
+    private val fermion: ILuminescent = Luminescent(Baryon::class),
 ) : Hadron(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Baryon::class),
+        Luminescent(Baryon::class),
     )
     init {
         super.i(3)

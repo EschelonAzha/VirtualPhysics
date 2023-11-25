@@ -1,18 +1,17 @@
 package symmetrical.dom.properties.identification
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 import symmetrical.dom.DomProperty
 
 class DomId(
-    private val fermion: IFermion = Fermion(DomId::class),
+    private val fermion: ILuminescent = Luminescent(DomId::class),
 ) : DomProperty(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(DomId::class),
+        Luminescent(DomId::class),
     )
     init {
         setProperty("id")

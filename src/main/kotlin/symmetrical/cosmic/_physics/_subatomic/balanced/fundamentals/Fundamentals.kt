@@ -7,17 +7,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Fundamentals(
-    private val fermion: IFermion = Fermion(Fundamentals::class),
+    private val luminescent: ILuminescent = Luminescent(Fundamentals::class),
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
-        Fermion(Fundamentals::class),
+        Luminescent(Fundamentals::class),
     )
     private var angularMomentum : AngularMomentum = AngularMomentum()
     private var spin            : Spin            = Spin()
@@ -25,7 +25,7 @@ class Fundamentals(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         var (spin, spinRemainder) = Absorber.materialize(photon.propagate())
         setSpin(spin as Spin)
@@ -38,7 +38,7 @@ class Fundamentals(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val propsId     :String                 = fermion.getClassId()
+        val propsId     :String                 = luminescent.getClassId()
         val spinId      :String                 = getSpin().emit().radiate()
         val wavelength  :String                 = getWavelength().emit().radiate()
         return propsId+spinId+wavelength

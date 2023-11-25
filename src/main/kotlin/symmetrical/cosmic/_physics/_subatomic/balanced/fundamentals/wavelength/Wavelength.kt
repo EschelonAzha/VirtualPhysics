@@ -1,23 +1,22 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Wavelength(
-    private val fermion: IFermion = Fermion(Wavelength::class),
+    private val luminescent: ILuminescent = Luminescent(Wavelength::class),
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
-        Fermion(Wavelength::class),
+        Luminescent(Wavelength::class),
     )
     object Static {
         const val NULL      = "0"
@@ -45,7 +44,7 @@ class Wavelength(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         var (type, lthValue) = Strings.remainder(Static.NUMBERS_LTH, photon.propagate().radiate())
         if (type == Static.NULL) {
@@ -107,7 +106,7 @@ class Wavelength(
         return getField().getValue()
     }
     private fun radiate() : String {
-        val prefix = fermion.getClassId()+field.getType()
+        val prefix = luminescent.getClassId()+field.getType()
         if (field.getType() == Static.NULL)
             return prefix
         if (field.getType() == Static.BOOLEAN)
@@ -129,7 +128,7 @@ class Wavelength(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun wavelength() : Any? {

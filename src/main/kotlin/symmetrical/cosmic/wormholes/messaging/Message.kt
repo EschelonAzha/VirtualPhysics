@@ -1,18 +1,17 @@
 package symmetrical.cosmic.wormholes.messaging
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Message(
-    private val fermion: IFermion = Fermion(Message::class),
+    private val fermion: ILuminescent = Luminescent(Message::class),
 ) : ParticleBeam(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Message::class),
+        Luminescent(Message::class),
     )
 
     object Static {

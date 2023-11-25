@@ -1,19 +1,17 @@
 package symmetrical.dom.properties.region
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 import symmetrical.dom.DomProperty
-import symmetrical.dom.properties.style.DomStyle
 
 class DomTop(
-    private val fermion: IFermion = Fermion(DomTop::class),
+    private val fermion: ILuminescent = Luminescent(DomTop::class),
 ) : DomProperty(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(DomTop::class),
+        Luminescent(DomTop::class),
     )
     init {
         setProperty("top")

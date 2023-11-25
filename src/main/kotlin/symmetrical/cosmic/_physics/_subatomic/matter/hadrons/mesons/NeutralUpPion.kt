@@ -1,25 +1,24 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class NeutralUpPion(
-    private val fermion: IFermion = Fermion(NeutralUpPion::class),
+    private val fermion: ILuminescent = Luminescent(NeutralUpPion::class),
 ) : Hadron(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
     constructor() : this(
-        Fermion(NeutralUpPion::class),
+        Luminescent(NeutralUpPion::class),
     )
     constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)

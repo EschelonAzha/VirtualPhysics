@@ -8,17 +8,17 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Lepton(
-    private val fermion: IFermion = Fermion(Lepton::class),
+    private val fermion: ILuminescent = Luminescent(Lepton::class),
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion(Lepton::class),
+        Luminescent(Lepton::class),
     )
 
     protected var fundamentals: Fundamentals = Fundamentals()

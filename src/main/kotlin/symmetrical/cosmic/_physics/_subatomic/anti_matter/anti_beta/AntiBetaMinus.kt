@@ -1,27 +1,26 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_beta
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiNeutrino
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class AntiBetaMinus(
-    private val fermion: IFermion = Fermion(AntiBetaMinus::class),
+    private val luminescent: ILuminescent = Luminescent(AntiBetaMinus::class),
 ) : LeptonPair(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(AntiBetaMinus::class),
+        Luminescent(AntiBetaMinus::class),
     )
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun decay(baryon: Baryon) : Up {

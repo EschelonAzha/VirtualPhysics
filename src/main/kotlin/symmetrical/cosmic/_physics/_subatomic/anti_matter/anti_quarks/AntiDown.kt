@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class AntiDown(
-    private val fermion: IFermion = Fermion(AntiDown::class),
-) : AntiQuark(fermion),
-    IFermion by fermion
+    private val luminescent: ILuminescent = Luminescent(AntiDown::class),
+) : AntiQuark(),
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(AntiDown::class),
+        Luminescent(AntiDown::class),
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

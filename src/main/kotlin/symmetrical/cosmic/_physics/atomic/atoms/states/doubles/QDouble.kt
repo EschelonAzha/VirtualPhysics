@@ -1,18 +1,17 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.doubles
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class QDouble(
-    private val fermion: Fermion = Fermion(QDouble::class),
+    private val fermion: Luminescent = Luminescent(QDouble::class),
 ) : Atom(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(QDouble::class),
+        Luminescent(QDouble::class),
     ) init {
         setDouble(0.0)
     }

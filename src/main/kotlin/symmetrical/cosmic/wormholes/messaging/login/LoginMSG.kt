@@ -1,20 +1,19 @@
 package symmetrical.cosmic.wormholes.messaging.login
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic.dictionary.PasswordFld
 import symmetrical.cosmic.dictionary.UseridFld
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class LoginMSG(
-    private val fermion: IFermion = Fermion(LoginMSG::class),
+    private val fermion: ILuminescent = Luminescent(LoginMSG::class),
 ) : Message(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(LoginMSG::class),
+        Luminescent(LoginMSG::class),
     )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1

@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics._subatomic.matter.quarks
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Strange(
-    private val fermion: IFermion = Fermion(Strange::class),
+    private val fermion: ILuminescent = Luminescent(Strange::class),
 ) : Quark(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Strange::class),
+        Luminescent(Strange::class),
     )
 
     override fun absorb(photon: Photon) : Photon {

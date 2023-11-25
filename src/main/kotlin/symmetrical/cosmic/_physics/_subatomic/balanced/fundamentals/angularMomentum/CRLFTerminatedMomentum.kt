@@ -1,21 +1,20 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class CRLFTerminatedMomentum(
-    private val fermion: IFermion = Fermion(CRLFTerminatedMomentum::class),
+    private val luminescent: ILuminescent = Luminescent(CRLFTerminatedMomentum::class),
 ) : AngularMomentum(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(CRLFTerminatedMomentum::class),
+        Luminescent(CRLFTerminatedMomentum::class),
     )
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun format(wavelength: Wavelength) : String {
         return Strings.crlfTerminated(wavelength.toString())

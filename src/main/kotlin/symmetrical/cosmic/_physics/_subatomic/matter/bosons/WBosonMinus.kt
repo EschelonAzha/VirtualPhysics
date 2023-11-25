@@ -1,23 +1,22 @@
 package symmetrical.cosmic._physics._subatomic.matter.bosons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class WBosonMinus(
-    private val fermion: IFermion = Fermion(WBosonMinus::class),
+    private val fermion: ILuminescent = Luminescent(WBosonMinus::class),
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by fermion,
     Emitter
 {
     // Carries the weak force
     // Spin 1
     constructor() : this(
-        Fermion(WBosonMinus::class),
+        Luminescent(WBosonMinus::class),
     )
 
 

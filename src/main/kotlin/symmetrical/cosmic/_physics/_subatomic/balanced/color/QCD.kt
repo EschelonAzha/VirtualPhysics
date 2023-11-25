@@ -1,16 +1,15 @@
 package symmetrical.cosmic._physics._subatomic.balanced.color
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class QCD (
-    private val fermion: IFermion = Fermion(QCD::class),
+    private val luminescent: ILuminescent = Luminescent(QCD::class),
 ) :
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(QCD::class),
+        Luminescent(QCD::class),
     )
     /*
         ARRAY      A-???
@@ -24,7 +23,7 @@ class QCD (
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : QCD {
         return this

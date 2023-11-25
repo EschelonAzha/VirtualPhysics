@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Positron (
-    private val fermion: IFermion = Fermion(Positron::class),
+    private val luminescent: ILuminescent = Luminescent(Positron::class),
 ) : AntiLepton(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(Positron::class),
+        Luminescent(Positron::class),
     )
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Positron {
         super.i()

@@ -1,6 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.balanced.quarks
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
@@ -8,23 +7,23 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class QuarkValue(
-    private val fermion: IFermion = Fermion(QuarkValue::class),
+    private val luminescent: ILuminescent = Luminescent(QuarkValue::class),
 )  :
-    IFermion by fermion,
+    ILuminescent by luminescent,
     IQuarkValue
 {
     constructor() : this(
-        Fermion(QuarkValue::class),
+        Luminescent(QuarkValue::class),
     )
     lateinit var atom:Atom
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun setAtom(atom: Atom) : Atom {
         this.atom = atom

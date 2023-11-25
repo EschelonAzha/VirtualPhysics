@@ -1,23 +1,22 @@
 package symmetrical.cosmic._physics._subatomic.matter.beta
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiNeutrino
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class BetaMinus(
-    private val fermion: IFermion = Fermion(BetaMinus::class),
+    private val fermion: ILuminescent = Luminescent(BetaMinus::class),
 ) : LeptonPair(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(BetaMinus::class),
+        Luminescent(BetaMinus::class),
     )
 
     override fun getClassId() : String {

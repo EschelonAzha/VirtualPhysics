@@ -1,22 +1,21 @@
 package symmetrical.cosmic._physics.atomic.atoms.nucleons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Neutrons(
-    private val fermion: IFermion = Fermion(Neutrons::class),
+    private val fermion: ILuminescent = Luminescent(Neutrons::class),
 ) : ParticleBeam(),
-    IFermion by fermion,
+    ILuminescent by fermion,
     INeutrons
 {
     constructor()  : this(
-        Fermion(Neutrons::class),
+        Luminescent(Neutrons::class),
     )
 
     lateinit var __nucleons:Nucleons

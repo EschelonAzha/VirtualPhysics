@@ -1,24 +1,23 @@
 package symmetrical.cosmic._physics._subatomic.balanced
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Particle(
-    private val fermion: IFermion = Fermion(Particle::class),
+    private val luminescent: ILuminescent = Luminescent(Particle::class),
 ) :
-    IFermion by fermion,
+    ILuminescent by luminescent,
     IParticle,
     Emitter
 {
     constructor() : this(
-        Fermion(Particle::class),
+        Luminescent(Particle::class),
     )
     object Static {
         const val UNIQUE_ID_LENGTH = 1
@@ -29,7 +28,7 @@ open class Particle(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         val (uniqueId, remainder) = Photons.parse(Static.UNIQUE_ID_LENGTH, photon.propagate().radiate())
         this.uniqueId = uniqueId
@@ -41,11 +40,11 @@ open class Particle(
     }
     private fun radiate() : String {
         val base52Lth = Base52.toFixedBase52(Static.UNIQUE_ID_LENGTH, uniqueId.length)
-        return fermion.getClassId()+base52Lth+uniqueId
+        return luminescent.getClassId()+base52Lth+uniqueId
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun createUniqueId(): IParticle {
         uniqueId = Keys.getUniqueId()

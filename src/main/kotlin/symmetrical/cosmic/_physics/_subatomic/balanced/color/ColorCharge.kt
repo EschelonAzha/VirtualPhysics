@@ -2,23 +2,23 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class ColorCharge(
-    private val fermion: IFermion = Fermion(ColorCharge::class),
+    private val luminescent: ILuminescent = Luminescent(ColorCharge::class),
 ) :
-    IFermion by fermion,
+    ILuminescent by luminescent,
     IColorCharge
 {
     constructor() : this (
-        Fermion(ColorCharge::class),
+        Luminescent(ColorCharge::class),
     )
 
     lateinit var atom     : Atom
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     override fun setAtom(atom: Atom) : Atom {

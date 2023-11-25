@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.vectors
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.spatial.Beam
 import symmetrical.cosmic._physics._subatomic.spatial.IBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class QMass(
-    private val fermion: Fermion = Fermion(QMass::class),
+    private val fermion: Luminescent = Luminescent(QMass::class),
 ) : Atom(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(QMass::class),
+        Luminescent(QMass::class),
     )
     init {
         setMass(Beam(0))

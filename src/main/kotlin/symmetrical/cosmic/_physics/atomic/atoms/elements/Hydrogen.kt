@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.atoms.elements
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Hydrogen(
-    private val fermion: IFermion = Fermion(Hydrogen::class),
+    private val fermion: ILuminescent = Luminescent(Hydrogen::class),
 ) :
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Hydrogen::class),
+        Luminescent(Hydrogen::class),
     )
 
     lateinit var atom : Atom

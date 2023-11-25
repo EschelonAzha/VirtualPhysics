@@ -1,16 +1,15 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class MuonNeutrino(
-    private val fermion: IFermion = Fermion(MuonNeutrino::class),
+    private val fermion: ILuminescent = Luminescent(MuonNeutrino::class),
 ) : Lepton(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(MuonNeutrino::class),
+        Luminescent(MuonNeutrino::class),
     )
 
     override fun getClassId() : String {

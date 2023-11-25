@@ -1,6 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.balanced.pairs
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiTau
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
@@ -9,16 +8,16 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Tau
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class TauAntiTauPair(
-    private val fermion: IFermion = Fermion(TauAntiTauPair::class),
+    private val luminescent: ILuminescent = Luminescent(TauAntiTauPair::class),
 ) : LeptonPair(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(TauAntiTauPair::class),
+        Luminescent(TauAntiTauPair::class),
     )
 
     var reasonCode : Int        = 0
@@ -38,7 +37,7 @@ class TauAntiTauPair(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun decay(pion: PlusPion) : TauAntiTauPair {

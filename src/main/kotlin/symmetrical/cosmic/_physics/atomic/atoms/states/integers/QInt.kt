@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.integers
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 // Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
-    private val fermion: Fermion = Fermion(QInt::class),
+    private val fermion: Luminescent = Luminescent(QInt::class),
 ) : Atom(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
 
     constructor() : this(
-        Fermion(QInt::class),
+        Luminescent(QInt::class),
     )   init {
         setInt(0)
     }

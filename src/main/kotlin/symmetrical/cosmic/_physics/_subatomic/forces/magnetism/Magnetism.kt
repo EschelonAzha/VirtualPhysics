@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.forces.magnetism
 
 import asymmetrical.machine.threads.Energy
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Magnetism(
-    private val fermion: IFermion = Fermion(Magnetism::class),
+    private val fermion: ILuminescent = Luminescent(Magnetism::class),
 ) : Energy(),
-    IFermion by fermion
+    ILuminescent by fermion
 
 {
     constructor() : this(
-        Fermion(Magnetism::class),
+        Luminescent(Magnetism::class),
     )
 
     // Spin 2

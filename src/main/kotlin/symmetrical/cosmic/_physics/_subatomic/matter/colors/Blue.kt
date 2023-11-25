@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics._subatomic.matter.colors
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Blue_AntiBlue
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 // PHOTON VALUE
 open class Blue(
-    private val fermion: IFermion = Fermion(Blue::class),
+    private val fermion: ILuminescent = Luminescent(Blue::class),
 ): Color(),
-    IFermion by fermion
+    ILuminescent by fermion
 { // Double
     constructor() : this(
-        Fermion(Blue::class),
+        Luminescent(Blue::class),
     )  init {
         color = BLUE
     }

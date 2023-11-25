@@ -1,6 +1,5 @@
 package symmetrical.cosmic._physics.atomic.bonds.covalent
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
@@ -10,20 +9,20 @@ import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Molecular(
-    private val fermion: IFermion = Fermion(Molecular::class),
+    private val fermion: ILuminescent = Luminescent(Molecular::class),
     private var particleBeam:ParticleBeam=ParticleBeam(),
 
     ) : Atom(fermion),
-    IFermion by fermion,
+    ILuminescent by fermion,
     IParticleBeam by particleBeam,
     IParticle
 {
     constructor() : this(
-        Fermion(Molecular::class),
+        Luminescent(Molecular::class),
         ParticleBeam(),
     )
     object Static {

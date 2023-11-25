@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics._subatomic.bosons
 
 import asymmetrical.machine.config.Config
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Photon(
-    private val fermion: IFermion = Fermion(Photon::class),
+    private val fermion: ILuminescent = Luminescent(Photon::class),
 ) : Particle(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Photon::class),
+        Luminescent(Photon::class),
     )
     companion object {
         fun toPhoton(value:Any?, lth:Int=Config.getPhotonLength()) : String {

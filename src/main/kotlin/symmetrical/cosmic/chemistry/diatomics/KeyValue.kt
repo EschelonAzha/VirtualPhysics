@@ -1,16 +1,15 @@
 package symmetrical.cosmic.chemistry.diatomics
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class KeyValue(
-    private val fermion: IFermion = Fermion(KeyValue::class),
+    private val fermion: ILuminescent = Luminescent(KeyValue::class),
 ) : Diatomic(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
 
     object Static {
@@ -20,7 +19,7 @@ open class KeyValue(
         const val LAST      : Int = VALUE
     }
     constructor() : this(
-        Fermion(KeyValue::class),
+        Luminescent(KeyValue::class),
     )
     constructor(key: Atom, value:Atom) : this(){
         add(key)

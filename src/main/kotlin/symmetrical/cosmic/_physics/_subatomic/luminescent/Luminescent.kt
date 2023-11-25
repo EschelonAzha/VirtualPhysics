@@ -1,12 +1,11 @@
-package symmetrical.cosmic._physics._subatomic.fermions
+package symmetrical.cosmic._physics._subatomic.luminescent
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import kotlin.reflect.KClass
 
-class Fermion : IFermion {
+class Luminescent : ILuminescent {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
@@ -34,7 +33,7 @@ class Fermion : IFermion {
         return Illuminations.beam
     }
 
-    override fun setKClass(kClass: KClass<*>) : IFermion {
+    override fun setKClass(kClass: KClass<*>) : ILuminescent {
         this.kClass = kClass
         return this
     }
@@ -43,7 +42,7 @@ class Fermion : IFermion {
     private fun getKClass() : KClass<*> {
         if (::kClass.isInitialized)
             return kClass
-        return Fermion::class
+        return Luminescent::class
     }
 
 }

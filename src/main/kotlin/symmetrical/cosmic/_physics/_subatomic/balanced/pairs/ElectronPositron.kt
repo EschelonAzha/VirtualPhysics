@@ -1,23 +1,22 @@
 package symmetrical.cosmic._physics._subatomic.balanced.pairs
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 //class ElectronPositron<PlusPion> : LeptonPair {
 class ElectronPositron(
-    private val fermion: IFermion = Fermion(ElectronPositron::class),
+    private val luminescent: ILuminescent = Luminescent(ElectronPositron::class),
 ) : LeptonPair(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(ElectronPositron::class),
+        Luminescent(ElectronPositron::class),
     )
 
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
@@ -25,7 +24,7 @@ class ElectronPositron(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 //    fun decay(pion: PlusPion) : ElectronPositron<PlusPion> {
 //        return this

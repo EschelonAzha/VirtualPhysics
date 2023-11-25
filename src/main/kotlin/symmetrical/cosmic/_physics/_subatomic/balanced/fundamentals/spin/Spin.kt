@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Spin(
-    private val fermion: IFermion = Fermion(Spin::class),
-) : Particle(fermion),
-    IFermion by fermion,
+    private val luminescent: ILuminescent = Luminescent(Spin::class),
+) : Particle(),
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
-        Fermion(Spin::class),
+        Luminescent(Spin::class),
     )
 
     object Static {
@@ -27,7 +26,7 @@ open class Spin(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return photon.propagate()
     }
@@ -35,11 +34,11 @@ open class Spin(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()  // spin has no fields, we only need to know the
+        return luminescent.getClassId()  // spin has no fields, we only need to know the
                              // type of spin
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun isPlus() : Boolean {

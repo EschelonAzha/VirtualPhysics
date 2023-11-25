@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class MinusPion (
-    private val fermion: IFermion = Fermion(MinusPion::class),
+    private val fermion: ILuminescent = Luminescent(MinusPion::class),
 ) : Hadron(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
 
     constructor() : this(
-        Fermion(MinusPion::class),
+        Luminescent(MinusPion::class),
     ) init {
         super.i(2);
         this.set(0, Down())

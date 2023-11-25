@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.matter
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Matter(
-    private val fermion: IFermion = Fermion(Matter::class),
+    private val fermion: ILuminescent = Luminescent(Matter::class),
 ) :
-    IFermion by fermion
+    ILuminescent by fermion
 {
 
     constructor() : this(
-        Fermion(Matter::class),
+        Luminescent(Matter::class),
     )
     override fun getClassId() : String {
         return fermion.getClassId()

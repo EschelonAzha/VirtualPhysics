@@ -1,17 +1,17 @@
 package symmetrical.cosmic._physics._subatomic.bosons
 
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class HiggsBoson(
-    private val fermion: IFermion = Fermion(HiggsBoson::class),
+    private val fermion: ILuminescent = Luminescent(HiggsBoson::class),
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion(HiggsBoson::class),
+        Luminescent(HiggsBoson::class),
     )
 
 

@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.bosons.gluons
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiRed
 import symmetrical.cosmic._physics._subatomic.matter.colors.Blue
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Blue_AntiRed  (
-    private val fermion: IFermion = Fermion(Blue_AntiRed::class),
+    private val fermion: ILuminescent = Luminescent(Blue_AntiRed::class),
 ) : Gluon(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Blue_AntiRed::class),
+        Luminescent(Blue_AntiRed::class),
     )
     init {
         color       = Blue()

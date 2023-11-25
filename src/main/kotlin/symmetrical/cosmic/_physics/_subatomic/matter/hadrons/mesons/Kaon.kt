@@ -1,20 +1,19 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Strange
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Kaon(
-    private val fermion: IFermion = Fermion(Kaon::class),
+    private val fermion: ILuminescent = Luminescent(Kaon::class),
 ) : Hadron(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Kaon::class),
+        Luminescent(Kaon::class),
     )
 
     lateinit var quark      : Strange

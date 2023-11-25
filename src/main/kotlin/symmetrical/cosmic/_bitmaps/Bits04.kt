@@ -1,16 +1,15 @@
 package symmetrical.cosmic._bitmaps
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Bits04(
-    private val fermion: IFermion = Fermion(Bits04::class),
+    private val luminescent: ILuminescent = Luminescent(Bits04::class),
 ) :
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(Bits04::class)
+        Luminescent(Bits04::class)
     )
 
 
@@ -41,7 +40,7 @@ open class Bits04(
         return
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun toDecimal() : Int {

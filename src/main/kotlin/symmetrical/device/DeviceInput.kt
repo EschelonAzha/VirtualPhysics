@@ -1,19 +1,18 @@
 package symmetrical.device
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
 class DeviceInput(
-    private val fermion: IFermion = Fermion(DeviceInput::class),
+    private val fermion: ILuminescent = Luminescent(DeviceInput::class),
 ) : Compound(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(DeviceInput::class),
+        Luminescent(DeviceInput::class),
     )
 
     object Static {

@@ -1,16 +1,15 @@
 package symmetrical.cosmic._bitmaps
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Bits24 (
-    private val fermion: IFermion = Fermion(Bits24::class),
+    private val luminescent: ILuminescent = Luminescent(Bits24::class),
 ) :
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(Bits24::class),
+        Luminescent(Bits24::class),
     )
 
     var top     : Bits08 = Bits08()
@@ -24,7 +23,7 @@ class Bits24 (
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun size() : Int {
         return 3

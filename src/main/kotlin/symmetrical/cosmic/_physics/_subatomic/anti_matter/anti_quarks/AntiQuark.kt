@@ -12,17 +12,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class AntiQuark(
-    private val fermion: IFermion = Fermion(AntiQuark::class),
+    private val luminescent: ILuminescent = Luminescent(AntiQuark::class),
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
-        Fermion(AntiQuark::class),
+        Luminescent(AntiQuark::class),
     )
 
     private var gluon       : Gluon         = Red_AntiRed()
@@ -31,7 +31,7 @@ open class AntiQuark(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         this.gluon                                  = Red_AntiRed()  // this is need for JS Bug
         val (clone, remainder)        = Absorber.materialize(photon.propagate())
@@ -43,10 +43,10 @@ open class AntiQuark(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+fundamental.emit().radiate()
+        return luminescent.getClassId()+fundamental.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     open fun i() : AntiQuark {
         return this

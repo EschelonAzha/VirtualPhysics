@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.balanced.pairs
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class LeptonPair(
-    private val fermion: IFermion = Fermion(LeptonPair::class),
+    private val luminescent: ILuminescent = Luminescent(LeptonPair::class),
 ) : Particle(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(LeptonPair::class),
+        Luminescent(LeptonPair::class),
     )
 
     public lateinit var lepton     : Lepton
@@ -31,6 +30,6 @@ open class LeptonPair(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

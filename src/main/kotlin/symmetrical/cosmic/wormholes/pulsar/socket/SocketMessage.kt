@@ -1,17 +1,16 @@
 package symmetrical.cosmic.wormholes.pulsar.socket
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class SocketMessage(
-    private val fermion: IFermion = Fermion(SocketMessage::class),
+    private val fermion: ILuminescent = Luminescent(SocketMessage::class),
 ) : Compound(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(SocketMessage::class),
+        Luminescent(SocketMessage::class),
     ) {
         bytes = ByteArray(0)
     }

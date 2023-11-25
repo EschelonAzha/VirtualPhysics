@@ -1,21 +1,20 @@
 package symmetrical.cosmic._physics.atomic.substance.molecules
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Covalent
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Molecule(
-    private val fermion: IFermion = Fermion(Molecule::class),
+    private val fermion: ILuminescent = Luminescent(Molecule::class),
 ) : Molecular(),
-    IFermion by fermion,
+    ILuminescent by fermion,
     Covalent
 {
     constructor() : this(
-        Fermion(Molecule::class),
+        Luminescent(Molecule::class),
     )  {
         fermion.setKClass(Molecule::class)
     }

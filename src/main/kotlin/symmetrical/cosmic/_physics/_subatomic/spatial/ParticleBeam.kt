@@ -8,20 +8,20 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class ParticleBeam(
-    private   val fermion  : IFermion = Fermion(ParticleBeam::class),
+    private   val fermion  : ILuminescent = Luminescent(ParticleBeam::class),
     protected val beam     : Beam = Beam()
 ) : Particle(),
-    IFermion by fermion,
+    ILuminescent by fermion,
     IBeam by beam,
     IParticleBeam,
     Emitter
 {
     constructor() : this(
-        Fermion(ParticleBeam::class),
+        Luminescent(ParticleBeam::class),
         Beam()
     )
     object Static {

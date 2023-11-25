@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.blackhole
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Blackhole(
-    private val fermion: IFermion = Fermion(Blackhole::class),
+    private val fermion: ILuminescent = Luminescent(Blackhole::class),
 ) :
-    IFermion by fermion
+    ILuminescent by fermion
 {
 
     constructor() : this(
-        Fermion(Blackhole::class),
+        Luminescent(Blackhole::class),
     )
     override fun getClassId() : String {
         return fermion.getClassId()

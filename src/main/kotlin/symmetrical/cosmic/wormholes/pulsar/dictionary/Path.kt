@@ -1,19 +1,18 @@
 package symmetrical.cosmic.wormholes.pulsar.dictionary
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics.atomic.substance.molecules.Molecule
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Path(
-    private val fermion: IFermion = Fermion(Path::class),
+    private val fermion: ILuminescent = Luminescent(Path::class),
 ) : Molecule(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Path::class),
+        Luminescent(Path::class),
     )
     init {
         parsePath("")

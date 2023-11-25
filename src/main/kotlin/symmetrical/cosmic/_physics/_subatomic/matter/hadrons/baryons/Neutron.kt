@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Neutron(
-    private val fermion: IFermion = Fermion(Neutron::class),
+    private val fermion: ILuminescent = Luminescent(Neutron::class),
 ) : Baryon(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Neutron::class),
+        Luminescent(Neutron::class),
     ) init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

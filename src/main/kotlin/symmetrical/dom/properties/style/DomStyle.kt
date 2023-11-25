@@ -1,19 +1,18 @@
 package symmetrical.dom.properties.style
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 import symmetrical.dom.DomProperty
 
 class DomStyle(
-    private val fermion: IFermion = Fermion(DomStyle::class),
+    private val fermion: ILuminescent = Luminescent(DomStyle::class),
 ) : DomProperty(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(DomStyle::class),
+        Luminescent(DomStyle::class),
     )
     init {
         setProperty("style")

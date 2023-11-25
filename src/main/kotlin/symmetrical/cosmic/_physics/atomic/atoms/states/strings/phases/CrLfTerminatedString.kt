@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.strings.phases
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class CrLfTerminatedString(
-    private val fermion: IFermion = Fermion(CrLfTerminatedString::class),
+    private val fermion: ILuminescent = Luminescent(CrLfTerminatedString::class),
 ) : QString() {
     constructor() : this(
-        Fermion(CrLfTerminatedString::class),
+        Luminescent(CrLfTerminatedString::class),
     ) {
         setQuarkMomentum(CRLFTerminatedMomentum())
         setQuarkSpin(Spin())

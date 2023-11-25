@@ -1,18 +1,17 @@
 package symmetrical.dom.properties.region
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 import symmetrical.dom.DomProperty
 
 class DomWidth(
-    private val fermion: IFermion = Fermion(DomWidth::class),
+    private val fermion: ILuminescent = Luminescent(DomWidth::class),
 ) : DomProperty(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(DomWidth::class),
+        Luminescent(DomWidth::class),
     )
     init {
         setProperty("width")

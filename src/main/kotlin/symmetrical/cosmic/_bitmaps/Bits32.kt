@@ -1,17 +1,16 @@
 package symmetrical.cosmic._bitmaps
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Ints
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Bits32 (
-    private val fermion: IFermion = Fermion(Bits32::class),
+    private val luminescent: ILuminescent = Luminescent(Bits32::class),
 ) :
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(Bits32::class),
+        Luminescent(Bits32::class),
     )
 
     private var high   : Bits16 = Bits16()
@@ -31,7 +30,7 @@ open class Bits32 (
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun getByteArray() : ByteArray {
         var result = ByteArray(4)

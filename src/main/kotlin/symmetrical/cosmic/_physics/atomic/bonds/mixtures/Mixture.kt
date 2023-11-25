@@ -1,17 +1,16 @@
 package symmetrical.cosmic._physics.atomic.bonds.mixtures
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics.atomic.matter.Matter
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Mixture(
-    private val fermion: IFermion = Fermion(Mixture::class),
+    private val fermion: ILuminescent = Luminescent(Mixture::class),
 ) : Matter(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Mixture::class),
+        Luminescent(Mixture::class),
     )
     // mixtures may be regular classes with all kinds of things
     // mixed together that are other classes but not Atoms or Molecules

@@ -1,16 +1,15 @@
 package symmetrical.cosmic._physics._subatomic.forces.weak_force.neutral
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class ChargedWeakForce(
-    private val fermion: IFermion = Fermion(ChargedWeakForce::class),
+    private val fermion: ILuminescent = Luminescent(ChargedWeakForce::class),
 ) :
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(ChargedWeakForce::class),
+        Luminescent(ChargedWeakForce::class),
     )
 
     override fun getClassId() : String {

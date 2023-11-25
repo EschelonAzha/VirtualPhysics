@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.matter.colors.manifestations
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class CRLFTerminatedColor(
-    private val fermion: IFermion = Fermion(CRLFTerminatedColor::class),
+    private val fermion: ILuminescent = Luminescent(CRLFTerminatedColor::class),
 ): Green(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
 
     constructor() : this(
-        Fermion(CRLFTerminatedColor::class),
+        Luminescent(CRLFTerminatedColor::class),
     ) {
         fermion.setKClass(CRLFTerminatedColor::class)
     }

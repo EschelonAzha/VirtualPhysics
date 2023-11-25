@@ -1,6 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_beta
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -8,23 +7,23 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class AntiBetaPlus(
-    private val fermion: Fermion = Fermion(AntiBetaPlus::class),
+    private val luminescent: Luminescent = Luminescent(AntiBetaPlus::class),
 ) : LeptonPair(),
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(AntiBetaPlus::class),
+        Luminescent(AntiBetaPlus::class),
     ) {
-        fermion.setKClass(AntiBetaPlus::class)
+        luminescent.setKClass(AntiBetaPlus::class)
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down

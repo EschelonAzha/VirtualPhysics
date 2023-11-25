@@ -1,22 +1,21 @@
 package symmetrical.cosmic._physics._dimensions.temperature
 
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Temperature (
-    private val fermion: IFermion = Fermion(Temperature::class),
+    private val luminescent: ILuminescent = Luminescent(Temperature::class),
 ) :
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(Temperature::class),
+        Luminescent(Temperature::class),
     ) {
-        fermion.setKClass(Temperature::class)
+        luminescent.setKClass(Temperature::class)
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : Temperature {
         return this

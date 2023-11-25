@@ -1,21 +1,20 @@
 package symmetrical.cosmic._physics.atomic.substance.ions
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic._physics.atomic.bonds.ionic.Ionic
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Compound(
-    private val fermion: IFermion = Fermion(Compound::class),
+    private val fermion: ILuminescent = Luminescent(Compound::class),
 ) : Molecular(),
-    IFermion by fermion,
+    ILuminescent by fermion,
     Ionic
 {
     constructor() : this(
-        Fermion(Compound::class),
+        Luminescent(Compound::class),
     )
     object Static {
         const val LAST      : Int = -1

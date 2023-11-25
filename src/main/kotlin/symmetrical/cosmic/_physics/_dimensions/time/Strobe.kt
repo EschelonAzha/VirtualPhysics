@@ -1,24 +1,23 @@
 package symmetrical.cosmic._physics._dimensions.time
 
 import asymmetrical.machine.time.RequestAnimationFrame
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Strobe (
-    private val fermion: IFermion = Fermion(Strobe::class),
+    private val luminescent: ILuminescent = Luminescent(Strobe::class),
 
     ) :
-    IFermion by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
-        Fermion(Strobe::class),
+        Luminescent(Strobe::class),
     )
 
     private val requestAnimationFrame = RequestAnimationFrame().i(this)
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : Strobe {
         return this

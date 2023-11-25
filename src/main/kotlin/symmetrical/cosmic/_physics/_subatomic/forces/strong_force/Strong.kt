@@ -1,18 +1,17 @@
 package symmetrical.cosmic._physics._subatomic.forces.strong_force
 
 import asymmetrical.machine.threads.Energy
-import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.fermions.IFermion
-import symmetrical.cosmic._physics._subatomic.fermions.Fermion
+import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Strong(
-    private val fermion: IFermion = Fermion(Strong::class),
+    private val fermion: ILuminescent = Luminescent(Strong::class),
 ) : Energy(),
-    IFermion by fermion
+    ILuminescent by fermion
 {
     constructor() : this(
-        Fermion(Strong::class),
+        Luminescent(Strong::class),
     )
 
     companion object {
