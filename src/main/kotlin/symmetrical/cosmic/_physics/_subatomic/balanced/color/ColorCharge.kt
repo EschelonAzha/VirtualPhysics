@@ -1,19 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.balanced.color
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
-class ColorCharges(
-    private val fermion: IFermion = Fermion(ColorCharges::class),
+class ColorCharge(
+    private val fermion: IFermion = Fermion(ColorCharge::class),
 ) :
     IFermion by fermion,
-    IColorCharges
+    IColorCharge
 {
     constructor() : this (
-        Fermion(ColorCharges::class),
+        Fermion(ColorCharge::class),
     )
 
     lateinit var atom     : Atom

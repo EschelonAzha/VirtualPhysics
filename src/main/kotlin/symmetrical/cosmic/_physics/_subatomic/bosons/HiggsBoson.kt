@@ -1,18 +1,17 @@
 package symmetrical.cosmic._physics._subatomic.bosons
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.fermions.IFermion
 import symmetrical.cosmic._physics._subatomic.fermions.Fermion
 
-class Higgs(
-    private val fermion: IFermion = Fermion(Higgs::class),
+class HiggsBoson(
+    private val fermion: IFermion = Fermion(HiggsBoson::class),
 ) : Particle(),
     IFermion by fermion,
     Emitter
 {
     constructor() : this(
-        Fermion(Higgs::class),
+        Fermion(HiggsBoson::class),
     )
 
 
@@ -30,7 +29,7 @@ class Higgs(
     override fun getClassId() : String {
         return fermion.getClassId()
     }
-    fun i() : Higgs {
+    fun i() : HiggsBoson {
         return this
     }
 }

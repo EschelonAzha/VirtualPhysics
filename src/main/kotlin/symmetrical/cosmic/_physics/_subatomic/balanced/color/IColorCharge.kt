@@ -3,7 +3,7 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 
-interface IColorCharges {
+interface IColorCharge {
     fun blue        ()                  : String
     fun green       ()                  : String
     fun red         ()                  : Any

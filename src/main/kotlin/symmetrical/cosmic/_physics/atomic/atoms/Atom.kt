@@ -2,13 +2,12 @@ package symmetrical.cosmic._physics.atomic.atoms
 
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._bitmaps.Bits04
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharges
-import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharges
+import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharge
+import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharge
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.INucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
@@ -30,14 +29,14 @@ open class Atom(
     private   val fermion       : IFermion             = Fermion(Atom::class),
     private   var orbitals      : Orbitals             = Orbitals(),
     public    var nucleons      : Nucleons             = Nucleons(),
-    private   val colorCharges  : ColorCharges         = ColorCharges(),
+    private   val colorCharges  : ColorCharge         = ColorCharge(),
     private   val quarkValue    : QuarkValue           = QuarkValue()
 
     ) : Particle(),
         IFermion                by fermion,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
-        IColorCharges           by colorCharges,
+        IColorCharge           by colorCharges,
         IQuarkValue             by quarkValue,
         Element,
         Emitter,
@@ -47,7 +46,7 @@ open class Atom(
             Fermion(Atom::class),
             Orbitals(),
             Nucleons(),
-            ColorCharges(),
+            ColorCharge(),
             QuarkValue(),
         )
         init {
