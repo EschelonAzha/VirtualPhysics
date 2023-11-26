@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class BetaPlus(
-    private val fermion: ILuminescent = Luminescent(BetaPlus::class),
+    private val luminescent: ILuminescent = Luminescent(BetaPlus::class),
 ) : LeptonPair(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(BetaPlus::class),
@@ -22,7 +22,7 @@ class BetaPlus(
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down

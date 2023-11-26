@@ -12,10 +12,10 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class ParticleBeam(
-    private   val fermion  : ILuminescent = Luminescent(ParticleBeam::class),
+    private   val luminescent  : ILuminescent = Luminescent(ParticleBeam::class),
     protected val beam     : Beam = Beam()
 ) : Particle(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     IBeam by beam,
     IParticleBeam,
     Emitter
@@ -31,7 +31,7 @@ open class ParticleBeam(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         val particleRemainder = super.absorb(photon.propagate())
         val (size52, line) = Strings.remainder(3, particleRemainder.radiate())
@@ -51,7 +51,7 @@ open class ParticleBeam(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId     :String = fermion.getClassId()
+        val classId     :String = luminescent.getClassId()
         val particle    :String = super.emit().radiate()
         val base52Size  :String = Base52.toFixedBase52(Config.getBase52ArraySize(), size())
 
@@ -64,7 +64,7 @@ open class ParticleBeam(
         return emission
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     open fun i() : ParticleBeam {
         beam.i()

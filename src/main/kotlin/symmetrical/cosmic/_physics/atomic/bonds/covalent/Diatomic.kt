@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Diatomic(
-    private val fermion: ILuminescent = Luminescent(Diatomic::class),
+    private val luminescent: ILuminescent = Luminescent(Diatomic::class),
 ) : Molecular(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Diatomic::class),
@@ -24,7 +24,7 @@ open class Diatomic(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,9 +33,9 @@ open class Diatomic(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

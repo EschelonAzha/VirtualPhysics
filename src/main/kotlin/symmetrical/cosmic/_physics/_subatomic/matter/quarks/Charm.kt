@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Charm(
-    private val fermion: ILuminescent = Luminescent(Charm::class),
+    private val luminescent: ILuminescent = Luminescent(Charm::class),
 ) : Quark(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Charm::class),
@@ -20,10 +20,10 @@ class Charm(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Charm {
         super.i()

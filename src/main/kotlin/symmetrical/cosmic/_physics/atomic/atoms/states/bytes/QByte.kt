@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class QByte(
-    private val fermion: Luminescent = Luminescent(QByte::class),
+    private val luminescent: Luminescent = Luminescent(QByte::class),
 ) : Atom(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(QByte::class),
@@ -16,7 +16,7 @@ class QByte(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun red() : Byte {
         return nucleons.getValueProton().red() as Byte

@@ -15,9 +15,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Proton(
-    private val fermion: ILuminescent = Luminescent(Proton::class),
+    private val luminescent: ILuminescent = Luminescent(Proton::class),
 ) : Baryon(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Proton::class),
@@ -52,21 +52,21 @@ open class Proton(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
 
     override fun emit() : Photon {
-        val classId = fermion.getClassId()
+        val classId = luminescent.getClassId()
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate();
+        return luminescent.getClassId()+super.emit().radiate();
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun getDown() : Down {
         return get(QuarkType.TYPE.value) as Down

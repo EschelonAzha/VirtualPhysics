@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Hadron(
-    private val fermion: ILuminescent = Luminescent(Hadron::class),
+    private val luminescent: ILuminescent = Luminescent(Hadron::class),
 ) : ParticleBeam(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
@@ -26,7 +26,7 @@ open class Hadron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -38,11 +38,11 @@ open class Hadron(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId = fermion.getClassId()
+        val classId = luminescent.getClassId()
         return classId+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i(size:Int) : Hadron {
         return this

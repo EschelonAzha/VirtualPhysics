@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 import symmetrical.dom.Dom
 
 open class Body(
-    private val fermion: ILuminescent = Luminescent(Body::class),
+    private val luminescent: ILuminescent = Luminescent(Body::class),
 ) : Dom(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Body::class),
@@ -20,7 +20,7 @@ open class Body(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -28,10 +28,10 @@ open class Body(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

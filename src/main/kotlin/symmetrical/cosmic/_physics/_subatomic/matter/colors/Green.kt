@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 // FORMATTED VALUE
 open class Green (
-    private val fermion: ILuminescent = Luminescent(Green::class),
+    private val luminescent: ILuminescent = Luminescent(Green::class),
 ):Color(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {  // Int
     constructor() : this(
         Luminescent(Green::class),
@@ -21,7 +21,7 @@ open class Green (
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Green {
         super.i()

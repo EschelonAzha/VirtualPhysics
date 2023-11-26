@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Compound(
-    private val fermion: ILuminescent = Luminescent(Compound::class),
+    private val luminescent: ILuminescent = Luminescent(Compound::class),
 ) : Molecular(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Ionic
 {
     constructor() : this(
@@ -23,7 +23,7 @@ open class Compound(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,10 +33,10 @@ open class Compound(
     }
     private fun radiate() : String {
         val (molecularId, remainder) = Strings.remainder(2, super.emit().radiate())
-        return fermion.getClassId()+remainder
+        return luminescent.getClassId()+remainder
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     override fun i() : Compound {

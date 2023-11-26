@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class ReadyMSG (
-    private val fermion: ILuminescent = Luminescent(ReadyMSG::class),
+    private val luminescent: ILuminescent = Luminescent(ReadyMSG::class),
 ) : Message(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(ReadyMSG::class),
@@ -25,7 +25,7 @@ class ReadyMSG (
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -34,9 +34,9 @@ class ReadyMSG (
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

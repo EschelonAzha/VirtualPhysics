@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 import symmetrical.dom.DomProperty
 
 class DomLeft(
-    private val fermion: ILuminescent = Luminescent(DomLeft::class),
+    private val luminescent: ILuminescent = Luminescent(DomLeft::class),
 ) : DomProperty(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(DomLeft::class),
@@ -22,7 +22,7 @@ class DomLeft(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -32,10 +32,10 @@ class DomLeft(
     }
     private fun radiate() : String {
 
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

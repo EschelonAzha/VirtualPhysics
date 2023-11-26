@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Composition(
-    private val fermion: ILuminescent = Luminescent(Composition::class),
+    private val luminescent: ILuminescent = Luminescent(Composition::class),
 ) : ParticleBeam(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Composition::class),
@@ -31,10 +31,10 @@ open class Composition(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun getFirst() : IParticle {
         return get(Static.FIRST) as IParticle

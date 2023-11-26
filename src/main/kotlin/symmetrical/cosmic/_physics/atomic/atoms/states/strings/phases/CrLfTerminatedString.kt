@@ -7,7 +7,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class CrLfTerminatedString(
-    private val fermion: ILuminescent = Luminescent(CrLfTerminatedString::class),
+    private val luminescent: ILuminescent = Luminescent(CrLfTerminatedString::class),
 ) : QString() {
     constructor() : this(
         Luminescent(CrLfTerminatedString::class),
@@ -23,7 +23,7 @@ class CrLfTerminatedString(
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
 }

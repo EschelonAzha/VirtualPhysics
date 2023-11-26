@@ -9,9 +9,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Neutrons(
-    private val fermion: ILuminescent = Luminescent(Neutrons::class),
+    private val luminescent: ILuminescent = Luminescent(Neutrons::class),
 ) : ParticleBeam(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     INeutrons
 {
     constructor()  : this(
@@ -24,7 +24,7 @@ class Neutrons(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -39,10 +39,10 @@ class Neutrons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun addNeutron(neutron: Neutron) : Neutron {
         add(neutron)

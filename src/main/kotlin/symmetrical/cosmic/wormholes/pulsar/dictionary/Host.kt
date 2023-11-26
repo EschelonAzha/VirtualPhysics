@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Host(
-    private val fermion: ILuminescent = Luminescent(Host::class),
+    private val luminescent: ILuminescent = Luminescent(Host::class),
 ) : KeyValue(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Host::class),

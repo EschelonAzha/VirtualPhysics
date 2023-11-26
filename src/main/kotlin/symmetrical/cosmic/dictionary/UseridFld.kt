@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class UseridFld(
-    private val fermion: ILuminescent = Luminescent(UseridFld::class),
+    private val luminescent: ILuminescent = Luminescent(UseridFld::class),
 ) : QString(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(UseridFld::class),
@@ -15,6 +15,6 @@ class UseridFld(
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

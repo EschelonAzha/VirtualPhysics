@@ -26,17 +26,17 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 
 
 open class Atom(
-    private   val fermion       : ILuminescent = Luminescent(Atom::class),
+    private   val luminescent       : ILuminescent = Luminescent(Atom::class),
     private   var orbitals      : Orbitals             = Orbitals(),
     public    var nucleons      : Nucleons             = Nucleons(),
     private   val colorCharges  : ColorCharge         = ColorCharge(),
     private   val quarkValue    : QuarkValue           = QuarkValue()
 
     ) : Particle(),
-        ILuminescent by fermion,
+        ILuminescent            by luminescent,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
-        IColorCharge           by colorCharges,
+        IColorCharge            by colorCharges,
         IQuarkValue             by quarkValue,
         Element,
         Emitter,
@@ -61,7 +61,7 @@ open class Atom(
 
 
         override fun absorb(photon: Photon) : Photon {
-            fermion.check(photon);
+            luminescent.check(photon);
 
             val remainder = super.absorb(photon.propagate())
             var (orbitals, orbitalsRemainder) = Absorber.materialize(remainder.radiate())
@@ -75,12 +75,12 @@ open class Atom(
             return Photon(radiate())
         }
         private fun radiate() : String {
-            return fermion.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+            return luminescent.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
 
 
         override fun getClassId() : String {
-            return fermion.getClassId()
+            return luminescent.getClassId()
         }
 
         fun getFieldName() : String {

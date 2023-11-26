@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Strange(
-    private val fermion: ILuminescent = Luminescent(Strange::class),
+    private val luminescent: ILuminescent = Luminescent(Strange::class),
 ) : Quark(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Strange::class),
@@ -20,10 +20,10 @@ class Strange(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Strange {
         super.i()

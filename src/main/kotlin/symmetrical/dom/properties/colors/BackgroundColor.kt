@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 import symmetrical.dom.DomProperty
 
 class BackgroundColor(
-    private val fermion: Luminescent = Luminescent(BackgroundColor::class),
+    private val luminescent: Luminescent = Luminescent(BackgroundColor::class),
 ) : DomProperty(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
 
     constructor() : this(
@@ -19,13 +19,13 @@ class BackgroundColor(
     }
 
     constructor(height:Int) : this() {
-        fermion.setKClass(BackgroundColor::class)
+        luminescent.setKClass(BackgroundColor::class)
         getValue()!!.setQuarkValue(height.toString())
     }
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -34,10 +34,10 @@ class BackgroundColor(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

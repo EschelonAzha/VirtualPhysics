@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Kaon(
-    private val fermion: ILuminescent = Luminescent(Kaon::class),
+    private val luminescent: ILuminescent = Luminescent(Kaon::class),
 ) : Hadron(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Kaon::class),
@@ -20,6 +20,6 @@ open class Kaon(
     lateinit var antiQuark  : AntiUp
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

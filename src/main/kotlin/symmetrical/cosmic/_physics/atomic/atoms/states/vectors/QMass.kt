@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class QMass(
-    private val fermion: Luminescent = Luminescent(QMass::class),
+    private val luminescent: Luminescent = Luminescent(QMass::class),
 ) : Atom(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(QMass::class),
@@ -19,7 +19,7 @@ open class QMass(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun red() : IBeam {
         return nucleons.getValueProton().red() as IBeam

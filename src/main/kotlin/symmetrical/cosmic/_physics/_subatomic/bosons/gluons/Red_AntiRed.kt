@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Red_AntiRed (
-    private val fermion: ILuminescent = Luminescent(Red_AntiRed::class),
+    private val luminescent: ILuminescent = Luminescent(Red_AntiRed::class),
 ) : Gluon(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Red_AntiRed::class),
@@ -20,7 +20,7 @@ class Red_AntiRed (
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Red_AntiRed {
         super.i()

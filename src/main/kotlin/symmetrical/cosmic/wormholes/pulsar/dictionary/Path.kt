@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Path(
-    private val fermion: ILuminescent = Luminescent(Path::class),
+    private val luminescent: ILuminescent = Luminescent(Path::class),
 ) : Molecule(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Path::class),

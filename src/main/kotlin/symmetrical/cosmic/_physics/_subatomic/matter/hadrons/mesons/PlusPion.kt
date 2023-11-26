@@ -9,9 +9,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class PlusPion(
-    private val fermion: ILuminescent = Luminescent(PlusPion::class),
+    private val luminescent: ILuminescent = Luminescent(PlusPion::class),
 ) : Hadron(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
@@ -24,7 +24,7 @@ open class PlusPion(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 //    fun decay() : ElectronPositron<PlusPion> {
 //        return ElectronPositron<PlusPion>().decay(this)

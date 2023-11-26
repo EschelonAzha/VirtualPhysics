@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Photon(
-    private val fermion: ILuminescent = Luminescent(Photon::class),
+    private val luminescent: ILuminescent = Luminescent(Photon::class),
 ) : Particle(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Photon::class),
@@ -58,7 +58,7 @@ open class Photon(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : Photon {
         return this

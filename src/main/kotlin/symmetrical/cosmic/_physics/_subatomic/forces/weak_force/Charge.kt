@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Charge(
-    private val fermion: ILuminescent = Luminescent(Charge::class),
+    private val luminescent: ILuminescent = Luminescent(Charge::class),
 )  : Particle(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
@@ -18,7 +18,7 @@ class Charge(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return photon.propagate()
     }
@@ -27,10 +27,10 @@ class Charge(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : Charge {
         return this

@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Magnetism(
-    private val fermion: ILuminescent = Luminescent(Magnetism::class),
+    private val luminescent: ILuminescent = Luminescent(Magnetism::class),
 ) : Energy(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 
 {
     constructor() : this(
@@ -26,7 +26,7 @@ open class Magnetism(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 //    fun run() : Unit {
 //        println("Magnetism")

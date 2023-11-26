@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class WBosonPlus (
-    private val fermion: ILuminescent = Luminescent(WBosonPlus::class),
+    private val luminescent: ILuminescent = Luminescent(WBosonPlus::class),
 ) : Particle(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     // Carries the weak force
@@ -20,7 +20,7 @@ class WBosonPlus (
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return photon.propagate()
     }
@@ -29,10 +29,10 @@ class WBosonPlus (
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : WBosonPlus {
         return this

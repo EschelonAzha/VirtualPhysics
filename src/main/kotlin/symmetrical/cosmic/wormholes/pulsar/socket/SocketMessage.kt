@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class SocketMessage(
-    private val fermion: ILuminescent = Luminescent(SocketMessage::class),
+    private val luminescent: ILuminescent = Luminescent(SocketMessage::class),
 ) : Compound(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(SocketMessage::class),

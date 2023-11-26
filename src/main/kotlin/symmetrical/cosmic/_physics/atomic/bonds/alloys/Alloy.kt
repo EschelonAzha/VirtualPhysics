@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Alloy(
     val mixtures: Substance? = null,
-    private val fermion: ILuminescent = Luminescent(Alloy::class),
+    private val luminescent: ILuminescent = Luminescent(Alloy::class),
 ) :
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         null,
@@ -26,7 +26,7 @@ open class Alloy(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun getSubstance(pos:Int) : Substance {

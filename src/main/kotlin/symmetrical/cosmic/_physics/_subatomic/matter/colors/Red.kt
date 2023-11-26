@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 // ACTUAL VALUE
 open class Red(
-    private val fermion: ILuminescent = Luminescent(Red::class),
+    private val luminescent: ILuminescent = Luminescent(Red::class),
 ): Color(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {  // Boolean
 
     constructor() : this(
@@ -20,7 +20,7 @@ open class Red(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun clone() : Red {
         var result      = Red()

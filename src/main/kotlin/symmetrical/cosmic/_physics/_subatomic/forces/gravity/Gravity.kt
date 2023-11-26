@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Gravity(
-    private val fermion: ILuminescent = Luminescent(Gravity::class),
+    private val luminescent: ILuminescent = Luminescent(Gravity::class),
 ) : Energy(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Gravity::class),
@@ -30,7 +30,7 @@ open class Gravity(
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 //    fun run() : Unit {
 //        for (graviton in gravitons) {

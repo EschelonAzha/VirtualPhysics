@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Neutron(
-    private val fermion: ILuminescent = Luminescent(Neutron::class),
+    private val luminescent: ILuminescent = Luminescent(Neutron::class),
 ) : Baryon(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Neutron::class),
@@ -24,7 +24,7 @@ open class Neutron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -32,10 +32,10 @@ open class Neutron(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun setNeutrons(neutrons:Neutrons) : Neutron {

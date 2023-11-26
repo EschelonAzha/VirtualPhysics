@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Protons(
-    private val fermion: Luminescent = Luminescent(Protons::class),
+    private val luminescent: Luminescent = Luminescent(Protons::class),
 ) : ParticleBeam(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     IProtons
 {
     constructor() : this(
@@ -37,7 +37,7 @@ class Protons(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -52,11 +52,11 @@ class Protons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     override fun addProton(proton: Proton) : Proton {

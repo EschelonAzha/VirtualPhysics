@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
 class DeviceInput(
-    private val fermion: ILuminescent = Luminescent(DeviceInput::class),
+    private val luminescent: ILuminescent = Luminescent(DeviceInput::class),
 ) : Compound(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(DeviceInput::class),
@@ -26,7 +26,7 @@ class DeviceInput(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : DeviceInput {
         super.i()

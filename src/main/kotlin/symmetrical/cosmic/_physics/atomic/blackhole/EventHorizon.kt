@@ -4,16 +4,16 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class EventHorizon (
-    private val fermion: ILuminescent = Luminescent(EventHorizon::class),
+    private val luminescent: ILuminescent = Luminescent(EventHorizon::class),
 ) :
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(EventHorizon::class),
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     // Event horizon is the API to external libraries and frameworks
 }

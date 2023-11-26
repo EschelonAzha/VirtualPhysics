@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class MinusPion (
-    private val fermion: ILuminescent = Luminescent(MinusPion::class),
+    private val luminescent: ILuminescent = Luminescent(MinusPion::class),
 ) : Hadron(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
 
     constructor() : this(
@@ -21,7 +21,7 @@ open class MinusPion (
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 //    fun decay() : ElectronPositron {
 //        return ElectronPositron().decay(this)

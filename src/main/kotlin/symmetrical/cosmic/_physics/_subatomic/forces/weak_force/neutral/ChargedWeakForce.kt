@@ -4,16 +4,16 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class ChargedWeakForce(
-    private val fermion: ILuminescent = Luminescent(ChargedWeakForce::class),
+    private val luminescent: ILuminescent = Luminescent(ChargedWeakForce::class),
 ) :
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(ChargedWeakForce::class),
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : ChargedWeakForce {
         return this

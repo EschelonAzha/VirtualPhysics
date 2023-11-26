@@ -10,9 +10,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class ZBoson(
-    private val fermion: ILuminescent = Luminescent(ZBoson::class),
+    private val luminescent: ILuminescent = Luminescent(ZBoson::class),
 ) : Particle(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
@@ -32,10 +32,10 @@ open class ZBoson(
 
 
     override fun check(photon: Photon) : Unit {
-        return fermion.check(photon)
+        return luminescent.check(photon)
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i(newValue: Field, constructing:Boolean = false) : ZBoson {
         this.newValue     = newValue

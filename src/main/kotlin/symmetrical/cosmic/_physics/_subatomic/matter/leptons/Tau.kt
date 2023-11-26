@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Tau(
-    private val fermion: ILuminescent = Luminescent(Tau::class),
+    private val luminescent: ILuminescent = Luminescent(Tau::class),
 ) : Lepton(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Tau::class),
@@ -17,7 +17,7 @@ class Tau(
         fundamentals.getWavelength().setField(newValue)
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Tau {
         super.i()

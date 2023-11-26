@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class ChargedWeak(
-    private val fermion: ILuminescent = Luminescent(ChargedWeak::class),
+    private val luminescent: ILuminescent = Luminescent(ChargedWeak::class),
 ) : Particle(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     // can emit a charged W Boson that can alter the charge of a Proton by
     // altering the structure of its quarks
@@ -16,7 +16,7 @@ class ChargedWeak(
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : ChargedWeak {
         return this

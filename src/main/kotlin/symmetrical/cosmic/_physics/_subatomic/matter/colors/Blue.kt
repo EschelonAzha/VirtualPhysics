@@ -8,9 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 // PHOTON VALUE
 open class Blue(
-    private val fermion: ILuminescent = Luminescent(Blue::class),
+    private val luminescent: ILuminescent = Luminescent(Blue::class),
 ): Color(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 { // Double
     constructor() : this(
         Luminescent(Blue::class),
@@ -20,7 +20,7 @@ open class Blue(
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Blue {
         super.i()

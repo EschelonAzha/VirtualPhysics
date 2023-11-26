@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class HiggsBoson(
-    private val fermion: ILuminescent = Luminescent(HiggsBoson::class),
+    private val luminescent: ILuminescent = Luminescent(HiggsBoson::class),
 ) : Particle(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
@@ -16,7 +16,7 @@ class HiggsBoson(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return photon.propagate()
     }
@@ -24,10 +24,10 @@ class HiggsBoson(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i() : HiggsBoson {
         return this

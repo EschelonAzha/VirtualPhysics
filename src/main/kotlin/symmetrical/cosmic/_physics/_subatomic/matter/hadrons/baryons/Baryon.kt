@@ -13,9 +13,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Baryon(
-    private val fermion: ILuminescent = Luminescent(Baryon::class),
+    private val luminescent: ILuminescent = Luminescent(Baryon::class),
 ) : Hadron(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Baryon::class),
@@ -31,7 +31,7 @@ open class Baryon(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -40,10 +40,10 @@ open class Baryon(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun Proton() : Baryon {
         this.add(Up())    // value

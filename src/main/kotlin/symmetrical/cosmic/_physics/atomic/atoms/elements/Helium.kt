@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Helium(
-    private val fermion: ILuminescent = Luminescent(Helium::class),
+    private val luminescent: ILuminescent = Luminescent(Helium::class),
 ) :
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Helium::class),
@@ -23,6 +23,6 @@ class Helium(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }

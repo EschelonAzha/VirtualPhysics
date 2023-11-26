@@ -17,9 +17,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Quark(
-    private val fermion: ILuminescent = Luminescent(Quark::class),
+    private val luminescent: ILuminescent = Luminescent(Quark::class),
 ) : Particle(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
@@ -38,7 +38,7 @@ open class Quark(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         this.gluon                          = Red_AntiRed()  // this is need for JS Bug
         val (clone, remainder) = Absorber.materialize(photon.propagate())
@@ -50,10 +50,10 @@ open class Quark(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+fundamentals.emit().radiate()
+        return luminescent.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     open fun i() : Quark {
         return this

@@ -4,16 +4,16 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Muon(
-    private val fermion: ILuminescent = Luminescent(Muon::class),
+    private val luminescent: ILuminescent = Luminescent(Muon::class),
 ) : Lepton(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Muon::class),
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun i() : Muon {
         super.i()

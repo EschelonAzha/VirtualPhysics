@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class KeyValue(
-    private val fermion: ILuminescent = Luminescent(KeyValue::class),
+    private val luminescent: ILuminescent = Luminescent(KeyValue::class),
 ) : Diatomic(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
 
     object Static {
@@ -29,7 +29,7 @@ open class KeyValue(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -38,10 +38,10 @@ open class KeyValue(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun getKey() : Atom? {

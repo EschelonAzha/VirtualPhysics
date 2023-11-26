@@ -11,9 +11,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class NeutralUpPion(
-    private val fermion: ILuminescent = Luminescent(NeutralUpPion::class),
+    private val luminescent: ILuminescent = Luminescent(NeutralUpPion::class),
 ) : Hadron(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
@@ -34,7 +34,7 @@ open class NeutralUpPion(
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun nuclearForce() : NeutralUpPion {

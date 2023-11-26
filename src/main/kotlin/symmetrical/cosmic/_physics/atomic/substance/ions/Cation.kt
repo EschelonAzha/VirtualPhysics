@@ -4,15 +4,15 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Cation(
-    private val fermion: ILuminescent = Luminescent(Cation::class),
+    private val luminescent: ILuminescent = Luminescent(Cation::class),
 ) : Ion(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Cation::class),
     )
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     // plus
 }

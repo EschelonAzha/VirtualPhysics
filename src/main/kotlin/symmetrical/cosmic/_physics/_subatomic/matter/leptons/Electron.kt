@@ -11,9 +11,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Electron(
-    private val fermion: ILuminescent = Luminescent(Electron::class),
+    private val luminescent: ILuminescent = Luminescent(Electron::class),
 ) : Lepton(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Electron::class),
@@ -28,17 +28,17 @@ class Electron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
         return super.absorb(photon.propagate())
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     fun i(orbitals:Orbitals) : Electron {
         super.i()

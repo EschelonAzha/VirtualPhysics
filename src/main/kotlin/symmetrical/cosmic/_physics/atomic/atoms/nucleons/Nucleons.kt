@@ -14,12 +14,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Nucleons(
-    private val fermion     : ILuminescent = Luminescent(Nucleons::class),
+    private val luminescent     : ILuminescent = Luminescent(Nucleons::class),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
 
     ) :
-        ILuminescent by fermion,
+        ILuminescent         by luminescent,
         IProtons             by protons,
         INeutrons            by neutrons,
         INucleons,
@@ -40,7 +40,7 @@ class Nucleons(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         var (protons, remainderProtons) = Absorber.materialize(photon.propagate())
         var (neutrons, remainder)       = Absorber.materialize(remainderProtons)
@@ -56,10 +56,10 @@ class Nucleons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
+        return luminescent.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun getAtom() : Atom {

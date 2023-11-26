@@ -13,11 +13,11 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Molecular(
-    private val fermion: ILuminescent = Luminescent(Molecular::class),
+    private val luminescent: ILuminescent = Luminescent(Molecular::class),
     private var particleBeam:ParticleBeam=ParticleBeam(),
 
-    ) : Atom(fermion),
-    ILuminescent by fermion,
+    ) : Atom(),
+    ILuminescent by luminescent,
     IParticleBeam by particleBeam,
     IParticle
 {
@@ -32,7 +32,7 @@ open class Molecular(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         clear()
         val remainderAtom: Photon = super.absorb(photon.propagate())
@@ -54,10 +54,10 @@ open class Molecular(
     }
     private fun radiate() : String {
         val particleBeamEmission = particleBeam.emit().radiate()
-        return fermion.getClassId()+super.emit().radiate()+particleBeamEmission
+        return luminescent.getClassId()+super.emit().radiate()+particleBeamEmission
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     open fun i() : Molecular {
         particleBeam.i()

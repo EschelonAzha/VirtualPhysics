@@ -9,9 +9,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Dom(
-    private val fermion: ILuminescent = Luminescent(Dom::class),
+    private val luminescent: ILuminescent = Luminescent(Dom::class),
 ) : Atom(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Dom::class),
@@ -37,11 +37,11 @@ open class Dom(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun append(dom:Dom) : Dom {

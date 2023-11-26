@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class Strong(
-    private val fermion: ILuminescent = Luminescent(Strong::class),
+    private val luminescent: ILuminescent = Luminescent(Strong::class),
 ) : Energy(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Strong::class),
@@ -25,7 +25,7 @@ open class Strong(
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 //    fun run() : Unit {
 //        println("StrongForce")

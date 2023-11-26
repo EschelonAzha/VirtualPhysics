@@ -12,9 +12,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 open class Lepton(
-    private val fermion: ILuminescent = Luminescent(Lepton::class),
+    private val luminescent: ILuminescent = Luminescent(Lepton::class),
 ) : Particle(),
-    ILuminescent by fermion,
+    ILuminescent by luminescent,
     Emitter
 {
     constructor() : this(
@@ -24,7 +24,7 @@ open class Lepton(
     protected var fundamentals: Fundamentals = Fundamentals()
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon);
+        luminescent.check(photon);
 
         val (clone, remainder) = Absorber.materialize(photon.propagate())
         this.fundamentals = clone as Fundamentals
@@ -35,10 +35,10 @@ open class Lepton(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+fundamentals.emit().radiate()
+        return luminescent.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     open fun i() : Lepton {
         return this

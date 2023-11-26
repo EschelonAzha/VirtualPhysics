@@ -7,9 +7,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 open class QString(
-    private val fermion: ILuminescent = Luminescent(QString::class),
+    private val luminescent: ILuminescent = Luminescent(QString::class),
 ) : Atom(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(QString::class),
@@ -23,17 +23,17 @@ open class QString(
 
 
     override fun absorb(photon: Photon) : Photon {
-        fermion.check(photon)
+        luminescent.check(photon)
         return super.absorb(photon.propagate())
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return fermion.getClassId()+super.emit().radiate()
+        return luminescent.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
     override fun red() : String {
         return nucleons.getValueProton().red() as String

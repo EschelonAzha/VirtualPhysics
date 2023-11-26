@@ -11,16 +11,16 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class BetaMinus(
-    private val fermion: ILuminescent = Luminescent(BetaMinus::class),
+    private val luminescent: ILuminescent = Luminescent(BetaMinus::class),
 ) : LeptonPair(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(BetaMinus::class),
     )
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
     fun decay(baryon: Baryon) : Up {

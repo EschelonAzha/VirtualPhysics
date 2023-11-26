@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 
 class Neutrino(
-    private val fermion: ILuminescent = Luminescent(Neutrino::class),
+    private val luminescent: ILuminescent = Luminescent(Neutrino::class),
 ) : Lepton(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Neutrino::class),
@@ -20,7 +20,7 @@ class Neutrino(
 
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 
 //    fun getOrigin(): Particle? {

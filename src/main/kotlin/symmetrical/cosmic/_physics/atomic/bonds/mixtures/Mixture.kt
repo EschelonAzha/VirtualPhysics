@@ -5,9 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
 class Mixture(
-    private val fermion: ILuminescent = Luminescent(Mixture::class),
+    private val luminescent: ILuminescent = Luminescent(Mixture::class),
 ) : Matter(),
-    ILuminescent by fermion
+    ILuminescent by luminescent
 {
     constructor() : this(
         Luminescent(Mixture::class),
@@ -16,6 +16,6 @@ class Mixture(
     // mixed together that are other classes but not Atoms or Molecules
 
     override fun getClassId() : String {
-        return fermion.getClassId()
+        return luminescent.getClassId()
     }
 }
