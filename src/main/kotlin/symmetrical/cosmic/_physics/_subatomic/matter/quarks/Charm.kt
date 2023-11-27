@@ -2,16 +2,16 @@ package symmetrical.cosmic._physics._subatomic.matter.quarks
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiCharm
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Charm(
-    private val luminescent: ILuminescent = Luminescent(Charm::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Charm::class),
 ) : Quark(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Charm::class),
+        AntiMatter(Charm::class),
     )
     init {
         setAntiMatter(AntiCharm::class)
@@ -24,10 +24,10 @@ class Charm(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : Charm {
         super.i()

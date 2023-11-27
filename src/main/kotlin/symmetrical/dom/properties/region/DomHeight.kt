@@ -1,17 +1,17 @@
 package symmetrical.dom.properties.region
 
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.dom.DomProperty
 
 class DomHeight(
-    private val luminescent: ILuminescent = Luminescent(DomHeight::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DomHeight::class),
 ) : DomProperty(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(DomHeight::class),
+        AntiMatter(DomHeight::class),
     )
     init {
         setProperty("height")
@@ -21,7 +21,7 @@ class DomHeight(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -30,10 +30,10 @@ class DomHeight(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 }

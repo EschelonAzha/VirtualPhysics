@@ -13,18 +13,18 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Quark(
-    private val luminescent: ILuminescent = Luminescent(Quark::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Quark::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(Quark::class),
+        AntiMatter(Quark::class),
     ) {
         this.gluon         = Red_AntiRed()
         this.fundamentals  = Fundamentals()
@@ -42,7 +42,7 @@ open class Quark(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         this.gluon                          = Red_AntiRed()  // this is need for JS Bug
         val (clone, remainder) = Absorber.materialize(photon.propagate())
@@ -54,10 +54,10 @@ open class Quark(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+fundamentals.emit().radiate()
+        return antiMatter.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun i() : Quark {
         return this

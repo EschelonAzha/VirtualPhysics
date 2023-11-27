@@ -1,19 +1,19 @@
 package symmetrical.cosmic._physics._dimensions.time
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Time (
-    private val luminescent: ILuminescent = Luminescent(Time::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Time::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Time::class),
+        AntiMatter(Time::class),
     )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i() : symmetrical.cosmic._physics._dimensions.time.Time {
         return this

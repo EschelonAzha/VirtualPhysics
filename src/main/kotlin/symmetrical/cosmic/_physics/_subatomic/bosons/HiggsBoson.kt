@@ -1,22 +1,22 @@
 package symmetrical.cosmic._physics._subatomic.bosons
 
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class HiggsBoson(
-    private val luminescent: ILuminescent = Luminescent(HiggsBoson::class),
+    private val antiMatter: IAntiMatter = AntiMatter(HiggsBoson::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(HiggsBoson::class),
+        AntiMatter(HiggsBoson::class),
     )
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return photon.propagate()
     }
@@ -24,10 +24,10 @@ class HiggsBoson(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i() : HiggsBoson {
         return this

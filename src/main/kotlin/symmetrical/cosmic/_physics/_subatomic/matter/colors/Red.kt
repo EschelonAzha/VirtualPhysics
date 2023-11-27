@@ -2,25 +2,25 @@ package symmetrical.cosmic._physics._subatomic.matter.colors
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Red_AntiRed
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // ACTUAL VALUE
 open class Red(
-    private val luminescent: ILuminescent = Luminescent(Red::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Red::class),
 ): Color(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {  // Boolean
 
     constructor() : this(
-        Luminescent(Red::class),
+        AntiMatter(Red::class),
     )
     init {
         color = RED
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun clone() : Red {
         var result      = Red()

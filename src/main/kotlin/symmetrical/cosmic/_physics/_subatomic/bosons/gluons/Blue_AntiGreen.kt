@@ -4,24 +4,24 @@ import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiGreen
 import symmetrical.cosmic._physics._subatomic.matter.colors.Blue
 import symmetrical.cosmic._physics._subatomic.matter.colors.Red
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Blue_AntiGreen (
-    private val luminescent: ILuminescent = Luminescent(Blue_AntiGreen::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Blue_AntiGreen::class),
 ) : Gluon(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Blue_AntiGreen::class),
+        AntiMatter(Blue_AntiGreen::class),
     )
     init {
         color       = Blue()
         antiColor   = AntiGreen()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : Blue_AntiGreen {
         super.i()

@@ -9,20 +9,20 @@ import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Molecular(
-    private val luminescent: ILuminescent = Luminescent(Molecular::class),
+    private val luminescent: IAntiMatter = AntiMatter(Molecular::class),
     private var particleBeam: ParticleBeam = ParticleBeam(),
 
     ) : Atom(),
-    ILuminescent by luminescent,
+    IAntiMatter by luminescent,
     IParticleBeam by particleBeam,
     IParticle
 {
     constructor() : this(
-        Luminescent(Molecular::class),
+        AntiMatter(Molecular::class),
         ParticleBeam(),
     )
     object Static {

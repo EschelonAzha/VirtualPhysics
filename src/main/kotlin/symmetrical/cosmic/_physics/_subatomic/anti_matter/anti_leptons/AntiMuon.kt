@@ -1,19 +1,19 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class AntiMuon(
-    private val luminescent: ILuminescent = Luminescent(AntiMuon::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiMuon::class),
 ) : AntiLepton(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(AntiMuon::class),
+        AntiMatter(AntiMuon::class),
     )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : AntiMuon {
         super.i()

@@ -7,23 +7,23 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class QuarkValue(
-    private val luminescent: ILuminescent = Luminescent(QuarkValue::class),
+    private val antiMatter: IAntiMatter = AntiMatter(QuarkValue::class),
 )  :
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     IQuarkValue
 {
     constructor() : this(
-        Luminescent(QuarkValue::class),
+        AntiMatter(QuarkValue::class),
     )
     lateinit var atom:Atom
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun setAtom(atom: Atom) : Atom {
         this.atom = atom

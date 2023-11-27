@@ -2,16 +2,16 @@ package symmetrical.cosmic._physics.atomic.bonds.covalent
 
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Diatomic(
-    private val luminescent: ILuminescent = Luminescent(Diatomic::class),
+    private val luminescent: IAntiMatter = AntiMatter(Diatomic::class),
 ) : Molecular(),
-    ILuminescent by luminescent
+    IAntiMatter by luminescent
 {
     constructor() : this(
-        Luminescent(Diatomic::class),
+        AntiMatter(Diatomic::class),
     )
     object Static {
         const val LAST      : Int = -1

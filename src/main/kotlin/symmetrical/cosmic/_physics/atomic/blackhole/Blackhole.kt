@@ -1,19 +1,19 @@
 package symmetrical.cosmic._physics.atomic.blackhole
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Blackhole(
-    private val luminescent: ILuminescent = Luminescent(Blackhole::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Blackhole::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        Luminescent(Blackhole::class),
+        AntiMatter(Blackhole::class),
     )
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     // black holes encompass all external libraries and frameworks
 }

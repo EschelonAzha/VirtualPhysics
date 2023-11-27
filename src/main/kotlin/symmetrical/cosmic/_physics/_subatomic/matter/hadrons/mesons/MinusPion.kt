@@ -3,17 +3,17 @@ package symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class MinusPion (
-    private val luminescent: ILuminescent = Luminescent(MinusPion::class),
+    private val antiMatter: IAntiMatter = AntiMatter(MinusPion::class),
 ) : Hadron(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        Luminescent(MinusPion::class),
+        AntiMatter(MinusPion::class),
     ) init {
         super.i(2);
         this.set(0, Down())
@@ -21,7 +21,7 @@ open class MinusPion (
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 //    fun decay() : ElectronPositron {
 //        return ElectronPositron().decay(this)

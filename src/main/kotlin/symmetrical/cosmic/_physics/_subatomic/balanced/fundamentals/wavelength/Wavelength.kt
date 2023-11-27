@@ -6,17 +6,17 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Wavelength(
-    private val luminescent: ILuminescent = Luminescent(Wavelength::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Wavelength::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(Wavelength::class),
+        AntiMatter(Wavelength::class),
     )
     object Static {
         const val NULL      = "0"
@@ -44,7 +44,7 @@ class Wavelength(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         var (type, lthValue) = Strings.remainder(Static.NUMBERS_LTH, photon.propagate().radiate())
         if (type == Static.NULL) {
@@ -106,7 +106,7 @@ class Wavelength(
         return getField().getValue()
     }
     private fun radiate() : String {
-        val prefix = luminescent.getClassId()+field.getType()
+        val prefix = antiMatter.getClassId()+field.getType()
         if (field.getType() == Static.NULL)
             return prefix
         if (field.getType() == Static.BOOLEAN)
@@ -128,7 +128,7 @@ class Wavelength(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
     fun wavelength() : Any? {

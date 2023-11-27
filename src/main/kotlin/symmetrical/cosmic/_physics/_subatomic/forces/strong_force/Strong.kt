@@ -1,17 +1,17 @@
 package symmetrical.cosmic._physics._subatomic.forces.strong_force
 
 import asymmetrical.machine.threads.Energy
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Strong(
-    private val luminescent: ILuminescent = Luminescent(Strong::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Strong::class),
 ) : Energy(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Strong::class),
+        AntiMatter(Strong::class),
     )
 
     companion object {
@@ -25,7 +25,7 @@ open class Strong(
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 //    fun run() : Unit {
 //        println("StrongForce")

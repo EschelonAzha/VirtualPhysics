@@ -4,16 +4,16 @@ import asymmetrical.machine.config.Config
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Photon(
-    private val luminescent: ILuminescent = Luminescent(Photon::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Photon::class),
 ) : Particle(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Photon::class),
+        AntiMatter(Photon::class),
     )
     companion object {
         fun toPhoton(value:Any?, lth:Int=Config.getPhotonLength()) : String {
@@ -58,7 +58,7 @@ open class Photon(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i() : Photon {
         return this

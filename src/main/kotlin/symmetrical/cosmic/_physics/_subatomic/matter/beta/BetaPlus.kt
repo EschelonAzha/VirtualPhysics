@@ -7,22 +7,22 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class BetaPlus(
-    private val luminescent: ILuminescent = Luminescent(BetaPlus::class),
+    private val antiMatter: IAntiMatter = AntiMatter(BetaPlus::class),
 ) : LeptonPair(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(BetaPlus::class),
+        AntiMatter(BetaPlus::class),
     )
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down

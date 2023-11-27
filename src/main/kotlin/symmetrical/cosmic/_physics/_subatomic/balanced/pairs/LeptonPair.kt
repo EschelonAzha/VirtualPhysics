@@ -3,17 +3,17 @@ package symmetrical.cosmic._physics._subatomic.balanced.pairs
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 
 open class LeptonPair(
-    private val luminescent: ILuminescent = Luminescent(LeptonPair::class),
+    private val antiMatter: IAntiMatter = AntiMatter(LeptonPair::class),
 ) : Particle(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(LeptonPair::class),
+        AntiMatter(LeptonPair::class),
     )
 
     public lateinit var lepton     : Lepton
@@ -31,9 +31,9 @@ open class LeptonPair(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun getIlluminations() : IParticleBeam {
-        return luminescent.getIlluminations()
+        return antiMatter.getIlluminations()
     }
 }

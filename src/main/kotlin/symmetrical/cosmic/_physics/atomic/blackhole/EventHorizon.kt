@@ -1,19 +1,19 @@
 package symmetrical.cosmic._physics.atomic.blackhole
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class EventHorizon (
-    private val luminescent: ILuminescent = Luminescent(EventHorizon::class),
+    private val antiMatter: IAntiMatter = AntiMatter(EventHorizon::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(EventHorizon::class),
+        AntiMatter(EventHorizon::class),
     )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     // Event horizon is the API to external libraries and frameworks
 }

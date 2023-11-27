@@ -6,7 +6,7 @@ import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
 
-class Luminescent : ILuminescent {
+class AntiMatter : IAntiMatter {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
@@ -37,7 +37,7 @@ class Luminescent : ILuminescent {
         return Illuminations.beam
     }
 
-    override fun setKClass(kClass: KClass<*>) : ILuminescent {
+    override fun setKClass(kClass: KClass<*>) : IAntiMatter {
         this.kClass = kClass
         return this
     }
@@ -46,7 +46,7 @@ class Luminescent : ILuminescent {
     private fun getKClass() : KClass<*> {
         if (::kClass.isInitialized)
             return kClass
-        return Luminescent::class
+        return AntiMatter::class
     }
 
 }

@@ -1,15 +1,15 @@
 package symmetrical.cosmic._bitmaps
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Bits64 (
-    private val luminescent: ILuminescent = Luminescent(Bits64::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Bits64::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Bits64::class),
+        AntiMatter(Bits64::class),
     )
 
     private var high   : Bits32 = Bits32()
@@ -28,7 +28,7 @@ class Bits64 (
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun toString() : String {
         return "$high :: $low"

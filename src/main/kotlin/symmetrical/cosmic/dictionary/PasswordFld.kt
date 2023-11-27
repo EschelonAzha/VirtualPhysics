@@ -1,20 +1,20 @@
 package symmetrical.cosmic.dictionary
 
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class PasswordFld(
-    private val luminescent: ILuminescent = Luminescent(PasswordFld::class),
+    private val antiMatter: IAntiMatter = AntiMatter(PasswordFld::class),
 ) : QString(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(PasswordFld::class),
+        AntiMatter(PasswordFld::class),
     )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
 }

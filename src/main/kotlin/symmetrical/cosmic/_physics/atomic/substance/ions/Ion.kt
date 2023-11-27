@@ -1,18 +1,18 @@
 package symmetrical.cosmic._physics.atomic.substance.ions
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Ion(
-    private val luminescent: ILuminescent = Luminescent(Ion::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Ion::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        Luminescent(Ion::class),
+        AntiMatter(Ion::class),
     )
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 }

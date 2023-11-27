@@ -1,22 +1,22 @@
 package symmetrical.cosmic._physics._subatomic.forces.weak_force
 
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class ChargedWeak(
-    private val luminescent: ILuminescent = Luminescent(ChargedWeak::class),
+    private val antiMatter: IAntiMatter = AntiMatter(ChargedWeak::class),
 ) : Particle(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     // can emit a charged W Boson that can alter the charge of a Proton by
     // altering the structure of its quarks
     constructor() : this(
-        Luminescent(ChargedWeak::class),
+        AntiMatter(ChargedWeak::class),
     )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i() : ChargedWeak {
         return this

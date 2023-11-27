@@ -9,18 +9,18 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 
 open class Lepton(
-    private val luminescent: ILuminescent = Luminescent(Lepton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Lepton::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(Lepton::class),
+        AntiMatter(Lepton::class),
     )
     init {
         setAntiMatter(AntiLepton::class)
@@ -29,7 +29,7 @@ open class Lepton(
     protected var fundamentals: Fundamentals = Fundamentals()
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         val (clone, remainder) = Absorber.materialize(photon.propagate())
         this.fundamentals = clone as Fundamentals
@@ -40,10 +40,10 @@ open class Lepton(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+fundamentals.emit().radiate()
+        return antiMatter.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun i() : Lepton {
         return this
@@ -53,7 +53,7 @@ open class Lepton(
 //        return wavelength.wavelength()
 //    }
     override fun getIlluminations() : IParticleBeam {
-        return luminescent.getIlluminations()
+        return antiMatter.getIlluminations()
     }
     fun getPhoton() : Photon {
         return fundamentals.getPhoton()

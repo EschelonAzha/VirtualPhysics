@@ -1,20 +1,20 @@
 package symmetrical.cosmic._physics._subatomic.matter.colors
 
 import symmetrical.cosmic._physics._subatomic.balanced.color.ChromoCharge
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Color(
-    private val luminescent: ILuminescent = Luminescent(Color::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Color::class),
 ): ChromoCharge(),
-    ILuminescent by luminescent {
+    IAntiMatter by antiMatter {
 
     constructor() : this(
-        Luminescent(Color::class),
+        AntiMatter(Color::class),
     )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : Color {
         super.i()

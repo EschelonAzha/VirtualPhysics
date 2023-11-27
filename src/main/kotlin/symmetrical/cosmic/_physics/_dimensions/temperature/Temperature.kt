@@ -1,21 +1,19 @@
 package symmetrical.cosmic._physics._dimensions.temperature
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Temperature (
-    private val luminescent: ILuminescent = Luminescent(Temperature::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Temperature::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Temperature::class),
-    ) {
-        luminescent.setKClass(Temperature::class)
-    }
+        AntiMatter(Temperature::class),
+    )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i() : Temperature {
         return this

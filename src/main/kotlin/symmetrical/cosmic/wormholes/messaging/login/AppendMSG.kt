@@ -2,16 +2,16 @@ package symmetrical.cosmic.wormholes.messaging.login
 
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.Message
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class AppendMSG(
-    private val luminescent: ILuminescent = Luminescent(AppendMSG::class),
+    private val luminescent: IAntiMatter = AntiMatter(AppendMSG::class),
 ) : Message(),
-    ILuminescent by luminescent
+    IAntiMatter by luminescent
 {
     constructor() : this(
-        Luminescent(AppendMSG::class),
+        AntiMatter(AppendMSG::class),
     )
     object Static {
         const val LAST      : Int = Message.Static.LAST

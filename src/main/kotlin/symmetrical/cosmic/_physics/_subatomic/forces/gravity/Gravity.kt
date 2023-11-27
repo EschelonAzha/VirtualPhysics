@@ -2,17 +2,17 @@ package symmetrical.cosmic._physics._subatomic.forces.gravity
 
 import asymmetrical.machine.threads.Energy
 import symmetrical.cosmic._physics._subatomic.bosons.Graviton
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Gravity(
-    private val luminescent: ILuminescent = Luminescent(Gravity::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Gravity::class),
 ) : Energy(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Gravity::class),
+        AntiMatter(Gravity::class),
     )
 
     // Spin 2
@@ -30,7 +30,7 @@ open class Gravity(
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 //    fun run() : Unit {
 //        for (graviton in gravitons) {

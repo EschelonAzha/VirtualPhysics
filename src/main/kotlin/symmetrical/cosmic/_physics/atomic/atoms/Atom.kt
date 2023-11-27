@@ -21,19 +21,19 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 
 
 open class Atom(
-    private   val luminescent       : ILuminescent = Luminescent(Atom::class),
-    private   var orbitals      : Orbitals             = Orbitals(),
-    public    var nucleons      : Nucleons             = Nucleons(),
-    private   val colorCharges  : ColorCharge         = ColorCharge(),
-    private   val quarkValue    : QuarkValue           = QuarkValue()
+    private   val antiMatter       : IAntiMatter           = AntiMatter(Atom::class),
+    private   var orbitals          : Orbitals              = Orbitals(),
+    public    var nucleons          : Nucleons              = Nucleons(),
+    private   val colorCharges      : ColorCharge           = ColorCharge(),
+    private   val quarkValue        : QuarkValue            = QuarkValue()
 
     ) : Particle(),
-        ILuminescent            by luminescent,
+        IAntiMatter             by antiMatter,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharge            by colorCharges,
@@ -43,7 +43,7 @@ open class Atom(
         IAtom
     {
         constructor() : this(
-            Luminescent(Atom::class),
+            AntiMatter(Atom::class),
             Orbitals(),
             Nucleons(),
             ColorCharge(),
@@ -61,7 +61,7 @@ open class Atom(
 
 
         override fun absorb(photon: Photon) : Photon {
-            luminescent.check(photon);
+            antiMatter.check(photon);
 
             val remainder = super.absorb(photon.propagate())
             var (orbitals, orbitalsRemainder) = Absorber.materialize(remainder.radiate())
@@ -75,12 +75,12 @@ open class Atom(
             return Photon(radiate())
         }
         private fun radiate() : String {
-            return luminescent.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+            return antiMatter.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
 
 
         override fun getClassId() : String {
-            return luminescent.getClassId()
+            return antiMatter.getClassId()
         }
 
         fun getFieldName() : String {

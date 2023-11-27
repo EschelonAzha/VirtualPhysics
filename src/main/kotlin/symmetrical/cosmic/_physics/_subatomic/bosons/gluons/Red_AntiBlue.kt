@@ -3,16 +3,16 @@ package symmetrical.cosmic._physics._subatomic.bosons.gluons
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiBlue
 import symmetrical.cosmic._physics._subatomic.matter.colors.Red
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Red_AntiBlue (
-    private val luminescent: ILuminescent = Luminescent(Red_AntiBlue::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Red_AntiBlue::class),
 ) : Gluon(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Red_AntiBlue::class),
+        AntiMatter(Red_AntiBlue::class),
     )
     init {
         color       = Red()
@@ -20,7 +20,7 @@ class Red_AntiBlue (
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : Red_AntiBlue {
         super.i()

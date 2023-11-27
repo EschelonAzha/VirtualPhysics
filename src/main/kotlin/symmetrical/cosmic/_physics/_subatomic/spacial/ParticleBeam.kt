@@ -8,20 +8,20 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class ParticleBeam(
-    private   val luminescent  : ILuminescent = Luminescent(ParticleBeam::class),
+    private   val antiMatter  : IAntiMatter = AntiMatter(ParticleBeam::class),
     protected val beam     : Beam = Beam()
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     IBeam by beam,
     IParticleBeam,
     Emitter
 {
     constructor() : this(
-        Luminescent(ParticleBeam::class),
+        AntiMatter(ParticleBeam::class),
         Beam()
     )
     init {
@@ -34,7 +34,7 @@ open class ParticleBeam(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         val particleRemainder = super.absorb(photon.propagate())
         val (size52, line) = Strings.remainder(3, particleRemainder.radiate())
@@ -54,7 +54,7 @@ open class ParticleBeam(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId     :String = luminescent.getClassId()
+        val classId     :String = antiMatter.getClassId()
         val particle    :String = super.emit().radiate()
         val base52Size  :String = Base52.toFixedBase52(Config.getBase52ArraySize(), size())
 
@@ -67,7 +67,7 @@ open class ParticleBeam(
         return emission
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun i() : ParticleBeam {
         beam.i()

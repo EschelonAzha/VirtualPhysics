@@ -5,18 +5,18 @@ import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class ZBoson(
-    private val luminescent: ILuminescent = Luminescent(ZBoson::class),
+    private val antiMatter: IAntiMatter = AntiMatter(ZBoson::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(ZBoson::class),
+        AntiMatter(ZBoson::class),
     )
 
     // Neutral Charge
@@ -32,10 +32,10 @@ open class ZBoson(
 
 
     override fun check(photon: Photon) : Unit {
-        return luminescent.check(photon)
+        return antiMatter.check(photon)
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i(newValue: Field, constructing:Boolean = false) : ZBoson {
         this.newValue     = newValue

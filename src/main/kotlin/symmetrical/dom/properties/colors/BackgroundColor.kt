@@ -1,31 +1,31 @@
 package symmetrical.dom.properties.colors
 
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.dom.DomProperty
 
 class BackgroundColor(
-    private val luminescent: Luminescent = Luminescent(BackgroundColor::class),
+    private val antiMatter: AntiMatter = AntiMatter(BackgroundColor::class),
 ) : DomProperty(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        Luminescent(BackgroundColor::class),
+        AntiMatter(BackgroundColor::class),
     )
     init {
             setProperty("backgroundColor")
     }
 
     constructor(height:Int) : this() {
-        luminescent.setKClass(BackgroundColor::class)
+        antiMatter.setKClass(BackgroundColor::class)
         getValue()!!.setQuarkValue(height.toString())
     }
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -34,10 +34,10 @@ class BackgroundColor(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 }

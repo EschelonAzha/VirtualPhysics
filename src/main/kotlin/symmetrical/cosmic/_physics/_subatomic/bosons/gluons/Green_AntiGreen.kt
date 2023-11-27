@@ -2,16 +2,16 @@ package symmetrical.cosmic._physics._subatomic.bosons.gluons
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiGreen
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Green_AntiGreen (
-    private val luminescent: ILuminescent = Luminescent(Green_AntiGreen::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Green_AntiGreen::class),
 ) : Gluon(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Green_AntiGreen::class),
+        AntiMatter(Green_AntiGreen::class),
     )
     init {
         color       = green()
@@ -19,7 +19,7 @@ class Green_AntiGreen (
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : Green_AntiGreen {
         super.i()

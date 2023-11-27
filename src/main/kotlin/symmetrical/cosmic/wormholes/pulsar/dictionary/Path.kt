@@ -2,17 +2,17 @@ package symmetrical.cosmic.wormholes.pulsar.dictionary
 
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics.atomic.substance.molecules.Molecule
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Path(
-    private val luminescent: ILuminescent = Luminescent(Path::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Path::class),
 ) : Molecule(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Path::class),
+        AntiMatter(Path::class),
     )
     init {
         parsePath("")

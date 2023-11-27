@@ -9,17 +9,17 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralUpPion
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Nucleons(
-    private val luminescent     : ILuminescent = Luminescent(Nucleons::class),
+    private val antiMatter  :IAntiMatter            = AntiMatter(Nucleons::class),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
 
     ) :
-        ILuminescent         by luminescent,
+        IAntiMatter          by antiMatter,
         IProtons             by protons,
         INeutrons            by neutrons,
         INucleons,
@@ -27,7 +27,7 @@ class Nucleons(
 {
 
     constructor() : this(
-        Luminescent(Nucleons::class),
+        AntiMatter(Nucleons::class),
         Protons(),
         Neutrons()
     )   init {
@@ -40,7 +40,7 @@ class Nucleons(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         var (protons, remainderProtons) = Absorber.materialize(photon.propagate())
         var (neutrons, remainder)       = Absorber.materialize(remainderProtons)
@@ -56,10 +56,10 @@ class Nucleons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
+        return antiMatter.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
     fun getAtom() : Atom {

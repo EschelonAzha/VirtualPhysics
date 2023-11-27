@@ -7,25 +7,25 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class AntiLepton(
-    private val luminescent: ILuminescent = Luminescent(AntiLepton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(AntiLepton::class),
+        AntiMatter(AntiLepton::class),
     )
 
     protected var fundamentals: Fundamentals = Fundamentals()
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         val (clone, remainder) = Absorber.materialize(photon.propagate())
         this.fundamentals = clone as Fundamentals
@@ -36,10 +36,10 @@ open class AntiLepton(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+fundamentals.emit().radiate()
+        return antiMatter.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun i() : AntiLepton {
         return this

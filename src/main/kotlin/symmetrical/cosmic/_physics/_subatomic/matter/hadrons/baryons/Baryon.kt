@@ -8,17 +8,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Baryon(
-    private val luminescent: ILuminescent = Luminescent(Baryon::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Baryon::class),
 ) : Hadron(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Baryon::class),
+        AntiMatter(Baryon::class),
     )
     init {
         super.i(3)
@@ -31,7 +31,7 @@ open class Baryon(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -40,10 +40,10 @@ open class Baryon(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun Proton() : Baryon {
         this.add(Up())    // value

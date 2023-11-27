@@ -2,23 +2,21 @@ package symmetrical.cosmic._physics._subatomic.matter.colors.manifestations
 
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class CRLFTerminatedColor(
-    private val luminescent: ILuminescent = Luminescent(CRLFTerminatedColor::class),
+    private val antiMatter: IAntiMatter = AntiMatter(CRLFTerminatedColor::class),
 ): Green(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        Luminescent(CRLFTerminatedColor::class),
-    ) {
-        luminescent.setKClass(CRLFTerminatedColor::class)
-    }
+        AntiMatter(CRLFTerminatedColor::class),
+    )
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun clone() : CRLFTerminatedColor {
         var result      = CRLFTerminatedColor()

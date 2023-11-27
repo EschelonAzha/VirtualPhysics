@@ -1,16 +1,16 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // ORIGINAL VALUE
 open class AntiBlue(
-    private val luminescent: ILuminescent = Luminescent(AntiBlue::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiBlue::class),
 ) : AntiColor(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {  // String
     constructor() : this(
-        Luminescent(AntiBlue::class),
+        AntiMatter(AntiBlue::class),
     )
     init {
         color = ANTI_BLUE
@@ -18,7 +18,7 @@ open class AntiBlue(
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : AntiBlue {
         super.i()

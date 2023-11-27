@@ -4,16 +4,16 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic.dictionary.PasswordFld
 import symmetrical.cosmic.dictionary.UseridFld
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class LoginMSG(
-    private val luminescent: ILuminescent = Luminescent(LoginMSG::class),
+    private val antiMatter: IAntiMatter = AntiMatter(LoginMSG::class),
 ) : Message(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(LoginMSG::class),
+        AntiMatter(LoginMSG::class),
     )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1
@@ -30,7 +30,7 @@ class LoginMSG(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -39,10 +39,10 @@ class LoginMSG(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun getUserId() : UseridFld {
         return get(Static.USERID) as UseridFld

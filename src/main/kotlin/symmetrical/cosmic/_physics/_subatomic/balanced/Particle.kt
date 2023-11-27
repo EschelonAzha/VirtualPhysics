@@ -5,21 +5,21 @@ import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
 
 
 open class Particle(
-    private val luminescent: ILuminescent = Luminescent(Particle::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Particle::class),
 ) :
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     IParticle,
     Emitter
 {
     constructor() : this(
-        Luminescent(Particle::class),
+        AntiMatter(Particle::class),
     )
     object Static {
         var ANTI_MATTER : KClass<*>  = Particle::class
@@ -32,7 +32,7 @@ open class Particle(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         val (uniqueId, remainder) = Photons.parse(Static.UNIQUE_ID_LENGTH, photon.propagate().radiate())
         this.uniqueId = uniqueId
@@ -44,11 +44,11 @@ open class Particle(
     }
     private fun radiate() : String {
         val base52Lth = Base52.toFixedBase52(Static.UNIQUE_ID_LENGTH, uniqueId.length)
-        return luminescent.getClassId()+base52Lth+uniqueId
+        return antiMatter.getClassId()+base52Lth+uniqueId
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun createUniqueId(): IParticle {
         uniqueId = Keys.getUniqueId()
@@ -60,7 +60,7 @@ open class Particle(
     }
 
     override fun getIlluminations() : IParticleBeam {
-        return luminescent.getIlluminations()
+        return antiMatter.getIlluminations()
     }
 
     override fun getSelf() : IParticle {

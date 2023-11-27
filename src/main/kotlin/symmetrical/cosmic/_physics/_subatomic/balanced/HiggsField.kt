@@ -1,17 +1,17 @@
 package symmetrical.cosmic._physics._subatomic.balanced
 
 import asymmetrical.machine.threads.Energy
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class HiggsField(
-    private val luminescent: ILuminescent = Luminescent(HiggsField::class),
+    private val antiMatter: IAntiMatter = AntiMatter(HiggsField::class),
 ) : Energy(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(HiggsField::class),
+        AntiMatter(HiggsField::class),
     )
     // Spin 0
     companion object {
@@ -24,7 +24,7 @@ open class HiggsField(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun materialize() : HiggsField {
         println("Higgs")

@@ -1,15 +1,15 @@
 package symmetrical.cosmic._physics._subatomic.balanced.color
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class QCD (
-    private val luminescent: ILuminescent = Luminescent(QCD::class),
+    private val antiMatter: IAntiMatter = AntiMatter(QCD::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(QCD::class),
+        AntiMatter(QCD::class),
     )
     /*
         ARRAY      A-???
@@ -23,7 +23,7 @@ class QCD (
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i() : QCD {
         return this

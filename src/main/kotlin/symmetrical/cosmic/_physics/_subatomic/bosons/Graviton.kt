@@ -1,18 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.bosons
 
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Graviton(
-    private val luminescent: ILuminescent = Luminescent(Graviton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Graviton::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(Graviton::class),
+        AntiMatter(Graviton::class),
     )
 
     var center      : Graviton? = null
@@ -21,7 +21,7 @@ class Graviton(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return photon.propagate()
     }
@@ -30,10 +30,10 @@ class Graviton(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i(center: Graviton, attract:Unit, radial: Graviton) : Graviton {
         this.center     = center

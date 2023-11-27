@@ -1,19 +1,19 @@
 package symmetrical.cosmic._physics.atomic.bonds.alloys
 
 import symmetrical.cosmic._physics.atomic.substance.Substance
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Alloy(
     val mixtures: Substance? = null,
-    private val luminescent: ILuminescent = Luminescent(Alloy::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Alloy::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
         null,
-        Luminescent(Alloy::class),
+        AntiMatter(Alloy::class),
     )
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()
@@ -26,7 +26,7 @@ open class Alloy(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
     fun getSubstance(pos:Int) : Substance {

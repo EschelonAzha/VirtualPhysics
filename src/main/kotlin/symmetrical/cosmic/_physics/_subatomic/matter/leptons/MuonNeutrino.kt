@@ -1,23 +1,23 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiMuonNeutrino
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class MuonNeutrino(
-    private val luminescent: ILuminescent = Luminescent(MuonNeutrino::class),
+    private val antiMatter: IAntiMatter = AntiMatter(MuonNeutrino::class),
 ) : Lepton(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(MuonNeutrino::class),
+        AntiMatter(MuonNeutrino::class),
     )
     init {
         setAntiMatter(AntiMuonNeutrino::class)
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : MuonNeutrino {
         super.i()

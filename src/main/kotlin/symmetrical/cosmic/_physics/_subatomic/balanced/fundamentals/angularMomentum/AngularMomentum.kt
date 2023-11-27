@@ -4,22 +4,22 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class AngularMomentum(
-    private val luminescent: ILuminescent = Luminescent(AngularMomentum::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AngularMomentum::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter {
     constructor() : this(
-        Luminescent(AngularMomentum::class),
+        AntiMatter(AngularMomentum::class),
     )
 
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return photon.propagate()
     }
@@ -27,10 +27,10 @@ open class AngularMomentum(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun format(wavelength: Wavelength) : String {
         return wavelength.toString()

@@ -2,17 +2,17 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiNeutrino
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Neutrino(
-    private val luminescent: ILuminescent = Luminescent(Neutrino::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Neutrino::class),
 ) : Lepton(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Neutrino::class),
+        AntiMatter(Neutrino::class),
     )
     init {
         setAntiMatter(AntiNeutrino::class)
@@ -24,7 +24,7 @@ class Neutrino(
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
 //    fun getOrigin(): Particle? {

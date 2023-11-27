@@ -7,17 +7,17 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Orbitals(
-    private val luminescent: Luminescent = Luminescent(Orbitals::class),
+    private val antiMatter: AntiMatter = AntiMatter(Orbitals::class),
 ) : ParticleBeam(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     IOrbitals
 {
     constructor() : this(
-        Luminescent(Orbitals::class),
+        AntiMatter(Orbitals::class),
     ) init {
         add(Electron())
     }
@@ -32,7 +32,7 @@ open class Orbitals(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -47,10 +47,10 @@ open class Orbitals(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun getElectronValue() : Electron {
         if (size() == 0) {

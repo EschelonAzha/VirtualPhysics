@@ -1,18 +1,18 @@
 package symmetrical.device
 
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
 class DeviceInput(
-    private val luminescent: ILuminescent = Luminescent(DeviceInput::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DeviceInput::class),
 ) : Compound(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(DeviceInput::class),
+        AntiMatter(DeviceInput::class),
     )
 
     object Static {
@@ -26,7 +26,7 @@ class DeviceInput(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : DeviceInput {
         super.i()

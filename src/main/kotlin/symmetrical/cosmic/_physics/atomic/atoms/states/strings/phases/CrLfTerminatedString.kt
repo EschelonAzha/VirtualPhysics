@@ -3,14 +3,16 @@ package symmetrical.cosmic._physics.atomic.atoms.states.strings.phases
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class CrLfTerminatedString(
-    private val luminescent: ILuminescent = Luminescent(CrLfTerminatedString::class),
-) : QString() {
+    private val antiMatter: IAntiMatter = AntiMatter(CrLfTerminatedString::class),
+) : QString() ,
+    IAntiMatter by antiMatter
+{
     constructor() : this(
-        Luminescent(CrLfTerminatedString::class),
+        AntiMatter(CrLfTerminatedString::class),
     ) {
         setQuarkMomentum(CRLFTerminatedMomentum())
         setQuarkSpin(Spin())
@@ -23,7 +25,7 @@ class CrLfTerminatedString(
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
 }

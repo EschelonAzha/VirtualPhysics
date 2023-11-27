@@ -3,24 +3,24 @@ package symmetrical.cosmic._physics._subatomic.matter.colors
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Blue_AntiBlue
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // PHOTON VALUE
 open class Blue(
-    private val luminescent: ILuminescent = Luminescent(Blue::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Blue::class),
 ): Color(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 { // Double
     constructor() : this(
-        Luminescent(Blue::class),
+        AntiMatter(Blue::class),
     )  init {
         color = BLUE
     }
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : Blue {
         super.i()

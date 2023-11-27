@@ -10,17 +10,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Proton(
-    private val luminescent: ILuminescent = Luminescent(Proton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Proton::class),
 ) : Baryon(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Proton::class),
+        AntiMatter(Proton::class),
     ) init {
         this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -52,21 +52,21 @@ open class Proton(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
 
     override fun emit() : Photon {
-        val classId = luminescent.getClassId()
+        val classId = antiMatter.getClassId()
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate();
+        return antiMatter.getClassId()+super.emit().radiate();
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun getDown() : Down {
         return get(QuarkType.TYPE.value) as Down

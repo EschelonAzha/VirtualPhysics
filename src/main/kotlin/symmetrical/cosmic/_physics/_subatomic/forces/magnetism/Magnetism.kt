@@ -1,18 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.forces.magnetism
 
 import asymmetrical.machine.threads.Energy
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Magnetism(
-    private val luminescent: ILuminescent = Luminescent(Magnetism::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Magnetism::class),
 ) : Energy(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 
 {
     constructor() : this(
-        Luminescent(Magnetism::class),
+        AntiMatter(Magnetism::class),
     )
 
     // Spin 2
@@ -26,7 +26,7 @@ open class Magnetism(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 //    fun run() : Unit {
 //        println("Magnetism")

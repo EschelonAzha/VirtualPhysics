@@ -1,16 +1,16 @@
 package symmetrical.cosmic._physics.atomic.atoms.elements
 
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Hydrogen(
-    private val luminescent: ILuminescent = Luminescent(Hydrogen::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Hydrogen::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Hydrogen::class),
+        AntiMatter(Hydrogen::class),
     )
 
 
@@ -27,6 +27,6 @@ class Hydrogen(
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 }

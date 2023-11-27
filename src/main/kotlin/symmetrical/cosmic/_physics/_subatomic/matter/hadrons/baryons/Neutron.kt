@@ -2,17 +2,17 @@ package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Neutron(
-    private val luminescent: ILuminescent = Luminescent(Neutron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Neutron::class),
 ) : Baryon(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Neutron::class),
+        AntiMatter(Neutron::class),
     ) init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -24,7 +24,7 @@ open class Neutron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -32,10 +32,10 @@ open class Neutron(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
     fun setNeutrons(neutrons:Neutrons) : Neutron {

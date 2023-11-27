@@ -3,16 +3,16 @@ package symmetrical.cosmic._physics._subatomic.matter.quarks
 import symmetrical.cosmic.__recycle.Recycler
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Up(
-    private val luminescent: ILuminescent = Luminescent(Up::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Up::class),
 ) : Quark(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Up::class),
+        AntiMatter(Up::class),
     )
     init {
         setAntiMatter(AntiUp::class)
@@ -25,10 +25,10 @@ class Up(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent .getClassId()+super.emit().radiate()
+        return antiMatter .getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : Up {
         super.i()

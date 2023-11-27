@@ -1,16 +1,16 @@
 package symmetrical.cosmic._bitmaps
 
 import symmetrical.cosmic.__transpectors.transpectors.Ints
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Bits32 (
-    private val luminescent: ILuminescent = Luminescent(Bits32::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Bits32::class),
 ) :
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Bits32::class),
+        AntiMatter(Bits32::class),
     )
 
     private var high   : Bits16 = Bits16()
@@ -30,7 +30,7 @@ open class Bits32 (
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun getByteArray() : ByteArray {
         var result = ByteArray(4)

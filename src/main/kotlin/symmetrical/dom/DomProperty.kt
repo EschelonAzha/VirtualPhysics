@@ -3,16 +3,16 @@ package symmetrical.dom
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class DomProperty(
-    private val luminescent: ILuminescent = Luminescent(DomProperty::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DomProperty::class),
 ) : KeyValue(),
-    ILuminescent by luminescent {
+    IAntiMatter by antiMatter {
 
     constructor() : this(
-        Luminescent(DomProperty::class),
+        AntiMatter(DomProperty::class),
     )
     constructor(propertyName:String) : this() {
         setProperty(propertyName);
@@ -24,7 +24,7 @@ open class DomProperty(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -32,11 +32,11 @@ open class DomProperty(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
     fun setProperty(propertyName:String, value:String="") : DomProperty {

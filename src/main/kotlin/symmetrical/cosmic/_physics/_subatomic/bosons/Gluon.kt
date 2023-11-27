@@ -5,18 +5,18 @@ import symmetrical.cosmic._physics._subatomic.matter.colors.Color
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiColor
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
 open class Gluon(
-    private val luminescent: ILuminescent = Luminescent(Gluon::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Gluon::class),
 ) : Particle(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(Gluon::class),
+        AntiMatter(Gluon::class),
     )
     // Gluons are confined within
     // Spin 1
@@ -28,7 +28,7 @@ open class Gluon(
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun i() : Gluon {
         return this

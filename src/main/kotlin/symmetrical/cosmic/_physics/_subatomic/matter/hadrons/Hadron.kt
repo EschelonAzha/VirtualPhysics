@@ -3,18 +3,18 @@ package symmetrical.cosmic._physics._subatomic.matter.hadrons
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Hadron(
-    private val luminescent: ILuminescent = Luminescent(Hadron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Hadron::class),
 ) : ParticleBeam(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(Hadron::class),
+        AntiMatter(Hadron::class),
     )
 
 
@@ -26,7 +26,7 @@ open class Hadron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -38,11 +38,11 @@ open class Hadron(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId = luminescent.getClassId()
+        val classId = antiMatter.getClassId()
         return classId+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i(size:Int) : Hadron {
         return this

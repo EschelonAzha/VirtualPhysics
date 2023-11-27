@@ -2,24 +2,24 @@ package symmetrical.cosmic._physics._creation
 
 
 import asymmetrical.machine.threads.Cores
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class BigBang (
-    private val luminescent: ILuminescent = Luminescent(BigBang::class),
+    private val antiMatter: IAntiMatter = AntiMatter(BigBang::class),
 ):
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(BigBang::class),
+        AntiMatter(BigBang::class),
     )
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     fun i(universe: Universe) : BigBang {
         this.universe = universe;

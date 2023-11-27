@@ -2,16 +2,16 @@ package symmetrical.cosmic.chemistry.compounds
 
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class DbKey(
-    private val luminescent: ILuminescent = Luminescent(DbKey::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DbKey::class),
 ) : Compound(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(DbKey::class),
+        AntiMatter(DbKey::class),
     )
 
     fun addKey(atom: Atom) : DbKey {
@@ -19,6 +19,6 @@ class DbKey(
         return this;
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 }

@@ -3,13 +3,13 @@ package symmetrical.cosmic.chemistry.diatomics
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class KeyValue(
-    private val luminescent: ILuminescent = Luminescent(KeyValue::class),
+    private val antiMatter: IAntiMatter = AntiMatter(KeyValue::class),
 ) : Diatomic(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
 
     object Static {
@@ -19,7 +19,7 @@ open class KeyValue(
         const val LAST      : Int = VALUE
     }
     constructor() : this(
-        Luminescent(KeyValue::class),
+        AntiMatter(KeyValue::class),
     )
     constructor(key: Atom, value:Atom) : this(){
         add(key)
@@ -29,7 +29,7 @@ open class KeyValue(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -38,10 +38,10 @@ open class KeyValue(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 
     fun getKey() : Atom? {

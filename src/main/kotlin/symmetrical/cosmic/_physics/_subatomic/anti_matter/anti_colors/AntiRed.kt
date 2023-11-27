@@ -1,18 +1,18 @@
 package symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors
 
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // ORIGINAL VALUE
 open class AntiRed (
-    private val luminescent: ILuminescent = Luminescent(AntiRed::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiRed::class),
 ) : AntiColor(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {  // Byte
     constructor() : this(
-        Luminescent(AntiRed::class),
+        AntiMatter(AntiRed::class),
     ) {
-        luminescent.setKClass(AntiRed::class)
+        antiMatter.setKClass(AntiRed::class)
     }
 
     init {
@@ -21,7 +21,7 @@ open class AntiRed (
 
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun i() : AntiRed {
         super.i()

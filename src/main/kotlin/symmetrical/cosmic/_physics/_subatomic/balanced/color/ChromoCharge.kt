@@ -4,18 +4,18 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class ChromoCharge(
-    private val luminescent: ILuminescent = Luminescent(ChromoCharge::class),
+    private val antiMatter: IAntiMatter = AntiMatter(ChromoCharge::class),
 ) : Particle(),
-    ILuminescent by luminescent,
+    IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        Luminescent(ChromoCharge::class),
+        AntiMatter(ChromoCharge::class),
     )
 
     public var _value: Any? = null
@@ -35,7 +35,7 @@ open class ChromoCharge(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return photon.propagate()
     }
@@ -43,10 +43,10 @@ open class ChromoCharge(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun i() : ChromoCharge {
         return this

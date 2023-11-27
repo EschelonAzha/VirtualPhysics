@@ -2,17 +2,17 @@ package symmetrical.dom.properties.style
 
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
-import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.dom.DomProperty
 
 class DomStyle(
-    private val luminescent: ILuminescent = Luminescent(DomStyle::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DomStyle::class),
 ) : DomProperty(),
-    ILuminescent by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
-        Luminescent(DomStyle::class),
+        AntiMatter(DomStyle::class),
     )
     init {
         setProperty("style")
@@ -23,7 +23,7 @@ class DomStyle(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,10 +33,10 @@ class DomStyle(
     }
     private fun radiate() : String {
         val (domPropertyId, remainder) = Strings.remainder(2, super.emit().radiate())
-        return luminescent.getClassId()+remainder
+        return antiMatter.getClassId()+remainder
     }
 
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 }
