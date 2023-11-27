@@ -18,6 +18,9 @@ class Luminescent : ILuminescent {
 
     }
 
+//    override fun annihilate() : Photon {
+//
+//    }
     override fun check(photon: Photon) : Unit {
         val classId = getClassId()
 

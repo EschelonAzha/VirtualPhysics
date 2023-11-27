@@ -5,6 +5,8 @@ import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
 
 interface ILuminescent {
+//    fun annihilate() : Photon
+
     fun check(photon: Photon) : Unit
     fun getClassId()            : String
     fun getIlluminations()      : IParticleBeam
