@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.spatial
+package symmetrical.cosmic._physics._subatomic.spacial
 
 interface IBeam {
     fun add             (obj:Any?)                      : Any?

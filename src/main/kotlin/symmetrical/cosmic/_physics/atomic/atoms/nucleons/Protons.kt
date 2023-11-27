@@ -33,9 +33,6 @@ class Protons(
 
     private lateinit var __nucleons   : Nucleons
 
-
-
-
     override fun absorb(photon: Photon) : Photon {
         luminescent.check(photon);
 

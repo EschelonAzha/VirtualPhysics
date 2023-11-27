@@ -1,6 +1,6 @@
 package symmetrical.cosmic.wormholes.pulsar.socket
 
-import symmetrical.cosmic._physics._subatomic.spatial.Beam
+import symmetrical.cosmic._physics._subatomic.spacial.Beam
 
 interface IOutlet {
     fun close()                     : IOutlet

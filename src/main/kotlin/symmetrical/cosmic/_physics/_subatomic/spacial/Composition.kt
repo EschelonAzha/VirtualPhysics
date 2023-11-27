@@ -1,10 +1,9 @@
-package symmetrical.cosmic._physics._subatomic.spatial
+package symmetrical.cosmic._physics._subatomic.spacial
 
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
-import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 
 open class Composition(
     private val luminescent: ILuminescent = Luminescent(Composition::class),

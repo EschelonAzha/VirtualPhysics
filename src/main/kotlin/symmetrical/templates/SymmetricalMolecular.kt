@@ -3,7 +3,7 @@ package symmetrical.templates
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
 

@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.spatial
+package symmetrical.cosmic._physics._subatomic.spacial
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings

@@ -3,8 +3,8 @@ package asymmetrical.wormholes.pulsar.plugins
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
-import symmetrical.cosmic._physics._subatomic.spatial.Beam
-import symmetrical.cosmic._physics._subatomic.spatial.IBeam
+import symmetrical.cosmic._physics._subatomic.spacial.Beam
+import symmetrical.cosmic._physics._subatomic.spacial.IBeam
 import symmetrical.cosmic._physics.atomic.substance.molecules.Molecule
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 

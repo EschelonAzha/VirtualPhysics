@@ -2,7 +2,6 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
@@ -12,7 +11,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.W
 
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
-import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 
 open class Lepton(
     private val luminescent: ILuminescent = Luminescent(Lepton::class),

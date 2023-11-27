@@ -1,7 +1,8 @@
-package symmetrical.cosmic._physics._subatomic.spatial
+package symmetrical.cosmic._physics._subatomic.spacial
 
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics._subatomic.spacial.IBeam
 
 interface IParticleBeam : IBeam {
              fun emit               ()                              : Photon

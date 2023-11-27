@@ -1,7 +1,7 @@
 package symmetrical.cosmic.wormholes.pulsar.socket
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.spatial.Beam
+import symmetrical.cosmic._physics._subatomic.spacial.Beam
 
 open class Outlet  {
 

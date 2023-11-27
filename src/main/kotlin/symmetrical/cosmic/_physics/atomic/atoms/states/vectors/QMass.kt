@@ -1,7 +1,7 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.vectors
 
-import symmetrical.cosmic._physics._subatomic.spatial.Beam
-import symmetrical.cosmic._physics._subatomic.spatial.IBeam
+import symmetrical.cosmic._physics._subatomic.spacial.Beam
+import symmetrical.cosmic._physics._subatomic.spacial.IBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent

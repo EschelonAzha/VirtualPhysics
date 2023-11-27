@@ -6,7 +6,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.spatial.Beam
+import symmetrical.cosmic._physics._subatomic.spacial.Beam
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
 open class Inspector(private val particle: Particle = Particle()) : IParticle by particle, Emitter {

@@ -10,9 +10,6 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
-import symmetrical.cosmic._physics._subatomic.spatial.Beam
-import symmetrical.cosmic._physics._subatomic.spatial.IBeam
-import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 
 open class ParticleBeam(
     private   val luminescent  : ILuminescent = Luminescent(ParticleBeam::class),
