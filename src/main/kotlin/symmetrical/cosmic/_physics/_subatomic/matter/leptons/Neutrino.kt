@@ -1,7 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiNeutrino
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 

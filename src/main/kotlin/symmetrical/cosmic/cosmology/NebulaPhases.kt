@@ -1,8 +1,6 @@
 package symmetrical.cosmic.cosmology
 
 import asymmetrical.wormholes.pulsar.Nebula
-import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 import websites._phases.LoginPhase
 
 

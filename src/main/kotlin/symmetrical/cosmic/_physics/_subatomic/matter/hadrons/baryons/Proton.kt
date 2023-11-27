@@ -8,7 +8,7 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
@@ -157,7 +157,7 @@ open class Proton(
 
         if (autoFlow) {
             flowing = true
-            val beam:ParticleBeam = flow() // beam has the remote changes.   Not being used yet
+            val beam: ParticleBeam = flow() // beam has the remote changes.   Not being used yet
             flowing = false
         }
 

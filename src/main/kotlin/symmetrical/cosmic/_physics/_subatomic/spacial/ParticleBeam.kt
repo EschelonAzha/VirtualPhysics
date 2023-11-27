@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.spatial
+package symmetrical.cosmic._physics._subatomic.spacial
 
 import asymmetrical.machine.config.Config
 import symmetrical.cosmic.__recycle.Absorber
@@ -10,6 +10,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.spatial.Beam
+import symmetrical.cosmic._physics._subatomic.spatial.IBeam
+import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 
 open class ParticleBeam(
     private   val luminescent  : ILuminescent = Luminescent(ParticleBeam::class),

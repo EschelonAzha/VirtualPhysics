@@ -5,6 +5,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 
 open class LeptonPair(
     private val luminescent: ILuminescent = Luminescent(LeptonPair::class),
@@ -31,5 +32,8 @@ open class LeptonPair(
 
     override fun getClassId() : String {
         return luminescent.getClassId()
+    }
+    override fun getIlluminations() : IParticleBeam {
+        return luminescent.getIlluminations()
     }
 }

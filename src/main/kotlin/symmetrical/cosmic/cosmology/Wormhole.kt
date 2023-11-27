@@ -1,12 +1,12 @@
 package symmetrical.cosmic.cosmology
 
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 
 class Wormhole {
 
     val nebula:INebula
-    val beam  :ParticleBeam = ParticleBeam()
+    val beam  : ParticleBeam = ParticleBeam()
     constructor(nebula:INebula) {
         this.nebula = nebula
     }

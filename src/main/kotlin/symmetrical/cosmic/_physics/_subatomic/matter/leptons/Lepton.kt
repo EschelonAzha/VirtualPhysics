@@ -12,6 +12,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.W
 
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 
 open class Lepton(
     private val luminescent: ILuminescent = Luminescent(Lepton::class),
@@ -52,6 +53,9 @@ open class Lepton(
 //        val wavelength:Wavelength = getWavelength()
 //        return wavelength.wavelength()
 //    }
+    override fun getIlluminations() : IParticleBeam {
+        return luminescent.getIlluminations()
+    }
     fun getPhoton() : Photon {
         return fundamentals.getPhoton()
     }

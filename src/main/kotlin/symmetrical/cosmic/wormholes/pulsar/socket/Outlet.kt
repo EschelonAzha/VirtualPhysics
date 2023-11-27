@@ -1,13 +1,11 @@
 package symmetrical.cosmic.wormholes.pulsar.socket
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.spatial.Beam
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
 
 open class Outlet  {
 
-    protected var records : Beam      = Beam(2)
+    protected var records : Beam = Beam(2)
     protected var closed  : Boolean   = false
     constructor() {
 

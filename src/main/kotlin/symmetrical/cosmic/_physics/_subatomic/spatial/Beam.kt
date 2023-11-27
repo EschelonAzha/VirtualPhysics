@@ -2,7 +2,6 @@ package symmetrical.cosmic._physics._subatomic.spatial
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
-import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 
 
 open class Beam : IBeam {

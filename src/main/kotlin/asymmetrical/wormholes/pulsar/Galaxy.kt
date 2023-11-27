@@ -2,9 +2,7 @@ package asymmetrical.wormholes.pulsar
 
 import asymmetrical.machine.threads.Energy
 import asymmetrical.wormholes.pulsar.plugins.galaxy.WSServerPlugin
-import symmetrical.cosmic._physics._subatomic.spatial.Beam
 import java.util.*
-import kotlin.reflect.KClass
 
 open class Galaxy : Energy {
     private var plugins   : Vector<WSServerPlugin> = Vector<WSServerPlugin>()

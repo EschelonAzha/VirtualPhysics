@@ -1,12 +1,12 @@
 package symmetrical.cosmic._physics._subatomic.matter.beta
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
+import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 

@@ -2,7 +2,8 @@ package symmetrical.templates
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
 
@@ -19,7 +20,7 @@ class SymmetricalMolecular : Molecular {
     override fun i() : SymmetricalMolecular {
         return this
     }
-    public override fun getIlluminations() : ParticleBeam {
+    public override fun getIlluminations() : IParticleBeam {
         return Illuminations.beam
     }
 

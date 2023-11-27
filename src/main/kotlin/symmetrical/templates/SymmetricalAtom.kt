@@ -3,7 +3,8 @@ package symmetrical.templates
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
 
 class SymmetricalAtom : Particle   {    // 3
@@ -20,7 +21,7 @@ class SymmetricalAtom : Particle   {    // 3
     fun i() : SymmetricalAtom {
         return this
     }
-    public override fun getIlluminations() : ParticleBeam {
+    public override fun getIlluminations() : IParticleBeam {
         return Illuminations.beam
     }
 

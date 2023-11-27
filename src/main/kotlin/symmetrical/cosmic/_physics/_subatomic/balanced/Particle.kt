@@ -7,6 +7,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 import kotlin.reflect.KClass
 
 
@@ -56,6 +57,10 @@ open class Particle(
 
     override fun getAntiMatter() : KClass<*> {
         return Static.ANTI_MATTER
+    }
+
+    override fun getIlluminations() : IParticleBeam {
+        return luminescent.getIlluminations()
     }
 
     override fun getSelf() : IParticle {

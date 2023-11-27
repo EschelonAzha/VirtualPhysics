@@ -13,6 +13,7 @@ class AntiBetaMinus(
     private val luminescent: ILuminescent = Luminescent(AntiBetaMinus::class),
 ) : LeptonPair(),
     ILuminescent by luminescent
+
 {
     constructor() : this(
         Luminescent(AntiBetaMinus::class),

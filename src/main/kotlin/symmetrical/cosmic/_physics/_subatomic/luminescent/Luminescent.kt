@@ -2,7 +2,8 @@ package symmetrical.cosmic._physics._subatomic.luminescent
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.spatial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
+import symmetrical.cosmic._physics._subatomic.spatial.IParticleBeam
 import kotlin.reflect.KClass
 
 class Luminescent : ILuminescent {
@@ -29,7 +30,7 @@ class Luminescent : ILuminescent {
     override fun getClassId() : String {
         return Absorber.getClassId(getKClass())
     }
-    public override fun getIlluminations() : ParticleBeam {
+    override fun getIlluminations() : IParticleBeam {
         return Illuminations.beam
     }
 
