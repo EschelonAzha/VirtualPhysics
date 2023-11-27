@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.quarks
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiStrange
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
@@ -12,6 +13,9 @@ class Strange(
     constructor() : this(
         Luminescent(Strange::class),
     )
+    init {
+        setAntiMatter(AntiStrange::class)
+    }
 
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())

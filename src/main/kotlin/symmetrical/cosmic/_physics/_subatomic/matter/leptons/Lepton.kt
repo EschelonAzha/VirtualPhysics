@@ -1,6 +1,8 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
@@ -20,6 +22,9 @@ open class Lepton(
     constructor() : this(
         Luminescent(Lepton::class),
     )
+    init {
+        setAntiMatter(AntiLepton::class)
+    }
 
     protected var fundamentals: Fundamentals = Fundamentals()
 

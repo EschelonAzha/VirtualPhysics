@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiMuon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
 
@@ -11,6 +12,9 @@ class Muon(
     constructor() : this(
         Luminescent(Muon::class),
     )
+    init {
+        setAntiMatter(AntiMuon::class)
+    }
 
     override fun getClassId() : String {
         return luminescent.getClassId()

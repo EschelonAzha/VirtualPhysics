@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.quarks
 
 import symmetrical.cosmic.__recycle.Recycler
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
@@ -13,6 +14,10 @@ class Up(
     constructor() : this(
         Luminescent(Up::class),
     )
+    init {
+        setAntiMatter(AntiUp::class)
+    }
+
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())
     }

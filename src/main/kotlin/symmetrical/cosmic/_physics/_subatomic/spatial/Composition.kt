@@ -14,6 +14,7 @@ open class Composition(
         Luminescent(Composition::class),
     )
 
+
     object Static {
         const val FIRST  = ParticleBeam.Static.LAST + 1
         const val LAST  = ParticleBeam.Static.LAST + 2

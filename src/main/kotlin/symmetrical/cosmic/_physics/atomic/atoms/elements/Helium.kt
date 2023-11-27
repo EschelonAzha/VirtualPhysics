@@ -13,6 +13,8 @@ class Helium(
     constructor() : this(
         Luminescent(Helium::class),
     )
+
+
     lateinit var atom : Atom
 
 

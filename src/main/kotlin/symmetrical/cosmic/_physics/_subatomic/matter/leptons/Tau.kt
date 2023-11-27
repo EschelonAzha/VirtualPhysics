@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiTau
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
@@ -13,6 +14,9 @@ class Tau(
     constructor() : this(
         Luminescent(Tau::class),
     )
+    init {
+        setAntiMatter(AntiTau::class)
+    }
     constructor(newValue : Field) : this() {
         fundamentals.getWavelength().setField(newValue)
     }

@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.leptons
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -18,6 +19,9 @@ class Electron(
     constructor() : this(
         Luminescent(Electron::class),
     )
+    init {
+        setAntiMatter(Positron::class)
+    }
 
     lateinit var orbitals : Orbitals
 

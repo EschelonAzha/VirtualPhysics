@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.quarks
 
 import symmetrical.cosmic.__recycle.Recycler
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
@@ -14,6 +15,9 @@ class Down(
     constructor() : this(
         Luminescent(Down::class),
     )
+    init {
+        setAntiMatter(AntiDown::class)
+    }
     companion object {
         const val VALUE            = "VALUE"
         const val FIELD_NAME       = "FIELD-NAME"

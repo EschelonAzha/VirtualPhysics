@@ -13,6 +13,7 @@ class Hydrogen(
         Luminescent(Hydrogen::class),
     )
 
+
     lateinit var atom : Atom
 
 

@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.quarks
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiCharm
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
@@ -12,6 +13,9 @@ class Charm(
     constructor() : this(
         Luminescent(Charm::class),
     )
+    init {
+        setAntiMatter(AntiCharm::class)
+    }
 
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(photon.propagate())

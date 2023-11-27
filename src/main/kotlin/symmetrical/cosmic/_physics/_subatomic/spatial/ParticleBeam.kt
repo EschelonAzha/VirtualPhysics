@@ -24,6 +24,9 @@ open class ParticleBeam(
         Luminescent(ParticleBeam::class),
         Beam()
     )
+    init {
+        setAntiMatter(ParticleBeam::class)
+    }
     object Static {
         const val LAST      : Int = -1
     }

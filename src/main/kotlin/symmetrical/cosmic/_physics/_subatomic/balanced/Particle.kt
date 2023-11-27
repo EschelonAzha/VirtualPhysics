@@ -7,6 +7,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.ILuminescent
 import symmetrical.cosmic._physics._subatomic.luminescent.Luminescent
+import kotlin.reflect.KClass
 
 
 open class Particle(
@@ -20,6 +21,8 @@ open class Particle(
         Luminescent(Particle::class),
     )
     object Static {
+        var ANTI_MATTER : KClass<*>  = Particle::class
+
         const val UNIQUE_ID_LENGTH = 1
     }
     private var uniqueId = ""
@@ -51,6 +54,10 @@ open class Particle(
         return getSelf()
     }
 
+    override fun getAntiMatter() : KClass<*> {
+        return Static.ANTI_MATTER
+    }
+
     override fun getSelf() : IParticle {
         if (::self.isInitialized)
             return self
@@ -59,6 +66,11 @@ open class Particle(
 
     override fun getUniqueId(): String {
         return uniqueId
+    }
+
+    override fun setAntiMatter(antiMatter:KClass<*>) : IParticle {
+        Static.ANTI_MATTER = antiMatter
+        return this
     }
 
     override fun setSelf(self: IParticle) : IParticle {
