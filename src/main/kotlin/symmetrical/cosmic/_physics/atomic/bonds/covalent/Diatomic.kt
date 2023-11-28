@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Diatomic(
-    private val luminescent: IAntiMatter = AntiMatter(Diatomic::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Diatomic::class),
 ) : Molecular(),
-    IAntiMatter by luminescent
+    IAntiMatter by antiMatter
 {
     constructor() : this(
         AntiMatter(Diatomic::class),
@@ -24,7 +24,7 @@ open class Diatomic(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,9 +33,9 @@ open class Diatomic(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return luminescent.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
 }

@@ -13,11 +13,11 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Molecular(
-    private val luminescent: IAntiMatter = AntiMatter(Molecular::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Molecular::class),
     private var particleBeam: ParticleBeam = ParticleBeam(),
 
     ) : Atom(),
-    IAntiMatter by luminescent,
+    IAntiMatter by antiMatter,
     IParticleBeam by particleBeam,
     IParticle
 {
@@ -32,7 +32,7 @@ open class Molecular(
 
 
     override fun absorb(photon: Photon) : Photon {
-        luminescent.check(photon);
+        antiMatter.check(photon);
 
         clear()
         val remainderAtom: Photon = super.absorb(photon.propagate())
@@ -54,10 +54,10 @@ open class Molecular(
     }
     private fun radiate() : String {
         val particleBeamEmission = particleBeam.emit().radiate()
-        return luminescent.getClassId()+super.emit().radiate()+particleBeamEmission
+        return antiMatter.getClassId()+super.emit().radiate()+particleBeamEmission
     }
     override fun getClassId() : String {
-        return luminescent.getClassId()
+        return antiMatter.getClassId()
     }
     open fun i() : Molecular {
         particleBeam.i()
