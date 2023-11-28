@@ -24,7 +24,7 @@ open class Quark(
     Emitter
 {
     constructor() : this(
-        AntiMatter(Quark::class),
+        AntiMatter(AntiQuark::class),
     ) {
         this.gluon         = Red_AntiRed()
         this.fundamentals  = Fundamentals()

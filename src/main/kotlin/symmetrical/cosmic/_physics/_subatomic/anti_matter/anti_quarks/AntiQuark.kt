@@ -14,6 +14,7 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 
 open class AntiQuark(
     private val antiMatter: IAntiMatter = AntiMatter(AntiQuark::class),
@@ -22,7 +23,7 @@ open class AntiQuark(
     Emitter
 {
     constructor() : this(
-        AntiMatter(AntiQuark::class),
+        AntiMatter(Quark::class),
     )
 
     private var gluon       : Gluon         = Red_AntiRed()
