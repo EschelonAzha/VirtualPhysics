@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._dimensions.time
+package symmetrical.cosmic._physics._dimensions
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
@@ -12,10 +12,12 @@ class Time (
         AntiMatter(Time::class),
     )
 
+    var time:Long = 0
+
     override fun getClassId() : String {
         return antiMatter.getClassId()
     }
-    fun i() : symmetrical.cosmic._physics._dimensions.time.Time {
+    fun i() : Time {
         return this
     }
 }

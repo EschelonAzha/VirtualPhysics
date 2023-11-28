@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._dimensions.temperature
+package symmetrical.cosmic._physics._dimensions
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
@@ -11,6 +11,8 @@ class Temperature (
     constructor() : this(
         AntiMatter(Temperature::class),
     )
+
+    var temperature:Any? = null
 
     override fun getClassId() : String {
         return antiMatter.getClassId()

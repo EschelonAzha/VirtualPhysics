@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics._subatomic.matter.quarks
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._dimensions.Dimensions
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -28,14 +29,16 @@ open class Quark(
     ) {
         this.gluon         = Red_AntiRed()
         this.fundamentals  = Fundamentals()
+
     }
     init {
         setAntiMatter(AntiQuark::class)
     }
 
-    lateinit var gluon       : Gluon
-
+    lateinit var gluon          : Gluon
+    private var dimensions      : Dimensions = Dimensions()
     private lateinit var fundamentals: Fundamentals
+
 
 
 
