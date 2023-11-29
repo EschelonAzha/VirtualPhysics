@@ -17,7 +17,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 
 open class AntiQuark(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiQuark::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Quark::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
@@ -25,6 +25,9 @@ open class AntiQuark(
     constructor() : this(
         AntiMatter(Quark::class),
     )
+    init {
+        setAntiMatter(Quark::class)
+    }
 
     private var gluon       : Gluon         = Red_AntiRed()
     private var fundamental : Fundamentals  = Fundamentals()
