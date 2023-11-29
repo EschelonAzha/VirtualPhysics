@@ -3,6 +3,7 @@ package symmetrical.cosmic._physics._subatomic.balanced
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic.__transpectors.transpectors.Photons
+import symmetrical.cosmic._physics._dimensions.Dimensions
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
@@ -28,6 +29,8 @@ open class Particle(
     }
     private var uniqueId = ""
     private lateinit var self : IParticle
+
+    private val dimensions:Dimensions = Dimensions()
 
 
 

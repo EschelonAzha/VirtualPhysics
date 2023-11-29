@@ -12,7 +12,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Temperature (
     private val antiMatter: IAntiMatter = AntiMatter(Temperature::class),
-) : Particle(),
+) :
     IAntiMatter by antiMatter,
     Emitter
 {
