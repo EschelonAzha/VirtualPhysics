@@ -35,9 +35,9 @@ open class Quark(
         setAntiMatter(AntiQuark::class)
     }
 
-    lateinit var gluon          : Gluon
-    private var dimensions      : Dimensions = Dimensions()
-    private lateinit var fundamentals: Fundamentals
+    lateinit var gluon                  : Gluon
+    private var dimensions              : Dimensions = Dimensions()
+    private lateinit var fundamentals   : Fundamentals
 
 
 
