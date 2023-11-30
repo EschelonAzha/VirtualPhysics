@@ -12,13 +12,17 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
+import symmetrical.dom.Dom
+import symmetrical.dom.properties.region.DomHeight
 
 object XTestEmissions {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        debugQString()
+        simpleEmissionTest()
+        testDomEmissions()
 
+        debugQString()
 
         testParticle()
         testProton()
@@ -123,14 +127,38 @@ object XTestEmissions {
         val particle = QString("Jumby")
         particle.setString("Yuppy")
         val emission = particle.emit().radiate()
-        val clone2 = Absorber.createInstance("dj") as QString
+        val clone2 = Absorber.createInstance(Absorber.getClassId(QString::class)) as QString
         clone2.setString("ooby")
         val (clone, remainder) = Absorber.materialize(emission)
         return
     }
     private fun debugQString() {
-        val qString :QString = Absorber.createInstance("dj") as QString
+        val qString :QString = Absorber.createInstance(Absorber.getClassId(QString::class)) as QString
         qString.setString("Jumby")
         return;
+    }
+
+    private fun simpleEmissionTest() {
+        val atom = Atom("Hello World")
+        val emission = atom.emit().radiate()
+
+        val (clone, remainder) = Absorber.materialize(emission)
+
+        return
+    }
+
+    private fun testDomEmissions() {
+        val property = DomHeight(99999999)
+        val child = Dom()
+        val parent = Dom()
+        parent.addProperty(property)
+        parent.append(child)
+
+        val emission = parent.emit().radiate()
+
+        val (emitter, remainder) = Absorber.materialize(emission)
+
+        val clone: Dom = emitter as Dom
+        return
     }
 }
