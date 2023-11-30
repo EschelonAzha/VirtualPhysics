@@ -2,25 +2,18 @@ package symmetrical.cosmic._physics._creation
 
 
 import asymmetrical.machine.threads.Cores
+import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-class BigBang (
-    private val antiMatter: IAntiMatter = AntiMatter(BigBang::class),
-):
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(BigBang::class),
-    )
+class BigBang  {
+    constructor()
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     fun i(universe: Universe) : BigBang {
         this.universe = universe;
         //  BootConfig.UNIVERSE = universe

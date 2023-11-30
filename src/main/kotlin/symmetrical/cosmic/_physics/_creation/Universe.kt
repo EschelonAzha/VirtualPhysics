@@ -3,18 +3,9 @@ package symmetrical.cosmic._physics._creation
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-open class Universe (
-    private val antiMatter: IAntiMatter = AntiMatter(Universe::class),
-) :
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Universe::class),
-    )
+open class Universe  {
+    constructor()
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     fun i() : Universe {
        return this
     }

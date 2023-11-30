@@ -6,14 +6,8 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-open class Gravity(
-    private val antiMatter: IAntiMatter = AntiMatter(Gravity::class),
-) : Energy(),
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Gravity::class),
-    )
+open class Gravity {
+    constructor()
 
     // Spin 2
 
@@ -28,10 +22,6 @@ open class Gravity(
         }
     }
 
-
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
 //    fun run() : Unit {
 //        for (graviton in gravitons) {
 //            graviton.attract()

@@ -11,11 +11,7 @@ import symmetrical.cosmic._physics.atomic.blackhole.EventHorizon
 
 class Cosmic : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), BigBang::class))
-        add(EntityId(Base52.classId(), Blackhole::class))
-        add(EntityId(Base52.classId(), EventHorizon::class))
-        add(EntityId(Base52.classId(), Gravity::class))
-        add(EntityId(Base52.classId(), Universe::class))
+
 
 
     }
