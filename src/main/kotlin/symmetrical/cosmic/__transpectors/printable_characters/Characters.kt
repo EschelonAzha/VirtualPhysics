@@ -8,12 +8,7 @@ open class Characters {
     private var _characters:String  = "";
     constructor() {
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Characters::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun i(characters:String) : Characters {
         this._characters = characters;
         return this;

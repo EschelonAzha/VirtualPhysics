@@ -3,14 +3,8 @@ package symmetrical.cosmic._bitmaps
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-open class Bits08 (
-    private val antiMatter: IAntiMatter = AntiMatter(Bits08::class),
-) :
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Bits08::class),
-    )
+open class Bits08 {
+    constructor()
 
     lateinit var high: Bits04
     lateinit var low: Bits04
@@ -28,9 +22,7 @@ open class Bits08 (
         this.byte = toDecimal().toUByte()
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun toString() : String {
         return "$high $low"
     }

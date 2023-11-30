@@ -9,12 +9,7 @@ class SpecialCharacters : Characters {
     }
     constructor() : super() {
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(UpperCase::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun i() : SpecialCharacters {
         super.i(SPECIAL);
         return this;

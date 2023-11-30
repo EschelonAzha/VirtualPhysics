@@ -4,14 +4,8 @@ import symmetrical.cosmic.__transpectors.transpectors.Ints
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-open class Bits32 (
-    private val antiMatter: IAntiMatter = AntiMatter(Bits32::class),
-) :
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Bits32::class),
-    )
+open class Bits32 {
+    constructor()
 
     private var high   : Bits16 = Bits16()
     private var low    : Bits16 = Bits16()
@@ -29,9 +23,7 @@ open class Bits32 (
         low  = Bits16(byteArray[2].toUByte(), byteArray[3].toUByte())
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     fun getByteArray() : ByteArray {
         var result = ByteArray(4)
         val highArray:ByteArray  = high.getByteArray()

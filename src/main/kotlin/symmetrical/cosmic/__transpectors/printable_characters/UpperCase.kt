@@ -9,12 +9,7 @@ class UpperCase : Characters {
     }
     constructor() : super() {
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(UpperCase::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun i() : UpperCase {
         super.i(UPPERCASE);
         return this;

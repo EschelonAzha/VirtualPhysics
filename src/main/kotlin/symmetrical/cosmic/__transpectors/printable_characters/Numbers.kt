@@ -9,12 +9,7 @@ class Numbers : Characters {
     }
     constructor() : super() {
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Numbers::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun i() : Numbers {
         super.i(NUMBERS);
         return this;

@@ -9,12 +9,7 @@ class LowerCase : Characters {
     }
     constructor() : super() {
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(LowerCase::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun i() : LowerCase {
         super.i(LOWERCASE);
         return this;

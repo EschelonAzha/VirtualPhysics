@@ -75,12 +75,7 @@ class Base52 {
     }
     constructor() {
     }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Base52::class)
-    }
-    open fun getClassId() : String {
-        return getLocalClassId()
-    }
+
     fun i() : Base52 {
         return this;
     }
