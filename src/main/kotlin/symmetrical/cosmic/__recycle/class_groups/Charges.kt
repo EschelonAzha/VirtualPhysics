@@ -22,27 +22,20 @@ import symmetrical.cosmic._physics._subatomic.matter.colors.Red
 
 class Charges : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), AntiColor::class))
+
         add(EntityId(Base52.classId(), AntiBlue::class))
         add(EntityId(Base52.classId(), AntiGreen::class))
         add(EntityId(Base52.classId(), AntiRed::class))
-        add(EntityId(Base52.classId(), Blue::class))
+
         add(EntityId(Base52.classId(), Blue_AntiBlue::class))
         add(EntityId(Base52.classId(), Blue_AntiGreen::class))
         add(EntityId(Base52.classId(), Blue_AntiRed::class))
         add(EntityId(Base52.classId(), Charge::class))
-        add(EntityId(Base52.classId(), ChargedWeak::class))
-        add(EntityId(Base52.classId(), ChargedWeakForce::class))
-        add(EntityId(Base52.classId(), ChromoCharge::class))
-        add(EntityId(Base52.classId(), Color::class))
-        add(EntityId(Base52.classId(), ColorCharge::class))
-        add(EntityId(Base52.classId(), Gluon::class))
-        add(EntityId(Base52.classId(), Green::class))
+
         add(EntityId(Base52.classId(), Green_AntiBlue::class))
         add(EntityId(Base52.classId(), Green_AntiGreen::class))
         add(EntityId(Base52.classId(), Green_AntiRed::class))
-        add(EntityId(Base52.classId(), QCD::class))
-        add(EntityId(Base52.classId(), Red::class))
+
         add(EntityId(Base52.classId(), Red_AntiBlue::class))
         add(EntityId(Base52.classId(), Red_AntiBlue::class))
         add(EntityId(Base52.classId(), Red_AntiRed::class))

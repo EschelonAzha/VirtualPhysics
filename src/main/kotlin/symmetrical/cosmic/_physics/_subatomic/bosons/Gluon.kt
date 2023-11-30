@@ -10,14 +10,8 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
-open class Gluon(
-    private val antiMatter: IAntiMatter = AntiMatter(Gluon::class),
-) : Particle(),
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Gluon::class),
-    )
+open class Gluon : Particle {
+    constructor()
     // Gluons are confined within
     // Spin 1
     lateinit var color      : Color
@@ -26,10 +20,6 @@ open class Gluon(
     var manifestation : Green = Green()
 
 
-
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     open fun i() : Gluon {
         return this
     }

@@ -6,22 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // ACTUAL VALUE
-open class Red(
-    private val antiMatter: IAntiMatter = AntiMatter(Red::class),
-): Color(),
-    IAntiMatter by antiMatter
-{  // Boolean
-
-    constructor() : this(
-        AntiMatter(Red::class),
-    )
+open class Red : Color {
+    constructor()
     init {
         color = RED
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     override fun clone() : Red {
         var result      = Red()
         result.setValue(_value)

@@ -5,29 +5,11 @@ import symmetrical.cosmic._physics._subatomic.balanced.color.ChromoCharge
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-open class AntiColor(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiColor::class),
-) : ChromoCharge(),
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(AntiColor::class),
-    )
+open class AntiColor : ChromoCharge {
 
-    override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+    constructor() {
+    }
 
-        return photon.propagate()
-    }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return antiMatter.getClassId()
-    }
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     override fun i() : AntiColor {
         super.i()
         return this

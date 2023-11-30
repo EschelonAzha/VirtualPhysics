@@ -8,15 +8,8 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-open class ChromoCharge(
-    private val antiMatter: IAntiMatter = AntiMatter(ChromoCharge::class),
-) : Particle(),
-    IAntiMatter by antiMatter,
-    Emitter
-{
-    constructor() : this(
-        AntiMatter(ChromoCharge::class),
-    )
+open class ChromoCharge : Particle {
+    constructor()
 
     public var _value: Any? = null
 
@@ -34,20 +27,6 @@ open class ChromoCharge(
 
 
 
-    override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
-
-        return photon.propagate()
-    }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return antiMatter.getClassId()
-    }
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     open fun i() : ChromoCharge {
         return this
     }

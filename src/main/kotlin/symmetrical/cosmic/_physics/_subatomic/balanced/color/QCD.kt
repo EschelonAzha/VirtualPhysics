@@ -3,14 +3,8 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-class QCD (
-    private val antiMatter: IAntiMatter = AntiMatter(QCD::class),
-) :
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(QCD::class),
-    )
+class QCD {
+    constructor()
     /*
         ARRAY      A-???
         BOOLEAN    T-0/1
@@ -22,9 +16,6 @@ class QCD (
 
 
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     fun i() : QCD {
         return this
     }

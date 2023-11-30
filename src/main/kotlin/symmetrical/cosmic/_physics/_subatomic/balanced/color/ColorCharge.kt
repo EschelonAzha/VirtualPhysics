@@ -5,21 +5,11 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-class ColorCharge(
-    private val antiMatter: IAntiMatter = AntiMatter(ColorCharge::class),
-) :
-    IAntiMatter by antiMatter,
-    IColorCharge
-{
-    constructor() : this (
-        AntiMatter(ColorCharge::class),
-    )
+class ColorCharge : IColorCharge {
+
+    constructor()
 
     lateinit var atom     : Atom
-
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
 
     override fun setAtom(atom: Atom) : Atom {
         this.atom = atom
