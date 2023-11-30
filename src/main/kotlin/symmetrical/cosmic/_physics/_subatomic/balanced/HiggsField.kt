@@ -5,14 +5,8 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-open class HiggsField(
-    private val antiMatter: IAntiMatter = AntiMatter(HiggsField::class),
-) : Energy(),
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(HiggsField::class),
-    )
+open class HiggsField{
+    constructor()
     // Spin 0
     companion object {
         lateinit var higgsField : HiggsField
@@ -23,9 +17,6 @@ open class HiggsField(
         }
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     open fun materialize() : HiggsField {
         println("Higgs")
         return this

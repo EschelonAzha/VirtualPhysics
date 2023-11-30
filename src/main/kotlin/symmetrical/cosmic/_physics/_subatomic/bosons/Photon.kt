@@ -7,14 +7,9 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-open class Photon(
-    private val antiMatter: IAntiMatter = AntiMatter(Photon::class),
-) : Particle(),
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Photon::class),
-    )
+open class Photon{
+    constructor()
+
     companion object {
         fun toPhoton(value:Any?, lth:Int=Config.getPhotonLength()) : String {
             if (value == null)
@@ -57,9 +52,7 @@ open class Photon(
         return
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     fun i() : Photon {
         return this
     }

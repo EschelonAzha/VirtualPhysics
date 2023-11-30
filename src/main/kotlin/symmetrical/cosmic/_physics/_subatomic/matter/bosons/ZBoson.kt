@@ -9,15 +9,8 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-open class ZBoson(
-    private val antiMatter: IAntiMatter = AntiMatter(ZBoson::class),
-) : Particle(),
-    IAntiMatter by antiMatter,
-    Emitter
-{
-    constructor() : this(
-        AntiMatter(ZBoson::class),
-    )
+open class ZBoson{
+    constructor()
 
     // Neutral Charge
     // Spin 1
@@ -31,12 +24,7 @@ open class ZBoson(
     private var reason       :String    = ""
 
 
-    override fun check(photon: Photon) : Unit {
-        return antiMatter.check(photon)
-    }
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     fun i(newValue: Field, constructing:Boolean = false) : ZBoson {
         this.newValue     = newValue
         this.constructing = constructing
