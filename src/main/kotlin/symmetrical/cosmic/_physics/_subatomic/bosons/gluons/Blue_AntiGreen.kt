@@ -8,21 +8,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-class Blue_AntiGreen (
-    private val antiMatter: IAntiMatter = AntiMatter(Blue_AntiGreen::class),
-) : Gluon(),
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Blue_AntiGreen::class),
-    )
+class Blue_AntiGreen : Gluon {
+    constructor()
     init {
         color       = Blue()
         antiColor   = AntiGreen()
     }
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun i() : Blue_AntiGreen {
         super.i()
         return this

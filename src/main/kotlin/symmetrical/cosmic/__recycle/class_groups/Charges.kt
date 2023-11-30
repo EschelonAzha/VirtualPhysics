@@ -23,21 +23,5 @@ import symmetrical.cosmic._physics._subatomic.matter.colors.Red
 class Charges : ClassGroup {
     constructor() {
 
-        add(EntityId(Base52.classId(), AntiBlue::class))
-        add(EntityId(Base52.classId(), AntiGreen::class))
-        add(EntityId(Base52.classId(), AntiRed::class))
-
-        add(EntityId(Base52.classId(), Blue_AntiBlue::class))
-        add(EntityId(Base52.classId(), Blue_AntiGreen::class))
-        add(EntityId(Base52.classId(), Blue_AntiRed::class))
-        add(EntityId(Base52.classId(), Charge::class))
-
-        add(EntityId(Base52.classId(), Green_AntiBlue::class))
-        add(EntityId(Base52.classId(), Green_AntiGreen::class))
-        add(EntityId(Base52.classId(), Green_AntiRed::class))
-
-        add(EntityId(Base52.classId(), Red_AntiBlue::class))
-        add(EntityId(Base52.classId(), Red_AntiBlue::class))
-        add(EntityId(Base52.classId(), Red_AntiRed::class))
     }
 }

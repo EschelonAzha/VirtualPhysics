@@ -4,23 +4,14 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // ORIGINAL VALUE
-open class AntiGreen (
-    private val antiMatter: IAntiMatter = AntiMatter(AntiGreen::class),
-) : AntiColor(),
-    IAntiMatter by antiMatter
-{ // Char
-    constructor() : this(
-        AntiMatter(AntiGreen::class),
-    )
+open class AntiGreen : AntiColor {
+    constructor()
 
     init {
         color = ANTI_GREEN
     }
 
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     override fun i() : AntiGreen {
         super.i()
         return this
