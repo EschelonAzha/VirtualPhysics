@@ -10,97 +10,33 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 class Temperature : Emitter {
 
 
-    private var field      : Field = Field()
+    private var field      : QuantumPhotonicField = QuantumPhotonicField()
 
     fun isNull() : Boolean {
         return field.isNull()
     }
 
     override fun absorb(photon: Photon) : Photon {
-
-        var (type, lthValue) = Strings.remainder(Field.Static.NUMBERS_LTH, photon.propagate().radiate())
-        if (type == Field.Static.NULL) {
-            field.setValue(null)
-            return Photon(lthValue)
-        }
-        if (type == Field.Static.BOOLEAN) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
-            field.setValue(value == "true")
-            return Photon(remainder)
-        }
-        if (type == Field.Static.BYTE) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
-            field.setValue(value)
-            return Photon(remainder)
-        }
-        if (type == Field.Static.INT) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
-            field.setValue(value.toInt())
-            return Photon(remainder)
-        }
-        if (type == Field.Static.DOUBLE) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
-            field.setValue(value.toDouble())
-            return Photon(remainder)
-        }
-        if (type == Field.Static.STRING1) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING1_LTH, lthValue)
-            field.setValue(value)
-            return Photon(remainder)
-        }
-        if (type == Field.Static.STRING2) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING2_LTH, lthValue)
-            field.setValue(value)
-            return Photon(remainder)
-        }
-        if (type == Field.Static.STRING3) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING3_LTH, lthValue)
-            field.setValue(value)
-            return Photon(remainder)
-        }
-        if (type == Field.Static.VECTOR) {
-            var (value, remainder) = Photons.parse(Field.Static.VECTOR_LTH, lthValue)
-            field.setValue(value)
-            return Photon(remainder)
-        }
-        println("!!!!!!!!!!!!!!!!!!!!!ERROR OCCURED IN WAVELENGTH:ABSORB!!!!!!!!!!!!!!!!!!!!!")
-        return Photon("")
+        return field.absorb(photon)
     }
 
     override fun emit() : Photon {
-        return Photon(radiate())
+        return field.emit()
     }
 
     fun getField() : Field {
-        return field
+        return field.getField()
     }
     fun getValue() : Any? {
         return getField().getValue()
     }
     private fun radiate() : String {
-        val prefix = getClassId()+field.getType()
-        if (field.getType() == Field.Static.NULL)
-            return prefix
-        if (field.getType() == Field.Static.BOOLEAN)
-            return prefix+ Photon.toPhoton1(field.getValue())
-        if (field.getType() == Field.Static.BYTE)
-            return prefix+ Photon.toPhoton1(field.getValue())
-        if (field.getType() == Field.Static.INT)
-            return prefix+ Photon.toPhoton1(field.getValue())
-        if (field.getType() == Field.Static.DOUBLE)
-            return prefix+ Photon.toPhoton1(field.getValue())
-        if (field.getType() == Field.Static.STRING1)
-            return prefix+ Photon.toPhoton1(field.getValue())
-        if (field.getType() == Field.Static.STRING2)
-            return prefix+ Photon.toPhoton2(field.getValue())
-        if (field.getType() == Field.Static.STRING3)
-            return prefix+ Photon.toPhoton3(field.getValue())
-
-        return prefix+ Photon.toPhoton3(field.getValue())
+        return field.radiate()
     }
 
     private fun getLocalClassId() : String {
@@ -116,16 +52,16 @@ class Temperature : Emitter {
     }
 
     fun setField(field: Field) : Temperature {
-        this.field = field
+        this.field.setField(field)
         return this
     }
 
     fun setTemperature(value:Any?) : Any? {
-        return field.setValue(value)
+        return field.getField().setValue(value)
     }
 
     override fun toString() : String {
-        return field.toString()
+        return field.getField().toString()
     }
     fun isChange(value:Any?) : Boolean {
         return field.isChange(value)

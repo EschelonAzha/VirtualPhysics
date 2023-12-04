@@ -3,14 +3,7 @@ package symmetrical.cosmic._physics._dimensions
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 
-class Mass (
-    private val antiMatter: IAntiMatter = AntiMatter(Mass::class),
-) :
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Mass::class),
-    )
+class Mass {
 
     var mass:Byte = 0
 
@@ -30,9 +23,6 @@ class Mass (
             const val NEURTRON      : Byte = 12
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     fun i() : Mass {
         return this
     }

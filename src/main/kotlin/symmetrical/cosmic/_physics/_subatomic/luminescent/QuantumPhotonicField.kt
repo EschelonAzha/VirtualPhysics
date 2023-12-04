@@ -3,7 +3,6 @@ package symmetrical.cosmic._physics._subatomic.luminescent
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic.__transpectors.transpectors.Strings
-import symmetrical.cosmic._physics._dimensions.Temperature
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -78,7 +77,7 @@ class QuantumPhotonicField : Emitter {
     fun getValue() : Any? {
         return getField().getValue()
     }
-    private fun radiate() : String {
+    fun radiate() : String {
         val prefix = getClassId()+field.getType()
         if (field.getType() == Field.Static.NULL)
             return prefix
@@ -101,23 +100,20 @@ class QuantumPhotonicField : Emitter {
     }
 
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(Temperature::class)
+        return Absorber.getClassId(QuantumPhotonicField::class)
     }
 
     public fun getClassId() : String {
         return getLocalClassId()
     }
 
-    fun temperature() : Any? {
-        return field.getValue()
-    }
 
     fun setField(field: Field) : QuantumPhotonicField {
         this.field = field
         return this
     }
 
-    fun setTemperature(value:Any?) : Any? {
+    fun setValue(value:Any?) : Any? {
         return field.setValue(value)
     }
 

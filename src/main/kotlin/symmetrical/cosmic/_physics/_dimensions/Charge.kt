@@ -3,14 +3,7 @@ package symmetrical.cosmic._physics._dimensions
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-class Charge (
-    private val antiMatter: IAntiMatter = AntiMatter(Charge::class),
-) :
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Charge::class),
-    )
+class Charge {
 
     var charge:Byte = Static.ZERO
 
@@ -20,9 +13,7 @@ class Charge (
         const val MINUS:Byte = -1
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     fun i() : Charge {
         return this
     }
