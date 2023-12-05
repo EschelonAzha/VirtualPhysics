@@ -7,7 +7,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class KeyValue(
-    private val antiMatter: IAntiMatter = AntiMatter(KeyValue::class),
+    private val antiMatter: IAntiMatter = AntiMatter(KeyValue::class, KeyValue::class),
 ) : Diatomic(),
     IAntiMatter by antiMatter
 {
@@ -19,7 +19,7 @@ open class KeyValue(
         const val LAST      : Int = VALUE
     }
     constructor() : this(
-        AntiMatter(KeyValue::class),
+        AntiMatter(KeyValue::class, KeyValue::class),
     )
     constructor(key: Atom, value:Atom) : this(){
         add(key)

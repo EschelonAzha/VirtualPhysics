@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class QMass(
-    private val antiMatter: AntiMatter = AntiMatter(QMass::class),
+    private val antiMatter: AntiMatter = AntiMatter(QMass::class, QMass::class),
 ) : Atom(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(QMass::class),
+        AntiMatter(QMass::class, QMass::class),
     )
     init {
         setMass(Beam(0))

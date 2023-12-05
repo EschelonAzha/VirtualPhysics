@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class QByte(
-    private val antiMatter: AntiMatter = AntiMatter(QByte::class),
+    private val antiMatter: AntiMatter = AntiMatter(QByte::class, QByte::class),
 ) : Atom(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(QByte::class),
+        AntiMatter(QByte::class, QByte::class),
     ) init {
         setByte(" ".toByte())
     }

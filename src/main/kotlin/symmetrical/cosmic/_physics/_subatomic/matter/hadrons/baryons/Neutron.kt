@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiNeutron
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
@@ -7,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Neutron(
-    private val antiMatter: IAntiMatter = AntiMatter(Neutron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Neutron::class, AntiNeutron::class),
 ) : Baryon(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Neutron::class),
+        AntiMatter(Neutron::class, AntiNeutron::class),
     ) init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

@@ -9,18 +9,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 
 
 class AntiBetaPlus(
-    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class),
+    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, BetaPlus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiBetaPlus::class),
-    ) {
-        antiMatter.setKClass(AntiBetaPlus::class)
-    }
+        AntiMatter(AntiBetaPlus::class, BetaPlus::class),
+    )
 
     override fun getClassId() : String {
         return antiMatter.getClassId()

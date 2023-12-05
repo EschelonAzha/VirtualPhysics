@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.dom.Dom
 
 open class Body(
-    private val antiMatter: IAntiMatter = AntiMatter(Body::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Body::class, Body::class),
 ) : Dom(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Body::class),
+        AntiMatter(Body::class, Body::class),
     )
 
     val peer: HtmlPeer = HtmlPeer(Document.getElementById("body"))

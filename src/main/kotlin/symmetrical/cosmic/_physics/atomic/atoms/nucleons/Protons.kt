@@ -12,13 +12,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Protons(
-    private val antiMatter:IAntiMatter = AntiMatter(Protons::class),
+    private val antiMatter:IAntiMatter = AntiMatter(Protons::class, Protons::class),
 ) : ParticleBeam(),
     IAntiMatter by antiMatter,
     IProtons
 {
     constructor() : this(
-        AntiMatter(Protons::class),
+        AntiMatter(Protons::class, Protons::class),
     )    init {
         add(Proton().setProtons(this))
     }

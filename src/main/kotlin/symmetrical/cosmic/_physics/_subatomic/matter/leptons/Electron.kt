@@ -12,15 +12,15 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Electron(
-    private val antiMatter: IAntiMatter = AntiMatter(Electron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Electron::class, Positron::class),
 ) : Lepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Electron::class),
+        AntiMatter(Electron::class, Positron::class),
     )
     init {
-        setAntiMatter(Positron::class)
+
     }
 
     lateinit var orbitals : Orbitals

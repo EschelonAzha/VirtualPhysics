@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class QString(
-    private val antiMatter: IAntiMatter = AntiMatter(QString::class),
+    private val antiMatter: IAntiMatter = AntiMatter(QString::class, QString::class),
 ) : Atom(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(QString::class),
+        AntiMatter(QString::class, QString::class),
     )   init {
         setString("")
     }

@@ -10,5 +10,4 @@ interface IAntiMatter {
     fun check(photon: Photon) : Unit
     fun getClassId()            : String
     fun getIlluminations()      : IParticleBeam
-    fun setKClass(kClass: KClass<*>) : IAntiMatter
 }

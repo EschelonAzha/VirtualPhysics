@@ -9,16 +9,17 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 
 
 open class AntiLepton(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(AntiLepton::class),
+        AntiMatter(AntiLepton::class, Lepton::class),
     )
 
     protected var fundamentals: Fundamentals = Fundamentals()

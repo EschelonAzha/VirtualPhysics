@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -13,12 +14,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Baryon(
-    private val antiMatter: IAntiMatter = AntiMatter(Baryon::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Baryon::class, AntiBaryon::class),
 ) : Hadron(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Baryon::class),
+        AntiMatter(Baryon::class, AntiBaryon::class),
     )
     init {
         super.i(3)

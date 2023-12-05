@@ -11,13 +11,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Fundamentals(
-    private val antiMatter: IAntiMatter = AntiMatter(Fundamentals::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Fundamentals::class, Fundamentals::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Fundamentals::class),
+        AntiMatter(Fundamentals::class, Fundamentals::class),
     )
     private var angularMomentum : AngularMomentum = AngularMomentum()
     private var spin            : Spin            = Spin()

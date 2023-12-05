@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Host(
-    private val antiMatter: IAntiMatter = AntiMatter(Host::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Host::class, Host::class),
 ) : KeyValue(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Host::class),
+        AntiMatter(Host::class, Host::class),
     )
     constructor(key: QString, value: QString) : this() {
         add(key)

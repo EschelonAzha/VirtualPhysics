@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
 class DeviceInput(
-    private val antiMatter: IAntiMatter = AntiMatter(DeviceInput::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DeviceInput::class, DeviceInput::class),
 ) : Compound(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(DeviceInput::class),
+        AntiMatter(DeviceInput::class, DeviceInput::class),
     )
 
     object Static {

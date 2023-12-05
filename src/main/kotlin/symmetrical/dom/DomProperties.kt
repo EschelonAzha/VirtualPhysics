@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class DomProperties(
-    private val antiMatter: IAntiMatter = AntiMatter(DomProperties::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DomProperties::class, DomProperties::class),
 ) : Molecular(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(DomProperties::class),
+        AntiMatter(DomProperties::class, DomProperties::class),
     )
 
 

@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class QDouble(
-    private val antiMatter: AntiMatter = AntiMatter(QDouble::class),
+    private val antiMatter: AntiMatter = AntiMatter(QDouble::class, QDouble::class),
 ) : Atom(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(QDouble::class),
+        AntiMatter(QDouble::class, QDouble::class),
     ) init {
         setDouble(0.0)
     }

@@ -6,16 +6,16 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Top(
-    private val antiMatter: IAntiMatter = AntiMatter(Top::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Top::class, AntiTop::class),
 ) : Quark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Top::class),
+        AntiMatter(Top::class, AntiTop::class),
     )
 
     init {
-        setAntiMatter(AntiTop::class)
+
     }
 
     override fun absorb(photon: Photon) : Photon {

@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class CrLfTerminatedString(
-    private val antiMatter: IAntiMatter = AntiMatter(CrLfTerminatedString::class),
+    private val antiMatter: IAntiMatter = AntiMatter(CrLfTerminatedString::class, CrLfTerminatedString::class),
 ) : QString() ,
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(CrLfTerminatedString::class),
+        AntiMatter(CrLfTerminatedString::class, CrLfTerminatedString::class),
     ) {
         setQuarkMomentum(CRLFTerminatedMomentum())
         setQuarkSpin(Spin())

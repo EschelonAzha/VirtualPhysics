@@ -7,13 +7,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 // Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
-    private val antiMatter: AntiMatter = AntiMatter(QInt::class),
+    private val antiMatter: AntiMatter = AntiMatter(QInt::class, QInt::class),
 ) : Atom(),
     IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        AntiMatter(QInt::class),
+        AntiMatter(QInt::class, QInt::class),
     )   init {
         setInt(0)
     }

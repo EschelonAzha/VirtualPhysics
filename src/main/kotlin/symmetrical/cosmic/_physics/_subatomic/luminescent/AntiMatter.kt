@@ -11,10 +11,12 @@ class AntiMatter : IAntiMatter {
         public val beam: ParticleBeam = ParticleBeam()
     }
 
-    private lateinit var kClass:KClass<*>
+    private var positive   :KClass<*>
+    private var negative   :KClass<*>
 
-    constructor(kClass:KClass<*>) {
-        setKClass(kClass)
+    constructor(positive:KClass<*>, negative:KClass<*>) {
+        this.positive = positive
+        this.negative = negative;
 
     }
 
@@ -31,22 +33,10 @@ class AntiMatter : IAntiMatter {
         return;
     }
     override fun getClassId() : String {
-        return Absorber.getClassId(getKClass())
+        return Absorber.getClassId(this.positive)
     }
     override fun getIlluminations() : IParticleBeam {
         return Illuminations.beam
-    }
-
-    override fun setKClass(kClass: KClass<*>) : IAntiMatter {
-        this.kClass = kClass
-        return this
-    }
-
-
-    private fun getKClass() : KClass<*> {
-        if (::kClass.isInitialized)
-            return kClass
-        return AntiMatter::class
     }
 
 }

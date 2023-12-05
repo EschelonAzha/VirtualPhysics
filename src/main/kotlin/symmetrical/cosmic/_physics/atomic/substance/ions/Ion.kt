@@ -4,13 +4,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Ion(
-    private val antiMatter: IAntiMatter = AntiMatter(Ion::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Ion::class, Ion::class),
 ) :
     IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        AntiMatter(Ion::class),
+        AntiMatter(Ion::class, Ion::class),
     )
     override fun getClassId() : String {
         return antiMatter.getClassId()

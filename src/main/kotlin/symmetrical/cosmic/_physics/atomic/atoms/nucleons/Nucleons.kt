@@ -14,7 +14,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Nucleons(
-    private val antiMatter  :IAntiMatter            = AntiMatter(Nucleons::class),
+    private val antiMatter  :IAntiMatter            = AntiMatter(Nucleons::class, Nucleons::class),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
 
@@ -27,7 +27,7 @@ class Nucleons(
 {
 
     constructor() : this(
-        AntiMatter(Nucleons::class),
+        AntiMatter(Nucleons::class, Nucleons::class),
         Protons(),
         Neutrons()
     )   init {

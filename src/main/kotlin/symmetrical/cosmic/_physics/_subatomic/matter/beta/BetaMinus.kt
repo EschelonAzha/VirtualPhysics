@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.beta
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_beta.AntiBetaMinus
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiNeutrino
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
@@ -11,12 +12,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class BetaMinus(
-    private val antiMatter: IAntiMatter = AntiMatter(BetaMinus::class),
+    private val antiMatter: IAntiMatter = AntiMatter(BetaMinus::class, AntiBetaMinus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(BetaMinus::class),
+        AntiMatter(BetaMinus::class, AntiBetaMinus::class),
     )
 
     override fun getClassId() : String {

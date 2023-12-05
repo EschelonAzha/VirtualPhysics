@@ -8,13 +8,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Compound(
-    private val antiMatter: IAntiMatter = AntiMatter(Compound::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Compound::class, Compound::class),
 ) : Molecular(),
     IAntiMatter by antiMatter,
     Ionic
 {
     constructor() : this(
-        AntiMatter(Compound::class),
+        AntiMatter(Compound::class, Compound::class),
     )
     object Static {
         const val LAST      : Int = -1

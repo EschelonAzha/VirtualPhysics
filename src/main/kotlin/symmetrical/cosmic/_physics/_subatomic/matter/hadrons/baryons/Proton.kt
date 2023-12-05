@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -15,12 +16,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Proton(
-    private val antiMatter: IAntiMatter = AntiMatter(Proton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Proton::class, AntiProton::class),
 ) : Baryon(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Proton::class),
+        AntiMatter(Proton::class, AntiProton::class),
     ) init {
         this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

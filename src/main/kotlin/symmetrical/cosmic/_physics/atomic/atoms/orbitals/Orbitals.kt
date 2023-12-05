@@ -11,13 +11,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Orbitals(
-    private val antiMatter: AntiMatter = AntiMatter(Orbitals::class),
+    private val antiMatter: AntiMatter = AntiMatter(Orbitals::class, Orbitals::class),
 ) : ParticleBeam(),
     IAntiMatter by antiMatter,
     IOrbitals
 {
     constructor() : this(
-        AntiMatter(Orbitals::class),
+        AntiMatter(Orbitals::class, Orbitals::class),
     ) init {
         add(Electron())
     }

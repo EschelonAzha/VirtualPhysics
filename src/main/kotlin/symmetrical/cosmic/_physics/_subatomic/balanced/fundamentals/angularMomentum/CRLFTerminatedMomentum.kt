@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class CRLFTerminatedMomentum(
-    private val antiMatter: IAntiMatter = AntiMatter(CRLFTerminatedMomentum::class),
+    private val antiMatter: IAntiMatter = AntiMatter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
 ) : AngularMomentum(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(CRLFTerminatedMomentum::class),
+        AntiMatter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
     )
     override fun getClassId() : String {
         return antiMatter.getClassId()

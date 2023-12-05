@@ -11,13 +11,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class QuarkValue(
-    private val antiMatter: IAntiMatter = AntiMatter(QuarkValue::class),
+    private val antiMatter: IAntiMatter = AntiMatter(QuarkValue::class, QuarkValue::class),
 )  :
     IAntiMatter by antiMatter,
     IQuarkValue
 {
     constructor() : this(
-        AntiMatter(QuarkValue::class),
+        AntiMatter(QuarkValue::class, QuarkValue::class),
     )
     lateinit var atom:Atom
 

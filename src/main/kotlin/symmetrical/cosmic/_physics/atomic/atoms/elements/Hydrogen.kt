@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Hydrogen(
-    private val antiMatter: IAntiMatter = AntiMatter(Hydrogen::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Hydrogen::class, AntiHydrogen::class),
 ) :
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Hydrogen::class),
+        AntiMatter(Hydrogen::class, AntiHydrogen::class),
     )
 
 

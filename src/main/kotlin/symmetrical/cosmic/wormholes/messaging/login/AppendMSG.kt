@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class AppendMSG(
-    private val luminescent: IAntiMatter = AntiMatter(AppendMSG::class),
+    private val luminescent: IAntiMatter = AntiMatter(AppendMSG::class, AppendMSG::class),
 ) : Message(),
     IAntiMatter by luminescent
 {
     constructor() : this(
-        AntiMatter(AppendMSG::class),
+        AntiMatter(AppendMSG::class, AppendMSG::class),
     )
     object Static {
         const val LAST      : Int = Message.Static.LAST

@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Dom(
-    private val antiMatter: IAntiMatter = AntiMatter(Dom::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Dom::class, Dom::class),
 ) : Atom(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Dom::class),
+        AntiMatter(Dom::class, Dom::class),
     )
 
     private var children  :Molecular     = Molecular()

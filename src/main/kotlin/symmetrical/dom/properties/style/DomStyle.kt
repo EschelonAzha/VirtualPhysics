@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.dom.DomProperty
 
 class DomStyle(
-    private val antiMatter: IAntiMatter = AntiMatter(DomStyle::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DomStyle::class, DomStyle::class),
 ) : DomProperty(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(DomStyle::class),
+        AntiMatter(DomStyle::class, DomStyle::class),
     )
     init {
         setProperty("style")

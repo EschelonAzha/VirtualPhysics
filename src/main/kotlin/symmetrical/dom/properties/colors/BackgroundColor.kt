@@ -6,20 +6,19 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.dom.DomProperty
 
 class BackgroundColor(
-    private val antiMatter: AntiMatter = AntiMatter(BackgroundColor::class),
+    private val antiMatter: AntiMatter = AntiMatter(BackgroundColor::class, BackgroundColor::class),
 ) : DomProperty(),
     IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        AntiMatter(BackgroundColor::class),
+        AntiMatter(BackgroundColor::class, BackgroundColor::class),
     )
     init {
             setProperty("backgroundColor")
     }
 
     constructor(height:Int) : this() {
-        antiMatter.setKClass(BackgroundColor::class)
         getValue()!!.setQuarkValue(height.toString())
     }
 

@@ -10,13 +10,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Wavelength(
-    private val antiMatter: IAntiMatter = AntiMatter(Wavelength::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Wavelength::class, Wavelength::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Wavelength::class),
+        AntiMatter(Wavelength::class, Wavelength::class),
     )
     object Static {
         const val NULL      = "0"

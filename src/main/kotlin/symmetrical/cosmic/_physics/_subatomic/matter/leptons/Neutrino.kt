@@ -7,15 +7,15 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Neutrino(
-    private val antiMatter: IAntiMatter = AntiMatter(Neutrino::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Neutrino::class, AntiNeutrino::class),
 ) : Lepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Neutrino::class),
+        AntiMatter(Neutrino::class, AntiNeutrino::class),
     )
     init {
-        setAntiMatter(AntiNeutrino::class)
+
     }
 
     lateinit var __beam: ParticleBeam

@@ -7,13 +7,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Alloy(
     val mixtures: Substance? = null,
-    private val antiMatter: IAntiMatter = AntiMatter(Alloy::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Alloy::class, Alloy::class),
 ) :
     IAntiMatter by antiMatter
 {
     constructor() : this(
         null,
-        AntiMatter(Alloy::class),
+        AntiMatter(Alloy::class, Alloy::class),
     )
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()

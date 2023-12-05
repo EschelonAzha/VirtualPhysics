@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.dom.DomProperty
 
 class DomTop(
-    private val antiMatter: IAntiMatter = AntiMatter(DomTop::class),
+    private val antiMatter: IAntiMatter = AntiMatter(DomTop::class, DomTop::class),
 ) : DomProperty(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(DomTop::class),
+        AntiMatter(DomTop::class, DomTop::class),
     )
     init {
         setProperty("top")

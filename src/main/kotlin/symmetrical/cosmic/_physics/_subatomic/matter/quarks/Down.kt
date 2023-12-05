@@ -8,15 +8,15 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Down(
-    private val antiMatter: IAntiMatter = AntiMatter(Down::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Down::class, AntiDown::class),
 ) : Quark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Down::class),
+        AntiMatter(Down::class, AntiDown::class),
     )
     init {
-        setAntiMatter(AntiDown::class)
+
     }
     companion object {
         const val VALUE            = "VALUE"

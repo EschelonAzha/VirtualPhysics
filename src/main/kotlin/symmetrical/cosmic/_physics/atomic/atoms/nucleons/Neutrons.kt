@@ -9,13 +9,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Neutrons(
-    private val antiMatter: IAntiMatter = AntiMatter(Neutrons::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Neutrons::class, Neutrons::class),
 ) : ParticleBeam(),
     IAntiMatter by antiMatter,
     INeutrons
 {
     constructor()  : this(
-        AntiMatter(Neutrons::class),
+        AntiMatter(Neutrons::class, Neutrons::class),
     )
 
 

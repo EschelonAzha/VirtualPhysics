@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class AngularMomentum(
-    private val antiMatter: IAntiMatter = AntiMatter(AngularMomentum::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AngularMomentum::class, AngularMomentum::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter {
     constructor() : this(
-        AntiMatter(AngularMomentum::class),
+        AntiMatter(AngularMomentum::class, AngularMomentum::class),
     )
 
 

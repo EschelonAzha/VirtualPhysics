@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Helium(
-    private val antiMatter: IAntiMatter = AntiMatter(Helium::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Helium::class, AntiHelium::class),
 ) :
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Helium::class),
+        AntiMatter(Helium::class, AntiHelium::class),
     )
 
 

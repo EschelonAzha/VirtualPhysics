@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 class Path(
-    private val antiMatter: IAntiMatter = AntiMatter(Path::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Path::class, Path::class),
 ) : Molecule(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Path::class),
+        AntiMatter(Path::class, Path::class),
     )
     init {
         parsePath("")

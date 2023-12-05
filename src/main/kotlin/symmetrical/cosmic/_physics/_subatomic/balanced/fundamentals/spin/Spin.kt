@@ -7,13 +7,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Spin(
-    private val antiMatter: IAntiMatter = AntiMatter(Spin::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Spin::class, Spin::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Spin::class),
+        AntiMatter(Spin::class, Spin::class),
     )
 
     object Static {

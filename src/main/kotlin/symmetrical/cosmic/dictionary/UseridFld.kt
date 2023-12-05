@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class UseridFld(
-    private val antiMatter: IAntiMatter = AntiMatter(UseridFld::class),
+    private val antiMatter: IAntiMatter = AntiMatter(UseridFld::class, UseridFld::class),
 ) : QString(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(UseridFld::class),
+        AntiMatter(UseridFld::class, UseridFld::class),
     )
 
 

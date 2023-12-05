@@ -1,19 +1,20 @@
 package symmetrical.cosmic._physics._subatomic.balanced
 
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Monad(
-    private val antiMatter: IAntiMatter = AntiMatter(Monad::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Monad::class, AntiQuark::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Monad::class),
+        AntiMatter(Monad::class, AntiQuark::class),
     )
 
 

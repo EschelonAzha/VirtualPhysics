@@ -8,15 +8,16 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 
 class AntiBetaMinus(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiBetaMinus::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiBetaMinus::class, BetaMinus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 
 {
     constructor() : this(
-        AntiMatter(AntiBetaMinus::class),
+        AntiMatter(AntiBetaMinus::class, BetaMinus::class)
     )
 
 

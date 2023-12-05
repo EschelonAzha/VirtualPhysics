@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Message(
-    private val antiMatter: IAntiMatter = AntiMatter(Message::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Message::class, Message::class),
 ) : ParticleBeam(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Message::class),
+        AntiMatter(Message::class, Message::class),
     )
 
     object Static {

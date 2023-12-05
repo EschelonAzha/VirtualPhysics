@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons
 
+import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.AntiHadron
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
@@ -8,13 +9,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Hadron(
-    private val antiMatter: IAntiMatter = AntiMatter(Hadron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Hadron::class, AntiHadron::class),
 ) : ParticleBeam(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Hadron::class),
+        AntiMatter(Hadron::class, AntiHadron::class),
     )
 
 

@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class SocketMessage(
-    private val antiMatter: IAntiMatter = AntiMatter(SocketMessage::class),
+    private val antiMatter: IAntiMatter = AntiMatter(SocketMessage::class, SocketMessage::class),
 ) : Compound(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(SocketMessage::class),
+        AntiMatter(SocketMessage::class, SocketMessage::class),
     ) {
         bytes = ByteArray(0)
     }

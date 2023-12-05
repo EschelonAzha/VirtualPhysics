@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class LoginMSG(
-    private val antiMatter: IAntiMatter = AntiMatter(LoginMSG::class),
+    private val antiMatter: IAntiMatter = AntiMatter(LoginMSG::class, LoginMSG::class),
 ) : Message(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(LoginMSG::class),
+        AntiMatter(LoginMSG::class, LoginMSG::class),
     )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1
