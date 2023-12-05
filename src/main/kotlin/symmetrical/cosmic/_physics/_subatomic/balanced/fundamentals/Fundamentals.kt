@@ -9,6 +9,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 class Fundamentals(
     private val antiMatter: IAntiMatter = AntiMatter(Fundamentals::class, Fundamentals::class),
@@ -19,9 +20,9 @@ class Fundamentals(
     constructor() : this(
         AntiMatter(Fundamentals::class, Fundamentals::class),
     )
-    private var angularMomentum : AngularMomentum = AngularMomentum()
-    private var spin            : Spin            = Spin()
-    private var wavelength      : Wavelength      = Wavelength()
+    private var angularMomentum : AngularMomentum           = AngularMomentum()
+    private var spin            : Spin                      = Spin()
+    private var wavelength      : QuantumPhotonicField      = QuantumPhotonicField()
 
 
     override fun absorb(photon: Photon) : Photon {
@@ -30,7 +31,7 @@ class Fundamentals(
         var (spin, spinRemainder) = Absorber.materialize(photon.propagate())
         setSpin(spin as Spin)
         var (wavelength, wavelengthRemainder) = Absorber.materialize(spinRemainder)
-        this.wavelength = wavelength as Wavelength
+        this.wavelength = wavelength as QuantumPhotonicField
         return Photon(wavelengthRemainder)
     }
 
@@ -54,7 +55,7 @@ class Fundamentals(
     fun getSpin() : Spin {
         return spin
     }
-    fun getWavelength() : Wavelength {
+    fun getWavelength() : QuantumPhotonicField {
         return wavelength
     }
     fun setMomentum(momentum: AngularMomentum) : Fundamentals {

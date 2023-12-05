@@ -6,6 +6,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 open class AngularMomentum(
     private val antiMatter: IAntiMatter = AntiMatter(AngularMomentum::class, AngularMomentum::class),
@@ -32,7 +33,7 @@ open class AngularMomentum(
     override fun getClassId() : String {
         return antiMatter.getClassId()
     }
-    open fun format(wavelength: Wavelength) : String {
+    open fun format(wavelength: QuantumPhotonicField) : String {
         return wavelength.toString()
     }
 }

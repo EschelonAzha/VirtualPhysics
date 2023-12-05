@@ -14,6 +14,7 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 
 open class AntiQuark(
@@ -86,7 +87,7 @@ open class AntiQuark(
     fun getSpin() : Spin {
         return fundamental.getSpin()
     }
-    fun getWavelength() : Wavelength {
+    fun getWavelength() : QuantumPhotonicField {
         return fundamental.getWavelength()
     }
     fun setSpin(spin: Spin) : AntiQuark {
@@ -102,7 +103,7 @@ open class AntiQuark(
         return this
     }
     fun setWavelength(value:Any?) : AntiQuark {
-        this.getWavelength().setWavelength(value)
+        this.getWavelength().setValue(value)
         return this
     }
     fun momentum() : String {
@@ -114,7 +115,7 @@ open class AntiQuark(
         return getSpin().isPlus()
     }
     fun wavelength() : Any? {
-        return getWavelength().wavelength()
+        return getWavelength().getValue()
     }
 
 

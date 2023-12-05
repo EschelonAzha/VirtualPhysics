@@ -16,6 +16,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 
 open class Quark(
@@ -95,7 +96,7 @@ open class Quark(
     fun getSpin() : Spin {
         return fundamentals.getSpin()
     }
-    fun getWavelength() : Wavelength {
+    fun getWavelength() : QuantumPhotonicField {
         return fundamentals.getWavelength()
     }
     fun setSpin(spin: Spin) : Quark {
@@ -111,7 +112,7 @@ open class Quark(
         return this
     }
     fun setWavelength(value:Any?) : Quark {
-        this.getWavelength().setWavelength(value)
+        this.getWavelength().setValue(value)
         return this
     }
     fun momentum() : String {
@@ -123,7 +124,7 @@ open class Quark(
         return getSpin().isPlus()
     }
     fun wavelength() : Any? {
-        return getWavelength().wavelength()
+        return getWavelength().getValue()
     }
 
 

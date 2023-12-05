@@ -13,6 +13,7 @@ import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 
 open class Proton(
@@ -131,8 +132,8 @@ open class Proton(
         return protonType == type.value
     }
     fun setType(protonType: Protons.ProtonType) : Proton {
-        val wavelength: Wavelength = getTypeQuark().getWavelength()
-        val changed = wavelength.setWavelength(protonType.value.toString())
+        val wavelength: QuantumPhotonicField = getTypeQuark().getWavelength()
+        val changed = wavelength.setValue(protonType.value.toString())
         return this
     }
     fun getValue() : Any? {
@@ -143,9 +144,9 @@ open class Proton(
         if (flowing)
             return zBoson
 
-        val newValue  : Field      = zBoson.getNewField()
-        val valueQuark: Up         = getValueQuark()
-        val wavelength: Wavelength = valueQuark.getWavelength()
+        val newValue  : Field                       = zBoson.getNewField()
+        val valueQuark: Up                          = getValueQuark()
+        val wavelength: QuantumPhotonicField        = valueQuark.getWavelength()
         zBoson.setOldValue(wavelength.getValue())
 
         if (!noChange(zBoson).isAccepted())
@@ -189,9 +190,9 @@ open class Proton(
         return electron.flow()
     }
     private fun noChange(zBoson:ZBoson) : ZBoson {
-        val newValue  : Field      = zBoson.getNewField()
-        val valueQuark: Up         = getValueQuark()
-        val wavelength: Wavelength = valueQuark.getWavelength()
+        val newValue  : Field                   = zBoson.getNewField()
+        val valueQuark: Up                      = getValueQuark()
+        val wavelength: QuantumPhotonicField    = valueQuark.getWavelength()
         if (!wavelength.isChange(newValue)) {
             zBoson.setAccepted(false)
         }

@@ -9,6 +9,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 
 
@@ -55,7 +56,7 @@ open class AntiLepton(
     fun getSpin() : Spin {
         return fundamentals.getSpin()
     }
-    fun getWavelength() : Wavelength {
+    fun getWavelength() : QuantumPhotonicField {
         return fundamentals.getWavelength()
     }
     fun setSpin(spin: Spin) : AntiLepton {
@@ -67,14 +68,14 @@ open class AntiLepton(
         return this
     }
     fun setWavelength(value:Any?) : AntiLepton {
-        this.getWavelength().setWavelength(value)
+        this.getWavelength().setValue(value)
         return this
     }
     fun spin() : Boolean {
         return getSpin().isPlus()
     }
     fun wavelength() : Any? {
-        return getWavelength().wavelength()
+        return getWavelength().getValue()
     }
     fun wavelengthStr() : String {
         val result = wavelength() ?: return ""
