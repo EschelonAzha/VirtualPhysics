@@ -13,7 +13,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Molecular(
-    private val antiMatter: IAntiMatter = AntiMatter(Molecular::class, AntiMolecular::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Molecular::class, Molecular::class),
     private var particleBeam: ParticleBeam = ParticleBeam(),
 
     ) : Atom(),
@@ -22,7 +22,7 @@ open class Molecular(
     IParticle
 {
     constructor() : this(
-        AntiMatter(Molecular::class, AntiMolecular::class),
+        AntiMatter(Molecular::class, Molecular::class),
         ParticleBeam(),
     )
     object Static {

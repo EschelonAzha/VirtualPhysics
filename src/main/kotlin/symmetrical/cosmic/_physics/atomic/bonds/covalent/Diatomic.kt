@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Diatomic(
-    private val antiMatter: IAntiMatter = AntiMatter(Diatomic::class, AntiDiatomic::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Diatomic::class, Diatomic::class),
 ) : Molecular(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Diatomic::class, AntiDiatomic::class),
+        AntiMatter(Diatomic::class, Diatomic::class),
     )
     object Static {
         const val LAST      : Int = -1

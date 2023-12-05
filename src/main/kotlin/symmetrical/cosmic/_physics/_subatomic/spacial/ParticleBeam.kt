@@ -12,7 +12,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class ParticleBeam(
-    private   val antiMatter  : IAntiMatter = AntiMatter(ParticleBeam::class, AntiParticleBeam::class),
+    private   val antiMatter  : IAntiMatter = AntiMatter(ParticleBeam::class, ParticleBeam::class),
     protected val beam     : Beam = Beam()
 ) : Particle(),
     IAntiMatter by antiMatter,
@@ -21,7 +21,7 @@ open class ParticleBeam(
     Emitter
 {
     constructor() : this(
-        AntiMatter(ParticleBeam::class, AntiParticleBeam::class),
+        AntiMatter(ParticleBeam::class, ParticleBeam::class),
         Beam()
     )
     init {

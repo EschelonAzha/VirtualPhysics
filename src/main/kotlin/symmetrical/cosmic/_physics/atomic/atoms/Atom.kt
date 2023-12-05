@@ -26,7 +26,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 
 
 open class Atom(
-    private   val antiMatter       : IAntiMatter            = AntiMatter(Atom::class, AntiAtom::class),
+    private   val antiMatter       : IAntiMatter            = AntiMatter(Atom::class, Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var nucleons          : Nucleons              = Nucleons(),
     private   val colorCharges      : ColorCharge           = ColorCharge(),
@@ -43,7 +43,7 @@ open class Atom(
         IAtom
     {
         constructor() : this(
-            AntiMatter(Atom::class, AntiAtom::class),
+            AntiMatter(Atom::class, Atom::class),
             Orbitals(),
             Nucleons(),
             ColorCharge(),
