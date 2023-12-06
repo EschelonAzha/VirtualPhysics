@@ -23,11 +23,8 @@ open class Lepton(
     constructor() : this(
         AntiMatter(Lepton::class, AntiLepton::class),
     )
-    init {
 
-    }
 
-    protected var fundamentals: Fundamentals = Fundamentals()
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);

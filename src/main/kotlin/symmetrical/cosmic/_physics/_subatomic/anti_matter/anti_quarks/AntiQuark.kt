@@ -26,21 +26,16 @@ open class AntiQuark(
     constructor() : this(
         AntiMatter(Quark::class, AntiQuark::class),
     )
-    init {
 
-    }
 
     private var gluon       : Gluon         = Red_AntiRed()
-    private var fundamental : Fundamentals  = Fundamentals()
-
-
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
 
-        this.gluon                                  = Red_AntiRed()  // this is need for JS Bug
-        val (clone, remainder)        = Absorber.materialize(photon.propagate())
-        this.fundamental                            = clone as Fundamentals
+        this.gluon                                 = Red_AntiRed()  // this is need for JS Bug
+        val (clone, remainder)       = Absorber.materialize(photon.propagate())
+        this.fundamentals                           = clone as Fundamentals
         return Photon(remainder)
     }
 
@@ -48,7 +43,7 @@ open class AntiQuark(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+fundamental.emit().radiate()
+        return antiMatter.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
         return antiMatter.getClassId()
@@ -79,23 +74,23 @@ open class AntiQuark(
         return getWavelength()
     }
     fun getPhoton() : Photon {
-        return fundamental.getPhoton()
+        return fundamentals.getPhoton()
     }
     fun getMomentum() : AngularMomentum {
-        return fundamental.getAngularMomentum()
+        return fundamentals.getAngularMomentum()
     }
     fun getSpin() : Spin {
-        return fundamental.getSpin()
+        return fundamentals.getSpin()
     }
     fun getWavelength() : QuantumPhotonicField {
-        return fundamental.getWavelength()
+        return fundamentals.getWavelength()
     }
     fun setSpin(spin: Spin) : AntiQuark {
-        this.fundamental.setSpin(spin)
+        this.fundamentals.setSpin(spin)
         return this
     }
     fun setMomentum(momentum: AngularMomentum) : AntiQuark {
-        this.fundamental.setMomentum(momentum)
+        this.fundamentals.setMomentum(momentum)
         return this
     }
     fun setValue(value:Any?) : AntiQuark {
@@ -164,6 +159,6 @@ open class AntiQuark(
         return this
     }
     override fun toString() : String {
-        return fundamental.toString()
+        return fundamentals.toString()
     }
 }

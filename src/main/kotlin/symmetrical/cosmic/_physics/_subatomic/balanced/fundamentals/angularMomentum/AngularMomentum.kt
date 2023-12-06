@@ -10,7 +10,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 open class AngularMomentum(
     private val antiMatter: IAntiMatter = AntiMatter(AngularMomentum::class, AngularMomentum::class),
-) : Particle(),
+) :
     IAntiMatter by antiMatter,
     Emitter {
     constructor() : this(

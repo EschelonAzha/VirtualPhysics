@@ -36,13 +36,6 @@ open class Quark(
     }
 
     lateinit var gluon                  : Gluon
-    private var dimensions              : Dimensions = Dimensions()
-    private lateinit var fundamentals   : Fundamentals
-
-
-
-
-
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);

@@ -13,7 +13,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 class Fundamentals(
     private val antiMatter: IAntiMatter = AntiMatter(Fundamentals::class, Fundamentals::class),
-) : Particle(),
+) :
     IAntiMatter by antiMatter,
     Emitter
 {

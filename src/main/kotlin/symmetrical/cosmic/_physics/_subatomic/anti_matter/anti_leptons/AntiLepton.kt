@@ -23,9 +23,6 @@ open class AntiLepton(
         AntiMatter(AntiLepton::class, Lepton::class),
     )
 
-    protected var fundamentals: Fundamentals = Fundamentals()
-
-
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
 
