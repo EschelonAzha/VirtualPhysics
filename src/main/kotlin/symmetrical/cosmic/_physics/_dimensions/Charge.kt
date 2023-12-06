@@ -2,10 +2,11 @@ package symmetrical.cosmic._physics._dimensions
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 class Charge {
 
-    var charge:Byte = Static.ZERO
+    var charge:QuantumPhotonicField = QuantumPhotonicField()
 
     object Static {
         const val PLUS:Byte  = +1
