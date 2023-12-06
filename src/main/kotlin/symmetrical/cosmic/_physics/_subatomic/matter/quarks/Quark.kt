@@ -77,48 +77,48 @@ open class Quark(
 
 
 
-    fun getValue() : Any? {
-        return getWavelength()
-    }
-    fun getPhoton() : Photon {
-        return fundamentals.getPhoton()
-    }
-    fun getMomentum() : AngularMomentum {
-        return fundamentals.getAngularMomentum()
-    }
-    fun getSpin() : Spin {
-        return fundamentals.getSpin()
-    }
-    fun getWavelength() : QuantumPhotonicField {
-        return fundamentals.getWavelength()
-    }
-    fun setSpin(spin: Spin) : Quark {
-        this.fundamentals.setSpin(spin)
-        return this
-    }
-    fun setMomentum(momentum: AngularMomentum) : Quark {
-        this.fundamentals.setMomentum(momentum)
-        return this
-    }
-    fun setValue(value:Any?) : Quark {
-        this.setWavelength(value)
-        return this
-    }
-    fun setWavelength(value:Any?) : Quark {
-        this.getWavelength().setValue(value)
-        return this
-    }
-    fun momentum() : String {
-        if (spin())
-            return getMomentum().format(getWavelength())
-        else return getWavelength().toString()
-    }
-    fun spin() : Boolean {
-        return getSpin().isPlus()
-    }
-    fun wavelength() : Any? {
-        return getWavelength().getValue()
-    }
+//    fun getValue() : Any? {
+//        return getWavelength()
+//    }
+//    fun getPhoton() : Photon {
+//        return fundamentals.getPhoton()
+//    }
+//    fun getMomentum() : AngularMomentum {
+//        return fundamentals.getAngularMomentum()
+//    }
+//    fun getSpin() : Spin {
+//        return fundamentals.getSpin()
+//    }
+//    fun getWavelength() : QuantumPhotonicField {
+//        return fundamentals.getWavelength()
+//    }
+//    fun setSpin(spin: Spin) : Quark {
+//        this.fundamentals.setSpin(spin)
+//        return this
+//    }
+//    fun setMomentum(momentum: AngularMomentum) : Quark {
+//        this.fundamentals.setMomentum(momentum)
+//        return this
+//    }
+//    fun setValue(value:Any?) : Quark {
+//        this.setWavelength(value)
+//        return this
+//    }
+//    fun setWavelength(value:Any?) : Quark {
+//        this.getWavelength().setValue(value)
+//        return this
+//    }
+//    fun momentum() : String {
+//        if (spin())
+//            return getMomentum().format(getWavelength())
+//        else return getWavelength().toString()
+//    }
+//    fun spin() : Boolean {
+//        return getSpin().isPlus()
+//    }
+//    fun wavelength() : Any? {
+//        return getWavelength().getValue()
+//    }
 
 
     fun red() : Any? {

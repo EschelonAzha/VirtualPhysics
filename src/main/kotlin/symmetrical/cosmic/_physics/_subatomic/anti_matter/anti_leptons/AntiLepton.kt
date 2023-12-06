@@ -43,42 +43,4 @@ open class AntiLepton(
     open fun i() : AntiLepton {
         return this
     }
-    //    fun getValue() : Any? {
-//        val wavelength:Wavelength = getWavelength()
-//        return wavelength.wavelength()
-//    }
-    fun getPhoton() : Photon {
-        return fundamentals.getPhoton()
-    }
-    fun getSpin() : Spin {
-        return fundamentals.getSpin()
-    }
-    fun getWavelength() : QuantumPhotonicField {
-        return fundamentals.getWavelength()
-    }
-    fun setSpin(spin: Spin) : AntiLepton {
-        this.fundamentals.setSpin(spin)
-        return this
-    }
-    fun setValue(value:Any?) : AntiLepton {
-        this.setWavelength(value)
-        return this
-    }
-    fun setWavelength(value:Any?) : AntiLepton {
-        this.getWavelength().setValue(value)
-        return this
-    }
-    fun spin() : Boolean {
-        return getSpin().isPlus()
-    }
-    fun wavelength() : Any? {
-        return getWavelength().getValue()
-    }
-    fun wavelengthStr() : String {
-        val result = wavelength() ?: return ""
-        return result.toString()
-    }
-
-
-
 }

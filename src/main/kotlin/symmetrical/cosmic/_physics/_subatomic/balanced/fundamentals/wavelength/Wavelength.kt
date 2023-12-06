@@ -12,7 +12,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 class Wavelength(
     private val antiMatter: IAntiMatter = AntiMatter(Wavelength::class, Wavelength::class),
-) : Particle(),
+) :
     IAntiMatter by antiMatter,
     Emitter
 {

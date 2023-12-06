@@ -49,7 +49,7 @@ open class KeyValue(
             return get(Static.KEY) as Atom
         return null
     }
-    fun getValue() : Atom? {
+    override fun getValue() : Atom? {
         if (size()>1)
             return get(Static.VALUE) as Atom
         return null

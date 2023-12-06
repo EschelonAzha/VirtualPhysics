@@ -136,7 +136,7 @@ open class Proton(
         val changed = wavelength.setValue(protonType.value.toString())
         return this
     }
-    fun getValue() : Any? {
+    override fun getValue() : Any? {
         return getField().getValue()
     }
 
