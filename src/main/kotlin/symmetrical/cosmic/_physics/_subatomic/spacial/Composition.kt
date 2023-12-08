@@ -4,14 +4,16 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Composition(
-    private val antiMatter: IAntiMatter = AntiMatter(Composition::class, Composition::class),
+    private val matter: IMatter = Matter(Composition::class, Composition::class, true),
 ) : ParticleBeam(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Composition::class, Composition::class),
+        Matter(Composition::class, Composition::class, true),
     )
 
 
@@ -32,10 +34,10 @@ open class Composition(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     fun getFirst() : IParticle {
         return get(Static.FIRST) as IParticle

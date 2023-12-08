@@ -12,12 +12,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class TauAntiTauPair(
-    private val antiMatter: IAntiMatter = AntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
+    private val antiMatter: IAntiMatter = AntiMatter(TauAntiTauPair::class, TauAntiTauPair::class, true),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
+        AntiMatter(TauAntiTauPair::class, TauAntiTauPair::class, true),
     )
 
     var reasonCode : Int        = 0

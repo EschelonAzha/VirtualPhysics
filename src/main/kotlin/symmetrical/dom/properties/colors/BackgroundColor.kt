@@ -3,16 +3,18 @@ package symmetrical.dom.properties.colors
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class BackgroundColor(
-    private val antiMatter: AntiMatter = AntiMatter(BackgroundColor::class, BackgroundColor::class),
+    private val matter: IMatter = Matter(BackgroundColor::class, BackgroundColor::class, true),
 ) : DomProperty(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
 
     constructor() : this(
-        AntiMatter(BackgroundColor::class, BackgroundColor::class),
+        Matter(BackgroundColor::class, BackgroundColor::class, true),
     )
     init {
             setProperty("backgroundColor")
@@ -24,7 +26,7 @@ class BackgroundColor(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,10 +35,10 @@ class BackgroundColor(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

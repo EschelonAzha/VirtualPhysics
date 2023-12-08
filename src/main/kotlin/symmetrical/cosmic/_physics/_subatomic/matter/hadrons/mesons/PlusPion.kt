@@ -7,17 +7,19 @@ import symmetrical.cosmic._physics._subatomic.balanced.pairs.ElectronPositron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class PlusPion(
-    private val antiMatter: IAntiMatter = AntiMatter(PlusPion::class, AntiPlusPion::class),
+    private val matter: IMatter = Matter(PlusPion::class, AntiPlusPion::class, true),
 ) : Hadron(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
     constructor() : this(
-        AntiMatter(PlusPion::class, AntiPlusPion::class),
+        Matter(PlusPion::class, AntiPlusPion::class, true),
     )    init {
         super.i(2)
         this.set(0, Up())
@@ -25,7 +27,7 @@ open class PlusPion(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 //    fun decay() : ElectronPositron<PlusPion> {
 //        return ElectronPositron<PlusPion>().decay(this)

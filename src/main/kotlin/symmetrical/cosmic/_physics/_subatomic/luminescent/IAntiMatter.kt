@@ -4,10 +4,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
 
-interface IAntiMatter {
-//    fun annihilate() : Photon
+interface IAntiMatter : IMatterAntiMatter {
 
-    fun check(photon: Photon) : Unit
-    fun getClassId()            : String
-    fun getIlluminations()      : IParticleBeam
+
 }

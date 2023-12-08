@@ -3,21 +3,23 @@ package symmetrical.cosmic._physics.atomic.atoms.states.doubles
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class QDouble(
-    private val antiMatter: AntiMatter = AntiMatter(QDouble::class, QDouble::class),
+    private val matter: IMatter = Matter(QDouble::class, QDouble::class, true),
 ) : Atom(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(QDouble::class, QDouble::class),
+        Matter(QDouble::class, QDouble::class, true),
     ) init {
         setDouble(0.0)
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun red() : Double {
         return nucleons.getValueProton().red() as Double

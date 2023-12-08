@@ -4,15 +4,17 @@ import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics.atomic.substance.molecules.Molecule
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Path(
-    private val antiMatter: IAntiMatter = AntiMatter(Path::class, Path::class),
+    private val matter: IMatter = Matter(Path::class, Path::class, true),
 ) : Molecule(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Path::class, Path::class),
+        Matter(Path::class, Path::class, true),
     )
     init {
         parsePath("")

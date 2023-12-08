@@ -10,23 +10,21 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
 
 
 open class Particle(
-    private val antiMatter: IAntiMatter = AntiMatter(Particle::class, AntiParticle::class),
+    private val matter: IMatter = Matter(Particle::class, AntiParticle::class, true),
 ) :
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     IParticle,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Particle::class, AntiParticle::class),
+        Matter(Particle::class, AntiParticle::class, true),
     )
     object Static {
         const val UNIQUE_ID_LENGTH = 1
@@ -40,7 +38,7 @@ open class Particle(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         val (uniqueId, remainder) = Photons.parse(Static.UNIQUE_ID_LENGTH, photon.propagate().radiate())
         this.uniqueId = uniqueId
@@ -52,11 +50,11 @@ open class Particle(
     }
     private fun radiate() : String {
         val base52Lth = Base52.toFixedBase52(Static.UNIQUE_ID_LENGTH, uniqueId.length)
-        return antiMatter.getClassId()+base52Lth+uniqueId
+        return matter.getClassId()+base52Lth+uniqueId
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun createUniqueId(): IParticle {
         uniqueId = Keys.getUniqueId()
@@ -65,7 +63,7 @@ open class Particle(
 
 
     override fun getIlluminations() : IParticleBeam {
-        return antiMatter.getIlluminations()
+        return matter.getIlluminations()
     }
 
     override fun getSelf() : IParticle {

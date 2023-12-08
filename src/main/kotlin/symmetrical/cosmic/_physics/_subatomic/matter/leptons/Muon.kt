@@ -3,20 +3,22 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiMuon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Muon(
-    private val antiMatter: IAntiMatter = AntiMatter(Muon::class, AntiMuon::class),
+    private val matter: IMatter = Matter(Muon::class, AntiMuon::class, true),
 ) : Lepton(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Muon::class, AntiMuon::class),
+        Matter(Muon::class, AntiMuon::class, true),
     )
     init {
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun i() : Muon {
         super.i()

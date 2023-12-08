@@ -5,21 +5,23 @@ import symmetrical.cosmic._physics._subatomic.spacial.IBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class QMass(
-    private val antiMatter: AntiMatter = AntiMatter(QMass::class, QMass::class),
+    private val matter: IMatter = Matter(QMass::class, QMass::class, true),
 ) : Atom(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(QMass::class, QMass::class),
+        Matter(QMass::class, QMass::class, true),
     )
     init {
         setMass(Beam(0))
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun red() : IBeam {
         return nucleons.getValueProton().red() as IBeam

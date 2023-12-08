@@ -4,23 +4,21 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 open class AngularMomentum(
-    private val antiMatter: IAntiMatter = AntiMatter(AngularMomentum::class, AngularMomentum::class),
+    private val matter: IMatter = Matter(AngularMomentum::class, AngularMomentum::class, true),
 ) :
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     Emitter {
     constructor() : this(
-        AntiMatter(AngularMomentum::class, AngularMomentum::class),
+        Matter(AngularMomentum::class, AngularMomentum::class, true),
     )
 
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return photon.propagate()
     }
@@ -28,10 +26,10 @@ open class AngularMomentum(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     open fun format(wavelength: QuantumPhotonicField) : String {
         return wavelength.toString()

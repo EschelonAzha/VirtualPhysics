@@ -4,14 +4,16 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Diatomic(
-    private val antiMatter: IAntiMatter = AntiMatter(Diatomic::class, Diatomic::class),
+    private val matter: IMatter = Matter(Diatomic::class, Diatomic::class, true),
 ) : Molecular(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Diatomic::class, Diatomic::class),
+        Matter(Diatomic::class, Diatomic::class, true),
     )
     object Static {
         const val LAST      : Int = -1
@@ -24,7 +26,7 @@ open class Diatomic(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,9 +35,9 @@ open class Diatomic(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

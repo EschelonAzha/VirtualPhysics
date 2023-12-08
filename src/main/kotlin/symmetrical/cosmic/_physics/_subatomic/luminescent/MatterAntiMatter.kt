@@ -6,7 +6,7 @@ import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import kotlin.reflect.KClass
 
-open class MatterAntiMatter: IAntiMatter {
+open class MatterAntiMatter: IMatterAntiMatter {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()
     }
@@ -19,10 +19,9 @@ open class MatterAntiMatter: IAntiMatter {
         this.negative = negative;
 
     }
-
-    //    override fun annihilate() : Photon {
-//
-//    }
+    override fun annihilate() : Photon {
+        return Photon()
+    }
     override fun check(photon: Photon) : Unit {
         val classId = getClassId()
 

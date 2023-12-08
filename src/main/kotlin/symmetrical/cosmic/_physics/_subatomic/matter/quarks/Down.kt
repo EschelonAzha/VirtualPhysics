@@ -5,15 +5,17 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Down(
-    private val antiMatter: IAntiMatter = AntiMatter(Down::class, AntiDown::class),
+    private val matter: IMatter = Matter(Down::class, AntiDown::class, true),
 ) : Quark(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Down::class, AntiDown::class),
+        Matter(Down::class, AntiDown::class, true),
     )
     init {
 
@@ -32,10 +34,10 @@ class Down(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun i() : Down {
         super.i()

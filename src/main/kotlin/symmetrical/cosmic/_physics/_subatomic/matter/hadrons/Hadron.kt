@@ -6,16 +6,18 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Hadron(
-    private val antiMatter: IAntiMatter = AntiMatter(Hadron::class, AntiHadron::class),
+    private val matter: IMatter = Matter(Hadron::class, AntiHadron::class, true),
 ) : ParticleBeam(),
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Hadron::class, AntiHadron::class),
+        Matter(Hadron::class, AntiHadron::class, true),
     )
 
 
@@ -27,7 +29,7 @@ open class Hadron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -39,11 +41,11 @@ open class Hadron(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId = antiMatter.getClassId()
+        val classId = matter.getClassId()
         return classId+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     fun i(size:Int) : Hadron {
         return this

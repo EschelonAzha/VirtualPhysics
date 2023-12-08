@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Charm
 
 class AntiCharm (
-    private val antiMatter: IAntiMatter = AntiMatter(AntiCharm::class, Charm::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiCharm::class, Charm::class, true),
 ) : AntiQuark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiCharm::class, Charm::class),
+        AntiMatter(AntiCharm::class, Charm::class, true),
     )
 
 

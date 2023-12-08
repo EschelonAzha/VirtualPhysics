@@ -9,17 +9,19 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class NeutralUpPion(
-    private val antiMatter: IAntiMatter = AntiMatter(NeutralUpPion::class, AntiNeutralUpPion::class),
+    private val matter: IMatter = Matter(NeutralUpPion::class, AntiNeutralUpPion::class, true),
 ) : Hadron(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
     constructor() : this(
-        AntiMatter(NeutralUpPion::class, AntiNeutralUpPion::class),
+        Matter(NeutralUpPion::class, AntiNeutralUpPion::class, true),
     )
     constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)
@@ -35,7 +37,7 @@ open class NeutralUpPion(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 
     fun nuclearForce() : NeutralUpPion {

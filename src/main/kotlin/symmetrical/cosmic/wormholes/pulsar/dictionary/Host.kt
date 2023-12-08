@@ -4,15 +4,17 @@ import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Host(
-    private val antiMatter: IAntiMatter = AntiMatter(Host::class, Host::class),
+    private val matter: IMatter = Matter(Host::class, Host::class, true),
 ) : KeyValue(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Host::class, Host::class),
+        Matter(Host::class, Host::class, true),
     )
     constructor(key: QString, value: QString) : this() {
         add(key)

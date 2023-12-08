@@ -4,15 +4,17 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiTau
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Tau(
-    private val antiMatter: IAntiMatter = AntiMatter(Tau::class, AntiTau::class),
+    private val matter: IMatter = Matter(Tau::class, AntiTau::class, true),
 ) : Lepton(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Tau::class, AntiTau::class),
+        Matter(Tau::class, AntiTau::class, true),
     )
     init {
 
@@ -21,7 +23,7 @@ class Tau(
         fundamentals.getWavelength().setField(newValue)
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun i() : Tau {
         super.i()

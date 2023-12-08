@@ -14,19 +14,17 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 
 open class Quark(
-    private val antiMatter: IAntiMatter = AntiMatter(Quark::class, AntiQuark::class),
+    private val matter: IMatter = Matter(Quark::class, AntiQuark::class, true),
 ) : Particle(),
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Quark::class, AntiQuark::class),
+        Matter(Quark::class, AntiQuark::class, true),
     ) {
         this.gluon         = Red_AntiRed()
     }
@@ -37,7 +35,7 @@ open class Quark(
     lateinit var gluon                  : Gluon
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         this.gluon                          = Red_AntiRed()  // this is need for JS Bug
         val (clone, remainder) = Absorber.materialize(photon.propagate())
@@ -49,10 +47,10 @@ open class Quark(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+fundamentals.emit().radiate()
+        return matter.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     open fun i() : Quark {
         return this
@@ -73,52 +71,6 @@ open class Quark(
 
         return boson
     }
-
-
-
-//    fun getValue() : Any? {
-//        return getWavelength()
-//    }
-//    fun getPhoton() : Photon {
-//        return fundamentals.getPhoton()
-//    }
-//    fun getMomentum() : AngularMomentum {
-//        return fundamentals.getAngularMomentum()
-//    }
-//    fun getSpin() : Spin {
-//        return fundamentals.getSpin()
-//    }
-//    fun getWavelength() : QuantumPhotonicField {
-//        return fundamentals.getWavelength()
-//    }
-//    fun setSpin(spin: Spin) : Quark {
-//        this.fundamentals.setSpin(spin)
-//        return this
-//    }
-//    fun setMomentum(momentum: AngularMomentum) : Quark {
-//        this.fundamentals.setMomentum(momentum)
-//        return this
-//    }
-//    fun setValue(value:Any?) : Quark {
-//        this.setWavelength(value)
-//        return this
-//    }
-//    fun setWavelength(value:Any?) : Quark {
-//        this.getWavelength().setValue(value)
-//        return this
-//    }
-//    fun momentum() : String {
-//        if (spin())
-//            return getMomentum().format(getWavelength())
-//        else return getWavelength().toString()
-//    }
-//    fun spin() : Boolean {
-//        return getSpin().isPlus()
-//    }
-//    fun wavelength() : Any? {
-//        return getWavelength().getValue()
-//    }
-
 
     fun red() : Any? {
         if (gluon.color.isRed())

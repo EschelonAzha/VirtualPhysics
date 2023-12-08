@@ -2,16 +2,18 @@ package symmetrical.cosmic._physics.atomic.matter
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Material(
-    private val antiMatter: IAntiMatter = AntiMatter(Material::class, Material::class),
+    private val matter: IMatter = Matter(Material::class, Material::class, true),
 ) :
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Material::class, Material::class),
+        Matter(Material::class, Material::class, true),
     )
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

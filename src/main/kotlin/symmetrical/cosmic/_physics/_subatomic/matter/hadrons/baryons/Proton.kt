@@ -4,6 +4,7 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_bary
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -11,18 +12,15 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 
 
 open class Proton(
-    private val antiMatter: IAntiMatter = AntiMatter(Proton::class, AntiProton::class),
+    private val matter: IMatter = Matter(Proton::class, AntiProton::class, true),
 ) : Baryon(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Proton::class, AntiProton::class),
+        Matter(Proton::class, AntiProton::class, true),
     ) init {
         this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -54,21 +52,21 @@ open class Proton(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
 
     override fun emit() : Photon {
-        val classId = antiMatter.getClassId()
+        val classId = matter.getClassId()
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate();
+        return matter.getClassId()+super.emit().radiate();
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     fun getDown() : Down {
         return get(QuarkType.TYPE.value) as Down

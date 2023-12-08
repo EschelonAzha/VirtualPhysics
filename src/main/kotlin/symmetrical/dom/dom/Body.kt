@@ -5,22 +5,24 @@ import asymmetrical.machine.dom.peers.HtmlPeer
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.Dom
 
 open class Body(
-    private val antiMatter: IAntiMatter = AntiMatter(Body::class, Body::class),
+    private val matter: IMatter = Matter(Body::class, Body::class, true),
 ) : Dom(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Body::class, Body::class),
+        Matter(Body::class, Body::class, true),
     )
 
     val peer: HtmlPeer = HtmlPeer(Document.getElementById("body"))
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -28,10 +30,10 @@ open class Body(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

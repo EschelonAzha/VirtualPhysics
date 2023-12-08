@@ -6,18 +6,16 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class Wavelength(
-    private val antiMatter: IAntiMatter = AntiMatter(Wavelength::class, Wavelength::class),
+    private val matter: IMatter = Matter(Wavelength::class, Wavelength::class, true),
 ) :
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Wavelength::class, Wavelength::class),
+        Matter(Wavelength::class, Wavelength::class, true),
     )
 
 
@@ -46,7 +44,7 @@ class Wavelength(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 
     fun wavelength() : Any? {

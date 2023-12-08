@@ -11,15 +11,17 @@ import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Baryon(
-    private val antiMatter: IAntiMatter = AntiMatter(Baryon::class, AntiBaryon::class),
+    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class, true),
 ) : Hadron(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Baryon::class, AntiBaryon::class),
+        Matter(Baryon::class, AntiBaryon::class, true),
     )
     init {
         super.i(3)
@@ -32,7 +34,7 @@ open class Baryon(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -41,10 +43,10 @@ open class Baryon(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     fun Proton() : Baryon {
         this.add(Up())    // value

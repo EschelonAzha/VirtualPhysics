@@ -6,15 +6,17 @@ import symmetrical.cosmic._physics.atomic.bonds.covalent.Covalent
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Molecule(
-    private val antiMatter: IAntiMatter = AntiMatter(Molecule::class, Molecule::class),
+    private val matter: IMatter = Matter(Molecule::class, Molecule::class, true),
 ) : Molecular(),
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     Covalent
 {
     constructor() : this(
-        AntiMatter(Molecule::class, Molecule::class),
+        Matter(Molecule::class, Molecule::class, true),
     )
     object Static {
         const val LAST      : Int = -1
@@ -23,7 +25,7 @@ open class Molecule(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,9 +35,9 @@ open class Molecule(
     }
     private fun radiate() : String {
         val (molecularId, remainder) = Strings.remainder(2, super.emit().radiate())
-        return antiMatter.getClassId()+remainder
+        return matter.getClassId()+remainder
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

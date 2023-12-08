@@ -10,14 +10,16 @@ import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Electron(
-    private val antiMatter: IAntiMatter = AntiMatter(Electron::class, Positron::class),
+    private val matter: IMatter = Matter(Electron::class, Positron::class, true),
 ) : Lepton(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Electron::class, Positron::class),
+        Matter(Electron::class, Positron::class, true),
     )
     init {
 
@@ -32,17 +34,17 @@ class Electron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
         return super.absorb(photon.propagate())
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     fun i(orbitals:Orbitals) : Electron {
         super.i()

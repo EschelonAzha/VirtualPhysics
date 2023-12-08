@@ -6,21 +6,23 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Strange
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Kaon(
-    private val antiMatter: IAntiMatter = AntiMatter(Kaon::class, AntiKaon::class),
+    private val matter: IMatter = Matter(Kaon::class, AntiKaon::class, true),
 ) : Hadron(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Kaon::class, AntiKaon::class),
+        Matter(Kaon::class, AntiKaon::class, true),
     )
 
     lateinit var quark      : Strange
     lateinit var antiQuark  : AntiUp
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

@@ -6,15 +6,17 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Dom(
-    private val antiMatter: IAntiMatter = AntiMatter(Dom::class, Dom::class),
+    private val matter: IMatter = Matter(Dom::class, Dom::class, true),
 ) : Atom(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Dom::class, Dom::class),
+        Matter(Dom::class, Dom::class, true),
     )
 
     private var children  :Molecular     = Molecular()
@@ -37,11 +39,11 @@ open class Dom(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 
     fun append(dom:Dom) : Dom {

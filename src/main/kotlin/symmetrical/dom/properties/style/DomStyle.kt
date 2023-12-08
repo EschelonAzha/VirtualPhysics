@@ -4,15 +4,17 @@ import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class DomStyle(
-    private val antiMatter: IAntiMatter = AntiMatter(DomStyle::class, DomStyle::class),
+    private val matter: IMatter = Matter(DomStyle::class, DomStyle::class, true),
 ) : DomProperty(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(DomStyle::class, DomStyle::class),
+        Matter(DomStyle::class, DomStyle::class, true),
     )
     init {
         setProperty("style")
@@ -23,7 +25,7 @@ class DomStyle(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -33,10 +35,10 @@ class DomStyle(
     }
     private fun radiate() : String {
         val (domPropertyId, remainder) = Strings.remainder(2, super.emit().radiate())
-        return antiMatter.getClassId()+remainder
+        return matter.getClassId()+remainder
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

@@ -4,14 +4,16 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiStrang
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Strange(
-    private val antiMatter: IAntiMatter = AntiMatter(Strange::class, AntiStrange::class),
+    private val matter: IMatter = Matter(Strange::class, AntiStrange::class, true),
 ) : Quark(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Strange::class, AntiStrange::class),
+        Matter(Strange::class, AntiStrange::class, true),
     )
     init {
 
@@ -24,10 +26,10 @@ class Strange(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun i() : Strange {
         super.i()

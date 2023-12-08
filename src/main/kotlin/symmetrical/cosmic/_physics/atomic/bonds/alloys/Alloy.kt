@@ -3,17 +3,19 @@ package symmetrical.cosmic._physics.atomic.bonds.alloys
 import symmetrical.cosmic._physics.atomic.substance.Substance
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Alloy(
     val mixtures: Substance? = null,
-    private val antiMatter: IAntiMatter = AntiMatter(Alloy::class, Alloy::class),
+    private val matter: IMatter = Matter(Alloy::class, Alloy::class, true),
 ) :
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
         null,
-        AntiMatter(Alloy::class, Alloy::class),
+        Matter(Alloy::class, Alloy::class, true),
     )
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()
@@ -26,7 +28,7 @@ open class Alloy(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 
     fun getSubstance(pos:Int) : Substance {

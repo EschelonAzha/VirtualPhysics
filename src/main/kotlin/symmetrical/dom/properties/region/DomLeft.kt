@@ -3,15 +3,17 @@ package symmetrical.dom.properties.region
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class DomLeft(
-    private val antiMatter: IAntiMatter = AntiMatter(DomLeft::class, DomLeft::class),
+    private val matter: IMatter = Matter(DomLeft::class, DomLeft::class, true),
 ) : DomProperty(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(DomLeft::class, DomLeft::class),
+        Matter(DomLeft::class, DomLeft::class, true),
     )
     init {
         setProperty("left")
@@ -22,7 +24,7 @@ class DomLeft(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -32,10 +34,10 @@ class DomLeft(
     }
     private fun radiate() : String {
 
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

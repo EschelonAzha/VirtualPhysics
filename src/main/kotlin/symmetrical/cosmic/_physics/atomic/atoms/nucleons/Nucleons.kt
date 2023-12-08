@@ -11,15 +11,17 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralUpPio
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Nucleons(
-    private val antiMatter  :IAntiMatter            = AntiMatter(Nucleons::class, Nucleons::class),
+    private val matter      :IMatter                = Matter(Nucleons::class, Nucleons::class, true),
     private var protons     :Protons                = Protons(),
     private var neutrons    :Neutrons               = Neutrons(),
 
     ) :
-        IAntiMatter          by antiMatter,
+        IMatter              by matter,
         IProtons             by protons,
         INeutrons            by neutrons,
         INucleons,
@@ -27,7 +29,7 @@ class Nucleons(
 {
 
     constructor() : this(
-        AntiMatter(Nucleons::class, Nucleons::class),
+        Matter(Nucleons::class, Nucleons::class, true),
         Protons(),
         Neutrons()
     )   init {
@@ -40,7 +42,7 @@ class Nucleons(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         var (protons, remainderProtons) = Absorber.materialize(photon.propagate())
         var (neutrons, remainder)       = Absorber.materialize(remainderProtons)
@@ -56,10 +58,10 @@ class Nucleons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
+        return matter.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 
     fun getAtom() : Atom {

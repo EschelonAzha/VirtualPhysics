@@ -6,15 +6,17 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class NeutralDownPion(
-    private val antiMatter: IAntiMatter = AntiMatter(NeutralDownPion::class, AntiNeutralDownPion::class),
+    private val matter: IMatter = Matter(NeutralDownPion::class, AntiNeutralDownPion::class, true),
 ) : Hadron(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(NeutralDownPion::class, AntiNeutralDownPion::class),
+        Matter(NeutralDownPion::class, AntiNeutralDownPion::class, true),
     )   init {
         super.i(2)
         this.set(0, Down())
@@ -22,7 +24,7 @@ open class NeutralDownPion(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 //    fun decay() : ElectronPositron {
 //        return ElectronPositron().decay(this)

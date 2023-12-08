@@ -5,11 +5,13 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class KeyValue(
-    private val antiMatter: IAntiMatter = AntiMatter(KeyValue::class, KeyValue::class),
+    private val matter: IMatter = Matter(KeyValue::class, KeyValue::class, true),
 ) : Diatomic(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
 
     object Static {
@@ -19,7 +21,7 @@ open class KeyValue(
         const val LAST      : Int = VALUE
     }
     constructor() : this(
-        AntiMatter(KeyValue::class, KeyValue::class),
+        Matter(KeyValue::class, KeyValue::class, true),
     )
     constructor(key: Atom, value:Atom) : this(){
         add(key)
@@ -29,7 +31,7 @@ open class KeyValue(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -38,10 +40,10 @@ open class KeyValue(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 
     fun getKey() : Atom? {

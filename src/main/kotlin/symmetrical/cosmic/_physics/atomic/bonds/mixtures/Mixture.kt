@@ -2,19 +2,21 @@ package symmetrical.cosmic._physics.atomic.bonds.mixtures
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Mixture(
-    private val antiMatter: IAntiMatter = AntiMatter(Mixture::class, Mixture::class),
+    private val matter: IMatter = Matter(Mixture::class, Mixture::class, true),
 ) :
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Mixture::class, Mixture::class),
+        Matter(Mixture::class, Mixture::class, true),
     )
     // mixtures may be regular classes with all kinds of things
     // mixed together that are other classes but not Atoms or Molecules
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

@@ -11,13 +11,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 
 class AntiBetaMinus(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiBetaMinus::class, BetaMinus::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiBetaMinus::class, BetaMinus::class, true),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 
 {
     constructor() : this(
-        AntiMatter(AntiBetaMinus::class, BetaMinus::class)
+        AntiMatter(AntiBetaMinus::class, BetaMinus::class, true),
     )
 
 

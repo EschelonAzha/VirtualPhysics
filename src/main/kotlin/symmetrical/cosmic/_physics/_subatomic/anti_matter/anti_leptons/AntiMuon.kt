@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Muon
 
 open class AntiMuon(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiMuon::class, Muon::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiMuon::class, Muon::class, true),
 ) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiMuon::class, Muon::class),
+        AntiMatter(AntiMuon::class, Muon::class, true),
     )
 
     override fun getClassId() : String {

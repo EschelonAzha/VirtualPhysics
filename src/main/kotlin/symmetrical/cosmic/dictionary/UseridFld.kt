@@ -3,18 +3,20 @@ package symmetrical.cosmic.dictionary
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class UseridFld(
-    private val antiMatter: IAntiMatter = AntiMatter(UseridFld::class, UseridFld::class),
+    private val matter: IMatter = Matter(UseridFld::class, UseridFld::class, true),
 ) : QString(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(UseridFld::class, UseridFld::class),
+        Matter(UseridFld::class, UseridFld::class, true),
     )
 
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

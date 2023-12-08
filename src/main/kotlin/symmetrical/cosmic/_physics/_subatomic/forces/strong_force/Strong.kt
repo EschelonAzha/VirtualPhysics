@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Strong(
-    private val antiMatter: IAntiMatter = AntiMatter(Strong::class, Strong::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Strong::class, Strong::class, true),
 ) : Energy(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Strong::class, Strong::class),
+        AntiMatter(Strong::class, Strong::class, true),
     )
 
     companion object {

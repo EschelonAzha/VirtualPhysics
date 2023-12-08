@@ -3,20 +3,22 @@ package symmetrical.cosmic._physics.atomic.atoms.states.bytes
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class QByte(
-    private val antiMatter: AntiMatter = AntiMatter(QByte::class, QByte::class),
+    private val matter: IMatter = Matter(QByte::class, QByte::class, true),
 ) : Atom(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(QByte::class, QByte::class),
+        Matter(QByte::class, QByte::class, true),
     ) init {
         setByte(" ".toByte())
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun red() : Byte {
         return nucleons.getValueProton().red() as Byte

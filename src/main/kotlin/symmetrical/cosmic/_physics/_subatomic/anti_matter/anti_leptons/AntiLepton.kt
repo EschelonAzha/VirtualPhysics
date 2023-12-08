@@ -14,13 +14,13 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 
 
 open class AntiLepton(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class, true),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(AntiLepton::class, Lepton::class),
+        AntiMatter(AntiLepton::class, Lepton::class, true),
     )
 
     override fun absorb(photon: Photon) : Photon {

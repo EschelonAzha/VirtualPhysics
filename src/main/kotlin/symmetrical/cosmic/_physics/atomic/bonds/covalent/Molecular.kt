@@ -11,18 +11,20 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Molecular(
-    private val antiMatter: IAntiMatter = AntiMatter(Molecular::class, Molecular::class),
+    private val matter: IMatter = Matter(Molecular::class, Molecular::class, true),
     private var particleBeam: ParticleBeam = ParticleBeam(),
 
     ) : Atom(),
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     IParticleBeam by particleBeam,
     IParticle
 {
     constructor() : this(
-        AntiMatter(Molecular::class, Molecular::class),
+        Matter(Molecular::class, Molecular::class, true),
         ParticleBeam(),
     )
     object Static {
@@ -32,7 +34,7 @@ open class Molecular(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         clear()
         val remainderAtom: Photon = super.absorb(photon.propagate())
@@ -54,10 +56,10 @@ open class Molecular(
     }
     private fun radiate() : String {
         val particleBeamEmission = particleBeam.emit().radiate()
-        return antiMatter.getClassId()+super.emit().radiate()+particleBeamEmission
+        return matter.getClassId()+super.emit().radiate()+particleBeamEmission
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     open fun i() : Molecular {
         particleBeam.i()

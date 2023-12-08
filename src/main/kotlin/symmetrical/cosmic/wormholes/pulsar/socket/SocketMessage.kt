@@ -3,14 +3,16 @@ package symmetrical.cosmic.wormholes.pulsar.socket
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class SocketMessage(
-    private val antiMatter: IAntiMatter = AntiMatter(SocketMessage::class, SocketMessage::class),
+    private val matter: IMatter = Matter(SocketMessage::class, SocketMessage::class, true),
 ) : Compound(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(SocketMessage::class, SocketMessage::class),
+        Matter(SocketMessage::class, SocketMessage::class, true),
     ) {
         bytes = ByteArray(0)
     }

@@ -8,26 +8,22 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 
 open class Lepton(
-    private val antiMatter: IAntiMatter = AntiMatter(Lepton::class, AntiLepton::class),
+    private val matter: IMatter = Matter(Lepton::class, AntiLepton::class, true),
 ) : Particle(),
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Lepton::class, AntiLepton::class),
+        Matter(Lepton::class, AntiLepton::class, true),
     )
 
-
-
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         val (clone, remainder) = Absorber.materialize(photon.propagate())
         this.fundamentals = clone as Fundamentals
@@ -38,10 +34,10 @@ open class Lepton(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+fundamentals.emit().radiate()
+        return matter.getClassId()+fundamentals.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     open fun i() : Lepton {
         return this
@@ -51,39 +47,8 @@ open class Lepton(
 //        return wavelength.wavelength()
 //    }
     override fun getIlluminations() : IParticleBeam {
-        return antiMatter.getIlluminations()
+        return matter.getIlluminations()
     }
-//    fun getPhoton() : Photon {
-//        return fundamentals.getPhoton()
-//    }
-//    fun getSpin() : Spin {
-//        return fundamentals.getSpin()
-//    }
-//    fun getWavelength() : QuantumPhotonicField {
-//        return fundamentals.getWavelength()
-//    }
-//    fun setSpin(spin: Spin) : Lepton {
-//        this.fundamentals.setSpin(spin)
-//        return this
-//    }
-//    fun setValue(value:Any?) : Lepton {
-//        this.setWavelength(value)
-//        return this
-//    }
-//    fun setWavelength(value:Any?) : Lepton {
-//        this.getWavelength().setValue(value)
-//        return this
-//    }
-//    fun spin() : Boolean {
-//        return getSpin().isPlus()
-//    }
-//    fun wavelength() : Any? {
-//        return getWavelength().getValue()
-//    }
-//    fun wavelengthStr() : String {
-//        val result = wavelength() ?: return ""
-//        return result.toString()
-//    }
 
 
 

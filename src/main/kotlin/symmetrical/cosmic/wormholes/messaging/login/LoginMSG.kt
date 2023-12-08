@@ -6,14 +6,16 @@ import symmetrical.cosmic.dictionary.PasswordFld
 import symmetrical.cosmic.dictionary.UseridFld
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class LoginMSG(
-    private val antiMatter: IAntiMatter = AntiMatter(LoginMSG::class, LoginMSG::class),
+    private val matter: IMatter = Matter(LoginMSG::class, LoginMSG::class, true),
 ) : Message(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(LoginMSG::class, LoginMSG::class),
+        Matter(LoginMSG::class, LoginMSG::class, true),
     )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1
@@ -30,7 +32,7 @@ class LoginMSG(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -39,10 +41,10 @@ class LoginMSG(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     fun getUserId() : UseridFld {
         return get(Static.USERID) as UseridFld

@@ -6,13 +6,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
 open class Magnetism(
-    private val antiMatter: IAntiMatter = AntiMatter(Magnetism::class, Magnetism::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Magnetism::class, Magnetism::class, true),
 ) : Energy(),
     IAntiMatter by antiMatter
 
 {
     constructor() : this(
-        AntiMatter(Magnetism::class, Magnetism::class),
+        AntiMatter(Magnetism::class, Magnetism::class, true),
     )
 
     // Spin 2

@@ -7,15 +7,17 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Neutrons(
-    private val antiMatter: IAntiMatter = AntiMatter(Neutrons::class, Neutrons::class),
+    private val matter: IMatter = Matter(Neutrons::class, Neutrons::class, true),
 ) : ParticleBeam(),
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     INeutrons
 {
     constructor()  : this(
-        AntiMatter(Neutrons::class, Neutrons::class),
+        Matter(Neutrons::class, Neutrons::class, true),
     )
 
 
@@ -25,7 +27,7 @@ class Neutrons(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -40,10 +42,10 @@ class Neutrons(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun addNeutron(neutron: Neutron) : Neutron {
         add(neutron)

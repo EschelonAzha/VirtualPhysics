@@ -2,20 +2,18 @@ package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMome
 
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class CRLFTerminatedMomentum(
-    private val antiMatter: IAntiMatter = AntiMatter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
+    private val matter: IMatter = Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class, true),
 ) : AngularMomentum(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
+        Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class, true),
     )
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun format(wavelength: QuantumPhotonicField) : String {
         return Strings.crlfTerminated(wavelength.toString())

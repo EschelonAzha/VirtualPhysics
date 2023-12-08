@@ -3,15 +3,17 @@ package symmetrical.cosmic._physics.atomic.atoms.elements
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Helium(
-    private val antiMatter: IAntiMatter = AntiMatter(Helium::class, AntiHelium::class),
+    private val matter: IMatter = Matter(Helium::class, AntiHelium::class, true),
 ) :
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(Helium::class, AntiHelium::class),
+        Matter(Helium::class, AntiHelium::class, true),
     )
 
 
@@ -25,6 +27,6 @@ class Helium(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

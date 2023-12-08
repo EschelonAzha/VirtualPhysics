@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Bottom
 
 
 class AntiBottom(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiBottom::class, Bottom::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiBottom::class, Bottom::class, true),
 ) : AntiQuark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiBottom::class, Bottom::class),
+        AntiMatter(AntiBottom::class, Bottom::class, true),
     )
 
     override fun getClassId() : String {

@@ -5,14 +5,16 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class ReadyMSG (
-    private val antiMatter: IAntiMatter = AntiMatter(ReadyMSG::class, ReadyMSG::class),
+    private val matter: IMatter = Matter(ReadyMSG::class, ReadyMSG::class, true),
 ) : Message(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(ReadyMSG::class, ReadyMSG::class),
+        Matter(ReadyMSG::class, ReadyMSG::class, true),
     )
     object Static {
         const val LAST      : Int = Message.Static.LAST
@@ -25,7 +27,7 @@ class ReadyMSG (
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -34,9 +36,9 @@ class ReadyMSG (
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

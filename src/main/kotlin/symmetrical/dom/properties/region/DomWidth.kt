@@ -3,15 +3,17 @@ package symmetrical.dom.properties.region
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class DomWidth(
-    private val antiMatter: IAntiMatter = AntiMatter(DomWidth::class, DomWidth::class),
+    private val matter: IMatter = Matter(DomWidth::class, DomWidth::class, true),
 ) : DomProperty(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(DomWidth::class, DomWidth::class),
+        Matter(DomWidth::class, DomWidth::class, true),
     )
     init {
         setProperty("width")
@@ -22,7 +24,7 @@ class DomWidth(
 
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
@@ -31,10 +33,10 @@ class DomWidth(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

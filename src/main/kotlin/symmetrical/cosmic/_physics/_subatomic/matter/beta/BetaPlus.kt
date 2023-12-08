@@ -10,20 +10,22 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class BetaPlus(
-    private val antiMatter: IAntiMatter = AntiMatter(BetaPlus::class, AntiBetaPlus::class),
+    private val matter: IMatter = Matter(BetaPlus::class, AntiBetaPlus::class, true),
 ) : LeptonPair(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(BetaPlus::class, AntiBetaPlus::class),
+        Matter(BetaPlus::class, AntiBetaPlus::class, true),
     )
 
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down

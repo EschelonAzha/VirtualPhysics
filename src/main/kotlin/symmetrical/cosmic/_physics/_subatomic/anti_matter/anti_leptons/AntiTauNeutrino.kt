@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.leptons.TauNeutrino
 
 class AntiTauNeutrino  (
-    private val antiMatter: IAntiMatter = AntiMatter(AntiTauNeutrino::class, TauNeutrino::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiTauNeutrino::class, TauNeutrino::class, true),
 ) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiTauNeutrino::class, TauNeutrino::class),
+        AntiMatter(AntiTauNeutrino::class, TauNeutrino::class, true),
     )
 
 

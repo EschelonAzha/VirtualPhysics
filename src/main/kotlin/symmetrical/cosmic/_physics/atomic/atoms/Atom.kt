@@ -23,17 +23,19 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Atom(
-    private   val antiMatter       : IAntiMatter            = AntiMatter(Atom::class, Atom::class),
+    private val matter: IMatter = Matter(Atom::class, Atom::class, true),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var nucleons          : Nucleons              = Nucleons(),
     private   val colorCharges      : ColorCharge           = ColorCharge(),
     private   val quarkValue        : QuarkValue            = QuarkValue()
 
     ) : Particle(),
-        IAntiMatter             by antiMatter,
+        IMatter                 by matter,
         IOrbitals               by orbitals,
         INucleons               by nucleons,
         IColorCharge            by colorCharges,
@@ -43,7 +45,7 @@ open class Atom(
         IAtom
     {
         constructor() : this(
-            AntiMatter(Atom::class, Atom::class),
+            Matter(Atom::class, Atom::class, true),
             Orbitals(),
             Nucleons(),
             ColorCharge(),
@@ -61,7 +63,7 @@ open class Atom(
 
 
         override fun absorb(photon: Photon) : Photon {
-            antiMatter.check(photon);
+            matter.check(photon);
 
             val remainder = super.absorb(photon.propagate())
             var (orbitals, orbitalsRemainder) = Absorber.materialize(remainder.radiate())
@@ -75,12 +77,12 @@ open class Atom(
             return Photon(radiate())
         }
         private fun radiate() : String {
-            return antiMatter.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+            return matter.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
         }
 
 
         override fun getClassId() : String {
-            return antiMatter.getClassId()
+            return matter.getClassId()
         }
 
         fun getFieldName() : String {

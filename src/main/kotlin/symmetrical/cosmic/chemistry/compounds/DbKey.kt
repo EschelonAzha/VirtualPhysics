@@ -4,14 +4,16 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class DbKey(
-    private val antiMatter: IAntiMatter = AntiMatter(DbKey::class, DbKey::class),
+    private val matter: IMatter = Matter(DbKey::class, DbKey::class, true),
 ) : Compound(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(DbKey::class, DbKey::class),
+        Matter(DbKey::class, DbKey::class, true),
     )
 
     fun addKey(atom: Atom) : DbKey {
@@ -19,6 +21,6 @@ class DbKey(
         return this;
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 }

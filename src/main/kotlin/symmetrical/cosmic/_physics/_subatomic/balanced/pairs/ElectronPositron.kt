@@ -11,12 +11,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 //class ElectronPositron<PlusPion> : LeptonPair {
 class ElectronPositron(
-    private val antiMatter: IAntiMatter = AntiMatter(ElectronPositron::class, ElectronPositron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(ElectronPositron::class, ElectronPositron::class, true),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(ElectronPositron::class, ElectronPositron::class),
+        AntiMatter(ElectronPositron::class, ElectronPositron::class, true),
     )
 
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {

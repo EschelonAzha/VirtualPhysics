@@ -7,13 +7,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Charge(
-    private val antiMatter: IAntiMatter = AntiMatter(Charge::class, Charge::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Charge::class, Charge::class, true),
 )  : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Charge::class, Charge::class),
+        AntiMatter(Charge::class, Charge::class, true),
     )
 
 

@@ -9,19 +9,21 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class BetaMinus(
-    private val antiMatter: IAntiMatter = AntiMatter(BetaMinus::class, AntiBetaMinus::class),
+    private val matter: IMatter = Matter(BetaMinus::class, AntiBetaMinus::class, true),
 ) : LeptonPair(),
-    IAntiMatter by antiMatter
+    IMatter by matter
 {
     constructor() : this(
-        AntiMatter(BetaMinus::class, AntiBetaMinus::class),
+        Matter(BetaMinus::class, AntiBetaMinus::class, true),
     )
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
 
     fun decay(baryon: Baryon) : Up {
