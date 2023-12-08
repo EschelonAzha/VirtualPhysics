@@ -29,7 +29,6 @@ open class Quark(
         AntiMatter(Quark::class, AntiQuark::class),
     ) {
         this.gluon         = Red_AntiRed()
-        this.fundamentals  = Fundamentals()
     }
     init {
 
