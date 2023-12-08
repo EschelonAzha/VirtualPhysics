@@ -6,37 +6,8 @@ import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
 
-class AntiMatter : IAntiMatter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
-
-    private var positive   :KClass<*>
-    private var negative   :KClass<*>
-
-    constructor(positive:KClass<*>, negative:KClass<*>) {
-        this.positive = positive
-        this.negative = negative;
+class AntiMatter : MatterAntiMatter {
+    constructor(positive:KClass<*>, negative:KClass<*>) : super(positive, negative){
 
     }
-
-//    override fun annihilate() : Photon {
-//
-//    }
-    override fun check(photon: Photon) : Unit {
-        val classId = getClassId()
-
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName);
-        return;
-    }
-    override fun getClassId() : String {
-        return Absorber.getClassId(this.positive)
-    }
-    override fun getIlluminations() : IParticleBeam {
-        return Illuminations.beam
-    }
-
 }

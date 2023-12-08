@@ -1,12 +1,11 @@
 package symmetrical.cosmic._physics.atomic.bonds.mixtures
 
-import symmetrical.cosmic._physics.atomic.matter.Matter
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Mixture(
     private val antiMatter: IAntiMatter = AntiMatter(Mixture::class, Mixture::class),
-) : Matter(),
+) :
     IAntiMatter by antiMatter
 {
     constructor() : this(

@@ -11,7 +11,6 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.forces.magnetism.Magnetism
 import symmetrical.cosmic._physics._subatomic.matter.colors.manifestations.CRLFTerminatedColor
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.phases.CrLfTerminatedString
-import symmetrical.cosmic._physics.atomic.matter.Matter
 import symmetrical.cosmic._physics.atomic.substance.metals.Metal
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic.dictionary.PasswordFld
@@ -47,7 +46,6 @@ class Other : ClassGroup {
         add(EntityId(Base52.classId(), Host::class))
         add(EntityId(Base52.classId(), KeyValue::class))
         add(EntityId(Base52.classId(), Magnetism::class))
-        add(EntityId(Base52.classId(), Matter::class))
         add(EntityId(Base52.classId(), Message::class))
         add(EntityId(Base52.classId(), Metal::class))
         add(EntityId(Base52.classId(), Monad::class))
