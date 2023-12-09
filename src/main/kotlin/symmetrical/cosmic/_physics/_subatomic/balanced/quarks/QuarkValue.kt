@@ -9,21 +9,23 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class QuarkValue(
-    private val antiMatter: IAntiMatter = AntiMatter(QuarkValue::class, QuarkValue::class, true),
+    private val matter: IMatter = Matter(QuarkValue::class, QuarkValue::class, true),
 )  :
-    IAntiMatter by antiMatter,
+    IMatter by matter,
     IQuarkValue
 {
     constructor() : this(
-        AntiMatter(QuarkValue::class, QuarkValue::class, true),
+        Matter(QuarkValue::class, QuarkValue::class, true),
     )
     lateinit var atom:Atom
 
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matter.getClassId()
     }
     override fun setAtom(atom: Atom) : Atom {
         this.atom = atom

@@ -13,12 +13,12 @@ import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 
 
 class AntiBetaPlus(
-    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, BetaPlus::class, true),
+    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, BetaPlus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiBetaPlus::class, BetaPlus::class, true),
+        AntiMatter(AntiBetaPlus::class, BetaPlus::class),
     )
 
     override fun getClassId() : String {

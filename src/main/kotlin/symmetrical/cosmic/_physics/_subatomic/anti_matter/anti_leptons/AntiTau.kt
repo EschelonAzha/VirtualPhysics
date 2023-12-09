@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Tau
 
 
 class AntiTau(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiTau::class, Tau::class, true),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiTau::class, Tau::class),
 ) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiTau::class, Tau::class, true),
+        AntiMatter(AntiTau::class, Tau::class),
     )
     constructor(oldValue : Field) : this() {
         fundamentals.getWavelength().setField(oldValue)

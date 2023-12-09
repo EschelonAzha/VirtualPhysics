@@ -7,7 +7,7 @@ import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
 
 class AntiMatter : MatterAntiMatter, IAntiMatter {
-    constructor(positive:KClass<*>, negative:KClass<*>, jumby:Boolean) : super(positive, negative){
+    constructor(positive:KClass<*>, negative:KClass<*>) : super(positive, negative){
 
     }
 }

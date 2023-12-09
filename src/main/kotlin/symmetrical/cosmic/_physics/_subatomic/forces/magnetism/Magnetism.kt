@@ -5,15 +5,10 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-open class Magnetism(
-    private val antiMatter: IAntiMatter = AntiMatter(Magnetism::class, Magnetism::class, true),
-) : Energy(),
-    IAntiMatter by antiMatter
+open class Magnetism: Energy
 
 {
-    constructor() : this(
-        AntiMatter(Magnetism::class, Magnetism::class, true),
-    )
+    constructor() : super()
 
     // Spin 2
     companion object {
@@ -25,9 +20,6 @@ open class Magnetism(
         }
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
 //    fun run() : Unit {
 //        println("Magnetism")
 //    }

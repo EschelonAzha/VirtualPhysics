@@ -7,16 +7,18 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.MatterAntiMatter
 
 
 //class ElectronPositron<PlusPion> : LeptonPair {
 class ElectronPositron(
-    private val antiMatter: IAntiMatter = AntiMatter(ElectronPositron::class, ElectronPositron::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(ElectronPositron::class, ElectronPositron::class),
 ) : LeptonPair(),
-    IAntiMatter by antiMatter
+    IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(ElectronPositron::class, ElectronPositron::class, true),
+        MatterAntiMatter(ElectronPositron::class, ElectronPositron::class),
     )
 
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
@@ -24,7 +26,7 @@ class ElectronPositron(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 //    fun decay(pion: PlusPion) : ElectronPositron<PlusPion> {
 //        return this

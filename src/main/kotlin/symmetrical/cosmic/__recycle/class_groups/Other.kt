@@ -45,7 +45,6 @@ class Other : ClassGroup {
         add(EntityId(Base52.classId(), DeviceInput::class))
         add(EntityId(Base52.classId(), Host::class))
         add(EntityId(Base52.classId(), KeyValue::class))
-        add(EntityId(Base52.classId(), Magnetism::class))
         add(EntityId(Base52.classId(), Message::class))
         add(EntityId(Base52.classId(), Metal::class))
         add(EntityId(Base52.classId(), Monad::class))

@@ -6,13 +6,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class CRLFTerminatedColor(
-    private val antiMatter: IAntiMatter = AntiMatter(CRLFTerminatedColor::class, CRLFTerminatedColor::class, true),
+    private val antiMatter: IAntiMatter = AntiMatter(CRLFTerminatedColor::class, CRLFTerminatedColor::class),
 ): Green(),
     IAntiMatter by antiMatter
 {
 
     constructor() : this(
-        AntiMatter(CRLFTerminatedColor::class, CRLFTerminatedColor::class, true),
+        AntiMatter(CRLFTerminatedColor::class, CRLFTerminatedColor::class),
     )
 
     override fun getClassId() : String {

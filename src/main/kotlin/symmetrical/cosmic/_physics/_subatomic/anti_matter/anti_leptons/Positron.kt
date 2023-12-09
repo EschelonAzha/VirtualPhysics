@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 
 class Positron (
-    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, Electron::class, true),
+    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, Electron::class),
 ) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Positron::class, Electron::class, true),
+        AntiMatter(Positron::class, Electron::class),
     )
     override fun getClassId() : String {
         return antiMatter.getClassId()

@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 
 class AntiDown(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiDown::class, Down::class, true),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiDown::class, Down::class),
 ) : AntiQuark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiDown::class, Down::class, true),
+        AntiMatter(AntiDown::class, Down::class),
     )
 
     override fun getClassId() : String {

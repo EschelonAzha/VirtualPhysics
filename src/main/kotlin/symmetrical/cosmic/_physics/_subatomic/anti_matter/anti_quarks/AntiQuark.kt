@@ -18,13 +18,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 
 open class AntiQuark(
-    private val antiMatter: IAntiMatter = AntiMatter(Quark::class, AntiQuark::class, true),
+    private val antiMatter: IAntiMatter = AntiMatter(Quark::class, AntiQuark::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
     Emitter
 {
     constructor() : this(
-        AntiMatter(Quark::class, AntiQuark::class, true),
+        AntiMatter(Quark::class, AntiQuark::class),
     )
 
 

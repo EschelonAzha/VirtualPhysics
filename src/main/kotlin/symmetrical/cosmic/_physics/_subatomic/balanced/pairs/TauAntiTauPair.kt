@@ -10,14 +10,16 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Tau
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.MatterAntiMatter
 
 class TauAntiTauPair(
-    private val antiMatter: IAntiMatter = AntiMatter(TauAntiTauPair::class, TauAntiTauPair::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
 ) : LeptonPair(),
-    IAntiMatter by antiMatter
+    IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(TauAntiTauPair::class, TauAntiTauPair::class, true),
+        MatterAntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
     )
 
     var reasonCode : Int        = 0
@@ -37,7 +39,7 @@ class TauAntiTauPair(
     }
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun decay(pion: PlusPion) : TauAntiTauPair {

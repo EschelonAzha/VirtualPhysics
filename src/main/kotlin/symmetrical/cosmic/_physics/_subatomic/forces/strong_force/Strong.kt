@@ -5,14 +5,8 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 
-open class Strong(
-    private val antiMatter: IAntiMatter = AntiMatter(Strong::class, Strong::class, true),
-) : Energy(),
-    IAntiMatter by antiMatter
-{
-    constructor() : this(
-        AntiMatter(Strong::class, Strong::class, true),
-    )
+open class Strong: Energy {
+    constructor() : super()
 
     companion object {
         lateinit var strong : Strong
@@ -23,10 +17,6 @@ open class Strong(
         }
     }
 
-
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
 //    fun run() : Unit {
 //        println("StrongForce")
 //    }
