@@ -9,13 +9,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Alloy(
     val mixtures: Substance? = null,
-    private val matter: IMatter = Matter(Alloy::class, Alloy::class, true),
+    private val matter: IMatter = Matter(Alloy::class, Alloy::class),
 ) :
     IMatter by matter
 {
     constructor() : this(
         null,
-        Matter(Alloy::class, Alloy::class, true),
+        Matter(Alloy::class, Alloy::class),
     )
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()

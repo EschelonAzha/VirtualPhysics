@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class QDouble(
-    private val matter: IMatter = Matter(QDouble::class, QDouble::class, true),
+    private val matter: IMatter = Matter(QDouble::class, QDouble::class),
 ) : Atom(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(QDouble::class, QDouble::class, true),
+        Matter(QDouble::class, QDouble::class),
     ) init {
         setDouble(0.0)
     }

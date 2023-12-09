@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class CrLfTerminatedString(
-    private val matter: IMatter = Matter(CrLfTerminatedString::class, CrLfTerminatedString::class, true),
+    private val matter: IMatter = Matter(CrLfTerminatedString::class, CrLfTerminatedString::class),
 ) : QString() ,
     IMatter by matter
 {
     constructor() : this(
-        Matter(CrLfTerminatedString::class, CrLfTerminatedString::class, true),
+        Matter(CrLfTerminatedString::class, CrLfTerminatedString::class),
     ) {
         setQuarkMomentum(CRLFTerminatedMomentum())
         setQuarkSpin(Spin())

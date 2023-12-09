@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Message(
-    private val matter: IMatter = Matter(Message::class, Message::class, true),
+    private val matter: IMatter = Matter(Message::class, Message::class),
 ) : ParticleBeam(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Message::class, Message::class, true),
+        Matter(Message::class, Message::class),
     )
 
     object Static {

@@ -10,13 +10,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class MinusPion (
-    private val matter: IMatter = Matter(MinusPion::class, AntiMinusPion::class, true),
+    private val matter: IMatter = Matter(MinusPion::class, AntiMinusPion::class),
 ) : Hadron(),
     IMatter by matter
 {
 
     constructor() : this(
-        Matter(MinusPion::class, AntiMinusPion::class, true),
+        Matter(MinusPion::class, AntiMinusPion::class),
     ) init {
         super.i(2);
         this.set(0, Down())

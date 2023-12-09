@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Diatomic(
-    private val matter: IMatter = Matter(Diatomic::class, Diatomic::class, true),
+    private val matter: IMatter = Matter(Diatomic::class, Diatomic::class),
 ) : Molecular(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Diatomic::class, Diatomic::class, true),
+        Matter(Diatomic::class, Diatomic::class),
     )
     object Static {
         const val LAST      : Int = -1

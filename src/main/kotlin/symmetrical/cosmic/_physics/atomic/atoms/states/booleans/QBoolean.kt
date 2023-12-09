@@ -1,24 +1,21 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.booleans
 
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class QBoolean(
-    private val matter: IMatter = Matter(QBoolean::class, QBoolean::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(QBoolean::class, QBoolean::class),
 ) : Atom(),
-    IMatter by matter
+    IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(QBoolean::class, QBoolean::class, true),
+        MatterAntiMatter(QBoolean::class, QBoolean::class),
     )  init {
         setBoolean(false)
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     override fun red() : Boolean {
         return nucleons.getValueProton().red() as Boolean

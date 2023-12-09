@@ -12,14 +12,14 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class PlusPion(
-    private val matter: IMatter = Matter(PlusPion::class, AntiPlusPion::class, true),
+    private val matter: IMatter = Matter(PlusPion::class, AntiPlusPion::class),
 ) : Hadron(),
     IMatter by matter
 {
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
     constructor() : this(
-        Matter(PlusPion::class, AntiPlusPion::class, true),
+        Matter(PlusPion::class, AntiPlusPion::class),
     )    init {
         super.i(2)
         this.set(0, Up())

@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Neutrino(
-    private val matter: IMatter = Matter(Neutrino::class, AntiNeutrino::class, true),
+    private val matter: IMatter = Matter(Neutrino::class, AntiNeutrino::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Neutrino::class, AntiNeutrino::class, true),
+        Matter(Neutrino::class, AntiNeutrino::class),
     )
     init {
 

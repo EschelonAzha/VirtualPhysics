@@ -9,13 +9,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 // Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
-    private val matter: IMatter = Matter(QInt::class, QInt::class, true),
+    private val matter: IMatter = Matter(QInt::class, QInt::class),
 ) : Atom(),
     IMatter by matter
 {
 
     constructor() : this(
-        Matter(QInt::class, QInt::class, true),
+        Matter(QInt::class, QInt::class),
     )   init {
         setInt(0)
     }

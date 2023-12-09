@@ -10,12 +10,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class LoginMSG(
-    private val matter: IMatter = Matter(LoginMSG::class, LoginMSG::class, true),
+    private val matter: IMatter = Matter(LoginMSG::class, LoginMSG::class),
 ) : Message(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(LoginMSG::class, LoginMSG::class, true),
+        Matter(LoginMSG::class, LoginMSG::class),
     )
     object Static {
         const val USERID    : Int = Message.Static.LAST + 1

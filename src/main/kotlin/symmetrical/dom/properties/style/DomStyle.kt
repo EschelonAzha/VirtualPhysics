@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class DomStyle(
-    private val matter: IMatter = Matter(DomStyle::class, DomStyle::class, true),
+    private val matter: IMatter = Matter(DomStyle::class, DomStyle::class),
 ) : DomProperty(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DomStyle::class, DomStyle::class, true),
+        Matter(DomStyle::class, DomStyle::class),
     )
     init {
         setProperty("style")

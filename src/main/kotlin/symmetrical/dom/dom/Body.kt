@@ -10,12 +10,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.Dom
 
 open class Body(
-    private val matter: IMatter = Matter(Body::class, Body::class, true),
+    private val matter: IMatter = Matter(Body::class, Body::class),
 ) : Dom(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Body::class, Body::class, true),
+        Matter(Body::class, Body::class),
     )
 
     val peer: HtmlPeer = HtmlPeer(Document.getElementById("body"))

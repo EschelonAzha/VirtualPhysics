@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Host(
-    private val matter: IMatter = Matter(Host::class, Host::class, true),
+    private val matter: IMatter = Matter(Host::class, Host::class),
 ) : KeyValue(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Host::class, Host::class, true),
+        Matter(Host::class, Host::class),
     )
     constructor(key: QString, value: QString) : this() {
         add(key)

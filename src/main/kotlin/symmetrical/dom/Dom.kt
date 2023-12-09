@@ -11,12 +11,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Dom(
-    private val matter: IMatter = Matter(Dom::class, Dom::class, true),
+    private val matter: IMatter = Matter(Dom::class, Dom::class),
 ) : Atom(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Dom::class, Dom::class, true),
+        Matter(Dom::class, Dom::class),
     )
 
     private var children  :Molecular     = Molecular()

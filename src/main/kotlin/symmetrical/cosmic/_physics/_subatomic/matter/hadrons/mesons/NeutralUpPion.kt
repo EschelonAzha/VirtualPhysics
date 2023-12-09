@@ -14,14 +14,14 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class NeutralUpPion(
-    private val matter: IMatter = Matter(NeutralUpPion::class, AntiNeutralUpPion::class, true),
+    private val matter: IMatter = Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
 ) : Hadron(),
     IMatter by matter
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
     constructor() : this(
-        Matter(NeutralUpPion::class, AntiNeutralUpPion::class, true),
+        Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
     )
     constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)

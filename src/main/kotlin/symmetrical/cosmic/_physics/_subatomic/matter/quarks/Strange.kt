@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Strange(
-    private val matter: IMatter = Matter(Strange::class, AntiStrange::class, true),
+    private val matter: IMatter = Matter(Strange::class, AntiStrange::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Strange::class, AntiStrange::class, true),
+        Matter(Strange::class, AntiStrange::class),
     )
     init {
 

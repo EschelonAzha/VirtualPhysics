@@ -11,13 +11,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Hadron(
-    private val matter: IMatter = Matter(Hadron::class, AntiHadron::class, true),
+    private val matter: IMatter = Matter(Hadron::class, AntiHadron::class),
 ) : ParticleBeam(),
     IMatter by matter,
     Emitter
 {
     constructor() : this(
-        Matter(Hadron::class, AntiHadron::class, true),
+        Matter(Hadron::class, AntiHadron::class),
     )
 
 

@@ -17,14 +17,14 @@ import kotlin.reflect.KClass
 
 
 open class Particle(
-    private val matter: IMatter = Matter(Particle::class, AntiParticle::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, AntiParticle::class),
 ) :
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     IParticle,
     Emitter
 {
     constructor() : this(
-        Matter(Particle::class, AntiParticle::class, true),
+        MatterAntiMatter(Particle::class, AntiParticle::class),
     )
     object Static {
         const val UNIQUE_ID_LENGTH = 1
@@ -38,7 +38,7 @@ open class Particle(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         val (uniqueId, remainder) = Photons.parse(Static.UNIQUE_ID_LENGTH, photon.propagate().radiate())
         this.uniqueId = uniqueId
@@ -50,11 +50,11 @@ open class Particle(
     }
     private fun radiate() : String {
         val base52Lth = Base52.toFixedBase52(Static.UNIQUE_ID_LENGTH, uniqueId.length)
-        return matter.getClassId()+base52Lth+uniqueId
+        return matterAntiMatter.getClassId()+base52Lth+uniqueId
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     override fun createUniqueId(): IParticle {
         uniqueId = Keys.getUniqueId()
@@ -63,7 +63,7 @@ open class Particle(
 
 
     override fun getIlluminations() : IParticleBeam {
-        return matter.getIlluminations()
+        return matterAntiMatter.getIlluminations()
     }
 
     override fun getSelf() : IParticle {

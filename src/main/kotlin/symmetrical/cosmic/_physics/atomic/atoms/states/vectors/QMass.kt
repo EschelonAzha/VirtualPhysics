@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class QMass(
-    private val matter: IMatter = Matter(QMass::class, QMass::class, true),
+    private val matter: IMatter = Matter(QMass::class, QMass::class),
 ) : Atom(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(QMass::class, QMass::class, true),
+        Matter(QMass::class, QMass::class),
     )
     init {
         setMass(Beam(0))

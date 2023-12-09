@@ -10,12 +10,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Down(
-    private val matter: IMatter = Matter(Down::class, AntiDown::class, true),
+    private val matter: IMatter = Matter(Down::class, AntiDown::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Down::class, AntiDown::class, true),
+        Matter(Down::class, AntiDown::class),
     )
     init {
 

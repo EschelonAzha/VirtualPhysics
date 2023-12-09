@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Charm(
-    private val matter: IMatter = Matter(Charm::class, AntiCharm::class, true),
+    private val matter: IMatter = Matter(Charm::class, AntiCharm::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Charm::class, AntiCharm::class, true),
+        Matter(Charm::class, AntiCharm::class),
     )
     init {
     }

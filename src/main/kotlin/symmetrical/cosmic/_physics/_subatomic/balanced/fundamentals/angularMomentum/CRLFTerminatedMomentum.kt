@@ -5,12 +5,12 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.W
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class CRLFTerminatedMomentum(
-    private val matter: IMatter = Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class, true),
+    private val matter: IMatter = Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
 ) : AngularMomentum(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class, true),
+        Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
     )
     override fun getClassId() : String {
         return matter.getClassId()

@@ -10,13 +10,13 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.W
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class Fundamentals(
-    private val matter: IMatter = Matter(Fundamentals::class, Fundamentals::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Fundamentals::class, Fundamentals::class),
 ) :
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     Emitter
 {
     constructor() : this(
-        Matter(Fundamentals::class, Fundamentals::class, true),
+        MatterAntiMatter(Fundamentals::class, Fundamentals::class),
     )
     private var angularMomentum : AngularMomentum           = AngularMomentum()
     private var spin            : Spin                      = Spin()
@@ -24,7 +24,7 @@ class Fundamentals(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var (spin, spinRemainder) = Absorber.materialize(photon.propagate())
         setSpin(spin as Spin)
@@ -37,7 +37,7 @@ class Fundamentals(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val propsId     :String                 = matter.getClassId()
+        val propsId     :String                 = matterAntiMatter.getClassId()
         val spinId      :String                 = getSpin().emit().radiate()
         val wavelength  :String                 = getWavelength().emit().radiate()
         return propsId+spinId+wavelength

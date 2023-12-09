@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Muon(
-    private val matter: IMatter = Matter(Muon::class, AntiMuon::class, true),
+    private val matter: IMatter = Matter(Muon::class, AntiMuon::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Muon::class, AntiMuon::class, true),
+        Matter(Muon::class, AntiMuon::class),
     )
     init {
     }

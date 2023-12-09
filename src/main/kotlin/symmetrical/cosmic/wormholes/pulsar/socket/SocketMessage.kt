@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class SocketMessage(
-    private val matter: IMatter = Matter(SocketMessage::class, SocketMessage::class, true),
+    private val matter: IMatter = Matter(SocketMessage::class, SocketMessage::class),
 ) : Compound(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(SocketMessage::class, SocketMessage::class, true),
+        Matter(SocketMessage::class, SocketMessage::class),
     ) {
         bytes = ByteArray(0)
     }

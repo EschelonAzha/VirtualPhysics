@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Tau(
-    private val matter: IMatter = Matter(Tau::class, AntiTau::class, true),
+    private val matter: IMatter = Matter(Tau::class, AntiTau::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Tau::class, AntiTau::class, true),
+        Matter(Tau::class, AntiTau::class),
     )
     init {
 

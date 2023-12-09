@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Helium(
-    private val matter: IMatter = Matter(Helium::class, AntiHelium::class, true),
+    private val matter: IMatter = Matter(Helium::class, AntiHelium::class),
 ) :
     IMatter by matter
 {
     constructor() : this(
-        Matter(Helium::class, AntiHelium::class, true),
+        Matter(Helium::class, AntiHelium::class),
     )
 
 

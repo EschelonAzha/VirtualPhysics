@@ -3,23 +3,20 @@ package symmetrical.cosmic._physics.atomic.atoms.orbitals
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Orbitals(
-    private val matter: IMatter = Matter(Orbitals::class, Orbitals::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Orbitals::class, Orbitals::class),
 ) : ParticleBeam(),
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     IOrbitals
 {
     constructor() : this(
-        Matter(Orbitals::class, Orbitals::class, true),
+        MatterAntiMatter(Orbitals::class, Orbitals::class),
     ) init {
         add(Electron())
     }
@@ -34,7 +31,7 @@ open class Orbitals(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         clear()
         val remainder = super.absorb(photon.propagate())
@@ -49,10 +46,10 @@ open class Orbitals(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
+        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     override fun getElectronValue() : Electron {
         if (size() == 0) {

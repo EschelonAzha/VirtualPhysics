@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class DbKey(
-    private val matter: IMatter = Matter(DbKey::class, DbKey::class, true),
+    private val matter: IMatter = Matter(DbKey::class, DbKey::class),
 ) : Compound(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DbKey::class, DbKey::class, true),
+        Matter(DbKey::class, DbKey::class),
     )
 
     fun addKey(atom: Atom) : DbKey {

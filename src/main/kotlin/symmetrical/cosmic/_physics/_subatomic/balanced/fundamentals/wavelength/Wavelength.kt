@@ -9,13 +9,13 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class Wavelength(
-    private val matter: IMatter = Matter(Wavelength::class, Wavelength::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Wavelength::class, Wavelength::class),
 ) :
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     Emitter
 {
     constructor() : this(
-        Matter(Wavelength::class, Wavelength::class, true),
+        MatterAntiMatter(Wavelength::class, Wavelength::class),
     )
 
 
@@ -44,7 +44,7 @@ class Wavelength(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun wavelength() : Any? {

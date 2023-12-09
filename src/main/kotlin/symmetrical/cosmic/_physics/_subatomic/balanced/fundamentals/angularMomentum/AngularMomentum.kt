@@ -7,18 +7,18 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 open class AngularMomentum(
-    private val matter: IMatter = Matter(AngularMomentum::class, AngularMomentum::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(AngularMomentum::class, AngularMomentum::class),
 ) :
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     Emitter {
     constructor() : this(
-        Matter(AngularMomentum::class, AngularMomentum::class, true),
+        Matter(AngularMomentum::class, AngularMomentum::class),
     )
 
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         return photon.propagate()
     }
@@ -26,10 +26,10 @@ open class AngularMomentum(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     open fun format(wavelength: QuantumPhotonicField) : String {
         return wavelength.toString()

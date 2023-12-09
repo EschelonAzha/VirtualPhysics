@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class UseridFld(
-    private val matter: IMatter = Matter(UseridFld::class, UseridFld::class, true),
+    private val matter: IMatter = Matter(UseridFld::class, UseridFld::class),
 ) : QString(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(UseridFld::class, UseridFld::class, true),
+        Matter(UseridFld::class, UseridFld::class),
     )
 
 

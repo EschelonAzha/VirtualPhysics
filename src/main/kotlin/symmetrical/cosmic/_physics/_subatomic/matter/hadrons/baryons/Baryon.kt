@@ -16,12 +16,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Baryon(
-    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class, true),
+    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Baryon::class, AntiBaryon::class, true),
+        Matter(Baryon::class, AntiBaryon::class),
     )
     init {
         super.i(3)

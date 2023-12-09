@@ -5,26 +5,23 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Molecular(
-    private val matter: IMatter = Matter(Molecular::class, Molecular::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecular::class, Molecular::class),
     private var particleBeam: ParticleBeam = ParticleBeam(),
 
     ) : Atom(),
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     IParticleBeam by particleBeam,
     IParticle
 {
     constructor() : this(
-        Matter(Molecular::class, Molecular::class, true),
+        MatterAntiMatter(Molecular::class, Molecular::class),
         ParticleBeam(),
     )
     object Static {
@@ -34,7 +31,7 @@ open class Molecular(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         clear()
         val remainderAtom: Photon = super.absorb(photon.propagate())
@@ -56,10 +53,10 @@ open class Molecular(
     }
     private fun radiate() : String {
         val particleBeamEmission = particleBeam.emit().radiate()
-        return matter.getClassId()+super.emit().radiate()+particleBeamEmission
+        return matterAntiMatter.getClassId()+super.emit().radiate()+particleBeamEmission
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     open fun i() : Molecular {
         particleBeam.i()

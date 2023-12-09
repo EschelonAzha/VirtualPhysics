@@ -13,13 +13,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 
 open class Lepton(
-    private val matter: IMatter = Matter(Lepton::class, AntiLepton::class, true),
+    private val matter: IMatter = Matter(Lepton::class, AntiLepton::class),
 ) : Particle(),
     IMatter by matter,
     Emitter
 {
     constructor() : this(
-        Matter(Lepton::class, AntiLepton::class, true),
+        Matter(Lepton::class, AntiLepton::class),
     )
 
     override fun absorb(photon: Photon) : Photon {

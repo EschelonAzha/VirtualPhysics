@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Composition(
-    private val matter: IMatter = Matter(Composition::class, Composition::class, true),
+    private val matter: IMatter = Matter(Composition::class, Composition::class),
 ) : ParticleBeam(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Composition::class, Composition::class, true),
+        Matter(Composition::class, Composition::class),
     )
 
 

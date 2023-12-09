@@ -8,13 +8,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class BackgroundColor(
-    private val matter: IMatter = Matter(BackgroundColor::class, BackgroundColor::class, true),
+    private val matter: IMatter = Matter(BackgroundColor::class, BackgroundColor::class),
 ) : DomProperty(),
     IMatter by matter
 {
 
     constructor() : this(
-        Matter(BackgroundColor::class, BackgroundColor::class, true),
+        Matter(BackgroundColor::class, BackgroundColor::class),
     )
     init {
             setProperty("backgroundColor")

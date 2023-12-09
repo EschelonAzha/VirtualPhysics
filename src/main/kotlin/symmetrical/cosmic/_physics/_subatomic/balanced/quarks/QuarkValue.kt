@@ -13,13 +13,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class QuarkValue(
-    private val matter: IMatter = Matter(QuarkValue::class, QuarkValue::class, true),
+    private val matter: IMatter = Matter(QuarkValue::class, QuarkValue::class),
 )  :
     IMatter by matter,
     IQuarkValue
 {
     constructor() : this(
-        Matter(QuarkValue::class, QuarkValue::class, true),
+        Matter(QuarkValue::class, QuarkValue::class),
     )
     lateinit var atom:Atom
 

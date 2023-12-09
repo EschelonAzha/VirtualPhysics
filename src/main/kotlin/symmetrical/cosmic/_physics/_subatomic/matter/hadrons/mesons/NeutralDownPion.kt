@@ -11,12 +11,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class NeutralDownPion(
-    private val matter: IMatter = Matter(NeutralDownPion::class, AntiNeutralDownPion::class, true),
+    private val matter: IMatter = Matter(NeutralDownPion::class, AntiNeutralDownPion::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(NeutralDownPion::class, AntiNeutralDownPion::class, true),
+        Matter(NeutralDownPion::class, AntiNeutralDownPion::class),
     )   init {
         super.i(2)
         this.set(0, Down())

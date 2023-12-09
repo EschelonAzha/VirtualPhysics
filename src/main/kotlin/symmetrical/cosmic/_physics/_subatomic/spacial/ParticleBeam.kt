@@ -8,22 +8,19 @@ import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 open class ParticleBeam(
-    private val matter: IMatter = Matter(ParticleBeam::class, ParticleBeam::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
     protected val beam     : Beam = Beam()
 ) : Particle(),
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     IBeam by beam,
     IParticleBeam,
     Emitter
 {
     constructor() : this(
-        Matter(ParticleBeam::class, ParticleBeam::class, true),
+        MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
         Beam()
     )
     init {
@@ -36,7 +33,7 @@ open class ParticleBeam(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         val particleRemainder = super.absorb(photon.propagate())
         val (size52, line) = Strings.remainder(3, particleRemainder.radiate())
@@ -56,7 +53,7 @@ open class ParticleBeam(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        val classId     :String = matter.getClassId()
+        val classId     :String = matterAntiMatter.getClassId()
         val particle    :String = super.emit().radiate()
         val base52Size  :String = Base52.toFixedBase52(Config.getBase52ArraySize(), size())
 
@@ -69,7 +66,7 @@ open class ParticleBeam(
         return emission
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     open fun i() : ParticleBeam {
         beam.i()

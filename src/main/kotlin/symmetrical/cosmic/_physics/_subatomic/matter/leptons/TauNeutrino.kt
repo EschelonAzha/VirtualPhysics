@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class TauNeutrino(
-    private val matter: IMatter = Matter(TauNeutrino::class, AntiTauNeutrino::class, true),
+    private val matter: IMatter = Matter(TauNeutrino::class, AntiTauNeutrino::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(TauNeutrino::class, AntiTauNeutrino::class, true),
+        Matter(TauNeutrino::class, AntiTauNeutrino::class),
     )
     init {
     }

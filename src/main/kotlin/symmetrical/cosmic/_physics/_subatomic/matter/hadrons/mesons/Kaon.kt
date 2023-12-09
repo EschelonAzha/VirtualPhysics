@@ -11,12 +11,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Kaon(
-    private val matter: IMatter = Matter(Kaon::class, AntiKaon::class, true),
+    private val matter: IMatter = Matter(Kaon::class, AntiKaon::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Kaon::class, AntiKaon::class, true),
+        Matter(Kaon::class, AntiKaon::class),
     )
 
     lateinit var quark      : Strange

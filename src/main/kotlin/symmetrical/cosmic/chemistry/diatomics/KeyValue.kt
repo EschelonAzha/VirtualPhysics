@@ -9,7 +9,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class KeyValue(
-    private val matter: IMatter = Matter(KeyValue::class, KeyValue::class, true),
+    private val matter: IMatter = Matter(KeyValue::class, KeyValue::class),
 ) : Diatomic(),
     IMatter by matter
 {
@@ -21,7 +21,7 @@ open class KeyValue(
         const val LAST      : Int = VALUE
     }
     constructor() : this(
-        Matter(KeyValue::class, KeyValue::class, true),
+        Matter(KeyValue::class, KeyValue::class),
     )
     constructor(key: Atom, value:Atom) : this(){
         add(key)

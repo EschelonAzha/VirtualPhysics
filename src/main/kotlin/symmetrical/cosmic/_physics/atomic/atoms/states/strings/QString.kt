@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class QString(
-    private val matter: IMatter = Matter(QString::class, QString::class, true),
+    private val matter: IMatter = Matter(QString::class, QString::class),
 ) : Atom(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(QString::class, QString::class, true),
+        Matter(QString::class, QString::class),
     )   init {
         setString("")
     }

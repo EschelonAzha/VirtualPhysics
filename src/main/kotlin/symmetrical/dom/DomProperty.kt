@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class DomProperty(
-    private val matter: IMatter = Matter(DomProperty::class, DomProperty::class, true),
+    private val matter: IMatter = Matter(DomProperty::class, DomProperty::class),
 ) : KeyValue(),
     IMatter by matter {
 
     constructor() : this(
-        Matter(DomProperty::class, DomProperty::class, true),
+        Matter(DomProperty::class, DomProperty::class),
     )
     constructor(propertyName:String) : this() {
         setProperty(propertyName);

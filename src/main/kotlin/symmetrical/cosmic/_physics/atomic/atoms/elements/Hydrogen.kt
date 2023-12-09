@@ -7,12 +7,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Hydrogen(
-    private val matter: IMatter = Matter(Hydrogen::class, AntiHydrogen::class, true),
+    private val matter: IMatter = Matter(Hydrogen::class, AntiHydrogen::class),
 ) :
     IMatter by matter
 {
     constructor() : this(
-        Matter(Hydrogen::class, AntiHydrogen::class, true),
+        Matter(Hydrogen::class, AntiHydrogen::class),
     )
 
 

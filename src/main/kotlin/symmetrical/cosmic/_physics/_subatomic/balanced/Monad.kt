@@ -10,13 +10,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 open class Monad(
-    private val matter: IMatter = Matter(Monad::class, Monad::class, true),
+    private val matter: IMatter = Matter(Monad::class, Monad::class),
 ) : Particle(),
     IMatter by matter,
     Emitter
 {
     constructor() : this(
-        Matter(Monad::class, Monad::class, true),
+        Matter(Monad::class, Monad::class),
     )
 
 

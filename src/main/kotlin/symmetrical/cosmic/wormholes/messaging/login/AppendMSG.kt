@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class AppendMSG(
-    private val matter: IMatter = Matter(AppendMSG::class, AppendMSG::class, true),
+    private val matter: IMatter = Matter(AppendMSG::class, AppendMSG::class),
 ) : Message(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(AppendMSG::class, AppendMSG::class, true),
+        Matter(AppendMSG::class, AppendMSG::class),
     )
     object Static {
         const val LAST      : Int = Message.Static.LAST

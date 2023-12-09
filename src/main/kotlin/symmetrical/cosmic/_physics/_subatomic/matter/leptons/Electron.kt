@@ -14,12 +14,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Electron(
-    private val matter: IMatter = Matter(Electron::class, Positron::class, true),
+    private val matter: IMatter = Matter(Electron::class, Positron::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Electron::class, Positron::class, true),
+        Matter(Electron::class, Positron::class),
     )
     init {
 

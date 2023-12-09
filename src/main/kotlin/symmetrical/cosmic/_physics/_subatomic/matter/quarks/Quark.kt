@@ -18,13 +18,13 @@ import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 
 open class Quark(
-    private val matter: IMatter = Matter(Quark::class, AntiQuark::class, true),
+    private val matter: IMatter = Matter(Quark::class, AntiQuark::class),
 ) : Particle(),
     IMatter by matter,
     Emitter
 {
     constructor() : this(
-        Matter(Quark::class, AntiQuark::class, true),
+        Matter(Quark::class, AntiQuark::class),
     ) {
         this.gluon         = Red_AntiRed()
     }

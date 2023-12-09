@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Top(
-    private val matter: IMatter = Matter(Top::class, AntiTop::class, true),
+    private val matter: IMatter = Matter(Top::class, AntiTop::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Top::class, AntiTop::class, true),
+        Matter(Top::class, AntiTop::class),
     )
 
     init {

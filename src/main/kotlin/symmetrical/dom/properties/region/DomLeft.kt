@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class DomLeft(
-    private val matter: IMatter = Matter(DomLeft::class, DomLeft::class, true),
+    private val matter: IMatter = Matter(DomLeft::class, DomLeft::class),
 ) : DomProperty(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DomLeft::class, DomLeft::class, true),
+        Matter(DomLeft::class, DomLeft::class),
     )
     init {
         setProperty("left")

@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class DomHeight(
-    private val matter: IMatter = Matter(DomHeight::class, DomHeight::class, true),
+    private val matter: IMatter = Matter(DomHeight::class, DomHeight::class),
 ) : DomProperty(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DomHeight::class, DomHeight::class, true),
+        Matter(DomHeight::class, DomHeight::class),
     )
     init {
         setProperty("height")

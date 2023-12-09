@@ -15,12 +15,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class BetaPlus(
-    private val matter: IMatter = Matter(BetaPlus::class, AntiBetaPlus::class, true),
+    private val matter: IMatter = Matter(BetaPlus::class, AntiBetaPlus::class),
 ) : LeptonPair(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(BetaPlus::class, AntiBetaPlus::class, true),
+        Matter(BetaPlus::class, AntiBetaPlus::class),
     )
 
 

@@ -3,19 +3,16 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 open class Spin(
-    private val matter: IMatter = Matter(Spin::class, Spin::class, true),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Spin::class, Spin::class),
 ) :
-    IMatter by matter,
+    IMatterAntiMatter by matterAntiMatter,
     Emitter
 {
     constructor() : this(
-        Matter(Spin::class, Spin::class, true),
+        MatterAntiMatter(Spin::class, Spin::class),
     )
 
     object Static {
@@ -28,7 +25,7 @@ open class Spin(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         return photon.propagate()
     }
@@ -36,11 +33,11 @@ open class Spin(
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return matter.getClassId()  // spin has no fields, we only need to know the
+        return matterAntiMatter.getClassId()  // spin has no fields, we only need to know the
                              // type of spin
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun isPlus() : Boolean {

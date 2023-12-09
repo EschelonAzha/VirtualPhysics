@@ -10,12 +10,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 open class Neutron(
-    private val matter: IMatter = Matter(Neutron::class, AntiNeutron::class, true),
+    private val matter: IMatter = Matter(Neutron::class, AntiNeutron::class),
 ) : Baryon(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Neutron::class, AntiNeutron::class, true),
+        Matter(Neutron::class, AntiNeutron::class),
     ) init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

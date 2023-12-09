@@ -6,12 +6,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 class Anion(
-    private val matter: IMatter = Matter(Anion::class, Anion::class, true),
+    private val matter: IMatter = Matter(Anion::class, Anion::class),
 ) : Ion(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Anion::class, Anion::class, true),
+        Matter(Anion::class, Anion::class),
     )
     override fun getClassId() : String {
         return matter.getClassId()

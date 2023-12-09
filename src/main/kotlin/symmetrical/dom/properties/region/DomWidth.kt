@@ -8,12 +8,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.dom.DomProperty
 
 class DomWidth(
-    private val matter: IMatter = Matter(DomWidth::class, DomWidth::class, true),
+    private val matter: IMatter = Matter(DomWidth::class, DomWidth::class),
 ) : DomProperty(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DomWidth::class, DomWidth::class, true),
+        Matter(DomWidth::class, DomWidth::class),
     )
     init {
         setProperty("width")

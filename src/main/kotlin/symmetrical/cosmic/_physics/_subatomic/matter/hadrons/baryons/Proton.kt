@@ -15,12 +15,12 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 
 
 open class Proton(
-    private val matter: IMatter = Matter(Proton::class, AntiProton::class, true),
+    private val matter: IMatter = Matter(Proton::class, AntiProton::class),
 ) : Baryon(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Proton::class, AntiProton::class, true),
+        Matter(Proton::class, AntiProton::class),
     ) init {
         this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

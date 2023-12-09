@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 // NOT COMPLETE.    See WebStorm::WebTerminal for reference
 
 class DeviceInput(
-    private val matter: IMatter = Matter(DeviceInput::class, DeviceInput::class, true),
+    private val matter: IMatter = Matter(DeviceInput::class, DeviceInput::class),
 ) : Compound(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DeviceInput::class, DeviceInput::class, true),
+        Matter(DeviceInput::class, DeviceInput::class),
     )
 
     object Static {

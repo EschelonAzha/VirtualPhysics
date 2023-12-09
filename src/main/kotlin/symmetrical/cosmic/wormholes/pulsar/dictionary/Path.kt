@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
 
 class Path(
-    private val matter: IMatter = Matter(Path::class, Path::class, true),
+    private val matter: IMatter = Matter(Path::class, Path::class),
 ) : Molecule(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Path::class, Path::class, true),
+        Matter(Path::class, Path::class),
     )
     init {
         parsePath("")
