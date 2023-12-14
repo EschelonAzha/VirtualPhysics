@@ -29,38 +29,45 @@ open class Particle(
     object Static {
         const val UNIQUE_ID_LENGTH = 1
     }
-    private var uniqueId = ""
+//    private var uniqueId = ""
+
 
     private lateinit var self : IParticle
 
-    private   val dimensions   :Dimensions   = Dimensions()
-    protected var fundamentals :Fundamentals = Fundamentals()
+    private     var uniqueId     :QuantumPhotonicField  = QuantumPhotonicField()
+    private     val dimensions   :Dimensions            = Dimensions()
+    protected   var fundamentals :Fundamentals          = Fundamentals()
 
 
-//    override fun absorb(photon:Photon) : Photon {
-//        return photon
-//    }
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        val (uniqueId, remainder) = Photons.parse(Static.UNIQUE_ID_LENGTH, photon.propagate().radiate())
-        this.uniqueId = uniqueId
-        return Photon(remainder)
+    override fun absorb(photon:Photon) : Photon {
+        return uniqueId.absorb(photon)
     }
+//    override fun absorb(photon: Photon) : Photon {
+//        matterAntiMatter.check(photon);
+//
+//        val (uniqueId, remainder) = Photons.parse(Static.UNIQUE_ID_LENGTH, photon.propagate().radiate())
+//        this.uniqueId = uniqueId
+//        return Photon(remainder)
+//    }
 
     override fun emit() : Photon {
-        return Photon(radiate())
+        return uniqueId.emit()
     }
-    private fun radiate() : String {
-        val base52Lth = Base52.toFixedBase52(Static.UNIQUE_ID_LENGTH, uniqueId.length)
-        return matterAntiMatter.getClassId()+base52Lth+uniqueId
-    }
+
+
+//    override fun emit() : Photon {
+//        return Photon(radiate())
+//    }
+//    private fun radiate() : String {
+//        val base52Lth = Base52.toFixedBase52(Static.UNIQUE_ID_LENGTH, uniqueId.length)
+//        return matterAntiMatter.getClassId()+base52Lth+uniqueId
+//    }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
     override fun createUniqueId(): IParticle {
-        uniqueId = Keys.getUniqueId()
+        uniqueId.setValue(Keys.getUniqueId())
         return getSelf()
     }
 
@@ -76,7 +83,7 @@ open class Particle(
     }
 
     override fun getUniqueId(): String {
-        return uniqueId
+        return uniqueId.getValue() as String
     }
 
     override fun setSelf(self: IParticle) : IParticle {
@@ -84,7 +91,7 @@ open class Particle(
         return getSelf()
     }
     fun setUniqueId(id:String) : IParticle {
-        this.uniqueId = id
+        this.uniqueId.setValue(id)
         return getSelf()
     }
 
