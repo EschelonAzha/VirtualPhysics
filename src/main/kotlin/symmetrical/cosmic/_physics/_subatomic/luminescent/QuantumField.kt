@@ -7,7 +7,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 
-class QuantumPhotonicField : Emitter {
+class QuantumField : Emitter {
 
 
     private var field      : Field = Field()
@@ -100,7 +100,7 @@ class QuantumPhotonicField : Emitter {
     }
 
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(QuantumPhotonicField::class)
+        return Absorber.getClassId(QuantumField::class)
     }
 
     public fun getClassId() : String {
@@ -108,7 +108,7 @@ class QuantumPhotonicField : Emitter {
     }
 
 
-    fun setField(field: Field) : QuantumPhotonicField {
+    fun setField(field: Field) : QuantumField {
         this.field = field
         return this
     }

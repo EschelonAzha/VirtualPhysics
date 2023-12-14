@@ -4,14 +4,12 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 class Time : Emitter {
 
 
-    private var field      : QuantumPhotonicField = QuantumPhotonicField()
+    private var field : QuantumField = QuantumField()
 
     fun isNull() : Boolean {
         return field.isNull()
@@ -36,7 +34,7 @@ class Time : Emitter {
     }
 
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(Temperature::class)
+        return Absorber.getClassId(Time::class)
     }
 
     public fun getClassId() : String {

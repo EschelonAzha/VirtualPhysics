@@ -1,7 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum
 
 import symmetrical.cosmic.__transpectors.transpectors.Strings
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class CRLFTerminatedMomentum(
@@ -15,7 +14,7 @@ class CRLFTerminatedMomentum(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun format(wavelength: QuantumPhotonicField) : String {
+    override fun format(wavelength: QuantumField) : String {
         return Strings.crlfTerminated(wavelength.toString())
     }
 }

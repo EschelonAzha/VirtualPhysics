@@ -2,9 +2,7 @@ package websites.tests
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
-import websites.tests.alloys._Left
-import websites.tests.alloys._Right
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 object XTestDimensions  {
     // run main then
@@ -19,13 +17,13 @@ object XTestDimensions  {
         val field: Field = Field()
         val changed = field.setValue(character)
 
-        val photonic = QuantumPhotonicField()
+        val photonic = QuantumField()
         val change2  = photonic.setValue(2)
 
         val emission = photonic.emit()
         val (clone, remainder) = Absorber.materialize(emission)
 
-        val result = clone as QuantumPhotonicField
+        val result = clone as QuantumField
 
         return
 

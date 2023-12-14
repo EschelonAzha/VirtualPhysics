@@ -1,8 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength
 
-import symmetrical.cosmic.__transpectors.transpectors.Photons
-import symmetrical.cosmic.__transpectors.transpectors.Strings
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -19,7 +16,7 @@ class Wavelength(
     )
 
 
-    private var field      : QuantumPhotonicField = QuantumPhotonicField()
+    private var field      : QuantumField = QuantumField()
 
     fun isNull() : Boolean {
         return field.isNull()

@@ -3,8 +3,7 @@ package symmetrical.cosmic._physics._subatomic.balanced
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
-import kotlin.reflect.KClass
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 
 interface IParticle {
@@ -18,7 +17,7 @@ interface IParticle {
     fun getPhoton() : Photon
     fun getMomentum() : AngularMomentum
     fun getSpin() : Spin
-    fun getWavelength() : QuantumPhotonicField
+    fun getWavelength() : QuantumField
     fun setSpin(spin: Spin) : IParticle
     fun setMomentum(momentum: AngularMomentum) : IParticle
     fun setValue(value:Any?) : IParticle

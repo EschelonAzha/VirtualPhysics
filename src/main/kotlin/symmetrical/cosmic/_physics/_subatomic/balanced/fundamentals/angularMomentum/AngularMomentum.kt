@@ -1,7 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum
 
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Emitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -31,7 +29,7 @@ open class AngularMomentum(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    open fun format(wavelength: QuantumPhotonicField) : String {
+    open fun format(wavelength: QuantumField) : String {
         return wavelength.toString()
     }
 }

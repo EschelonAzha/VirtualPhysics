@@ -8,7 +8,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 class FundamentalProperties : ClassGroup {
     constructor() {
@@ -17,7 +17,7 @@ class FundamentalProperties : ClassGroup {
         add(EntityId(Base52.classId(), Particle::class))
         add(EntityId(Base52.classId(), Spin::class))
         add(EntityId(Base52.classId(), Wavelength::class))
-        add(EntityId(Base52.classId(), QuantumPhotonicField::class))
+        add(EntityId(Base52.classId(), QuantumField::class))
 
     }
 }

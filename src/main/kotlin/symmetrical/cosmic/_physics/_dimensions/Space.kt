@@ -8,7 +8,7 @@ class Space {
 
     constructor()
 
-    var space: IParticle? = null
+    var space: IParticle? = null   // this may have to change to a Particle UniqueId when emitted
 
     fun i() : Space {
         return this

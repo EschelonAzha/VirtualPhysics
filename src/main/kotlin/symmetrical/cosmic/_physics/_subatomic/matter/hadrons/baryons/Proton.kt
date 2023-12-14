@@ -1,7 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -130,7 +129,7 @@ open class Proton(
         return protonType == type.value
     }
     fun setType(protonType: Protons.ProtonType) : Proton {
-        val wavelength: QuantumPhotonicField = getTypeQuark().getWavelength()
+        val wavelength: QuantumField = getTypeQuark().getWavelength()
         val changed = wavelength.setValue(protonType.value.toString())
         return this
     }
@@ -144,7 +143,7 @@ open class Proton(
 
         val newValue  : Field                       = zBoson.getNewField()
         val valueQuark: Up                          = getValueQuark()
-        val wavelength: QuantumPhotonicField        = valueQuark.getWavelength()
+        val wavelength: QuantumField        = valueQuark.getWavelength()
         zBoson.setOldValue(wavelength.getValue())
 
         if (!noChange(zBoson).isAccepted())
@@ -190,7 +189,7 @@ open class Proton(
     private fun noChange(zBoson:ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
         val valueQuark: Up                      = getValueQuark()
-        val wavelength: QuantumPhotonicField    = valueQuark.getWavelength()
+        val wavelength: QuantumField    = valueQuark.getWavelength()
         if (!wavelength.isChange(newValue)) {
             zBoson.setAccepted(false)
         }

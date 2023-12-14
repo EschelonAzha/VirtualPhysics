@@ -1,12 +1,10 @@
 package symmetrical.cosmic._physics._dimensions
 
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumPhotonicField
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 class Mass {
 
-    var mass: QuantumPhotonicField = QuantumPhotonicField()
+    var mass: QuantumField = QuantumField()
 
     object Static {
             const val PHOTON        : Byte = 0
@@ -21,7 +19,7 @@ class Mass {
             const val BOTTOM_QUARK  : Byte = 9
             const val TOP_QUARK     : Byte = 10
             const val PROTON        : Byte = 11
-            const val NEURTRON      : Byte = 12
+            const val NEUTRON       : Byte = 12
     }
 
     fun i() : Mass {
