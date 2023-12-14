@@ -3,7 +3,7 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
@@ -14,7 +14,7 @@ open class AntiLepton(
     private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class),
 ) : Particle(),
     IAntiMatter by antiMatter,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         AntiMatter(AntiLepton::class, Lepton::class),

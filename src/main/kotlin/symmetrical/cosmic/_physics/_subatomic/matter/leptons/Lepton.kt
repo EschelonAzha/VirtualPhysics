@@ -2,12 +2,10 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
@@ -16,7 +14,7 @@ open class Lepton(
     private val matter: IMatter = Matter(Lepton::class, AntiLepton::class),
 ) : Particle(),
     IMatter by matter,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         Matter(Lepton::class, AntiLepton::class),

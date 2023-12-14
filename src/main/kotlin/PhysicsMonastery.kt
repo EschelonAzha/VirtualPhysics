@@ -2,7 +2,7 @@
 import asymmetrical.wormholes.pulsar.Pulsar
 import symmetrical.cosmic.__recycle.Absorber
 
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 
 import symmetrical.cosmic.cosmology.INebula
 import symmetrical.dom.Dom
@@ -34,7 +34,7 @@ fun test() : Unit {
 
     val emission = parent.emit().radiate()
 
-    val (clone: Emitter, remainder:String) = Absorber.materialize(emission)
+    val (clone: IEmitter, remainder:String) = Absorber.materialize(emission)
 
     val dom:Dom = clone as Dom
 

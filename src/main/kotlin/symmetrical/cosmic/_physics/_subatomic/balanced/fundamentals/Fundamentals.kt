@@ -2,7 +2,7 @@ package symmetrical.cosmic._physics._subatomic.balanced.fundamentals
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -11,7 +11,7 @@ class Fundamentals(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Fundamentals::class, Fundamentals::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         MatterAntiMatter(Fundamentals::class, Fundamentals::class),

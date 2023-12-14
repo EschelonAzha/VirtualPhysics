@@ -6,7 +6,7 @@ import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
@@ -17,7 +17,7 @@ open class ParticleBeam(
     IMatterAntiMatter by matterAntiMatter,
     IBeam by beam,
     IParticleBeam,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
@@ -59,7 +59,7 @@ open class ParticleBeam(
 
         var emission = classId+particle+base52Size
         for (i:Int in 0 until size()) {
-            val emitter: Emitter = get(i) as Emitter
+            val emitter: IEmitter = get(i) as IEmitter
             emission+=emitter.emit().radiate()
         }
 

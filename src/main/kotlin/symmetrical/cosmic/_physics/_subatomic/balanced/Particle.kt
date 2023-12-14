@@ -6,7 +6,7 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
@@ -17,7 +17,7 @@ open class Particle(
 ) :
     IMatterAntiMatter by matterAntiMatter,
     IParticle,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         MatterAntiMatter(Particle::class, AntiParticle::class),

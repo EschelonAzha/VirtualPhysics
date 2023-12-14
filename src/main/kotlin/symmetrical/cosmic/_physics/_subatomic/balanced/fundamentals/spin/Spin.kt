@@ -1,6 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -9,7 +8,7 @@ open class Spin(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Spin::class, Spin::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         MatterAntiMatter(Spin::class, Spin::class),

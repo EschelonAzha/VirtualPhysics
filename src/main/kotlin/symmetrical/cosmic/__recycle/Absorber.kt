@@ -48,15 +48,15 @@ object Absorber {
         return null
     }
 
-    fun materialize(photon: Photon) : Pair<Emitter, String> {
+    fun materialize(photon: Photon) : Pair<IEmitter, String> {
         return materialize(photon.radiate())
     }
 
-    fun materialize(emission:String) : Pair<Emitter, String> {
+    fun materialize(emission:String) : Pair<IEmitter, String> {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
-        val clone = createInstance(classId) as Emitter
+        val clone = createInstance(classId) as IEmitter
         val remainderPhoton: Photon = clone.absorb(Photon(emission))
-        return Pair<Emitter, String>(clone, remainderPhoton.radiate())
+        return Pair<IEmitter, String>(clone, remainderPhoton.radiate())
     }
     fun getClassId(kClass: KClass<*>) : String {
 

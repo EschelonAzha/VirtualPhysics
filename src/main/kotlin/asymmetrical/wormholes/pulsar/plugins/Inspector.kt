@@ -4,12 +4,12 @@ package asymmetrical.wormholes.pulsar.plugins
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.Beam
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
-open class Inspector(private val particle: Particle = Particle()) : IParticle by particle, Emitter {
+open class Inspector(private val particle: Particle = Particle()) : IParticle by particle, IEmitter {
 
     protected lateinit var message          : SocketMessage
 

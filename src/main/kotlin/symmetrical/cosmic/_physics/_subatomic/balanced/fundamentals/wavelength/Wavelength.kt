@@ -1,7 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength
 
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
@@ -9,7 +9,7 @@ class Wavelength(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Wavelength::class, Wavelength::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         MatterAntiMatter(Wavelength::class, Wavelength::class),

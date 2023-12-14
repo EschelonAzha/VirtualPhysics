@@ -2,11 +2,11 @@ package symmetrical.cosmic._physics._dimensions
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
-class Time : Emitter {
+class Time : IEmitter {
 
 
     private var field : QuantumField = QuantumField()

@@ -3,9 +3,6 @@ package symmetrical.cosmic._physics._subatomic.bosons
 import asymmetrical.machine.config.Config
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Photons
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 open class Photon{
     constructor()
@@ -43,7 +40,7 @@ open class Photon{
 
     }
 
-    lateinit    var emitter     : Emitter
+    lateinit    var emitter     : IEmitter
                 var radiation   : String = ""
 
     // Spin 1
@@ -64,7 +61,7 @@ open class Photon{
         return radiation
     }
 
-    fun setEmitter(emitter: Emitter) : Photon {
+    fun setEmitter(emitter: IEmitter) : Photon {
         this.emitter = emitter
         return this
     }

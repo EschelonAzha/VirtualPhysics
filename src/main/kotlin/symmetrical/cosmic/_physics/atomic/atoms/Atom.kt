@@ -3,7 +3,7 @@ package symmetrical.cosmic._physics.atomic.atoms
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharge
@@ -38,7 +38,7 @@ open class Atom(
         IColorCharge            by colorCharges,
         IQuarkValue             by quarkValue,
         Element,
-        Emitter,
+        IEmitter,
         IAtom
     {
         constructor() : this(

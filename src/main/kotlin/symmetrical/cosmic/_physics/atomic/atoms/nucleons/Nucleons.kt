@@ -1,7 +1,7 @@
 package symmetrical.cosmic._physics.atomic.atoms.nucleons
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
@@ -22,7 +22,7 @@ class Nucleons(
         IProtons             by protons,
         INeutrons            by neutrons,
         INucleons,
-        Emitter
+        IEmitter
 {
 
     constructor() : this(

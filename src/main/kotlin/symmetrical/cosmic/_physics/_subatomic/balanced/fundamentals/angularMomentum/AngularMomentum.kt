@@ -1,6 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum
 
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
@@ -8,7 +8,7 @@ open class AngularMomentum(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(AngularMomentum::class, AngularMomentum::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
-    Emitter {
+    IEmitter {
     constructor() : this(
         Matter(AngularMomentum::class, AngularMomentum::class),
     )

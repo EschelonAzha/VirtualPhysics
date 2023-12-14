@@ -2,18 +2,14 @@ package symmetrical.cosmic._physics._subatomic.matter.quarks
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._dimensions.Dimensions
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
-import symmetrical.cosmic._physics._subatomic.bosons.Emitter
+import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 
@@ -21,7 +17,7 @@ open class Quark(
     private val matter: IMatter = Matter(Quark::class, AntiQuark::class),
 ) : Particle(),
     IMatter by matter,
-    Emitter
+    IEmitter
 {
     constructor() : this(
         Matter(Quark::class, AntiQuark::class),
