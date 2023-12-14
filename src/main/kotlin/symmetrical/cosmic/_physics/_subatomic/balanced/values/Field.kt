@@ -13,6 +13,7 @@ class Field : IField {
         const val STRING3   = "!"
         const val VECTOR    = "V"
 
+        const val TYPE_LTH    = 1
         const val NUMBERS_LTH = 1
         const val STRING1_LTH = 1
         const val STRING2_LTH = 2

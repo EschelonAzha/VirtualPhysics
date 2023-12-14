@@ -30,13 +30,16 @@ open class Particle(
         const val UNIQUE_ID_LENGTH = 1
     }
     private var uniqueId = ""
+
     private lateinit var self : IParticle
 
     private   val dimensions   :Dimensions   = Dimensions()
     protected var fundamentals :Fundamentals = Fundamentals()
 
 
-
+//    override fun absorb(photon:Photon) : Photon {
+//        return photon
+//    }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 

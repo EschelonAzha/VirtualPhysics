@@ -18,52 +18,52 @@ class QuantumPhotonicField : Emitter {
 
     override fun absorb(photon: Photon) : Photon {
 
-        var (type, lthValue) = Strings.remainder(Field.Static.NUMBERS_LTH, photon.propagate().radiate())
+        var (type, leftover) = Strings.remainder(Field.Static.TYPE_LTH, photon.propagate().radiate())
         if (type == Field.Static.NULL) {
             field.setValue(null)
-            return Photon(lthValue)
+            return Photon(leftover)
         }
         if (type == Field.Static.BOOLEAN) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
             field.setValue(value == "true")
             return Photon(remainder)
         }
         if (type == Field.Static.BYTE) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
             field.setValue(value)
             return Photon(remainder)
         }
         if (type == Field.Static.INT) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
             field.setValue(value.toInt())
             return Photon(remainder)
         }
         if (type == Field.Static.DOUBLE) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
             field.setValue(value.toDouble())
             return Photon(remainder)
         }
         if (type == Field.Static.STRING1) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING1_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.STRING1_LTH, leftover)
             field.setValue(value)
             return Photon(remainder)
         }
         if (type == Field.Static.STRING2) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING2_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.STRING2_LTH, leftover)
             field.setValue(value)
             return Photon(remainder)
         }
         if (type == Field.Static.STRING3) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING3_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.STRING3_LTH, leftover)
             field.setValue(value)
             return Photon(remainder)
         }
         if (type == Field.Static.VECTOR) {
-            var (value, remainder) = Photons.parse(Field.Static.VECTOR_LTH, lthValue)
+            var (value, remainder) = Photons.parse(Field.Static.VECTOR_LTH, leftover)
             field.setValue(value)
             return Photon(remainder)
         }
-        println("!!!!!!!!!!!!!!!!!!!!!ERROR OCCURED IN WAVELENGTH:ABSORB!!!!!!!!!!!!!!!!!!!!!")
+        println("!!!!!!!!!!!!!!!!!!!!!ERROR OCCURED IN QuantumPhotonicField:ABSORB!!!!!!!!!!!!!!!!!!!!!")
         return Photon("")
     }
 
