@@ -12,6 +12,13 @@ class QuantumField : IEmitter {
 
     private var field      : Field = Field()
 
+    constructor() {
+
+    }
+    constructor(value:Any?) {
+        field.setValue(value)
+    }
+
     fun isNull() : Boolean {
         return field.isNull()
     }

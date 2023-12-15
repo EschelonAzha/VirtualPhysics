@@ -19,7 +19,7 @@ open class Spin(
         const val MINUS:Int      = -1
     }
 
-    val field:Field = Field(Spin.Static.PLUS)
+    val spin:QuantumField = QuantumField(Spin.Static.PLUS)
 
 
 
@@ -40,23 +40,23 @@ open class Spin(
     }
 
     fun isPlus() : Boolean {
-        return field.toInt() > 0
+        return spin.getField().toInt() > 0
     }
     fun isMinus() : Boolean {
-        return field.toInt() < 0
+        return spin.getField().toInt() < 0
     }
 
     fun setSpin(value:Int) : Spin {
-        field.setValue(value)
+        spin.setValue(value)
         return this
     }
 
     fun spinPlus() : Spin {
-        field.setValue(Spin.Static.PLUS)
+        spin.setValue(Spin.Static.PLUS)
         return this
     }
     fun spinMinus() : Spin {
-        field.setValue(Static.MINUS)
+        spin.setValue(Static.MINUS)
         return this
     }
 }
