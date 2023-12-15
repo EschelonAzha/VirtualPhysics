@@ -18,7 +18,7 @@ class Fundamentals(
     )
     private var angularMomentum : AngularMomentum           = AngularMomentum()
     private var spin            : Spin                      = Spin()
-    private var wavelength      : QuantumField      = QuantumField()
+    private var wavelength      : QuantumField              = QuantumField()
 
 
     override fun absorb(photon: Photon) : Photon {
