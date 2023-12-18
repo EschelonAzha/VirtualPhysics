@@ -13,6 +13,7 @@ interface IField {
     fun getValue()              : Any?
     fun isChange(value:Any?)    : Boolean
     fun isNull()                : Boolean
+    fun setField(field:Field)   : Field
     fun setValue(value:Any?)    : Any?
 
     fun toArray()               : Array<Any>

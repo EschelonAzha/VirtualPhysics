@@ -21,8 +21,8 @@ class Field : IField {
         const val VECTOR_LTH  = 3
 
     }
-    private var type:String = "0"
-    private var value:Any?  = null
+    private var type :String = "0"
+    private var value:Any?   = null
     constructor() {
     }
     constructor(value:Any?) {
@@ -57,6 +57,11 @@ class Field : IField {
     }
     override fun isNull() : Boolean {
         return value == null
+    }
+    override fun setField(field:Field) : Field {
+        value = field.getValue()
+        type  = field.getType()
+        return this
     }
     override fun setValue(value:Any?) : Any? {
         val previous = this.value

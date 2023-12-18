@@ -4,23 +4,22 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics._subatomic.balanced.values.IField
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 
-class QuantumField : IEmitter {
-
-
-    private var field      : Field = Field()
-
-    constructor() {
-
-    }
-    constructor(value:Any?) {
+class QuantumField(
+    private val field:Field=Field()
+) : IField by field,
+    IEmitter
+{
+    constructor() : this(
+        Field()
+    )
+    constructor(value:Any?) : this(
+        Field()
+    ){
         field.setValue(value)
-    }
-
-    fun isNull() : Boolean {
-        return field.isNull()
     }
 
     override fun absorb(photon: Photon) : Photon {
@@ -81,9 +80,7 @@ class QuantumField : IEmitter {
     fun getField() : Field {
         return field
     }
-    fun getValue() : Any? {
-        return getField().getValue()
-    }
+
     fun radiate() : String {
         val prefix = getClassId()+field.getType()
         if (field.getType() == Field.Static.NULL)
@@ -115,20 +112,8 @@ class QuantumField : IEmitter {
     }
 
 
-    fun setField(field: Field) : QuantumField {
-        this.field = field
-        return this
-    }
-
-    fun setValue(value:Any?) : Any? {
-        return field.setValue(value)
-    }
-
     override fun toString() : String {
         return field.toString()
-    }
-    fun isChange(value:Any?) : Boolean {
-        return field.isChange(value)
     }
 
 }
