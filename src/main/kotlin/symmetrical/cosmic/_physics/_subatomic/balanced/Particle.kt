@@ -34,6 +34,7 @@ open class Particle(
     private     val charge       :Charge                = Charge()
     private     val mass         :Mass                  = Mass()
     private     val temperature  :Temperature           = Temperature()
+    private     val space        :Space                 = Space()
 
 
     private     val dimensions   :Dimensions            = Dimensions()
@@ -47,6 +48,7 @@ open class Particle(
         remainder = charge.absorb(remainder)
         remainder = mass.absorb(remainder)
         remainder = temperature.absorb(remainder)
+        remainder = space.absorb(remainder)
 
         return remainder
     }
@@ -62,7 +64,8 @@ open class Particle(
                 time.emit().radiate()+
                 charge.emit().radiate()+
                 mass.emit().radiate()+
-                temperature.emit().radiate()
+                temperature.emit().radiate()+
+                space.emit().radiate()
     }
 
 
