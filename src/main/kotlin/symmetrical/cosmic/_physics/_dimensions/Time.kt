@@ -9,6 +9,24 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 class Time(private val field:QuantumField=QuantumField()) : IQuantumField by field {
 
+    override fun absorb(photon:Photon) : Photon {
+        return field.absorb(photon);
+    }
+    override fun emit() : Photon {
+        return field.emit()
+    }
+
+    private fun radiate() : String {
+        return field.emit().radiate()
+    }
+
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Time::class)
+    }
+
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
     fun getField() : Field {
         return field.getField()
     }

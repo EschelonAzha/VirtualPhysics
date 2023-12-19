@@ -37,7 +37,8 @@ open class Particle(
 
 
     override fun absorb(photon:Photon) : Photon {
-        return uniqueId.absorb(photon.propagate())
+        val remainder:Photon = uniqueId.absorb(photon.propagate())
+        return remainder
     }
 
     override fun emit() : Photon {
