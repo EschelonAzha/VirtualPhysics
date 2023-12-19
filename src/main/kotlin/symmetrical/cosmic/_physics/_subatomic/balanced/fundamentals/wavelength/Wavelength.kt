@@ -1,67 +1,49 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength
 
+import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._dimensions.Mass
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
-class Wavelength(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Wavelength::class, Wavelength::class),
-) :
-    IMatterAntiMatter by matterAntiMatter,
-    IEmitter
-{
+class Wavelength(private val field:QuantumField=QuantumField()) : IQuantumField by field {
+
     constructor() : this(
-        MatterAntiMatter(Wavelength::class, Wavelength::class),
+        QuantumField()
     )
 
-
-    private var field      : QuantumField = QuantumField()
-
-    fun isNull() : Boolean {
-        return field.isNull()
-    }
-
     override fun absorb(photon: Photon) : Photon {
-        return field.absorb(photon)
+        return field.absorb(photon.propagate());
     }
-
     override fun emit() : Photon {
-        return field.emit()
+        return Photon(radiate())
     }
 
+    private fun radiate() : String {
+        return getLocalClassId()+field.emit().radiate()
+    }
+
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Wavelength::class)
+    }
+
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
     fun getField() : Field {
         return field.getField()
-    }
-    fun getValue() : Any? {
-        return field.getField().getValue()
-    }
-    private fun radiate() : String {
-        return field.radiate()
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
     }
 
     fun wavelength() : Any? {
         return field.getValue()
     }
 
-    fun setField(field:Field) : Wavelength {
-        this.field.setField(field)
+    fun setWavelength(value:Any?) : Any? {
+        return setValue(value)
+    }
+
+    fun i() : Wavelength {
         return this
     }
-
-    fun setWavelength(value:Any?) : Any? {
-        return field.setValue(value)
-    }
-
-    override fun toString() : String {
-        return field.toString()
-    }
-    fun isChange(value:Any?) : Boolean {
-        return field.isChange(value)
-    }
-
 }

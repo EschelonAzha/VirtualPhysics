@@ -27,6 +27,7 @@ class LogicalSocietyApp : App {
             message.getMass().setMass(3.5)
             message.getSpace().setSpace(Particle())
             message.getTemperature().setTemperature(100)
+         //   message.getWavelength().setWavelength(22)
             val emission = message.emit().radiate()
             nebula.send(emission)
         }

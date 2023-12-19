@@ -73,7 +73,7 @@ open class Orbitals(
         return getElectronValue().getSpin()
     }
     override fun getElectronWavelength() : Any? {
-        return getElectronValue().getWavelength()
+        return getElectronValue().getWL()
     }
     override fun getElectronPhoton() : Photon {
         return getElectronValue().getPhoton()

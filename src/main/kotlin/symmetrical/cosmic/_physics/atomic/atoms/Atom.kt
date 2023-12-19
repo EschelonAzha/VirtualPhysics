@@ -161,7 +161,7 @@ open class Atom(
             return zBoson
         }
         open fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
-            valueQuark.getWavelength().setValue(zBoson.getNewValue())
+            valueQuark.getWL().setValue(zBoson.getNewValue())
             zBoson.setAccepted(true)
             return zBoson
         }

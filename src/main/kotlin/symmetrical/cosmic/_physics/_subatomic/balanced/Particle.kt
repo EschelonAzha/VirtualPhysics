@@ -6,6 +6,7 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -32,10 +33,11 @@ open class Particle(
 
     private     val time         :Time                  = Time()
     private     val charge       :Charge                = Charge()
+    private     val space        :Space                 = Space()
     private     val mass         :Mass                  = Mass()
     private     val temperature  :Temperature           = Temperature()
-    private     val space        :Space                 = Space()
 
+    private     val wavelength   :Wavelength            = Wavelength()
 
     private     val dimensions   :Dimensions            = Dimensions()
     protected   var fundamentals :Fundamentals          = Fundamentals()
@@ -49,6 +51,7 @@ open class Particle(
         remainder = mass.absorb(remainder)
         remainder = temperature.absorb(remainder)
         remainder = space.absorb(remainder)
+        remainder = wavelength.absorb(remainder)
 
         return remainder
     }
@@ -65,7 +68,8 @@ open class Particle(
                 charge.emit().radiate()+
                 mass.emit().radiate()+
                 temperature.emit().radiate()+
-                space.emit().radiate()
+                space.emit().radiate()+
+                wavelength.emit().radiate()
     }
 
 
@@ -120,7 +124,7 @@ open class Particle(
 
     //  FUNDAMENTALS !!!!!!!!!!!!!!!!!!!!!!!
     override fun getValue() : Any? {
-        return getWavelength()
+        return getWL()
     }
     override fun getPhoton() : Photon {
         return fundamentals.getPhoton()
@@ -131,7 +135,7 @@ open class Particle(
     override fun getSpin() : Spin {
         return fundamentals.getSpin()
     }
-    override fun getWavelength() : QuantumField {
+    override fun getWL() : QuantumField {
         return fundamentals.getWavelength()
     }
     override fun setSpin(spin: Spin) : IParticle {
@@ -147,19 +151,19 @@ open class Particle(
         return this
     }
     override fun setWavelength(value:Any?) : IParticle {
-        this.getWavelength().setValue(value)
+        this.getWL().setValue(value)
         return this
     }
     override fun momentum() : String {
         if (spin())
-            return getMomentum().format(getWavelength())
-        else return getWavelength().toString()
+            return getMomentum().format(getWL())
+        else return getWL().toString()
     }
     override fun spin() : Boolean {
         return getSpin().isPlus()
     }
     override fun wavelength() : Any? {
-        return getWavelength().getValue()
+        return getWL().getValue()
     }
     override fun wavelengthStr() : String {
         val result = wavelength() ?: return ""
