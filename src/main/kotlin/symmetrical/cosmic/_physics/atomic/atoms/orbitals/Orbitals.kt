@@ -79,7 +79,7 @@ open class Orbitals(
         return getElectronValue().getPhoton()
     }
     override fun setElectronSpin(spin: SpinOld) : Atom {
-        getElectronValue().setSpin(spin)
+        getElectronValue().setSpinOld(spin)
         return __atom
     }
     override fun setElectronValue(value:Any?) : ZBoson {

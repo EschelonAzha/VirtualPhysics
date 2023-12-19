@@ -144,7 +144,7 @@ open class Particle(
     override fun getWL() : QuantumField {
         return fundamentals.getWavelength()
     }
-    override fun setSpin(spin: SpinOld) : IParticle {
+    override fun setSpinOld(spin: SpinOld) : IParticle {
         this.fundamentals.setSpin(spin)
         return this
     }

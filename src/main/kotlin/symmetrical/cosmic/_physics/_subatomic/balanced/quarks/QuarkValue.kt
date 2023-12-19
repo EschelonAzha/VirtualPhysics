@@ -53,7 +53,7 @@ class QuarkValue(
     }
     override fun setQuarkSpin(spin: SpinOld) : Atom {
         val quark   = atom.nucleons.getValueProton().get(0) as Quark
-        quark.setSpin(spin)
+        quark.setSpinOld(spin)
         return atom
     }
     override fun setQuarkValue(value:Any?) : ZBoson {
