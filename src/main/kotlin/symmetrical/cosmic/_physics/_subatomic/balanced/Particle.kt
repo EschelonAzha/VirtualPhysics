@@ -77,15 +77,32 @@ open class Particle(
         return getSelf()
     }
 
-
+    fun getCharge() : Charge {
+        return charge
+    }
     override fun getIlluminations() : IParticleBeam {
         return matterAntiMatter.getIlluminations()
+    }
+
+    fun getMass() : Mass {
+        return mass
     }
 
     override fun getSelf() : IParticle {
         if (::self.isInitialized)
             return self
         else return this
+    }
+
+    fun getSpace() : Space {
+        return space
+    }
+
+    fun getTemperature() : Temperature {
+        return temperature
+    }
+    fun getTime() : Time {
+        return time
     }
 
     override fun getUniqueId(): String {

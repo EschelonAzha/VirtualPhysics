@@ -6,6 +6,7 @@ import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
 import symmetrical.dom.Dom
 import symmetrical.dom.properties.region.DomHeight
 import asymmetrical.app.App
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 
 class LogicalSocietyApp : App {
 
@@ -21,6 +22,11 @@ class LogicalSocietyApp : App {
             parent.append(child)
             message.add(parent)
             message.createUniqueId()
+            message.getTime().setTime(2)
+            message.getCharge().setCharge(1)
+            message.getMass().setMass(3.5)
+            message.getSpace().setSpace(Particle())
+            message.getTemperature().setTemperature(100)
             val emission = message.emit().radiate()
             nebula.send(emission)
         }
