@@ -70,7 +70,7 @@ open class Particle(
         return matterAntiMatter.getClassId()
     }
     override fun createUniqueId(): IParticle {
-        uniqueId.setValue(Keys.getUniqueId())
+        uniqueId.setValue(getClassId()+Keys.getUniqueId())
         return getSelf()
     }
 
