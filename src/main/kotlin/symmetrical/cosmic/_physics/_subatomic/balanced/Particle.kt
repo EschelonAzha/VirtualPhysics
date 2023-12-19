@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.balanced
 
 import symmetrical.cosmic.__transpectors.transpectors.Keys
+import symmetrical.cosmic._physics._dimensions.Charge
 import symmetrical.cosmic._physics._dimensions.Dimensions
 import symmetrical.cosmic._physics._dimensions.Time
 import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
@@ -29,15 +30,22 @@ open class Particle(
 
     private lateinit var self : IParticle
 
-    private     val time         :Time                  = Time()
-
     private     var uniqueId     :QuantumField          = QuantumField()
+
+    private     val time         :Time                  = Time()
+    private     val charge       :Charge                = Charge()
+
+
     private     val dimensions   :Dimensions            = Dimensions()
     protected   var fundamentals :Fundamentals          = Fundamentals()
 
 
     override fun absorb(photon:Photon) : Photon {
-        val remainder:Photon = uniqueId.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = uniqueId.absorb(remainder)
+        remainder = time.absorb(remainder)
+        remainder = charge.absorb(remainder)
+
         return remainder
     }
 
@@ -47,7 +55,10 @@ open class Particle(
 
 
     private fun radiate() : String {
-        return getClassId()+uniqueId.emit().radiate()
+        return getClassId()+
+                uniqueId.emit().radiate()+
+                time.emit().radiate()+
+                charge.emit().radiate()
     }
 
 

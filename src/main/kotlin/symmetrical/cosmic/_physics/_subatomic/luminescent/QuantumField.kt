@@ -82,7 +82,7 @@ class QuantumField(
     }
 
     fun radiate() : String {
-        val prefix = getClassId()+field.getType()
+        val prefix = getLocalClassId()+field.getType()
         if (field.getType() == Field.Static.NULL)
             return prefix
         if (field.getType() == Field.Static.BOOLEAN)

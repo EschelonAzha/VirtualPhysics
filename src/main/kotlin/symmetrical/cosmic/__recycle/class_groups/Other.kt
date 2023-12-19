@@ -53,7 +53,6 @@ class Other : ClassGroup {
         add(EntityId(Base52.classId(), Path::class))
         add(EntityId(Base52.classId(), SocketMessage::class))
         add(EntityId(Base52.classId(), Strobe::class))
-        add(EntityId(Base52.classId(), Time::class))
         add(EntityId(Base52.classId(), UseridFld::class))
 
 

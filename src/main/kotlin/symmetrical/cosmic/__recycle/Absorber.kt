@@ -11,7 +11,7 @@ object Absorber {
     val beam: ClassGroup = ClassGroup()
     init {
         beam.addAll(Atoms())
-        beam.addAll(Bosons())
+        beam.addAll(Dimentions())
         beam.addAll(Charges())
         beam.addAll(Compounds())
         beam.addAll(Cosmic())
