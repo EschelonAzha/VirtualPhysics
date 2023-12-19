@@ -2,7 +2,7 @@ package symmetrical.cosmic._physics.atomic.atoms.orbitals
 
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -69,8 +69,8 @@ open class Orbitals(
     override fun electronValueStr() : String {
         return getElectronValue().wavelengthStr()
     }
-    override fun getElectronSpin() : Spin {
-        return getElectronValue().getSpin()
+    override fun getElectronSpin() : SpinOld {
+        return getElectronValue().getSpinOld()
     }
     override fun getElectronWavelength() : Any? {
         return getElectronValue().getWL()
@@ -78,7 +78,7 @@ open class Orbitals(
     override fun getElectronPhoton() : Photon {
         return getElectronValue().getPhoton()
     }
-    override fun setElectronSpin(spin: Spin) : Atom {
+    override fun setElectronSpin(spin: SpinOld) : Atom {
         getElectronValue().setSpin(spin)
         return __atom
     }

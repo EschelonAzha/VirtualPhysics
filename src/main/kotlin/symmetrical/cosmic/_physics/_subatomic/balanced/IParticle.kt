@@ -1,7 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.balanced
 
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
@@ -16,9 +16,9 @@ interface IParticle {
     fun getValue() : Any?
     fun getPhoton() : Photon
     fun getMomentum() : AngularMomentum
-    fun getSpin() : Spin
+    fun getSpinOld() : SpinOld
     fun getWL() : QuantumField
-    fun setSpin(spin: Spin) : IParticle
+    fun setSpin(spin: SpinOld) : IParticle
     fun setMomentum(momentum: AngularMomentum) : IParticle
     fun setValue(value:Any?) : IParticle
     fun setWavelength(value:Any?) : IParticle

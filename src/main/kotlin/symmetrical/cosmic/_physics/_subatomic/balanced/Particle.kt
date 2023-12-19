@@ -6,6 +6,7 @@ import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -38,6 +39,7 @@ open class Particle(
     private     val temperature  :Temperature           = Temperature()
 
     private     val wavelength   :Wavelength            = Wavelength()
+    private     val spin         :Spin                  = Spin()
 
     private     val dimensions   :Dimensions            = Dimensions()
     protected   var fundamentals :Fundamentals          = Fundamentals()
@@ -136,13 +138,13 @@ open class Particle(
     override fun getMomentum() : AngularMomentum {
         return fundamentals.getAngularMomentum()
     }
-    override fun getSpin() : Spin {
+    override fun getSpinOld() : SpinOld {
         return fundamentals.getSpin()
     }
     override fun getWL() : QuantumField {
         return fundamentals.getWavelength()
     }
-    override fun setSpin(spin: Spin) : IParticle {
+    override fun setSpin(spin: SpinOld) : IParticle {
         this.fundamentals.setSpin(spin)
         return this
     }
@@ -164,7 +166,7 @@ open class Particle(
         else return getWL().toString()
     }
     override fun spin() : Boolean {
-        return getSpin().isPlus()
+        return getSpinOld().isPlus()
     }
     override fun wavelength() : Any? {
         return getWL().getValue()

@@ -3,7 +3,6 @@ package symmetrical.cosmic.__recycle.class_groups
 import symmetrical.cosmic.__recycle.ClassGroup
 import symmetrical.cosmic.__recycle.EntityId
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics._subatomic.forces.strong_force.Strong
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.elements.Helium
 import symmetrical.cosmic._physics.atomic.atoms.elements.Hydrogen

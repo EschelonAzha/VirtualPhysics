@@ -9,13 +9,13 @@ import symmetrical.cosmic._physics.atomic.substance.molecules.Molecule
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
 
-open class Task(private val particle: Particle = Particle()) : IParticle by particle {
+open class Task : Particle {
     protected lateinit var message   : SocketMessage
     protected lateinit var outlet    : IOutlet
     private            var payload   : IBeam = Beam(0)
 
 
-    constructor(outlet: IOutlet) : this(Particle()) {
+    constructor(outlet: IOutlet)  {
         this.outlet     = outlet
     }
 

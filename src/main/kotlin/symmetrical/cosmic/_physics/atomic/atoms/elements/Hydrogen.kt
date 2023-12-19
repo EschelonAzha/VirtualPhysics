@@ -1,10 +1,8 @@
 package symmetrical.cosmic._physics.atomic.atoms.elements
 
-import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 class Hydrogen(
     private val matter: IMatter = Matter(Hydrogen::class, AntiHydrogen::class),

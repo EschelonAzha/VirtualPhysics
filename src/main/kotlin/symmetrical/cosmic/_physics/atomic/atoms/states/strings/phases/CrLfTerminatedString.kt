@@ -1,10 +1,8 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.strings.phases
 
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
@@ -17,12 +15,12 @@ class CrLfTerminatedString(
         Matter(CrLfTerminatedString::class, CrLfTerminatedString::class),
     ) {
         setQuarkMomentum(CRLFTerminatedMomentum())
-        setQuarkSpin(Spin())
+        setQuarkSpin(SpinOld())
     }
     constructor(value:String) : this() {
         setString(value)
         setQuarkMomentum(CRLFTerminatedMomentum())
-        setQuarkSpin(Spin())
+        setQuarkSpin(SpinOld())
     }
 
 

@@ -8,6 +8,6 @@ interface IColorCharge {
     fun green       ()                  : String
     fun red         ()                  : Any
     fun currentColor()                  : Any?
-    fun setAtom     (atom:Atom)         : Atom
+    fun setAtom     (atom: Atom)        : Atom
     fun setGreen    (green: Green)      : Atom
 }

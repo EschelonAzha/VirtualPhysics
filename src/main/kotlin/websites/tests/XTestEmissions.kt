@@ -2,7 +2,7 @@ package websites.tests
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
@@ -36,9 +36,9 @@ object XTestEmissions {
         testQString()
 
         val emitter = Atom()
-        emitter.setQuarkSpin(Spin())
+        emitter.setQuarkSpin(SpinOld())
         emitter.setQuarkValue(2022.22)
-        emitter.setElectronSpin(Spin())
+        emitter.setElectronSpin(SpinOld())
         emitter.setElectronValue(33.33)
         val emission = emitter.emit().radiate()
         val (clone, remainder) = Absorber.materialize(emission)

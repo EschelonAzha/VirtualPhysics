@@ -2,15 +2,13 @@ package symmetrical.cosmic._physics._subatomic.balanced.quarks
 
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 class QuarkValue(
     private val matter: IMatter = Matter(QuarkValue::class, QuarkValue::class),
@@ -21,7 +19,7 @@ class QuarkValue(
     constructor() : this(
         Matter(QuarkValue::class, QuarkValue::class),
     )
-    lateinit var atom:Atom
+    lateinit var atom: Atom
 
 
     override fun getClassId() : String {
@@ -53,7 +51,7 @@ class QuarkValue(
         quark.setMomentum(momentum)
         return atom
     }
-    override fun setQuarkSpin(spin: Spin) : Atom {
+    override fun setQuarkSpin(spin: SpinOld) : Atom {
         val quark   = atom.nucleons.getValueProton().get(0) as Quark
         quark.setSpin(spin)
         return atom
