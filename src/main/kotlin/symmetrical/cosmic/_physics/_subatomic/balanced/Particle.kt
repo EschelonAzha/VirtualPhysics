@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics._subatomic.balanced
 
 import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic._physics._dimensions.Dimensions
+import symmetrical.cosmic._physics._dimensions.Time
 import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
@@ -21,10 +22,14 @@ open class Particle(
 {
     constructor() : this(
         MatterAntiMatter(Particle::class, AntiParticle::class),
-    )
+    ) {
+        time.setValue(200)
+    }
 
 
     private lateinit var self : IParticle
+
+    private     val time         :Time                  = Time()
 
     private     var uniqueId     :QuantumField          = QuantumField()
     private     val dimensions   :Dimensions            = Dimensions()
@@ -38,6 +43,7 @@ open class Particle(
     override fun emit() : Photon {
         return uniqueId.emit()
     }
+
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()

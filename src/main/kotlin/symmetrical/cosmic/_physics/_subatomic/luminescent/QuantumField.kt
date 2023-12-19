@@ -11,7 +11,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 class QuantumField(
     private val field:Field=Field()
 ) : IField by field,
-    IEmitter
+    IQuantumField
 {
     constructor() : this(
         Field()
