@@ -113,6 +113,10 @@ open class Particle(
         return uniqueId.getValue() as String
     }
 
+    fun getWavelength() : Wavelength {
+        return wavelength
+    }
+
     override fun setSelf(self: IParticle) : IParticle {
         this.self = self
         return getSelf()
