@@ -3,6 +3,7 @@ package symmetrical.cosmic._physics._subatomic.balanced
 import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic._physics._dimensions.Charge
 import symmetrical.cosmic._physics._dimensions.Dimensions
+import symmetrical.cosmic._physics._dimensions.Mass
 import symmetrical.cosmic._physics._dimensions.Time
 import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
@@ -34,6 +35,7 @@ open class Particle(
 
     private     val time         :Time                  = Time()
     private     val charge       :Charge                = Charge()
+    private     val mass         :Mass                  = Mass()
 
 
     private     val dimensions   :Dimensions            = Dimensions()
@@ -45,6 +47,7 @@ open class Particle(
         remainder = uniqueId.absorb(remainder)
         remainder = time.absorb(remainder)
         remainder = charge.absorb(remainder)
+        remainder = mass.absorb(remainder)
 
         return remainder
     }
@@ -58,7 +61,8 @@ open class Particle(
         return getClassId()+
                 uniqueId.emit().radiate()+
                 time.emit().radiate()+
-                charge.emit().radiate()
+                charge.emit().radiate()+
+                mass.emit().radiate()
     }
 
 
