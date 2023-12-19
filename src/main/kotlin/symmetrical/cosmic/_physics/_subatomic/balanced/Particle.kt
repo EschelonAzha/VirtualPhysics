@@ -37,11 +37,18 @@ open class Particle(
 
 
     override fun absorb(photon:Photon) : Photon {
-        return uniqueId.absorb(photon)
+     //   return uniqueId.absorb(photon)
+        return uniqueId.absorb(photon.propagate())
     }
 
     override fun emit() : Photon {
-        return uniqueId.emit()
+       // return uniqueId.emit()
+        return Photon(radiate())
+    }
+
+
+    private fun radiate() : String {
+        return getClassId()+uniqueId.emit().radiate()
     }
 
 
