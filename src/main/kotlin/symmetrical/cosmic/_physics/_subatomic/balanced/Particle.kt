@@ -68,7 +68,7 @@ open class Particle(
 
 
     private fun radiate() : String {
-        return getClassId()+
+        return matterAntiMatter.getClassId()+
                 uniqueId.emit().radiate()+
                 time.emit().radiate()+
                 charge.emit().radiate()+

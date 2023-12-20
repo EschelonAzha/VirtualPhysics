@@ -24,13 +24,10 @@ open class ParticleBeam(
         Beam()
     )
     init {
-
     }
     object Static {
         const val LAST      : Int = -1
     }
-
-
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
