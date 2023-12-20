@@ -1,35 +1,50 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum
 
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
+import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics._subatomic.luminescent.IQuantumField
+import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
-open class AngularMomentum(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(AngularMomentum::class, AngularMomentum::class),
-) :
-    IMatterAntiMatter by matterAntiMatter,
-    IEmitter {
+class AngularMomentum(private val field: QuantumField = QuantumField()) : IQuantumField by field {
+
+
+
     constructor() : this(
-        Matter(AngularMomentum::class, AngularMomentum::class),
+        QuantumField()
     )
 
-
-
     override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        return photon.propagate()
+        return field.absorb(photon.propagate());
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
+
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()
+        return getLocalClassId()+field.emit().radiate()
     }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
+
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(AngularMomentum::class)
     }
-    open fun format(wavelength: QuantumField) : String {
-        return wavelength.toString()
+
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
+    fun getField() : Field {
+        return field.getField()
+    }
+
+    fun spin() : Any? {
+        return field.getValue()
+    }
+
+    fun setAngularMomentum(value:Any?) : Any? {
+        return setValue(value)
+    }
+
+    fun i() : AngularMomentum {
+        return this
     }
 }

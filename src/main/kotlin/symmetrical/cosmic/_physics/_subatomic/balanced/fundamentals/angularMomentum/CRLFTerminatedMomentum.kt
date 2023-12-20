@@ -5,7 +5,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class CRLFTerminatedMomentum(
     private val matter: IMatter = Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
-) : AngularMomentum(),
+) : AngularMomentumOld(),
     IMatter by matter
 {
     constructor() : this(

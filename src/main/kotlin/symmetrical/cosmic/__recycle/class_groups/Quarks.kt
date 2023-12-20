@@ -5,7 +5,6 @@ import symmetrical.cosmic.__recycle.EntityId
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.*
 import symmetrical.cosmic._physics._subatomic.balanced.quarks.QuarkValue
-import symmetrical.cosmic._physics._subatomic.forces.strong_force.Strong
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.Kaon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.MinusPion
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralDownPion

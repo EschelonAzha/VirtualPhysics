@@ -29,6 +29,7 @@ class LogicalSocietyApp : App {
             message.getTemperature().setTemperature(100)
             message.getWavelength().setWavelength(22)
             message.getSpin().setSpin(-1)
+            message.getAngularMomentum().setAngularMomentum("AngularMomentum")
             val emission = message.emit().radiate()
             nebula.send(emission)
         }

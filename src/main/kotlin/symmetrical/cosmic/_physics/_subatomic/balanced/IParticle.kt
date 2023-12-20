@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics._subatomic.balanced
 
 import symmetrical.cosmic._physics._dimensions.*
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
@@ -16,6 +17,8 @@ interface IParticle {
     fun getSelf       ()                    : IParticle
     fun setSelf       (self: IParticle)     : IParticle
 
+    fun getAngularMomentum() : AngularMomentum
+
     fun getTime() : Time
     fun getCharge() : Charge
     fun getSpace() : Space
@@ -27,11 +30,11 @@ interface IParticle {
 
     fun getValue() : Any?
     fun getPhoton() : Photon
-    fun getMomentum() : AngularMomentum
+    fun getMomentum() : AngularMomentumOld
     fun getSpinOld() : SpinOld
     fun getWL() : QuantumField
     fun setSpinOld(spin: SpinOld) : IParticle
-    fun setMomentum(momentum: AngularMomentum) : IParticle
+    fun setMomentum(momentum: AngularMomentumOld) : IParticle
     fun setValue(value:Any?) : IParticle
     fun setWavelength(value:Any?) : IParticle
     fun momentum() : String

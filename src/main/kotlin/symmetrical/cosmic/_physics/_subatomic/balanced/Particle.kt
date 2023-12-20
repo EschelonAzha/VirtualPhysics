@@ -5,6 +5,7 @@ import symmetrical.cosmic._physics._dimensions.*
 import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
@@ -30,16 +31,17 @@ open class Particle(
 
     private lateinit var self : IParticle
 
-    private     var uniqueId     :QuantumField          = QuantumField()
+    private     var uniqueId        :QuantumField           = QuantumField()
 
-    private     val time         :Time                  = Time()
-    private     val charge       :Charge                = Charge()
-    private     val space        :Space                 = Space()
-    private     val mass         :Mass                  = Mass()
-    private     val temperature  :Temperature           = Temperature()
+    private     val time            :Time                   = Time()
+    private     val charge          :Charge                 = Charge()
+    private     val space           :Space                  = Space()
+    private     val mass            :Mass                   = Mass()
+    private     val temperature     :Temperature            = Temperature()
 
-    private     val wavelength   :Wavelength            = Wavelength()
-    private     val spin         :Spin                  = Spin()
+    private     val wavelength      :Wavelength             = Wavelength()
+    private     val spin            :Spin                   = Spin()
+    private     val angularMomentum :AngularMomentum        = AngularMomentum()
 
     private     val dimensions   :Dimensions            = Dimensions()
     protected   var fundamentals :Fundamentals          = Fundamentals()
@@ -55,6 +57,7 @@ open class Particle(
         remainder = space.absorb(remainder)
         remainder = wavelength.absorb(remainder)
         remainder = spin.absorb(remainder)
+        remainder = angularMomentum.absorb(remainder)
 
         return remainder
     }
@@ -73,7 +76,8 @@ open class Particle(
                 temperature.emit().radiate()+
                 space.emit().radiate()+
                 wavelength.emit().radiate()+
-                spin.emit().radiate()
+                spin.emit().radiate()+
+                angularMomentum.emit().radiate()
     }
 
 
@@ -85,6 +89,9 @@ open class Particle(
         return getSelf()
     }
 
+    override fun getAngularMomentum() : AngularMomentum {
+        return angularMomentum
+    }
     override fun getCharge() : Charge {
         return charge
     }
@@ -140,7 +147,7 @@ open class Particle(
     override fun getPhoton() : Photon {
         return fundamentals.getPhoton()
     }
-    override fun getMomentum() : AngularMomentum {
+    override fun getMomentum() : AngularMomentumOld {
         return fundamentals.getAngularMomentum()
     }
     override fun getSpinOld() : SpinOld {
@@ -153,7 +160,7 @@ open class Particle(
         this.fundamentals.setSpin(spin)
         return this
     }
-    override fun setMomentum(momentum: AngularMomentum) : IParticle {
+    override fun setMomentum(momentum: AngularMomentumOld) : IParticle {
         this.fundamentals.setMomentum(momentum)
         return this
     }

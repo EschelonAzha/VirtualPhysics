@@ -15,7 +15,7 @@ interface IOrbitals {
     fun getElectronSpin         ()              : SpinOld
     fun getElectronWavelength   ()              : Any?
     fun getElectronPhoton       ()              : Photon
-    fun setElectronSpin         (spin: SpinOld)    : Atom
+    fun setElectronSpin         (spin: SpinOld) : Atom
     fun setElectronValue        (value:Any?)    : ZBoson
     fun setAtom                 (atom: Atom)    : Atom
 }

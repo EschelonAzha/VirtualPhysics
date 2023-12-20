@@ -1,6 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.balanced.quarks
 
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -46,7 +46,7 @@ class QuarkValue(
     override fun quarkValueStr() : String {
         return quarkValue().toString()
     }
-    override fun setQuarkMomentum(momentum: AngularMomentum): Atom {
+    override fun setQuarkMomentum(momentum: AngularMomentumOld): Atom {
         val quark   = atom.nucleons.getValueProton().get(0) as Quark
         quark.setMomentum(momentum)
         return atom
