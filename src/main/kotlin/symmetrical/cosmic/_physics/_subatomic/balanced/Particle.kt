@@ -54,6 +54,7 @@ open class Particle(
         remainder = temperature.absorb(remainder)
         remainder = space.absorb(remainder)
         remainder = wavelength.absorb(remainder)
+        remainder = spin.absorb(remainder)
 
         return remainder
     }
@@ -71,7 +72,8 @@ open class Particle(
                 mass.emit().radiate()+
                 temperature.emit().radiate()+
                 space.emit().radiate()+
-                wavelength.emit().radiate()
+                wavelength.emit().radiate()+
+                spin.emit().radiate()
     }
 
 
@@ -83,14 +85,14 @@ open class Particle(
         return getSelf()
     }
 
-    fun getCharge() : Charge {
+    override fun getCharge() : Charge {
         return charge
     }
     override fun getIlluminations() : IParticleBeam {
         return matterAntiMatter.getIlluminations()
     }
 
-    fun getMass() : Mass {
+    override fun getMass() : Mass {
         return mass
     }
 
@@ -100,14 +102,17 @@ open class Particle(
         else return this
     }
 
-    fun getSpace() : Space {
+    override fun getSpace() : Space {
         return space
     }
+    override fun getSpin() : Spin {
+        return spin
+    }
 
-    fun getTemperature() : Temperature {
+    override fun getTemperature() : Temperature {
         return temperature
     }
-    fun getTime() : Time {
+    override fun getTime() : Time {
         return time
     }
 
@@ -115,7 +120,7 @@ open class Particle(
         return uniqueId.getValue() as String
     }
 
-    fun getWavelength() : Wavelength {
+    override fun getWavelength() : Wavelength {
         return wavelength
     }
 
