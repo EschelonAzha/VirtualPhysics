@@ -1,4 +1,5 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin
+import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -18,44 +19,57 @@ open class SpinOld(
         const val MINUS:Int      = -1
     }
 
-    val spin:QuantumField = QuantumField(SpinOld.Static.PLUS)
-
-
+    val field:QuantumField = QuantumField(SpinOld.Static.PLUS)
 
     override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        return photon.propagate()
+        return field.absorb(photon.propagate());
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
+
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()  // spin has no fields, we only need to know the
-                             // type of spin
+        return getLocalClassId()+field.emit().radiate()
     }
+
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(SpinOld::class)
+    }
+
+//    override fun absorb(photon: Photon) : Photon {
+//        matterAntiMatter.check(photon);
+//
+//        return photon.propagate()
+//    }
+//    override fun emit() : Photon {
+//        return Photon(radiate())
+//    }
+//    private fun radiate() : String {
+//        return matterAntiMatter.getClassId()
+//
+//    }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
 
     fun isPlus() : Boolean {
-        return spin.getField().toInt() > 0
+        return field.getField().toInt() > 0
     }
     fun isMinus() : Boolean {
-        return spin.getField().toInt() < 0
+        return field.getField().toInt() < 0
     }
 
     fun setSpin(value:Int) : SpinOld {
-        spin.setValue(value)
+        field.setValue(value)
         return this
     }
 
     fun spinPlus() : SpinOld {
-        spin.setValue(SpinOld.Static.PLUS)
+        field.setValue(SpinOld.Static.PLUS)
         return this
     }
     fun spinMinus() : SpinOld {
-        spin.setValue(Static.MINUS)
+        field.setValue(Static.MINUS)
         return this
     }
 }
