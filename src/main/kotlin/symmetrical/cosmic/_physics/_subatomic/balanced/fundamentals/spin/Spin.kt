@@ -49,13 +49,15 @@ class Spin(
         return field.toInt() < 0
     }
 
+    fun setSpin(value:Any?) : Any? {
+        return setValue(value)
+    }
+
     fun spin() : Any? {
         return field.getValue()
     }
 
-    fun setSpin(value:Any?) : Any? {
-        return setValue(value)
-    }
+
 
     fun i() : Spin {
         return this

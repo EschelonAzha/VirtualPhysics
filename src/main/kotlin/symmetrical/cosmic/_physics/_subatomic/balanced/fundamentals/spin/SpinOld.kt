@@ -48,9 +48,8 @@ open class SpinOld(
         return field.toInt() < 0
     }
 
-    fun setSpin(value:Int) : SpinOld {
-        field.setValue(value)
-        return this
+    fun setSpin(value:Any?) : Any? {
+        return setValue(value)
     }
 
     fun spinPlus() : SpinOld {
