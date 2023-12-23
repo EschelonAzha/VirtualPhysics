@@ -20,8 +20,6 @@ class Spin(
         const val MINUS:Int      = -1
     }
 
-
-
     override fun absorb(photon: Photon) : Photon {
         return field.absorb(photon.propagate());
     }
