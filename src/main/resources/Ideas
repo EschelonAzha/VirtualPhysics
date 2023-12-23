@@ -1,0 +1,66 @@
+
+Down(Value)
+UP  (Format)
+UP  (Constraints)  Red(Apply Constraints)
+
+
+
+Down (Value)
+Down
+UP
+
+
+
+Value Colors:
+
+Red: Invalid value; violates constraints or exceeds allowable range.
+Green: Valid value; meets all constraints and is within acceptable range.
+Blue: Unknown value; awaiting validation against constraints.
+Anti-Red: Value flagged for potential constraint violation, requiring further analysis.
+Anti-Green: Value flagged for potential ambiguity or edge case, needing manual intervention.
+Anti-Blue: Value cleared or reset, ready for new input.
+
+
+Format Colors:
+
+Red: Formatting rule applied but encountered constraint violation, resulting in partial or incorrect formatting.
+Green: Formatting rule applied successfully, value presented accurately within constraints.
+Blue: No formatting applied yet, awaiting formatting instructions.
+Anti-Red: Formatting rule flagged for potential conflict or ambiguity, requiring review.
+Anti-Green: Formatting rule flagged for unexpected data type, needing special formatting logic.
+Anti-Blue: Formatting cleared or reset, value in raw form.
+
+
+Constraint Colors:
+
+Red: Constraint violated, potentially invalidating the value or requiring data correction.
+Green: All constraints met, value conforms to all rules and restrictions.
+Blue: Constraint awaiting evaluation, value validation still in progress.
+Anti-Red: Potential constraint conflict or overlap identified, requiring manual rule refinement.
+Anti-Green: Constraint flagged for edge case or uncommon data type, needing tailored validation methods.
+Anti-Blue: Constraints cleared or reset, ready for new definition or application.
+
+Value:
+Anti-Blue: initial state with data missing or violating constraints (like non-null requirements)
+Blue: initial state with valid data passing constraints.    Means it can remain initialized value
+
+Anti-Red:   violates constraints
+Red         violates validation
+
+Anti-Green  passes constraints
+Green       passes validation
+
+Format:
+Green:       Use As-Is
+Anti-Green:  Use Format in Quark (ex:  MM/DD/YYYY)
+
+
+Constraints:
+Green:        Validation function supplied (if Spin +1, constraints as well)
+Anti-Green:   Constraints supplied (Spin +1)
+Blue:         No Constraints (Spin -1)
+
+
+
+
+

@@ -43,8 +43,8 @@ open class Particle(
     private     val spin            :Spin                   = Spin()
     private     val angularMomentum :AngularMomentum        = AngularMomentum()
 
-    private     val dimensions   :Dimensions            = Dimensions()
-    protected   var fundamentals :Fundamentals          = Fundamentals()
+    private     val dimensions      :Dimensions             = Dimensions()
+    protected   var fundamentals    :Fundamentals           = Fundamentals()
 
 
     override fun absorb(photon:Photon) : Photon {
