@@ -38,9 +38,6 @@ open class SpinOld(
     override fun getClassId() : String {
         return getLocalClassId()
     }
-//    override fun getClassId() : String {
-//        return matterAntiMatter.getClassId()
-//    }
 
     fun isPlus() : Boolean {
         return field.getField().toInt() > 0
