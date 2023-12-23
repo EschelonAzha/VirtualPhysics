@@ -6,16 +6,21 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuantumField
 import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
-class Spin(private val field: QuantumField = QuantumField(Static.PLUS)) : IQuantumField by field {
+class Spin(
+    private val field: QuantumField = QuantumField(Static.PLUS)
+) :
+    IQuantumField by field {
+
+    constructor() : this(
+        QuantumField(Static.PLUS)
+    )
 
     object Static {
         const val PLUS :Int      = +1
         const val MINUS:Int      = -1
     }
 
-    constructor() : this(
-        QuantumField(Static.PLUS)
-    )
+
 
     override fun absorb(photon: Photon) : Photon {
         return field.absorb(photon.propagate());

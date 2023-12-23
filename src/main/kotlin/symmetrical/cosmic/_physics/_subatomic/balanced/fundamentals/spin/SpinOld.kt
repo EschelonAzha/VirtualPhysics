@@ -5,13 +5,12 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 open class SpinOld(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(SpinOld::class, SpinOld::class),
+    private val field: QuantumField = QuantumField(Spin.Static.PLUS)
 ) :
-    IMatterAntiMatter by matterAntiMatter,
-    IEmitter
-{
+    IQuantumField by field {
+
     constructor() : this(
-        MatterAntiMatter(SpinOld::class, SpinOld::class),
+        QuantumField(Spin.Static.PLUS)
     )
 
     object Static {
@@ -19,7 +18,6 @@ open class SpinOld(
         const val MINUS:Int      = -1
     }
 
-    val field:QuantumField = QuantumField(SpinOld.Static.PLUS)
 
     override fun absorb(photon: Photon) : Photon {
         return field.absorb(photon.propagate());
@@ -35,7 +33,7 @@ open class SpinOld(
     private fun getLocalClassId() : String {
         return Absorber.getClassId(SpinOld::class)
     }
-    override fun getClassId() : String {
+    fun getClassId() : String {
         return getLocalClassId()
     }
 
