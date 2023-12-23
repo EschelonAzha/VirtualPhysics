@@ -39,6 +39,13 @@ class Spin(private val field: QuantumField = QuantumField()) : IQuantumField by 
         return field.getField()
     }
 
+    fun isPlus() : Boolean {
+        return field.toInt() > 0
+    }
+    fun isMinus() : Boolean {
+        return field.toInt() < 0
+    }
+
     fun spin() : Any? {
         return field.getValue()
     }
