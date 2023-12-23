@@ -42,10 +42,10 @@ open class SpinOld(
         return field.getField()
     }
     fun isPlus() : Boolean {
-        return field.getField().toInt() > 0
+        return field.toInt() > 0
     }
     fun isMinus() : Boolean {
-        return field.getField().toInt() < 0
+        return field.toInt() < 0
     }
 
     fun setSpin(value:Int) : SpinOld {
