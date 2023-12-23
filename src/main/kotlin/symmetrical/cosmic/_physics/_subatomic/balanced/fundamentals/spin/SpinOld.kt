@@ -35,22 +35,12 @@ open class SpinOld(
     private fun getLocalClassId() : String {
         return Absorber.getClassId(SpinOld::class)
     }
-
-//    override fun absorb(photon: Photon) : Photon {
-//        matterAntiMatter.check(photon);
-//
-//        return photon.propagate()
-//    }
-//    override fun emit() : Photon {
-//        return Photon(radiate())
-//    }
-//    private fun radiate() : String {
-//        return matterAntiMatter.getClassId()
-//
-//    }
     override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
+        return getLocalClassId()
     }
+//    override fun getClassId() : String {
+//        return matterAntiMatter.getClassId()
+//    }
 
     fun isPlus() : Boolean {
         return field.getField().toInt() > 0
