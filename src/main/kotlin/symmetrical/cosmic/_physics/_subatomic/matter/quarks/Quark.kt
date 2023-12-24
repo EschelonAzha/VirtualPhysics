@@ -33,17 +33,17 @@ open class Quark(
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
-        this.gluon                          = Red_AntiRed()  // this is need for JS Bug
-        val (clone, remainder) = Absorber.materialize(photon.propagate())
-        this.fundamentals = clone as Fundamentals
-        return Photon(remainder)
+        this.gluon              = Red_AntiRed()  // this is need for JS Bug
+        var remainder : Photon  = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return matter.getClassId()+fundamentals.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
         return matter.getClassId()
@@ -113,6 +113,6 @@ open class Quark(
         return this
     }
     override fun toString() : String {
-        return fundamentals.toString()
+        return super.toString()
     }
 }

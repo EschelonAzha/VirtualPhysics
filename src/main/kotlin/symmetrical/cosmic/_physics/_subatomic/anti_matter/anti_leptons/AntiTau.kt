@@ -15,7 +15,7 @@ class AntiTau(
         AntiMatter(AntiTau::class, Tau::class),
     )
     constructor(oldValue : Field) : this() {
-        fundamentals.getWavelength().setField(oldValue)
+        getWavelength().setField(oldValue)
     }
 
     override fun getClassId() : String {

@@ -28,18 +28,18 @@ open class AntiQuark(
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
-
         this.gluon                                 = Red_AntiRed()  // this is need for JS Bug
-        val (clone, remainder)       = Absorber.materialize(photon.propagate())
-        this.fundamentals                           = clone as Fundamentals
-        return Photon(remainder)
+
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+fundamentals.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
         return antiMatter.getClassId()
@@ -110,6 +110,6 @@ open class AntiQuark(
         return this
     }
     override fun toString() : String {
-        return fundamentals.toString()
+        return super.toString()
     }
 }

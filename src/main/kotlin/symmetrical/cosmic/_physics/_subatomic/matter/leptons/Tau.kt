@@ -20,7 +20,7 @@ class Tau(
 
     }
     constructor(newValue : Field) : this() {
-        fundamentals.getWavelength().setField(newValue)
+        getWavelength().setField(newValue)
     }
     override fun getClassId() : String {
         return matter.getClassId()

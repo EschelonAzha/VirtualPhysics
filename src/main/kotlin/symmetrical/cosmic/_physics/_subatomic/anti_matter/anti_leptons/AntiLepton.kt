@@ -22,17 +22,16 @@ open class AntiLepton(
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
-
-        val (clone, remainder) = Absorber.materialize(photon.propagate())
-        this.fundamentals = clone as Fundamentals
-        return Photon(remainder)
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+fundamentals.emit().radiate()
+        return antiMatter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
         return antiMatter.getClassId()

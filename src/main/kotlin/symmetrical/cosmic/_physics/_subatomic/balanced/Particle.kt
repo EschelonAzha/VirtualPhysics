@@ -41,9 +41,6 @@ open class Particle(
     private     var spin            :Spin                   = Spin()
     private     var angularMomentum :AngularMomentum        = AngularMomentum()
 
-    protected   var fundamentals    :Fundamentals           = Fundamentals()
-
-
     override fun absorb(photon:Photon) : Photon {
         var remainder = photon.propagate()
         remainder = uniqueId.absorb(remainder)

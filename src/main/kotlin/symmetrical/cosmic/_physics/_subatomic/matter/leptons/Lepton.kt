@@ -23,16 +23,16 @@ open class Lepton(
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
-        val (clone, remainder) = Absorber.materialize(photon.propagate())
-        this.fundamentals = clone as Fundamentals
-        return Photon(remainder)
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
     private fun radiate() : String {
-        return matter.getClassId()+fundamentals.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
         return matter.getClassId()
