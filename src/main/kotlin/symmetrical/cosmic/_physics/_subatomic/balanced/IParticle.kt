@@ -28,10 +28,9 @@ interface IParticle {
 
     fun getValue() : Any?
     fun getPhoton() : Photon
-    fun getMomentum() : AngularMomentum
     fun getWL() : Wavelength
+    fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle
     fun setSpin(spin: Spin) : IParticle
-    fun setMomentum(momentum: AngularMomentum) : IParticle
     fun setValue(value:Any?) : IParticle
     fun setWavelength(value:Any?) : IParticle
     fun momentum() : String

@@ -39,7 +39,7 @@ open class Particle(
 
     private     val wavelength      :Wavelength             = Wavelength()
     private     var spin            :Spin                   = Spin()
-    private     val angularMomentum :AngularMomentum        = AngularMomentum()
+    private     var angularMomentum :AngularMomentum        = AngularMomentum()
 
     private     val dimensions      :Dimensions             = Dimensions()
     protected   var fundamentals    :Fundamentals           = Fundamentals()
@@ -149,16 +149,16 @@ open class Particle(
     override fun getPhoton() : Photon {
         return fundamentals.getPhoton()
     }
-    override fun getMomentum() : AngularMomentum {
-        return fundamentals.getAngularMomentum()
-    }
+
     override fun getWL() : Wavelength {
         return fundamentals.getWavelength()
     }
-    override fun setMomentum(momentum: AngularMomentum) : IParticle {
-        this.fundamentals.setMomentum(momentum)
-        return this
+
+    override fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle {
+        this.angularMomentum = angularMomentum
+        return this;
     }
+
     override fun setValue(value:Any?) : IParticle {
         this.setWavelength(value)
         return this
@@ -169,7 +169,7 @@ open class Particle(
     }
     override fun momentum() : String {
         if (spin())
-            return getMomentum().format(getWL().getQuantumField())
+            return getAngularMomentum().format(getWL().getQuantumField())
         else return getWL().toString()
     }
     override fun spin() : Boolean {
