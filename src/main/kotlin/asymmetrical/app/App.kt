@@ -6,8 +6,8 @@ import symmetrical.cosmic.cosmology.INebula
 import symmetrical.cosmic.wormholes.messaging.Message
 
 open class App : IApp {
-    lateinit    var nebula      : INebula
     lateinit    var galaxy      : Galaxy
+    lateinit    var nebula      : INebula
                 val remotePage  : RemotePage = RemotePage()
     override fun onMessage(message: Message)  : Boolean {
         return false

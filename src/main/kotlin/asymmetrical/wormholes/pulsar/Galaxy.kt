@@ -5,11 +5,11 @@ import asymmetrical.wormholes.pulsar.plugins.galaxy.WSServerPlugin
 import java.util.*
 
 open class Galaxy : Energy {
-    private var plugins   : Vector<WSServerPlugin> = Vector<WSServerPlugin>()
-    private var additions : Vector<WSServerPlugin> = Vector<WSServerPlugin>()
 
-    private var messageCount:Long = 0
-    private var every             = 0
+    private var additions   : Vector<WSServerPlugin> = Vector<WSServerPlugin>()
+    private var every               = 0
+    private var messageCount: Long  = 0
+    private var plugins     : Vector<WSServerPlugin> = Vector<WSServerPlugin>()
 
     constructor() {
     }

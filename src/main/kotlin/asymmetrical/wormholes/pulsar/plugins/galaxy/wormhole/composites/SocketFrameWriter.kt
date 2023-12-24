@@ -9,11 +9,12 @@ import symmetrical.cosmic._bitmaps.Bits04
 
 open class SocketFrameWriter {
     private   val finalOpCode : FinalOpCode
-    protected val maskLength  : MaskLength
-    private   var shortLength : ShortLength?    = null
     private   var intLength   : IntLength?      = null
+    protected val maskLength  : MaskLength
     protected var payload     : String          = ""
+    private   var shortLength : ShortLength?    = null
 
+    
     constructor(opCode: Bits04, maskLength: MaskLength, payload:String = "") {
         this.payload     = payload;
         this.maskLength  = maskLength

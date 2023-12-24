@@ -12,11 +12,11 @@ import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
 
 open class WSServerPlugin : ServerPlugin, INebula {
-    private lateinit var director   : WSDirector
-    private lateinit var galaxy     : Galaxy
-    private var inbox               : Inbox       = Inbox()
-    private var loggedIn            : Boolean     = true
-    private var sessionReady        : Boolean     = true
+    private lateinit    var director            : WSDirector
+    private lateinit    var galaxy              : Galaxy
+    private             var inbox               : Inbox       = Inbox()
+    private             var loggedIn            : Boolean     = true
+    private             var sessionReady        : Boolean     = true
 
 
     constructor() : super() {

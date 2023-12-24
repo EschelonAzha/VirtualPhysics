@@ -5,7 +5,7 @@ import symmetrical.cosmic._physics.atomic.atoms.states.strings.phases.CrLfTermin
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
 
 open class ResponseMessage : Compound {
-    private var returnCode = "200"
+    private var returnCode    = "200"
     private var returnMessage = "OK"
     constructor(returnCode:String, returnMessage:String) {
         this.returnCode = returnCode

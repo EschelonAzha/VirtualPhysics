@@ -10,9 +10,10 @@ import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
 open class HttpInspector : Inspector {
 
-    private   lateinit var requestMethod : RequestMethod
+
     protected lateinit var method        : QString
     protected lateinit var path          : Path
+    private   lateinit var requestMethod : RequestMethod
 
     constructor() : super(){
 

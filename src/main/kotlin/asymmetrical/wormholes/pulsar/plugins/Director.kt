@@ -9,8 +9,9 @@ open class Director : Compound {
     object Static {
         const val LAST = Compound.Static.LAST
     }
-    private lateinit var socketMessage : SocketMessage
     protected val        outlet        : IOutlet
+    private lateinit var socketMessage : SocketMessage
+
 
     constructor(outlet: IOutlet) {
 

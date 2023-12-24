@@ -11,10 +11,12 @@ class WaitForData {
         const val PING_REQUIRED     = 1
         const val DATA_AVAILABLE    = 2;
     }
+    private val energy          : Energy
     private val outlet          : IOutlet
-    private var tries           :Int = 0
-    private var pingRequired    :Int = 0
-    private val energy          :Energy
+    private var pingRequired    : Int = 0
+    private var tries           : Int = 0
+
+
     constructor(energy: Energy, outlet: IOutlet) {
         this.outlet = outlet
         this.energy = energy

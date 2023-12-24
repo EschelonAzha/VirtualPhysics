@@ -8,9 +8,10 @@ import java.io.OutputStream
 import java.net.Socket
 
 open class ServerOutlet : Outlet, IOutlet {
-    private var socket      : Socket
+
     private var input       : InputStream
     private var output      : OutputStream
+    private var socket      : Socket
 
     constructor(socket:Socket) {
         this.socket = socket

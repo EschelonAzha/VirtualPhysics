@@ -13,9 +13,11 @@ import java.security.MessageDigest
 import java.util.*
 
 class UpgradeWebSocket : FileServer {
-    private lateinit var upgrade         : Upgrade
-    private lateinit var key             : WebSocketKey
     private lateinit var connection      : ConnectionType
+    private lateinit var key             : WebSocketKey
+    private lateinit var upgrade         : Upgrade
+
+
     constructor(outlet: IOutlet) : super(outlet) {
     }
     override fun run() : Boolean {

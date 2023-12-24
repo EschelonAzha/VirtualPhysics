@@ -11,9 +11,10 @@ import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
 open class HttpTask : Task {
 
-    protected lateinit var requestMethod : RequestMethod
+
     protected lateinit var method        : QString
     protected lateinit var path          : Path
+    protected lateinit var requestMethod : RequestMethod
 
     constructor(outlet: IOutlet) : super(outlet) {
     }

@@ -8,18 +8,14 @@ import symmetrical.cosmic._bitmaps.Bits16
 import symmetrical.cosmic._bitmaps.Bits32
 
 class GenericSocketFrame {
-    private var payloadLength       = 0
-    private var maskKey:ByteArray   = ByteArray(0)
-    private var payload:String      = ""
-
-    private val finalOpCode : FinalOpCode
-    private val maskLength  : MaskLength
-
-
-    private var nextByte    : Int = 0
-
-    private val bytes       : ByteArray
-    private val remainder   : ByteArray
+    private val bytes           : ByteArray
+    private val finalOpCode     : FinalOpCode
+    private var maskKey         : ByteArray     = ByteArray(0)
+    private val maskLength      : MaskLength
+    private var nextByte        : Int           = 0
+    private var payload         : String        = ""
+    private var payloadLength                   = 0
+    private val remainder       : ByteArray
 
     constructor(bytes:ByteArray) {
         this.bytes  = bytes

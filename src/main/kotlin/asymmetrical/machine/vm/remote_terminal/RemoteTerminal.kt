@@ -8,8 +8,9 @@ import websites.logical_society.LogicalSocietyApp
 import websites.logical_society.LogicalSocietyGalaxy
 
 open class RemoteTerminal : Nebula {
-    private            var phase  : INebula = this
     protected lateinit var app    : IApp
+    private            var phase  : INebula = this
+
     constructor() {
     }
     override fun onClose() : Unit {

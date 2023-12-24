@@ -8,11 +8,11 @@ import java.net.Socket
 import kotlin.reflect.KClass
 
 open class Pulsar : Energy {
+    private val galaxy:Galaxy
+    private val nebula :KClass<INebula>
     private var port = 0;
     private var server: ServerSocket
 
-    private val galaxy:Galaxy
-    private val nebula :KClass<INebula>
     constructor(galaxy:Galaxy, port:Int, INebula: KClass<INebula>) {
         this.galaxy = galaxy
         galaxy.start()

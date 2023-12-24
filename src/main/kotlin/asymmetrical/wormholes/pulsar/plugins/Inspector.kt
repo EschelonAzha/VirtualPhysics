@@ -11,9 +11,8 @@ import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
 open class Inspector(private val particle: Particle = Particle()) : IParticle by particle, IEmitter {
 
-    protected lateinit var message          : SocketMessage
-
-    private   var payload                   : Beam = Beam(0)
+    protected lateinit  var message : SocketMessage
+    private             var payload : Beam = Beam(0)
 
     constructor() : this(Particle()) {
 
