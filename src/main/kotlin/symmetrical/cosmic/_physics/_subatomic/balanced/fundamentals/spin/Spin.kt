@@ -57,7 +57,14 @@ class Spin(
         return field.getValue()
     }
 
-
+    fun spinPlus() : Spin {
+        field.setValue(SpinOld.Static.PLUS)
+        return this
+    }
+    fun spinMinus() : Spin {
+        field.setValue(SpinOld.Static.MINUS)
+        return this
+    }
 
     fun i() : Spin {
         return this
