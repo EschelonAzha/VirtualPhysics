@@ -34,12 +34,16 @@ class AngularMomentum(private val field: QuantumField = QuantumField()) : IQuant
         return field.getField()
     }
 
-    fun spin() : Any? {
+    fun momentum() : Any? {
         return field.getValue()
     }
 
     fun setAngularMomentum(value:Any?) : Any? {
         return setValue(value)
+    }
+
+    open fun format(wavelength: QuantumField) : String {
+        return wavelength.toString()
     }
 
     fun i() : AngularMomentum {
