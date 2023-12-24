@@ -41,7 +41,6 @@ open class Particle(
     private     var spin            :Spin                   = Spin()
     private     var angularMomentum :AngularMomentum        = AngularMomentum()
 
-    private     val dimensions      :Dimensions             = Dimensions()
     protected   var fundamentals    :Fundamentals           = Fundamentals()
 
 
