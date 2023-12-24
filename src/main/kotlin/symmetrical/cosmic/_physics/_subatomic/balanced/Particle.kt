@@ -38,7 +38,7 @@ open class Particle(
     private     val temperature     :Temperature            = Temperature()
 
     private     val wavelength      :Wavelength             = Wavelength()
-    private     val spin            :Spin                   = Spin()
+    private     var spin            :Spin                   = Spin()
     private     val angularMomentum :AngularMomentum        = AngularMomentum()
 
     private     val dimensions      :Dimensions             = Dimensions()
@@ -133,6 +133,10 @@ open class Particle(
         this.self = self
         return getSelf()
     }
+    override fun setSpin(spin:Spin) : IParticle {
+        this.spin = spin
+        return this
+    }
     fun setUniqueId(id:String) : IParticle {
         this.uniqueId.setValue(id)
         return getSelf()
@@ -148,15 +152,8 @@ open class Particle(
     override fun getMomentum() : AngularMomentum {
         return fundamentals.getAngularMomentum()
     }
-    override fun getSpinOld() : Spin {
-        return fundamentals.getSpin()
-    }
     override fun getWL() : Wavelength {
         return fundamentals.getWavelength()
-    }
-    override fun setSpinOld(spin: Spin) : IParticle {
-        this.fundamentals.setSpin(spin)
-        return this
     }
     override fun setMomentum(momentum: AngularMomentum) : IParticle {
         this.fundamentals.setMomentum(momentum)
@@ -176,7 +173,7 @@ open class Particle(
         else return getWL().toString()
     }
     override fun spin() : Boolean {
-        return getSpinOld().isPlus()
+        return getSpin().isPlus()
     }
     override fun wavelength() : Any? {
         return getWL().getValue()
