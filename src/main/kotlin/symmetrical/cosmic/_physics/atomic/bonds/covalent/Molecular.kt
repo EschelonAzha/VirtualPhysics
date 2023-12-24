@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics.atomic.bonds.covalent
 
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
@@ -62,7 +63,7 @@ open class Molecular(
         particleBeam.i()
         return this
     }
-    fun applyQuarkMomentum(momentum: AngularMomentumOld) : Molecular {
+    fun applyQuarkMomentum(momentum: AngularMomentum) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
             atom.setQuarkMomentum(CRLFTerminatedMomentum())

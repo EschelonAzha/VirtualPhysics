@@ -13,7 +13,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 class FundamentalProperties : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), AngularMomentumOld::class))
+     //   add(EntityId(Base52.classId(), AngularMomentumOld::class))
         add(EntityId(Base52.classId(), AngularMomentum::class))
         add(EntityId(Base52.classId(), Fundamentals::class))
         add(EntityId(Base52.classId(), Particle::class))

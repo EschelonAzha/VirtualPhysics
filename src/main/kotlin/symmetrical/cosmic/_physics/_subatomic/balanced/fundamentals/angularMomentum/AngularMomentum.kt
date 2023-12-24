@@ -6,7 +6,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuantumField
 import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
-class AngularMomentum(private val field: QuantumField = QuantumField()) : IQuantumField by field {
+open class AngularMomentum(private val field: QuantumField = QuantumField()) : IQuantumField by field {
 
     constructor() : this(
         QuantumField()
@@ -27,7 +27,7 @@ class AngularMomentum(private val field: QuantumField = QuantumField()) : IQuant
         return Absorber.getClassId(AngularMomentum::class)
     }
 
-    public fun getClassId() : String {
+    public open fun getClassId() : String {
         return getLocalClassId()
     }
     fun getField() : Field {

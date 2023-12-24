@@ -146,7 +146,7 @@ open class Particle(
     override fun getPhoton() : Photon {
         return fundamentals.getPhoton()
     }
-    override fun getMomentum() : AngularMomentumOld {
+    override fun getMomentum() : AngularMomentum {
         return fundamentals.getAngularMomentum()
     }
     override fun getSpinOld() : Spin {
@@ -159,7 +159,7 @@ open class Particle(
         this.fundamentals.setSpin(spin)
         return this
     }
-    override fun setMomentum(momentum: AngularMomentumOld) : IParticle {
+    override fun setMomentum(momentum: AngularMomentum) : IParticle {
         this.fundamentals.setMomentum(momentum)
         return this
     }

@@ -8,6 +8,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharge
 import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharge
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
@@ -108,7 +109,7 @@ open class Atom(
         getValueProton().setFieldName(name)
         return this
     }
-    override fun setQuarkMomentum(momentum:AngularMomentumOld) : Atom {
+    override fun setQuarkMomentum(momentum: AngularMomentum) : Atom {
         return quarkValue.setQuarkMomentum(momentum)
     }
     override fun toString() : String {

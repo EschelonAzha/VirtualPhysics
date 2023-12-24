@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
@@ -16,9 +17,9 @@ class Fundamentals(
     constructor() : this(
         MatterAntiMatter(Fundamentals::class, Fundamentals::class),
     )
-    private var angularMomentum : AngularMomentumOld           = AngularMomentumOld()
-    private var spin            : Spin                         = Spin()
-    private var wavelength      : QuantumField                 = QuantumField()
+    private var angularMomentum : AngularMomentum               = AngularMomentum()
+    private var spin            : Spin                          = Spin()
+    private var wavelength      : QuantumField                  = QuantumField()
 
 
     override fun absorb(photon: Photon) : Photon {
@@ -41,7 +42,7 @@ class Fundamentals(
         return propsId+spinId+wavelength
     }
 
-    fun getAngularMomentum() : AngularMomentumOld {
+    fun getAngularMomentum() : AngularMomentum {
         return angularMomentum
     }
 
@@ -54,7 +55,7 @@ class Fundamentals(
     fun getWavelength() : QuantumField {
         return wavelength
     }
-    fun setMomentum(momentum: AngularMomentumOld) : Fundamentals {
+    fun setMomentum(momentum: AngularMomentum) : Fundamentals {
         this.angularMomentum = momentum;
         return this
     }
