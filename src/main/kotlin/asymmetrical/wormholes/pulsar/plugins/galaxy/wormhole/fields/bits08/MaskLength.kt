@@ -14,15 +14,15 @@ class MaskLength : Bits08 {
     }
     constructor(byte:UByte) : super(byte) {
     }
-    fun isMasked() : Boolean {
-        return high.get0() == 1
-    }
+
     fun getByteLength() : Int {
         var lth : Int = toDecimal()
         if (lth > 127)
             lth -= 128
         return lth
     }
-
+    fun isMasked() : Boolean {
+        return high.get0() == 1
+    }
 
 }

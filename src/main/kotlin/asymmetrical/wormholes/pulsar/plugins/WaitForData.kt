@@ -19,11 +19,7 @@ class WaitForData {
         this.outlet = outlet
         this.energy = energy
     }
-    private fun reset() : WaitForData {
-        tries = 0;
-        pingRequired = 0
-        return this
-    }
+
     fun wait() : Int {
         val dataAvailable = outlet.read()
         if (dataAvailable == -1)
@@ -45,14 +41,20 @@ class WaitForData {
         reset()
         return Static.DATA_AVAILABLE
     }
+
+    private fun isPingRequired() : Boolean {
+        val threadSleep : Long  = Config.getThreadSleep()
+        var webTimeout  : Long  = Config.getPingRequired()
+        return pingRequired > webTimeout / threadSleep
+    }
     private fun isTimeout() : Boolean {
         val threadSleep : Long  = Config.getThreadSleep()
         var webTimeout  : Long  = Config.getWebTimeout()
         return tries > webTimeout / threadSleep
     }
-    private fun isPingRequired() : Boolean {
-        val threadSleep : Long  = Config.getThreadSleep()
-        var webTimeout  : Long  = Config.getPingRequired()
-        return pingRequired > webTimeout / threadSleep
+    private fun reset() : WaitForData {
+        tries = 0;
+        pingRequired = 0
+        return this
     }
 }

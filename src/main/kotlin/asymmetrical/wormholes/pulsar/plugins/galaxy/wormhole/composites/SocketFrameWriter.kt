@@ -47,6 +47,10 @@ open class SocketFrameWriter {
     fun getPayloadLth() : Int {
         return payload.length
     }
+    fun setIntLength(intLength: IntLength) : SocketFrameWriter {
+        this.intLength = intLength;
+        return this
+    }
     fun setPayloadLth() : Unit {
         if (getPayloadLth() < 126) {
             maskLength.setDecimal(payload.length.toUByte())
@@ -59,6 +63,10 @@ open class SocketFrameWriter {
         }
         maskLength.setDecimal(127u)
         setIntLength(IntLength(getPayloadLth()))
+    }
+    fun setShortLength(shortLength: ShortLength) : SocketFrameWriter {
+        this.shortLength = shortLength;
+        return this
     }
     private fun getMessageSize() : Int {
         var result = finalOpCode.size()
@@ -74,14 +82,4 @@ open class SocketFrameWriter {
         result += payloadLth
         return result
     }
-    fun setShortLength(shortLength: ShortLength) : SocketFrameWriter {
-        this.shortLength = shortLength;
-        return this
-    }
-    fun setIntLength(intLength: IntLength) : SocketFrameWriter {
-        this.intLength = intLength;
-        return this
-    }
-
-
 }

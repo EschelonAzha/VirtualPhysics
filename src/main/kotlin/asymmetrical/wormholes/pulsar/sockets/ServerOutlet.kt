@@ -17,15 +17,33 @@ open class ServerOutlet : Outlet, IOutlet {
         this.input  = socket.getInputStream()
         this.output = socket.getOutputStream()
     }
+    override fun close() : IOutlet {
+        flush()
+        closed = true
+        try {
+            input.close()
+            output.close()
+            socket.close()
+        } catch (e:Exception) {
 
-    fun getSocket() : Socket {
-        return socket
+        }
+        return this
+    }
+    override fun flush() : IOutlet {
+        try {
+            output.flush()
+        } catch (e:Exception) {
+        }
+        return this
     }
     fun getInputStream() : InputStream {
         return input
     }
     fun getOutputStream() : OutputStream {
         return output
+    }
+    fun getSocket() : Socket {
+        return socket
     }
     override fun read() : Int {
         if (closed)
@@ -58,24 +76,4 @@ open class ServerOutlet : Outlet, IOutlet {
         write(byteArray)
         return true
     }
-    override fun flush() : IOutlet {
-        try {
-            output.flush()
-        } catch (e:Exception) {
-        }
-        return this
-    }
-    override fun close() : IOutlet {
-        flush()
-        closed = true
-        try {
-            input.close()
-            output.close()
-            socket.close()
-        } catch (e:Exception) {
-
-        }
-        return this
-    }
-
 }

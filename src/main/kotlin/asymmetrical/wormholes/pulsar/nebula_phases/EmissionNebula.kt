@@ -14,13 +14,11 @@ open class EmissionNebula: NebulaPhase, INebula {
     override fun nextPhase() : INebula {
         return this
     }
-    override fun onOpen   ()                 : Unit {
-
-    }
     override fun onClose  ()                 : Unit {
-
     }
     override fun onMessage(message:String)   : Boolean {
         return true
+    }
+    override fun onOpen   ()                 : Unit {
     }
 }

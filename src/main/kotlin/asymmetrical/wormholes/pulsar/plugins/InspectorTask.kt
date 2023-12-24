@@ -16,16 +16,15 @@ class InspectorTask : Composition {
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(InspectorTask::class)
-    }
-
     fun setMessage(message: SocketMessage) : InspectorTask {
         (getFirst() as Inspector).setMessage(message)
         (getLast()  as Task).setMessage(message)
         return this
+    }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(InspectorTask::class)
+    }
+    private fun radiate() : String {
+        return getLocalClassId()+super.emit().radiate()
     }
 }

@@ -15,8 +15,12 @@ class RequestAnimationFrame : TimerTask, symmetrical.cosmic._physics._dimensions
         this.strobe = strobe;
         return this;
     }
+
     private fun frame(timestamp:Double):Unit {
         this.strobe.frame(timestamp)
+    }
+    override fun run() :Unit {
+        this.frame(System.currentTimeMillis().toDouble())
     }
     override fun start() : Unit {
         timer.schedule(this,0, 16)
@@ -24,8 +28,5 @@ class RequestAnimationFrame : TimerTask, symmetrical.cosmic._physics._dimensions
     override fun stop() : Unit {
         timer.cancel()
     }
-    override fun run() :Unit {
 
-        this.frame(System.currentTimeMillis().toDouble())
-    }
 }

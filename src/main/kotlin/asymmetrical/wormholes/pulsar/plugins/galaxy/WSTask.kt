@@ -11,10 +11,10 @@ open class WSTask : Task {
     constructor(plugin:WSServerPlugin, outlet: IOutlet) : super(outlet){
         this.plugin = plugin
     }
-    override fun run() : Boolean {
-        return false
-    }
     fun getNebula() : INebula {
         return plugin
+    }
+    override fun run() : Boolean {
+        return false
     }
 }

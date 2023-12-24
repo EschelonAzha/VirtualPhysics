@@ -13,15 +13,18 @@ open class Galaxy : Energy {
 
     constructor() {
     }
-
-    fun showCount() : Unit {
-        every++
-        messageCount++
-        if (every > 1000) {
-            every = 0
-            println("MessageCount=$messageCount")
-        }
-
+    fun add(plugin: WSServerPlugin) : WSServerPlugin {
+        while (!acquireUpdate()){}
+        additions.add(plugin)
+        releaseUpdate()
+        plugin.run()
+        return plugin
+    }
+    fun remove(plugin: WSServerPlugin) : WSServerPlugin {
+        while (!acquireUpdate()){}
+        plugins.remove(plugin)
+        releaseUpdate()
+        return plugin
     }
     override fun run() : Unit {
         while (true) {
@@ -40,10 +43,14 @@ open class Galaxy : Energy {
         }
         return;
     }
-    private fun deliverCrossSessionMail() : Unit {
-
+    fun showCount() : Unit {
+        every++
+        messageCount++
+        if (every > 1000) {
+            every = 0
+            println("MessageCount=$messageCount")
+        }
     }
-
     private fun addReadySessions() : Unit {
         for (i in 0 until additions.size) {
             val session:WSServerPlugin = additions[i]
@@ -53,18 +60,6 @@ open class Galaxy : Energy {
             }
         }
     }
-
-    fun remove(plugin: WSServerPlugin) : WSServerPlugin {
-        while (!acquireUpdate()){}
-        plugins.remove(plugin)
-        releaseUpdate()
-        return plugin
-    }
-    fun add(plugin: WSServerPlugin) : WSServerPlugin {
-        while (!acquireUpdate()){}
-        additions.add(plugin)
-        releaseUpdate()
-        plugin.run()
-        return plugin
+    private fun deliverCrossSessionMail() : Unit {
     }
 }

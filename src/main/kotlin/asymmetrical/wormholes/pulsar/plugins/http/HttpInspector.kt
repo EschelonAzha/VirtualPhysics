@@ -17,16 +17,14 @@ open class HttpInspector : Inspector {
     constructor() : super(){
 
     }
-
+    override fun inspect() : Int {
+        return 0
+    }
     override fun setMessage(message: SocketMessage) : Inspector {
         super.setMessage(message)
         requestMethod   = (message as HttpMessage).getRequestMethod()
         method          = requestMethod.getRequestMethod()
         path            = message.getRequestMethod().getPath()
         return this
-    }
-
-    override fun inspect() : Int {
-        return 0
     }
 }

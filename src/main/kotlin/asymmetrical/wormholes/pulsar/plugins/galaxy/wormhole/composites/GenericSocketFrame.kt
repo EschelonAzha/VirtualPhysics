@@ -16,9 +16,9 @@ class GenericSocketFrame {
     private val maskLength  : MaskLength
 
 
-    private var nextByte : Int = 0
+    private var nextByte    : Int = 0
 
-    private val bytes       :ByteArray
+    private val bytes       : ByteArray
     private val remainder   : ByteArray
 
     constructor(bytes:ByteArray) {
@@ -45,22 +45,18 @@ class GenericSocketFrame {
         val end = nextByte+payloadLength
         remainder = Bytes.selectBytes(end, bytes.size-end, bytes)
     }
-
-    fun getRemainder() : ByteArray {
-        return remainder
-    }
     fun getByteArray() : ByteArray {
         return bytes
     }
-
     fun getOpCode() : Int {
         return finalOpCode.getOpCode()
     }
-
     fun getPayload() : String {
         return payload
     }
-
+    fun getRemainder() : ByteArray {
+        return remainder
+    }
     fun hasRemainder() : Boolean {
         return remainder.isNotEmpty()
     }

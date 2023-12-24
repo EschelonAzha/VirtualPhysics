@@ -10,7 +10,6 @@ class LineReader : Compound {
         lines = Compound().materialize(File(fileName.quarkMomentum()).readLines()) as Compound
 
     }
-
     fun getLines() : Compound {
         return lines
     }

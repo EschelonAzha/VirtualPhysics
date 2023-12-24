@@ -44,15 +44,7 @@ class HttpMessage : SocketMessage {
     fun getWebSocketKey() : WebSocketKey {
         return get(Static.WEB_SOCKET_KEY) as WebSocketKey
     }
-    private fun truncate(tokens:List<String>) : List<String> {
-        var last = tokens[tokens.size-1]
-        var result:MutableList<String> = tokens as MutableList<String>
-        if (last == "\r") {
-            result = tokens as MutableList<String>
-            result.removeAt(tokens.size-1)
-        }
-        return result
-    }
+
 
     private fun createElements() : Unit {
         for (i in tokens.indices ) {
@@ -101,5 +93,13 @@ class HttpMessage : SocketMessage {
         return size()  + (SocketMessage.Static.LAST+1)
     }
 
-
+    private fun truncate(tokens:List<String>) : List<String> {
+        var last = tokens[tokens.size-1]
+        var result:MutableList<String> = tokens as MutableList<String>
+        if (last == "\r") {
+            result = tokens as MutableList<String>
+            result.removeAt(tokens.size-1)
+        }
+        return result
+    }
 }

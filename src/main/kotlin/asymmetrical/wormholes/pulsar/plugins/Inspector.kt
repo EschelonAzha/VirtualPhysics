@@ -18,15 +18,11 @@ open class Inspector(private val particle: Particle = Particle()) : IParticle by
     constructor() : this(Particle()) {
 
     }
-    private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
-
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName);
-        return;
+    fun addPayload(payload:String) : Inspector {
+        this.payload.add(payload)
+        return this
     }
+
 
     override fun absorb(photon: Photon) : Photon {
         check(photon);
@@ -37,31 +33,35 @@ open class Inspector(private val particle: Particle = Particle()) : IParticle by
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return getLocalClassId();
+    override fun getClassId() : String {
+        return getLocalClassId()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Inspector::class)
     }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
-
-    open fun inspect() : Int {
-        return 1
-    }
     fun getPayload() : Beam {
         return payload
+    }
+    open fun inspect() : Int {
+        return 1
     }
     open fun setMessage(message: SocketMessage) : Inspector {
         this.message = message
         return this
     }
+    private fun check(photon: Photon) : Unit {
+        val classId = getLocalClassId()
 
-    fun addPayload(payload:String) : Inspector {
-        this.payload.add(payload)
-        return this
+        val radiation = photon.radiate()
+        if (radiation.startsWith(classId))
+            return
+        println("Radiation Leak in: "+this::class.simpleName);
+        return;
     }
+    private fun radiate() : String {
+        return getLocalClassId();
+    }
+
 
 
 }

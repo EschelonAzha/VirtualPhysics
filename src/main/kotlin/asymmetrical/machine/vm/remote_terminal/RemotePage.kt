@@ -14,12 +14,10 @@ class RemotePage : Body {
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(RemotePage::class)
     }
-
-
+    private fun radiate() : String {
+        return getLocalClassId()+super.emit().radiate()
+    }
 }

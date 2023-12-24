@@ -16,23 +16,18 @@ open class HttpTask : Task {
     protected lateinit var path          : Path
 
     constructor(outlet: IOutlet) : super(outlet) {
-
-
     }
-
+    public fun getHttpMessage() : HttpMessage {
+        return message as HttpMessage
+    }
+    override fun run() : Boolean {
+        return false
+    }
     override fun setMessage(message: SocketMessage): Task {
         super.setMessage(message)
         requestMethod   = (message as HttpMessage).getRequestMethod()
         method          = requestMethod.getRequestMethod()
         path            = message.getRequestMethod().getPath()
         return this
-    }
-
-    override fun run() : Boolean {
-        return false
-    }
-
-    public fun getHttpMessage() : HttpMessage {
-        return message as HttpMessage
     }
 }

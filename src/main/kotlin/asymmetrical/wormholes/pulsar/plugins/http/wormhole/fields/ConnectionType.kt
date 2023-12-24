@@ -17,10 +17,11 @@ class ConnectionType : KeyValue {
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
-    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ConnectionType::class)
     }
+    private fun radiate() : String {
+        return getLocalClassId()+super.emit().radiate()
+    }
+
 }

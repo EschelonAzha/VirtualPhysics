@@ -25,6 +25,12 @@ class UpgradeWebSocket : FileServer {
         webSocketUpgrade();
         return false   // Don't close this socket
     }
+    private fun generateWebSocketAcceptKey(key: String): String {
+        val hashDigest = MessageDigest.getInstance("SHA-1").digest(
+            (key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11").toByteArray()
+        )
+        return Base64.getEncoder().encodeToString(hashDigest)
+    }
     private fun webSocketUpgrade() : Boolean {
         var response: Compound = WebSocketSwitchProtocol(generateWebSocketAcceptKey(key.getValue()!!.quarkValueStr()))
         SpinWriter(outlet).write(response)
@@ -33,10 +39,5 @@ class UpgradeWebSocket : FileServer {
         println("Upgrade Written")
         return false
     }
-    private fun generateWebSocketAcceptKey(key: String): String {
-        val hashDigest = MessageDigest.getInstance("SHA-1").digest(
-            (key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11").toByteArray()
-        )
-        return Base64.getEncoder().encodeToString(hashDigest)
-    }
+
 }

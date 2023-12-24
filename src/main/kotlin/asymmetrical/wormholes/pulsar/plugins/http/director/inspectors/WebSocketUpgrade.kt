@@ -12,9 +12,7 @@ import symmetrical.cosmic.chemistry.diatomics.KeyValue
 
 class WebSocketUpgrade : HttpInspector {
     constructor() : super() {
-
     }
-
     override fun inspect() : Int {
         if (method.quarkValueStr().lowercase() != "get")
             return 0
@@ -27,6 +25,12 @@ class WebSocketUpgrade : HttpInspector {
             return 1
         return 0
     }
+    private fun getHttpMessage() : HttpMessage {
+        return message as HttpMessage
+    }
+    private fun getLowerCase(value: KeyValue) : String {
+        return value.getValue()!!.quarkValueStr().lowercase()
+    }
     private fun isWebSocketUpgrade() : Boolean {
         val upgrade         : Upgrade = getHttpMessage().getUpgrade()
         val key             : WebSocketKey = getHttpMessage().getWebSocketKey()
@@ -37,12 +41,5 @@ class WebSocketUpgrade : HttpInspector {
         if (getLowerCase(connection) != "upgrade")
             return false
         return getLowerCase(upgrade) == "websocket"
-    }
-    private fun getLowerCase(value: KeyValue) : String {
-        return value.getValue()!!.quarkValueStr().lowercase()
-    }
-
-    private fun getHttpMessage() : HttpMessage {
-        return message as HttpMessage
     }
 }

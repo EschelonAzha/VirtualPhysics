@@ -16,14 +16,6 @@ open class Director : Compound {
 
         this.outlet = outlet
     }
-
-    fun setMessage(message: SocketMessage) : Director {
-        for (i in 0 until size()) {
-            (get(i) as InspectorTask).setMessage(message)
-        }
-        return this
-    }
-
     fun execute() : Boolean {
         for (i in 0 until size()) {
             val composition     : Composition = get(i)                  as Composition
@@ -41,18 +33,24 @@ open class Director : Compound {
         }
         return true  // close socket
     }
-    fun executex() : Boolean {
+    fun setMessage(message: SocketMessage) : Director {
         for (i in 0 until size()) {
-            val composition     : Composition = get(i)                  as Composition
-            val inspector       : Inspector     = composition.getFirst()  as Inspector
-            var task            : Task          = composition.getLast()   as Task
-
-            val recordCount = inspector.inspect()
-            if (recordCount>0) {
-                task.getPayload().add(inspector.getPayload().popLeft())
-                return task.run()
-            }
+            (get(i) as InspectorTask).setMessage(message)
         }
-        return true  // close socket
+        return this
     }
+//    fun executex() : Boolean {
+//        for (i in 0 until size()) {
+//            val composition     : Composition = get(i)                  as Composition
+//            val inspector       : Inspector     = composition.getFirst()  as Inspector
+//            var task            : Task          = composition.getLast()   as Task
+//
+//            val recordCount = inspector.inspect()
+//            if (recordCount>0) {
+//                task.getPayload().add(inspector.getPayload().popLeft())
+//                return task.run()
+//            }
+//        }
+//        return true  // close socket
+//    }
 }

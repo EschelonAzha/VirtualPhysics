@@ -6,9 +6,7 @@ import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 
 class JSLoader : HttpInspector {
     constructor() : super() {
-
     }
-
     override fun inspect() : Int {
         if (method.quarkValueStr().lowercase() != "get")
             return 0
@@ -19,5 +17,4 @@ class JSLoader : HttpInspector {
             return 1
         return 0
     }
-
 }

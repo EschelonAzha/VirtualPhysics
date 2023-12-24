@@ -27,11 +27,13 @@ open class WSServerPlugin : ServerPlugin, INebula {
          director = WSDirector(this, outlet)
          return this
     }
+    fun close() : WSServerPlugin {
+        getOutlet().close()
+        println("Socket Closed")
+        return this
+    }
     fun getGalaxy() : Galaxy {
         return galaxy
-    }
-    override fun nextPhase() : INebula {
-        return this
     }
     fun isLoggedIn() : Boolean {
         return loggedIn
@@ -39,11 +41,9 @@ open class WSServerPlugin : ServerPlugin, INebula {
     fun isSessionReady() : Boolean {
         return sessionReady
     }
-    fun setGalaxy(galaxy:Galaxy) : Unit {
-        this.galaxy = galaxy;
-        return;
+    override fun nextPhase() : INebula {
+        return this
     }
-
     override fun run() : Int {
         println("SocketServer")
         val waitForData = WaitForData(energy, getOutlet())
@@ -81,18 +81,17 @@ open class WSServerPlugin : ServerPlugin, INebula {
         }
 
     }
-
+    fun setGalaxy(galaxy:Galaxy) : Unit {
+        this.galaxy = galaxy;
+        return;
+    }
     private fun terminate() : Int {
         close()
         onClose()
         return Static.TERMINATE
     }
 
-    fun close() : WSServerPlugin {
-        getOutlet().close()
-        println("Socket Closed")
-        return this
-    }
+
 
     private fun popMessage(): SocketMessage {
         var record: ByteArray = getOutlet().pop() as ByteArray

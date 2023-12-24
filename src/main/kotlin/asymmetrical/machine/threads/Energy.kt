@@ -8,17 +8,6 @@ open class Energy : Thread  {
     constructor() {
     }
 
-    fun acquireUpdate() : Boolean {
-        while (running) {
-            Thread.sleep(Config.getUpdateSleep())
-        }
-        updating = true
-        if (running) {  // got it too late
-            updating = false
-            return false
-        }
-        return true
-    }
     fun acquireRunning() : Boolean {
         while (updating) {
             Thread.sleep(Config.getUpdateSleep())
@@ -30,19 +19,29 @@ open class Energy : Thread  {
         }
         return true
     }
-    fun releaseUpdate() : Unit {
-        updating = false
-        return
-    }
-    fun releaseRunning() : Unit {
-        running = false
-        return
-    }
 
+    fun acquireUpdate() : Boolean {
+        while (running) {
+            Thread.sleep(Config.getUpdateSleep())
+        }
+        updating = true
+        if (running) {  // got it too late
+            updating = false
+            return false
+        }
+        return true
+    }
     fun pause() : Unit {
         releaseRunning()
         Thread.sleep(Config.getThreadSleep())
         while (!acquireRunning()){}
     }
-
+    fun releaseRunning() : Unit {
+        running = false
+        return
+    }
+    fun releaseUpdate() : Unit {
+        updating = false
+        return
+    }
 }

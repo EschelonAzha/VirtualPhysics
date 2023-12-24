@@ -10,15 +10,15 @@ import websites.logical_society.LogicalSocietyGalaxy
 open class RemoteTerminal : Nebula {
     private            var phase  : INebula = this
     protected lateinit var app    : IApp
-
     constructor() {
-    }
-    override fun onOpen() : Unit {
-    }
-    override fun onMessage(message:String) : Boolean {
-        return app.onMessage(Messages.detect(message))
     }
     override fun onClose() : Unit {
         return
     }
+    override fun onMessage(message:String) : Boolean {
+        return app.onMessage(Messages.detect(message))
+    }
+    override fun onOpen() : Unit {
+    }
+
 }

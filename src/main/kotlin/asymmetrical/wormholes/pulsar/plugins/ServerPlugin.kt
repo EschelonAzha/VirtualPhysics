@@ -21,23 +21,23 @@ abstract class ServerPlugin {
         this.outlet     = outlet
         return this
     }
-    open fun run() : Int {
-        return -1
-    }
     open fun getOutlet() : IOutlet {
         return outlet
     }
-    open fun onOpen   ()                 : Unit {
-       return
-    }
+
     open fun onClose  ()                 : Unit {
         return
     }
     open fun onMessage(message:String)   : Boolean {
         return true
     }
+    open fun onOpen   ()                 : Unit {
+        return
+    }
+    open fun run() : Int {
+        return -1
+    }
     open fun send(message:String) : Boolean {
         return false
     }
-
 }

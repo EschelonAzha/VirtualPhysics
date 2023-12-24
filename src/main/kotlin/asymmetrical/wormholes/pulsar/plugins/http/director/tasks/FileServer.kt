@@ -12,15 +12,15 @@ open class FileServer : HttpTask {
 
     constructor(outlet: IOutlet) : super(outlet) {
     }
-    override fun run() : Boolean {
-        return false
-    }
     fun loadFile(fileName: QString) : Compound {
         val readFileName : String   = fileName.quarkValueStr()
         val filePath     : String   = Config.getWebRoot().quarkValueStr()+"/$readFileName"
         val lines        : Compound = LineReader(QString(filePath)).getLines()
 
         return lines
+    }
+    override fun run() : Boolean {
+        return false
     }
     fun writeResponse(response:Compound) : Unit {
         SpinWriter(outlet).write(response)
