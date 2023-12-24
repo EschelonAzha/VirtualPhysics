@@ -42,23 +42,15 @@ class Fundamentals(
         return propsId+spinId+wavelength
     }
 
-    fun getAngularMomentum() : AngularMomentum {
-        return angularMomentum
-    }
 
-    fun getPhoton() : Photon {
-        return Photon()
-    }
+
     fun getSpin() : Spin {
         return spin
     }
     fun getWavelength() : Wavelength {
         return wavelength
     }
-    fun setMomentum(momentum: AngularMomentum) : Fundamentals {
-        this.angularMomentum = momentum;
-        return this
-    }
+
     fun setSpin(spin: Spin) : Fundamentals {
         this.spin = spin;
         return this

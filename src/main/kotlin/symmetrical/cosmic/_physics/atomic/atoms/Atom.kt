@@ -113,7 +113,7 @@ open class Atom(
     }
     override fun toString() : String {
         var down: Down = nucleons.getValueProton().getDown()
-        val value:Any? = down.getValue()
+        val value:Any? = down.getWavelength()
         return value.toString()
     }
     fun capacitor_(atom: Atom) : Atom {
@@ -170,7 +170,7 @@ open class Atom(
         return zBoson
     }
     open fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
-        valueQuark.getWL().setValue(zBoson.getNewValue())
+        valueQuark.getWavelength().setValue(zBoson.getNewValue())
         zBoson.setAccepted(true)
         return zBoson
     }

@@ -41,7 +41,7 @@ class QuarkValue(
         val nucleons: Nucleons = atom.nucleons
         val protons : Protons = nucleons.getProtons()
         val quark   = protons.getValueProton().get(0) as Quark
-        return quark.getValue()
+        return quark.getWavelength()
     }
     override fun quarkValueStr() : String {
         return quarkValue().toString()

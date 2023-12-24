@@ -143,40 +143,32 @@ open class Particle(
     }
 
     //  FUNDAMENTALS !!!!!!!!!!!!!!!!!!!!!!!
-    override fun getValue() : Any? {
-        return getWL()
-    }
+
     override fun getPhoton() : Photon {
-        return fundamentals.getPhoton()
+        return Photon()
     }
 
-    override fun getWL() : Wavelength {
-        return fundamentals.getWavelength()
-    }
 
     override fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle {
         this.angularMomentum = angularMomentum
         return this;
     }
 
-    override fun setValue(value:Any?) : IParticle {
-        this.setWavelength(value)
-        return this
-    }
+
     override fun setWavelength(value:Any?) : IParticle {
-        this.getWL().setValue(value)
+        this.getWavelength().setValue(value)
         return this
     }
     override fun momentum() : String {
         if (spin())
-            return getAngularMomentum().format(getWL().getQuantumField())
-        else return getWL().toString()
+            return getAngularMomentum().format(getWavelength().getQuantumField())
+        else return getWavelength().toString()
     }
     override fun spin() : Boolean {
         return getSpin().isPlus()
     }
     override fun wavelength() : Any? {
-        return getWL().getValue()
+        return getWavelength().getValue()
     }
     override fun wavelengthStr() : String {
         val result = wavelength() ?: return ""

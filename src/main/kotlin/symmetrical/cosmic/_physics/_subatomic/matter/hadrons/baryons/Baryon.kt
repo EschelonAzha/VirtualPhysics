@@ -124,7 +124,7 @@ open class Baryon(
         (get(0) as Quark).setGreen(green)
         return this
     }
-    override fun setValue(value:Any?) : Baryon {
+    public fun setValue(value:Any?) : Baryon {
         var down: Down = this.get(0) as Down
         //  up.setValue(value)
         down.z(Quark.Args(value))

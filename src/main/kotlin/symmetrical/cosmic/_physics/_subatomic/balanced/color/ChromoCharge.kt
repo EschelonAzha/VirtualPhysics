@@ -66,7 +66,7 @@ open class ChromoCharge : Particle {
 //        return this
 //    }
 
-    override fun setValue(value:Any?) : ChromoCharge {
+    public fun setValue(value:Any?) : ChromoCharge {
         this._value = value
         return this
     }

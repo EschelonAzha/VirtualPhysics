@@ -39,8 +39,8 @@ class AntiBetaPlus(
         var positron: Positron = Positron()
         var neutrino: Neutrino = Neutrino()
 
-        positron.setValue(up.red())
-        neutrino.setValue((proton.get(2)as Quark).red())
+        positron.setWavelength(up.red())
+        neutrino.setWavelength((proton.get(2)as Quark).red())
 
         setPositron(positron)
         setNeutrino(neutrino)

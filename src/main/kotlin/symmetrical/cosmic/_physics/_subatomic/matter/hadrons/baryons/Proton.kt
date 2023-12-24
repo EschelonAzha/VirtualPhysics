@@ -84,7 +84,7 @@ open class Proton(
 //    }
 
     fun getField() : Field {
-        return getValueQuark().getWL().getField()
+        return getValueQuark().getWavelength().getField()
     }
 
     fun setFieldName(name:String) : Proton {
@@ -125,15 +125,15 @@ open class Proton(
         return electron
     }
     fun isType(type: QuarkType) : Boolean {
-        val protonType = getTypeQuark().getWL().getField().toInt()
+        val protonType = getTypeQuark().getWavelength().getField().toInt()
         return protonType == type.value
     }
     fun setType(protonType: Protons.ProtonType) : Proton {
-        val wavelength: QuantumField = getTypeQuark().getWL().getQuantumField()
+        val wavelength: QuantumField = getTypeQuark().getWavelength().getQuantumField()
         val changed = wavelength.setValue(protonType.value.toString())
         return this
     }
-    override fun getValue() : Any? {
+    public fun getValue() : Any? {
         return getField().getValue()
     }
 
@@ -143,7 +143,7 @@ open class Proton(
 
         val newValue  : Field                       = zBoson.getNewField()
         val valueQuark: Up                          = getValueQuark()
-        val wavelength: QuantumField                = valueQuark.getWL().getQuantumField()
+        val wavelength: QuantumField                = valueQuark.getWavelength().getQuantumField()
         zBoson.setOldValue(wavelength.getValue())
 
         if (!noChange(zBoson).isAccepted())
@@ -189,7 +189,7 @@ open class Proton(
     private fun noChange(zBoson:ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
         val valueQuark: Up                      = getValueQuark()
-        val wavelength: QuantumField            = valueQuark.getWL().getQuantumField()
+        val wavelength: QuantumField            = valueQuark.getWavelength().getQuantumField()
         if (!wavelength.isChange(newValue)) {
             zBoson.setAccepted(false)
         }

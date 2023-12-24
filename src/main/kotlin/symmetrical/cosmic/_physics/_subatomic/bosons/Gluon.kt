@@ -30,7 +30,7 @@ open class Gluon : Particle {
         this.manifestation = green
         return this
     }
-    override fun setValue(value:Any?) : Gluon {
+    public open fun setValue(value:Any?) : Gluon {
         color.setValue(value)
         antiColor.setValue(value)
 

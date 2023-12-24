@@ -59,7 +59,7 @@ open class AntiQuark(
 
 
         gluon.setValue(boson.value)
-        setValue(boson.value)
+        setWavelength(boson.value)
 
         return boson
     }
