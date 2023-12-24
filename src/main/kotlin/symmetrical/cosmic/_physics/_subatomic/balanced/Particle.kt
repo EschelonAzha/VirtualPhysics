@@ -7,7 +7,6 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -150,13 +149,13 @@ open class Particle(
     override fun getMomentum() : AngularMomentumOld {
         return fundamentals.getAngularMomentum()
     }
-    override fun getSpinOld() : SpinOld {
+    override fun getSpinOld() : Spin {
         return fundamentals.getSpin()
     }
     override fun getWL() : QuantumField {
         return fundamentals.getWavelength()
     }
-    override fun setSpinOld(spin: SpinOld) : IParticle {
+    override fun setSpinOld(spin: Spin) : IParticle {
         this.fundamentals.setSpin(spin)
         return this
     }

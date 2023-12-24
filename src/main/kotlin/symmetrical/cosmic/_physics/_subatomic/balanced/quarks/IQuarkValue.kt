@@ -1,8 +1,8 @@
 package symmetrical.cosmic._physics._subatomic.balanced.quarks
 
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 interface IQuarkValue {
@@ -13,6 +13,6 @@ interface IQuarkValue {
     fun quarkValueStr   ()                                  : String
     fun getClassId      ()                                  : String
     fun setQuarkMomentum(momentum: AngularMomentumOld)      : Atom
-    fun setQuarkSpin    (spin: SpinOld)                     : Atom
+    fun setQuarkSpin    (spin: Spin)                     : Atom
     fun setQuarkValue   (value:Any?)                        : ZBoson
 }

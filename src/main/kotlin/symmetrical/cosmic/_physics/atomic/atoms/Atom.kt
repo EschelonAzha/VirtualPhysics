@@ -9,6 +9,7 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharge
 import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharge
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.INucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
@@ -97,6 +98,10 @@ open class Atom(
         nucleons.setAtom(this)
         colorCharges.setAtom(this)
         quarkValue.setAtom(this)
+        return this
+    }
+    override fun setElectronSpin(spin: Spin) : Atom {
+        orbitals.setElectronSpin(spin)
         return this
     }
     fun setFieldName(name:String) : Atom {

@@ -3,8 +3,8 @@ package symmetrical.cosmic._physics.atomic.bonds.covalent
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
@@ -69,17 +69,17 @@ open class Molecular(
         }
         return this
     }
-    fun applyQuarkSpin(spin: SpinOld) : Molecular {
+    fun applyQuarkSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
-            atom.setQuarkSpin(SpinOld())
+            atom.setQuarkSpin(Spin())
         }
         return this
     }
-    fun applyElectronSpin(spin: SpinOld) : Molecular {
+    fun applyElectronSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
-            atom.setElectronSpin(SpinOld())
+            atom.setElectronSpin(Spin())
         }
         return this
     }

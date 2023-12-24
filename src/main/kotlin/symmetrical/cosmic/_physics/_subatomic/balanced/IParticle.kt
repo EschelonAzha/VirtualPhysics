@@ -4,7 +4,6 @@ import symmetrical.cosmic._physics._dimensions.*
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
@@ -31,9 +30,9 @@ interface IParticle {
     fun getValue() : Any?
     fun getPhoton() : Photon
     fun getMomentum() : AngularMomentumOld
-    fun getSpinOld() : SpinOld
+    fun getSpinOld() : Spin
     fun getWL() : QuantumField
-    fun setSpinOld(spin: SpinOld) : IParticle
+    fun setSpinOld(spin: Spin) : IParticle
     fun setMomentum(momentum: AngularMomentumOld) : IParticle
     fun setValue(value:Any?) : IParticle
     fun setWavelength(value:Any?) : IParticle

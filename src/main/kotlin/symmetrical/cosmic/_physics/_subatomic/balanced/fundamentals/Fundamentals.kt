@@ -2,9 +2,9 @@ package symmetrical.cosmic._physics._subatomic.balanced.fundamentals
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentumOld
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class Fundamentals(
@@ -17,7 +17,7 @@ class Fundamentals(
         MatterAntiMatter(Fundamentals::class, Fundamentals::class),
     )
     private var angularMomentum : AngularMomentumOld           = AngularMomentumOld()
-    private var spin            : SpinOld                      = SpinOld()
+    private var spin            : Spin                         = Spin()
     private var wavelength      : QuantumField                 = QuantumField()
 
 
@@ -25,7 +25,7 @@ class Fundamentals(
         matterAntiMatter.check(photon);
 
         var (spin, spinRemainder) = Absorber.materialize(photon.propagate())
-        setSpin(spin as SpinOld)
+        setSpin(spin as Spin)
         var (wavelength, wavelengthRemainder) = Absorber.materialize(spinRemainder)
         this.wavelength = wavelength as QuantumField
         return Photon(wavelengthRemainder)
@@ -48,7 +48,7 @@ class Fundamentals(
     fun getPhoton() : Photon {
         return Photon()
     }
-    fun getSpin() : SpinOld {
+    fun getSpin() : Spin {
         return spin
     }
     fun getWavelength() : QuantumField {
@@ -58,7 +58,7 @@ class Fundamentals(
         this.angularMomentum = momentum;
         return this
     }
-    fun setSpin(spin: SpinOld) : Fundamentals {
+    fun setSpin(spin: Spin) : Fundamentals {
         this.spin = spin;
         return this
     }

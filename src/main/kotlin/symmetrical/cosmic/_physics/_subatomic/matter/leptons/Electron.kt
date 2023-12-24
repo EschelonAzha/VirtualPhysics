@@ -2,7 +2,7 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.SpinOld
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
@@ -94,12 +94,12 @@ class Electron(
     }
     fun covalentBond(you:Electron) : Electron {
         you.setElectron(this)
-        this.setSpin(SpinOld.Static.PLUS)
+        this.setSpin(Spin.Static.PLUS)
         return this
     }
     fun ionicBond(you:Electron) : Electron {
         you.setElectron(this)
-        this.setSpin(SpinOld.Static.MINUS)
+        this.setSpin(Spin.Static.MINUS)
         return this
     }
 
