@@ -8,8 +8,6 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
 class AngularMomentum(private val field: QuantumField = QuantumField()) : IQuantumField by field {
 
-
-
     constructor() : this(
         QuantumField()
     )
