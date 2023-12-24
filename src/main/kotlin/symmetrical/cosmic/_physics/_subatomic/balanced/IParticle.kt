@@ -30,7 +30,7 @@ interface IParticle {
     fun getPhoton() : Photon
     fun getMomentum() : AngularMomentum
     fun getSpinOld() : Spin
-    fun getWL() : QuantumField
+    fun getWL() : Wavelength
     fun setSpinOld(spin: Spin) : IParticle
     fun setMomentum(momentum: AngularMomentum) : IParticle
     fun setValue(value:Any?) : IParticle

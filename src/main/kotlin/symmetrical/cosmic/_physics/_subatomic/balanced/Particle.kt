@@ -151,7 +151,7 @@ open class Particle(
     override fun getSpinOld() : Spin {
         return fundamentals.getSpin()
     }
-    override fun getWL() : QuantumField {
+    override fun getWL() : Wavelength {
         return fundamentals.getWavelength()
     }
     override fun setSpinOld(spin: Spin) : IParticle {
@@ -172,7 +172,7 @@ open class Particle(
     }
     override fun momentum() : String {
         if (spin())
-            return getMomentum().format(getWL())
+            return getMomentum().format(getWL().getQuantumField())
         else return getWL().toString()
     }
     override fun spin() : Boolean {

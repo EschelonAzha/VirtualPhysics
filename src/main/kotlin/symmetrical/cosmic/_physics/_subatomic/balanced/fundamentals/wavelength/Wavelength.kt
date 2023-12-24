@@ -35,6 +35,10 @@ class Wavelength(private val field:QuantumField=QuantumField()) : IQuantumField 
         return field.getField()
     }
 
+    fun getQuantumField() : QuantumField {
+        return field
+    }
+
     fun wavelength() : Any? {
         return field.getValue()
     }
