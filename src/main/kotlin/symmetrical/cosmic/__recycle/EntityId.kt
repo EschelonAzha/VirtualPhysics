@@ -10,16 +10,13 @@ class EntityId {
         this.id = id
         this.kClass = kClass
     }
-
-    override fun toString() : String {
-        return "["+id+":"+kClass.simpleName+"]"
-    }
-
     fun has(kClass:KClass<*>) : Boolean {
         return this.kClass == kClass
     }
-
     fun newInstance() : Any? {
         return Classes.createInstance(kClass)
+    }
+    override fun toString() : String {
+        return "["+id+":"+kClass.simpleName+"]"
     }
 }

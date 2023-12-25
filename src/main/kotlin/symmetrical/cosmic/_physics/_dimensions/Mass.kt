@@ -29,7 +29,9 @@ class Mass (private val field:QuantumField=QuantumField()) : IQuantumField by fi
     ) {
         setMass(Static.PHOTON)
     }
-
+    fun i() : Mass {
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         return field.absorb(photon.propagate());
     }
@@ -37,15 +39,7 @@ class Mass (private val field:QuantumField=QuantumField()) : IQuantumField by fi
         return Photon(radiate())
     }
 
-    private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
-    }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Mass::class)
-    }
-
-    public fun getClassId() : String {
+    fun getClassId() : String {
         return getLocalClassId()
     }
     fun getField() : Field {
@@ -59,8 +53,10 @@ class Mass (private val field:QuantumField=QuantumField()) : IQuantumField by fi
     fun setMass(value:Any?) : Any? {
         return setValue(value)
     }
-
-    fun i() : Mass {
-        return this
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Mass::class)
+    }
+    private fun radiate() : String {
+        return getLocalClassId()+field.emit().radiate()
     }
 }

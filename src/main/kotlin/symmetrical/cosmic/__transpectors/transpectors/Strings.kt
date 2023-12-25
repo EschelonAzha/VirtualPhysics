@@ -35,9 +35,7 @@ object Strings {
     fun removeSingleQuotes(text:String) : String {
         return removeBookends(text);
     }
-    fun toByteArray(str: String): ByteArray {
-        return ABytes.toByteArray(str.toCharArray())
-    }
+
     fun scramble(payload:String, pattern:Int=44) : String {
 
         val byteArray = toByteArray(payload)
@@ -64,6 +62,9 @@ object Strings {
 
         return Bytes.toString(result)
 
+    }
+    fun toByteArray(str: String): ByteArray {
+        return ABytes.toByteArray(str.toCharArray())
     }
 
     fun toDelimitedString(delimiter:String, array: Array<Any?>) : String {

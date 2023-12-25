@@ -34,16 +34,15 @@ open class Bits32 {
         result[3] = lowArray[1]
         return result
     }
-
     fun size() : Int {
         return 4
-    }
-    override fun toString() : String {
-        return "$high :: $low"
     }
     fun toDecimal() : Int {
         val high:Int = high.toDecimal() * 65536
         val low :Int = low.toDecimal()
         return high + low
+    }
+    override fun toString() : String {
+        return "$high :: $low"
     }
 }

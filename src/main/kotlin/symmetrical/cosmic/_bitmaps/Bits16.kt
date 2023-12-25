@@ -22,23 +22,19 @@ open class Bits16 {
         low  = Bits08(byteArray[1].toUByte())
     }
 
-
-
     fun getByteArray() : ByteArray {
         var result = ByteArray(2)
         result[0] = high.getByte().toByte()
         result[1] = low.getByte().toByte()
         return result
     }
-
-    override fun toString() : String {
-        return "$high : $low"
-    }
-
     fun size() : Int {
         return 2
     }
     fun toDecimal(): Int {
         return (high.getByte().toInt() shl 8) or (low.getByte().toInt() and 0xFF)
+    }
+    override fun toString() : String {
+        return "$high : $low"
     }
 }

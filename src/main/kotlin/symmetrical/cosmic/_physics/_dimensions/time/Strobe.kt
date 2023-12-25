@@ -9,7 +9,6 @@ class Strobe {
 
     private val requestAnimationFrame = RequestAnimationFrame().i(this)
 
-
     fun i() : Strobe {
         return this
     }

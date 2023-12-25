@@ -16,22 +16,15 @@ class Space (private val field: QuantumField = QuantumField()) : IQuantumField b
     constructor() : this(
         QuantumField()
     )
-
+    fun i() : Space {
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         return field.absorb(photon.propagate());
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
-
-    private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
-    }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Space::class)
-    }
-
     public fun getClassId() : String {
         return getLocalClassId()
     }
@@ -41,18 +34,17 @@ class Space (private val field: QuantumField = QuantumField()) : IQuantumField b
     fun getSpace() : IParticle? {
         return space
     }
-
-    fun space() : Any? {
-        return field.getValue()
-    }
-
     fun setSpace(particle:IParticle) : Any? {
         this.space = particle
         return setValue(particle.createUniqueId().getUniqueId())
     }
-
-
-    fun i() : Space {
-        return this
+    fun space() : Any? {
+        return field.getValue()
+    }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Space::class)
+    }
+    private fun radiate() : String {
+        return getLocalClassId()+field.emit().radiate()
     }
 }

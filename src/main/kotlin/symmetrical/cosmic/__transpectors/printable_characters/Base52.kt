@@ -23,20 +23,7 @@ class Base52 {
             var value: Int = toInt(base52)
             return toBase52(++value)
         }
-        fun toInt(base52:String) : Int {
-            var base52 = Strings.trimLeading("a", base52);
-            if (base52.isEmpty())
-                return 0
 
-            var result = 0;
-            var pos    = 0;
-            for (i in base52.length-1 downTo 0) {
-                val character = base52[i]
-                result += posValue(pos, character.toString())
-                pos++;
-            }
-            return result;
-        }
         fun toBase52(integer:Int) : String {
             var ones:Int        = (integer % 52.0).toInt();
             var quotient:Int    = floor(integer / 52.0).toInt();
@@ -63,6 +50,20 @@ class Base52 {
 
         fun toFixedBase52(lth:Int, integer:Int) : String {
             val result = Strings.toFixedLength(lth, "a", toBase52(integer));
+            return result;
+        }
+        fun toInt(base52:String) : Int {
+            var base52 = Strings.trimLeading("a", base52);
+            if (base52.isEmpty())
+                return 0
+
+            var result = 0;
+            var pos    = 0;
+            for (i in base52.length-1 downTo 0) {
+                val character = base52[i]
+                result += posValue(pos, character.toString())
+                pos++;
+            }
             return result;
         }
         private fun posValue(pos:Int, character:String) : Int {

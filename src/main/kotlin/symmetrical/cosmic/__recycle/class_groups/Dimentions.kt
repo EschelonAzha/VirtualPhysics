@@ -7,11 +7,12 @@ import symmetrical.cosmic._physics._dimensions.*
 
 class Dimentions : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), Time::class))
+
         add(EntityId(Base52.classId(), Charge::class))
         add(EntityId(Base52.classId(), Mass::class))
-        add(EntityId(Base52.classId(), Temperature::class))
         add(EntityId(Base52.classId(), Space::class))
+        add(EntityId(Base52.classId(), Temperature::class))
+        add(EntityId(Base52.classId(), Time::class))
 
     }
 }

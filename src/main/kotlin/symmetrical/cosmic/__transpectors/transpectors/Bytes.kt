@@ -74,21 +74,21 @@ object Bytes {
     fun toString(byteArray:ByteArray) : String {
         return ABytes.toString(byteArray)
     }
-    private fun zeroTop4Nibble(byte:Byte) : Byte {
-        val topNibbleMask: Byte = (0x0F).toByte()
+    private fun zeroBottom3Nibble(byte:Byte) : Byte {
+        val topNibbleMask: Byte = (0xF8).toByte()
         return (byte.toInt() and topNibbleMask.toInt()).toByte()
     }
     private fun zeroBottom4Nibble(byte:Byte) : Byte {
         val topNibbleMask: Byte = (0xF0).toByte()
         return (byte.toInt() and topNibbleMask.toInt()).toByte()
     }
-
+    private fun zeroTop4Nibble(byte:Byte) : Byte {
+        val topNibbleMask: Byte = (0x0F).toByte()
+        return (byte.toInt() and topNibbleMask.toInt()).toByte()
+    }
     private fun zeroTop5Nibble(byte:Byte) : Byte {
         val topNibbleMask: Byte = (0x07).toByte()
         return (byte.toInt() and topNibbleMask.toInt()).toByte()
     }
-    private fun zeroBottom3Nibble(byte:Byte) : Byte {
-        val topNibbleMask: Byte = (0xF8).toByte()
-        return (byte.toInt() and topNibbleMask.toInt()).toByte()
-    }
+
 }

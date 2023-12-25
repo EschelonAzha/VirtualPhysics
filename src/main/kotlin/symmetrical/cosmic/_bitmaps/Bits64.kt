@@ -20,14 +20,12 @@ class Bits64 {
     }
     constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte(),byteArray[2].toUByte(), byteArray[3].toUByte(),byteArray[4].toUByte(), byteArray[5].toUByte(),byteArray[6].toUByte(), byteArray[7].toUByte()) {
     }
-
-
-    override fun toString() : String {
-        return "$high :: $low"
-    }
     fun toDecimal() : Long {
         val high:Long = high.toDecimal() * 4294967296
         val low :Long = low.toDecimal().toLong()
         return high + low
+    }
+    override fun toString() : String {
+        return "$high :: $low"
     }
 }

@@ -15,9 +15,8 @@ class FundamentalProperties : ClassGroup {
         add(EntityId(Base52.classId(), AngularMomentum::class))
         add(EntityId(Base52.classId(), Fundamentals::class))
         add(EntityId(Base52.classId(), Particle::class))
-        add(EntityId(Base52.classId(), Wavelength::class))
         add(EntityId(Base52.classId(), QuantumField::class))
         add(EntityId(Base52.classId(), Spin::class))
-
+        add(EntityId(Base52.classId(), Wavelength::class))
     }
 }

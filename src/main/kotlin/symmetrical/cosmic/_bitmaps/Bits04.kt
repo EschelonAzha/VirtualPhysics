@@ -6,12 +6,10 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 open class Bits04 {
     constructor()
 
-
     var b00:Short = 0
     var b01:Short = 0
     var b02:Short = 0
     var b03:Short = 0
-
 
     constructor(byte:UByte) : this() {
 
@@ -33,29 +31,6 @@ open class Bits04 {
 
         return
     }
-
-
-    fun toDecimal() : Int {
-        var result = 0
-        if (get3()==1)
-            result+=1
-
-        if (get2() == 1)
-            result+=2
-
-        if (get1() == 1)
-            result+=4
-
-        if (get0() == 1)
-            result+=8
-
-        return result
-    }
-
-    override fun toString() : String {
-        return b00.toString()+b01.toString()+b02.toString()+b03.toString()
-    }
-
     fun get0() : Int {
         return b00.toInt()
     }
@@ -83,6 +58,25 @@ open class Bits04 {
     fun set3(bit:Short) : Bits04 {
         b03 = bit
         return this
+    }
+    fun toDecimal() : Int {
+        var result = 0
+        if (get3()==1)
+            result+=1
+
+        if (get2() == 1)
+            result+=2
+
+        if (get1() == 1)
+            result+=4
+
+        if (get0() == 1)
+            result+=8
+
+        return result
+    }
+    override fun toString() : String {
+        return b00.toString()+b01.toString()+b02.toString()+b03.toString()
     }
 
 }

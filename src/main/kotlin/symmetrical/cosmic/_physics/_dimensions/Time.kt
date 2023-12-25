@@ -15,28 +15,22 @@ class Time(private val field:QuantumField=QuantumField()) : IQuantumField by fie
     override fun emit() : Photon {
         return Photon(radiate())
     }
-
-    private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
-    }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Time::class)
-    }
-
     public fun getClassId() : String {
         return getLocalClassId()
     }
     fun getField() : Field {
         return field.getField()
     }
-
-    fun time() : Any? {
-        return field.getValue()
-    }
-
     fun setTime(value:Any?) : Any? {
         return setValue(value)
     }
-
+    fun time() : Any? {
+        return field.getValue()
+    }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Time::class)
+    }
+    private fun radiate() : String {
+        return getLocalClassId()+field.emit().radiate()
+    }
 }

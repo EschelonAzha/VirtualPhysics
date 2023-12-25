@@ -13,6 +13,12 @@ open class Characters {
         this._characters = characters;
         return this;
     }
+    fun indexOf(pos: Int) : String? {
+        if (pos > this.getCharacters().length-1) {
+            return null
+        }
+        return this.getCharacters()[pos].toString();
+    }
     fun getCharacters() : String {
         return this._characters;
     }
@@ -20,11 +26,4 @@ open class Characters {
         val index = this.getCharacters().indexOf(character);
         return index;
     }
-    fun indexOf(pos: Int) : String? {
-        if (pos > this.getCharacters().length-1) {
-            return null
-        }
-        return this.getCharacters()[pos].toString();
-    }
-
 }

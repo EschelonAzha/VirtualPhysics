@@ -6,9 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 class Bits24 {
     constructor()
 
-    var top     : Bits08 = Bits08()
-    var middle  : Bits08 = Bits08()
     var bottom  : Bits08 = Bits08()
+    var middle  : Bits08 = Bits08()
+    var top     : Bits08 = Bits08()
 
     constructor(byte1:UByte, byte2:UByte, byte3:UByte) : this() {
         top     = Bits08(byte1)

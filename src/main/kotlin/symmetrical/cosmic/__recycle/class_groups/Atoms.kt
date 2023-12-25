@@ -16,7 +16,8 @@ class Atoms : ClassGroup {
         add(EntityId(Base52.classId(), QByte::class))
         add(EntityId(Base52.classId(), QDouble::class))
         add(EntityId(Base52.classId(), QInt::class))
-        add(EntityId(Base52.classId(), QString::class))
         add(EntityId(Base52.classId(), QMass::class))
+        add(EntityId(Base52.classId(), QString::class))
+
     }
 }

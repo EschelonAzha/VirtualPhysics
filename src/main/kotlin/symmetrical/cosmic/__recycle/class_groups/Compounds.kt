@@ -27,7 +27,6 @@ class Compounds : ClassGroup {
         add(EntityId(Base52.classId(), Mixture::class))
         add(EntityId(Base52.classId(), Molecular::class))
         add(EntityId(Base52.classId(), Molecule::class))
-        add(EntityId(Base52.classId(), Material::class))
         add(EntityId(Base52.classId(), Solution::class))
 
     }

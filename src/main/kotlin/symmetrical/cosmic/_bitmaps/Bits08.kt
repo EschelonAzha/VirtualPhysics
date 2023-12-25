@@ -22,17 +22,8 @@ open class Bits08 {
         this.byte = toDecimal().toUByte()
     }
 
-
-    override fun toString() : String {
-        return "$high $low"
-    }
     fun getByte() : UByte {
         return byte
-    }
-    fun toDecimal() : Int {
-        val upper: Int = high.toDecimal() * 16
-        val lower: Int = low.toDecimal()
-        return upper+lower;
     }
     fun setDecimal(value:UByte) : Bits08 {
         this.byte = value
@@ -42,8 +33,15 @@ open class Bits08 {
         low = Bits04(lowNibble)
         return this
     }
-
     fun size() : Int {
         return 1
+    }
+    fun toDecimal() : Int {
+        val upper: Int = high.toDecimal() * 16
+        val lower: Int = low.toDecimal()
+        return upper+lower;
+    }
+    override fun toString() : String {
+        return "$high $low"
     }
 }
