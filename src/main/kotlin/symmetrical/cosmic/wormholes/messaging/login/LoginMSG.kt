@@ -29,27 +29,24 @@ class LoginMSG(
         add(PasswordFld())
         return this
     }
-
-
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
-
     override fun emit() : Photon {
         return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
     }
     override fun getClassId() : String {
         return matter.getClassId()
     }
+    fun getPassword() : PasswordFld {
+        return get(Static.PASSWORD) as PasswordFld
+    }
     fun getUserId() : UseridFld {
         return get(Static.USERID) as UseridFld
     }
-    fun getPassword() : PasswordFld {
-        return get(Static.PASSWORD) as PasswordFld
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

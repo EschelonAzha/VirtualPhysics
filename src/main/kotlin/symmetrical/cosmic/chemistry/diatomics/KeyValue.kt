@@ -37,9 +37,7 @@ open class KeyValue(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
@@ -53,5 +51,8 @@ open class KeyValue(
         if (size()>1)
             return get(Static.VALUE) as Atom
         return null
+    }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

@@ -19,14 +19,16 @@ class Tau(
     init {
 
     }
+
     constructor(newValue : Field) : this() {
         getWavelength().setField(newValue)
-    }
-    override fun getClassId() : String {
-        return matter.getClassId()
     }
     override fun i() : Tau {
         super.i()
         return this
     }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
 }

@@ -20,8 +20,6 @@ open class Dom(
     private var children  :Molecular     = Molecular()
     private var properties:DomProperties = DomProperties()
 
-
-
     override fun absorb(photon: Photon) : Photon {
         check(photon);
 
@@ -32,28 +30,23 @@ open class Dom(
         this.properties = properties as DomProperties
         return Photon(propertiesRemainder)
     }
-
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
-    }
-
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
-
     fun append(dom:Dom) : Dom {
         children.add(dom)
         return dom
     }
-    fun get(pos:Int) : Dom {
-        return children.get(pos) as Dom
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+    override fun getClassId() : String {
+        return matter.getClassId()
     }
     fun addProperty(property:DomProperty) : DomProperty {
         properties.add(property)
         return property
+    }
+
+    fun get(pos:Int) : Dom {
+        return children.get(pos) as Dom
     }
 
     fun getChildren() : Molecular {
@@ -61,5 +54,8 @@ open class Dom(
     }
     fun getProperties() : DomProperties {
         return properties
+    }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
     }
 }

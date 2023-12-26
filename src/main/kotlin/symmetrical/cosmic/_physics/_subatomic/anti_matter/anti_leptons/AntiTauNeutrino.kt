@@ -14,11 +14,12 @@ class AntiTauNeutrino  (
     )
 
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun i() : AntiTauNeutrino {
         super.i()
         return this
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
 }

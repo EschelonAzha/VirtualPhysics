@@ -17,11 +17,12 @@ class Muon(
     init {
     }
 
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
     override fun i() : Muon {
         super.i()
         return this
     }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
 }

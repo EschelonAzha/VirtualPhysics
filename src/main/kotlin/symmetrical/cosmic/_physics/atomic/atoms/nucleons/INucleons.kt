@@ -16,7 +16,8 @@ interface INucleons {
     fun getNeutron      (purpose:String)    : Neutron
     fun getProton       (pos:Int)           : Proton
     fun getValueProton  ()                  : Proton
-    fun setAtomicNumber (number:Int)        : Nucleons
     fun setAtom         (atom: Atom)        : Atom
+    fun setAtomicNumber (number:Int)        : Nucleons
+
     fun wind            (purpose:String)    : Nucleons
 }

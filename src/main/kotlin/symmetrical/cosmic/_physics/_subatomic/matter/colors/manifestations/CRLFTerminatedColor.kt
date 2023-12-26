@@ -15,16 +15,18 @@ class CRLFTerminatedColor(
         AntiMatter(CRLFTerminatedColor::class, CRLFTerminatedColor::class),
     )
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun clone() : CRLFTerminatedColor {
         var result      = CRLFTerminatedColor()
         result.setValue(_value)
         return result
     }
+
     override fun format(redValue:Any?) : Any? {
         return Strings.crlfTerminated(redValue.toString())
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
 
 }

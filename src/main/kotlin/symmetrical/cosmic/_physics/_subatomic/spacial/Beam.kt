@@ -23,12 +23,8 @@ open class Beam : IBeam {
         this.capacity   = capacity
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Beam::class)
-    }
-    override fun getClassId() : String {
-        return getLocalClassId()
-    }
+
+
     open fun i() : Beam {
         return this
     }
@@ -87,12 +83,23 @@ open class Beam : IBeam {
         memoryBlock = result
         return this
     }
+    fun find(item:Any) : Int {
+        for (i:Int in 0 until count) {
+            if (get(i)==item) {
+                return i
+            }
+        }
+        return -1
+    }
 
     override fun get(pos:Int) : Any? {
         if (isOverflow(pos)) {
             return null
         }
         return memoryBlock[pos]
+    }
+    override fun getClassId() : String {
+        return getLocalClassId()
     }
     override fun getCore() : Array<Any?> {
         return memoryBlock
@@ -119,14 +126,7 @@ open class Beam : IBeam {
         }
         return this
     }
-    fun find(item:Any) : Int {
-        for (i:Int in 0 until count) {
-            if (get(i)==item) {
-                return i
-            }
-        }
-        return -1
-    }
+
     override fun remove(item:Any) : Any {
         for (i in 0 until count) {
             if (item == get(i)) {
@@ -166,6 +166,14 @@ open class Beam : IBeam {
     private fun createBlock(size:Int) : Array<Any?> {
         return Array(size){}
     }
+    private fun executeExpandMode() : Unit {
+        if (expandMode == Static.NORMAL) {
+            expand(memoryBlock.size * 2)
+            return
+        }
+
+        expand(memoryBlock.size + 1)
+    }
     private fun expandSizeTo() : Int {
         var result:Int = count + 1
         if (expandMode == Static.NORMAL) {
@@ -176,16 +184,12 @@ open class Beam : IBeam {
         }
         return result
     }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Beam::class)
+    }
 
     private fun isOverflow(pos:Int) : Boolean {
         return pos >= memoryBlock.size
     }
-    private fun executeExpandMode() : Unit {
-        if (expandMode == Static.NORMAL) {
-            expand(memoryBlock.size * 2)
-            return
-        }
 
-        expand(memoryBlock.size + 1)
-    }
 }

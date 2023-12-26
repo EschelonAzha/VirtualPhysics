@@ -22,10 +22,9 @@ class TauAntiTauPair(
         MatterAntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
     )
 
-    var reasonCode : Int        = 0
-    var reason     : String     = ""
     var accepted   : Boolean    = true
-
+    var reason     : String     = ""
+    var reasonCode : Int        = 0
 
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
         i(lepton, antiLepton)
@@ -38,14 +37,12 @@ class TauAntiTauPair(
         return this
     }
 
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
     fun decay(pion: PlusPion) : TauAntiTauPair {
         return this
     }
-
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     fun getElectron() : Electron {
         return lepton as Electron
     }

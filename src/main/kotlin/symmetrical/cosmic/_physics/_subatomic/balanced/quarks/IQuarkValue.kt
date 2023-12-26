@@ -6,13 +6,14 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 interface IQuarkValue {
-    fun setAtom         (atom: Atom)                        : Atom
+
     fun quarkMomentum   ()                                  : String
     fun quarkSpin       ()                                  : Boolean
     fun quarkValue      ()                                  : Any?
     fun quarkValueStr   ()                                  : String
     fun getClassId      ()                                  : String
-    fun setQuarkMomentum(momentum: AngularMomentum)      : Atom
-    fun setQuarkSpin    (spin: Spin)                     : Atom
+    fun setAtom         (atom: Atom)                        : Atom
+    fun setQuarkMomentum(momentum: AngularMomentum)         : Atom
+    fun setQuarkSpin    (spin: Spin)                        : Atom
     fun setQuarkValue   (value:Any?)                        : ZBoson
 }

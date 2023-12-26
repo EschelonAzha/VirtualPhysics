@@ -17,11 +17,7 @@ class Neutrons(
         MatterAntiMatter(Neutrons::class, Neutrons::class),
     )
 
-
     lateinit var __nucleons:Nucleons
-
-
-
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
@@ -34,19 +30,13 @@ class Neutrons(
         }
         return remainder
     }
-
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matterAntiMatter.getClassId()+super.emit().radiate()
-    }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
     override fun addNeutron(neutron: Neutron) : Neutron {
         add(neutron)
         return neutron
+    }
+
+    override fun emit() : Photon {
+        return Photon(radiate())
     }
     override fun findNeutron(purpose:String) : Int {
         var i=0;
@@ -59,7 +49,9 @@ class Neutrons(
         }
         return -1
     }
-
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     override fun getNeutron(pos:Int) : Neutron {
         return get(pos) as Neutron
     }
@@ -77,5 +69,9 @@ class Neutrons(
     override fun setNucleons(nucleons:Nucleons) : Nucleons {
         this.__nucleons = nucleons
         return nucleons
+    }
+
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
 }

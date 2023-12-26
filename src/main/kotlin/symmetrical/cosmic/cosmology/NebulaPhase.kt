@@ -11,17 +11,14 @@ open class NebulaPhase : INebula   {
         this.nextPhase = this
     }
 
+    override fun getOutlet() : IOutlet {
+        return parent.getOutlet()
+    }
     fun getParent() : INebula {
         return parent
     }
     override fun nextPhase() : INebula {
         return this
-    }
-    override fun getOutlet() : IOutlet {
-        return parent.getOutlet()
-    }
-    override fun onOpen   ()                 : Unit {
-
     }
     override fun onClose  ()                 : Unit {
 
@@ -29,6 +26,10 @@ open class NebulaPhase : INebula   {
     override fun onMessage(message:String)   : Boolean {
         return true
     }
+    override fun onOpen   ()                 : Unit {
+
+    }
+
     override fun send     (message:String)   : Boolean {
         return parent.send(message)
     }

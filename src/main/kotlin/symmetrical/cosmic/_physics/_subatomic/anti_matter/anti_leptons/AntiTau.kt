@@ -18,11 +18,12 @@ class AntiTau(
         getWavelength().setField(oldValue)
     }
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun i() : AntiTau {
         super.i()
         return this
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
 }

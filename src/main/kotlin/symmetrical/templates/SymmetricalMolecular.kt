@@ -29,7 +29,6 @@ class SymmetricalMolecular : Molecular {
 
         return super.absorb(photon.propagate())
     }
-
     override fun emit() : Photon {
         return Photon(radiate())
     }

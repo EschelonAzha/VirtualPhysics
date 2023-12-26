@@ -26,12 +26,12 @@ class DeviceInput(
 
         const val LAST           = Static.NETWORK_ARRAY;
     }
-
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
     override fun i() : DeviceInput {
         super.i()
         return this
     }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
 }

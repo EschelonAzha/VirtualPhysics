@@ -12,11 +12,12 @@ class AntiNeutrino (
     constructor() : this(
         AntiMatter(AntiNeutrino::class, Neutrino::class),
     )
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun i() : AntiNeutrino {
         super.i()
         return this
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
 }

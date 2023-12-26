@@ -20,6 +20,10 @@ open class Lepton(
         Matter(Lepton::class, AntiLepton::class),
     )
 
+    open fun i() : Lepton {
+        return this
+    }
+
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
@@ -31,15 +35,11 @@ open class Lepton(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    open fun i() : Lepton {
-        return this
-    }
+
 //    fun getValue() : Any? {
 //        val wavelength:Wavelength = getWavelength()
 //        return wavelength.wavelength()
@@ -47,7 +47,8 @@ open class Lepton(
     override fun getIlluminations() : IParticleBeam {
         return matter.getIlluminations()
     }
-
-
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
+    }
 
 }

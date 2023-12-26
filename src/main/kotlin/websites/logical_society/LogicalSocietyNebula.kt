@@ -6,12 +6,11 @@ class LogicalSocietyNebula : RemoteTerminal {
 
     constructor() {
     }
-
-    override fun onOpen() : Unit {
-        app = LogicalSocietyApp().setNebula(this).setGalaxy(getGalaxy() as LogicalSocietyGalaxy)
-    }
     override fun onClose() : Unit {
         return
+    }
+    override fun onOpen() : Unit {
+        app = LogicalSocietyApp().setNebula(this).setGalaxy(getGalaxy() as LogicalSocietyGalaxy)
     }
 
 }

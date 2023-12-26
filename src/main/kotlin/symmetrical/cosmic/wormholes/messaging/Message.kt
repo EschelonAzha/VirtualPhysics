@@ -19,9 +19,6 @@ open class Message(
     object Static {
         const val LAST      : Int = ParticleBeam.Static.LAST
     }
-
-
-
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
@@ -31,14 +28,14 @@ open class Message(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
     override fun getClassId() : String {
         return matter.getClassId()
     }
     override fun i() : Message {
         super.i()
         return this
+    }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

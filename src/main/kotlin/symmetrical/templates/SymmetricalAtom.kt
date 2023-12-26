@@ -21,9 +21,7 @@ class SymmetricalAtom : Particle   {    // 3
     fun i() : SymmetricalAtom {
         return this
     }
-    public override fun getIlluminations() : IParticleBeam {
-        return Illuminations.beam
-    }
+
 
     override fun absorb(photon: Photon) : Photon {
         check(photon);
@@ -34,13 +32,17 @@ class SymmetricalAtom : Particle   {    // 3
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
+    public override fun getIlluminations() : IParticleBeam {
+        return Illuminations.beam
+    }
+
+    override fun getClassId() : String {
+        return getLocalClassId()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(ReadyMSG::class)
     }
-    override fun getClassId() : String {
-        return getLocalClassId()
+    private fun radiate() : String {
+        return getLocalClassId()+super.emit().radiate()
     }
 }

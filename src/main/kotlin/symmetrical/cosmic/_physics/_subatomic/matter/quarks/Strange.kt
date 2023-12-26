@@ -16,7 +16,11 @@ class Strange(
         Matter(Strange::class, AntiStrange::class),
     )
     init {
+    }
 
+    override fun i() : Strange {
+        super.i()
+        return this
     }
 
     override fun absorb(photon: Photon) : Photon {
@@ -25,14 +29,12 @@ class Strange(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun i() : Strange {
-        super.i()
-        return this
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

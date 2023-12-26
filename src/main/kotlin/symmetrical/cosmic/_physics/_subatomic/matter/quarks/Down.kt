@@ -25,26 +25,27 @@ class Down(
         const val FIELD_NAME       = "FIELD-NAME"
         const val TEST_PROPERTY    = "TEST_PROPERTY"
     }
-
-
-    override fun absorb(photon: Photon) : Photon {
-        return super.absorb(photon.propagate())
-    }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
     override fun i() : Down {
         super.i()
         return this
     }
 
+    override fun absorb(photon: Photon) : Photon {
+        return super.absorb(photon.propagate())
+    }
     override fun dissipate() : Unit {
         Recycler.Down_dissipate(this)
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

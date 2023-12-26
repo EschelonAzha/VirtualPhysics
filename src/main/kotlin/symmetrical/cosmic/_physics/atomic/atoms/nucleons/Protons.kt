@@ -43,22 +43,23 @@ class Protons(
         }
         return remainder
     }
+    override fun addProton(proton: Proton) : Proton {
+        add(proton)
+        return proton
+    }
+    fun capacitanceChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+        return getAtom().capacitanceChange(proton, valueQuark, zBoson)
+    }
 
     override fun emit() : Photon {
         return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
 
-    override fun addProton(proton: Proton) : Proton {
-        add(proton)
-        return proton
-    }
+
 //
 //    override fun findProton(purpose:String) : Int {
 //        var i=0;
@@ -78,6 +79,16 @@ class Protons(
     override fun getAtomicNumber() : Int {
         return size()
     }
+    fun getCurrentValue() : Any? {
+        return getCurrentValueProton().getValue()
+    }
+    fun getCurrentValueProton() : Proton {
+        return getProton(ProtonType.CURRENT_VALUE)
+    }
+    fun getElectron(proton: Proton) : Electron {
+        val electronNum = beam.find(proton)
+        return getAtom().getElectron(electronNum)
+    }
     override fun getProton(pos:Int) : Proton {
         return get(pos) as Proton
     }
@@ -95,10 +106,7 @@ class Protons(
     override fun getValueProton() : Proton {
         return get(Static.VALUE_PROTON) as Proton
     }
-    override fun setNucleons(nucleons:Nucleons) : Nucleons {
-        this.__nucleons = nucleons
-        return nucleons
-    }
+
     override fun setAtomicNumber(number:Int) : Nucleons {
         var i=size()
         while (i<number) {
@@ -107,28 +115,24 @@ class Protons(
         }
         return __nucleons as Nucleons
     }
-
-    fun getElectron(proton: Proton) : Electron {
-        val electronNum = beam.find(proton)
-        return getAtom().getElectron(electronNum)
-    }
-    fun getCurrentValue() : Any? {
-        return getCurrentValueProton().getValue()
-    }
     fun setCurrentValue(zBoson: ZBoson) : ZBoson {
         getCurrentValueProton().interact(zBoson)
         return zBoson
     }
-    fun getCurrentValueProton() : Proton {
-        return getProton(ProtonType.CURRENT_VALUE)
+    override fun setNucleons(nucleons:Nucleons) : Nucleons {
+        this.__nucleons = nucleons
+        return nucleons
     }
+
+    fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+        return getAtom().valueChange(proton, valueQuark, zBoson)
+    }
+
     private fun getProton(type: ProtonType) : Proton {
         return get(type.value) as Proton
     }
-    fun capacitanceChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
-        return getAtom().capacitanceChange(proton, valueQuark, zBoson)
-    }
-    fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
-        return getAtom().valueChange(proton, valueQuark, zBoson)
+
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
 }

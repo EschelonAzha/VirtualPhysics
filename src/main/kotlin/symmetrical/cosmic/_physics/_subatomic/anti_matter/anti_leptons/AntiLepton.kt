@@ -20,6 +20,9 @@ open class AntiLepton(
         AntiMatter(AntiLepton::class, Lepton::class),
     )
 
+    open fun i() : AntiLepton {
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
         var remainder = photon.propagate()
@@ -30,13 +33,11 @@ open class AntiLepton(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
-    }
     override fun getClassId() : String {
         return antiMatter.getClassId()
     }
-    open fun i() : AntiLepton {
-        return this
+    private fun radiate() : String {
+        return antiMatter.getClassId()+super.emit().radiate()
     }
+
 }

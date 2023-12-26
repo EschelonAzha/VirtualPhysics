@@ -40,6 +40,14 @@ open class NeutralUpPion(
         return matter.getClassId()
     }
 
+
+
+    fun getNeutron() : Baryon {
+        return (get(1) as Quark).red() as Baryon
+    }
+    fun getProton() : Baryon {
+        return (get(1) as Quark).red() as Baryon
+    }
     fun nuclearForce() : NeutralUpPion {
         val protonQ1 = getProton().get(1) as Quark
         val neutronQ1 = getNeutron().get(1) as Quark
@@ -47,12 +55,5 @@ open class NeutralUpPion(
         protonQ1.z(Quark.Args(getNeutron()))
         neutronQ1.z(Quark.Args(getProton()))
         return this
-    }
-
-    fun getNeutron() : Baryon {
-        return (get(1) as Quark).red() as Baryon
-    }
-    fun getProton() : Baryon {
-        return (get(1) as Quark).red() as Baryon
     }
 }

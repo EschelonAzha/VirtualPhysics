@@ -23,6 +23,9 @@ open class Green : Color {
         result.setValue(_value)
         return result
     }
+    open fun format(redValue:Any?) : Any? {
+        return QCD().green(redValue)
+    }
     open fun green(charge: Gluon) : Green_AntiGreen {
         var gluon               = Green_AntiGreen()
         gluon.antiColor.setValue(charge.getAntiValue())
@@ -30,7 +33,5 @@ open class Green : Color {
         return gluon
     }
 
-    open fun format(redValue:Any?) : Any? {
-        return QCD().green(redValue)
-    }
+
 }

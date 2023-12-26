@@ -28,8 +28,6 @@ open class Orbitals(
     private lateinit var __atom: Atom
 
 
-
-
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -45,9 +43,7 @@ open class Orbitals(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matterAntiMatter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
@@ -69,15 +65,21 @@ open class Orbitals(
     override fun electronValueStr() : String {
         return getElectronValue().wavelengthStr()
     }
+    override fun getElectronPhoton() : Photon {
+        return getElectronValue().getPhoton()
+    }
     override fun getElectronSpin() : Spin {
         return getElectronValue().getSpin()
     }
     override fun getElectronWavelength() : Any? {
         return getElectronValue().getWavelength()
     }
-    override fun getElectronPhoton() : Photon {
-        return getElectronValue().getPhoton()
+    override fun setAtom(atom:Atom) : Atom {
+        //   add(Electron().i(atom))
+        this.__atom = atom
+        return atom
     }
+
     override fun setElectronSpin(spin: Spin) : Atom {
         getElectronValue().setSpin(spin)
         return __atom
@@ -87,10 +89,7 @@ open class Orbitals(
         getElectronValue().setWavelength(value)
         return zBoson
     }
-
-    override fun setAtom(atom:Atom) : Atom {
-     //   add(Electron().i(atom))
-        this.__atom = atom
-        return atom
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
 }

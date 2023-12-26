@@ -25,11 +25,13 @@ open class Quark(
         this.gluon         = Red_AntiRed()
     }
     init {
-
     }
 
     lateinit var gluon                  : Gluon
 
+    open fun i() : Quark {
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
@@ -42,17 +44,60 @@ open class Quark(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    open fun i() : Quark {
-        return this
+    class Args(val value:Any?) : ZBoson()
+
+
+
+    fun blue() : String {
+        if (gluon.color.isBlue())
+            return gluon.color._value as String
+
+        if (gluon.color.isGreen())
+            gluon = Green_AntiRed().blue(gluon)
+        else gluon = Red_AntiGreen().blue(gluon)
+
+        return gluon.color._value as String
+    }
+    fun currentColor() : Any? {
+        return gluon.color._value
+    }
+    open fun dissipate() : Unit {
+
     }
 
-    class Args(val value:Any?) : ZBoson()
+
+    fun green() : String {
+        if (gluon.color.isGreen())
+            return gluon.color._value as String
+
+        if (gluon.color.isBlue())
+            gluon = Blue_AntiRed().green(gluon)
+        else gluon = Red_AntiBlue().green(gluon)
+
+        return gluon.color._value as String
+    }
+    fun red() : Any? {
+        if (gluon.color.isRed())
+            return gluon.color._value
+
+        if (gluon.color.isGreen())
+            gluon = Green_AntiBlue().red(gluon)
+        else gluon = Blue_AntiGreen().red(gluon)
+
+        return gluon.color._value
+    }
+
+    fun setGreen(green: Green) : Quark {
+        gluon.setGreen(green)
+        return this
+    }
+    override fun toString() : String {
+        return super.toString()
+    }
     fun z(boson: Args) : Args {
         red()
 
@@ -67,52 +112,7 @@ open class Quark(
 
         return boson
     }
-
-    fun red() : Any? {
-        if (gluon.color.isRed())
-            return gluon.color._value
-
-        if (gluon.color.isGreen())
-            gluon = Green_AntiBlue().red(gluon)
-        else gluon = Blue_AntiGreen().red(gluon)
-
-        return gluon.color._value
-    }
-
-    fun blue() : String {
-        if (gluon.color.isBlue())
-            return gluon.color._value as String
-
-        if (gluon.color.isGreen())
-            gluon = Green_AntiRed().blue(gluon)
-        else gluon = Red_AntiGreen().blue(gluon)
-
-        return gluon.color._value as String
-    }
-
-    fun green() : String {
-        if (gluon.color.isGreen())
-            return gluon.color._value as String
-
-        if (gluon.color.isBlue())
-            gluon = Blue_AntiRed().green(gluon)
-        else gluon = Red_AntiBlue().green(gluon)
-
-        return gluon.color._value as String
-    }
-    fun currentColor() : Any? {
-        return gluon.color._value
-    }
-
-    open fun dissipate() : Unit {
-
-    }
-
-    fun setGreen(green: Green) : Quark {
-        gluon.setGreen(green)
-        return this
-    }
-    override fun toString() : String {
-        return super.toString()
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

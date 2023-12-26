@@ -21,9 +21,7 @@ class AntiBetaPlus(
         AntiMatter(AntiBetaPlus::class, BetaPlus::class),
     )
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down
 
@@ -46,6 +44,9 @@ class AntiBetaPlus(
         setNeutrino(neutrino)
 
         return Down()
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
     fun getNeutrino() : Neutrino {
         return lepton as Neutrino

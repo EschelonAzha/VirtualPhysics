@@ -11,10 +11,12 @@ class CRLFTerminatedMomentum(
     constructor() : this(
         Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
     )
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
+
     override fun format(wavelength: QuantumField) : String {
         return Strings.crlfTerminated(wavelength.toString())
     }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
 }

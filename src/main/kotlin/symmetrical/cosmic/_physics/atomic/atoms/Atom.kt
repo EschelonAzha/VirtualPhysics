@@ -72,49 +72,8 @@ open class Atom(
         setAtom(this)
         return Photon(nucleonsRemainder)
     }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matterAntiMatter.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
-    }
-
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
-    fun getFieldName() : String {
-        return getValueProton().getFieldName()
-    }
-    fun getElectron(pos:Int) : Electron {
-        return orbitals.get(pos) as Electron
-    }
-    fun getProtons() : Protons {
-        return nucleons.getProtons()
-    }
-    final override fun setAtom(atom:Atom) : Atom {
-        orbitals.setAtom(this)
-        nucleons.setAtom(this)
-        colorCharges.setAtom(this)
-        quarkValue.setAtom(this)
-        return this
-    }
-    override fun setElectronSpin(spin: Spin) : Atom {
-        orbitals.setElectronSpin(spin)
-        return this
-    }
-    fun setFieldName(name:String) : Atom {
-        getValueProton().setFieldName(name)
-        return this
-    }
-    override fun setQuarkMomentum(momentum: AngularMomentum) : Atom {
-        return quarkValue.setQuarkMomentum(momentum)
-    }
-    override fun toString() : String {
-        var down: Down = nucleons.getValueProton().getDown()
-        val value:Any? = down.getWavelength()
-        return value.toString()
+    open fun capacitanceChange(me: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+        return zBoson
     }
     fun capacitor_(atom: Atom) : Atom {
         capacitor(atom);
@@ -132,6 +91,16 @@ open class Atom(
         conductor(atom, autoFlow);
         return this
     }
+    fun conductor(atom: Atom, autoFlow:Boolean=true) : Unit {
+        diode(atom, autoFlow)
+        atom.diode(this, autoFlow)
+    }
+    fun capacitor(atom: Atom) : Unit {
+        val me : Proton = getCurrentValueProton()
+        val you: Proton = atom.getCurrentValueProton()
+
+        me.ionicBond(you)
+    }
     fun diode_(atom: Atom, autoFlow:Boolean=true) : Atom {
         diode(atom, autoFlow)
         return atom
@@ -146,15 +115,12 @@ open class Atom(
 
         me.covalentBond(you, autoFlow)
     }
-    fun conductor(atom: Atom, autoFlow:Boolean=true) : Unit {
-        diode(atom, autoFlow)
-        atom.diode(this, autoFlow)
+    override fun emit() : Photon {
+        return Photon(radiate())
     }
-    fun capacitor(atom: Atom) : Unit {
-        val me : Proton = getCurrentValueProton()
-        val you: Proton = atom.getCurrentValueProton()
 
-        me.ionicBond(you)
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
     }
     fun getCurrentValue() : Any? {
         return nucleons.getProtons().getCurrentValue()
@@ -162,12 +128,40 @@ open class Atom(
     private fun getCurrentValueProton() : Proton {
         return getProtons().getCurrentValueProton()
     }
-
+    fun getElectron(pos:Int) : Electron {
+        return orbitals.get(pos) as Electron
+    }
+    fun getFieldName() : String {
+        return getValueProton().getFieldName()
+    }
+    fun getProtons() : Protons {
+        return nucleons.getProtons()
+    }
+    final override fun setAtom(atom:Atom) : Atom {
+        orbitals.setAtom(this)
+        nucleons.setAtom(this)
+        colorCharges.setAtom(this)
+        quarkValue.setAtom(this)
+        return this
+    }
     fun setCurrentValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().setCurrentValue(ZBoson().i(Field(value), constructing)).decay()
     }
-    open fun capacitanceChange(me: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
-        return zBoson
+    override fun setElectronSpin(spin: Spin) : Atom {
+        orbitals.setElectronSpin(spin)
+        return this
+    }
+    fun setFieldName(name:String) : Atom {
+        getValueProton().setFieldName(name)
+        return this
+    }
+    override fun setQuarkMomentum(momentum: AngularMomentum) : Atom {
+        return quarkValue.setQuarkMomentum(momentum)
+    }
+    override fun toString() : String {
+        var down: Down = nucleons.getValueProton().getDown()
+        val value:Any? = down.getWavelength()
+        return value.toString()
     }
     open fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
         valueQuark.getWavelength().setValue(zBoson.getNewValue())
@@ -175,5 +169,7 @@ open class Atom(
         return zBoson
     }
 
-
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+    }
 }

@@ -77,6 +77,10 @@ class QuantumField(
         return Photon(radiate())
     }
 
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
+
     fun getField() : Field {
         return field
     }
@@ -103,17 +107,11 @@ class QuantumField(
         return prefix+ Photon.toPhoton3(field.getValue())
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(QuantumField::class)
-    }
-
-    public fun getClassId() : String {
-        return getLocalClassId()
-    }
-
-
     override fun toString() : String {
         return field.toString()
     }
 
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(QuantumField::class)
+    }
 }

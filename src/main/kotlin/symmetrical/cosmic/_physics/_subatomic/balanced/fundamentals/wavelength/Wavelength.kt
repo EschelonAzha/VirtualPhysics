@@ -13,21 +13,16 @@ class Wavelength(private val field:QuantumField=QuantumField()) : IQuantumField 
         QuantumField()
     )
 
+    fun i() : Wavelength {
+        return this
+    }
+
     override fun absorb(photon: Photon) : Photon {
         return field.absorb(photon.propagate());
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
-
-    private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
-    }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Wavelength::class)
-    }
-
     public fun getClassId() : String {
         return getLocalClassId()
     }
@@ -39,15 +34,19 @@ class Wavelength(private val field:QuantumField=QuantumField()) : IQuantumField 
         return field
     }
 
+    private fun radiate() : String {
+        return getLocalClassId()+field.emit().radiate()
+    }
+
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Wavelength::class)
+    }
+    fun setWavelength(value:Any?) : Any? {
+        return setValue(value)
+    }
     fun wavelength() : Any? {
         return field.getValue()
     }
 
-    fun setWavelength(value:Any?) : Any? {
-        return setValue(value)
-    }
 
-    fun i() : Wavelength {
-        return this
-    }
 }

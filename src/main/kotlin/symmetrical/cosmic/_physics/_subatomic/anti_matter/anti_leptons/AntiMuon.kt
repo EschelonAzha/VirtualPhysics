@@ -13,11 +13,12 @@ open class AntiMuon(
         AntiMatter(AntiMuon::class, Muon::class),
     )
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun i() : AntiMuon {
         super.i()
         return this
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
 }

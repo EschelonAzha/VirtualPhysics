@@ -21,22 +21,18 @@ class DomId(
     constructor(height:Int) : this() {
         setProperty("id", height.toString())
     }
-
-
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
-
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
-
     override fun getClassId() : String {
         return matter.getClassId()
+    }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

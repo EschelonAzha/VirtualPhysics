@@ -23,8 +23,6 @@ open class DomProperty(
        setProperty(propertyName, value)
     }
 
-
-
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
@@ -33,10 +31,6 @@ open class DomProperty(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
-
     override fun getClassId() : String {
         return matter.getClassId()
     }
@@ -45,5 +39,8 @@ open class DomProperty(
         add(QString(propertyName))
         add(QString(value))
         return this
+    }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

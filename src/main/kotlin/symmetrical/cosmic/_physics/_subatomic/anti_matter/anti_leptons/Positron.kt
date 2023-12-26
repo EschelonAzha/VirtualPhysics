@@ -12,12 +12,13 @@ class Positron (
     constructor() : this(
         AntiMatter(Positron::class, Electron::class),
     )
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
+
     override fun i() : Positron {
         super.i()
         return this
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
 
 }

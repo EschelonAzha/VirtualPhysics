@@ -20,11 +20,6 @@ class AntiBetaMinus(
         AntiMatter(AntiBetaMinus::class, BetaMinus::class),
     )
 
-
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
-
     fun decay(baryon: Baryon) : Up {
         var down      : Down = baryon.get(1) as Down
 
@@ -41,6 +36,9 @@ class AntiBetaMinus(
     }
     fun getAntiNeutrino() : AntiNeutrino {
         return antiLepton as AntiNeutrino
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
     fun getElectron() : Electron {
         return lepton as Electron

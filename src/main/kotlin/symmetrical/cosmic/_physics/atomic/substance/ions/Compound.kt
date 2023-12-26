@@ -19,6 +19,11 @@ open class Compound(
         const val LAST      : Int = -1
     }
 
+    override fun i() : Compound {
+        super.i();
+        return this
+    }
+
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -28,16 +33,15 @@ open class Compound(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        val (molecularId, remainder) = Strings.remainder(2, super.emit().radiate())
-        return matterAntiMatter.getClassId()+remainder
-    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
 
-    override fun i() : Compound {
-        super.i();
-        return this
+
+
+    private fun radiate() : String {
+        val (molecularId, remainder) = Strings.remainder(2, super.emit().radiate())
+        return matterAntiMatter.getClassId()+remainder
     }
 }

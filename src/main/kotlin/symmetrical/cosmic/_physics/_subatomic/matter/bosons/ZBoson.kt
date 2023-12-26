@@ -15,8 +15,8 @@ open class ZBoson{
     private var constructing :Boolean   = false
     private var newValue     :Field     = Field();
     private var oldValue     :Field     = Field()
-    private var reasonCode   :Int       = 0
     private var reason       :String    = ""
+    private var reasonCode   :Int       = 0
 
 
 

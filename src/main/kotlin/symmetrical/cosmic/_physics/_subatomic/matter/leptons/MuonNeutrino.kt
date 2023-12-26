@@ -17,12 +17,12 @@ class MuonNeutrino(
     init {
 
     }
-
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
     override fun i() : MuonNeutrino {
         super.i()
         return this
     }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
 }

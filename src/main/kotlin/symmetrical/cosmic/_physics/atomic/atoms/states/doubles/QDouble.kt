@@ -19,11 +19,11 @@ class QDouble(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun red() : Double {
-        return nucleons.getValueProton().red() as Double
-    }
     override fun getElectronWavelength() : Double {
         return super.getElectronWavelength() as Double
+    }
+    override fun red() : Double {
+        return nucleons.getValueProton().red() as Double
     }
     fun setDouble(value:Double) : QDouble {
         setQuarkValue(value)

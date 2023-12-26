@@ -11,9 +11,6 @@ open class Outlet  {
 
     }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Outlet::class)
-    }
     open fun getClassId() : String {
         return getLocalClassId()
     }
@@ -21,12 +18,16 @@ open class Outlet  {
     fun hasRecords() : Boolean {
         return records.size() > 0
     }
+    fun pop() : Any? {
+        return records.popLeft()
+    }
     fun receiveRecords() : Beam {
         var result = records;
         records = Beam(2)
         return result
     }
-    fun pop() : Any? {
-        return records.popLeft()
+
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Outlet::class)
     }
 }

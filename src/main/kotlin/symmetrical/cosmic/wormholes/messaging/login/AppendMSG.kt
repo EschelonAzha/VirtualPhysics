@@ -35,10 +35,11 @@ class AppendMSG(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
+    }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

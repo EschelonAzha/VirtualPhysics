@@ -36,8 +36,6 @@ class Nucleons(
     private lateinit var __atom: Atom
 
 
-
-
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -54,16 +52,13 @@ class Nucleons(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matterAntiMatter.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
+    fun getAtom() : Atom {
+        return this.__atom
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
 
-    fun getAtom() : Atom {
-        return this.__atom
-    }
     fun getProtons() : Protons {
         return protons
     }
@@ -91,5 +86,8 @@ class Nucleons(
         NeutralUpPion(proton, neutron)  // exert Nuclear force
 
         return this
+    }
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
     }
 }

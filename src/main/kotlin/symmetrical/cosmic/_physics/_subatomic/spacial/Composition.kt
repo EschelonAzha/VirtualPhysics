@@ -16,7 +16,6 @@ open class Composition(
         Matter(Composition::class, Composition::class),
     )
 
-
     object Static {
         const val FIRST  = ParticleBeam.Static.LAST + 1
         const val LAST  = ParticleBeam.Static.LAST + 2
@@ -33,9 +32,7 @@ open class Composition(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
@@ -44,5 +41,9 @@ open class Composition(
     }
     fun getLast() : IParticle {
         return get(Static.LAST) as IParticle
+    }
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

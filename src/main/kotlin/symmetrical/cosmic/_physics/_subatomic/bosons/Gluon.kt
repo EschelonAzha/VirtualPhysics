@@ -23,19 +23,6 @@ open class Gluon : Particle {
     open fun i() : Gluon {
         return this
     }
-    open fun getAntiValue() : Any? {
-        return antiColor._value
-    }
-    fun setGreen(green: Green) : Gluon {
-        this.manifestation = green
-        return this
-    }
-    public open fun setValue(value:Any?) : Gluon {
-        color.setValue(value)
-        antiColor.setValue(value)
-
-        return this
-    }
     fun exchange() : PlusPion {
         // incomplete.  My thinking is that value will be
         // reflected in Neutrons that are inert
@@ -51,8 +38,23 @@ open class Gluon : Particle {
 //        color.value = antiColor.value
         return pion
     }
-
+    open fun getAntiValue() : Any? {
+        return antiColor._value
+    }
     fun green() : Green {
         return manifestation.clone()
     }
+    fun setGreen(green: Green) : Gluon {
+        this.manifestation = green
+        return this
+    }
+    public open fun setValue(value:Any?) : Gluon {
+        color.setValue(value)
+        antiColor.setValue(value)
+
+        return this
+    }
+
+
+
 }

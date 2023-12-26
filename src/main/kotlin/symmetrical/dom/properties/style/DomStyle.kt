@@ -33,12 +33,11 @@ class DomStyle(
     override fun emit() : Photon {
         return Photon(radiate())
     }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
     private fun radiate() : String {
         val (domPropertyId, remainder) = Strings.remainder(2, super.emit().radiate())
         return matter.getClassId()+remainder
-    }
-
-    override fun getClassId() : String {
-        return matter.getClassId()
     }
 }

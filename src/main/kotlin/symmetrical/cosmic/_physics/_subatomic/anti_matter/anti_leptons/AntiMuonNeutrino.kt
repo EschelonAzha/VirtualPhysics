@@ -13,11 +13,11 @@ class AntiMuonNeutrino(
         AntiMatter(AntiMuonNeutrino::class, MuonNeutrino::class),
     )
 
-    override fun getClassId() : String {
-        return antiMatter.getClassId()
-    }
     override fun i() : AntiMuonNeutrino {
         super.i()
         return this
+    }
+    override fun getClassId() : String {
+        return antiMatter.getClassId()
     }
 }

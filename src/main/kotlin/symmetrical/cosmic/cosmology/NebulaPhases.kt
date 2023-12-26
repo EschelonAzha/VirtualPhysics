@@ -10,17 +10,19 @@ open class NebulaPhases : Nebula {
     constructor() {
     }
 
-    override fun onOpen() : Unit {
-        phase.onOpen()
+    override fun onClose() : Unit {
+        phase.onClose()
+        phase = phase.nextPhase()
+        return
     }
     override fun onMessage(payload:String) : Boolean {
         val result:Boolean = phase.onMessage(payload)
         phase = phase.nextPhase()
         return result
     }
-    override fun onClose() : Unit {
-        phase.onClose()
-        phase = phase.nextPhase()
-        return
+    override fun onOpen() : Unit {
+        phase.onOpen()
     }
+
+
 }

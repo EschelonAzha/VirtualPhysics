@@ -19,8 +19,9 @@ open class Kaon(
         Matter(Kaon::class, AntiKaon::class),
     )
 
-    lateinit var quark      : Strange
     lateinit var antiQuark  : AntiUp
+    lateinit var quark      : Strange
+
 
     override fun getClassId() : String {
         return matter.getClassId()

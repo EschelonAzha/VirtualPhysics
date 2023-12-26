@@ -38,38 +38,17 @@ open class Baryon(
 
         return super.absorb(photon.propagate())
     }
+    // Proton absorbs BetaMinus and becomes Neutron
+    fun absorb(beta: BetaMinus) : Baryon {
 
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
-    fun Proton() : Baryon {
-        this.add(Up())    // value
-        this.add(Up())    // When Up Points to Neutron
-        this.add(Down())  // type
-        shrink()
+        set(1, Down())
+        val up: Up = get(0) as Up
+        up.z(Quark.Args(beta.getElectron().wavelength()))
+
+        beta.getAntiNeutrino()  // points to proton
+
         return this
     }
-    fun Neutron() : Baryon {
-        this.add(Up())    // value
-        this.add(Down())  // When down Points to Proton
-        this.add(Down())  // type
-        shrink()
-        return this
-    }
-
-    fun isNeutron() : Boolean {
-        return (this.get(1) as Quark) is Down
-    }
-    fun isProton() : Boolean {
-        return (this.get(1) as Quark) is Up
-    }
-
     // Neutron absorbs BetaPlus and becomes Proton
     fun absorb(beta: BetaPlus) : Baryon {
 
@@ -82,17 +61,44 @@ open class Baryon(
 
         return this
     }
-    // Proton absorbs BetaMinus and becomes Neutron
-    fun absorb(beta: BetaMinus) : Baryon {
 
-        set(1, Down())
-        val up: Up = get(0) as Up
-        up.z(Quark.Args(beta.getElectron().wavelength()))
-
-        beta.getAntiNeutrino()  // points to proton
-
+    fun betaPlusDecay() : Pair<Baryon, BetaPlus> {
+        var beta        = BetaPlus()
+        this.set(1, beta.decay(this))
+        return Pair(this, beta)
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+    fun exchange(baryon: Baryon) : Baryon {
         return this
     }
+
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+    fun isNeutron() : Boolean {
+        return (this.get(1) as Quark) is Down
+    }
+    fun isProton() : Boolean {
+        return (this.get(1) as Quark) is Up
+    }
+    fun Neutron() : Baryon {
+        this.add(Up())    // value
+        this.add(Down())  // When down Points to Proton
+        this.add(Down())  // type
+        shrink()
+        return this
+    }
+    fun Proton() : Baryon {
+        this.add(Up())    // value
+        this.add(Up())    // When Up Points to Neutron
+        this.add(Down())  // type
+        shrink()
+        return this
+    }
+
+
     // Turn this Neutron into a Proton
     fun betaMinusDecay() : Pair<Baryon, BetaMinus> {
         var beta        = BetaMinus()
@@ -100,28 +106,32 @@ open class Baryon(
         return Pair(this, beta)
     }
     // Turn this Proton into a Neutron
-    fun betaPlusDecay() : Pair<Baryon, BetaPlus> {
-        var beta        = BetaPlus()
-        this.set(1, beta.decay(this))
-        return Pair(this, beta)
-    }
-    fun exchange(baryon: Baryon) : Baryon {
-        return this
-    }
-    fun red() : Any? {
-        return (this.get(0) as Quark).red()
-    }
+
     fun blue() : String {
         return (this.get(0) as Quark).blue()
-    }
-    fun green() : String {
-        return (this.get(0) as Quark).green()
     }
     fun currentColor() : Any? {
         return (this.get(0) as Quark).currentColor()
     }
+    fun green() : String {
+        return (this.get(0) as Quark).green()
+    }
+    fun red() : Any? {
+        return (this.get(0) as Quark).red()
+    }
+    fun setBinding(boundTo: Baryon) : Baryon {
+        val up: Quark = this.get(1) as Quark
+        (this.get(1) as Quark).z(Quark.Args(boundTo))
+        return this
+    }
     fun setGreen(green: Green) : Baryon {
         (get(0) as Quark).setGreen(green)
+        return this
+    }
+    fun setPurpose(value:Any?) : Baryon {
+        var item = this.get(0)
+        var down: Down = this.get(0) as Down
+        down.z(Quark.Args(value))
         return this
     }
     public fun setValue(value:Any?) : Baryon {
@@ -130,15 +140,8 @@ open class Baryon(
         down.z(Quark.Args(value))
         return this
     }
-    fun setBinding(boundTo: Baryon) : Baryon {
-        val up: Quark = this.get(1) as Quark
-        (this.get(1) as Quark).z(Quark.Args(boundTo))
-        return this
-    }
-    fun setPurpose(value:Any?) : Baryon {
-        var item = this.get(0)
-        var down: Down = this.get(0) as Down
-        down.z(Quark.Args(value))
-        return this
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

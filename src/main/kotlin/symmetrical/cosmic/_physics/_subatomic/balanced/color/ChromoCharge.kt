@@ -26,35 +26,33 @@ open class ChromoCharge : Particle {
     open fun i() : ChromoCharge {
         return this
     }
+    open fun clone() : ChromoCharge {
+        return ChromoCharge()
+    }
+    open fun getString() : String {
+        return _value.toString()
+    }
+    fun isAntiBlue() : Boolean {
+        return color == ANTI_BLUE
+    }
     fun isAntiGreen() : Boolean {
         return color == ANTI_GREEN
     }
     fun isAntiRed() : Boolean {
         return color == ANTI_RED
     }
-    fun isAntiBlue() : Boolean {
-        return color == ANTI_BLUE
+    fun isBlue() : Boolean {
+        return color == BLUE
     }
+
     fun isGreen() : Boolean {
         return color == GREEN
     }
     fun isRed() : Boolean {
         return color == RED
     }
-    fun isBlue() : Boolean {
-        return color == BLUE
-    }
-
-
     fun reinitialize() : ChromoCharge {
         return this
-    }
-    open fun clone() : ChromoCharge {
-        return ChromoCharge()
-    }
-
-    open fun getString() : String {
-        return _value.toString()
     }
     fun setBaryon(baryon: Baryon) : ChromoCharge {
         // setQuark(baryon.quarks[0].value)

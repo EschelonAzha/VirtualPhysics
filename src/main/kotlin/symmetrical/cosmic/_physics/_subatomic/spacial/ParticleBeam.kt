@@ -11,8 +11,8 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 open class ParticleBeam(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
-    protected val beam     : Beam = Beam()
+    private   val matterAntiMatter : IMatterAntiMatter  = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
+    protected val beam             : Beam               = Beam()
 ) : Particle(),
     IMatterAntiMatter by matterAntiMatter,
     IBeam by beam,
@@ -27,6 +27,11 @@ open class ParticleBeam(
     }
     object Static {
         const val LAST      : Int = -1
+    }
+
+    open fun i() : ParticleBeam {
+        beam.i()
+        return this
     }
 
     override fun absorb(photon: Photon) : Photon {
@@ -45,10 +50,31 @@ open class ParticleBeam(
         shrink()
         return Photon(remainder)
     }
+    override fun add(particle: IParticle) : IParticle {
+        return beam.add(particle) as IParticle
+    }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
+    fun find(particle:IParticle) : Int {
+        return beam.find(particle)
+    }
+
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+    override operator fun get(pos:Int): IParticle {
+        val result = beam.get(pos)
+        return result as IParticle
+    }
+    override fun getParticleCore() : Array<IParticle> {
+        return getCore() as Array<IParticle>
+    }
+    override fun set(pos:Int, particle: IParticle) : IParticle {
+        return beam.set(pos, particle) as IParticle
+    }
+
     private fun radiate() : String {
         val classId     :String = matterAntiMatter.getClassId()
         val particle    :String = super.emit().radiate()
@@ -61,30 +87,6 @@ open class ParticleBeam(
         }
 
         return emission
-    }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-    open fun i() : ParticleBeam {
-        beam.i()
-        return this
-    }
-    override fun add(particle: IParticle) : IParticle {
-        return beam.add(particle) as IParticle
-    }
-    fun find(particle:IParticle) : Int {
-        return beam.find(particle)
-    }
-
-    override operator fun get(pos:Int): IParticle {
-        val result = beam.get(pos)
-        return result as IParticle
-    }
-    override fun getParticleCore() : Array<IParticle> {
-        return getCore() as Array<IParticle>
-    }
-    override fun set(pos:Int, particle: IParticle) : IParticle {
-        return beam.set(pos, particle) as IParticle
     }
 
 }

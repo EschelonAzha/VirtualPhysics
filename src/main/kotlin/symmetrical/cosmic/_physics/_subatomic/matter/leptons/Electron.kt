@@ -20,41 +20,25 @@ class Electron(
         Matter(Electron::class, Positron::class),
     )
     init {
-
     }
-
-    lateinit var orbitals : Orbitals
-
-    private lateinit var proton         : Proton
+            lateinit var orbitals       : Orbitals
     private          var particleBeam   : ParticleBeam = ParticleBeam()
+    private lateinit var proton         : Proton
 
-
-
-
-    override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
-        return super.absorb(photon.propagate())
-    }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
     fun i(orbitals:Orbitals) : Electron {
         super.i()
         this.orbitals = orbitals
         return this
     }
-
-    fun setOrbitals(orbitals: Orbitals) : Electron {
-        this.orbitals = orbitals
+    override fun absorb(photon: Photon) : Photon {
+        matter.check(photon);
+        return super.absorb(photon.propagate())
+    }
+    fun covalentBond(you:Electron) : Electron {
+        you.setElectron(this)
+        this.setSpin(Spin.Static.PLUS)
         return this
     }
-
     fun flow() : ParticleBeam {
         val result : ParticleBeam = ParticleBeam()
         for (i:Int in 0 until particleBeam.size()) {
@@ -63,6 +47,36 @@ class Electron(
         }
 
         return result
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
+    fun ionicBond(you:Electron) : Electron {
+        you.setElectron(this)
+        this.setSpin(Spin.Static.MINUS)
+        return this
+    }
+
+    fun setOrbitals(orbitals: Orbitals) : Electron {
+        this.orbitals = orbitals
+        return this
+    }
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
+    }
+    fun setProton(proton: Proton) : Electron {
+        this.proton = proton
+        return this
+    }
+    fun setSpin(spin:Int) : Electron {
+        getSpin().setSpin(spin)
+        return this
     }
     private fun flow(electron:Electron) : ZBoson {
         val terminal: Proton? = electron!!.proton
@@ -74,16 +88,6 @@ class Electron(
         else return terminal.capacitanceChange(ZBoson().i(proton.getField()).setOldValue(terminal.getValue()))
 
     }
-
-
-    fun setProton(proton: Proton) : Electron {
-        this.proton = proton
-        return this
-    }
-    fun setSpin(spin:Int) : Electron {
-        getSpin().setSpin(spin)
-        return this
-    }
     private fun setElectron(electron:Electron) : Electron {
         val particle: IParticle = electron as IParticle
         val pos = particleBeam.find(electron as IParticle)
@@ -92,15 +96,4 @@ class Electron(
 
         return this
     }
-    fun covalentBond(you:Electron) : Electron {
-        you.setElectron(this)
-        this.setSpin(Spin.Static.PLUS)
-        return this
-    }
-    fun ionicBond(you:Electron) : Electron {
-        you.setElectron(this)
-        this.setSpin(Spin.Static.MINUS)
-        return this
-    }
-
 }

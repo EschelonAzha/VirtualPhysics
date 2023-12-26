@@ -28,11 +28,13 @@ open class Molecule(
     override fun emit() : Photon {
         return Photon(radiate())
     }
+
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+
     private fun radiate() : String {
         val (molecularId, remainder) = Strings.remainder(2, super.emit().radiate())
         return matterAntiMatter.getClassId()+remainder
-    }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
     }
 }

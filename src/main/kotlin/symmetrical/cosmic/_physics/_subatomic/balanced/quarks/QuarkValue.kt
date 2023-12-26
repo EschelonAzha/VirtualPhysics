@@ -19,16 +19,14 @@ class QuarkValue(
     constructor() : this(
         Matter(QuarkValue::class, QuarkValue::class),
     )
+
     lateinit var atom: Atom
 
 
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun setAtom(atom: Atom) : Atom {
-        this.atom = atom
-        return atom
-    }
+
     override fun quarkMomentum() : String {
         val quark   = atom.nucleons.getValueProton().get(0) as Quark
         return quark.momentum()
@@ -45,6 +43,10 @@ class QuarkValue(
     }
     override fun quarkValueStr() : String {
         return quarkValue().toString()
+    }
+    override fun setAtom(atom: Atom) : Atom {
+        this.atom = atom
+        return atom
     }
     override fun setQuarkMomentum(momentum: AngularMomentum): Atom {
         val quark   = atom.nucleons.getValueProton().get(0) as Quark

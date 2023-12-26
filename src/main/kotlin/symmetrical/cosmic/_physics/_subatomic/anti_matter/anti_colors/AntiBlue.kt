@@ -11,8 +11,6 @@ open class AntiBlue : AntiColor {
         color = ANTI_BLUE
     }
 
-
-
     override fun i() : AntiBlue {
         super.i()
         return this

@@ -28,7 +28,10 @@ open class Molecular(
         const val LAST      : Int = -1
     }
 
-
+    open fun i() : Molecular {
+        particleBeam.i()
+        return this
+    }
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
@@ -48,20 +51,6 @@ open class Molecular(
 //        return Photon(remainder)
 //    }
 
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    private fun radiate() : String {
-        val particleBeamEmission = particleBeam.emit().radiate()
-        return matterAntiMatter.getClassId()+super.emit().radiate()+particleBeamEmission
-    }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-    open fun i() : Molecular {
-        particleBeam.i()
-        return this
-    }
     fun applyQuarkMomentum(momentum: AngularMomentum) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
@@ -84,6 +73,9 @@ open class Molecular(
         return this
     }
 
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
     fun findString(value:String) : Int {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
@@ -92,6 +84,11 @@ open class Molecular(
         }
         return -1
     }
+
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+
     fun findContainsString(contains:String) : Int {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
@@ -107,5 +104,9 @@ open class Molecular(
         }
         shrink()
         return this
+    }
+    private fun radiate() : String {
+        val particleBeamEmission = particleBeam.emit().radiate()
+        return matterAntiMatter.getClassId()+super.emit().radiate()+particleBeamEmission
     }
 }

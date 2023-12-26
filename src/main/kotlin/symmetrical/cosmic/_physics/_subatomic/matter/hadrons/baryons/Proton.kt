@@ -31,7 +31,6 @@ open class Proton(
         VALUE(0),
         VALIDATOR(1),
         TYPE(2),
-
     }
 
     object Static {
@@ -49,53 +48,17 @@ open class Proton(
         return this
     }
 
-
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
         return super.absorb(photon.propagate())
     }
+    fun capacitanceChange(zBoson:ZBoson) : ZBoson {
+        if (__protons != null)
+            __protons!!.capacitanceChange(this, getValueQuark(), zBoson)
 
-    override fun emit() : Photon {
-        val classId = matter.getClassId()
-        return Photon(radiate())
+        return zBoson
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate();
-    }
-
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
-    fun getDown() : Down {
-        return get(QuarkType.TYPE.value) as Down
-    }
-    fun getQuarkValue() : Any? {
-        return getValueQuark().wavelength()
-    }
-    fun getFieldName() : String {
-        return getFieldNameQuark().wavelength() as String
-    }
-    private fun getFieldNameQuark() : Quark {
-        return (get(Static.FIELD_NAME) as Quark)
-    }
-//    private fun getValueQuark() : Quark {
-//        return (get(Static.VALUE_QUARK) as Quark)
-//    }
-
-    fun getField() : Field {
-        return getValueQuark().getWavelength().getField()
-    }
-
-    fun setFieldName(name:String) : Proton {
-        getFieldNameQuark().setWavelength(name)
-        return this
-    }
-    fun setProtons(protons:Protons) : Proton {
-        this.__protons = protons
-        return this
-    }
-
     fun covalentBond(proton: Proton, autoFlow:Boolean = true) : Proton {
         proton.autoFlow = autoFlow
         val myElectron  = getElectron()
@@ -107,6 +70,34 @@ open class Proton(
         myElectron.covalentBond(youElectron)
         return this
     }
+
+    override fun emit() : Photon {
+        val classId = matter.getClassId()
+        return Photon(radiate())
+    }
+
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+    fun getDown() : Down {
+        return get(QuarkType.TYPE.value) as Down
+    }
+
+    fun getField() : Field {
+        return getValueQuark().getWavelength().getField()
+    }
+    fun getFieldName() : String {
+        return getFieldNameQuark().wavelength() as String
+    }
+    fun getQuarkValue() : Any? {
+        return getValueQuark().wavelength()
+    }
+    fun getValidatorQuark() : Up {
+        return get(QuarkType.VALIDATOR.value) as Up
+    }
+    public fun getValue() : Any? {
+        return getField().getValue()
+    }
     fun ionicBond(proton: Proton) : Proton {
         val myElectron  = getElectron()
         val youElectron = proton.getElectron()
@@ -117,26 +108,6 @@ open class Proton(
         myElectron.ionicBond(youElectron)
         return this
     }
-    private fun getElectron() : Electron? {
-        val electron : Electron = __protons?.getElectron(this) ?: return null
-
-        electron.setProton(this)
-
-        return electron
-    }
-    fun isType(type: QuarkType) : Boolean {
-        val protonType = getTypeQuark().getWavelength().getField().toInt()
-        return protonType == type.value
-    }
-    fun setType(protonType: Protons.ProtonType) : Proton {
-        val wavelength: QuantumField = getTypeQuark().getWavelength().getQuantumField()
-        val changed = wavelength.setValue(protonType.value.toString())
-        return this
-    }
-    public fun getValue() : Any? {
-        return getField().getValue()
-    }
-
     fun interact(zBoson: ZBoson) : ZBoson {
         if (flowing)
             return zBoson
@@ -162,30 +133,47 @@ open class Proton(
 
         return zBoson  // this returns only the local changes
     }
-    private fun getValueQuark() : Up {
-        return get(QuarkType.VALUE.value) as Up
+    fun isType(type: QuarkType) : Boolean {
+        val protonType = getTypeQuark().getWavelength().getField().toInt()
+        return protonType == type.value
     }
-    fun getValidatorQuark() : Up {
-        return get(QuarkType.VALIDATOR.value) as Up
-    }
-    private fun getTypeQuark() : Down {
-        return get(QuarkType.TYPE.value) as Down
-    }
-    fun capacitanceChange(zBoson:ZBoson) : ZBoson {
-        if (__protons != null)
-            __protons!!.capacitanceChange(this, getValueQuark(), zBoson)
 
-        return zBoson
+    fun setFieldName(name:String) : Proton {
+        getFieldNameQuark().setWavelength(name)
+        return this
     }
-    private fun valueChange(valueQuark:Up, zBoson:ZBoson) : ZBoson {
-        if (__protons != null)
-            __protons!!.valueChange(this, valueQuark, zBoson)
-        return zBoson
+    fun setProtons(protons:Protons) : Proton {
+        this.__protons = protons
+        return this
     }
+
+    fun setType(protonType: Protons.ProtonType) : Proton {
+        val wavelength: QuantumField = getTypeQuark().getWavelength().getQuantumField()
+        val changed = wavelength.setValue(protonType.value.toString())
+        return this
+    }
+
     private fun flow() : ParticleBeam {
         val electron: Electron = getElectron() ?: return ParticleBeam()
         return electron.flow()
     }
+    private fun getElectron() : Electron? {
+        val electron : Electron = __protons?.getElectron(this) ?: return null
+
+        electron.setProton(this)
+
+        return electron
+    }
+    private fun getFieldNameQuark() : Quark {
+        return (get(Static.FIELD_NAME) as Quark)
+    }
+    private fun getTypeQuark() : Down {
+        return get(QuarkType.TYPE.value) as Down
+    }
+    private fun getValueQuark() : Up {
+        return get(QuarkType.VALUE.value) as Up
+    }
+
     private fun noChange(zBoson:ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
         val valueQuark: Up                      = getValueQuark()
@@ -196,4 +184,14 @@ open class Proton(
         zBoson.setAccepted(true)
         return zBoson
     }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate();
+    }
+    private fun valueChange(valueQuark:Up, zBoson:ZBoson) : ZBoson {
+        if (__protons != null)
+            __protons!!.valueChange(this, valueQuark, zBoson)
+        return zBoson
+    }
+
+
 }

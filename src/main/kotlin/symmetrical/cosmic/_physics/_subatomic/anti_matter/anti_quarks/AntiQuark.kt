@@ -38,12 +38,13 @@ open class AntiQuark(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
-    }
     override fun getClassId() : String {
         return antiMatter.getClassId()
     }
+    private fun radiate() : String {
+        return antiMatter.getClassId()+super.emit().radiate()
+    }
+
     open fun i() : AntiQuark {
         return this
     }
@@ -65,16 +66,7 @@ open class AntiQuark(
     }
 
 
-    fun red() : Any? {
-        if (gluon.color.isRed())
-            return gluon.color._value
 
-        if (gluon.color.isGreen())
-            gluon = Green_AntiBlue().red(gluon)
-        else gluon = Blue_AntiGreen().red(gluon)
-
-        return gluon.color._value
-    }
 
     fun blue() : String {
         if (gluon.color.isBlue())
@@ -87,6 +79,14 @@ open class AntiQuark(
         return gluon.color._value as String
     }
 
+    fun currentColor() : Any? {
+        return gluon.color._value
+    }
+
+    open fun dissipate() : Unit {
+
+    }
+
     fun green() : String {
         if (gluon.color.isGreen())
             return gluon.color._value as String
@@ -97,13 +97,17 @@ open class AntiQuark(
 
         return gluon.color._value as String
     }
-    fun currentColor() : Any? {
+    fun red() : Any? {
+        if (gluon.color.isRed())
+            return gluon.color._value
+
+        if (gluon.color.isGreen())
+            gluon = Green_AntiBlue().red(gluon)
+        else gluon = Blue_AntiGreen().red(gluon)
+
         return gluon.color._value
     }
 
-    open fun dissipate() : Unit {
-
-    }
 
     fun setGreen(green: Green) : AntiQuark {
         gluon.setGreen(green)

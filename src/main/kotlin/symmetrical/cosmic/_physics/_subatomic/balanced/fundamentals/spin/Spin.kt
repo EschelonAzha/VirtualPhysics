@@ -20,11 +20,21 @@ class Spin(
         const val MINUS:Int      = -1
     }
 
+    fun i() : Spin {
+        return this
+    }
+
     override fun absorb(photon: Photon) : Photon {
         return field.absorb(photon.propagate());
     }
     override fun emit() : Photon {
         return Photon(radiate())
+    }
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
+    fun getField() : Field {
+        return field.getField()
     }
 
     private fun radiate() : String {
@@ -34,14 +44,6 @@ class Spin(
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Spin::class)
     }
-
-    public fun getClassId() : String {
-        return getLocalClassId()
-    }
-    fun getField() : Field {
-        return field.getField()
-    }
-
     fun isPlus() : Boolean {
         return field.toInt() > 0
     }
@@ -66,7 +68,5 @@ class Spin(
         return this
     }
 
-    fun i() : Spin {
-        return this
-    }
+
 }

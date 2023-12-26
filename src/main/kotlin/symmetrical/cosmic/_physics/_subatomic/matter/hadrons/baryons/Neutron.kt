@@ -34,9 +34,7 @@ open class Neutron(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
@@ -44,5 +42,9 @@ open class Neutron(
     fun setNeutrons(neutrons:Neutrons) : Neutron {
         this.__neutrons = neutrons
         return this
+    }
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

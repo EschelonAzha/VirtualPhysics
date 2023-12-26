@@ -9,9 +9,9 @@ class LoginPhase : NebulaPhase, INebula {
     constructor(nebula:INebula) : super(nebula) {
 
     }
-    override fun onOpen() : Unit {
+    override fun onClose() : Unit {
+        println("OnClose is fired once")
         return
-
     }
     override fun onMessage(payload:String) : Boolean {
         val message : LoginMSG = LoginMSG().i()
@@ -26,8 +26,9 @@ class LoginPhase : NebulaPhase, INebula {
 
         return true;
     }
-    override fun onClose() : Unit {
-        println("OnClose is fired once")
+    override fun onOpen() : Unit {
         return
+
     }
+
 }

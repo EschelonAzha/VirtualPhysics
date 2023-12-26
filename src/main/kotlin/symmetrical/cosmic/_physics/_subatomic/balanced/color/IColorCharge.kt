@@ -5,9 +5,10 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 interface IColorCharge {
     fun blue        ()                  : String
+    fun currentColor()                  : Any?
     fun green       ()                  : String
     fun red         ()                  : Any
-    fun currentColor()                  : Any?
+
     fun setAtom     (atom: Atom)        : Atom
     fun setGreen    (green: Green)      : Atom
 }

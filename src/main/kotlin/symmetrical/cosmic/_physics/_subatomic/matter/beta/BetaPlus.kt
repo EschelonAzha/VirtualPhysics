@@ -24,9 +24,6 @@ class BetaPlus(
     )
 
 
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down
 
@@ -49,6 +46,9 @@ class BetaPlus(
         setNeutrino(neutrino)
 
         return Down()
+    }
+    override fun getClassId() : String {
+        return matter.getClassId()
     }
     fun getNeutrino() : Neutrino {
         return lepton as Neutrino

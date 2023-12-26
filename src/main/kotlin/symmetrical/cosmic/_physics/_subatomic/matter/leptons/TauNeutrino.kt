@@ -16,12 +16,12 @@ class TauNeutrino(
     )
     init {
     }
-
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
     override fun i() : TauNeutrino {
         super.i()
         return this
     }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+
 }
