@@ -23,7 +23,9 @@ class Charge (private val field:QuantumField=QuantumField()) : IQuantumField by 
     }
 
     override fun absorb(photon: Photon) : Photon {
-        return field.absorb(photon.propagate());
+        var remainder : Photon  = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
     }
     fun charge() : Any? {
         return field.getValue()

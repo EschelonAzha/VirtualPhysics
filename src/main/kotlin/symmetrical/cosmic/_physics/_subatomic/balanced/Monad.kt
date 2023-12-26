@@ -15,25 +15,26 @@ open class Monad(
     constructor() : this(
         Matter(Monad::class, Monad::class),
     )
-
-
+    fun i() : Monad {
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
-        return photon.propagate()
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    private fun radiate() : String {
-        return matter.getClassId()
-    }
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
 
-    fun i() : Monad {
-        return this
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
     }
 }

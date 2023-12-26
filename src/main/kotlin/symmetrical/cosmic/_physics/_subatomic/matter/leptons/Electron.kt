@@ -32,7 +32,9 @@ class Electron(
     }
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
-        return super.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
     fun covalentBond(you:Electron) : Electron {
         you.setElectron(this)

@@ -37,10 +37,11 @@ open class Molecular(
         matterAntiMatter.check(photon);
 
         clear()
-        val remainderAtom: Photon = super.absorb(photon.propagate())
-        val photon : Photon = this.particleBeam.absorb(remainderAtom)
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        remainder = this.particleBeam.absorb(remainder)
         shrink()
-        return photon
+        return remainder
     }
 //    override fun absorb(photon:Photon) : Photon {
 //        clear()

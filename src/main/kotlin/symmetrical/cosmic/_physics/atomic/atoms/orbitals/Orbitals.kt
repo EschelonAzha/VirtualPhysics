@@ -32,7 +32,9 @@ open class Orbitals(
         matterAntiMatter.check(photon);
 
         clear()
-        val remainder = super.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+
         shrink()
         for (i in 0 until size()) {
             (get(i) as Electron).setOrbitals(this)

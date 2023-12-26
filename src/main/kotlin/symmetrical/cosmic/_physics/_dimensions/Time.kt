@@ -10,7 +10,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 class Time(private val field:QuantumField=QuantumField()) : IQuantumField by field {
 
     override fun absorb(photon:Photon) : Photon {
-        return field.absorb(photon.propagate());
+        var remainder : Photon  = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
     }
     override fun emit() : Photon {
         return Photon(radiate())

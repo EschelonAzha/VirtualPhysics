@@ -22,7 +22,9 @@ class Charm(
         return this
     }
     override fun absorb(photon: Photon) : Photon {
-        return super.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
     override fun emit() : Photon {
         return Photon(radiate())

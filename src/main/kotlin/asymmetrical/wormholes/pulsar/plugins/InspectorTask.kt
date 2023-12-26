@@ -11,7 +11,9 @@ class InspectorTask : Composition {
 
     }
     override fun absorb(photon: Photon) : Photon {
-        return super.absorb(photon.propagate())
+        var remainder : Photon  = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
     override fun emit() : Photon {
         return Photon(radiate())

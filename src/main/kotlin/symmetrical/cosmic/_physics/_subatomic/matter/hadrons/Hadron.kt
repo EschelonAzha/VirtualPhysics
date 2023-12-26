@@ -31,7 +31,9 @@ open class Hadron(
         matter.check(photon);
 
         clear()
-        val remainder = super.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+
         shrink()
         return remainder
     }

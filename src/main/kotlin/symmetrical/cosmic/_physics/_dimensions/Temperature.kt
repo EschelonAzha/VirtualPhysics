@@ -13,7 +13,9 @@ class Temperature  (private val field:QuantumField=QuantumField()) : IQuantumFie
         return this
     }
     override fun absorb(photon: Photon) : Photon {
-        return field.absorb(photon.propagate());
+        var remainder : Photon  = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
     }
     override fun emit() : Photon {
         return Photon(radiate())

@@ -13,7 +13,9 @@ open class AngularMomentum(private val field: QuantumField = QuantumField()) : I
     )
 
     override fun absorb(photon: Photon) : Photon {
-        return field.absorb(photon.propagate());
+        var remainder = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
     }
     override fun emit() : Photon {
         return Photon(radiate())

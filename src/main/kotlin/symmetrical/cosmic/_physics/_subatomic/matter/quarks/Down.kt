@@ -31,7 +31,9 @@ class Down(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        return super.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
     override fun dissipate() : Unit {
         Recycler.Down_dissipate(this)
