@@ -1,7 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.quarks
 
 import symmetrical.cosmic._physics._subatomic.bosons.Gluon
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -9,7 +8,6 @@ import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 

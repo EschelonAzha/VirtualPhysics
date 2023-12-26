@@ -3,7 +3,6 @@ package symmetrical.cosmic._physics._subatomic.balanced
 import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic._physics._dimensions.*
 import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.Fundamentals
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
