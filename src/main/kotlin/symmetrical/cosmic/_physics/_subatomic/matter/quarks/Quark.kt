@@ -32,8 +32,8 @@ open class Quark(
     }
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
-
         this.gluon              = Red_AntiRed()  // this is need for JS Bug
+
         var remainder : Photon  = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder

@@ -9,12 +9,12 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.Beam
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 
-open class Inspector(private val particle: Particle = Particle()) : IParticle by particle, IEmitter {
+open class Inspector : Particle, IEmitter {
 
     protected lateinit  var message : SocketMessage
     private             var payload : Beam = Beam(0)
 
-    constructor() : this(Particle()) {
+    constructor()  {
 
     }
     fun addPayload(payload:String) : Inspector {
@@ -48,19 +48,8 @@ open class Inspector(private val particle: Particle = Particle()) : IParticle by
         this.message = message
         return this
     }
-    private fun check(photon: Photon) : Unit {
-        val classId = getLocalClassId()
 
-        val radiation = photon.radiate()
-        if (radiation.startsWith(classId))
-            return
-        println("Radiation Leak in: "+this::class.simpleName);
-        return;
-    }
     private fun radiate() : String {
         return getLocalClassId();
     }
-
-
-
 }
