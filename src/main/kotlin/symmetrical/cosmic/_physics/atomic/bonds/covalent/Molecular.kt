@@ -36,7 +36,6 @@ open class Molecular(
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
-        clear()
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         remainder = this.particleBeam.absorb(remainder)
@@ -107,9 +106,9 @@ open class Molecular(
         return this
     }
     private fun radiate() : String {
-        val particleBeamEmission = particleBeam.emit().radiate()
+
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()+
-                particleBeamEmission
+                particleBeam.emit().radiate()
     }
 }
