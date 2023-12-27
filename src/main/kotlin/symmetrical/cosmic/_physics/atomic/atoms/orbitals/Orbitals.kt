@@ -35,7 +35,6 @@ open class Orbitals(
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
 
-        shrink()
         for (i in 0 until size()) {
             (get(i) as Electron).setOrbitals(this)
         }

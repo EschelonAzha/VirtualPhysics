@@ -23,10 +23,10 @@ class Neutrons(
         matterAntiMatter.check(photon);
 
         clear()
+
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
 
-        shrink()
         for (i in 0 until size()) {
             (get(i) as Neutron).setNeutrons(this)
         }
