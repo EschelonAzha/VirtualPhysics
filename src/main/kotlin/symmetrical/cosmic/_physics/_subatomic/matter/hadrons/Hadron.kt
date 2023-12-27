@@ -30,11 +30,9 @@ open class Hadron(
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
-        clear()
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
 
-        shrink()
         return remainder
     }
 

@@ -35,11 +35,9 @@ class Protons(
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
-        clear()
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
 
-        shrink()
         for (i in 0 until size()) {
             (get(i) as Proton).setProtons(this)
         }

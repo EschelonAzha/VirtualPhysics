@@ -60,7 +60,16 @@ open class Atom(
         setQuarkValue(value)
     }
 
-
+//    override fun absorb(photon: Photon) : Photon {
+//        matterAntiMatter.check(photon);
+//
+//        var remainder = photon.propagate()
+//        remainder = orbitals.absorb(remainder)
+//        remainder = nucleons.absorb(remainder)
+//
+//        setAtom(this)
+//        return remainder
+//    }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 

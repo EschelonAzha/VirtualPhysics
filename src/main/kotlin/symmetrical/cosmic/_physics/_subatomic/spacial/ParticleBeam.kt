@@ -37,15 +37,15 @@ open class ParticleBeam(
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
-        val particleRemainder = super.absorb(photon.propagate())
-        val (size52, line) = Strings.remainder(3, particleRemainder.radiate())
-        val size = Base52.toInt(size52)
-        var remainder = line
+        val particleRemainder : Photon      = super.absorb(photon.propagate())
+        val (size52:String, line:String)    = Strings.remainder(3, particleRemainder.radiate())
+        val size:Int                        = Base52.toInt(size52)
+        var remainder : String              = line
+        
         for (i in 0 until size) {
             val (emitter, line) = Absorber.materialize(remainder)
             add(emitter)
             remainder = line
-            continue
         }
         shrink()
         return Photon(remainder)
@@ -78,6 +78,11 @@ open class ParticleBeam(
     private fun radiate() : String {
         val classId     :String = matterAntiMatter.getClassId()
         val particle    :String = super.emit().radiate()
+        if (size() > 140606) {
+            println("ParticleBeam::radiate() ************************** MAXIMUM ARRAY SIZE EXCEEDED *********************")
+            println("ParticleBeam::radiate() ************************** MAXIMUM ARRAY SIZE EXCEEDED *********************")
+            println("ParticleBeam::radiate() ************************** MAXIMUM ARRAY SIZE EXCEEDED *********************")
+        }
         val base52Size  :String = Base52.toFixedBase52(Config.getBase52ArraySize(), size())
 
         var emission = classId+particle+base52Size
