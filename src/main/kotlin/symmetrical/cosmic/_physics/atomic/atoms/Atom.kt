@@ -60,26 +60,16 @@ open class Atom(
         setQuarkValue(value)
     }
 
-//    override fun absorb(photon: Photon) : Photon {
-//        matterAntiMatter.check(photon);
-//
-//        var remainder = photon.propagate()
-//        remainder = orbitals.absorb(remainder)
-//        remainder = nucleons.absorb(remainder)
-//
-//        setAtom(this)
-//        return remainder
-//    }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
-        val remainder = super.absorb(photon.propagate())
-        var (orbitals, orbitalsRemainder) = Absorber.materialize(remainder.radiate())
-        var (nucleons, nucleonsRemainder) = Absorber.materialize(orbitalsRemainder)
-        this.orbitals   = orbitals as Orbitals
-        this.nucleons   = nucleons as Nucleons
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        remainder = orbitals.absorb(remainder)
+        remainder = nucleons.absorb(remainder)
+
         setAtom(this)
-        return Photon(nucleonsRemainder)
+        return remainder
     }
     open fun capacitanceChange(me: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
         return zBoson
