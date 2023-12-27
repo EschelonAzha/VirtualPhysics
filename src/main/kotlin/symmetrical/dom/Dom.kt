@@ -23,7 +23,9 @@ open class Dom(
     override fun absorb(photon: Photon) : Photon {
         check(photon);
 
-        val remainder = super.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+
         var (children,   childrenRemainder) = Absorber.materialize(remainder.radiate())
         var (properties, propertiesRemainder) = Absorber.materialize(childrenRemainder)
         this.children   = children as Molecular

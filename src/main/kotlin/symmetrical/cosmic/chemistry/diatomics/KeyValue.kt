@@ -31,7 +31,9 @@ open class KeyValue(
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
-        return super.absorb(photon.propagate())
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
