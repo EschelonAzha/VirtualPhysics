@@ -39,14 +39,14 @@ class Nucleons(
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
-        var (protons, remainderProtons) = Absorber.materialize(photon.propagate())
-        var (neutrons, remainder)       = Absorber.materialize(remainderProtons)
-        this.protons    = protons as Protons
-        this.neutrons   = neutrons as Neutrons
+        var remainder = photon.propagate()
+        remainder = protons.absorb(remainder)
+        remainder = neutrons.absorb(remainder)
+
         this.protons.setNucleons(this)
         this.neutrons.setNucleons(this)
 
-        return Photon(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
