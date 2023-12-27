@@ -22,7 +22,8 @@ open class AngularMomentum(private val field: QuantumField = QuantumField()) : I
     }
 
     private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
+        return getLocalClassId()+
+                field.emit().radiate()
     }
 
     private fun getLocalClassId() : String {

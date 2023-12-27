@@ -47,6 +47,7 @@ class Space (private val field: QuantumField = QuantumField()) : IQuantumField b
         return Absorber.getClassId(Space::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
+        return getLocalClassId()+
+                field.emit().radiate()
     }
 }

@@ -46,7 +46,8 @@ open class Lepton(
         return matter.getIlluminations()
     }
     private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+
+                super.emit().radiate()
     }
 
 }

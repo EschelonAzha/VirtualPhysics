@@ -58,6 +58,9 @@ open class Dom(
         return properties
     }
     private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()+children.emit().radiate()+properties.emit().radiate()
+        return matter.getClassId()+
+                super.emit().radiate()+
+                children.emit().radiate()+
+                properties.emit().radiate()
     }
 }

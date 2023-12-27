@@ -33,6 +33,7 @@ class Time(private val field:QuantumField=QuantumField()) : IQuantumField by fie
         return Absorber.getClassId(Time::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
+        return getLocalClassId()+
+                field.emit().radiate()
     }
 }

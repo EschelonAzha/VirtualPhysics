@@ -20,6 +20,7 @@ class RemotePage : Body {
         return Absorber.getClassId(RemotePage::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
+        return getLocalClassId()+
+                super.emit().radiate()
     }
 }

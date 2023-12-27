@@ -26,7 +26,9 @@ open class Inspector : Particle, IEmitter {
     override fun absorb(photon: Photon) : Photon {
         check(photon);
 
-        return photon.propagate()
+        var remainder : Photon  = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
     }
 
     override fun emit() : Photon {
@@ -50,6 +52,7 @@ open class Inspector : Particle, IEmitter {
     }
 
     private fun radiate() : String {
-        return getLocalClassId();
+        return  getLocalClassId()+
+                super.emit().radiate()
     }
 }

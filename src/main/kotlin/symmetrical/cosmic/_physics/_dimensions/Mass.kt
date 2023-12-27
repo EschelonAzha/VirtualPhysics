@@ -59,6 +59,7 @@ class Mass (private val field:QuantumField=QuantumField()) : IQuantumField by fi
         return Absorber.getClassId(Mass::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
+        return getLocalClassId()+
+                field.emit().radiate()
     }
 }

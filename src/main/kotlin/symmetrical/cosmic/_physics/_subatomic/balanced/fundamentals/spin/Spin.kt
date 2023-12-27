@@ -40,7 +40,8 @@ class Spin(
     }
 
     private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
+        return getLocalClassId()+
+                field.emit().radiate()
     }
 
     private fun getLocalClassId() : String {

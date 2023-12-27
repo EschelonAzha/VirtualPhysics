@@ -135,6 +135,7 @@ class Protons(
     }
 
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+super.emit().radiate()
+        return matterAntiMatter.getClassId()+
+                super.emit().radiate()
     }
 }

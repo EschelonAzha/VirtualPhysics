@@ -27,6 +27,7 @@ class InspectorTask : Composition {
         return Absorber.getClassId(InspectorTask::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
+        return  getLocalClassId()+
+                super.emit().radiate()
     }
 }

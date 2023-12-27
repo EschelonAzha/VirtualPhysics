@@ -187,7 +187,8 @@ open class Proton(
         return zBoson
     }
     private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate();
+        return matter.getClassId()+
+                super.emit().radiate();
     }
     private fun valueChange(valueQuark:Up, zBoson:ZBoson) : ZBoson {
         if (__protons != null)

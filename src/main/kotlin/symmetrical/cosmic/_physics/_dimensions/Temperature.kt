@@ -36,6 +36,7 @@ class Temperature  (private val field:QuantumField=QuantumField()) : IQuantumFie
         return Absorber.getClassId(Temperature::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
+        return getLocalClassId()+
+                field.emit().radiate()
     }
 }

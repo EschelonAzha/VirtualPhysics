@@ -23,7 +23,8 @@ class ConnectionType : KeyValue {
         return Absorber.getClassId(ConnectionType::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+super.emit().radiate()
+        return getLocalClassId()+
+                super.emit().radiate()
     }
 
 }

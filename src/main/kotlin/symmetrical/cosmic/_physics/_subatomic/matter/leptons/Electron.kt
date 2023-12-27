@@ -70,7 +70,8 @@ class Electron(
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+
+                super.emit().radiate()
     }
     fun setProton(proton: Proton) : Electron {
         this.proton = proton

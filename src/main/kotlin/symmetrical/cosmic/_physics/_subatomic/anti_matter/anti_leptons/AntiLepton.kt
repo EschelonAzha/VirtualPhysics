@@ -35,7 +35,8 @@ open class AntiLepton(
         return antiMatter.getClassId()
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+
+                super.emit().radiate()
     }
 
 }

@@ -88,6 +88,8 @@ class Nucleons(
         return this
     }
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+this.protons.emit().radiate()+this.neutrons.emit().radiate()
+        return matterAntiMatter.getClassId()+
+                this.protons.emit().radiate()+
+                this.neutrons.emit().radiate()
     }
 }

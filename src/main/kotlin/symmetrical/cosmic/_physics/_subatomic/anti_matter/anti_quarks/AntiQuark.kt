@@ -40,7 +40,8 @@ open class AntiQuark(
         return antiMatter.getClassId()
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+super.emit().radiate()
+        return antiMatter.getClassId()+
+                super.emit().radiate()
     }
 
     open fun i() : AntiQuark {

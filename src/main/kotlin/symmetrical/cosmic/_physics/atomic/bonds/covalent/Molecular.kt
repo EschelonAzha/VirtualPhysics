@@ -108,6 +108,8 @@ open class Molecular(
     }
     private fun radiate() : String {
         val particleBeamEmission = particleBeam.emit().radiate()
-        return matterAntiMatter.getClassId()+super.emit().radiate()+particleBeamEmission
+        return matterAntiMatter.getClassId()+
+                super.emit().radiate()+
+                particleBeamEmission
     }
 }

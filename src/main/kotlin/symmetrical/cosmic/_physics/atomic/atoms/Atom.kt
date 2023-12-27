@@ -170,6 +170,9 @@ open class Atom(
     }
 
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+super.emit().radiate()+orbitals.emit().radiate()+nucleons.emit().radiate()
+        return matterAntiMatter.getClassId()+
+                super.emit().radiate()+
+                orbitals.emit().radiate()+
+                nucleons.emit().radiate()
     }
 }

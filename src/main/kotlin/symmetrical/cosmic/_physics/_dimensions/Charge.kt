@@ -47,6 +47,7 @@ class Charge (private val field:QuantumField=QuantumField()) : IQuantumField by 
         return Absorber.getClassId(Charge::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+field.emit().radiate()
+        return getLocalClassId()+
+                field.emit().radiate()
     }
 }

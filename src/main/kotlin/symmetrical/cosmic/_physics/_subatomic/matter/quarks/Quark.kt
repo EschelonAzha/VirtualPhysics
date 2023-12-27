@@ -111,6 +111,7 @@ open class Quark(
         return boson
     }
     private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
+        return matter.getClassId()+
+                super.emit().radiate()
     }
 }

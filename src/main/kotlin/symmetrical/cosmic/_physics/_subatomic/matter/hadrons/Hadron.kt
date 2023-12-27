@@ -47,7 +47,7 @@ open class Hadron(
     }
 
     private fun radiate() : String {
-        val classId = matter.getClassId()
-        return classId+super.emit().radiate()
+        return matter.getClassId()+
+                super.emit().radiate()
     }
 }
