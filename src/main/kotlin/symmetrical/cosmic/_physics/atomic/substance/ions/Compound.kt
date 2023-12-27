@@ -39,14 +39,8 @@ open class Compound(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
-
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
-//    private fun radiate() : String {
-//        val (molecularId, remainder) = Strings.remainder(2, super.emit().radiate())
-//        return matterAntiMatter.getClassId()+remainder
-//    }
 }

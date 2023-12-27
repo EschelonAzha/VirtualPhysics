@@ -25,12 +25,10 @@ open class Dom(
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
+        remainder = children.absorb(remainder)
+        remainder = properties.absorb(remainder)
 
-        var (children,   childrenRemainder) = Absorber.materialize(remainder.radiate())
-        var (properties, propertiesRemainder) = Absorber.materialize(childrenRemainder)
-        this.children   = children as Molecular
-        this.properties = properties as DomProperties
-        return Photon(propertiesRemainder)
+        return remainder
     }
     fun append(dom:Dom) : Dom {
         children.add(dom)
