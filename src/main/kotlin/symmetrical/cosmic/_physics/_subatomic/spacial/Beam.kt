@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics._subatomic.spacial
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
+import kotlin.reflect.KClass
 
 
 open class Beam : IBeam {
@@ -13,11 +14,11 @@ open class Beam : IBeam {
         const val LAST      : Int = -1
     }
 
-    private var count      :Int = 0;
-    private lateinit var memoryBlock:Array<Any?>
-    private var expandMode :Int = Static.NORMAL
+    private var count                   :Int = 0;
+    private lateinit var memoryBlock    :Array<Any?>
+    private var expandMode              :Int = Static.NORMAL
 
-    private var capacity   :Int = 0
+    private var capacity                :Int = 0
     constructor(capacity:Int=1)  {
         memoryBlock     = createBlock(capacity)
         this.capacity   = capacity
@@ -86,6 +87,14 @@ open class Beam : IBeam {
     fun find(item:Any) : Int {
         for (i:Int in 0 until count) {
             if (get(i)==item) {
+                return i
+            }
+        }
+        return -1
+    }
+    fun find(kClass: KClass<*>) : Any? {
+        for (i:Int in 0 until count) {
+            if (get(i)!!::class==kClass) {
                 return i
             }
         }
