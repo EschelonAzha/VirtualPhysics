@@ -2,19 +2,20 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 class ColorCharge : IColorCharge {
     lateinit var atom     : Atom
     constructor()
 
     override fun blue() : String {
-        return atom.nucleons.getValueProton().blue() as String
+        return atom.nucleons.getProton(ValueProton::class).blue() as String
     }
     override fun currentColor() : Any? {
-        return atom.nucleons.getValueProton().currentColor()
+        return atom.nucleons.getProton(ValueProton::class).currentColor()
     }
     override fun green() : String {
-        return atom.nucleons.getValueProton().green() as String
+        return atom.nucleons.getProton(ValueProton::class).green() as String
     }
     override fun red() : Any {
         return ""
@@ -25,7 +26,7 @@ class ColorCharge : IColorCharge {
         return atom
     }
     override fun setGreen(green: Green) : Atom {
-        atom.nucleons.getValueProton().setGreen(green)
+        atom.nucleons.getProton(ValueProton::class).setGreen(green)
         return atom
     }
 }

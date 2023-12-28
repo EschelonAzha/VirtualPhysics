@@ -4,6 +4,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 
 open class QString(
@@ -34,7 +35,7 @@ open class QString(
         return matter.getClassId()
     }
     override fun red() : String {
-        return nucleons.getValueProton().red() as String
+        return nucleons.getProton(ValueProton::class).red() as String
     }
     fun setString(value:String) : QString {
 

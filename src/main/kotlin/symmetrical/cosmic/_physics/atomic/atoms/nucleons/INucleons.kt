@@ -4,6 +4,7 @@ package symmetrical.cosmic._physics.atomic.atoms.nucleons
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import kotlin.reflect.KClass
 
 interface INucleons {
 
@@ -14,8 +15,7 @@ interface INucleons {
     fun getClassId      ()                  : String
     fun getNeutron      (pos:Int)           : Neutron
     fun getNeutron      (purpose:String)    : Neutron
- //   fun getProton       (pos:Int)           : Proton
-    fun getValueProton  ()                  : Proton
+    fun getProton       (kClass: KClass<*>) : Proton
     fun setAtom         (atom: Atom)        : Atom
     fun setAtomicNumber (number:Int)        : Nucleons
 

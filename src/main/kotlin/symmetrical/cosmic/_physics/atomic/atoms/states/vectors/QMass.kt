@@ -5,6 +5,7 @@ import symmetrical.cosmic._physics._subatomic.spacial.IBeam
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 open class QMass(
     private val matter: IMatter = Matter(QMass::class, QMass::class),
@@ -22,7 +23,7 @@ open class QMass(
         return matter.getClassId()
     }
     override fun red() : IBeam {
-        return nucleons.getValueProton().red() as IBeam
+        return nucleons.getProton(ValueProton::class).red() as IBeam
     }
     fun setMass(value: IBeam) : QMass {
         setQuarkValue(value)

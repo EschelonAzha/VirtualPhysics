@@ -24,6 +24,7 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 
 open class Atom(
@@ -131,7 +132,7 @@ open class Atom(
         return orbitals.get(pos) as Electron
     }
     fun getFieldName() : String {
-        return getValueProton().getFieldName()
+        return getProton(ValueProton::class).getFieldName()
     }
     fun getProtons() : Protons {
         return nucleons.getProtons()
@@ -151,14 +152,14 @@ open class Atom(
         return this
     }
     fun setFieldName(name:String) : Atom {
-        getValueProton().setFieldName(name)
+        getProton(ValueProton::class).setFieldName(name)
         return this
     }
     override fun setQuarkMomentum(momentum: AngularMomentum) : Atom {
         return quarkValue.setQuarkMomentum(momentum)
     }
     override fun toString() : String {
-        var down: Down = nucleons.getValueProton().getDown()
+        var down: Down = nucleons.getProton(ValueProton::class).getDown()
         val value:Any? = down.getWavelength()
         return value.toString()
     }

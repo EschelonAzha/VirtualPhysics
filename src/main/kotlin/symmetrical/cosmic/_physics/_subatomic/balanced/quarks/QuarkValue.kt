@@ -9,6 +9,7 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 class QuarkValue(
     private val matter: IMatter = Matter(QuarkValue::class, QuarkValue::class),
@@ -28,17 +29,17 @@ class QuarkValue(
     }
 
     override fun quarkMomentum() : String {
-        val quark   = atom.nucleons.getValueProton().get(0) as Quark
+        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
         return quark.momentum()
     }
     override fun quarkSpin() : Boolean {
-        val quark   = atom.nucleons.getValueProton().get(0) as Quark
+        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
         return quark.spin()
     }
     override fun quarkValue() : Any? {
         val nucleons: Nucleons = atom.nucleons
         val protons : Protons = nucleons.getProtons()
-        val quark   = protons.getValueProton().get(0) as Quark
+        val quark   = protons.getProton(ValueProton::class).get(0) as Quark
         return quark.getWavelength()
     }
     override fun quarkValueStr() : String {
@@ -49,18 +50,18 @@ class QuarkValue(
         return atom
     }
     override fun setQuarkMomentum(momentum: AngularMomentum): Atom {
-        val quark   = atom.nucleons.getValueProton().get(0) as Quark
+        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
         quark.setAngularMomentum(momentum)
         return atom
     }
     override fun setQuarkSpin(spin: Spin) : Atom {
-        val quark   = atom.nucleons.getValueProton().get(0) as Quark
+        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
         quark.setSpin(spin)
         return atom
     }
     override fun setQuarkValue(value:Any?) : ZBoson {
         val zBoson = Quark.Args(value)
-        val quark   = atom.nucleons.getValueProton().get(0) as Quark
+        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
         return quark.z(zBoson)
     }
 }
