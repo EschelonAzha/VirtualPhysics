@@ -23,13 +23,6 @@ class Protons(
     )    init {
         add(ValueProton().setProtons(this))
     }
-//    object Static {
-//        const val VALUE_PROTON  : Int  = ParticleBeam.Static.LAST + 1
-//        const val LAST          : Int  = VALUE_PROTON + 1
-//    }
-    object Static {
-
-    }
 
 
     private lateinit var __nucleons   : Nucleons

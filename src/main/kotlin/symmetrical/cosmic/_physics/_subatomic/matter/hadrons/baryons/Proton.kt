@@ -91,12 +91,7 @@ open class Proton(
     fun getFieldName() : String {
         return getFieldNameQuark().wavelength() as String
     }
-    fun getQuarkValue() : Any? {
-        return getValueQuark().wavelength()
-    }
-    fun getValidatorQuark() : Up {
-        return get(QuarkType.VALIDATOR.value) as Up
-    }
+
     public fun getValue() : Any? {
         return getField().getValue()
     }
@@ -135,10 +130,6 @@ open class Proton(
 
         return zBoson  // this returns only the local changes
     }
-    fun isType(type: QuarkType) : Boolean {
-        val protonType = getTypeQuark().getWavelength().getField().toInt()
-        return protonType == type.value
-    }
 
     fun setFieldName(name:String) : Proton {
         getFieldNameQuark().setWavelength(name)
@@ -149,11 +140,6 @@ open class Proton(
         return this
     }
 
-//    fun setType(protonType: Protons.ProtonType) : Proton {
-//        val wavelength: QuantumField = getTypeQuark().getWavelength().getQuantumField()
-//        val changed = wavelength.setValue(protonType.value.toString())
-//        return this
-//    }
 
     private fun flow() : ParticleBeam {
         val electron: Electron = getElectron() ?: return ParticleBeam()
@@ -169,9 +155,7 @@ open class Proton(
     private fun getFieldNameQuark() : Quark {
         return (get(Static.FIELD_NAME) as Quark)
     }
-    private fun getTypeQuark() : Down {
-        return get(QuarkType.TYPE.value) as Down
-    }
+
     private fun getValueQuark() : Up {
         return get(QuarkType.VALUE.value) as Up
     }
