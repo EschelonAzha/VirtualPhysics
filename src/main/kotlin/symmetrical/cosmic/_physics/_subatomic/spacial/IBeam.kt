@@ -13,7 +13,7 @@ interface IBeam {
     fun getClassId      ()                              : String
     fun getCore         ()                              : Array<Any?>
     fun find            (item:Any)                      : Int
-    fun find            (kClass: KClass<*>)             : Any?
+    fun find            (kClass: KClass<*>)             : Int
     fun isEmpty         ()                              : Boolean
     fun isNotEmpty      ()                              : Boolean
     fun popLeft         ()                              : Any?

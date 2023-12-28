@@ -9,6 +9,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
+import kotlin.reflect.KClass
 
 open class ParticleBeam(
     private   val matterAntiMatter : IMatterAntiMatter  = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
@@ -62,6 +63,9 @@ open class ParticleBeam(
     }
     override fun find(item:Any) : Int {
         return beam.find(item)
+    }
+    override fun find(kClass: KClass<*>) : Int {
+        return beam.find(kClass)
     }
 
     override fun getClassId() : String {

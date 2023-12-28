@@ -92,7 +92,7 @@ open class Beam : IBeam {
         }
         return -1
     }
-    override fun find(kClass: KClass<*>) : Any? {
+    override fun find(kClass: KClass<*>) : Int {
         for (i:Int in 0 until count) {
             if (get(i)!!::class==kClass) {
                 return i

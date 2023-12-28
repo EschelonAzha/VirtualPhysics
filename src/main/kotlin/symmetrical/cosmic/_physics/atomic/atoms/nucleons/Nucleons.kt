@@ -10,6 +10,7 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralUpPion
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 
 class Nucleons(
@@ -73,8 +74,7 @@ class Nucleons(
         return nucleons
     }
     override fun wind(purpose:String) : Nucleons {
-
-        var pos = Protons.Static.VALUE_PROTON
+        val pos = protons.find(ValueProton::class)
 
         var (neutron, betaPlus) = (protons.removeAt(pos) as Proton).betaPlusDecay()
         var proton              = Baryon().Neutron().absorb(betaPlus)

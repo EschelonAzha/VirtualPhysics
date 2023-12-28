@@ -23,14 +23,14 @@ class Protons(
     )    init {
         add(ValueProton().setProtons(this))
     }
+//    object Static {
+//        const val VALUE_PROTON  : Int  = ParticleBeam.Static.LAST + 1
+//        const val LAST          : Int  = VALUE_PROTON + 1
+//    }
     object Static {
-        const val VALUE_PROTON  : Int  = ParticleBeam.Static.LAST + 1
-        const val LAST          : Int  = VALUE_PROTON + 1
+
     }
 
-//    enum class ProtonType(val value:Int) {
-//        CURRENT_VALUE(0),
-//    }
 
     private lateinit var __nucleons   : Nucleons
 
@@ -84,7 +84,7 @@ class Protons(
         return get(pos) as Proton
     }
     override fun getValueProton() : Proton {
-        return get(Static.VALUE_PROTON) as Proton
+        return get(find(ValueProton::class)) as Proton
     }
 
     override fun setAtomicNumber(number:Int) : Nucleons {
@@ -108,9 +108,6 @@ class Protons(
         return getAtom().valueChange(proton, valueQuark, zBoson)
     }
 
-    private fun getProton(kClass: KClass<*>) : Proton {
-        return find(kClass) as Proton
-    }
 
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
