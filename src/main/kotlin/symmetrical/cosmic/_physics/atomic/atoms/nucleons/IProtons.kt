@@ -7,10 +7,9 @@ interface IProtons {
     fun absorb          (photon: Photon)     : Photon
     fun addProton       (proton: Proton)    : Proton
     fun emit            ()                  : Photon
- //   fun find            (proton:Proton)     : Int
     fun getAtomicNumber ()                  : Int
     fun getClassId      ()                  : String
-    fun getProton       (pos:Int)           : Proton
+  //  fun getProton       (pos:Int)           : Proton
     fun getValueProton  ()                  : Proton
 
     fun setAtomicNumber (number:Int)        : Nucleons

@@ -14,7 +14,7 @@ interface INucleons {
     fun getClassId      ()                  : String
     fun getNeutron      (pos:Int)           : Neutron
     fun getNeutron      (purpose:String)    : Neutron
-    fun getProton       (pos:Int)           : Proton
+ //   fun getProton       (pos:Int)           : Proton
     fun getValueProton  ()                  : Proton
     fun setAtom         (atom: Atom)        : Atom
     fun setAtomicNumber (number:Int)        : Nucleons
