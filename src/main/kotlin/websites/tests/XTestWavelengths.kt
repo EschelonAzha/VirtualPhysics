@@ -40,14 +40,11 @@ object XTestWavelengths {
 
 
         var qInt   = QInt()
-   //     qInt.setGreen(CRLFTerminatedColor())
         qInt.setInt(2020)
         var red    = qInt.getElectronWavelength()
         var blue   = qInt.getElectronPhoton()
         var green  = qInt.getElectronSpin()
 
-        var fieldName = qInt.getFieldName()
-        qInt.setFieldName("some name")
 
         var neutron = qInt.getNeutron(Down.TEST_PROPERTY)
         neutron.setValue(null)

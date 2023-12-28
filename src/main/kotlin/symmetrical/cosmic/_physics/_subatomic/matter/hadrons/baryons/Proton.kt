@@ -21,7 +21,11 @@ open class Proton(
     constructor() : this(
         Matter(Proton::class, AntiProton::class),
     ) init {
-        this.Proton()
+        this.add(Down())  // value
+        this.add(Up())    // Format
+        this.add(Up())    // Constraints
+
+        shrink()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
         // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
         // -1/3 wavelength(Type Of Proton),        Spin(?),
@@ -29,8 +33,8 @@ open class Proton(
 
     enum class QuarkType(val value:Int) {
         VALUE(0),
-        VALIDATOR(1),
-        TYPE(2),
+        FORMAT(1),
+        CONSTRAINTS(2),
     }
 
     object Static {
@@ -81,16 +85,14 @@ open class Proton(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    fun getDown() : Down {
-        return get(QuarkType.TYPE.value) as Down
+    fun getConstraints() : Up {
+        return get(QuarkType.CONSTRAINTS.value) as Up
     }
 
     fun getField() : Field {
         return getValueQuark().getWavelength().getField()
     }
-    fun getFieldName() : String {
-        return getFieldNameQuark().wavelength() as String
-    }
+
 
     public fun getValue() : Any? {
         return getField().getValue()
@@ -131,10 +133,7 @@ open class Proton(
         return zBoson  // this returns only the local changes
     }
 
-    fun setFieldName(name:String) : Proton {
-        getFieldNameQuark().setWavelength(name)
-        return this
-    }
+
     fun setProtons(protons:Protons) : Proton {
         this.__protons = protons
         return this

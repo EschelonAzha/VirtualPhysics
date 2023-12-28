@@ -131,9 +131,9 @@ open class Atom(
     fun getElectron(pos:Int) : Electron {
         return orbitals.get(pos) as Electron
     }
-    fun getFieldName() : String {
-        return getProton(ValueProton::class).getFieldName()
-    }
+//    fun getFieldName() : String {
+//        return getProton(ValueProton::class).getFieldName()
+//    }
     fun getProtons() : Protons {
         return nucleons.getProtons()
     }
@@ -151,16 +151,16 @@ open class Atom(
         orbitals.setElectronSpin(spin)
         return this
     }
-    fun setFieldName(name:String) : Atom {
-        getProton(ValueProton::class).setFieldName(name)
-        return this
-    }
+//    fun setFieldName(name:String) : Atom {
+//        getProton(ValueProton::class).setFieldName(name)
+//        return this
+//    }
     override fun setQuarkMomentum(momentum: AngularMomentum) : Atom {
         return quarkValue.setQuarkMomentum(momentum)
     }
     override fun toString() : String {
-        var down: Down = nucleons.getProton(ValueProton::class).getDown()
-        val value:Any? = down.getWavelength()
+        var up: Up = nucleons.getProton(ValueProton::class).getConstraints()
+        val value:Any? = up.getWavelength()
         return value.toString()
     }
     open fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
