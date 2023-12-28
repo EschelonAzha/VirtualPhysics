@@ -1,5 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.spacial
 
+import kotlin.reflect.KClass
+
 interface IBeam {
     fun add             (obj:Any?)                      : Any?
     fun addAll          (beam: IBeam)                    : IBeam
@@ -10,6 +12,8 @@ interface IBeam {
     fun get             (pos:Int)                       : Any?
     fun getClassId      ()                              : String
     fun getCore         ()                              : Array<Any?>
+    fun find            (item:Any)                      : Int
+    fun find            (kClass: KClass<*>)             : Any?
     fun isEmpty         ()                              : Boolean
     fun isNotEmpty      ()                              : Boolean
     fun popLeft         ()                              : Any?

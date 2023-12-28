@@ -149,11 +149,11 @@ open class Proton(
         return this
     }
 
-    fun setType(protonType: Protons.ProtonType) : Proton {
-        val wavelength: QuantumField = getTypeQuark().getWavelength().getQuantumField()
-        val changed = wavelength.setValue(protonType.value.toString())
-        return this
-    }
+//    fun setType(protonType: Protons.ProtonType) : Proton {
+//        val wavelength: QuantumField = getTypeQuark().getWavelength().getQuantumField()
+//        val changed = wavelength.setValue(protonType.value.toString())
+//        return this
+//    }
 
     private fun flow() : ParticleBeam {
         val electron: Electron = getElectron() ?: return ParticleBeam()

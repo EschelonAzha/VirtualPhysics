@@ -60,6 +60,9 @@ open class ParticleBeam(
     fun find(particle:IParticle) : Int {
         return beam.find(particle)
     }
+    override fun find(item:Any) : Int {
+        return beam.find(item)
+    }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()

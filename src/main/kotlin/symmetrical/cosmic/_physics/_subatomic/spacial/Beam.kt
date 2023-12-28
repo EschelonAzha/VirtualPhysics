@@ -84,7 +84,7 @@ open class Beam : IBeam {
         memoryBlock = result
         return this
     }
-    fun find(item:Any) : Int {
+    override fun find(item:Any) : Int {
         for (i:Int in 0 until count) {
             if (get(i)==item) {
                 return i
@@ -92,7 +92,7 @@ open class Beam : IBeam {
         }
         return -1
     }
-    fun find(kClass: KClass<*>) : Any? {
+    override fun find(kClass: KClass<*>) : Any? {
         for (i:Int in 0 until count) {
             if (get(i)!!::class==kClass) {
                 return i

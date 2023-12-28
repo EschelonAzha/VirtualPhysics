@@ -10,6 +10,7 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import kotlin.reflect.KClass
 
 class Protons(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Protons::class, Protons::class),
@@ -27,9 +28,9 @@ class Protons(
         const val LAST          : Int  = VALUE_PROTON + 1
     }
 
-    enum class ProtonType(val value:Int) {
-        CURRENT_VALUE(0),
-    }
+//    enum class ProtonType(val value:Int) {
+//        CURRENT_VALUE(0),
+//    }
 
     private lateinit var __nucleons   : Nucleons
 
@@ -63,19 +64,6 @@ class Protons(
     }
 
 
-//
-//    override fun findProton(purpose:String) : Int {
-//        var i=0;
-//        while (i<size()) {
-//            val baryon = get(i) as Proton
-//            if ((baryon.get(2) as Quark).red() == purpose) {
-//                return i
-//            }
-//            i++
-//        }
-//        return -1
-//    }
-
     fun getAtom() : Atom {
         return __nucleons.getAtom()
     }
@@ -86,7 +74,7 @@ class Protons(
         return getCurrentValueProton().getValue()
     }
     fun getCurrentValueProton() : Proton {
-        return getProton(ProtonType.CURRENT_VALUE)
+        return find(ValueProton::class) as Proton
     }
     fun getElectron(proton: Proton) : Electron {
         val electronNum = beam.find(proton)
@@ -95,17 +83,6 @@ class Protons(
     override fun getProton(pos:Int) : Proton {
         return get(pos) as Proton
     }
-//    override fun getProton(purpose:String) : Proton {
-//        var pos = findProton(purpose)
-//
-//        if (pos!=-1)
-//            return getProton(pos) as Proton
-//
-//        var proton = Proton()
-//        proton.setPurpose(purpose)
-//        addProton(proton)
-//        return proton
-//    }
     override fun getValueProton() : Proton {
         return get(Static.VALUE_PROTON) as Proton
     }
@@ -131,8 +108,8 @@ class Protons(
         return getAtom().valueChange(proton, valueQuark, zBoson)
     }
 
-    private fun getProton(type: ProtonType) : Proton {
-        return get(type.value) as Proton
+    private fun getProton(kClass: KClass<*>) : Proton {
+        return find(kClass) as Proton
     }
 
     private fun radiate() : String {
