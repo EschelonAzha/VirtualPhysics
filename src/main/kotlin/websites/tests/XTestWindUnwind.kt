@@ -19,6 +19,8 @@ object XTestWindUnwind  {
         val atom: Atom = Atom()
         atom.setQuarkValue(200)
         atom.wind("")
+        atom.setQuarkValue(300)
+
 
 
         return
