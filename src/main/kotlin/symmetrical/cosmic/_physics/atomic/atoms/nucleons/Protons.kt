@@ -9,6 +9,7 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 class Protons(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Protons::class, Protons::class),
@@ -19,7 +20,7 @@ class Protons(
     constructor() : this(
         MatterAntiMatter(Protons::class, Protons::class),
     )    init {
-        add(Proton().setProtons(this))
+        add(ValueProton().setProtons(this))
     }
     object Static {
         const val VALUE_PROTON  : Int  = ParticleBeam.Static.LAST + 1

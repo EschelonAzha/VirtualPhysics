@@ -2,10 +2,8 @@ package symmetrical.cosmic.wormholes.messaging.login
 
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic.wormholes.messaging.Message
-import symmetrical.cosmic.dictionary.PasswordFld
-import symmetrical.cosmic.dictionary.UseridFld
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic.dictionary.atoms.PasswordFld
+import symmetrical.cosmic.dictionary.atoms.UseridFld
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 

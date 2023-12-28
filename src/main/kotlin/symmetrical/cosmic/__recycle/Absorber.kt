@@ -15,6 +15,7 @@ object Absorber {
         beam.addAll(Charges())
         beam.addAll(Compounds())
         beam.addAll(Cosmic())
+        beam.addAll(DictionaryGroup())
         beam.addAll(Encodings())
         beam.addAll(FundamentalProperties())
         beam.addAll(Hadrons())
