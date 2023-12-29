@@ -72,7 +72,7 @@ open class Atom(
         setAtom(this)
         return remainder
     }
-    open fun capacitanceChange(me: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+    open fun capacitanceChange(me: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return zBoson
     }
     fun capacitor_(atom: Atom) : Atom {
@@ -163,7 +163,7 @@ open class Atom(
         val value:Any? = up.getWavelength()
         return value.toString()
     }
-    open fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+    open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         valueQuark.getWavelength().setContent(zBoson.getNewValue())
         zBoson.setAccepted(true)
         return zBoson

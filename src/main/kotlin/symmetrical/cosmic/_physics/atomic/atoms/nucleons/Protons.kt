@@ -7,6 +7,7 @@ import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
@@ -44,7 +45,7 @@ class Protons(
         add(proton)
         return proton
     }
-    fun capacitanceChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+    fun capacitanceChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return getAtom().capacitanceChange(proton, valueQuark, zBoson)
     }
 
@@ -64,7 +65,7 @@ class Protons(
         return size()
     }
     fun getCurrentValue() : Any? {
-        return getCurrentValueProton().getContent()
+        return getCurrentValueProton().getValue().getWavelength().getField().getContent()
     }
     fun getCurrentValueProton() : Proton {
         return find(ValueProton::class) as Proton
@@ -97,7 +98,7 @@ class Protons(
         return nucleons
     }
 
-    fun valueChange(proton: Proton, valueQuark: Up, zBoson: ZBoson) : ZBoson {
+    fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return getAtom().valueChange(proton, valueQuark, zBoson)
     }
 

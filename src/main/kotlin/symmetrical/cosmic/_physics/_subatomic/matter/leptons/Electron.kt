@@ -3,6 +3,7 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
@@ -10,6 +11,7 @@ import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 
 class Electron(
     private val matter: IMatter = Matter(Electron::class, Positron::class),
@@ -86,9 +88,13 @@ class Electron(
 
         if (terminal == null)
             return ZBoson().i(proton.getField())
-        if (electron.getSpin().isPlus())
-            return  terminal.interact(ZBoson().i(proton.getField()))
-        else return terminal.capacitanceChange(ZBoson().i(proton.getField()).setOldValue(terminal.getContent()))
+        if (electron.getSpin().isPlus()) {
+            return terminal.interact(ZBoson().i(proton.getField()))
+        } else {
+            val quark: Down = terminal.getValue()
+            val field: Field = quark.getWavelength().getField()
+            return terminal.capacitanceChange(ZBoson().i(proton.getField()).setOldValue(field.getContent()))
+        }
 
     }
     private fun setElectron(electron:Electron) : Electron {

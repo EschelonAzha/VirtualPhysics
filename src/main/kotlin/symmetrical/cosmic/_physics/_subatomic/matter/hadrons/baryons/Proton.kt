@@ -86,9 +86,9 @@ open class Proton(
     fun getConstraints() : Up {
         return get(QuarkType.CONSTRAINTS.value) as Up
     }
-    public fun getContent() : Any? {
-        return getField().getContent()
-    }
+//    fun getContent() : Any? {
+//        return getField().getContent()
+//    }
 
     fun getField() : Field {
         return getValue().getWavelength().getField()
@@ -97,7 +97,9 @@ open class Proton(
     fun getFormat() : Up {
         return get(QuarkType.FORMAT.value) as Up
     }
-
+    fun getValue() : Down {
+        return get(QuarkType.VALUE.value) as Down
+    }
 
     fun ionicBond(proton: Proton) : Proton {
         val myElectron  = getElectron()
@@ -114,7 +116,7 @@ open class Proton(
             return zBoson
 
         val newValue  : Field                       = zBoson.getNewField()
-        val valueQuark: Up                          = getValue()
+        val valueQuark: Down                        = getValue()
         val wavelength: QuantumField                = valueQuark.getWavelength().getQuantumField()
         zBoson.setOldValue(wavelength.getContent())
 
@@ -154,13 +156,10 @@ open class Proton(
         return electron
     }
 
-    private fun getValue() : Up {
-        return get(QuarkType.VALUE.value) as Up
-    }
 
     private fun noChange(zBoson:ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
-        val valueQuark: Up                      = getValue()
+        val valueQuark: Down                    = getValue()
         val wavelength: QuantumField            = valueQuark.getWavelength().getQuantumField()
         if (!wavelength.isChange(newValue)) {
             zBoson.setAccepted(false)
@@ -172,7 +171,7 @@ open class Proton(
         return matter.getClassId()+
                 super.emit().radiate();
     }
-    private fun valueChange(valueQuark:Up, zBoson:ZBoson) : ZBoson {
+    private fun valueChange(valueQuark:Down, zBoson:ZBoson) : ZBoson {
         if (__protons != null)
             __protons!!.valueChange(this, valueQuark, zBoson)
         return zBoson
