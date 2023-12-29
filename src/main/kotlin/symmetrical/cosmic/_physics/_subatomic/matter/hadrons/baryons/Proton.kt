@@ -86,13 +86,6 @@ open class Proton(
     fun getConstraints() : Up {
         return get(QuarkType.CONSTRAINTS.value) as Up
     }
-//    fun getContent() : Any? {
-//        return getField().getContent()
-//    }
-
-    fun getField() : Field {
-        return getValue().getWavelength().getField()
-    }
 
     fun getFormat() : Up {
         return get(QuarkType.FORMAT.value) as Up

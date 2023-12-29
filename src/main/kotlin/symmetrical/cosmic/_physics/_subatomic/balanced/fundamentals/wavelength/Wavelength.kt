@@ -7,7 +7,10 @@ import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
-class Wavelength(private val field:QuantumField=QuantumField()) : IQuantumField by field {
+class Wavelength(
+    private val field:QuantumField=QuantumField()
+) :
+    IQuantumField by field {
 
     constructor() : this(
         QuantumField()
