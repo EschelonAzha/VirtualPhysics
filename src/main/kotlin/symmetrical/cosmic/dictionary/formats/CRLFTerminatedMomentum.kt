@@ -1,6 +1,7 @@
-package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum
+package symmetrical.cosmic.dictionary.formats
 
 import symmetrical.cosmic.__transpectors.transpectors.Strings
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 
 class CRLFTerminatedMomentum(

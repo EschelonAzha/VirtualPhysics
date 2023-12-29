@@ -2,7 +2,7 @@ package asymmetrical.wormholes.pulsar.plugins.http.director.tasks.responses
 
 import asymmetrical.wormholes.pulsar.plugins.http.director.tasks.FileServer
 import asymmetrical.wormholes.pulsar.plugins.http.wormhole.composites.Success
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
+import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark

@@ -1,6 +1,6 @@
 package symmetrical.cosmic._physics.atomic.atoms.states.strings.phases
 
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
+import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
