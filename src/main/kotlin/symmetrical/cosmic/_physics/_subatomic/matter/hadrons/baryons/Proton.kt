@@ -86,6 +86,9 @@ open class Proton(
     fun getConstraints() : Up {
         return get(QuarkType.CONSTRAINTS.value) as Up
     }
+    public fun getContent() : Any? {
+        return getField().getContent()
+    }
 
     fun getField() : Field {
         return getValueQuark().getWavelength().getField()
@@ -95,9 +98,7 @@ open class Proton(
         return get(QuarkType.FORMAT.value) as Up
     }
 
-    public fun getValue() : Any? {
-        return getField().getContent()
-    }
+
     fun ionicBond(proton: Proton) : Proton {
         val myElectron  = getElectron()
         val youElectron = proton.getElectron()

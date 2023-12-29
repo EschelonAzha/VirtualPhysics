@@ -88,7 +88,7 @@ class Electron(
             return ZBoson().i(proton.getField())
         if (electron.getSpin().isPlus())
             return  terminal.interact(ZBoson().i(proton.getField()))
-        else return terminal.capacitanceChange(ZBoson().i(proton.getField()).setOldValue(terminal.getValue()))
+        else return terminal.capacitanceChange(ZBoson().i(proton.getField()).setOldValue(terminal.getContent()))
 
     }
     private fun setElectron(electron:Electron) : Electron {
