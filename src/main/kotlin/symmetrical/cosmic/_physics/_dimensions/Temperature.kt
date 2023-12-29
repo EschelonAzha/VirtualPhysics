@@ -27,10 +27,10 @@ class Temperature  (private val field:QuantumField=QuantumField()) : IQuantumFie
         return field.getField()
     }
     fun setTemperature(value:Any?) : Any? {
-        return setValue(value)
+        return setContent(value)
     }
     fun temperature() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Temperature::class)

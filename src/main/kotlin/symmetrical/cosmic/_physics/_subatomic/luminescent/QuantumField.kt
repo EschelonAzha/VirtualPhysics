@@ -19,54 +19,54 @@ class QuantumField(
     constructor(value:Any?) : this(
         Field()
     ){
-        field.setValue(value)
+        field.setContent(value)
     }
 
     override fun absorb(photon: Photon) : Photon {
 
         var (type, leftover) = Strings.remainder(Field.Static.TYPE_LTH, photon.propagate().radiate())
         if (type == Field.Static.NULL) {
-            field.setValue(null)
+            field.setContent(null)
             return Photon(leftover)
         }
         if (type == Field.Static.BOOLEAN) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
-            field.setValue(value == "true")
+            var (content, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
+            field.setContent(content == "true")
             return Photon(remainder)
         }
         if (type == Field.Static.BYTE) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
-            field.setValue(value)
+            var (content, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
+            field.setContent(content)
             return Photon(remainder)
         }
         if (type == Field.Static.INT) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
-            field.setValue(value.toInt())
+            var (content, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
+            field.setContent(content.toInt())
             return Photon(remainder)
         }
         if (type == Field.Static.DOUBLE) {
-            var (value, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
-            field.setValue(value.toDouble())
+            var (content, remainder) = Photons.parse(Field.Static.NUMBERS_LTH, leftover)
+            field.setContent(content.toDouble())
             return Photon(remainder)
         }
         if (type == Field.Static.STRING1) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING1_LTH, leftover)
-            field.setValue(value)
+            var (content, remainder) = Photons.parse(Field.Static.STRING1_LTH, leftover)
+            field.setContent(content)
             return Photon(remainder)
         }
         if (type == Field.Static.STRING2) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING2_LTH, leftover)
-            field.setValue(value)
+            var (content, remainder) = Photons.parse(Field.Static.STRING2_LTH, leftover)
+            field.setContent(content)
             return Photon(remainder)
         }
         if (type == Field.Static.STRING3) {
-            var (value, remainder) = Photons.parse(Field.Static.STRING3_LTH, leftover)
-            field.setValue(value)
+            var (content, remainder) = Photons.parse(Field.Static.STRING3_LTH, leftover)
+            field.setContent(content)
             return Photon(remainder)
         }
         if (type == Field.Static.VECTOR) {
-            var (value, remainder) = Photons.parse(Field.Static.VECTOR_LTH, leftover)
-            field.setValue(value)
+            var (content, remainder) = Photons.parse(Field.Static.VECTOR_LTH, leftover)
+            field.setContent(content)
             return Photon(remainder)
         }
         println("!!!!!!!!!!!!!!!!!!!!!ERROR OCCURED IN QuantumPhotonicField:ABSORB!!!!!!!!!!!!!!!!!!!!!")
@@ -90,21 +90,21 @@ class QuantumField(
         if (field.getType() == Field.Static.NULL)
             return prefix
         if (field.getType() == Field.Static.BOOLEAN)
-            return prefix+ Photon.toPhoton1(field.getValue())
+            return prefix+ Photon.toPhoton1(field.getContent())
         if (field.getType() == Field.Static.BYTE)
-            return prefix+ Photon.toPhoton1(field.getValue())
+            return prefix+ Photon.toPhoton1(field.getContent())
         if (field.getType() == Field.Static.INT)
-            return prefix+ Photon.toPhoton1(field.getValue())
+            return prefix+ Photon.toPhoton1(field.getContent())
         if (field.getType() == Field.Static.DOUBLE)
-            return prefix+ Photon.toPhoton1(field.getValue())
+            return prefix+ Photon.toPhoton1(field.getContent())
         if (field.getType() == Field.Static.STRING1)
-            return prefix+ Photon.toPhoton1(field.getValue())
+            return prefix+ Photon.toPhoton1(field.getContent())
         if (field.getType() == Field.Static.STRING2)
-            return prefix+ Photon.toPhoton2(field.getValue())
+            return prefix+ Photon.toPhoton2(field.getContent())
         if (field.getType() == Field.Static.STRING3)
-            return prefix+ Photon.toPhoton3(field.getValue())
+            return prefix+ Photon.toPhoton3(field.getContent())
 
-        return prefix+ Photon.toPhoton3(field.getValue())
+        return prefix+ Photon.toPhoton3(field.getContent())
     }
 
     override fun toString() : String {

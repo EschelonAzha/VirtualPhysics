@@ -45,10 +45,10 @@ class Wavelength(private val field:QuantumField=QuantumField()) : IQuantumField 
         return Absorber.getClassId(Wavelength::class)
     }
     fun setWavelength(value:Any?) : Any? {
-        return setValue(value)
+        return setContent(value)
     }
     fun wavelength() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
 
 

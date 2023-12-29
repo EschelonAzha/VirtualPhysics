@@ -22,7 +22,7 @@ open class Particle(
     constructor() : this(
         MatterAntiMatter(Particle::class, AntiParticle::class),
     ) {
-        time.setValue(200)
+        time.setContent(200)
     }
 
 
@@ -78,7 +78,7 @@ open class Particle(
         return matterAntiMatter.getClassId()
     }
     override fun createUniqueId(): IParticle {
-        uniqueId.setValue(getClassId()+Keys.getUniqueId())
+        uniqueId.setContent(getClassId()+Keys.getUniqueId())
         return getSelf()
     }
 
@@ -117,7 +117,7 @@ open class Particle(
     }
 
     override fun getUniqueId(): String {
-        return uniqueId.getValue() as String
+        return uniqueId.getContent() as String
     }
 
     override fun getWavelength() : Wavelength {
@@ -133,7 +133,7 @@ open class Particle(
         return this
     }
     fun setUniqueId(id:String) : IParticle {
-        this.uniqueId.setValue(id)
+        this.uniqueId.setContent(id)
         return getSelf()
     }
 
@@ -151,7 +151,7 @@ open class Particle(
 
 
     override fun setWavelength(value:Any?) : IParticle {
-        this.getWavelength().setValue(value)
+        this.getWavelength().setContent(value)
         return this
     }
     override fun momentum() : String {
@@ -163,7 +163,7 @@ open class Particle(
         return getSpin().isPlus()
     }
     override fun wavelength() : Any? {
-        return getWavelength().getValue()
+        return getWavelength().getContent()
     }
     override fun wavelengthStr() : String {
         val result = wavelength() ?: return ""

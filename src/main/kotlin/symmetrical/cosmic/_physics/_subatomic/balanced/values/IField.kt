@@ -8,13 +8,13 @@ interface IField {
     fun asDouble()              : Double?
     fun asInt()                 : Int?
     fun asString()              : Boolean?
-
+    fun getContent()            : Any?
     fun getType()               : String
-    fun getValue()              : Any?
+
     fun isChange(value:Any?)    : Boolean
     fun isNull()                : Boolean
+    fun setContent(content:Any?): Any?
     fun setField(field:Field)   : Field
-    fun setValue(value:Any?)    : Any?
 
     fun toArray()               : Array<Any>
     fun toBoolean()             : Boolean

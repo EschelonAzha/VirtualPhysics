@@ -28,7 +28,7 @@ class Charge (private val field:QuantumField=QuantumField()) : IQuantumField by 
         return remainder
     }
     fun charge() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
     override fun emit() : Photon {
         return Photon(radiate())
@@ -39,8 +39,8 @@ class Charge (private val field:QuantumField=QuantumField()) : IQuantumField by 
     fun getField() : Field {
         return field.getField()
     }
-    fun setCharge(value:Any?) : Any? {
-        return setValue(value)
+    fun setCharge(content:Any?) : Any? {
+        return setContent(content)
     }
 
     private fun getLocalClassId() : String {

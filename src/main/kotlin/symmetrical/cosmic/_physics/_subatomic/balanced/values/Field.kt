@@ -21,12 +21,12 @@ class Field : IField {
         const val VECTOR_LTH  = 3
 
     }
-    private var type :String = "0"
-    private var value:Any?   = null
+    private var type   :String = "0"
+    private var content:Any?   = null
     constructor() {
     }
-    constructor(value:Any?) {
-        setValue(value)
+    constructor(content:Any?) {
+        setContent(content)
     }
     override fun asArray() : Array<Any> {
         return Converter(this).asArray()
@@ -49,25 +49,25 @@ class Field : IField {
     override fun getType() : String {
         return type
     }
-    override fun getValue() : Any? {
-        return value
+    override fun getContent() : Any? {
+        return content
     }
-    override fun isChange(value:Any?)    : Boolean {
-        return this.value != value
+    override fun isChange(content:Any?)    : Boolean {
+        return this.content != content
     }
     override fun isNull() : Boolean {
-        return value == null
+        return content == null
     }
     override fun setField(field:Field) : Field {
-        value = field.getValue()
-        type  = field.getType()
+        content = field.getContent()
+        type    = field.getType()
         return this
     }
-    override fun setValue(value:Any?) : Any? {
-        val previous = this.value
-        this.value = value
+    override fun setContent(content:Any?) : Any? {
+        val previous = this.content
+        this.content = content
 
-        type = getTypeStr(value)
+        type = getTypeStr(content)
         return previous
     }
     override fun toArray() : Array<Any> {

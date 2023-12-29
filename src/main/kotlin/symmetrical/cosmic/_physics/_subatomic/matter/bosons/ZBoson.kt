@@ -32,14 +32,14 @@ open class ZBoson{
         return this.newValue;
     }
     fun getNewValue() : Any? {
-        return getNewField().getValue()
+        return getNewField().getContent()
     }
 
     fun getOldField() : Field {
         return this.oldValue
     }
     fun getOldValue() : Any? {
-        return getOldField().getValue()
+        return getOldField().getContent()
     }
     fun isAccepted() : Boolean {
         return accepted
@@ -51,12 +51,12 @@ open class ZBoson{
         this.accepted = accepted
         return this
     }
-    fun setNewValue(value:Any?) : ZBoson {
-        this.newValue.setValue(value)
+    fun setNewValue(content:Any?) : ZBoson {
+        this.newValue.setContent(content)
         return this
     }
-    fun setOldValue(value:Any?) : ZBoson {
-        this.oldValue.setValue(value)
+    fun setOldValue(content:Any?) : ZBoson {
+        this.oldValue.setContent(content)
         return this
     }
     fun setReason(reason:String) : ZBoson {

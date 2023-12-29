@@ -96,7 +96,7 @@ open class Proton(
     }
 
     public fun getValue() : Any? {
-        return getField().getValue()
+        return getField().getContent()
     }
     fun ionicBond(proton: Proton) : Proton {
         val myElectron  = getElectron()
@@ -115,7 +115,7 @@ open class Proton(
         val newValue  : Field                       = zBoson.getNewField()
         val valueQuark: Up                          = getValueQuark()
         val wavelength: QuantumField                = valueQuark.getWavelength().getQuantumField()
-        zBoson.setOldValue(wavelength.getValue())
+        zBoson.setOldValue(wavelength.getContent())
 
         if (!noChange(zBoson).isAccepted())
             return zBoson // not accepted, nothing changed

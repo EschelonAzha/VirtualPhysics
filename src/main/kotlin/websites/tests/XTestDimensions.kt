@@ -15,10 +15,10 @@ object XTestDimensions  {
     private fun test() {
         val character:Byte = 7
         val field: Field = Field()
-        val changed = field.setValue(character)
+        val changed = field.setContent(character)
 
         val photonic = QuantumField()
-        val change2  = photonic.setValue(2)
+        val change2  = photonic.setContent(2)
 
         val emission = photonic.emit()
         val (clone, remainder) = Absorber.materialize(emission)

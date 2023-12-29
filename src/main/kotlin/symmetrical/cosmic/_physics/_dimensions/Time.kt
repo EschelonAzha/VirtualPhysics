@@ -23,11 +23,11 @@ class Time(private val field:QuantumField=QuantumField()) : IQuantumField by fie
     fun getField() : Field {
         return field.getField()
     }
-    fun setTime(value:Any?) : Any? {
-        return setValue(value)
+    fun setTime(content:Any?) : Any? {
+        return setContent(content)
     }
     fun time() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Time::class)

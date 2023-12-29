@@ -49,11 +49,11 @@ class Mass (private val field:QuantumField=QuantumField()) : IQuantumField by fi
     }
 
     fun mass() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
 
-    fun setMass(value:Any?) : Any? {
-        return setValue(value)
+    fun setMass(content:Any?) : Any? {
+        return setContent(content)
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Mass::class)

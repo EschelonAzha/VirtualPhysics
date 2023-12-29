@@ -38,11 +38,11 @@ open class AngularMomentum(private val field: QuantumField = QuantumField()) : I
     }
 
     fun momentum() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
 
-    fun setAngularMomentum(value:Any?) : Any? {
-        return setValue(value)
+    fun setAngularMomentum(content:Any?) : Any? {
+        return setContent(content)
     }
 
     open fun format(wavelength: QuantumField) : String {

@@ -12,6 +12,7 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
+import symmetrical.cosmic.dictionary.protons.ValueProton
 import symmetrical.dom.Dom
 import symmetrical.dom.properties.region.DomHeight
 
@@ -19,6 +20,7 @@ object XTestEmissions {
 
     @JvmStatic
     fun main(args: Array<String>) {
+        testQuarks()
         simpleEmissionTest()
         testDomEmissions()
 
@@ -61,6 +63,11 @@ object XTestEmissions {
 //        val clone = Replicator.createInstance(classId) as Emitter
 //        clone.absorb(remainder)
 
+    }
+
+    private fun testQuarks() {
+        val atom:Atom = Atom()
+        atom.getProton(ValueProton::class)
     }
 
     private fun testParticle() {

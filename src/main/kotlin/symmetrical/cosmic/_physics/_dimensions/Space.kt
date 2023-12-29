@@ -38,10 +38,10 @@ class Space (private val field: QuantumField = QuantumField()) : IQuantumField b
     }
     fun setSpace(particle:IParticle) : Any? {
         this.space = particle
-        return setValue(particle.createUniqueId().getUniqueId())
+        return setContent(particle.createUniqueId().getUniqueId())
     }
     fun space() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Space::class)

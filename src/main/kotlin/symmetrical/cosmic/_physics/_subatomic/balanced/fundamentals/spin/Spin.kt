@@ -54,20 +54,20 @@ class Spin(
         return field.toInt() < 0
     }
 
-    fun setSpin(value:Any?) : Any? {
-        return setValue(value)
+    fun setSpin(content:Any?) : Any? {
+        return setContent(content)
     }
 
     fun spin() : Any? {
-        return field.getValue()
+        return field.getContent()
     }
 
     fun spinPlus() : Spin {
-        field.setValue(Spin.Static.PLUS)
+        field.setContent(Spin.Static.PLUS)
         return this
     }
     fun spinMinus() : Spin {
-        field.setValue(Spin.Static.MINUS)
+        field.setContent(Spin.Static.MINUS)
         return this
     }
 
