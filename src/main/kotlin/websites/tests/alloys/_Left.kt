@@ -7,20 +7,20 @@ class _Left : Left {
     var derived = ArrayList<Substance>()
 
 
-    var _value:String = "Left"
+    var _content:String = "Left"
 
     override fun addDerived(substance:Substance) : Substance {
         //   this.derived.add(substance);
         return this;
     }
-    override fun getValue() : String {
-        return this._value;
+    override fun getContent() : String {
+        return this._content;
     }
-    override fun getLeftValue() : String {
-        return this._value
+    override fun getLeftContent() : String {
+        return this._content
     }
-    override fun setLeftValue(value:String) : Left {
-        this._value = value;
+    override fun setLeftContent(content:String) : Left {
+        this._content = content;
         return this
     }
     override fun start() : Unit {
