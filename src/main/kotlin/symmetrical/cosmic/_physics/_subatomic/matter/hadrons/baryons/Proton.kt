@@ -38,9 +38,7 @@ open class Proton(
     }
 
     object Static {
-        const val VALUE_QUARK   : Int = Baryon.Static.LAST + 1
-        const val FIELD_NAME    : Int = VALUE_QUARK        + 1
-        const val LAST          : Int = FIELD_NAME         + 1
+
     }
 
     private var __protons       : Protons? = null
@@ -150,9 +148,6 @@ open class Proton(
         electron.setProton(this)
 
         return electron
-    }
-    private fun getFieldNameQuark() : Quark {
-        return (get(Static.FIELD_NAME) as Quark)
     }
 
     private fun getValueQuark() : Up {
