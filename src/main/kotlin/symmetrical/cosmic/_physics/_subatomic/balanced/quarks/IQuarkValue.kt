@@ -7,7 +7,6 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 interface IQuarkValue {
 
-    fun quarkMomentum   ()                                  : String
     fun quarkSpin       ()                                  : Boolean
     fun quarkValue      ()                                  : Any?
     fun quarkValueStr   ()                                  : String

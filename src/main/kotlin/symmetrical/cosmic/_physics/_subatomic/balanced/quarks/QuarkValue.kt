@@ -28,10 +28,7 @@ class QuarkValue(
         return matter.getClassId()
     }
 
-    override fun quarkMomentum() : String {
-        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
-        return quark.momentum()
-    }
+
     override fun quarkSpin() : Boolean {
         val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
         return quark.spin()

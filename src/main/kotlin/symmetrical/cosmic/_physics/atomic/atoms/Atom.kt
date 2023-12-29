@@ -137,9 +137,9 @@ open class Atom(
     fun getProtons() : Protons {
         return nucleons.getProtons()
     }
-    override fun quarkMomentum() : String {
-        return quarkValue.quarkMomentum()
-    }
+//    override fun quarkMomentum() : String {
+//        return quarkValue.quarkMomentum()
+//    }
     final override fun setAtom(atom:Atom) : Atom {
         orbitals.setAtom(this)
         nucleons.setAtom(this)
