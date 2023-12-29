@@ -91,6 +91,9 @@ open class Proton(
         return getValueQuark().getWavelength().getField()
     }
 
+    fun getFormat() : Up {
+        return get(QuarkType.FORMAT.value) as Up
+    }
 
     public fun getValue() : Any? {
         return getField().getValue()
