@@ -6,7 +6,7 @@ import symmetrical.cosmic.__recycle.EntityId
 import symmetrical.cosmic.__transpectors.printable_characters.*
 import symmetrical.cosmic._physics._dimensions.time.Strobe
 import symmetrical.cosmic._physics._subatomic.balanced.Monad
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
+import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.matter.colors.manifestations.CRLFTerminatedColor
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.phases.CrLfTerminatedString
 import symmetrical.cosmic._physics.atomic.substance.metals.Metal
