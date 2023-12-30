@@ -5,6 +5,11 @@ import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuantumField
 import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
+import kotlin.reflect.KClass
 
 class Spin(
     private val field: QuantumField = QuantumField(Static.PLUS)
@@ -18,6 +23,31 @@ class Spin(
     object Static {
         const val PLUS :Int      = +1
         const val MINUS:Int      = -1
+    }
+
+    companion object {
+        fun isMinus(atom: Atom) : Any? {
+            return isMinus(atom.getProton(ValueProton::class))
+        }
+        fun isMinus(atom: Atom, kClass: KClass<*>) : Any? {
+            return isMinus(atom.getProton(kClass))
+        }
+        fun isMinus(proton: Proton) : Any? {
+            var quark  : Quark = proton.getValueQuark()
+            return quark.getSpin().spin()
+        }
+        fun isPlus(atom: Atom) : Any? {
+            return isPlus(atom.getProton(ValueProton::class))
+        }
+        fun isPlus(atom: Atom, kClass: KClass<*>) : Any? {
+            return isPlus(atom.getProton(kClass))
+        }
+        fun isPlus(proton: Proton) : Any? {
+            var quark  : Quark = proton.getValueQuark()
+            return quark.getSpin().spin()
+        }
+
+
     }
 
     fun i() : Spin {

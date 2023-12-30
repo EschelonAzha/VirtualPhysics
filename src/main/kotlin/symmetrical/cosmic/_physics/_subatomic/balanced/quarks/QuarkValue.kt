@@ -29,10 +29,10 @@ class QuarkValue(
     }
 
 
-    override fun quarkSpin() : Boolean {
-        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
-        return quark.spin()
-    }
+//    override fun quarkSpin() : Boolean {
+//        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
+//        return quark.spin()
+//    }
     override fun setAtom(atom: Atom) : Atom {
         this.atom = atom
         return atom
