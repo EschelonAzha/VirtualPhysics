@@ -6,6 +6,10 @@ import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
+import kotlin.reflect.KClass
 
 class Wavelength(
     private val field:QuantumField=QuantumField()
@@ -18,6 +22,34 @@ class Wavelength(
 
     fun i() : Wavelength {
         return this
+    }
+
+    companion object {
+        fun content(atom: Atom) : Any? {
+            val proton = atom.getProton(ValueProton::class)
+            var quark  : Quark = proton.getValue()
+            return quark.getWavelength().getField().getContent()
+        }
+        fun content(atom: Atom, kClass: KClass<*>) : Any? {
+            val proton = atom.getProton(kClass)
+            var quark  : Quark = proton.getValue()
+            return quark.getWavelength().getField().getContent()
+        }
+        fun field(atom: Atom) : Field {
+            val proton = atom.getProton(ValueProton::class)
+            var quark  : Quark = proton.getValue()
+            return quark.getWavelength().getField()
+        }
+        fun field(atom: Atom, kClass: KClass<*>) : Field {
+            val proton = atom.getProton(kClass)
+            var quark  : Quark = proton.getValue()
+            return quark.getWavelength().getField()
+        }
+        fun format(atom: Atom) : Field {  // XXXR:   NOT FINISHED
+            val proton = atom.getProton(ValueProton::class)
+            var quark  : Quark = proton.getFormat()
+            return quark.getWavelength().getField()
+        }
     }
 
     override fun absorb(photon: Photon) : Photon {

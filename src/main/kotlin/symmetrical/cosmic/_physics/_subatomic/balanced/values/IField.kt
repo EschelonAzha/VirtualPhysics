@@ -7,7 +7,7 @@ interface IField {
     fun asByte()                : Byte?
     fun asDouble()              : Double?
     fun asInt()                 : Int?
-    fun asString()              : Boolean?
+    fun asString()              : String?
     fun getContent()            : Any?
     fun getType()               : String
 

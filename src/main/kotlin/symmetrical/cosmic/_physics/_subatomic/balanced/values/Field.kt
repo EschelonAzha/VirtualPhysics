@@ -43,8 +43,8 @@ class Field : IField {
     override fun asInt() : Int? {
         return Converter(this).asInt()
     }
-    override fun asString() : Boolean? {
-        return Converter(this).asBoolean()
+    override fun asString() : String? {
+        return Converter(this).asString()
     }
     override fun getType() : String {
         return type

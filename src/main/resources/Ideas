@@ -9,6 +9,13 @@ Proton:
         AngularMomentum : Format
         Temperature
 
+    Format Quark:
+           Time            : Int
+           Space           : Ptr:Neutron
+           Wavelength      : Value
+           Spin            : Format, Yes/NO
+           AngularMomentum : Format
+           Temperature
 
     Constraints Quark:
         Time            :Int
