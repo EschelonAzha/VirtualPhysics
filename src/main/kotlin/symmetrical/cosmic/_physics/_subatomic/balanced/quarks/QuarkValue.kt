@@ -39,9 +39,6 @@ class QuarkValue(
         val quark   = protons.getProton(ValueProton::class).get(0) as Quark
         return quark.getWavelength()
     }
-//    override fun quarkValueStr() : String {
-//        return quarkValue().toString()
-//    }
     override fun setAtom(atom: Atom) : Atom {
         this.atom = atom
         return atom
