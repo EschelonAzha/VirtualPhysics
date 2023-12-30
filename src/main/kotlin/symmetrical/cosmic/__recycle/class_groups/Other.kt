@@ -7,7 +7,6 @@ import symmetrical.cosmic.__transpectors.printable_characters.*
 import symmetrical.cosmic._physics._dimensions.time.Strobe
 import symmetrical.cosmic._physics._subatomic.balanced.Monad
 import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
-import symmetrical.cosmic._physics._subatomic.matter.colors.manifestations.CRLFTerminatedColor
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.phases.CrLfTerminatedString
 import symmetrical.cosmic._physics.atomic.substance.metals.Metal
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
@@ -37,7 +36,7 @@ import symmetrical.dom.properties.style.DomStyle
 class Other : ClassGroup {
     constructor() {
 
-        add(EntityId(Base52.classId(), CRLFTerminatedColor::class))
+      //  add(EntityId(Base52.classId(), CRLFTerminatedColor::class))
         add(EntityId(Base52.classId(), CRLFTerminatedMomentum::class))
         add(EntityId(Base52.classId(), CrLfTerminatedString::class))
         add(EntityId(Base52.classId(), DeviceInput::class))

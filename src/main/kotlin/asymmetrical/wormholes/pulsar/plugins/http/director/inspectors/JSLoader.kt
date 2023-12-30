@@ -16,8 +16,8 @@ class JSLoader : HttpInspector {
         if (content.lowercase() != "get")
             return 0
         getPayload().add("")
-
-        val file  = Wavelength.field(path.get(0) as QString).toString()
+        val qString = path.get(0) as QString
+        val file  = Wavelength.field(qString).toString()
         if (file.endsWith(".js"))
             return 1
         return 0
