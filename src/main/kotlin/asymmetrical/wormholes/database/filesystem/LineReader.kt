@@ -1,5 +1,6 @@
 package asymmetrical.wormholes.database.filesystem
 
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
@@ -12,19 +13,9 @@ class LineReader : Compound {
     constructor(fileName: QString) {
         val proton: Proton = fileName.getProton(ValueProton::class)
         val quark : Quark  = proton.getValueQuark()
-        lines = Compound().materialize(File(momentum(quark)).readLines()) as Compound
+        lines = Compound().materialize(File(Wavelength.format(fileName)).readLines()) as Compound
     }
     fun getLines() : Compound {
         return lines
-    }
-
-    private fun momentum(quark:Quark) : String {
-        if (spin(quark))
-            return  quark.getAngularMomentum().run(quark.getWavelength().getField())
-        else return quark.getWavelength().toString()
-    }
-
-    private fun spin(quark:Quark) : Boolean {
-        return quark.getSpin().isPlus()
     }
 }
