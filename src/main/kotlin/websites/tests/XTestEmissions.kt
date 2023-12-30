@@ -6,6 +6,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
@@ -38,7 +39,7 @@ object XTestEmissions {
         testQString()
 
         val emitter = Atom()
-        emitter.setQuarkSpin(Spin())
+        Quark.value(emitter).setSpin(Spin())
         emitter.setQuarkValue(2022.22)
         emitter.setElectronSpin(Spin())
         emitter.setElectronValue(33.33)

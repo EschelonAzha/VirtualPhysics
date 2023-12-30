@@ -10,6 +10,10 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.dictionary.protons.ValueProton
+import kotlin.reflect.KClass
 
 
 open class Quark(
@@ -33,6 +37,19 @@ open class Quark(
     lateinit var gluon                  : Gluon
     protected lateinit var _parent                : Baryon
 
+    companion object {
+        fun value(atom: Atom) : Quark {
+            val proton = atom.getProton(ValueProton::class)
+            return value(proton)
+        }
+        fun value(atom: Atom, kClass: KClass<*>) : Quark {
+            val proton = atom.getProton(kClass)
+            return value(proton)
+        }
+        fun value(proton: Proton) : Quark {
+            return proton.getValueQuark()
+        }
+    }
     open fun i() : Quark {
         return this
     }

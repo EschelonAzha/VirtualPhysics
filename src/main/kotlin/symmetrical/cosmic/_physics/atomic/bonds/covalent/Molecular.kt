@@ -6,6 +6,7 @@ import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
@@ -61,14 +62,14 @@ open class Molecular(
     fun applyQuarkSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
-            atom.setQuarkSpin(Spin())
+            Quark.value(this).setSpin(spin)
         }
         return this
     }
     fun applyElectronSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
-            atom.setElectronSpin(Spin())
+            atom.setElectronSpin(spin)
         }
         return this
     }

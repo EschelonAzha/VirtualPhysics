@@ -10,6 +10,5 @@ interface IQuarkValue {
     fun getClassId      ()                                  : String
     fun setAtom         (atom: Atom)                        : Atom
     fun setQuarkMomentum(momentum: AngularMomentum)         : Atom
-    fun setQuarkSpin    (spin: Spin)                        : Atom
     fun setQuarkValue   (value:Any?)                        : ZBoson
 }

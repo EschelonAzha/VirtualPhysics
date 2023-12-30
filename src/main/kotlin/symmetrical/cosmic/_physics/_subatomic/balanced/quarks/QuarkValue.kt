@@ -37,11 +37,6 @@ class QuarkValue(
         quark.setAngularMomentum(momentum)
         return atom
     }
-    override fun setQuarkSpin(spin: Spin) : Atom {
-        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
-        quark.setSpin(spin)
-        return atom
-    }
     override fun setQuarkValue(value:Any?) : ZBoson {
         val zBoson = Quark.Args(value)
         val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark

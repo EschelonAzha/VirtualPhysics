@@ -5,6 +5,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 
 class CrLfTerminatedString(
     private val matter: IMatter = Matter(CrLfTerminatedString::class, CrLfTerminatedString::class),
@@ -15,12 +16,12 @@ class CrLfTerminatedString(
         Matter(CrLfTerminatedString::class, CrLfTerminatedString::class),
     ) {
         setQuarkMomentum(CRLFTerminatedMomentum())
-        setQuarkSpin(Spin())
+        Quark.value(this).setSpin(Spin())
     }
     constructor(value:String) : this() {
         setString(value)
         setQuarkMomentum(CRLFTerminatedMomentum())
-        setQuarkSpin(Spin())
+        Quark.value(this).setSpin(Spin())
     }
 
 
