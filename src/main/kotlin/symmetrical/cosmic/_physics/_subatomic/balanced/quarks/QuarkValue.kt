@@ -33,12 +33,12 @@ class QuarkValue(
         val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
         return quark.spin()
     }
-    override fun quarkValue() : Any? {
-        val nucleons: Nucleons = atom.nucleons
-        val protons : Protons = nucleons.getProtons()
-        val quark   = protons.getProton(ValueProton::class).get(0) as Quark
-        return quark.getWavelength()
-    }
+//    override fun quarkValue() : Any? {
+//        val nucleons: Nucleons = atom.nucleons
+//        val protons : Protons = nucleons.getProtons()
+//        val quark   = protons.getProton(ValueProton::class).get(0) as Quark
+//        return quark.getWavelength()
+//    }
     override fun setAtom(atom: Atom) : Atom {
         this.atom = atom
         return atom

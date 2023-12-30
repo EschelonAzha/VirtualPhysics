@@ -7,14 +7,15 @@ import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 import asymmetrical.wormholes.pulsar.plugins.http.writers.SpinWriter
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
 open class FileServer : HttpTask {
 
     constructor(outlet: IOutlet) : super(outlet) {
     }
     fun loadFile(fileName: QString) : Compound {
-        val readFileName : String   = fileName.quarkValue().toString()
-        val filePath     : String   = Config.getWebRoot().quarkValue().toString()+"/$readFileName"
+        val readFileName : String   = fileName.getProton(ValueProton::class).getValue().wavelength().toString()
+        val filePath     : String   = Config.getWebRoot().getProton(ValueProton::class).getValue().wavelength().toString()+"/$readFileName"
         val lines        : Compound = LineReader(QString(filePath)).getLines()
 
         return lines

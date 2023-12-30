@@ -9,6 +9,7 @@ import asymmetrical.wormholes.pulsar.plugins.http.wormhole.composites.WebSocketS
 import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 import asymmetrical.wormholes.pulsar.plugins.http.writers.SpinWriter
 import symmetrical.cosmic._physics.atomic.substance.ions.Compound
+import symmetrical.cosmic.dictionary.protons.ValueProton
 import java.security.MessageDigest
 import java.util.*
 
@@ -34,7 +35,8 @@ class UpgradeWebSocket : FileServer {
         return Base64.getEncoder().encodeToString(hashDigest)
     }
     private fun webSocketUpgrade() : Boolean {
-        var response: Compound = WebSocketSwitchProtocol(generateWebSocketAcceptKey(key.getValue()!!.quarkValue().toString()))
+        var response: Compound = WebSocketSwitchProtocol(generateWebSocketAcceptKey(key.getValue()!!.getProton(
+            ValueProton::class).getValue().wavelength().toString()))
         SpinWriter(outlet).write(response)
         outlet.flush()
 

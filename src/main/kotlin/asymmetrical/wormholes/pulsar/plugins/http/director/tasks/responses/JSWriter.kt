@@ -15,7 +15,7 @@ class JSWriter : FileServer {
     constructor(outlet: IOutlet) : super(outlet) {
     }
     private fun runx() : Boolean {
-        val filePath:String = (path.get(0) as QString).quarkValue().toString()
+        val filePath:String = (path.get(0) as QString).getProton(ValueProton::class).getValue().wavelength().toString()
         val lines: Compound = loadFile(QString(filePath))
         lines.applyQuarkMomentum(CRLFTerminatedMomentum())
         lines.applyQuarkSpin(Spin())
