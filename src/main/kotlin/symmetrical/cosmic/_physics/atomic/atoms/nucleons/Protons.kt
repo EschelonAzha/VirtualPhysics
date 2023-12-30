@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics.atomic.atoms.nucleons
 
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -65,7 +66,7 @@ class Protons(
         return size()
     }
     fun getCurrentValue() : Any? {
-        return getCurrentValueProton().getValueQuark().getWavelength().getField().getContent()
+        return Wavelength.content(getCurrentValueProton())
     }
     fun getCurrentValueProton() : Proton {
         return find(ValueProton::class) as Proton
@@ -77,9 +78,6 @@ class Protons(
     override fun getProton(kClass:KClass<*>) : Proton {
         return get(find(kClass)) as Proton
     }
-//    override fun getValueProton() : Proton {
-//        return get(find(ValueProton::class)) as Proton
-//    }
 
     override fun setAtomicNumber(number:Int) : Nucleons {
         var i=size()

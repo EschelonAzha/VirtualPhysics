@@ -27,12 +27,12 @@ class Wavelength(
 
     companion object {
         fun content(atom: Atom) : Any? {
-            val proton = atom.getProton(ValueProton::class)
-            var quark  : Quark = proton.getValueQuark()
-            return quark.getWavelength().getField().getContent()
+            return content(atom.getProton(ValueProton::class))
         }
         fun content(atom: Atom, kClass: KClass<*>) : Any? {
-            val proton = atom.getProton(kClass)
+            return content(atom.getProton(kClass))
+        }
+        fun content(proton:Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
