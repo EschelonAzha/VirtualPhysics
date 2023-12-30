@@ -1,6 +1,5 @@
 Usable Properties:
-
-Proton:
+Atom:
     Value Quark:
         Time            : Int
         Space           : Ptr:Neutron
@@ -8,10 +7,18 @@ Proton:
         Spin            : Format, Yes/NO
         AngularMomentum : Format
         Temperature
+Proton:
+    Value Quark:
+        Time            : Int
+        Space           : Ptr:Neutron
+        Wavelength      : Pattern (MM/DD/YY, YYYYMMDD, $, etc)
+        Spin            : Format, Yes/NO
+        AngularMomentum : Format
+        Temperature
 
     Format Quark:
            Time            : Int
-           Space           : Ptr:Neutron
+           Space           : Ptr:ValueQuark
            Wavelength      : Value
            Spin            : Format, Yes/NO
            AngularMomentum : Format
@@ -19,7 +26,7 @@ Proton:
 
     Constraints Quark:
         Time            :Int
-        Space           :Ptr->?
+        Space           :Ptr
         Wavelength      :Value
         Spin            :Constraints yes/no
         AngularMomentum :Constaint Validation
