@@ -154,11 +154,6 @@ open class Particle(
         this.getWavelength().setContent(value)
         return this
     }
-    override fun momentum() : String {
-        if (spin())
-            return getAngularMomentum().format(getWavelength().getQuantumField())
-        else return getWavelength().toString()
-    }
     override fun spin() : Boolean {
         return getSpin().isPlus()
     }

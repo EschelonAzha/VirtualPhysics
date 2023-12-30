@@ -30,7 +30,6 @@ interface IParticle {
     fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle
     fun setSpin(spin: Spin) : IParticle
     fun setWavelength(value:Any?) : IParticle
-    fun momentum() : String
     fun spin() : Boolean
     fun wavelength() : Any?
     fun wavelengthStr() : String
