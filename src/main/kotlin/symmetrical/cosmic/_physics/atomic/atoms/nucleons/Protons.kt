@@ -65,7 +65,7 @@ class Protons(
         return size()
     }
     fun getCurrentValue() : Any? {
-        return getCurrentValueProton().getValue().getWavelength().getField().getContent()
+        return getCurrentValueProton().getValueQuark().getWavelength().getField().getContent()
     }
     fun getCurrentValueProton() : Proton {
         return find(ValueProton::class) as Proton

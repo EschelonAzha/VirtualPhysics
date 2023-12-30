@@ -11,7 +11,7 @@ class SpinWriter : FundamentalPropertyWriter {
 
     override fun write(atom: Atom) : SpinWriter {
         val proton = atom.getProton(ValueProton::class)
-        val quark = proton.getValue() as Quark
+        val quark = proton.getValueQuark() as Quark
         outlet.write(momentum(quark))
         return this;
     }

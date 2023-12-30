@@ -59,7 +59,7 @@ open class Proton(
     }
     fun capacitanceChange(zBoson:ZBoson) : ZBoson {
         if (__protons != null)
-            __protons!!.capacitanceChange(this, getValue(), zBoson)
+            __protons!!.capacitanceChange(this, getValueQuark(), zBoson)
 
         return zBoson
     }
@@ -83,14 +83,14 @@ open class Proton(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    fun getConstraints() : Up {
+    fun getConstraintsQuark() : Up {
         return get(QuarkType.CONSTRAINTS.value) as Up
     }
 
-    fun getFormat() : Up {
+    fun getFormatQuark() : Up {
         return get(QuarkType.FORMAT.value) as Up
     }
-    fun getValue() : Down {
+    fun getValueQuark() : Down {
         return get(QuarkType.VALUE.value) as Down
     }
 
@@ -109,7 +109,7 @@ open class Proton(
             return zBoson
 
         val newValue  : Field                       = zBoson.getNewField()
-        val valueQuark: Down                        = getValue()
+        val valueQuark: Down                        = getValueQuark()
         val wavelength: QuantumField                = valueQuark.getWavelength().getQuantumField()
         zBoson.setOldValue(wavelength.getContent())
 
@@ -152,7 +152,7 @@ open class Proton(
 
     private fun noChange(zBoson:ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
-        val valueQuark: Down                    = getValue()
+        val valueQuark: Down                    = getValueQuark()
         val wavelength: QuantumField            = valueQuark.getWavelength().getQuantumField()
         if (!wavelength.isChange(newValue)) {
             zBoson.setAccepted(false)

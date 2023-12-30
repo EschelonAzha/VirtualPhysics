@@ -1,6 +1,7 @@
 package asymmetrical.wormholes.pulsar.plugins.http.director.inspectors
 
 import asymmetrical.wormholes.pulsar.plugins.http.HttpInspector
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic.dictionary.protons.ValueProton
@@ -11,9 +12,7 @@ class HomePage : HttpInspector {
     }
 
     override fun inspect() : Int {
-        val proton : Proton = method.getProton(ValueProton::class)
-        val quark  : Quark  = proton.getValue()
-        val content: String = quark.wavelength().toString()
+        val content: String = Wavelength.field(method).toString()
         if (content.lowercase() != "get")
             return 0
         getPayload().add("")

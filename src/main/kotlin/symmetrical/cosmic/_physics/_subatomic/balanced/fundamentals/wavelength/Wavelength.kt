@@ -6,6 +6,7 @@ import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
@@ -27,27 +28,27 @@ class Wavelength(
     companion object {
         fun content(atom: Atom) : Any? {
             val proton = atom.getProton(ValueProton::class)
-            var quark  : Quark = proton.getValue()
+            var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
         fun content(atom: Atom, kClass: KClass<*>) : Any? {
             val proton = atom.getProton(kClass)
-            var quark  : Quark = proton.getValue()
+            var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
         fun field(atom: Atom) : Field {
-            val proton = atom.getProton(ValueProton::class)
-            var quark  : Quark = proton.getValue()
-            return quark.getWavelength().getField()
+            return field(atom.getProton(ValueProton::class))
         }
         fun field(atom: Atom, kClass: KClass<*>) : Field {
-            val proton = atom.getProton(kClass)
-            var quark  : Quark = proton.getValue()
+            return field(atom.getProton(kClass))
+        }
+        fun field(proton: Proton) : Field {
+            var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }
         fun format(atom: Atom) : Field {  // XXXR:   NOT FINISHED
             val proton = atom.getProton(ValueProton::class)
-            var quark  : Quark = proton.getFormat()
+            var quark  : Quark = proton.getFormatQuark()
             return quark.getWavelength().getField()
         }
     }

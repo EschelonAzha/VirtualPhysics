@@ -3,6 +3,7 @@ package symmetrical.cosmic._physics._subatomic.matter.leptons
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -87,13 +88,12 @@ class Electron(
         val terminal: Proton? = electron!!.proton
 
         if (terminal == null)
-            return ZBoson().i(proton.getValue().getWavelength().getField())
+            return ZBoson().i(Wavelength.field(proton))
         if (electron.getSpin().isPlus()) {
-            return terminal.interact(ZBoson().i(proton.getValue().getWavelength().getField()))
+            return terminal.interact(ZBoson().i(Wavelength.field(proton)))
         } else {
-            val quark: Down = terminal.getValue()
-            val field: Field = quark.getWavelength().getField()
-            return terminal.capacitanceChange(ZBoson().i(proton.getValue().getWavelength().getField()).setOldValue(field.getContent()))
+            val field = Wavelength.field(terminal)
+            return terminal.capacitanceChange(ZBoson().i(Wavelength.field(proton)).setOldValue(field.getContent()))
         }
 
     }

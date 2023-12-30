@@ -153,7 +153,7 @@ open class Atom(
         return quarkValue.setQuarkMomentum(momentum)
     }
     override fun toString() : String {
-        var up: Up = nucleons.getProton(ValueProton::class).getConstraints()
+        var up: Up = nucleons.getProton(ValueProton::class).getConstraintsQuark()
         val value:Any? = up.getWavelength()
         return value.toString()
     }
