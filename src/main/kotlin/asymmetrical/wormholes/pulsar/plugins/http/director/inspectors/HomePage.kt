@@ -8,7 +8,7 @@ class HomePage : HttpInspector {
     }
 
     override fun inspect() : Int {
-        if (method.quarkValueStr().lowercase() != "get")
+        if (method.quarkValue().toString().lowercase() != "get")
             return 0
         getPayload().add("")
         if (path.isEmpty())

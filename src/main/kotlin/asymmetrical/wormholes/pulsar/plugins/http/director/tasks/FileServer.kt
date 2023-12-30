@@ -13,8 +13,8 @@ open class FileServer : HttpTask {
     constructor(outlet: IOutlet) : super(outlet) {
     }
     fun loadFile(fileName: QString) : Compound {
-        val readFileName : String   = fileName.quarkValueStr()
-        val filePath     : String   = Config.getWebRoot().quarkValueStr()+"/$readFileName"
+        val readFileName : String   = fileName.quarkValue().toString()
+        val filePath     : String   = Config.getWebRoot().quarkValue().toString()+"/$readFileName"
         val lines        : Compound = LineReader(QString(filePath)).getLines()
 
         return lines

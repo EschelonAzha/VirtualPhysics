@@ -2,7 +2,7 @@ package asymmetrical.wormholes.pulsar.plugins.http.director.tasks.responses
 
 import asymmetrical.wormholes.pulsar.plugins.http.director.tasks.FileServer
 import asymmetrical.wormholes.pulsar.plugins.http.wormhole.composites.Success
-import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.CRLFTerminatedMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -15,7 +15,7 @@ class JSWriter : FileServer {
     constructor(outlet: IOutlet) : super(outlet) {
     }
     private fun runx() : Boolean {
-        val filePath:String = (path.get(0) as QString).quarkValueStr()
+        val filePath:String = (path.get(0) as QString).quarkValue().toString()
         val lines: Compound = loadFile(QString(filePath))
         lines.applyQuarkMomentum(CRLFTerminatedMomentum())
         lines.applyQuarkSpin(Spin())

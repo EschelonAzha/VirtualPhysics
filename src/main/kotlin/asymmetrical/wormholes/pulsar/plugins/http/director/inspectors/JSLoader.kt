@@ -8,10 +8,10 @@ class JSLoader : HttpInspector {
     constructor() : super() {
     }
     override fun inspect() : Int {
-        if (method.quarkValueStr().lowercase() != "get")
+        if (method.quarkValue().toString().lowercase() != "get")
             return 0
         getPayload().add("")
-        val file = (path.get(0) as QString).quarkValueStr()
+        val file = (path.get(0) as QString).quarkValue().toString()
 
         if (file.endsWith(".js"))
             return 1

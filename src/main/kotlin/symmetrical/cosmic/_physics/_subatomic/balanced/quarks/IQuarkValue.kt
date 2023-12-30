@@ -9,7 +9,7 @@ interface IQuarkValue {
 
     fun quarkSpin       ()                                  : Boolean
     fun quarkValue      ()                                  : Any?
-    fun quarkValueStr   ()                                  : String
+ //   fun quarkValueStr   ()                                  : String
     fun getClassId      ()                                  : String
     fun setAtom         (atom: Atom)                        : Atom
     fun setQuarkMomentum(momentum: AngularMomentum)         : Atom

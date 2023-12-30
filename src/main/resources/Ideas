@@ -1,4 +1,27 @@
+Usable Properties:
 
+Proton:
+    Value Quark:
+        Time            : Int
+        Space           : Ptr:Neutron
+        Wavelength      : Value
+        Spin            : Format, Yes/NO
+        AngularMomentum : Format
+        Temperature
+
+
+    Constraints Quark:
+        Time            :Int
+        Space           :Ptr->?
+        Wavelength      :Value
+        Spin            :Constraints yes/no
+        AngularMomentum :Constaint Validation
+        Temperature
+
+
+
+
+Proton:
 Down(Value)
 UP  (Format)
 UP  (Constraints)  Red(Apply Constraints)

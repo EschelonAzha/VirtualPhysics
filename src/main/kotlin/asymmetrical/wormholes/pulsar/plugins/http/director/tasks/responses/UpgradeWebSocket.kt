@@ -34,7 +34,7 @@ class UpgradeWebSocket : FileServer {
         return Base64.getEncoder().encodeToString(hashDigest)
     }
     private fun webSocketUpgrade() : Boolean {
-        var response: Compound = WebSocketSwitchProtocol(generateWebSocketAcceptKey(key.getValue()!!.quarkValueStr()))
+        var response: Compound = WebSocketSwitchProtocol(generateWebSocketAcceptKey(key.getValue()!!.quarkValue().toString()))
         SpinWriter(outlet).write(response)
         outlet.flush()
 

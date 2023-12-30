@@ -14,10 +14,10 @@ class WebSocketUpgrade : HttpInspector {
     constructor() : super() {
     }
     override fun inspect() : Int {
-        if (method.quarkValueStr().lowercase() != "get")
+        if (method.quarkValue().toString().lowercase() != "get")
             return 0
         getPayload().add("")
-        val file = (path.get(0) as QString).quarkValueStr()
+        val file = (path.get(0) as QString).quarkValue().toString()
         if (!(file.endsWith("wormhole")))
             return 0
 
@@ -29,7 +29,7 @@ class WebSocketUpgrade : HttpInspector {
         return message as HttpMessage
     }
     private fun getLowerCase(value: KeyValue) : String {
-        return value.getValue()!!.quarkValueStr().lowercase()
+        return value.getValue()!!.quarkValue().toString().lowercase()
     }
     private fun isWebSocketUpgrade() : Boolean {
         val upgrade         : Upgrade = getHttpMessage().getUpgrade()
