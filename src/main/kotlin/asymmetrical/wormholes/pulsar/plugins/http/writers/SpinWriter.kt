@@ -18,7 +18,7 @@ class SpinWriter : FundamentalPropertyWriter {
 
     private fun momentum(quark:Quark) : String {
         if (spin(quark))
-            return quark.getAngularMomentum().format(quark.getWavelength().getQuantumField())
+            return quark.getAngularMomentum().run(quark.getWavelength().getField())
         else return quark.getWavelength().toString()
     }
 

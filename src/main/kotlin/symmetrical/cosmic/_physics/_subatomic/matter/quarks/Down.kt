@@ -7,6 +7,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 
 
 class Down(
@@ -18,7 +19,9 @@ class Down(
         Matter(Down::class, AntiDown::class),
     )
     init {
-
+    }
+    constructor(baryon: Baryon) : this() {
+        this._parent = baryon
     }
     companion object {
         const val VALUE            = "VALUE"

@@ -21,11 +21,7 @@ open class Proton(
     constructor() : this(
         Matter(Proton::class, AntiProton::class),
     ) init {
-        this.add(Down())  // value
-        this.add(Up())    // Format
-        this.add(Up())    // Constraints
-
-        shrink()
+        this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
         // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
         // -1/3 wavelength(Type Of Proton),        Spin(?),

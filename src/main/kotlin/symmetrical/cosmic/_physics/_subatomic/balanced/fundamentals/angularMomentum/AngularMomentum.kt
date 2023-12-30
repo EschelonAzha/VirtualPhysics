@@ -45,7 +45,7 @@ open class AngularMomentum(private val field: QuantumField = QuantumField()) : I
         return setContent(content)
     }
 
-    open fun format(wavelength: QuantumField) : String {
+    open fun run(wavelength: Field) : String {
         return wavelength.toString()
     }
 

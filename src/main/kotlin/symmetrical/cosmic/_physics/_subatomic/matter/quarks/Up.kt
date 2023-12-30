@@ -7,6 +7,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 
 class Up(
     private val matter: IMatter = Matter(Up::class, AntiUp::class),
@@ -18,7 +19,9 @@ class Up(
     )
     init {
     }
-
+    constructor(baryon: Baryon) : this() {
+        this._parent = baryon
+    }
     override fun i() : Up {
         super.i()
         return this

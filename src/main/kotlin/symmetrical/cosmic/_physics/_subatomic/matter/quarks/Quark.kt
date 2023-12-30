@@ -9,6 +9,7 @@ import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 
 
 open class Quark(
@@ -22,10 +23,15 @@ open class Quark(
     ) {
         this.gluon         = Red_AntiRed()
     }
+    constructor(baryon: Baryon) : this() {
+        this._parent = baryon
+    }
+
     init {
     }
 
     lateinit var gluon                  : Gluon
+    protected lateinit var _parent                : Baryon
 
     open fun i() : Quark {
         return this

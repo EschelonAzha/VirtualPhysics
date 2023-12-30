@@ -86,16 +86,17 @@ open class Baryon(
         return (this.get(1) as Quark) is Up
     }
     fun Neutron() : Baryon {
-        this.add(Up())    // value
-        this.add(Down())  // When down Points to Proton
-        this.add(Down())  // type
+        this.add(Up(this))    // value
+        this.add(Down(this))  // When down Points to Proton
+        this.add(Down(this))  // type
         shrink()
         return this
     }
     fun Proton() : Baryon {
-        this.add(Up())    // value
-        this.add(Up())    // When Up Points to Neutron
-        this.add(Down())  // type
+        this.add(Down(this))  // type
+        this.add(Up(this))    // value
+        this.add(Up(this))    // When Up Points to Neutron
+
         shrink()
         return this
     }

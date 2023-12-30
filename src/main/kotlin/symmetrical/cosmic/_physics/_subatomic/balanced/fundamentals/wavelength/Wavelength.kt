@@ -46,10 +46,10 @@ class Wavelength(
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }
-        fun format(atom: Atom) : Field {  // XXXR:   NOT FINISHED
+        fun format(atom: Atom) : String {
             val proton = atom.getProton(ValueProton::class)
-            var quark  : Quark = proton.getFormatQuark()
-            return quark.getWavelength().getField()
+            var quark  : Quark = proton.getValueQuark()
+            return quark.getAngularMomentum().run(field(atom))
         }
     }
 

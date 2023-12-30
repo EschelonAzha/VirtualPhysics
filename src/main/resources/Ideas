@@ -12,7 +12,7 @@ Proton:
         Time            : Int
         Space           : Ptr:Neutron
         Wavelength      : Pattern (MM/DD/YY, YYYYMMDD, $, etc)
-        Spin            : Format, Yes/NO
+        Spin            : Format
         AngularMomentum : Format
         Temperature
 
