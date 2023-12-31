@@ -2,6 +2,8 @@ package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._dimensions.Mass
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -44,7 +46,12 @@ class Wavelength(
         }
         fun field(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
-            return quark.getWavelength().getField()
+            val field  : Field = quark.getWavelength().getField()
+            if (Spin.isPlus(quark)) {
+                return AngularMomentum.run(proton)
+            } else {
+                return field
+            }
         }
         fun format(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
