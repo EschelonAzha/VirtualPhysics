@@ -23,9 +23,6 @@ open class QMass(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun red() : IBeam {
-        return nucleons.getProton(ValueProton::class).red() as IBeam
-    }
     fun setMass(value: IBeam) : QMass {
         Quark.value(this).setWavelength(value)
         return this

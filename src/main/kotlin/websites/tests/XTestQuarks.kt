@@ -35,27 +35,27 @@ object XTestQuarks {
 
         qDouble.setDouble(22.3)
 
-        var result = qDouble.blue()
+  //      var result = qDouble.blue()
 
         var qString = QString()
         qString.setString("abc")
 
-        var redString   = qString.red()
-        var blueString  = qString.blue()
-        var greenString = qString.green()
-        blueString = qString.blue()
+   //     var redString   = qString.red()
+   //     var blueString  = qString.blue()
+   //     var greenString = qString.green()
+   //     blueString = qString.blue()
 
 
         var qInt   = QInt()
         qInt.setInt(2020)
-        var red    = qInt.red()
-        var blue   = qInt.blue()
-        var green  = qInt.green()
+//        var red    = qInt.red()
+//        var blue   = qInt.blue()
+//        var green  = qInt.green()
 
 
-        blue    = qInt.blue()
-        red     = qInt.red()
-        green   = qInt.green()
+//        blue    = qInt.blue()
+//        red     = qInt.red()
+//        green   = qInt.green()
 
 
         var neutron = qInt.getNeutron(Down.TEST_PROPERTY)
@@ -76,15 +76,15 @@ object XTestQuarks {
         var qDouble = QDouble()
         qDouble.setDouble(22.3)
 
-        var result = qDouble.red()
+ //       var result = qDouble.red()
 
         var qString = QString()
         qString.setString("abc")
-        var redString   = qString.red()
+   //     var redString   = qString.red()
 
         var qInt   = QInt()
         qInt.setInt(2020)
-        var red    = qInt.red()
+   //     var red    = qInt.red()
     }
 
 }

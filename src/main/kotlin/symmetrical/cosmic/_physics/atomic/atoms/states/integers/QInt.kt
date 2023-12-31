@@ -23,9 +23,6 @@ class QInt(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun red() : Int {
-        return nucleons.getProton(ValueProton::class).red() as Int
-    }
     fun setInt(value:Int) : QInt {
         Quark.value(this).setWavelength(value)
         return this

@@ -20,9 +20,6 @@ class QByte(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun red() : Byte {
-        return nucleons.getProton(ValueProton::class).red() as Byte
-    }
     fun setByte(value:Byte) : QByte {
         Quark.value(this).setWavelength(value)
         return this

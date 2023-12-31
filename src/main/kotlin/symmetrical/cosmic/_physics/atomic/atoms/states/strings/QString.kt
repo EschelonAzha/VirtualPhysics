@@ -35,9 +35,6 @@ open class QString(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    override fun red() : String {
-        return nucleons.getProton(ValueProton::class).red() as String
-    }
     fun setString(value:String) : QString {
 
         Quark.value(this).setWavelength(value)

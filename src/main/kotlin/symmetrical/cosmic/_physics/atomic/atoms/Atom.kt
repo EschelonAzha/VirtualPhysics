@@ -27,15 +27,12 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 open class Atom(
     private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter(Atom::class, Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
-    public    var nucleons          : Nucleons              = Nucleons(),
-    private   val colorCharges      : ColorCharge           = ColorCharge()
-
+    public    var nucleons          : Nucleons              = Nucleons()
 
 ) : Particle(),
     IMatterAntiMatter       by matterAntiMatter,
     IOrbitals               by orbitals,
     INucleons               by nucleons,
-    IColorCharge            by colorCharges,
     Element,
     IEmitter,
     IAtom
@@ -43,8 +40,7 @@ open class Atom(
     constructor() : this(
         MatterAntiMatter(Atom::class, Atom::class),
         Orbitals(),
-        Nucleons(),
-        ColorCharge()
+        Nucleons()
 
     )
     init {
@@ -134,14 +130,11 @@ open class Atom(
     final override fun setAtom(atom:Atom) : Atom {
         orbitals.setAtom(this)
         nucleons.setAtom(this)
-        colorCharges.setAtom(this)
         return this
     }
     fun setCurrentValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().setCurrentValue(ZBoson().i(Field(value), constructing)).decay()
     }
-
-
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         valueQuark.getWavelength().setContent(zBoson.getNewValue())
         zBoson.setAccepted(true)

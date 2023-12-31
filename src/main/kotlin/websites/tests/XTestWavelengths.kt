@@ -64,15 +64,15 @@ object XTestWavelengths {
         var qDouble = QDouble()
         qDouble.setDouble(22.3)
 
-        var result = qDouble.red()
+      //  var result = qDouble.red()
 
         var qString = QString()
         qString.setString("abc")
-        var redString   = qString.red()
+    //    var redString   = qString.red()
 
         var qInt   = QInt()
         qInt.setInt(2020)
-        var red    = qInt.red()
+     //   var red    = qInt.red()
     }
 
 }

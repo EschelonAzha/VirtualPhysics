@@ -19,9 +19,6 @@ class QBoolean(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun red() : Boolean {
-        return nucleons.getProton(ValueProton::class).red() as Boolean
-    }
     fun setBoolean(value:Boolean) : QBoolean {
         Quark.value(this).setWavelength(value)
         return this

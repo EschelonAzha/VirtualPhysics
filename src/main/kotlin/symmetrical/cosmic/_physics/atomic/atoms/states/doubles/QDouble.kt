@@ -24,9 +24,6 @@ class QDouble(
     override fun getElectronWavelength() : Double {
         return super.getElectronWavelength() as Double
     }
-    override fun red() : Double {
-        return nucleons.getProton(ValueProton::class).red() as Double
-    }
     fun setDouble(value:Double) : QDouble {
         Quark.value(this).setWavelength(value)
         return this

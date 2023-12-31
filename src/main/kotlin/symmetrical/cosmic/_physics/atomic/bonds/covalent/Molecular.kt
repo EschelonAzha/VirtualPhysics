@@ -77,27 +77,27 @@ open class Molecular(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    fun findString(value:String) : Int {
-        for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
-            if (atom.red().toString() == value)
-                return i
-        }
-        return -1
-    }
+//    fun findString(value:String) : Int {
+//        for (i in 0 until size()) {
+//            val atom:Atom = get(i) as Atom
+//            if (atom.red().toString() == value)
+//                return i
+//        }
+//        return -1
+//    }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
 
-    fun findContainsString(contains:String) : Int {
-        for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
-            if (atom.red().toString().contains(contains))
-                return i
-        }
-        return -1
-    }
+//    fun findContainsString(contains:String) : Int {
+//        for (i in 0 until size()) {
+//            val atom:Atom = get(i) as Atom
+//            if (atom.red().toString().contains(contains))
+//                return i
+//        }
+//        return -1
+//    }
 
     fun materialize(strings:List<String>) : Molecular {
         for (item in strings) {
