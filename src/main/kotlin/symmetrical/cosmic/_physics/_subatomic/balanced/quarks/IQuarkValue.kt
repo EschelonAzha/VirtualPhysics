@@ -9,5 +9,4 @@ interface IQuarkValue {
 
     fun getClassId      ()                                  : String
     fun setAtom         (atom: Atom)                        : Atom
-//    fun setQuarkValue   (value:Any?)                        : ZBoson
 }
