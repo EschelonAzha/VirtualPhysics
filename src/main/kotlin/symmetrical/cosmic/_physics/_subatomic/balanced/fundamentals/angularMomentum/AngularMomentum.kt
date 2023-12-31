@@ -12,7 +12,11 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 
-open class AngularMomentum(private val field: QuantumField = QuantumField()) : IQuantumField by field {
+open class AngularMomentum(
+    private val field: QuantumField = QuantumField()
+) :
+    IQuantumField by field
+{
 
     constructor() : this(
         QuantumField()
