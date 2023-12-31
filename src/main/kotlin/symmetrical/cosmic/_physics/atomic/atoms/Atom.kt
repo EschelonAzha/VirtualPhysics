@@ -119,10 +119,10 @@ open class Atom(
         return matterAntiMatter.getClassId()
     }
     fun getCurrentValue() : Any? {
-        return nucleons.getProtons().getCurrentValue()
+        return nucleons.getProtons().getProton(ValueProton::class)
     }
     private fun getCurrentValueProton() : Proton {
-        return getProtons().getCurrentValueProton()
+        return getProtons().getProton(ValueProton::class)
     }
     fun getElectron(pos:Int) : Electron {
         return orbitals.get(pos) as Electron

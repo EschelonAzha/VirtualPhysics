@@ -65,12 +65,7 @@ class Protons(
     override fun getAtomicNumber() : Int {
         return size()
     }
-    fun getCurrentValue() : Any? {
-        return Wavelength.content(getCurrentValueProton())
-    }
-    fun getCurrentValueProton() : Proton {
-        return find(ValueProton::class) as Proton
-    }
+
     fun getElectron(proton: Proton) : Electron {
         val electronNum = beam.find(proton)
         return getAtom().getElectron(electronNum)
@@ -88,7 +83,7 @@ class Protons(
         return __nucleons as Nucleons
     }
     fun setCurrentValue(zBoson: ZBoson) : ZBoson {
-        getCurrentValueProton().interact(zBoson)
+        getProton(ValueProton::class).interact(zBoson)
         return zBoson
     }
     override fun setNucleons(nucleons:Nucleons) : Nucleons {
