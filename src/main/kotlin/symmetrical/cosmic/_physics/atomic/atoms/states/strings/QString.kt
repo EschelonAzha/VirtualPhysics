@@ -3,6 +3,7 @@ package symmetrical.cosmic._physics.atomic.atoms.states.strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 
@@ -39,7 +40,7 @@ open class QString(
     }
     fun setString(value:String) : QString {
 
-        setQuarkValue(value)
+        Quark.value(this).setWavelength(value)
         return this
     }
     private fun radiate() : String {

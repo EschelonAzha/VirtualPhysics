@@ -5,6 +5,8 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.dom.DomProperty
 
 class BackgroundColor(
@@ -21,7 +23,8 @@ class BackgroundColor(
     }
 
     constructor(height:Int) : this() {
-        getValue()!!.setQuarkValue(height.toString())
+        val atom:Atom = getValue() as Atom
+        Quark.value(atom).setWavelength(height.toString())
     }
 
 

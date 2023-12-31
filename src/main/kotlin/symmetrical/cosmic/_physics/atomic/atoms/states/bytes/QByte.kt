@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics.atomic.atoms.states.bytes
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 
@@ -23,7 +24,7 @@ class QByte(
         return nucleons.getProton(ValueProton::class).red() as Byte
     }
     fun setByte(value:Byte) : QByte {
-        setQuarkValue(value)
+        Quark.value(this).setWavelength(value)
         return this
     }
 }

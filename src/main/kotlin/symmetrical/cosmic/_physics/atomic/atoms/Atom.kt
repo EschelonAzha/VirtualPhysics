@@ -22,6 +22,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.dictionary.protons.ValueProton
@@ -58,7 +59,7 @@ open class Atom(
     }
 
     constructor(value:String) : this() {
-        setQuarkValue(value)
+        Quark.value(this).setWavelength(value)
     }
 
     override fun absorb(photon: Photon) : Photon {

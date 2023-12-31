@@ -40,7 +40,7 @@ object XTestEmissions {
 
         val emitter = Atom()
         Quark.value(emitter).setSpin(Spin())
-        emitter.setQuarkValue(2022.22)
+        Quark.value(emitter).setWavelength(2022.22)
         emitter.setElectronSpin(Spin())
         emitter.setElectronValue(33.33)
         val emission = emitter.emit().radiate()

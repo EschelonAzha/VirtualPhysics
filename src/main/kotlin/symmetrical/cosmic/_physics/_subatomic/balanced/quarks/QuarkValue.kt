@@ -32,9 +32,9 @@ class QuarkValue(
         this.atom = atom
         return atom
     }
-    override fun setQuarkValue(value:Any?) : ZBoson {
-        val zBoson = Quark.Args(value)
-        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
-        return quark.z(zBoson)
-    }
+//    override fun setQuarkValue(value:Any?) : ZBoson {
+//        val zBoson = Quark.Args(value)
+//        val quark   = atom.nucleons.getProton(ValueProton::class).get(0) as Quark
+//        return quark.z(zBoson)
+//    }
 }
