@@ -28,9 +28,4 @@ class QuarkValue(
         return matter.getClassId()
     }
 
-    override fun setAtom(atom: Atom) : Atom {
-        this.atom = atom
-        return atom
-    }
-
 }

@@ -140,7 +140,6 @@ open class Atom(
         orbitals.setAtom(this)
         nucleons.setAtom(this)
         colorCharges.setAtom(this)
-        quarkValue.setAtom(this)
         return this
     }
     fun setCurrentValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
