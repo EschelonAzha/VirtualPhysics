@@ -140,15 +140,8 @@ open class Atom(
     fun setCurrentValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().setCurrentValue(ZBoson().i(Field(value), constructing)).decay()
     }
-    override fun setElectronSpin(spin: Spin) : Atom {
-        orbitals.setElectronSpin(spin)
-        return this
-    }
-    override fun toString() : String {
-        var up: Up = nucleons.getProton(ValueProton::class).getConstraintsQuark()
-        val value:Any? = up.getWavelength()
-        return value.toString()
-    }
+
+
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         valueQuark.getWavelength().setContent(zBoson.getNewValue())
         zBoson.setAccepted(true)
