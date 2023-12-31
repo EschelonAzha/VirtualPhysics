@@ -23,6 +23,17 @@ open class AngularMomentum(
     )
 
     companion object {
+        fun field(atom:Atom) : Field {
+            val proton = atom.getProton(ValueProton::class)
+            return field(proton)
+        }
+        fun field(atom:Atom, kClass:KClass<*>) : Field {
+            val proton = atom.getProton(kClass)
+            return field(proton)
+        }
+        fun field(proton:Proton) : Field {
+            return proton.getFormatQuark().getAngularMomentum().getField()
+        }
         fun run(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return run(proton)

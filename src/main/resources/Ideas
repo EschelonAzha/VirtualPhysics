@@ -13,7 +13,7 @@ Atom:
             Space           : Ptr:Neutron
             Wavelength      : Value
             Spin            : Format (Y/N)
-            AngularMomentum : run(any)
+            AngularMomentum : run(Field) : Field;Pattern (MM/DD/YY, YYYYMMDD, $,
             Temperature     : ?
 
         Format Quark:
