@@ -19,6 +19,9 @@ class Spin(
     constructor() : this(
         QuantumField(Static.ZERO)
     )
+    constructor(content:Int) : this() {
+        field.setContent(content)
+    }
 
     object Static {
         const val PLUS :Int      = +1

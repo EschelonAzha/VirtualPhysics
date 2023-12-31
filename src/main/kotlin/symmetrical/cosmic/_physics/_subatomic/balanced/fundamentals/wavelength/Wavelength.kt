@@ -46,12 +46,7 @@ class Wavelength(
         }
         fun field(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
-            val field  : Field = quark.getWavelength().getField()
-            if (Spin.isPlus(quark)) {
-                return AngularMomentum.run(proton)
-            } else {
-                return field
-            }
+            return quark.getWavelength().getField()
         }
         fun format(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
