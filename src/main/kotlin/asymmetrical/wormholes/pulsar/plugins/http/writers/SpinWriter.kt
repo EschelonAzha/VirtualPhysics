@@ -12,7 +12,7 @@ class SpinWriter : FundamentalPropertyWriter {
     }
 
     override fun write(atom: Atom) : SpinWriter {
-        outlet.write(Wavelength.format(atom))
+        outlet.write(Wavelength.format(atom).toString())
         return this;
     }
 

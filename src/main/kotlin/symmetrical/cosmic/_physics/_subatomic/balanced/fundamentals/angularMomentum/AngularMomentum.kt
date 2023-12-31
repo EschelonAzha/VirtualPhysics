@@ -23,15 +23,15 @@ open class AngularMomentum(
     )
 
     companion object {
-        fun run(atom: Atom) : String {
+        fun run(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return run(proton)
         }
-        fun run(atom: Atom, kClass:KClass<*>) : String {
+        fun run(atom: Atom, kClass:KClass<*>) : Field {
             val proton = atom.getProton(kClass)
             return run(proton)
         }
-        fun run(proton:Proton) : String {
+        fun run(proton:Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getAngularMomentum().run(Wavelength.field(proton))
         }
@@ -69,8 +69,8 @@ open class AngularMomentum(
         return setContent(content)
     }
 
-    open fun run(wavelength: Field) : String {
-        return wavelength.toString()
+    open fun run(arg: Field) : Field {
+        return arg
     }
 
     fun i() : AngularMomentum {

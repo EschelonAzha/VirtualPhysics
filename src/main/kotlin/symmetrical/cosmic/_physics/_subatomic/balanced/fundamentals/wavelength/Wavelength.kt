@@ -46,7 +46,7 @@ class Wavelength(
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }
-        fun format(atom: Atom) : String {
+        fun format(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             var quark  : Quark = proton.getValueQuark()
             return quark.getAngularMomentum().run(field(atom))

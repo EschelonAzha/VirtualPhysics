@@ -13,7 +13,7 @@ class LineReader : Compound {
     constructor(fileName: QString) {
         val proton: Proton = fileName.getProton(ValueProton::class)
         val quark : Quark  = proton.getValueQuark()
-        lines = Compound().materialize(File(Wavelength.format(fileName)).readLines()) as Compound
+        lines = Compound().materialize(File(Wavelength.format(fileName).toString()).readLines()) as Compound
     }
     fun getLines() : Compound {
         return lines

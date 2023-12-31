@@ -14,8 +14,9 @@ class CRLFTerminatedMomentum(
         Matter(CRLFTerminatedMomentum::class, CRLFTerminatedMomentum::class),
     )
 
-    override fun run(wavelength: Field) : String {
-        return Strings.crlfTerminated(wavelength.toString())
+    override fun run(wavelength: Field) : Field {
+
+        return Field(Strings.crlfTerminated(wavelength.toString()))
     }
     override fun getClassId() : String {
         return matter.getClassId()
