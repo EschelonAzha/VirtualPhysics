@@ -4,7 +4,6 @@ import symmetrical.cosmic.__recycle.ClassGroup
 import symmetrical.cosmic.__recycle.EntityId
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.*
-import symmetrical.cosmic._physics._subatomic.balanced.quarks.QuarkValue
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.Kaon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.MinusPion
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralDownPion
@@ -29,15 +28,8 @@ class Quarks : ClassGroup {
         add(EntityId(Base52.classId(), NeutralDownPion::class))
         add(EntityId(Base52.classId(), NeutralUpPion::class))
         add(EntityId(Base52.classId(), Quark::class))
-        add(EntityId(Base52.classId(), QuarkValue::class))
         add(EntityId(Base52.classId(), Strange::class))
         add(EntityId(Base52.classId(), Top::class))
         add(EntityId(Base52.classId(), Up::class))
-
-
-
-
-
-
     }
 }

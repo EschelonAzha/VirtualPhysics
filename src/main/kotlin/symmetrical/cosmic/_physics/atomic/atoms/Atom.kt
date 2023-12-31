@@ -1,22 +1,18 @@
 package symmetrical.cosmic._physics.atomic.atoms
 
 
-import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharge
 import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharge
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.INucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
-import symmetrical.cosmic._physics._subatomic.balanced.quarks.IQuarkValue
-import symmetrical.cosmic._physics._subatomic.balanced.quarks.QuarkValue
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -29,18 +25,17 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 
 
 open class Atom(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Atom::class, Atom::class),
+    private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter(Atom::class, Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var nucleons          : Nucleons              = Nucleons(),
-    private   val colorCharges      : ColorCharge           = ColorCharge(),
-    private   val quarkValue        : QuarkValue            = QuarkValue()
+    private   val colorCharges      : ColorCharge           = ColorCharge()
+
 
 ) : Particle(),
     IMatterAntiMatter       by matterAntiMatter,
     IOrbitals               by orbitals,
     INucleons               by nucleons,
     IColorCharge            by colorCharges,
-    IQuarkValue             by quarkValue,
     Element,
     IEmitter,
     IAtom
@@ -49,8 +44,8 @@ open class Atom(
         MatterAntiMatter(Atom::class, Atom::class),
         Orbitals(),
         Nucleons(),
-        ColorCharge(),
-        QuarkValue(),
+        ColorCharge()
+
     )
     init {
         setAtom(this)
