@@ -16,19 +16,19 @@ Atom:
             AngularMomentum : run(Field) : Field;Pattern (MM/DD/YY, YYYYMMDD, $,
             Temperature     : ?
 
-        Format Quark:
-            Time            : Int
-            Space           : Ptr:ValueQuark
-            Wavelength      : Pattern (MM/DD/YY, YYYYMMDD, $, etc)
-            Spin            : Format, Yes/NO
-            AngularMomentum : run(any)
-            Temperature     : ?
-
         Constraints Quark:
             Time            : Int
             Space           : Ptr
             Wavelength      : Value
             Spin            : Constraints yes/no
+            AngularMomentum : run(any)
+            Temperature     : ?
+
+        UP Quark:
+            Time            : Int
+            Space           : Ptr:ValueQuark
+            Wavelength      : ?
+            Spin            : Yes/no/0
             AngularMomentum : run(any)
             Temperature     : ?
 
