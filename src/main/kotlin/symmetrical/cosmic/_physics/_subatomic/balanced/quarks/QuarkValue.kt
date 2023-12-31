@@ -21,11 +21,5 @@ class QuarkValue(
         Matter(QuarkValue::class, QuarkValue::class),
     )
 
-    lateinit var atom: Atom
-
-
-//    override fun getClassId() : String {
-//        return matter.getClassId()
-//    }
 
 }
