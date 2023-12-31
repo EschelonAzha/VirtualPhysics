@@ -17,11 +17,12 @@ class Spin(
     IQuantumField by field {
 
     constructor() : this(
-        QuantumField(Static.PLUS)
+        QuantumField(Static.ZERO)
     )
 
     object Static {
         const val PLUS :Int      = +1
+        const val ZERO :Int      = 0
         const val MINUS:Int      = -1
     }
 
@@ -78,10 +79,13 @@ class Spin(
         return Absorber.getClassId(Spin::class)
     }
     fun isPlus() : Boolean {
-        return field.toInt() > 0
+        return field.toInt() == 1
     }
     fun isMinus() : Boolean {
-        return field.toInt() < 0
+        return field.toInt() == -1
+    }
+    fun isZero() : Boolean {
+        return field.toInt() == 0
     }
 
     fun setSpin(content:Any?) : Any? {
@@ -98,6 +102,10 @@ class Spin(
     }
     fun spinMinus() : Spin {
         field.setContent(Spin.Static.MINUS)
+        return this
+    }
+    fun spinZero() : Spin {
+        field.setContent(Spin.Static.ZERO)
         return this
     }
 
