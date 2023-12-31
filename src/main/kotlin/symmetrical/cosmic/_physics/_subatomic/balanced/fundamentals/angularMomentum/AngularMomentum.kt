@@ -19,8 +19,6 @@ open class AngularMomentum(private val field: QuantumField = QuantumField()) : I
     )
 
     companion object {
-
-
         fun run(atom: Atom) : String {
             val proton = atom.getProton(ValueProton::class)
             return run(proton)
