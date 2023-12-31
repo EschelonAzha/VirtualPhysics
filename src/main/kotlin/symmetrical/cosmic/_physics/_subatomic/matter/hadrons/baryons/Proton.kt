@@ -29,8 +29,8 @@ open class Proton(
 
     enum class QuarkType(val value:Int) {
         VALUE(0),
-        FORMAT(1),
-        CONSTRAINTS(2),
+        CONSTRAINTS(1),
+        UP(2),
     }
 
     object Static {
@@ -83,8 +83,8 @@ open class Proton(
         return get(QuarkType.CONSTRAINTS.value) as Up
     }
 
-    fun getFormatQuark() : Up {
-        return get(QuarkType.FORMAT.value) as Up
+    fun getUpQuark() : Up {
+        return get(QuarkType.UP.value) as Up
     }
     fun getValueQuark() : Down {
         return get(QuarkType.VALUE.value) as Down

@@ -32,7 +32,7 @@ open class AngularMomentum(
             return field(proton)
         }
         fun field(proton:Proton) : Field {
-            return proton.getFormatQuark().getAngularMomentum().getField()
+            return proton.getValueQuark().getAngularMomentum().getField()
         }
         fun run(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
