@@ -28,14 +28,14 @@ open class Quark(
         this.gluon         = Red_AntiRed()
     }
     constructor(baryon: Baryon) : this() {
-        this._parent = baryon
+        this.p_baryon = baryon
     }
 
     init {
     }
 
     lateinit var gluon                  : Gluon
-    protected lateinit var _parent                : Baryon
+    protected lateinit var p_baryon     : Baryon
 
     companion object {
         fun value(atom: Atom) : Quark {

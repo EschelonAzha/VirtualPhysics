@@ -92,13 +92,13 @@ open class Baryon(
         shrink()
         return this
     }
-    fun Proton() : Baryon {
-        this.add(Down(this))  // type
+    fun Proton() : Quark {
+        val down = this.add(Down(this))  // type
         this.add(Up(this))    // value
         this.add(Up(this))    // When Up Points to Neutron
 
         shrink()
-        return this
+        return down as Quark
     }
 
 

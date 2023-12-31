@@ -15,12 +15,12 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 
 class Nucleons(
     private val matterAntiMatter :IMatterAntiMatter      = MatterAntiMatter(Nucleons::class, Nucleons::class),
-    private var protons          :Protons                = Protons(),
+    private var _protons         :Protons                = Protons(),
     private var neutrons         :Neutrons               = Neutrons(),
 
     ) :
         IMatterAntiMatter    by matterAntiMatter,
-        IProtons             by protons,
+        IProtons             by _protons,
         INeutrons            by neutrons,
         INucleons,
         IEmitter
@@ -34,17 +34,17 @@ class Nucleons(
         setNucleons(this)
     }
 
-    private lateinit var __atom: Atom
+    private lateinit var p_atom: Atom
 
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
-        remainder = protons.absorb(remainder)
+        remainder = _protons.absorb(remainder)
         remainder = neutrons.absorb(remainder)
 
-        this.protons.setNucleons(this)
+        this._protons.setNucleons(this)
         this.neutrons.setNucleons(this)
 
         return remainder
@@ -54,33 +54,33 @@ class Nucleons(
         return Photon(radiate())
     }
     fun getAtom() : Atom {
-        return this.__atom
+        return this.p_atom
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
 
     fun getProtons() : Protons {
-        return protons
+        return _protons
     }
 
     override fun setAtom(atom:Atom) : Atom {
-        this.__atom = atom
+        this.p_atom = atom
         return atom
     }
     override fun setNucleons(nucleons:Nucleons) : Nucleons {
         neutrons.setNucleons(nucleons)
-        protons.setNucleons(nucleons)
+        _protons.setNucleons(nucleons)
         return nucleons
     }
     override fun wind(purpose:String) : Nucleons {
-        val pos = protons.find(ValueProton::class)
+        val pos = _protons.find(ValueProton::class)
 
-        var (neutron, betaPlus) = (protons.removeAt(pos) as Proton).betaPlusDecay()
+        var (neutron, betaPlus) = (_protons.removeAt(pos) as Proton).betaPlusDecay()
         var proton              = Baryon().Neutron().absorb(betaPlus)
 
         neutrons.add(neutron)
-        protons.add(proton)
+        _protons.add(proton)
         (proton.get(0) as Quark).gluon.color = (neutron.get(0) as Quark).gluon.color.clone() as Color
 
         NeutralUpPion(proton, neutron)  // exert Nuclear force
@@ -89,7 +89,7 @@ class Nucleons(
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
-                this.protons.emit().radiate()+
+                this._protons.emit().radiate()+
                 this.neutrons.emit().radiate()
     }
 }

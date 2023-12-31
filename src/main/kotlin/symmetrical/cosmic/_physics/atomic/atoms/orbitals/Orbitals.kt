@@ -25,7 +25,7 @@ open class Orbitals(
         const val VALUE     : Int = ParticleBeam.Static.LAST+1
         const val LAST      : Int = VALUE
     }
-    private lateinit var __atom: Atom
+    private lateinit var p_atom: Atom
 
 
     override fun absorb(photon: Photon) : Photon {
@@ -77,13 +77,13 @@ open class Orbitals(
     }
     override fun setAtom(atom:Atom) : Atom {
         //   add(Electron().i(atom))
-        this.__atom = atom
+        this.p_atom = atom
         return atom
     }
 
     override fun setElectronSpin(spin: Spin) : Atom {
         getElectronValue().setSpin(spin)
-        return __atom
+        return p_atom
     }
     override fun setElectronValue(value:Any?) : ZBoson {
         val zBoson = Quark.Args(value)

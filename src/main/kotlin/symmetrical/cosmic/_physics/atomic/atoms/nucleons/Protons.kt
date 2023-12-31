@@ -20,14 +20,15 @@ class Protons(
     IMatterAntiMatter by matterAntiMatter,
     IProtons
 {
+    val _valueProton:Proton
     constructor() : this(
         MatterAntiMatter(Protons::class, Protons::class),
     )    init {
-        add(ValueProton().setProtons(this))
+        _valueProton = add(ValueProton().setProtons(this)) as ValueProton
     }
 
 
-    private lateinit var __nucleons   : Nucleons
+    private lateinit var p_nucleons   : Nucleons
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
@@ -60,14 +61,14 @@ class Protons(
 
 
     fun getAtom() : Atom {
-        return __nucleons.getAtom()
+        return p_nucleons.getAtom()
     }
     override fun getAtomicNumber() : Int {
         return size()
     }
 
     fun getElectron(proton: Proton) : Electron {
-        val electronNum = beam.find(proton)
+        val electronNum = _beam.find(proton)
         return getAtom().getElectron(electronNum)
     }
     override fun getProton(kClass:KClass<*>) : Proton {
@@ -80,14 +81,14 @@ class Protons(
             add(Baryon().Proton() as Baryon)
             i++
         }
-        return __nucleons as Nucleons
+        return p_nucleons as Nucleons
     }
     fun setCurrentValue(zBoson: ZBoson) : ZBoson {
         getProton(ValueProton::class).interact(zBoson)
         return zBoson
     }
     override fun setNucleons(nucleons:Nucleons) : Nucleons {
-        this.__nucleons = nucleons
+        this.p_nucleons = nucleons
         return nucleons
     }
 

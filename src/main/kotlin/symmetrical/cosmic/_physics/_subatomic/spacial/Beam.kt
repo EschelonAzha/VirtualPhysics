@@ -15,12 +15,12 @@ open class Beam : IBeam {
     }
 
     private var count                   :Int = 0;
-    private lateinit var memoryBlock    :Array<Any?>
+    private lateinit var _memoryBlock   :Array<Any?>
     private var expandMode              :Int = Static.NORMAL
 
     private var capacity                :Int = 0
     constructor(capacity:Int=1)  {
-        memoryBlock     = createBlock(capacity)
+        _memoryBlock    = createBlock(capacity)
         this.capacity   = capacity
     }
 
@@ -46,42 +46,42 @@ open class Beam : IBeam {
         return this
     }
     override fun clear() : IBeam {
-        memoryBlock = createBlock(capacity)
+        _memoryBlock = createBlock(capacity)
         count = 0
         return this
     }
 
     override fun compress() : IBeam {
         count = 0
-        var result = createBlock(memoryBlock.size)
+        var result = createBlock(_memoryBlock.size)
         var pos :Int = 0
-        for (i in memoryBlock.indices) {
-            if (memoryBlock[i] == Unit) {
+        for (i in _memoryBlock.indices) {
+            if (_memoryBlock[i] == Unit) {
                 continue
             }
-            if (memoryBlock[i] != null) {
-                result[pos++] = memoryBlock[i]
+            if (_memoryBlock[i] != null) {
+                result[pos++] = _memoryBlock[i]
                 count++
             }
         }
-        memoryBlock = result
+        _memoryBlock = result
         return this
     }
 
     override fun contract(newSize:Int) : IBeam {
         var result = createBlock(newSize)
         for (i in result.indices) {
-            result[i] = memoryBlock[i]
+            result[i] = _memoryBlock[i]
         }
-        memoryBlock = result
+        _memoryBlock = result
         return this
     }
     override fun expand(size:Int) : IBeam {
         var result = createBlock(size)
-        for (i in memoryBlock.indices) {
-            result[i] = memoryBlock[i]
+        for (i in _memoryBlock.indices) {
+            result[i] = _memoryBlock[i]
         }
-        memoryBlock = result
+        _memoryBlock = result
         return this
     }
     override fun find(item:Any) : Int {
@@ -105,13 +105,13 @@ open class Beam : IBeam {
         if (isOverflow(pos)) {
             return null
         }
-        return memoryBlock[pos]
+        return _memoryBlock[pos]
     }
     override fun getClassId() : String {
         return getLocalClassId()
     }
     override fun getCore() : Array<Any?> {
-        return memoryBlock
+        return _memoryBlock
     }
 
     override fun isEmpty() : Boolean {
@@ -123,8 +123,8 @@ open class Beam : IBeam {
     override fun popLeft() : Any? {
         if (count == 0)
             return null
-        val value:Any = memoryBlock[0] as Any
-        memoryBlock[0] = null
+        val value:Any = _memoryBlock[0] as Any
+        _memoryBlock[0] = null
         compress()
         return value
     }
@@ -157,7 +157,7 @@ open class Beam : IBeam {
         if (isOverflow(pos))
             expand(pos+1)
 
-        memoryBlock[pos] = any
+        _memoryBlock[pos] = any
         if (pos+1 > count)
             count = pos+1
         return any
@@ -170,18 +170,18 @@ open class Beam : IBeam {
         return count
     }
     override fun toString() : String {
-        return Strings.toDelimitedString("::", memoryBlock)
+        return Strings.toDelimitedString("::", _memoryBlock)
     }
     private fun createBlock(size:Int) : Array<Any?> {
         return Array(size){}
     }
     private fun executeExpandMode() : Unit {
         if (expandMode == Static.NORMAL) {
-            expand(memoryBlock.size * 2)
+            expand(_memoryBlock.size * 2)
             return
         }
 
-        expand(memoryBlock.size + 1)
+        expand(_memoryBlock.size + 1)
     }
     private fun expandSizeTo() : Int {
         var result:Int = count + 1
@@ -198,7 +198,7 @@ open class Beam : IBeam {
     }
 
     private fun isOverflow(pos:Int) : Boolean {
-        return pos >= memoryBlock.size
+        return pos >= _memoryBlock.size
     }
 
 }

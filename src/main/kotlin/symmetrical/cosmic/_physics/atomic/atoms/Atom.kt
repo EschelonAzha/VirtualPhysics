@@ -27,12 +27,12 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 open class Atom(
     private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter(Atom::class, Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
-    public    var nucleons          : Nucleons              = Nucleons()
+    public    var _nucleons         : Nucleons              = Nucleons()
 
 ) : Particle(),
     IMatterAntiMatter       by matterAntiMatter,
     IOrbitals               by orbitals,
-    INucleons               by nucleons,
+    INucleons               by _nucleons,
     Element,
     IEmitter,
     IAtom
@@ -46,7 +46,7 @@ open class Atom(
     init {
         setAtom(this)
         this.orbitals.setAtom(this)
-        this.nucleons.setAtom(this)
+        this._nucleons.setAtom(this)
     }
 
     constructor(value:String) : this() {
@@ -59,7 +59,7 @@ open class Atom(
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         remainder = orbitals.absorb(remainder)
-        remainder = nucleons.absorb(remainder)
+        remainder = _nucleons.absorb(remainder)
 
         setAtom(this)
         return remainder
@@ -115,7 +115,7 @@ open class Atom(
         return matterAntiMatter.getClassId()
     }
     fun getCurrentValue() : Any? {
-        return nucleons.getProtons().getProton(ValueProton::class)
+        return _nucleons.getProtons().getProton(ValueProton::class)
     }
     private fun getCurrentValueProton() : Proton {
         return getProtons().getProton(ValueProton::class)
@@ -124,12 +124,12 @@ open class Atom(
         return orbitals.get(pos) as Electron
     }
     fun getProtons() : Protons {
-        return nucleons.getProtons()
+        return _nucleons.getProtons()
     }
 
     final override fun setAtom(atom:Atom) : Atom {
         orbitals.setAtom(this)
-        nucleons.setAtom(this)
+        _nucleons.setAtom(this)
         return this
     }
     fun setCurrentValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
@@ -145,6 +145,6 @@ open class Atom(
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()+
                 orbitals.emit().radiate()+
-                nucleons.emit().radiate()
+                _nucleons.emit().radiate()
     }
 }

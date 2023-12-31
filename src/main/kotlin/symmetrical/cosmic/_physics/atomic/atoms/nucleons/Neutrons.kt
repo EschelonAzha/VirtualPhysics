@@ -17,7 +17,7 @@ class Neutrons(
         MatterAntiMatter(Neutrons::class, Neutrons::class),
     )
 
-    lateinit var __nucleons:Nucleons
+    lateinit var p_nucleons:Nucleons
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
@@ -69,7 +69,7 @@ class Neutrons(
         return neutron
     }
     override fun setNucleons(nucleons:Nucleons) : Nucleons {
-        this.__nucleons = nucleons
+        this.p_nucleons = nucleons
         return nucleons
     }
 

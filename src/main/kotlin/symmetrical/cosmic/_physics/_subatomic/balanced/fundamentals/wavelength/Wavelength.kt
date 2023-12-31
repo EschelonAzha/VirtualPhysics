@@ -15,9 +15,9 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 
 class Wavelength(
-    private val field:QuantumField=QuantumField()
+    private val _field:QuantumField=QuantumField()
 ) :
-    IQuantumField by field {
+    IQuantumField by _field {
 
     constructor() : this(
         QuantumField()
@@ -57,7 +57,7 @@ class Wavelength(
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
-        remainder = field.absorb(remainder)
+        remainder = _field.absorb(remainder)
         return remainder
     }
     override fun emit() : Photon {
@@ -67,16 +67,16 @@ class Wavelength(
         return getLocalClassId()
     }
     fun getField() : Field {
-        return field.getField()
+        return _field.getField()
     }
 
     fun getQuantumField() : QuantumField {
-        return field
+        return _field
     }
 
     private fun radiate() : String {
         return getLocalClassId()+
-                field.emit().radiate()
+                _field.emit().radiate()
     }
 
     private fun getLocalClassId() : String {
@@ -86,7 +86,7 @@ class Wavelength(
         return setContent(value)
     }
     fun wavelength() : Any? {
-        return field.getContent()
+        return _field.getContent()
     }
 
 

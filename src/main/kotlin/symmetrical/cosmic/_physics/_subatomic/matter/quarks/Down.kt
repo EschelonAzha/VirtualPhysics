@@ -21,7 +21,7 @@ class Down(
     init {
     }
     constructor(baryon: Baryon) : this() {
-        this._parent = baryon
+        this.p_baryon = baryon
     }
     companion object {
         const val VALUE            = "VALUE"

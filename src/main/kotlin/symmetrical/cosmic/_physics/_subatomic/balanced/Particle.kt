@@ -36,7 +36,7 @@ open class Particle(
     private     val mass            :Mass                   = Mass()
     private     val temperature     :Temperature            = Temperature()
 
-    private     val wavelength      :Wavelength             = Wavelength()
+    private     val _wavelength     :Wavelength             = Wavelength()
     private     var spin            :Spin                   = Spin()
     private     var angularMomentum :AngularMomentum        = AngularMomentum()
 
@@ -48,7 +48,7 @@ open class Particle(
         remainder = mass.absorb(remainder)
         remainder = temperature.absorb(remainder)
         remainder = space.absorb(remainder)
-        remainder = wavelength.absorb(remainder)
+        remainder = _wavelength.absorb(remainder)
         remainder = spin.absorb(remainder)
         remainder = angularMomentum.absorb(remainder)
 
@@ -68,7 +68,7 @@ open class Particle(
                 mass.emit().radiate()+
                 temperature.emit().radiate()+
                 space.emit().radiate()+
-                wavelength.emit().radiate()+
+                _wavelength.emit().radiate()+
                 spin.emit().radiate()+
                 angularMomentum.emit().radiate()
     }
@@ -121,7 +121,7 @@ open class Particle(
     }
 
     override fun getWavelength() : Wavelength {
-        return wavelength
+        return _wavelength
     }
 
     override fun setSelf(self: IParticle) : IParticle {

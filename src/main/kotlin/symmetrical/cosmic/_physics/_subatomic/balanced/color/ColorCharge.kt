@@ -9,13 +9,13 @@ class ColorCharge : IColorCharge {
     constructor()
 
     override fun blue() : String {
-        return atom.nucleons.getProton(ValueProton::class).blue() as String
+        return atom._nucleons.getProton(ValueProton::class).blue() as String
     }
     override fun currentColor() : Any? {
-        return atom.nucleons.getProton(ValueProton::class).currentColor()
+        return atom._nucleons.getProton(ValueProton::class).currentColor()
     }
     override fun green() : String {
-        return atom.nucleons.getProton(ValueProton::class).green() as String
+        return atom._nucleons.getProton(ValueProton::class).green() as String
     }
     override fun red() : Any {
         return ""
@@ -26,7 +26,7 @@ class ColorCharge : IColorCharge {
         return atom
     }
     override fun setGreen(green: Green) : Atom {
-        atom.nucleons.getProton(ValueProton::class).setGreen(green)
+        atom._nucleons.getProton(ValueProton::class).setGreen(green)
         return atom
     }
 }

@@ -20,7 +20,7 @@ class Up(
     init {
     }
     constructor(baryon: Baryon) : this() {
-        this._parent = baryon
+        this.p_baryon = baryon
     }
     override fun i() : Up {
         super.i()

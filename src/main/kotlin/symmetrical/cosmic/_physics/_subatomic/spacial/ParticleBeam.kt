@@ -13,10 +13,10 @@ import kotlin.reflect.KClass
 
 open class ParticleBeam(
     private   val matterAntiMatter : IMatterAntiMatter  = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
-    protected val beam             : Beam               = Beam()
+    protected val _beam            : Beam               = Beam()
 ) : Particle(),
     IMatterAntiMatter by matterAntiMatter,
-    IBeam by beam,
+    IBeam by _beam,
     IParticleBeam,
     IEmitter
 {
@@ -31,7 +31,7 @@ open class ParticleBeam(
     }
 
     open fun i() : ParticleBeam {
-        beam.i()
+        _beam.i()
         return this
     }
 
@@ -52,34 +52,34 @@ open class ParticleBeam(
         return Photon(remainder)
     }
     override fun add(particle: IParticle) : IParticle {
-        return beam.add(particle) as IParticle
+        return _beam.add(particle) as IParticle
     }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
     fun find(particle:IParticle) : Int {
-        return beam.find(particle)
+        return _beam.find(particle)
     }
     override fun find(item:Any) : Int {
-        return beam.find(item)
+        return _beam.find(item)
     }
     override fun find(kClass: KClass<*>) : Int {
-        return beam.find(kClass)
+        return _beam.find(kClass)
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
     override operator fun get(pos:Int): IParticle {
-        val result = beam.get(pos)
+        val result = _beam.get(pos)
         return result as IParticle
     }
     override fun getParticleCore() : Array<IParticle> {
         return getCore() as Array<IParticle>
     }
     override fun set(pos:Int, particle: IParticle) : IParticle {
-        return beam.set(pos, particle) as IParticle
+        return _beam.set(pos, particle) as IParticle
     }
 
     private fun radiate() : String {

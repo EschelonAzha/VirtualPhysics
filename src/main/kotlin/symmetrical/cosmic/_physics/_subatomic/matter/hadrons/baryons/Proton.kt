@@ -18,10 +18,11 @@ open class Proton(
 ) : Baryon(),
     IMatter by matter
 {
+    val _quark:Quark
     constructor() : this(
         Matter(Proton::class, AntiProton::class),
     ) init {
-        this.Proton()
+        _quark = this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
         // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
         // -1/3 wavelength(Type Of Proton),        Spin(?),
@@ -37,12 +38,12 @@ open class Proton(
 
     }
 
-    private var __protons       : Protons? = null
+    private var p_protons       : Protons? = null
     private var autoFlow        : Boolean  = true
     private var flowing         : Boolean  = false
 
     fun i(protons:Protons) : Proton {
-        this.__protons = protons
+        this.p_protons = protons
         return this
     }
 
@@ -54,8 +55,8 @@ open class Proton(
         return remainder
     }
     fun capacitanceChange(zBoson:ZBoson) : ZBoson {
-        if (__protons != null)
-            __protons!!.capacitanceChange(this, getValueQuark(), zBoson)
+        if (p_protons != null)
+            p_protons!!.capacitanceChange(this, getValueQuark(), zBoson)
 
         return zBoson
     }
@@ -128,7 +129,7 @@ open class Proton(
 
 
     fun setProtons(protons:Protons) : Proton {
-        this.__protons = protons
+        this.p_protons = protons
         return this
     }
 
@@ -138,7 +139,7 @@ open class Proton(
         return electron.flow()
     }
     private fun getElectron() : Electron? {
-        val electron : Electron = __protons?.getElectron(this) ?: return null
+        val electron : Electron = p_protons?.getElectron(this) ?: return null
 
         electron.setProton(this)
 
@@ -161,8 +162,8 @@ open class Proton(
                 super.emit().radiate();
     }
     private fun valueChange(valueQuark:Down, zBoson:ZBoson) : ZBoson {
-        if (__protons != null)
-            __protons!!.valueChange(this, valueQuark, zBoson)
+        if (p_protons != null)
+            p_protons!!.valueChange(this, valueQuark, zBoson)
         return zBoson
     }
 
