@@ -15,12 +15,12 @@ class CrLfTerminatedString(
     constructor() : this(
         Matter(CrLfTerminatedString::class, CrLfTerminatedString::class),
     ) {
-        setQuarkMomentum(CRLFTerminatedMomentum())
+        Quark.value(this).setAngularMomentum(CRLFTerminatedMomentum())
         Quark.value(this).setSpin(Spin())
     }
     constructor(value:String) : this() {
         setString(value)
-        setQuarkMomentum(CRLFTerminatedMomentum())
+        Quark.value(this).setAngularMomentum(CRLFTerminatedMomentum())
         Quark.value(this).setSpin(Spin())
     }
 

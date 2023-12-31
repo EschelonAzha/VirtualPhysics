@@ -55,7 +55,7 @@ open class Molecular(
     fun applyQuarkMomentum(momentum: AngularMomentum) : Molecular {
         for (i in 0 until size()) {
             val atom:Atom = get(i) as Atom
-            atom.setQuarkMomentum(CRLFTerminatedMomentum())
+            Quark.value(this).setAngularMomentum(momentum)
         }
         return this
     }

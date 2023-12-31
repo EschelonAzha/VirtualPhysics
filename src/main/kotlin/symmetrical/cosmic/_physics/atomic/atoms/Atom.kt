@@ -149,9 +149,6 @@ open class Atom(
         orbitals.setElectronSpin(spin)
         return this
     }
-    override fun setQuarkMomentum(momentum: AngularMomentum) : Atom {
-        return quarkValue.setQuarkMomentum(momentum)
-    }
     override fun toString() : String {
         var up: Up = nucleons.getProton(ValueProton::class).getConstraintsQuark()
         val value:Any? = up.getWavelength()
