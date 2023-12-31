@@ -7,5 +7,5 @@ import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 interface IQuarkValue {
 
-    fun getClassId      ()                                  : String
+//    fun getClassId      ()                                  : String
 }

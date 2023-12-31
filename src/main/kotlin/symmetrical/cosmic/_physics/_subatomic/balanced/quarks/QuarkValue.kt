@@ -24,8 +24,8 @@ class QuarkValue(
     lateinit var atom: Atom
 
 
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
+//    override fun getClassId() : String {
+//        return matter.getClassId()
+//    }
 
 }
