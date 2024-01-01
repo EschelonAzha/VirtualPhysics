@@ -1,11 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength
 
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic._physics._dimensions.Mass
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
@@ -13,14 +9,16 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Wavelength
+ */
 class Wavelength(
-    private val _field:QuantumField=QuantumField()
+    private val _field:QuasiParticle=QuasiParticle()
 ) :
-    IQuantumField by _field {
+    IQuasiParticle by _field {
 
     constructor() : this(
-        QuantumField()
+        QuasiParticle()
     )
 
     fun i() : Wavelength {
@@ -70,7 +68,7 @@ class Wavelength(
         return _field.getField()
     }
 
-    fun getQuantumField() : QuantumField {
+    fun getQuantumField() : QuasiParticle {
         return _field
     }
 

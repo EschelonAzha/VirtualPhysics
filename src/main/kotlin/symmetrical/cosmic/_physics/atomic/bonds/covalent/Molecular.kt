@@ -11,7 +11,9 @@ import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-
+/*
+https://en.wikipedia.org/wiki/Molecule
+ */
 open class Molecular(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecular::class, Molecular::class),
     private var particleBeam: ParticleBeam = ParticleBeam(),

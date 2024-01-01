@@ -1,10 +1,10 @@
 package symmetrical.cosmic._physics._subatomic.matter.colors
 
-import symmetrical.cosmic._physics._subatomic.bosons.Gluon
+import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Red_AntiRed
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Color_charge
+*/
 // ACTUAL VALUE
 open class Red : Color {
     constructor()

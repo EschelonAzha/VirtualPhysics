@@ -1,11 +1,11 @@
 package symmetrical.cosmic._physics._subatomic.matter.colors
 
-import symmetrical.cosmic._physics._subatomic.bosons.Gluon
+import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Blue_AntiBlue
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Color_charge
+*/
 // PHOTON VALUE
 open class Blue : Color {
 

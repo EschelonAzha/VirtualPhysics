@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.balanced
 import asymmetrical.machine.threads.Energy
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Higgs_boson#Higgs_field
+ */
 
 open class HiggsField{
     constructor()

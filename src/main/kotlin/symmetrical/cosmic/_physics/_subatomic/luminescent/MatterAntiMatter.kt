@@ -5,7 +5,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Annihilation
+ */
 open class MatterAntiMatter: IMatterAntiMatter {
     object Illuminations {
         public val beam: ParticleBeam = ParticleBeam()

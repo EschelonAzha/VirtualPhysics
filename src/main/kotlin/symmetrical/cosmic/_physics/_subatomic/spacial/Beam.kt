@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.spacial
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Particle_beam
+ */
 
 open class Beam : IBeam {
 

@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.forces.magnetism
 import asymmetrical.machine.threads.Energy
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Magnetism
+ */
 
 open class Magnetism: Energy
 

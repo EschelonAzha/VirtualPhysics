@@ -1,6 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.matter.quarks
 
-import symmetrical.cosmic._physics._subatomic.bosons.Gluon
+import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon

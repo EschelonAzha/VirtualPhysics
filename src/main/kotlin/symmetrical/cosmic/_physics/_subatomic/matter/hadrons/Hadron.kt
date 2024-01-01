@@ -7,7 +7,9 @@ import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
-
+/*
+https://en.wikipedia.org/wiki/Hadron
+ */
 open class Hadron(
     private val matter: IMatter = Matter(Hadron::class, AntiHadron::class),
 ) : ParticleBeam(),

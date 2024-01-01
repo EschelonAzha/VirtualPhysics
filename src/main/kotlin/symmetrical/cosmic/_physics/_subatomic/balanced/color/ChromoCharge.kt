@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 
-
+/*
+https://en.wikipedia.org/wiki/Color_charge
+*/
 open class ChromoCharge : Particle {
     constructor()
 

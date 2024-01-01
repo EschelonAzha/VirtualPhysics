@@ -5,7 +5,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-
+/*
+https://en.wikipedia.org/wiki/Atomic_orbital
+ */
 interface IOrbitals {
 
     fun electronSpin            ()              : Boolean

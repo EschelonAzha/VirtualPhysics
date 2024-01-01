@@ -9,7 +9,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
-
+/*
+https://en.wikipedia.org/wiki/Kaon
+ */
 open class Kaon(
     private val matter: IMatter = Matter(Kaon::class, AntiKaon::class),
 ) : Hadron(),

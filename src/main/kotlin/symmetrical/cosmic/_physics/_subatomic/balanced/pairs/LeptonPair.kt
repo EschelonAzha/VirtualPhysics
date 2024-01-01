@@ -9,7 +9,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
-
+/*
+https://en.wikipedia.org/wiki/Pair_production
+ */
 open class LeptonPair(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(LeptonPair::class, LeptonPair::class),
 ) : Particle(),

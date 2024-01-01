@@ -4,22 +4,24 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IQuantumField
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
+import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
+import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Angular_momentum
+ */
 open class AngularMomentum(
-    private val field: QuantumField = QuantumField()
+    private val field: QuasiParticle = QuasiParticle()
 ) :
-    IQuantumField by field
+    IQuasiParticle by field
 {
 
     constructor() : this(
-        QuantumField()
+        QuasiParticle()
     )
 
     companion object {

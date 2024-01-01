@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Bottom
-
+/*
+https://en.wikipedia.org/wiki/BottomQuark
+ */
 
 class AntiBottom(
     private val antiMatter: IAntiMatter = AntiMatter(AntiBottom::class, Bottom::class),

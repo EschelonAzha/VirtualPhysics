@@ -23,7 +23,9 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Atom
+ */
 
 open class Atom(
     private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter(Atom::class, Atom::class),

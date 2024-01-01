@@ -10,7 +10,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Particle_beam
+ */
 open class ParticleBeam(
     private   val matterAntiMatter : IMatterAntiMatter  = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
     protected val _beam            : Beam               = Beam()

@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
-
+/*
+https://en.wikipedia.org/wiki/Color_charge
+*/
 class ColorCharge : IColorCharge {
     lateinit var atom     : Atom
     constructor()

@@ -12,7 +12,9 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 
-
+/*
+https://en.wikipedia.org/wiki/Proton
+ */
 open class Proton(
     private val matter: IMatter = Matter(Proton::class, AntiProton::class),
 ) : Baryon(),
@@ -107,7 +109,7 @@ open class Proton(
 
         val newValue  : Field                       = zBoson.getNewField()
         val valueQuark: Down                        = getValueQuark()
-        val wavelength: QuantumField                = valueQuark.getWavelength().getQuantumField()
+        val wavelength: QuasiParticle                = valueQuark.getWavelength().getQuantumField()
         zBoson.setOldValue(wavelength.getContent())
 
         if (!noChange(zBoson).isAccepted())
@@ -150,7 +152,7 @@ open class Proton(
     private fun noChange(zBoson:ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
         val valueQuark: Down                    = getValueQuark()
-        val wavelength: QuantumField            = valueQuark.getWavelength().getQuantumField()
+        val wavelength: QuasiParticle            = valueQuark.getWavelength().getQuantumField()
         if (!wavelength.isChange(newValue)) {
             zBoson.setAccepted(false)
         }

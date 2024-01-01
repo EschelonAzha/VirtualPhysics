@@ -13,7 +13,9 @@ import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
-
+/*
+https://en.wikipedia.org/wiki/Electron
+ */
 class Electron(
     private val matter: IMatter = Matter(Electron::class, Positron::class),
 ) : Lepton(),

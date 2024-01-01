@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics.atomic.atoms.elements
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-
+/*
+https://en.wikipedia.org/wiki/Hydrogen
+ */
 class Hydrogen(
     private val matter: IMatter = Matter(Hydrogen::class, AntiHydrogen::class),
 ) :

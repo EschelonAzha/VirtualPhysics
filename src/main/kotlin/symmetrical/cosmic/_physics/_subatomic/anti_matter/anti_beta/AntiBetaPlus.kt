@@ -11,7 +11,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 
-
+/*
+https://en.wikipedia.org/wiki/Beta_decay
+ */
 class AntiBetaPlus(
     private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, BetaPlus::class),
 ) : LeptonPair(),

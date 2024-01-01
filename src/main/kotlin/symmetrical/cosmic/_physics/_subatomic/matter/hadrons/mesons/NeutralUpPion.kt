@@ -12,7 +12,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
-
+/*
+https://en.wikipedia.org/wiki/Pion
+ */
 open class NeutralUpPion(
     private val matter: IMatter = Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
 ) : Hadron(),

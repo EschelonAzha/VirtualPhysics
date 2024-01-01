@@ -10,7 +10,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
-
+/*
+https://en.wikipedia.org/wiki/Particle
+ */
 
 open class Particle(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, AntiParticle::class),
@@ -28,7 +30,7 @@ open class Particle(
 
     private lateinit var self : IParticle
 
-    private     var uniqueId        :QuantumField           = QuantumField()
+    private     var uniqueId        :QuasiParticle           = QuasiParticle()
 
     private     val time            :Time                   = Time()
     private     val charge          :Charge                 = Charge()

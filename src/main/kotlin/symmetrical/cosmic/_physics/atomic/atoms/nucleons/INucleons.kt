@@ -5,7 +5,9 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Nucleon
+ */
 interface INucleons {
 
     fun addNeutron      (proton: Neutron)   : Neutron

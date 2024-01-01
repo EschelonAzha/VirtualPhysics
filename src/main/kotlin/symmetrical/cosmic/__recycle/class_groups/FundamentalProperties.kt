@@ -7,13 +7,13 @@ import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
+import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
 
 class FundamentalProperties : ClassGroup {
     constructor() {
         add(EntityId(Base52.classId(), AngularMomentum::class))
         add(EntityId(Base52.classId(), Particle::class))
-        add(EntityId(Base52.classId(), QuantumField::class))
+        add(EntityId(Base52.classId(), QuasiParticle::class))
         add(EntityId(Base52.classId(), Spin::class))
         add(EntityId(Base52.classId(), Wavelength::class))
     }

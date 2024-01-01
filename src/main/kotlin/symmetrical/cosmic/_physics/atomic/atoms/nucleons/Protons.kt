@@ -13,7 +13,9 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Proton
+ */
 class Protons(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Protons::class, Protons::class),
 ) : ParticleBeam(),

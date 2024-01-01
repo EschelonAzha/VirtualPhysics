@@ -5,7 +5,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Antimatter
+ */
 class AntiMatter : MatterAntiMatter, IAntiMatter {
     constructor(positive:KClass<*>, negative:KClass<*>) : super(positive, negative){
 

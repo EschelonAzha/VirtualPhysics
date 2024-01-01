@@ -3,6 +3,9 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
+/*
+https://en.wikipedia.org/wiki/Color_charge
+*/
 
 // ORIGINAL VALUE
 open class AntiBlue : AntiColor {

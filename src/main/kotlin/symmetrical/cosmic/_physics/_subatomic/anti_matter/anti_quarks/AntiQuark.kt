@@ -2,7 +2,7 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks
 
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.bosons.Gluon
+import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -22,7 +22,7 @@ open class AntiQuark(
     )
 
 
-    private var gluon       : Gluon         = Red_AntiRed()
+    private var gluon       : Gluon = Red_AntiRed()
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);

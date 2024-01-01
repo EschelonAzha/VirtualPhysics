@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics.atomic.atoms.elements
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-
+/*
+https://en.wikipedia.org/wiki/Helium
+ */
 
 class Helium(
     private val matter: IMatter = Matter(Helium::class, AntiHelium::class),

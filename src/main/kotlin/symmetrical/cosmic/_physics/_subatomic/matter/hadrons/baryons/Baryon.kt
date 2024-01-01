@@ -14,7 +14,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 
-
+/*
+https://en.wikipedia.org/wiki/Baryon
+ */
 open class Baryon(
     private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class),
 ) : Hadron(),

@@ -5,7 +5,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
-
+/*
+https://en.wikipedia.org/wiki/MuonNeutrino
+ */
 class MuonNeutrino(
     private val matter: IMatter = Matter(MuonNeutrino::class, AntiMuonNeutrino::class),
 ) : Lepton(),

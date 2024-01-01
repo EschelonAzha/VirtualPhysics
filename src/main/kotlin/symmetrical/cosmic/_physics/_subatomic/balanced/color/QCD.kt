@@ -2,7 +2,9 @@ package symmetrical.cosmic._physics._subatomic.balanced.color
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Quantum_chromodynamics
+ */
 class QCD {
     constructor()
     /*

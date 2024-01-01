@@ -10,8 +10,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.MatterAntiMatter
 
-
-//class ElectronPositron<PlusPion> : LeptonPair {
+/*
+https://en.wikipedia.org/wiki/Pair_production
+ */
 class ElectronPositron(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(ElectronPositron::class, ElectronPositron::class),
 ) : LeptonPair(),

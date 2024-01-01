@@ -3,10 +3,12 @@ package symmetrical.cosmic._physics._dimensions
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IQuantumField
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
-
-class Charge (private val field:QuantumField=QuantumField()) : IQuantumField by field {
+import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
+import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
+/*
+https://en.wikipedia.org/wiki/Charge_(physics)
+ */
+class Charge (private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle by field {
 
     object Static {
         const val PLUS:Byte  = +1
@@ -14,7 +16,7 @@ class Charge (private val field:QuantumField=QuantumField()) : IQuantumField by 
         const val MINUS:Byte = -1
     }
     constructor() : this(
-        QuantumField()
+        QuasiParticle()
     ) {
         setCharge(Static.ZERO)
     }

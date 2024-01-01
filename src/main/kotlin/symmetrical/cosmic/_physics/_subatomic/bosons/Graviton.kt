@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.bosons
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Graviton
+ */
 
 class Graviton {
     constructor()

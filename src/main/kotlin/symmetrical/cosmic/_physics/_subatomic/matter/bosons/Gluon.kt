@@ -1,13 +1,14 @@
-package symmetrical.cosmic._physics._subatomic.bosons
+package symmetrical.cosmic._physics._subatomic.matter.bosons
 
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiColor
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
+/*
+https://en.wikipedia.org/wiki/Gluon
+ */
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
 open class Gluon : Particle {

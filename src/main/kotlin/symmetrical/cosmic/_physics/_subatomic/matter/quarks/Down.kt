@@ -8,7 +8,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-
+/*
+https://en.wikipedia.org/wiki/DownQuark
+ */
 
 class Down(
     private val matter: IMatter = Matter(Down::class, AntiDown::class),

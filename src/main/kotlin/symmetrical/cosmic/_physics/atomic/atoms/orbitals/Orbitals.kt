@@ -8,7 +8,9 @@ import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-
+/*
+https://en.wikipedia.org/wiki/Atomic_orbital
+ */
 open class Orbitals(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Orbitals::class, Orbitals::class),
 ) : ParticleBeam(),

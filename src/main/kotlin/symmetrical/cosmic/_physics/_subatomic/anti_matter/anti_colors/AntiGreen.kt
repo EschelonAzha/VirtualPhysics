@@ -2,7 +2,9 @@ package symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors
 
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Color_charge
+*/
 // ORIGINAL VALUE
 open class AntiGreen : AntiColor {
     constructor()

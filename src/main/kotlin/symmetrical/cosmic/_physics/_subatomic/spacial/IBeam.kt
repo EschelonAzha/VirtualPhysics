@@ -1,7 +1,9 @@
 package symmetrical.cosmic._physics._subatomic.spacial
 
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Particle_beam
+ */
 interface IBeam {
     fun add             (obj:Any?)                      : Any?
     fun addAll          (beam: IBeam)                    : IBeam

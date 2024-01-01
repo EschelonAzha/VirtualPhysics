@@ -2,9 +2,6 @@ package symmetrical.cosmic._physics._creation
 
 
 import asymmetrical.machine.threads.Cores
-import symmetrical.cosmic._physics._subatomic.bosons.Gluon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class BigBang  {
     constructor()

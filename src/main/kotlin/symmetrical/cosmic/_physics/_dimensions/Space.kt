@@ -4,17 +4,17 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IQuantumField
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
-
-class Space (private val field: QuantumField = QuantumField()) : IQuantumField by field {
+import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
+import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
+/*
+https://en.wikipedia.org/wiki/Space
+ */
+class Space (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
 
     private var space: IParticle? = null   // this may have to change to a Particle UniqueId when emitted
 
     constructor() : this(
-        QuantumField()
+        QuasiParticle()
     )
     fun i() : Space {
         return this

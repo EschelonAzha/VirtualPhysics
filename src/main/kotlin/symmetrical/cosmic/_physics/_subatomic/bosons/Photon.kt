@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics._subatomic.bosons
 import asymmetrical.machine.config.Config
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Photons
-
+/*
+https://en.wikipedia.org/wiki/Photon
+ */
 open class Photon{
     constructor()
 

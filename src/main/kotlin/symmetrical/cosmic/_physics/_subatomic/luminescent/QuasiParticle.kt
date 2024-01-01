@@ -5,13 +5,14 @@ import symmetrical.cosmic.__transpectors.transpectors.Photons
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.balanced.values.IField
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-
-class QuantumField(
+/*
+https://en.wikipedia.org/wiki/Quasiparticle
+ */
+class QuasiParticle(
     private val _field:Field=Field()
 ) : IField by _field,
-    IQuantumField
+    IQuasiParticle
 {
     constructor() : this(
         Field()
@@ -112,6 +113,6 @@ class QuantumField(
     }
 
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(QuantumField::class)
+        return Absorber.getClassId(QuasiParticle::class)
     }
 }

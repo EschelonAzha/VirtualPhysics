@@ -1,10 +1,8 @@
 package symmetrical.cosmic._physics._subatomic.bosons.gluons
 
-import symmetrical.cosmic._physics._subatomic.bosons.Gluon
+import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_colors.AntiRed
 import symmetrical.cosmic._physics._subatomic.matter.colors.Blue
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
 class Green_AntiRed : Gluon {
     constructor()

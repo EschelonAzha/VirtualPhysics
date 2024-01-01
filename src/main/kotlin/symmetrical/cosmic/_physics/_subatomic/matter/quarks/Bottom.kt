@@ -6,7 +6,9 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
-
+/*
+https://en.wikipedia.org/wiki/BottomQuark
+ */
 class Bottom(
     private val matter: IMatter = Matter(Bottom::class, AntiBottom::class),
 ) : Quark(),

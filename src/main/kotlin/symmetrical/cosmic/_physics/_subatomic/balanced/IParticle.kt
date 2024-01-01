@@ -5,8 +5,10 @@ import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomen
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.QuantumField
 
+/*
+https://en.wikipedia.org/wiki/Particle
+ */
 
 interface IParticle {
     fun createUniqueId()                    : IParticle

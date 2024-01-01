@@ -3,7 +3,9 @@ package symmetrical.cosmic._physics.atomic.atoms.nucleons
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
-
+/*
+https://en.wikipedia.org/wiki/Proton
+ */
 interface IProtons {
     fun absorb          (photon: Photon)    : Photon
     fun addProton       (proton: Proton)    : Proton

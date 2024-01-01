@@ -5,7 +5,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic._physics.atomic.bonds.ionic.Ionic
-
+/*
+https://en.wikipedia.org/wiki/Chemical_compound
+ */
 open class Compound(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Compound::class, Compound::class),
 ) : Molecular(),

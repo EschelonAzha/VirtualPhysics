@@ -1,9 +1,7 @@
 package symmetrical.cosmic._physics.atomic.blackhole
-
-import symmetrical.cosmic._physics._subatomic.bosons.Gluon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-
+/*
+https://en.wikipedia.org/wiki/Event_horizon
+ */
 class EventHorizon  {
     constructor()
 

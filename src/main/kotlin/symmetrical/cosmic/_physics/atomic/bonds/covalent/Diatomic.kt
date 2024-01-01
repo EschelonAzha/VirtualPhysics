@@ -4,7 +4,9 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-
+/*
+https://en.wikipedia.org/wiki/Diatomic_molecule
+ */
 open class Diatomic(
     private val matter: IMatter = Matter(Diatomic::class, Diatomic::class),
 ) : Molecular(),
