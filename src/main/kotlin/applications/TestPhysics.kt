@@ -1,6 +1,7 @@
 package applications
 
 import applications.tests.VTestElectronics
+import applications.tests.VTestEmissions
 import symmetrical.cosmic.__recycle.Absorber
 
 object TestPhysics {
@@ -9,6 +10,7 @@ object TestPhysics {
         Absorber.initialize(TestPhysicsEmitters())
 
         VTestElectronics().test()
+        VTestEmissions().test()
     }
 
 }

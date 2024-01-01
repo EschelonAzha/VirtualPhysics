@@ -85,6 +85,9 @@ open class ParticleBeam(
     }
 
     private fun radiate() : String {
+        if (Particle.Static.debuggingOn) {
+            println("ParticleBeam")
+        }
         val classId     :String = matterAntiMatter.getClassId()
         val particle    :String = super.emit().radiate()
         if (size() > 140606) {

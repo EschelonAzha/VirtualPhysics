@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics._subatomic.balanced
 
+import asymmetrical.machine.vm.Classes
 import symmetrical.cosmic.__transpectors.transpectors.Keys
 import symmetrical.cosmic._physics._dimensions.*
 import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
@@ -27,8 +28,13 @@ open class Particle(
         time.setContent(200)
     }
 
+    object Static {
+        public val debuggingOn :Boolean = true
+    }
 
-    private lateinit var self : IParticle
+
+
+    private lateinit var self   :IParticle
 
     private     var uniqueId        :QuasiParticle           = QuasiParticle()
 
@@ -57,24 +63,13 @@ open class Particle(
         return remainder
     }
 
+    fun getSimpleName() : String {
+        return Classes.getSimpleName(this)
+    }
+
     override fun emit() : Photon {
         return Photon(radiate())
     }
-
-
-    private fun radiate() : String {
-        return matterAntiMatter.getClassId()+
-                uniqueId.emit().radiate()+
-                time.emit().radiate()+
-                charge.emit().radiate()+
-                mass.emit().radiate()+
-                temperature.emit().radiate()+
-                space.emit().radiate()+
-                _wavelength.emit().radiate()+
-                spin.emit().radiate()+
-                angularMomentum.emit().radiate()
-    }
-
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
@@ -165,6 +160,24 @@ open class Particle(
     override fun wavelengthStr() : String {
         val result = wavelength() ?: return ""
         return result.toString()
+    }
+
+    private fun radiate() : String {
+        if (Particle.Static.debuggingOn) {
+            println("Particle")
+        }
+        val classId         : String = matterAntiMatter.getClassId()
+        val uniqueId        : String = uniqueId.emit().radiate()
+        val time            : String = time.emit().radiate()
+        val charge          : String = charge.emit().radiate()
+        val mass            : String = mass.emit().radiate()
+        val temperature     : String = temperature.emit().radiate()
+        val space           : String = space.emit().radiate()
+        val wavelength      : String = _wavelength.emit().radiate()
+        val spin            : String = spin.emit().radiate()
+        val angularMomentum : String = angularMomentum.emit().radiate()
+
+        return classId+uniqueId+time+charge+mass+temperature+space+wavelength+spin+angularMomentum
     }
 
 }

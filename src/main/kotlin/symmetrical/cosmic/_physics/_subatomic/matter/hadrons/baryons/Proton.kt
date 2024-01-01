@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -160,8 +161,13 @@ open class Proton(
         return zBoson
     }
     private fun radiate() : String {
-        return matter.getClassId()+
-                super.emit().radiate();
+        if (Particle.Static.debuggingOn) {
+            println("Proton")
+        }
+
+        val classId : String = matter.getClassId()
+        val baryon  : String = super.emit().radiate()
+        return classId+baryon
     }
     private fun valueChange(valueQuark:Down, zBoson:ZBoson) : ZBoson {
         if (p_protons != null)

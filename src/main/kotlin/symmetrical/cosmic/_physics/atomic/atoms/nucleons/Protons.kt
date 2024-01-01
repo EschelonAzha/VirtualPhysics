@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics.atomic.atoms.nucleons
 
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -100,7 +101,11 @@ class Protons(
 
 
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+
-                super.emit().radiate()
+        if (Particle.Static.debuggingOn) {
+            println("Protons")
+        }
+        val classId:String = matterAntiMatter.getClassId()
+        val particleBeam:String = super.emit().radiate()
+        return classId+particleBeam
     }
 }

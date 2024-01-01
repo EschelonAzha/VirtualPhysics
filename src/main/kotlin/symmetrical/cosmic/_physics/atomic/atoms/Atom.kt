@@ -88,8 +88,8 @@ open class Atom(
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
-        remainder = orbitals.absorb(remainder)
         remainder = _nucleons.absorb(remainder)
+        remainder = orbitals.absorb(remainder)
 
         setAtom(this)
         return remainder
@@ -188,9 +188,13 @@ open class Atom(
     }
 
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+
-                super.emit().radiate()+
-                orbitals.emit().radiate()+
-                _nucleons.emit().radiate()
+        if (Particle.Static.debuggingOn) {
+            println("Atom")
+        }
+        val classId :String = matterAntiMatter.getClassId()
+        val particle:String = super.emit().radiate()
+        val nucleons:String = _nucleons.emit().radiate()
+        val orbitals:String = orbitals.emit().radiate()
+        return classId+particle+nucleons+orbitals
     }
 }

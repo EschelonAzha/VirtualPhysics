@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.AntiHadron
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
@@ -47,7 +48,11 @@ open class Hadron(
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
-                super.emit().radiate()
+        if (Particle.Static.debuggingOn) {
+            println("Hadron")
+        }
+        val classId      : String = matter.getClassId()
+        val particleBeam : String = super.emit().radiate()
+        return classId+particleBeam
     }
 }

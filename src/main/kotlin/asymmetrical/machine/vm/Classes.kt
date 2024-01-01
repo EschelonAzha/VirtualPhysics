@@ -1,5 +1,6 @@
 package asymmetrical.machine.vm
 
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import kotlin.reflect.KClass
 
 object Classes {
@@ -15,4 +16,9 @@ object Classes {
 //        }
         return null
     }
+    fun getSimpleName(obj:Any) : String {
+        val kClass = obj::class
+        return kClass.simpleName as String
+    }
 }
+

@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -147,7 +148,11 @@ open class Baryon(
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
-                super.emit().radiate()
+        if (Particle.Static.debuggingOn) {
+            println("Baryon")
+        }
+        val classId:String = matter.getClassId()
+        val hadron :String = super.emit().radiate()
+        return classId+hadron
     }
 }

@@ -1,5 +1,6 @@
 package symmetrical.cosmic._physics.atomic.atoms.orbitals
 
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -93,6 +94,9 @@ open class Orbitals(
         return zBoson
     }
     private fun radiate() : String {
+        if (Particle.Static.debuggingOn) {
+            println("Orbitals")
+        }
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }

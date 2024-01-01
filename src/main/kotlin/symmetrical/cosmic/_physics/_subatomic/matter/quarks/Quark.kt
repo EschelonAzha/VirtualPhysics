@@ -139,7 +139,12 @@ open class Quark(
         return boson
     }
     private fun radiate() : String {
-        return matter.getClassId()+
-                super.emit().radiate()
+        if (Particle.Static.debuggingOn) {
+            println("Quark")
+        }
+
+        val classId  : String = matter.getClassId()
+        val particle : String = super.emit().radiate()
+        return classId+particle
     }
 }

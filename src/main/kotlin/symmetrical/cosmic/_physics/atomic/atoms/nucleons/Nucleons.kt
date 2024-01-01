@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics.atomic.atoms.nucleons
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -90,8 +91,12 @@ class Nucleons(
         return this
     }
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+
-                this._protons.emit().radiate()+
-                this.neutrons.emit().radiate()
+        if (Particle.Static.debuggingOn) {
+            println("Nucleons")
+        }
+        val classId :String = matterAntiMatter.getClassId()
+        val protons :String = _protons.emit().radiate()
+        val neutrons:String = neutrons.emit().radiate()
+        return classId+protons+neutrons
     }
 }
