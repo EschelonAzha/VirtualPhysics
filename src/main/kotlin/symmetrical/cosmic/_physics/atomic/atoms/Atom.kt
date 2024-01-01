@@ -151,6 +151,12 @@ open class Atom(
     fun getElectron(pos:Int) : Electron {
         return orbitals.get(pos) as Electron
     }
+    fun getField() : Field {
+        return Atom.field(this)
+    }
+    fun getField(proton:KClass<*>) : Field {
+        return Atom.field(this, proton)
+    }
     fun getProtons() : Protons {
         return _nucleons.getProtons()
     }

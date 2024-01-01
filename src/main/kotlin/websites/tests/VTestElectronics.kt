@@ -34,9 +34,9 @@ class VTestElectronics {
         val pair1 : TauAntiTauPair = atom3.setCurrentValue(ATOM3NEW)
         val pair2 : TauAntiTauPair = atom1.setCurrentValue(ATOM1NEW)
 
-        val atom1Val1 = Atom.field(atom1).toString()
-        val atom2Val1 = Atom.field(atom2).toString()
-        val atom3Val1 = Atom.field(atom3).toString()
+        val atom1Val1 = atom1.getField().toString()
+        val atom2Val1 = atom2.getField().toString()
+        val atom3Val1 = atom3.getField().toString()
 
         if (atom1Val1!=ATOM1NEW)
             return false
