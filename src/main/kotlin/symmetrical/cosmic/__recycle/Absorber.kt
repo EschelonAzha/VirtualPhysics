@@ -1,7 +1,6 @@
 package symmetrical.cosmic.__recycle
 
 import asymmetrical.machine.config.Config
-import asymmetrical.machine.vm.Classes
 import symmetrical.cosmic.__recycle.class_groups.*
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.*
@@ -10,6 +9,7 @@ import kotlin.reflect.KClass
 object Absorber {
     val beam: ClassGroup = ClassGroup()
     init {
+        beam.addAll(AppClasses())
         beam.addAll(Atoms())
         beam.addAll(Dimentions())
         beam.addAll(Charges())
@@ -21,7 +21,6 @@ object Absorber {
         beam.addAll(Hadrons())
         beam.addAll(Ions())
         beam.addAll(Leptons())
-        beam.addAll(Other())
         beam.addAll(Quarks())
         beam.addAll(Spacial())
         beam.print()

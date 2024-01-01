@@ -33,10 +33,9 @@ import symmetrical.dom.properties.region.DomTop
 import symmetrical.dom.properties.region.DomWidth
 import symmetrical.dom.properties.style.DomStyle
 
-class Other : ClassGroup {
+class AppClasses : ClassGroup {
     constructor() {
 
-      //  add(EntityId(Base52.classId(), CRLFTerminatedColor::class))
         add(EntityId(Base52.classId(), CRLFTerminatedMomentum::class))
         add(EntityId(Base52.classId(), CrLfTerminatedString::class))
         add(EntityId(Base52.classId(), DeviceInput::class))
