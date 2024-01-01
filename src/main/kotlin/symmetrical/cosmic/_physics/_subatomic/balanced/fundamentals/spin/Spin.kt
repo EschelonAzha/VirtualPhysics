@@ -114,6 +114,12 @@ class Spin(
     }
 
     fun setSpin(content:Any?) : Any? {
+        if (content is Boolean) {
+            if (content)
+                return setContent(1)
+            else return setContent(0)
+        }
+
         return setContent(content)
     }
 

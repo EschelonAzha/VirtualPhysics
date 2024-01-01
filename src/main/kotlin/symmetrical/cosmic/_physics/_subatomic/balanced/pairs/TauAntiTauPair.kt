@@ -22,7 +22,11 @@ class TauAntiTauPair(
 {
     constructor() : this(
         MatterAntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
-    )
+    ) init {
+        setAccepted(true)
+        setReason("")
+        setReasonCode(0)
+    }
 
     companion object {
         fun field(pair:LeptonPair) : Field {
@@ -33,18 +37,16 @@ class TauAntiTauPair(
         }
     }
 
-    var accepted   : Boolean    = true
-    var reason     : String     = ""
-    var reasonCode : Int        = 0
+
 
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
         i(lepton, antiLepton)
     }
     fun i(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
         super.i(Tau(newValue), AntiTau(oldValue))
-        this.accepted       = accepted
-        this.reasonCode     = reasonCode
-        this.reason         = reason
+        setAccepted(accepted)
+        setReasonCode(reasonCode)
+        setReason(reason)
         return this
     }
 
@@ -66,14 +68,31 @@ class TauAntiTauPair(
     fun getPositron() : Positron {
         return _antiLepton as Positron
     }
-    //    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
-//        this.leptons[0] = electron
-//        return this
-//    }
-//    private fun setPositron(positron: Positron) : ElectronPositron<PlusPion> {
-//        this.leptons[1] = positron
-//        return this
-//    }
+
+    fun getReason() : String {
+        return getWavelength().getField().toString()
+    }
+
+    fun getReasonCode() : Int {
+        return getTemperature().getField().toInt()
+    }
+
+    fun isAccepted() : Boolean {
+        return getSpin().isPlus()
+    }
+    fun setAccepted(accepted:Boolean) : TauAntiTauPair {
+        getSpin().setSpin(accepted)
+        return this
+    }
+
+    fun setReason(content:String) : TauAntiTauPair {
+        getWavelength().setContent(content)
+        return this
+    }
+    fun setReasonCode(value:Int) : TauAntiTauPair {
+        getTemperature().setContent(value)
+        return this
+    }
     private fun setElectron(electron: Electron) : TauAntiTauPair {
         this._lepton = electron
         return this

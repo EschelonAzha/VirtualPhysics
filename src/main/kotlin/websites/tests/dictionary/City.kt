@@ -7,6 +7,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 
 class City(
     private val matter: IMatter = Matter(City::class, City::class),
@@ -19,10 +20,12 @@ class City(
 
     }
     constructor(content:Any?) : this(){
-        setContent(content)
+        Quark.value(this).setWavelength(content)
     }
     override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
-        accept(valueQuark, zBoson)
+     //   accept(valueQuark, zBoson)
+
+        reject(20, "Nope!", zBoson)
 
         return zBoson
     }

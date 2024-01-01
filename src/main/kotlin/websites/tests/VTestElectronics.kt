@@ -39,11 +39,22 @@ class VTestElectronics {
         val pair1 : TauAntiTauPair = atom3.setContent(ATOM3NEW)
         val pair2 : TauAntiTauPair = atom1.setContent(ATOM1NEW)
 
+        val accepted    : Boolean    = pair2.isAccepted()
+        val reason      : String     = pair2.getReason()
+        val reasonCode  : Int        = pair2.getReasonCode()
+
+        if (accepted)
+            return false
+        if (reasonCode != 20)
+            return false
+        if (reason != "Nope!")
+            return false
+
         val atom1Val1 = atom1.getField().toString()
         val atom2Val1 = atom2.getField().toString()
         val atom3Val1 = atom3.getField().toString()
 
-        if (atom1Val1!=ATOM1NEW)
+        if (atom1Val1!=ATOM1)  // change was rejected by City
             return false
         if (atom2Val1!=ATOM3NEW)
             return false
@@ -65,7 +76,7 @@ class VTestElectronics {
         if (antiLepton1 != ATOM3){
             return false
         }
-        if (antiLepton2 != ATOM3NEW) {
+        if (antiLepton2 != ATOM1) {
             return false
         }
         return true
