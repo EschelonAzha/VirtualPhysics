@@ -57,6 +57,12 @@ class TauAntiTauPair(
     fun getElectron() : Electron {
         return _lepton as Electron
     }
+    fun getField() : Field {
+        return TauAntiTauPair.field(this)
+    }
+    fun getAntiField() : Field {
+        return TauAntiTauPair._field(this)
+    }
     fun getPositron() : Positron {
         return _antiLepton as Positron
     }
