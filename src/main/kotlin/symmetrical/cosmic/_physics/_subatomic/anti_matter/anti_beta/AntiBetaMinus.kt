@@ -35,20 +35,20 @@ class AntiBetaMinus(
         return Up()
     }
     fun getAntiNeutrino() : AntiNeutrino {
-        return antiLepton as AntiNeutrino
+        return _antiLepton as AntiNeutrino
     }
     override fun getClassId() : String {
         return antiMatter.getClassId()
     }
     fun getElectron() : Electron {
-        return lepton as Electron
+        return _lepton as Electron
     }
     private fun setAntiNeutrino(antiNeutrino: AntiNeutrino) : AntiBetaMinus {
-        this.antiLepton =  antiNeutrino
+        this._antiLepton =  antiNeutrino
         return this
     }
     private fun setElectron(electron: Electron) : AntiBetaMinus {
-        this.lepton = electron
+        this._lepton = electron
         return this
     }
 }

@@ -2,6 +2,7 @@ package symmetrical.cosmic._physics._subatomic.balanced.pairs
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
@@ -18,8 +19,17 @@ open class LeptonPair(
         MatterAntiMatter(LeptonPair::class, LeptonPair::class),
     )
 
-    public lateinit var lepton     : Lepton
-    public lateinit var antiLepton : AntiLepton
+    companion object {
+        fun field(pair:LeptonPair) : Field {
+            return pair._lepton.getWavelength().getField()
+        }
+        fun _field(pair:LeptonPair) : Field {
+            return pair._antiLepton.getWavelength().getField()
+        }
+    }
+
+    public lateinit var _lepton     : Lepton
+    public lateinit var _antiLepton : AntiLepton
 
 
 //    constructor(lepton:Lepton, antiLepton:AntiLepton) {
@@ -27,8 +37,8 @@ open class LeptonPair(
 //    }
 
     fun i(lepton:Lepton, antiLepton:AntiLepton) : LeptonPair {
-        this.lepton     = lepton;
-        this.antiLepton = antiLepton
+        this._lepton     = lepton;
+        this._antiLepton = antiLepton
         return this
     }
 

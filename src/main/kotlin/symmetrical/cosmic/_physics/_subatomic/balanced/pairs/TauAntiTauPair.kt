@@ -22,6 +22,15 @@ class TauAntiTauPair(
         MatterAntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
     )
 
+    companion object {
+        fun field(pair:LeptonPair) : Field {
+            return pair._lepton.getWavelength().getField()
+        }
+        fun _field(pair:LeptonPair) : Field {
+            return pair._antiLepton.getWavelength().getField()
+        }
+    }
+
     var accepted   : Boolean    = true
     var reason     : String     = ""
     var reasonCode : Int        = 0
@@ -44,10 +53,10 @@ class TauAntiTauPair(
         return matterAntiMatter.getClassId()
     }
     fun getElectron() : Electron {
-        return lepton as Electron
+        return _lepton as Electron
     }
     fun getPositron() : Positron {
-        return antiLepton as Positron
+        return _antiLepton as Positron
     }
     //    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
 //        this.leptons[0] = electron
@@ -58,11 +67,11 @@ class TauAntiTauPair(
 //        return this
 //    }
     private fun setElectron(electron: Electron) : TauAntiTauPair {
-        this.lepton = electron
+        this._lepton = electron
         return this
     }
     private fun setPositron(positron: Positron) : TauAntiTauPair {
-        this.antiLepton = positron
+        this._antiLepton = positron
         return this
     }
 

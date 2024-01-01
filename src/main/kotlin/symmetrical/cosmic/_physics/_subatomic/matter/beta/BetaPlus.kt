@@ -51,17 +51,17 @@ class BetaPlus(
         return matter.getClassId()
     }
     fun getNeutrino() : Neutrino {
-        return lepton as Neutrino
+        return _lepton as Neutrino
     }
     fun getPositron() : Positron {
-        return antiLepton as Positron
+        return _antiLepton as Positron
     }
     private fun setNeutrino(neutrino: Neutrino) : BetaPlus {
-        this.lepton = neutrino
+        this._lepton = neutrino
         return this
     }
     private fun setPositron(positron: Positron) : BetaPlus {
-        this.antiLepton = positron
+        this._antiLepton = positron
         return this
     }
 

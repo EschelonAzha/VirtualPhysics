@@ -22,6 +22,7 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import kotlin.reflect.KClass
 
 
 open class Atom(
@@ -37,6 +38,33 @@ open class Atom(
     IEmitter,
     IAtom
 {
+    companion object {
+        fun content(atom: Atom) : Any? {
+            return content(atom.getProton(ValueProton::class))
+        }
+        fun content(atom: Atom, kClass: KClass<*>) : Any? {
+            return content(atom.getProton(kClass))
+        }
+        fun content(proton:Proton) : Any? {
+            var quark  : Quark = proton.getValueQuark()
+            return quark.getWavelength().getField().getContent()
+        }
+        fun field(atom: Atom) : Field {
+            return field(atom.getProton(ValueProton::class))
+        }
+        fun field(atom: Atom, kClass: KClass<*>) : Field {
+            return field(atom.getProton(kClass))
+        }
+        fun field(proton: Proton) : Field {
+            var quark  : Quark = proton.getValueQuark()
+            return quark.getWavelength().getField()
+        }
+        fun format(atom: Atom) : Field {
+            val proton = atom.getProton(ValueProton::class)
+            var quark  : Quark = proton.getValueQuark()
+            return quark.getAngularMomentum().run(field(atom))
+        }
+    }
     constructor() : this(
         MatterAntiMatter(Atom::class, Atom::class),
         Orbitals(),

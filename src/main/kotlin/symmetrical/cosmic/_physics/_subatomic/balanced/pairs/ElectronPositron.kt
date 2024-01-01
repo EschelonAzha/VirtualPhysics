@@ -36,10 +36,10 @@ class ElectronPositron(
     }
 
     fun getElectron() : Electron {
-        return lepton as Electron
+        return _lepton as Electron
     }
     fun getPositron() : Positron {
-        return antiLepton as Positron
+        return _antiLepton as Positron
     }
 //    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
 //        this.leptons[0] = electron
@@ -50,11 +50,11 @@ class ElectronPositron(
 //        return this
 //    }
     private fun setElectron(electron: Electron) : ElectronPositron {
-        this.lepton = electron
+        this._lepton = electron
         return this
     }
     private fun setPositron(positron: Positron) : ElectronPositron {
-        this.antiLepton = positron
+        this._antiLepton = positron
         return this
     }
 

@@ -10,8 +10,6 @@ object TestPhysics {
         VTestElectronics().test()
     }
 
-
-
     private fun testDiodes() : Unit {
         val atom1: Atom = Atom("Atom1")
         val atom2: Atom = Atom("Atom2")
