@@ -1,8 +1,8 @@
 package websites.tests
 
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import websites.tests.dictionary.City
 
 class VTestElectronics {
     val ATOM1:String = "Atom1"
@@ -30,7 +30,7 @@ class VTestElectronics {
         return true
     }
     private fun testDiodes() : Boolean {
-        val atom1: Atom = Atom(ATOM1)
+        val atom1: Atom = City(ATOM1)
         val atom2: Atom = Atom(ATOM2)
         val atom3: Atom = Atom(ATOM3)
 

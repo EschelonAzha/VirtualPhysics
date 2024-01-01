@@ -79,8 +79,8 @@ open class Atom(
         this._nucleons.setAtom(this)
     }
 
-    constructor(value:String) : this() {
-        Quark.value(this).setWavelength(value)
+    constructor(content:Any?) : this() {
+        Quark.value(this).setWavelength(content)
     }
 
     override fun absorb(photon: Photon) : Photon {
@@ -93,6 +93,12 @@ open class Atom(
 
         setAtom(this)
         return remainder
+    }
+
+    fun accept(valueQuark: Down, zBoson: ZBoson) : Atom {
+        valueQuark.getWavelength().setContent(zBoson.getNewValue())
+        zBoson.setAccepted(true)
+        return this
     }
     open fun capacitanceChange(me: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return zBoson
@@ -162,7 +168,12 @@ open class Atom(
     fun getProtons() : Protons {
         return _nucleons.getProtons()
     }
-
+    fun reject(reasonCode:Int, reason:String, boson:ZBoson) : Atom {
+        boson.setAccepted(false)
+        boson.setReasonCode(reasonCode)
+        boson.setReason(reason)
+        return this;
+    }
     final override fun setAtom(atom:Atom) : Atom {
         orbitals.setAtom(this)
         _nucleons.setAtom(this)
@@ -172,8 +183,7 @@ open class Atom(
         return getProtons().setCurrentValue(ZBoson().i(Field(value), constructing)).decay()
     }
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
-        valueQuark.getWavelength().setContent(zBoson.getNewValue())
-        zBoson.setAccepted(true)
+        accept(valueQuark, zBoson)
         return zBoson
     }
 

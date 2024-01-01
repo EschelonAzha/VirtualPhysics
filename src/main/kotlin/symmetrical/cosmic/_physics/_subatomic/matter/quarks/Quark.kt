@@ -112,6 +112,11 @@ open class Quark(
         return gluon.color._value
     }
 
+    fun setContent(content:Any?) : Quark {
+        getWavelength().setContent(content)
+        return this
+    }
+
     fun setGreen(green: Green) : Quark {
         gluon.setGreen(green)
         return this
