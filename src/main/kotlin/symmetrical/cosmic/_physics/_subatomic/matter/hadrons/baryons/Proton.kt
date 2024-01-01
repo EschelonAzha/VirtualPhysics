@@ -21,7 +21,7 @@ open class Proton(
 ) : Baryon(),
     IMatter by matter
 {
-    val _quark:Quark
+    var _quark:Quark
     constructor() : this(
         Matter(Proton::class, AntiProton::class),
     ) init {
@@ -53,8 +53,12 @@ open class Proton(
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
+        clear()
         var remainder = photon.propagate()
+
         remainder = super.absorb(remainder)
+
+        _quark    = get(0) as Quark
         return remainder
     }
     fun capacitanceChange(zBoson:ZBoson) : ZBoson {

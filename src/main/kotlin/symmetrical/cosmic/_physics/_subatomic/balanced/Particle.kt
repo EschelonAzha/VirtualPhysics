@@ -29,7 +29,7 @@ open class Particle(
     }
 
     object Static {
-        public val debuggingOn :Boolean = true
+        public val debuggingOn :Boolean = false
     }
 
 
@@ -61,6 +61,9 @@ open class Particle(
         remainder = angularMomentum.absorb(remainder)
 
         return remainder
+    }
+    fun breakpoint() : Unit {
+        return
     }
 
     fun getSimpleName() : String {

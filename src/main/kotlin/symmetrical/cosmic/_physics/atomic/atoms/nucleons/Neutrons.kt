@@ -76,7 +76,8 @@ class Neutrons(
     }
 
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+
-                super.emit().radiate()
+        val classId : String = matterAntiMatter.getClassId()
+        val particleBeam : String = super.emit().radiate()
+        return classId+particleBeam
     }
 }

@@ -31,10 +31,15 @@ class VTestEmissions {
         val (atomClone, atomRemainder) = Absorber.materialize(atomEmission)
 
 
+
         val cityEmission = city.emit()
         val (cityClone, cityRemainder) = Absorber.materialize(cityEmission)
 
         return true
+    }
+
+    fun breakpoint() : Unit {
+        return
     }
 
 }
