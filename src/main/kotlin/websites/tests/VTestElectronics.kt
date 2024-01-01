@@ -18,9 +18,10 @@ class VTestElectronics {
     }
 
     fun test() : Boolean {
-        if (!testDiodes())
+        if (!testDiodes()) {
             println("VTestElectronics::testDiodes FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
+        }
 
         return true
     }
