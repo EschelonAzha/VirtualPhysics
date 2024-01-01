@@ -1,4 +1,4 @@
-package websites.tests
+package applications.tests
 
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field

@@ -1,8 +1,8 @@
-package websites.tests
+package applications.tests
 
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import websites.tests.dictionary.City
+import applications.tests.dictionary.City
 
 class VTestElectronics {
     val ATOM1:String = "Atom1"

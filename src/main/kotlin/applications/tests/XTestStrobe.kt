@@ -1,4 +1,4 @@
-package websites.tests
+package applications.tests
 
 
 object XTestStrobe {

@@ -1,4 +1,4 @@
-package websites.tests.dictionary
+package applications.tests.dictionary
 
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter

@@ -23,11 +23,14 @@ object Absorber {
         beam.addAll(Leptons())
         beam.addAll(Quarks())
         beam.addAll(Spacial())
-        beam.print()
+
     }
 
 
-
+    fun addAll(group:ClassGroup) : Absorber {
+        beam.addAll(group)
+        return this
+    }
     fun createInstance(id:String) : Any? {
         for (i in 0 until beam.size()) {
             val entityId = beam.get(i) as EntityId
@@ -52,6 +55,12 @@ object Absorber {
         return ""
     }
     fun initialize() : Absorber {
+        beam.print()
+        return this
+    }
+    fun initialize(group:ClassGroup) : Absorber {
+        beam.addAll(group)
+        beam.print()
         return this
     }
     fun materialize(emission:String) : Pair<IEmitter, String> {

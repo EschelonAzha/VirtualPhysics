@@ -1,4 +1,4 @@
-package websites.tests
+package applications.tests
 
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom

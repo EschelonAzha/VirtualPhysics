@@ -1,4 +1,4 @@
-package websites.tests
+package applications.tests
 
 import java.net.URI
 import java.net.http.HttpClient

@@ -1,7 +1,7 @@
-package websites.tests
+package applications.tests
 
-import websites.tests.alloys._Left
-import websites.tests.alloys._Right
+import applications.tests.alloys._Left
+import applications.tests.alloys._Right
 
 
 object XTestAlloys {

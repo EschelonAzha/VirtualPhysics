@@ -1,4 +1,4 @@
-package websites.tests.alloys
+package applications.tests.alloys
 
 import symmetrical.cosmic._physics.atomic.substance.Substance
 
