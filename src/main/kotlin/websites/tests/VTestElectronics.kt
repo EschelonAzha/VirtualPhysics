@@ -36,8 +36,8 @@ class VTestElectronics {
 
         atom1.diode_(atom2).diode(atom3)
 
-        val pair1 : TauAntiTauPair = atom3.setCurrentValue(ATOM3NEW)
-        val pair2 : TauAntiTauPair = atom1.setCurrentValue(ATOM1NEW)
+        val pair1 : TauAntiTauPair = atom3.setContent(ATOM3NEW)
+        val pair2 : TauAntiTauPair = atom1.setContent(ATOM1NEW)
 
         val atom1Val1 = atom1.getField().toString()
         val atom2Val1 = atom2.getField().toString()
@@ -77,7 +77,7 @@ class VTestElectronics {
 
         atom1.conductor_(atom2).conductor(atom3)
 
-        val pair : TauAntiTauPair = atom1.setCurrentValue(ATOM1NEW)
+        val pair : TauAntiTauPair = atom1.setContent(ATOM1NEW)
 
         val atom1Val1 = atom1.getField().toString()
         val atom2Val1 = atom2.getField().toString()

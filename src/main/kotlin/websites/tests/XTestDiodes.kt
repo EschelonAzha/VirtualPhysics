@@ -16,8 +16,8 @@ object XTestDiodes {
         val atom2: Atom = Atom("Atom2")
         val atom3: Atom = Atom("Atom3")
         atom1.diode_(atom2).diode(atom3)
-        val pair: TauAntiTauPair = atom3.setCurrentValue("newValue")
-        val pair2: TauAntiTauPair = atom1.setCurrentValue("jumby")
+        val pair: TauAntiTauPair = atom3.setContent("newValue")
+        val pair2: TauAntiTauPair = atom1.setContent("jumby")
 
         val atom1Val1 = atom1.getCurrentValue()
         val atom2Val1 = atom2.getCurrentValue()

@@ -168,7 +168,7 @@ open class Atom(
         _nucleons.setAtom(this)
         return this
     }
-    fun setCurrentValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
+    fun setContent(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().setCurrentValue(ZBoson().i(Field(value), constructing)).decay()
     }
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
