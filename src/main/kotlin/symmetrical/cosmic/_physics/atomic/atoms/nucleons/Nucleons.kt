@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics.atomic.atoms.nucleons
 
 import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -8,8 +9,10 @@ import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralUpPion
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 /*
@@ -53,6 +56,48 @@ class Nucleons(
         return remainder
     }
 
+    override fun betaPlusDecay(content:Any?) : Nucleons {
+        betaPlusDecay()
+        _protons.getProton(ValueProton::class).getValueQuark().setContent(content)
+
+        return this
+    }
+
+    override fun betaMinusDecay() : Nucleons {
+        val proton      :Proton     = getProton(ValueProton::class)
+        val protonDown  :Down       = proton.getValueQuark()
+        val space       :IParticle  = protonDown.getSpace().getSpace()  ?: return this
+        val neutronDown :Down       = space as Down
+        neutronDown.getSpace().setSpace(null)
+        neutrons.remove(neutronDown.getBaryon())
+        proton.set(0, neutronDown)
+
+        return this
+    }
+    override fun betaPlusDecay() : Nucleons {
+        val protonDown  :Down       = getProton(ValueProton::class).getValueQuark()
+        val neutronDown :Down       = cloneQuark(protonDown)
+        val neutron     :Neutron    = Neutron()
+        neutron.set(2, neutronDown)
+        crossLink(protonDown, neutronDown)
+        neutrons.add(neutron)
+        return this
+    }
+//    private fun betaPlusDecayx() : Nucleons {
+//        val pos = _protons.getProton(ValueProton::class)
+//
+//        var (neutron, betaPlus) = (_protons.removeAt(pos) as Proton).betaPlusDecay()
+//        var proton              = Baryon().Neutron().absorb(betaPlus)
+//
+//        neutrons.add(neutron)
+//        _protons.add(proton)
+//        (proton.get(0) as Quark).gluon.color = (neutron.get(0) as Quark).gluon.color.clone() as Color
+//
+//        NeutralUpPion(proton, neutron)  // exert Nuclear force
+//
+//        return this
+//    }
+
     override fun emit() : Photon {
         return Photon(radiate())
     }
@@ -76,19 +121,16 @@ class Nucleons(
         _protons.setNucleons(nucleons)
         return nucleons
     }
-    override fun wind(purpose:String) : Nucleons {
-        val pos = _protons.find(ValueProton::class)
 
-        var (neutron, betaPlus) = (_protons.removeAt(pos) as Proton).betaPlusDecay()
-        var proton              = Baryon().Neutron().absorb(betaPlus)
+    private fun cloneQuark(down:Quark) : Down {
 
-        neutrons.add(neutron)
-        _protons.add(proton)
-        (proton.get(0) as Quark).gluon.color = (neutron.get(0) as Quark).gluon.color.clone() as Color
-
-        NeutralUpPion(proton, neutron)  // exert Nuclear force
-
-        return this
+        val emission:Photon = down.emit()
+        val (clone, _) = Absorber.materialize(emission)
+        return clone as Down
+    }
+    private fun crossLink(quark1:Quark, quark2:Quark) : Unit {
+        quark1.getSpace().setSpace(quark2)
+        quark2.getSpace().setSpace(quark1)
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {

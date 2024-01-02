@@ -61,7 +61,7 @@ object XTestQuarks {
         var neutron = qInt.getNeutron(Down.TEST_PROPERTY)
         neutron.setValue(null)
 
-        qInt.wind(Down.VALUE)
+        qInt.betaPlusDecay()
 
 //        var universe = Universe().bigBang(PlanetaryTraveler_Gravity(),
 //            PlanetaryTraveler_Higgs(),

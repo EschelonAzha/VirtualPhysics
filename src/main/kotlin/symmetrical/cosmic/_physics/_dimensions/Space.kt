@@ -36,9 +36,9 @@ class Space (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticl
     fun getSpace() : IParticle? {
         return space
     }
-    fun setSpace(particle:IParticle) : Any? {
+    fun setSpace(particle:IParticle?) : Any? {
         this.space = particle
-        return setContent(particle.createUniqueId().getUniqueId())
+        return null
     }
     fun space() : Any? {
         return field.getContent()

@@ -12,6 +12,9 @@ interface INucleons {
 
     fun addNeutron      (proton: Neutron)   : Neutron
     fun addProton       (proton: Proton)    : Proton
+    fun betaMinusDecay  ()                  : Nucleons
+    fun betaPlusDecay   ()                  : Nucleons
+    fun betaPlusDecay   (content:Any?)      : Nucleons
     fun findNeutron     (purpose:String)    : Int
     fun getAtomicNumber ()                  : Int
     fun getClassId      ()                  : String
@@ -21,5 +24,5 @@ interface INucleons {
     fun setAtom         (atom: Atom)        : Atom
     fun setAtomicNumber (number:Int)        : Nucleons
 
-    fun wind            (purpose:String)    : Nucleons
+
 }

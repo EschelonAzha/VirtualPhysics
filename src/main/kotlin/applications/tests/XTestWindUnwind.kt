@@ -16,7 +16,7 @@ object XTestWindUnwind  {
 
         val atom: Atom = Atom()
         Quark.value(atom).setWavelength(200)
-        atom.wind("")
+        atom.betaPlusDecay()
         Quark.value(atom).setWavelength(300)
 
 

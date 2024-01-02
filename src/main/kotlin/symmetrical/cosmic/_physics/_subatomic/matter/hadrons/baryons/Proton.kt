@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
+import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -133,7 +134,12 @@ open class Proton(
 
         return zBoson  // this returns only the local changes
     }
-
+    override fun set(pos:Int, quark: IParticle) : IParticle {
+        super.set(pos, quark)
+        if (pos == 0)
+            _quark = quark as Quark
+        return quark
+    }
 
     fun setProtons(protons:Protons) : Proton {
         this.p_protons = protons

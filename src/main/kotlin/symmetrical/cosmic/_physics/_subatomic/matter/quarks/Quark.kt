@@ -66,6 +66,9 @@ open class Quark(
         return Photon(radiate())
     }
 
+    fun getBaryon() : Baryon {
+        return p_baryon
+    }
     override fun getClassId() : String {
         return matter.getClassId()
     }
@@ -112,6 +115,10 @@ open class Quark(
         return gluon.color._value
     }
 
+    fun setBaryon(baryon:Baryon) : Quark {
+        this.p_baryon = baryon
+        return this
+    }
     fun setContent(content:Any?) : Quark {
         getWavelength().setContent(content)
         return this

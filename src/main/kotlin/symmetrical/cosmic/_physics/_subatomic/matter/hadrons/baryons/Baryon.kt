@@ -1,6 +1,7 @@
 package symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons
 
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
+import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
@@ -124,6 +125,11 @@ open class Baryon(
     }
     fun red() : Any? {
         return (this.get(0) as Quark).red()
+    }
+    override fun set(pos:Int, quark:IParticle) : IParticle {
+        super.set(pos, quark)
+        (quark as Quark).setBaryon(this)
+        return quark
     }
     fun setBinding(boundTo: Baryon) : Baryon {
         val up: Quark = this.get(1) as Quark
