@@ -48,14 +48,14 @@ class VTestNeutrons {
 
     private fun testMoleculeRollback() : Boolean {
         val row: AddressRow = AddressRow()
-        row.print()
         row.betaPlusDecay()
+        row.print()
+
 
         row.name.setContent("Name2")
         row.address.setContent("address2")
         row.city.setContent("city2")
         row.state.setContent("state2")
-
         row.print()
 
         row.betaMinusDecay()
