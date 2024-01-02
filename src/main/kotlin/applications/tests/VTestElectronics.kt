@@ -2,7 +2,7 @@ package applications.tests
 
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.Atom
-import applications.tests.dictionary.City
+import applications.tests.dictionary.Rejector
 
 class VTestElectronics {
     val ATOM1:String = "Atom1"
@@ -30,7 +30,7 @@ class VTestElectronics {
         return true
     }
     private fun testDiodes() : Boolean {
-        val atom1: Atom = City(ATOM1)
+        val atom1: Atom = Rejector(ATOM1)
         val atom2: Atom = Atom(ATOM2)
         val atom3: Atom = Atom(ATOM3)
 

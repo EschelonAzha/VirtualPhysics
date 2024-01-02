@@ -75,7 +75,20 @@ open class Molecular(
         }
         return this
     }
-
+    override fun betaMinusDecay() : Atom {
+        for (i in 0 until size()) {
+            val atom:Atom = get(i) as Atom
+            atom.betaMinusDecay()
+        }
+        return this
+    }
+    override fun betaPlusDecay() : Atom {
+        for (i in 0 until size()) {
+            val atom:Atom = get(i) as Atom
+            atom.betaPlusDecay()
+        }
+        return this
+    }
     override fun emit() : Photon {
         return Photon(radiate())
     }

@@ -150,6 +150,9 @@ open class Atom(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
+    fun getContent() : Any? {
+        return getField().getContent()
+    }
     fun getCurrentValue() : Any? {
         return _nucleons.getProtons().getProton(ValueProton::class)
     }

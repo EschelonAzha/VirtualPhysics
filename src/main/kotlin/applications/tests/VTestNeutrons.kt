@@ -1,6 +1,7 @@
 package applications.tests
 
 
+import applications.tests.dictionary.AddressRow
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 
 class VTestNeutrons {
@@ -15,6 +16,11 @@ class VTestNeutrons {
     fun test(): Boolean {
         if (!testNeutrons()) {
             println("VTestNeutrons::testNeutrons FAILED!!!!!!!!!!!!!!!!!!!!")
+            return false
+        }
+
+        if (!testMoleculeRollback()) {
+            println("VTestNeutrons::testMoleculeRollback FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
         }
 
@@ -36,6 +42,25 @@ class VTestNeutrons {
 
         if (restored != original)
             return false
+
+        return true
+    }
+
+    private fun testMoleculeRollback() : Boolean {
+        val row: AddressRow = AddressRow()
+        row.print()
+        row.betaPlusDecay()
+
+        row.name.setContent("Name2")
+        row.address.setContent("address2")
+        row.city.setContent("city2")
+        row.state.setContent("state2")
+
+        row.print()
+
+        row.betaMinusDecay()
+        row.print()
+
 
         return true
     }

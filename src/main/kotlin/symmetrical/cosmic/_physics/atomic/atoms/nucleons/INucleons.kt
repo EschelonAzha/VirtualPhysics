@@ -12,9 +12,9 @@ interface INucleons {
 
     fun addNeutron      (proton: Neutron)   : Neutron
     fun addProton       (proton: Proton)    : Proton
-    fun betaMinusDecay  ()                  : Nucleons
-    fun betaPlusDecay   ()                  : Nucleons
-    fun betaPlusDecay   (content:Any?)      : Nucleons
+    fun betaMinusDecay  ()                  : Atom
+    fun betaPlusDecay   ()                  : Atom
+    fun betaPlusDecay   (content:Any?)      : Atom
     fun findNeutron     (purpose:String)    : Int
     fun getAtomicNumber ()                  : Int
     fun getClassId      ()                  : String

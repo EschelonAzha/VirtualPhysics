@@ -56,32 +56,32 @@ class Nucleons(
         return remainder
     }
 
-    override fun betaPlusDecay(content:Any?) : Nucleons {
+    override fun betaPlusDecay(content:Any?) : Atom {
         betaPlusDecay()
         _protons.getProton(ValueProton::class).getValueQuark().setContent(content)
 
-        return this
+        return p_atom
     }
 
-    override fun betaMinusDecay() : Nucleons {
+    override fun betaMinusDecay() : Atom {
         val proton      :Proton     = getProton(ValueProton::class)
         val protonDown  :Down       = proton.getValueQuark()
-        val space       :IParticle  = protonDown.getSpace().getSpace()  ?: return this
+        val space       :IParticle  = protonDown.getSpace().getSpace()  ?: return p_atom
         val neutronDown :Down       = space as Down
         neutronDown.getSpace().setSpace(null)
         neutrons.remove(neutronDown.getBaryon())
         proton.set(0, neutronDown)
 
-        return this
+        return p_atom
     }
-    override fun betaPlusDecay() : Nucleons {
+    override fun betaPlusDecay() : Atom {
         val protonDown  :Down       = getProton(ValueProton::class).getValueQuark()
         val neutronDown :Down       = cloneQuark(protonDown)
         val neutron     :Neutron    = Neutron()
         neutron.set(2, neutronDown)
         crossLink(protonDown, neutronDown)
         neutrons.add(neutron)
-        return this
+        return p_atom
     }
 //    private fun betaPlusDecayx() : Nucleons {
 //        val pos = _protons.getProton(ValueProton::class)
