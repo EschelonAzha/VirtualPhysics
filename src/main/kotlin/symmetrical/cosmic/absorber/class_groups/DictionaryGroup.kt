@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__recycle
+package symmetrical.cosmic.absorber.class_groups
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,41 +166,13 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.absorber.ClassGroup
+import symmetrical.cosmic.absorber.EntityId
+import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic.dictionary.protons.ValueProton
 
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-
-
-class Recycler {
-    companion object {
-        val up   : ArrayList<Up>    = ArrayList(1000)
-        val down : ArrayList<Down>  = ArrayList(1000)
-
-        fun Down_() : Down {
-            var end = down.size - 1;
-            if (end == -1)
-                return Down()
-
-            var quark = down.removeAt(end)
-            return quark as Down
-        }
-
-        fun Down_dissipate(quark: Down) : Unit{
-            down.add(quark)
-            return
-        }
-        fun Up_() : Up {
-            var end = up.size - 1;
-            if (end == -1)
-                return Up()
-
-            var up = up.removeAt(end)
-            return up as Up
-        }
-        fun Up_dissipate(up: Up) : Unit{
-            Companion.up.add(up)
-            return
-        }
-
+class DictionaryGroup : ClassGroup {
+    constructor() {
+        add(EntityId(Base52.classId(), ValueProton::class))
     }
 }

@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic.absorber.Absorber
 import cosmology.INebula
 import cosmology.NebulaPhase
 import symmetrical.cosmic.wormholes.messaging.login.LoginMSG

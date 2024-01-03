@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__recycle.class_groups
+package symmetrical.cosmic.absorber.class_groups
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,19 +166,24 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__recycle.ClassGroup
-import symmetrical.cosmic.__recycle.EntityId
+import symmetrical.cosmic.absorber.ClassGroup
+import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics._creation.BigBang
-import symmetrical.cosmic._physics._creation.Universe
-import symmetrical.cosmic._physics._subatomic.forces.gravity.Gravity
-import symmetrical.cosmic._physics.atomic.blackhole.Blackhole
-import symmetrical.cosmic._physics.atomic.blackhole.EventHorizon
+import symmetrical.cosmic._physics.atomic.atoms.states.booleans.QBoolean
+import symmetrical.cosmic._physics.atomic.atoms.states.bytes.QByte
+import symmetrical.cosmic._physics.atomic.atoms.states.doubles.QDouble
+import symmetrical.cosmic._physics.atomic.atoms.states.integers.QInt
+import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
+import symmetrical.cosmic._physics.atomic.atoms.states.vectors.QMass
 
-class Cosmic : ClassGroup {
+class Atoms : ClassGroup {
     constructor() {
-
-
+        add(EntityId(Base52.classId(), QBoolean::class))
+        add(EntityId(Base52.classId(), QByte::class))
+        add(EntityId(Base52.classId(), QDouble::class))
+        add(EntityId(Base52.classId(), QInt::class))
+        add(EntityId(Base52.classId(), QMass::class))
+        add(EntityId(Base52.classId(), QString::class))
 
     }
 }

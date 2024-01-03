@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__recycle.class_groups
+package symmetrical.cosmic.absorber.class_groups
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,25 +166,75 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__recycle.ClassGroup
-import symmetrical.cosmic.__recycle.EntityId
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
-import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
-import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import asymmetrical.machine.dom.peers.HtmlPeer
+import symmetrical.cosmic.absorber.ClassGroup
+import symmetrical.cosmic.absorber.EntityId
+import symmetrical.cosmic.__transpectors.printable_characters.*
+import symmetrical.cosmic._physics._dimensions.time.Strobe
+import symmetrical.cosmic._physics._subatomic.balanced.Monad
+import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
+import symmetrical.cosmic._physics.atomic.atoms.states.strings.phases.CrLfTerminatedString
+import symmetrical.cosmic._physics.atomic.substance.metals.Metal
+import symmetrical.cosmic.chemistry.diatomics.KeyValue
+import symmetrical.cosmic.dictionary.atoms.PasswordFld
+import symmetrical.cosmic.dictionary.atoms.UseridFld
+import symmetrical.cosmic.wormholes.messaging.Message
+import symmetrical.cosmic.wormholes.messaging.login.AppendMSG
+import symmetrical.cosmic.wormholes.messaging.login.LoginMSG
+import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
+import symmetrical.cosmic.wormholes.pulsar.dictionary.Host
+import symmetrical.cosmic.wormholes.pulsar.dictionary.Path
+import symmetrical.cosmic.wormholes.pulsar.socket.Outlet
+import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
+import symmetrical.device.DeviceInput
+import cosmology.dom.Dom
+import cosmology.dom.DomProperties
+import cosmology.dom.DomProperty
+import cosmology.dom.dom.Body
+import cosmology.dom.properties.colors.BackgroundColor
+import cosmology.dom.properties.identification.DomId
+import cosmology.dom.properties.region.DomHeight
+import cosmology.dom.properties.region.DomLeft
+import cosmology.dom.properties.region.DomTop
+import cosmology.dom.properties.region.DomWidth
+import cosmology.dom.properties.style.DomStyle
 
-class Hadrons : ClassGroup {
+
+class AppClasses : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), Baryon::class))
-        add(EntityId(Base52.classId(), Hadron::class))
-        add(EntityId(Base52.classId(), Neutron::class))
-        add(EntityId(Base52.classId(), Neutrons::class))
-        add(EntityId(Base52.classId(), Nucleons::class))
-        add(EntityId(Base52.classId(), Proton::class))
-        add(EntityId(Base52.classId(), Protons::class))
+
+        add(EntityId(Base52.classId(), CRLFTerminatedMomentum::class))
+        add(EntityId(Base52.classId(), CrLfTerminatedString::class))
+        add(EntityId(Base52.classId(), DeviceInput::class))
+        add(EntityId(Base52.classId(), Host::class))
+        add(EntityId(Base52.classId(), KeyValue::class))
+        add(EntityId(Base52.classId(), Message::class))
+        add(EntityId(Base52.classId(), Metal::class))
+        add(EntityId(Base52.classId(), Monad::class))
+        add(EntityId(Base52.classId(), Outlet::class))
+        add(EntityId(Base52.classId(), PasswordFld::class))
+        add(EntityId(Base52.classId(), Path::class))
+        add(EntityId(Base52.classId(), SocketMessage::class))
+        add(EntityId(Base52.classId(), Strobe::class))
+        add(EntityId(Base52.classId(), UseridFld::class))
+
+
+        /************************/
+        add(EntityId(Base52.classId(), AppendMSG::class))
+        add(EntityId(Base52.classId(), BackgroundColor::class))
+        add(EntityId(Base52.classId(), Body::class))
+        add(EntityId(Base52.classId(), Dom::class))
+        add(EntityId(Base52.classId(), DomHeight::class))
+        add(EntityId(Base52.classId(), DomId::class))
+        add(EntityId(Base52.classId(), DomLeft::class))
+        add(EntityId(Base52.classId(), DomStyle::class))
+        add(EntityId(Base52.classId(), DomTop::class))
+        add(EntityId(Base52.classId(), DomWidth::class))
+        add(EntityId(Base52.classId(), DomProperties::class))
+        add(EntityId(Base52.classId(), DomProperty::class))
+        add(EntityId(Base52.classId(), HtmlPeer::class))
+        add(EntityId(Base52.classId(), LoginMSG::class))
+        add(EntityId(Base52.classId(), ReadyMSG::class))
+
     }
 }

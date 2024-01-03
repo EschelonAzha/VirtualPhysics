@@ -166,7 +166,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import asymmetrical.wormholes.pulsar.Pulsar
-import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic.absorber.Absorber
 
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 

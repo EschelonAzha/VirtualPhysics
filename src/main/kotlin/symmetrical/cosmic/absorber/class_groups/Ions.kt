@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__recycle.class_groups
+package symmetrical.cosmic.absorber.class_groups
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,14 +166,18 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__recycle.ClassGroup
-import symmetrical.cosmic.__recycle.EntityId
-import symmetrical.cosmic.__transpectors.printable_characters.*
-import symmetrical.cosmic._bitmaps.*
+import symmetrical.cosmic.absorber.ClassGroup
+import symmetrical.cosmic.absorber.EntityId
+import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic._physics.atomic.substance.ions.Anion
+import symmetrical.cosmic._physics.atomic.substance.ions.Cation
+import symmetrical.cosmic._physics.atomic.substance.ions.Ion
 
-class Encodings : ClassGroup {
+class Ions : ClassGroup {
     constructor() {
-
+        add(EntityId(Base52.classId(), Anion::class))
+        add(EntityId(Base52.classId(), Cation::class))
+        add(EntityId(Base52.classId(), Ion::class))
 
     }
 }

@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import asymmetrical.machine.config.Config
-import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle

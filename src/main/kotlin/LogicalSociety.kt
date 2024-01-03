@@ -166,7 +166,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import asymmetrical.wormholes.pulsar.Pulsar
-import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic.absorber.Absorber
 import cosmology.INebula
 import websites.logical_society.LogicalSocietyGalaxy
 import websites.logical_society.LogicalSocietyNebula

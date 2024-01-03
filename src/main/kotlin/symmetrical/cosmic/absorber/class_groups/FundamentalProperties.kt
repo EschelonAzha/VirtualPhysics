@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__recycle.class_groups
+package symmetrical.cosmic.absorber.class_groups
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,10 +166,21 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__recycle.ClassGroup
+import symmetrical.cosmic.absorber.ClassGroup
+import symmetrical.cosmic.absorber.EntityId
+import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
 
-class Charges : ClassGroup {
+class FundamentalProperties : ClassGroup {
     constructor() {
-
+        add(EntityId(Base52.classId(), AngularMomentum::class))
+        add(EntityId(Base52.classId(), Particle::class))
+        add(EntityId(Base52.classId(), QuasiParticle::class))
+        add(EntityId(Base52.classId(), Spin::class))
+        add(EntityId(Base52.classId(), Wavelength::class))
     }
 }

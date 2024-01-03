@@ -3,7 +3,7 @@ package applications
 import applications.tests.VTestElectronics
 import applications.tests.VTestEmissions
 import applications.tests.VTestNeutrons
-import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic.absorber.Absorber
 
 object TestPhysics {
     @JvmStatic

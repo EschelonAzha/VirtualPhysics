@@ -2,7 +2,7 @@ package applications.tests
 
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import applications.tests.dictionary.Rejector
-import symmetrical.cosmic.__recycle.Absorber
+import symmetrical.cosmic.absorber.Absorber
 
 class VTestEmissions {
     val ATOM1:String = "!!!!!!!!!!!!!!!"
