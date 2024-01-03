@@ -14,8 +14,8 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic.dictionary.protons.ValueProton
-import symmetrical.dom.Dom
-import symmetrical.dom.properties.region.DomHeight
+import cosmology.dom.Dom
+import cosmology.dom.properties.region.DomHeight
 
 object XTestEmissions {
 

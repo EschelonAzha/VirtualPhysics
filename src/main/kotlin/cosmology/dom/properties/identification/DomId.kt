@@ -1,4 +1,4 @@
-package symmetrical.dom.properties.region
+package cosmology.dom.properties.identification
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -171,23 +171,22 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
-import symmetrical.dom.DomProperty
+import cosmology.dom.DomProperty
 
-class DomHeight(
-    private val matter: IMatter = Matter(DomHeight::class, DomHeight::class),
+class DomId(
+    private val matter: IMatter = Matter(DomId::class, DomId::class),
 ) : DomProperty(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DomHeight::class, DomHeight::class),
+        Matter(DomId::class, DomId::class),
     )
     init {
-        setProperty("height")
+        setProperty("id")
     }
     constructor(height:Int) : this() {
-        setProperty("height", height.toString())
+        setProperty("id", height.toString())
     }
-
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
@@ -195,7 +194,6 @@ class DomHeight(
         remainder = super.absorb(remainder)
         return remainder
     }
-
     override fun emit() : Photon {
         return Photon(radiate())
     }

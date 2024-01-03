@@ -1,4 +1,4 @@
-package asymmetrical.app
+package cosmology.dom.properties.region
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,14 +166,41 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import cosmology.dom.DomProperty
 
-import asymmetrical.wormholes.pulsar.Galaxy
-import cosmology.INebula
-import symmetrical.cosmic.wormholes.messaging.Message
+class DomTop(
+    private val matter: IMatter = Matter(DomTop::class, DomTop::class),
+) : DomProperty(),
+    IMatter by matter
+{
+    constructor() : this(
+        Matter(DomTop::class, DomTop::class),
+    )
+    init {
+        setProperty("top")
+    }
+    constructor(height:Int) : this() {
+        setProperty("top", height.toString())
+    }
+    override fun absorb(photon: Photon) : Photon {
+        matter.check(photon);
 
-interface IApp {
-
-    fun onMessage(message: Message)  : Boolean;
-    fun setGalaxy(galaxy : Galaxy)   : IApp
-    fun setNebula(nebula : INebula)  : IApp;
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
+    }
 }

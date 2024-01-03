@@ -1,4 +1,4 @@
-package symmetrical.dom.dom.peers
+package cosmology.dom.dom.peers
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

@@ -169,7 +169,7 @@ Library.
 import asymmetrical.wormholes.pulsar.Nebula
 import cosmology.INebula
 import symmetrical.cosmic.wormholes.messaging.Messages
-import asymmetrical.app.IApp
+import cosmology.app.IApp
 
 open class RemoteTerminal : Nebula {
     protected lateinit var app    : IApp

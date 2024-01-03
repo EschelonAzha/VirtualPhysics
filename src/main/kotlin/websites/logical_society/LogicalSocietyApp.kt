@@ -168,9 +168,9 @@ Library.
 */
 import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
-import symmetrical.dom.Dom
-import symmetrical.dom.properties.region.DomHeight
-import asymmetrical.app.App
+import cosmology.dom.Dom
+import cosmology.dom.properties.region.DomHeight
+import cosmology.app.App
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 
 class LogicalSocietyApp : App {

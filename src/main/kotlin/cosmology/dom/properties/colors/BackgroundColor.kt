@@ -1,4 +1,4 @@
-package symmetrical.dom
+package cosmology.dom.properties.colors
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -167,20 +167,33 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.atomic.atoms.Atom
+import cosmology.dom.DomProperty
 
-class DomProperties(
-    private val matter: IMatter = Matter(DomProperties::class, DomProperties::class),
-) : Molecular(),
+class BackgroundColor(
+    private val matter: IMatter = Matter(BackgroundColor::class, BackgroundColor::class),
+) : DomProperty(),
     IMatter by matter
 {
+
     constructor() : this(
-        Matter(DomProperties::class, DomProperties::class),
+        Matter(BackgroundColor::class, BackgroundColor::class),
     )
+    init {
+            setProperty("backgroundColor")
+    }
+
+    constructor(height:Int) : this() {
+        val atom:Atom = getValue() as Atom
+        Quark.value(atom).setWavelength(height.toString())
+    }
+
+
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 

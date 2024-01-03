@@ -187,17 +187,18 @@ import symmetrical.cosmic.wormholes.pulsar.dictionary.Path
 import symmetrical.cosmic.wormholes.pulsar.socket.Outlet
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 import symmetrical.device.DeviceInput
-import symmetrical.dom.Dom
-import symmetrical.dom.DomProperties
-import symmetrical.dom.DomProperty
-import symmetrical.dom.dom.Body
-import symmetrical.dom.properties.colors.BackgroundColor
-import symmetrical.dom.properties.identification.DomId
-import symmetrical.dom.properties.region.DomHeight
-import symmetrical.dom.properties.region.DomLeft
-import symmetrical.dom.properties.region.DomTop
-import symmetrical.dom.properties.region.DomWidth
-import symmetrical.dom.properties.style.DomStyle
+import cosmology.dom.Dom
+import cosmology.dom.DomProperties
+import cosmology.dom.DomProperty
+import cosmology.dom.dom.Body
+import cosmology.dom.properties.colors.BackgroundColor
+import cosmology.dom.properties.identification.DomId
+import cosmology.dom.properties.region.DomHeight
+import cosmology.dom.properties.region.DomLeft
+import cosmology.dom.properties.region.DomTop
+import cosmology.dom.properties.region.DomWidth
+import cosmology.dom.properties.style.DomStyle
+
 
 class AppClasses : ClassGroup {
     constructor() {

@@ -1,4 +1,4 @@
-package symmetrical.dom.dom
+package cosmology.dom.dom
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -173,7 +173,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
-import symmetrical.dom.Dom
+import cosmology.dom.Dom
 
 open class Body(
     private val matter: IMatter = Matter(Body::class, Body::class),

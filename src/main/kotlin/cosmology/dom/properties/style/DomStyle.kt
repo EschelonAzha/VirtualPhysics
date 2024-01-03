@@ -1,4 +1,4 @@
-package symmetrical.dom.properties.colors
+package cosmology.dom.properties.style
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,31 +166,27 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.dom.DomProperty
+import cosmology.dom.DomProperty
 
-class BackgroundColor(
-    private val matter: IMatter = Matter(BackgroundColor::class, BackgroundColor::class),
+class DomStyle(
+    private val matter: IMatter = Matter(DomStyle::class, DomStyle::class),
 ) : DomProperty(),
     IMatter by matter
 {
-
     constructor() : this(
-        Matter(BackgroundColor::class, BackgroundColor::class),
+        Matter(DomStyle::class, DomStyle::class),
     )
     init {
-            setProperty("backgroundColor")
+        setProperty("style")
     }
-
-    constructor(height:Int) : this() {
-        val atom:Atom = getValue() as Atom
-        Quark.value(atom).setWavelength(height.toString())
+    constructor(style:Int) : this() {
+        setProperty("style", style.toString())
     }
 
 
@@ -201,6 +197,7 @@ class BackgroundColor(
         remainder = super.absorb(remainder)
         return remainder
     }
+
     override fun emit() : Photon {
         return Photon(radiate())
     }
@@ -208,7 +205,7 @@ class BackgroundColor(
         return matter.getClassId()
     }
     private fun radiate() : String {
-        return matter.getClassId()+
-                super.emit().radiate()
+        val (domPropertyId, remainder) = Strings.remainder(2, super.emit().radiate())
+        return matter.getClassId()+remainder
     }
 }

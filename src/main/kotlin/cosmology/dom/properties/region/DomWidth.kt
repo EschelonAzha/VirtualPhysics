@@ -1,4 +1,4 @@
-package symmetrical.dom.properties.identification
+package cosmology.dom.properties.region
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -171,22 +171,24 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
-import symmetrical.dom.DomProperty
+import cosmology.dom.DomProperty
 
-class DomId(
-    private val matter: IMatter = Matter(DomId::class, DomId::class),
+class DomWidth(
+    private val matter: IMatter = Matter(DomWidth::class, DomWidth::class),
 ) : DomProperty(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DomId::class, DomId::class),
+        Matter(DomWidth::class, DomWidth::class),
     )
     init {
-        setProperty("id")
+        setProperty("width")
     }
-    constructor(height:Int) : this() {
-        setProperty("id", height.toString())
+    constructor(width:Int) : this() {
+        setProperty("width", width.toString())
     }
+
+
     override fun absorb(photon: Photon) : Photon {
         matter.check(photon);
 
@@ -194,14 +196,16 @@ class DomId(
         remainder = super.absorb(remainder)
         return remainder
     }
+
     override fun emit() : Photon {
         return Photon(radiate())
     }
+
+
     override fun getClassId() : String {
         return matter.getClassId()
     }
     private fun radiate() : String {
-        return matter.getClassId()+
-                super.emit().radiate()
+        return matter.getClassId()+super.emit().radiate()
     }
 }

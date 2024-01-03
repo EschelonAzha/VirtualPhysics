@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.dom.dom.Body
+import cosmology.dom.dom.Body
 
 class RemotePage : Body {
     constructor() {

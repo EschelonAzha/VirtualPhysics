@@ -171,9 +171,9 @@ import symmetrical.cosmic.__recycle.Absorber
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 
 import cosmology.INebula
-import symmetrical.dom.Dom
+import cosmology.dom.Dom
 
-import symmetrical.dom.properties.region.DomHeight
+import cosmology.dom.properties.region.DomHeight
 import websites.physics_monastery.PhysicsMonasteryGalaxy
 import websites.physics_monastery.PhysicsMonasteryNebula
 import kotlin.reflect.KClass
@@ -202,7 +202,7 @@ fun test() : Unit {
 
     val (clone: IEmitter, remainder:String) = Absorber.materialize(emission)
 
-    val dom:Dom = clone as Dom
+    val dom: Dom = clone as Dom
 
 
     return

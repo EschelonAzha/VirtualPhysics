@@ -170,7 +170,7 @@ Library.
 import asymmetrical.machine.dom.Document
 import asymmetrical.machine.dom.Element
 
-import symmetrical.dom.dom.peers.DomPeer
+import cosmology.dom.dom.peers.DomPeer
 
 
 class HtmlPeer : DomPeer {

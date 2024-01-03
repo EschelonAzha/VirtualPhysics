@@ -1,4 +1,4 @@
-package symmetrical.dom.properties.region
+package cosmology.dom.properties.region
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -171,7 +171,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
-import symmetrical.dom.DomProperty
+import cosmology.dom.DomProperty
 
 class DomLeft(
     private val matter: IMatter = Matter(DomLeft::class, DomLeft::class),
