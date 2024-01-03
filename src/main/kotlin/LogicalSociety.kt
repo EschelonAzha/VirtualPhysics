@@ -167,7 +167,7 @@ Library.
 */
 import asymmetrical.wormholes.pulsar.Pulsar
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import websites.logical_society.LogicalSocietyGalaxy
 import websites.logical_society.LogicalSocietyNebula
 import kotlin.reflect.KClass

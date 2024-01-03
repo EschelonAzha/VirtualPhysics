@@ -168,7 +168,7 @@ Library.
 */
 
 import asymmetrical.wormholes.pulsar.Galaxy
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import symmetrical.cosmic.wormholes.messaging.Message
 
 interface IApp {

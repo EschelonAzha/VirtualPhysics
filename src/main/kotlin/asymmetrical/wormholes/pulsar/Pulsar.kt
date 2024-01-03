@@ -168,7 +168,7 @@ Library.
 */
 import asymmetrical.machine.threads.Energy
 import asymmetrical.wormholes.pulsar.sockets.ServerOutlet
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import java.net.ServerSocket
 import java.net.Socket
 import kotlin.reflect.KClass

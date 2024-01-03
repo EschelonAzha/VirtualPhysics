@@ -171,7 +171,7 @@ import asymmetrical.machine.vm.Classes
 import asymmetrical.wormholes.pulsar.plugins.galaxy.WSServerPlugin
 import asymmetrical.wormholes.pulsar.plugins.ServerPlugin
 import asymmetrical.wormholes.pulsar.plugins.http.HttpServerPlugin
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 import kotlin.reflect.KClass
 

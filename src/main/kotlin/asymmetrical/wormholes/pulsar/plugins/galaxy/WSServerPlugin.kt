@@ -172,7 +172,7 @@ import asymmetrical.wormholes.pulsar.Galaxy
 import asymmetrical.wormholes.pulsar.plugins.ServerPlugin
 import asymmetrical.wormholes.pulsar.plugins.WaitForData
 import asymmetrical.wormholes.pulsar.plugins.galaxy.wormhole.composites.SocketFramePing
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 

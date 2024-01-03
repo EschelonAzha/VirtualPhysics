@@ -170,7 +170,7 @@ import symmetrical.cosmic.__recycle.Absorber
 
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import symmetrical.dom.Dom
 
 import symmetrical.dom.properties.region.DomHeight

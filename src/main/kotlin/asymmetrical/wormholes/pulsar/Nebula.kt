@@ -169,7 +169,7 @@ Library.
 import asymmetrical.wormholes.pulsar.plugins.galaxy.WSServerPlugin
 import asymmetrical.wormholes.pulsar.plugins.galaxy.wormhole.composites.SocketFrameText
 import symmetrical.cosmic.__transpectors.transpectors.Strings
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 
 open class Nebula : WSServerPlugin, INebula {
     constructor() {

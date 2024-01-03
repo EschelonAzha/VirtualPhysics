@@ -1,6 +1,6 @@
 package asymmetrical.wormholes.pulsar.nebula_phases
 
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

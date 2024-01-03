@@ -167,12 +167,12 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.__recycle.Absorber
-import symmetrical.cosmic.cosmology.INebula
-import symmetrical.cosmic.cosmology.NebulaPhase
+import cosmology.INebula
+import cosmology.NebulaPhase
 import symmetrical.cosmic.wormholes.messaging.login.LoginMSG
 
 class LoginPhase : NebulaPhase, INebula {
-    constructor(nebula:INebula) : super(nebula) {
+    constructor(nebula: INebula) : super(nebula) {
 
     }
     override fun onClose() : Unit {

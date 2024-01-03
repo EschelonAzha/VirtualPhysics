@@ -1,4 +1,4 @@
-package symmetrical.cosmic.cosmology
+package cosmology
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,13 +166,30 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
+import asymmetrical.wormholes.pulsar.Nebula
+import cosmology.INebula
+import websites._phases.LoginPhase
 
-interface INebula {
-    fun getOutlet()                 : IOutlet
-    fun nextPhase()                 : INebula
-    fun onOpen   ()                 : Unit
-    fun onClose  ()                 : Unit
-    fun onMessage(message:String)   : Boolean
-    fun send     (message:String)   : Boolean
+
+open class NebulaPhases : Nebula {
+
+    private var phase: INebula = LoginPhase(this)
+    constructor() {
+    }
+
+    override fun onClose() : Unit {
+        phase.onClose()
+        phase = phase.nextPhase()
+        return
+    }
+    override fun onMessage(payload:String) : Boolean {
+        val result:Boolean = phase.onMessage(payload)
+        phase = phase.nextPhase()
+        return result
+    }
+    override fun onOpen() : Unit {
+        phase.onOpen()
+    }
+
+
 }

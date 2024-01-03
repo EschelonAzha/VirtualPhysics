@@ -166,15 +166,15 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.cosmology.INebula
-import symmetrical.cosmic.cosmology.NebulaPhase
+import cosmology.INebula
+import cosmology.NebulaPhase
 
 /*
 6. Supernova remnants are formed when a star explodes in a supernova. The expanding shell of gas and dust from the explosion eventually disperses into space
  */
 class SupernovaRemnant : NebulaPhase, INebula {
 
-    constructor(parent:INebula) : super(parent) {
+    constructor(parent: INebula) : super(parent) {
     }
     override fun nextPhase() : INebula {
         return this

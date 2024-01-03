@@ -1,7 +1,7 @@
 package asymmetrical.wormholes.pulsar.nebula_phases
 
-import symmetrical.cosmic.cosmology.INebula
-import symmetrical.cosmic.cosmology.NebulaPhase
+import cosmology.INebula
+import cosmology.NebulaPhase
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -174,7 +174,7 @@ Library.
  */
 class DarkNebula : NebulaPhase, INebula {
 
-    constructor(parent:INebula) : super(parent) {
+    constructor(parent: INebula) : super(parent) {
     }
     override fun nextPhase() : INebula {
         return this

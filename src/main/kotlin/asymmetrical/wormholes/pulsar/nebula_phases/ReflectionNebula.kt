@@ -166,15 +166,15 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.cosmology.INebula
-import symmetrical.cosmic.cosmology.NebulaPhase
+import cosmology.INebula
+import cosmology.NebulaPhase
 
 /*
 2. Reflection nebulae are formed when light from nearby stars is scattered by the dust in a dark nebula. The dust grains in a reflection nebula are typically much smaller than the grains in a dark nebula, so they scatter the light more effectively.
  */
 class ReflectionNebula : NebulaPhase, INebula {
 
-    constructor(parent:INebula) : super(parent) {
+    constructor(parent: INebula) : super(parent) {
     }
     override fun nextPhase() : INebula {
         return this

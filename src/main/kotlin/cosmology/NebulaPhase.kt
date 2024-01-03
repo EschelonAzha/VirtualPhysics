@@ -1,4 +1,4 @@
-package symmetrical.cosmic.cosmology
+package cosmology
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,13 +166,14 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import cosmology.INebula
 import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 
-open class NebulaPhase : INebula   {
+open class NebulaPhase : INebula {
 
-    private val parent:INebula
-    private var nextPhase   :INebula
-    constructor(parent:INebula) {
+    private val parent: INebula
+    private var nextPhase   : INebula
+    constructor(parent: INebula) {
         this.parent    = parent
         this.nextPhase = this
     }

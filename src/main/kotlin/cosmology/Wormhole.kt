@@ -1,4 +1,4 @@
-package symmetrical.cosmic.cosmology
+package cosmology
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,29 +166,23 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.wormholes.pulsar.Nebula
-import websites._phases.LoginPhase
+import cosmology.INebula
+import symmetrical.cosmic._physics._subatomic.balanced.IParticle
+import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 
+class Wormhole {
 
-open class NebulaPhases : Nebula {
-
-    private var phase: INebula = LoginPhase(this)
-    constructor() {
-    }
-
-    override fun onClose() : Unit {
-        phase.onClose()
-        phase = phase.nextPhase()
-        return
-    }
-    override fun onMessage(payload:String) : Boolean {
-        val result:Boolean = phase.onMessage(payload)
-        phase = phase.nextPhase()
-        return result
-    }
-    override fun onOpen() : Unit {
-        phase.onOpen()
+    val nebula: INebula
+    val beam  : ParticleBeam = ParticleBeam()
+    constructor(nebula: INebula) {
+        this.nebula = nebula
     }
 
 
+    fun add(particle: IParticle) : IParticle {
+        return beam.add(particle)
+    }
+    fun remove(particle: IParticle) : IParticle {
+        return beam.remove(particle) as IParticle
+    }
 }

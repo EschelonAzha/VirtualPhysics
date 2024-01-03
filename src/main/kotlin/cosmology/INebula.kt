@@ -1,4 +1,4 @@
-package symmetrical.cosmic.cosmology
+package cosmology
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,22 +166,13 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
+import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 
-class Wormhole {
-
-    val nebula:INebula
-    val beam  : ParticleBeam = ParticleBeam()
-    constructor(nebula:INebula) {
-        this.nebula = nebula
-    }
-
-
-    fun add(particle: IParticle) : IParticle {
-        return beam.add(particle)
-    }
-    fun remove(particle: IParticle) : IParticle {
-        return beam.remove(particle) as IParticle
-    }
+interface INebula {
+    fun getOutlet()                 : IOutlet
+    fun nextPhase()                 : INebula
+    fun onOpen   ()                 : Unit
+    fun onClose  ()                 : Unit
+    fun onMessage(message:String)   : Boolean
+    fun send     (message:String)   : Boolean
 }

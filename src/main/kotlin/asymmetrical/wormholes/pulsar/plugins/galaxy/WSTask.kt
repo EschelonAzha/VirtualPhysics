@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import asymmetrical.wormholes.pulsar.plugins.Task
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import symmetrical.cosmic.wormholes.pulsar.socket.IOutlet
 
 

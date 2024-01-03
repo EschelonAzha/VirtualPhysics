@@ -167,11 +167,9 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import asymmetrical.wormholes.pulsar.Nebula
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import symmetrical.cosmic.wormholes.messaging.Messages
 import asymmetrical.app.IApp
-import websites.logical_society.LogicalSocietyApp
-import websites.logical_society.LogicalSocietyGalaxy
 
 open class RemoteTerminal : Nebula {
     protected lateinit var app    : IApp

@@ -169,7 +169,7 @@ Library.
 
 import asymmetrical.machine.vm.remote_terminal.RemotePage
 import asymmetrical.wormholes.pulsar.Galaxy
-import symmetrical.cosmic.cosmology.INebula
+import cosmology.INebula
 import symmetrical.cosmic.wormholes.messaging.Message
 
 open class App : IApp {
@@ -183,7 +183,7 @@ open class App : IApp {
         this.galaxy = galaxy
         return this
     }
-    override fun setNebula(nebula:INebula) : IApp {
+    override fun setNebula(nebula: INebula) : IApp {
         this.nebula = nebula
         return this
     }
