@@ -172,7 +172,7 @@ import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.*
 import kotlin.reflect.KClass
 
-object Absorber {
+object Absorber : IAbsorber {
     val beam: ClassGroup = ClassGroup()
     init {
         beam.addAll(AppClasses())
@@ -193,11 +193,11 @@ object Absorber {
     }
 
 
-    fun addAll(group:ClassGroup) : Absorber {
+    override fun addAll(group:ClassGroup) : Absorber {
         beam.addAll(group)
         return this
     }
-    fun createInstance(id:String) : Any? {
+    override fun createInstance(id:String) : Any? {
         for (i in 0 until beam.size()) {
             val entityId = beam.get(i) as EntityId
             if (entityId.id == id) {
@@ -206,7 +206,7 @@ object Absorber {
         }
         return null
     }
-    fun getClassId(kClass: KClass<*>) : String {
+    override fun getClassId(kClass: KClass<*>) : String {
 
         for (i in 0 until beam.size()) {
             val entityId = beam.get(i) as EntityId
@@ -220,26 +220,26 @@ object Absorber {
         println("")
         return ""
     }
-    fun initialize() : Absorber {
+    override fun initialize() : Absorber {
         beam.print()
         return this
     }
-    fun initialize(group:ClassGroup) : Absorber {
+    override fun initialize(group:ClassGroup) : Absorber {
         beam.addAll(group)
         beam.print()
         return this
     }
-    fun materialize(emission:String) : Pair<IEmitter, String> {
+    override fun materialize(emission:String) : Pair<IEmitter, String> {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
         val clone = createInstance(classId) as IEmitter
         val remainderPhoton: Photon = clone.absorb(Photon(emission))
         return Pair<IEmitter, String>(clone, remainderPhoton.radiate())
     }
-    fun materialize(photon: Photon) : Pair<IEmitter, String> {
+    override fun materialize(photon: Photon) : Pair<IEmitter, String> {
         return materialize(photon.radiate())
     }
 
-    private fun newInstance(kClass:KClass<*>) : Any? {
+    override fun newInstance(kClass:KClass<*>) : Any? {
         for (i:Int in 0 until beam.size()) {
             val entityId:EntityId = beam.get(i) as EntityId
             if (entityId.has(kClass))
