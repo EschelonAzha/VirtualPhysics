@@ -218,23 +218,5 @@ class AppClasses : ClassGroup {
         add(EntityId(Base52.classId(), Strobe::class))
         add(EntityId(Base52.classId(), UseridFld::class))
 
-
-        /************************/
-        add(EntityId(Base52.classId(), AppendMSG::class))
-        add(EntityId(Base52.classId(), BackgroundColor::class))
-        add(EntityId(Base52.classId(), Body::class))
-        add(EntityId(Base52.classId(), Dom::class))
-        add(EntityId(Base52.classId(), DomHeight::class))
-        add(EntityId(Base52.classId(), DomId::class))
-        add(EntityId(Base52.classId(), DomLeft::class))
-        add(EntityId(Base52.classId(), DomStyle::class))
-        add(EntityId(Base52.classId(), DomTop::class))
-        add(EntityId(Base52.classId(), DomWidth::class))
-        add(EntityId(Base52.classId(), DomProperties::class))
-        add(EntityId(Base52.classId(), DomProperty::class))
-        add(EntityId(Base52.classId(), HtmlPeer::class))
-        add(EntityId(Base52.classId(), LoginMSG::class))
-        add(EntityId(Base52.classId(), ReadyMSG::class))
-
     }
 }
