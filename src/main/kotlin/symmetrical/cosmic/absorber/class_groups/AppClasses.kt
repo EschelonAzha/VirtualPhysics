@@ -171,8 +171,6 @@ import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.__transpectors.printable_characters.*
 import symmetrical.cosmic._physics._dimensions.time.Strobe
 import symmetrical.cosmic._physics._subatomic.balanced.Monad
-import symmetrical.cosmic.dictionary.formats.CRLFTerminatedMomentum
-import symmetrical.cosmic._physics.atomic.atoms.states.strings.phases.CrLfTerminatedString
 import symmetrical.cosmic._physics.atomic.substance.metals.Metal
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic.dictionary.atoms.PasswordFld
@@ -188,8 +186,6 @@ import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 class AppClasses : ClassGroup {
     constructor() {
 
-        add(EntityId(Base52.classId(), CRLFTerminatedMomentum::class))
-        add(EntityId(Base52.classId(), CrLfTerminatedString::class))
         add(EntityId(Base52.classId(), Host::class))
         add(EntityId(Base52.classId(), KeyValue::class))
         add(EntityId(Base52.classId(), Message::class))
