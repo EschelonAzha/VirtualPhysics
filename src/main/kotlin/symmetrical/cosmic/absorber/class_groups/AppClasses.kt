@@ -173,8 +173,6 @@ import symmetrical.cosmic._physics._dimensions.time.Strobe
 import symmetrical.cosmic._physics._subatomic.balanced.Monad
 import symmetrical.cosmic._physics.atomic.substance.metals.Metal
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
-import symmetrical.cosmic.dictionary.atoms.PasswordFld
-import symmetrical.cosmic.dictionary.atoms.UseridFld
 import symmetrical.cosmic.wormholes.pulsar.dictionary.Host
 import symmetrical.cosmic.wormholes.pulsar.dictionary.Path
 import symmetrical.cosmic.wormholes.pulsar.socket.Outlet
@@ -190,11 +188,9 @@ class AppClasses : ClassGroup {
         add(EntityId(Base52.classId(), Metal::class))
         add(EntityId(Base52.classId(), Monad::class))
         add(EntityId(Base52.classId(), Outlet::class))
-        add(EntityId(Base52.classId(), PasswordFld::class))
         add(EntityId(Base52.classId(), Path::class))
         add(EntityId(Base52.classId(), SocketMessage::class))
         add(EntityId(Base52.classId(), Strobe::class))
-        add(EntityId(Base52.classId(), UseridFld::class))
 
     }
 }
