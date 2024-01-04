@@ -167,15 +167,17 @@ permanent authorization for you to choose that version for the
 Library.
 */
 
+import symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame
+import symmetrical.cosmic._physics._dimensions.time.Strobe
 import java.util.*
 
 
-class RequestAnimationFrame : TimerTask, symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame {
+class RequestAnimationFrame : TimerTask, IRequestAnimationFrame {
     var timer: Timer = Timer()
-    private lateinit var strobe: symmetrical.cosmic._physics._dimensions.time.Strobe
+    private lateinit var strobe: Strobe
     constructor() {
     }
-    fun i(strobe: symmetrical.cosmic._physics._dimensions.time.Strobe) : symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame {
+    fun i(strobe: Strobe) : IRequestAnimationFrame {
         this.strobe = strobe;
         return this;
     }
