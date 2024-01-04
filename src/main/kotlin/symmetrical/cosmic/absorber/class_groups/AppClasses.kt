@@ -166,7 +166,6 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.machine.dom.peers.HtmlPeer
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.__transpectors.printable_characters.*
@@ -179,25 +178,12 @@ import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic.dictionary.atoms.PasswordFld
 import symmetrical.cosmic.dictionary.atoms.UseridFld
 import symmetrical.cosmic.wormholes.messaging.Message
-import symmetrical.cosmic.wormholes.messaging.login.AppendMSG
-import symmetrical.cosmic.wormholes.messaging.login.LoginMSG
-import symmetrical.cosmic.wormholes.messaging.login.ReadyMSG
 import symmetrical.cosmic.wormholes.pulsar.dictionary.Host
 import symmetrical.cosmic.wormholes.pulsar.dictionary.Path
 import symmetrical.cosmic.wormholes.pulsar.socket.Outlet
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
 import symmetrical.device.DeviceInput
-import cosmology.dom.Dom
-import cosmology.dom.DomProperties
-import cosmology.dom.DomProperty
-import cosmology.dom.dom.Body
-import cosmology.dom.properties.colors.BackgroundColor
-import cosmology.dom.properties.identification.DomId
-import cosmology.dom.properties.region.DomHeight
-import cosmology.dom.properties.region.DomLeft
-import cosmology.dom.properties.region.DomTop
-import cosmology.dom.properties.region.DomWidth
-import cosmology.dom.properties.style.DomStyle
+
 
 
 class AppClasses : ClassGroup {
