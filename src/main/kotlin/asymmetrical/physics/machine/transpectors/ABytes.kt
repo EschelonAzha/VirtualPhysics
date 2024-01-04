@@ -1,4 +1,4 @@
-package asymmetrical.machine.config
+package asymmetrical.physics.machine.transpectors
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,10 +166,14 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-
-object BootConfig {
-    const val WIDTH     = 1280.0
-    const val HEIGHT    = 720.0
-    const val BACKGROUND_COLOR = "#FFFFFF"
- //   var UNIVERSE: Universe? = null
+object ABytes {
+    fun toByteArray(charArray:CharArray) : ByteArray {
+        return charArray.joinToString("").toByteArray(Charsets.UTF_8)
+    }
+    fun toCharArray(byteArray:ByteArray) : CharArray {
+        return String(byteArray, Charsets.UTF_8).toCharArray()
+    }
+    fun toString(byteArray:ByteArray) : String {
+        return byteArray.toString(Charsets.UTF_8)
+    }
 }

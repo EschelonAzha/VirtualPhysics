@@ -1,4 +1,4 @@
-package asymmetrical.machine.time
+package asymmetrical.physics.machine.threads
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,33 +166,10 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-
-import symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame
-import symmetrical.cosmic._physics._dimensions.time.Strobe
-import java.util.*
-
-
-class RequestAnimationFrame : TimerTask, symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame {
-    var timer: Timer = Timer()
-    private lateinit var strobe: symmetrical.cosmic._physics._dimensions.time.Strobe
+class Cores {
+    var processors = 1
     constructor() {
+  //      processors = Runtime.getRuntime().availableProcessors()
+        return
     }
-    fun i(strobe: symmetrical.cosmic._physics._dimensions.time.Strobe) : symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame {
-        this.strobe = strobe;
-        return this;
-    }
-
-    private fun frame(timestamp:Double):Unit {
-        this.strobe.frame(timestamp)
-    }
-    override fun run() :Unit {
-        this.frame(System.currentTimeMillis().toDouble())
-    }
-    override fun start() : Unit {
-        timer.schedule(this,0, 16)
-    }
-    override fun stop() : Unit {
-        timer.cancel()
-    }
-
 }

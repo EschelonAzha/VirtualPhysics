@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.machine.config.Config
+import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.__transpectors.printable_characters.Base52
 import symmetrical.cosmic.__transpectors.transpectors.Photons
 /*
@@ -176,7 +176,7 @@ open class Photon{
     constructor()
 
     companion object {
-        fun toPhoton(value:Any?, lth:Int=Config.getPhotonLength()) : String {
+        fun toPhoton(value:Any?, lth:Int= Config.getPhotonLength()) : String {
             if (value == null)
                 return Base52.toFixedBase52(lth, 0)
             val str = value.toString()

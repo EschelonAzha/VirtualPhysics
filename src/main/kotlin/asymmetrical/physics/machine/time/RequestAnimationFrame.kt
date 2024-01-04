@@ -1,4 +1,4 @@
-package __origin.threads
+package asymmetrical.physics.machine.time
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,12 +166,31 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-//import kotlin.system.exitProcess
-class Exit {
-    companion object {
-        fun exit(code:Int) : Any {
-//            return exitProcess(-1)
-            return ""
-        }
+
+import java.util.*
+
+
+class RequestAnimationFrame : TimerTask, symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame {
+    var timer: Timer = Timer()
+    private lateinit var strobe: symmetrical.cosmic._physics._dimensions.time.Strobe
+    constructor() {
     }
+    fun i(strobe: symmetrical.cosmic._physics._dimensions.time.Strobe) : symmetrical.cosmic._physics._dimensions.time.IRequestAnimationFrame {
+        this.strobe = strobe;
+        return this;
+    }
+
+    private fun frame(timestamp:Double):Unit {
+        this.strobe.frame(timestamp)
+    }
+    override fun run() :Unit {
+        this.frame(System.currentTimeMillis().toDouble())
+    }
+    override fun start() : Unit {
+        timer.schedule(this,0, 16)
+    }
+    override fun stop() : Unit {
+        timer.cancel()
+    }
+
 }

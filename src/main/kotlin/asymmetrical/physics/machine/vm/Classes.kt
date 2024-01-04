@@ -1,4 +1,4 @@
-package asymmetrical.machine.transpectors
+package asymmetrical.physics.machine.vm
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,14 +166,24 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-object ABytes {
-    fun toByteArray(charArray:CharArray) : ByteArray {
-        return charArray.joinToString("").toByteArray(Charsets.UTF_8)
+import kotlin.reflect.KClass
+
+object Classes {
+    fun <T:Any> createInstance(kClass:KClass<T>) : Any? {
+
+        val constructors = kClass.constructors
+        for (constructor in constructors) {
+            if (constructor.parameters.isEmpty())
+                return constructor.call()
+        }
+//        for (constructor in constructors) {
+//            return constructor.call(Protons(), Neutrons())
+//        }
+        return null
     }
-    fun toCharArray(byteArray:ByteArray) : CharArray {
-        return String(byteArray, Charsets.UTF_8).toCharArray()
-    }
-    fun toString(byteArray:ByteArray) : String {
-        return byteArray.toString(Charsets.UTF_8)
+    fun getSimpleName(obj:Any) : String {
+        val kClass = obj::class
+        return kClass.simpleName as String
     }
 }
+

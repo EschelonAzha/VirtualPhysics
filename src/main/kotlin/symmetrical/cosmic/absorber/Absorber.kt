@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.machine.config.Config
+import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.absorber.class_groups.*
 import symmetrical.cosmic.__transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.*

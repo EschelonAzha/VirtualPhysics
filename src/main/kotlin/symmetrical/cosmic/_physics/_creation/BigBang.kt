@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 
-import asymmetrical.machine.threads.Cores
+import asymmetrical.physics.machine.threads.Cores
 
 class BigBang  {
     constructor()

@@ -166,10 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.machine.threads.Energy
 import symmetrical.cosmic._physics._subatomic.bosons.Graviton
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+
 /*
 https://en.wikipedia.org/wiki/Gravity
  */

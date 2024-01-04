@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.machine.vm.Classes
+import asymmetrical.physics.machine.vm.Classes
 import kotlin.reflect.KClass
 
 class EntityId {

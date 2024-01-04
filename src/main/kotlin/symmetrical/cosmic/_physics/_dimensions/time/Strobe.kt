@@ -166,9 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.machine.time.RequestAnimationFrame
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import asymmetrical.physics.machine.time.RequestAnimationFrame
 
 class Strobe {
     constructor()

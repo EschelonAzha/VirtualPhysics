@@ -1,4 +1,4 @@
-package asymmetrical.machine.fx
+package asymmetrical.physics.machine.threads
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,30 +166,48 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import asymmetrical.physics.machine.config.Config
 
-open class FxLauncher : Application() {
-//
-//    override fun start(stage: Stage) {
-//        stage.title         = getTitle();
-//        val borderPane      = BorderPane()
-//        borderPane.style    = "-fx-background-color: "+BootConfig.BACKGROUND_COLOR;
-//        stage.scene         = Scene(borderPane, BootConfig.WIDTH, BootConfig.HEIGHT, Color.web(BootConfig.BACKGROUND_COLOR))
-//        val browser         = createBrowser()
-//        borderPane.center   = browser
-//        browser.engine.load(getHomePage())
-//        stage.show()
-//    }
-//    private fun createBrowser() : WebView {
-//        val browser = WebView()
-//        browser.minWidth  = BootConfig.WIDTH
-//        browser.minHeight = BootConfig.HEIGHT
-//        return browser
-//    }
-//
-//    protected open fun getHomePage() : String {
-//        return ""
-//    }
-//    protected open fun getTitle() : String {
-//        return ""
-//    }
+open class Energy : Thread  {
+    @Volatile protected var running     = false
+    @Volatile protected var updating    = false
+    constructor() {
+    }
+
+    fun acquireRunning() : Boolean {
+        while (updating) {
+            Thread.sleep(Config.getUpdateSleep())
+        }
+        running = true
+        if (updating) { // got it too late
+            running = false
+            return false // try again.
+        }
+        return true
+    }
+
+    fun acquireUpdate() : Boolean {
+        while (running) {
+            Thread.sleep(Config.getUpdateSleep())
+        }
+        updating = true
+        if (running) {  // got it too late
+            updating = false
+            return false
+        }
+        return true
+    }
+    fun pause() : Unit {
+        releaseRunning()
+        Thread.sleep(Config.getThreadSleep())
+        while (!acquireRunning()){}
+    }
+    fun releaseRunning() : Unit {
+        running = false
+        return
+    }
+    fun releaseUpdate() : Unit {
+        updating = false
+        return
+    }
 }

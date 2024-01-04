@@ -1,4 +1,4 @@
-package asymmetrical.machine.fx
+package asymmetrical.physics.machine.threads
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,5 +166,12 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-open class Application {
+//import kotlin.system.exitProcess
+class Exit {
+    companion object {
+        fun exit(code:Int) : Any {
+//            return exitProcess(-1)
+            return ""
+        }
+    }
 }
