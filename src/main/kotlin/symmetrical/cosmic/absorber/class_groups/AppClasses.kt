@@ -175,7 +175,6 @@ import symmetrical.cosmic._physics.atomic.substance.metals.Metal
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
 import symmetrical.cosmic.dictionary.atoms.PasswordFld
 import symmetrical.cosmic.dictionary.atoms.UseridFld
-import symmetrical.cosmic.wormholes.messaging.Message
 import symmetrical.cosmic.wormholes.pulsar.dictionary.Host
 import symmetrical.cosmic.wormholes.pulsar.dictionary.Path
 import symmetrical.cosmic.wormholes.pulsar.socket.Outlet
@@ -188,7 +187,6 @@ class AppClasses : ClassGroup {
 
         add(EntityId(Base52.classId(), Host::class))
         add(EntityId(Base52.classId(), KeyValue::class))
-        add(EntityId(Base52.classId(), Message::class))
         add(EntityId(Base52.classId(), Metal::class))
         add(EntityId(Base52.classId(), Monad::class))
         add(EntityId(Base52.classId(), Outlet::class))
