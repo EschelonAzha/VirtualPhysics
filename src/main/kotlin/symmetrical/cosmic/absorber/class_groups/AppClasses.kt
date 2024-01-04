@@ -182,7 +182,6 @@ import symmetrical.cosmic.wormholes.pulsar.dictionary.Host
 import symmetrical.cosmic.wormholes.pulsar.dictionary.Path
 import symmetrical.cosmic.wormholes.pulsar.socket.Outlet
 import symmetrical.cosmic.wormholes.pulsar.socket.SocketMessage
-import symmetrical.device.DeviceInput
 
 
 
@@ -191,7 +190,6 @@ class AppClasses : ClassGroup {
 
         add(EntityId(Base52.classId(), CRLFTerminatedMomentum::class))
         add(EntityId(Base52.classId(), CrLfTerminatedString::class))
-        add(EntityId(Base52.classId(), DeviceInput::class))
         add(EntityId(Base52.classId(), Host::class))
         add(EntityId(Base52.classId(), KeyValue::class))
         add(EntityId(Base52.classId(), Message::class))
