@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._creation
+package symmetrical.cosmic._physics.creation
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
