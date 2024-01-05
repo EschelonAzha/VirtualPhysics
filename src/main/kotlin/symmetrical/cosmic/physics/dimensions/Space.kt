@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.dimensions
+package symmetrical.cosmic.physics.dimensions
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,15 +166,54 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-class Dimensions {
-    val charge      :Charge         = Charge()
-    val mass        :Mass           = Mass()
-    val space       :Space          = Space()
-    val time        :Time           = Time()
-    val temperature :Temperature    = Temperature()
+import symmetrical.cosmic.absorber.Absorber
+import symmetrical.cosmic._physics.subatomic.balanced.IParticle
+import symmetrical.cosmic._physics.subatomic.balanced.values.Field
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
+import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
+/*
+https://en.wikipedia.org/wiki/Space
+ */
+class Space (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
 
-    constructor() {
+    private var space: symmetrical.cosmic._physics.subatomic.balanced.IParticle? = null   // this may have to change to a Particle UniqueId when emitted
 
+    constructor() : this(
+        QuasiParticle()
+    )
+    fun i() : Space {
+        return this
     }
-
+    override fun absorb(photon: Photon) : Photon {
+        var remainder : Photon = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
+    fun getField() : Field {
+        return field.getField()
+    }
+    fun getSpace() : symmetrical.cosmic._physics.subatomic.balanced.IParticle? {
+        return space
+    }
+    fun setSpace(particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle?) : Any? {
+        this.space = particle
+        return null
+    }
+    fun space() : Any? {
+        return field.getContent()
+    }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Space::class)
+    }
+    private fun radiate() : String {
+        return getLocalClassId()+
+                field.emit().radiate()
+    }
 }

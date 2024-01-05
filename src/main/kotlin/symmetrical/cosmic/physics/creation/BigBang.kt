@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.dimensions
+package symmetrical.cosmic.physics.creation
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,41 +166,27 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
-import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
-/*
-https://en.wikipedia.org/wiki/Time_in_physics
- */
-class Time(private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
 
-    override fun absorb(photon: Photon) : Photon {
-        var remainder : Photon = photon.propagate()
-        remainder = field.absorb(remainder)
-        return remainder
+import asymmetrical.physics.machine.threads.Cores
+
+class BigBang  {
+    constructor()
+
+    private lateinit var universe       : Universe
+    var cores                           : Cores = Cores()
+    fun i(universe: Universe) : BigBang {
+        this.universe = universe;
+        //  BootConfig.UNIVERSE = universe
+        return this;
     }
-    override fun emit() : Photon {
-        return Photon(radiate())
+
+    fun run() : Unit {
+        // this runs a console app
+        this.universe.run()
     }
-    public fun getClassId() : String {
-        return getLocalClassId()
+    fun runUI() : Unit {
+        // this starts and runs the browser UI
+        //   Application.launch(FxLauncher::class.java)
     }
-    fun getField() : Field {
-        return field.getField()
-    }
-    fun setTime(content:Any?) : Any? {
-        return setContent(content)
-    }
-    fun time() : Any? {
-        return field.getContent()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Time::class)
-    }
-    private fun radiate() : String {
-        return getLocalClassId()+
-                field.emit().radiate()
-    }
+
 }

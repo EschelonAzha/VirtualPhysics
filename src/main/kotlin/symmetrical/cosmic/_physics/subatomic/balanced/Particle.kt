@@ -168,7 +168,6 @@ Library.
 */
 import asymmetrical.physics.machine.vm.Classes
 import symmetrical.cosmic.transpectors.transpectors.Keys
-import symmetrical.cosmic._physics.dimensions.*
 import symmetrical.cosmic._physics.subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
@@ -179,6 +178,7 @@ import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
+import symmetrical.cosmic.physics.dimensions.*
 
 /*
 https://en.wikipedia.org/wiki/Particle
@@ -207,11 +207,11 @@ open class Particle(
 
     private     var uniqueId        : QuasiParticle = QuasiParticle()
 
-    private     val time            :Time                   = Time()
-    private     val charge          :Charge                 = Charge()
-    private     val space           :Space                  = Space()
-    private     val mass            :Mass                   = Mass()
-    private     val temperature     :Temperature            = Temperature()
+    private     val time            : Time = Time()
+    private     val charge          : Charge = Charge()
+    private     val space           : Space = Space()
+    private     val mass            : Mass = Mass()
+    private     val temperature     : Temperature = Temperature()
 
     private     val _wavelength     :Wavelength             = Wavelength()
     private     var spin            :Spin                   = Spin()

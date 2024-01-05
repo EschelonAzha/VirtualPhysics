@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.dimensions
+package symmetrical.cosmic.physics.creation
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,44 +166,16 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
-import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
-/*
-https://en.wikipedia.org/wiki/Temperature
- */
-class Temperature  (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
 
-    fun i() : Temperature {
-        return this
+open class Universe  {
+    constructor()
+
+    fun i() : Universe {
+       return this
     }
-    override fun absorb(photon: Photon) : Photon {
-        var remainder : Photon = photon.propagate()
-        remainder = field.absorb(remainder)
-        return remainder
-    }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-    fun getClassId() : String {
-        return getLocalClassId()
-    }
-    fun getField() : Field {
-        return field.getField()
-    }
-    fun setTemperature(value:Any?) : Any? {
-        return setContent(value)
-    }
-    fun temperature() : Any? {
-        return field.getContent()
-    }
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Temperature::class)
-    }
-    private fun radiate() : String {
-        return getLocalClassId()+
-                field.emit().radiate()
+    open fun run() {
+//        while (true) {
+//            Energy.sleep(4)
+//        }
     }
 }
