@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiNeutron
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiNeutron
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
@@ -178,12 +178,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Neutron
 */
 open class Neutron(
-    private val matter: IMatter = Matter(Neutron::class, AntiNeutron::class),
+    private val matter: IMatter = Matter(Neutron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiNeutron::class),
 ) : Baryon(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Neutron::class, AntiNeutron::class),
+        Matter(Neutron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiNeutron::class),
     ) init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

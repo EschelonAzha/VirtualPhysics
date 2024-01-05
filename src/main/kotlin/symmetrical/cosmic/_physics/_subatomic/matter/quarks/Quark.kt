@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
@@ -183,13 +183,13 @@ import kotlin.reflect.KClass
 
 
 open class Quark(
-    private val matter: IMatter = Matter(Quark::class, AntiQuark::class),
+    private val matter: IMatter = Matter(Quark::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),
 ) : Particle(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(Quark::class, AntiQuark::class),
+        Matter(Quark::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),
     ) {
         this.gluon         = Red_AntiRed()
     }

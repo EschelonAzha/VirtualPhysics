@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_beta.AntiBetaPlus
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaPlus
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -181,12 +181,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class BetaPlus(
-    private val matter: IMatter = Matter(BetaPlus::class, AntiBetaPlus::class),
+    private val matter: IMatter = Matter(BetaPlus::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaPlus::class),
 ) : LeptonPair(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(BetaPlus::class, AntiBetaPlus::class),
+        Matter(BetaPlus::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaPlus::class),
     )
 
 
@@ -202,7 +202,8 @@ class BetaPlus(
     fun decay(proton: Baryon) : Down {
         var up      : Up = proton.get(0) as Up
 
-        var positron: Positron = Positron()
+        var positron: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron =
+            symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron()
         var neutrino: Neutrino = Neutrino()
 
         positron.setWavelength(up.red())
@@ -219,14 +220,14 @@ class BetaPlus(
     fun getNeutrino() : Neutrino {
         return _lepton as Neutrino
     }
-    fun getPositron() : Positron {
-        return _antiLepton as Positron
+    fun getPositron() : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron {
+        return _antiLepton as symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
     }
     private fun setNeutrino(neutrino: Neutrino) : BetaPlus {
         this._lepton = neutrino
         return this
     }
-    private fun setPositron(positron: Positron) : BetaPlus {
+    private fun setPositron(positron: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron) : BetaPlus {
         this._antiLepton = positron
         return this
     }

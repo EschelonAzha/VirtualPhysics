@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiTauNeutrino
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
@@ -175,12 +175,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/TauNeutrino
  */
 class TauNeutrino(
-    private val matter: IMatter = Matter(TauNeutrino::class, AntiTauNeutrino::class),
+    private val matter: IMatter = Matter(TauNeutrino::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(TauNeutrino::class, AntiTauNeutrino::class),
+        Matter(TauNeutrino::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino::class),
     )
     init {
     }

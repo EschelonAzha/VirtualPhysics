@@ -169,7 +169,6 @@ Library.
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.*
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.ElectronPositron
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
@@ -179,12 +178,12 @@ import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 
 class Leptons : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), AntiLepton::class))
-        add(EntityId(Base52.classId(), AntiMuon::class))
-        add(EntityId(Base52.classId(), AntiMuonNeutrino::class))
-        add(EntityId(Base52.classId(), AntiNeutrino::class))
-        add(EntityId(Base52.classId(), AntiTau::class))
-        add(EntityId(Base52.classId(), AntiTauNeutrino::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiMuon::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiMuonNeutrino::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTau::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino::class))
         add(EntityId(Base52.classId(), BetaMinus::class))
         add(EntityId(Base52.classId(), BetaPlus::class))
         add(EntityId(Base52.classId(), Electron::class))

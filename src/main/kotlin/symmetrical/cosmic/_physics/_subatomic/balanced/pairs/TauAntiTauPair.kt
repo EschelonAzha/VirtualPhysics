@@ -166,9 +166,9 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiTau
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTau
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
@@ -205,11 +205,11 @@ class TauAntiTauPair(
 
 
 
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
+    constructor(lepton: Lepton, antiLepton: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton) : this() {
         i(lepton, antiLepton)
     }
     fun i(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
-        super.i(Tau(newValue), AntiTau(oldValue))
+        super.i(Tau(newValue), symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTau(oldValue))
         setAccepted(accepted)
         setReasonCode(reasonCode)
         setReason(reason)
@@ -231,8 +231,8 @@ class TauAntiTauPair(
     fun getAntiField() : Field {
         return TauAntiTauPair._field(this)
     }
-    fun getPositron() : Positron {
-        return _antiLepton as Positron
+    fun getPositron() : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron {
+        return _antiLepton as symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
     }
 
     fun getReason() : String {
@@ -263,7 +263,7 @@ class TauAntiTauPair(
         this._lepton = electron
         return this
     }
-    private fun setPositron(positron: Positron) : TauAntiTauPair {
+    private fun setPositron(positron: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron) : TauAntiTauPair {
         this._antiLepton = positron
         return this
     }

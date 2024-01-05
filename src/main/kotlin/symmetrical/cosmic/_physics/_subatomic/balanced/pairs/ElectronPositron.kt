@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
@@ -188,7 +188,7 @@ class ElectronPositron(
         MatterAntiMatter(ElectronPositron::class, ElectronPositron::class),
     )
 
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
+    constructor(lepton: Lepton, antiLepton: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton) : this() {
         i(lepton, antiLepton)
     }
 
@@ -205,8 +205,8 @@ class ElectronPositron(
     fun getElectron() : Electron {
         return _lepton as Electron
     }
-    fun getPositron() : Positron {
-        return _antiLepton as Positron
+    fun getPositron() : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron {
+        return _antiLepton as symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
     }
 //    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
 //        this.leptons[0] = electron
@@ -220,7 +220,7 @@ class ElectronPositron(
         this._lepton = electron
         return this
     }
-    private fun setPositron(positron: Positron) : ElectronPositron {
+    private fun setPositron(positron: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron) : ElectronPositron {
         this._antiLepton = positron
         return this
     }

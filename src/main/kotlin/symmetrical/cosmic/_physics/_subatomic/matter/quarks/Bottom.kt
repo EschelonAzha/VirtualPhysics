@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiBottom
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
@@ -176,12 +176,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/BottomQuark
  */
 class Bottom(
-    private val matter: IMatter = Matter(Bottom::class, AntiBottom::class),
+    private val matter: IMatter = Matter(Bottom::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Bottom::class, AntiBottom::class),
+        Matter(Bottom::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom::class),
     )
     init {
 

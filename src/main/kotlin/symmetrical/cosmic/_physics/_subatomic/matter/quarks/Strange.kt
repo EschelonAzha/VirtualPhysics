@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiStrange
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiStrange
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
@@ -176,12 +176,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/StrangeQuark
  */
 class Strange(
-    private val matter: IMatter = Matter(Strange::class, AntiStrange::class),
+    private val matter: IMatter = Matter(Strange::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiStrange::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Strange::class, AntiStrange::class),
+        Matter(Strange::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiStrange::class),
     )
     init {
     }

@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiDown
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
@@ -177,12 +177,12 @@ https://en.wikipedia.org/wiki/DownQuark
  */
 
 class Down(
-    private val matter: IMatter = Matter(Down::class, AntiDown::class),
+    private val matter: IMatter = Matter(Down::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Down::class, AntiDown::class),
+        Matter(Down::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown::class),
     )
     init {
     }

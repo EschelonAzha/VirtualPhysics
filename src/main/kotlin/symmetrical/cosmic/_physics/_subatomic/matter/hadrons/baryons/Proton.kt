@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
@@ -184,13 +184,13 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 https://en.wikipedia.org/wiki/Proton
  */
 open class Proton(
-    private val matter: IMatter = Matter(Proton::class, AntiProton::class),
+    private val matter: IMatter = Matter(Proton::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton::class),
 ) : Baryon(),
     IMatter by matter
 {
     var _quark:Quark
     constructor() : this(
-        Matter(Proton::class, AntiProton::class),
+        Matter(Proton::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton::class),
     ) init {
         _quark = this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

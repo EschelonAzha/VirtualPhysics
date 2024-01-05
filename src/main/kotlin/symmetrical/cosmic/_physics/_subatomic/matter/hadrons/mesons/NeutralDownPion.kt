@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralDownPion
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiDown
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralDownPion
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
@@ -179,16 +179,16 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Pion
  */
 open class NeutralDownPion(
-    private val matter: IMatter = Matter(NeutralDownPion::class, AntiNeutralDownPion::class),
+    private val matter: IMatter = Matter(NeutralDownPion::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralDownPion::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(NeutralDownPion::class, AntiNeutralDownPion::class),
+        Matter(NeutralDownPion::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralDownPion::class),
     )   init {
         super.i(2)
         this.set(0, Down())
-        this.set(1, AntiDown())
+        this.set(1, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown())
     }
 
     override fun getClassId() : String {

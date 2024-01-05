@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
@@ -186,12 +186,12 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Baryon
  */
 open class Baryon(
-    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class),
+    private val matter: IMatter = Matter(Baryon::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Baryon::class, AntiBaryon::class),
+        Matter(Baryon::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon::class),
     )
     init {
         super.i(3)

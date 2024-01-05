@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.Positron
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
@@ -183,12 +183,12 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 https://en.wikipedia.org/wiki/Electron
  */
 class Electron(
-    private val matter: IMatter = Matter(Electron::class, Positron::class),
+    private val matter: IMatter = Matter(Electron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Electron::class, Positron::class),
+        Matter(Electron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron::class),
     )
     init {
     }

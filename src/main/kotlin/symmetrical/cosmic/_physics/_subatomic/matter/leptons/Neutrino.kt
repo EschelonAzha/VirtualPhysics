@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiNeutrino
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
@@ -177,12 +177,12 @@ https://en.wikipedia.org/wiki/Neutrino
  */
 
 class Neutrino(
-    private val matter: IMatter = Matter(Neutrino::class, AntiNeutrino::class),
+    private val matter: IMatter = Matter(Neutrino::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Neutrino::class, AntiNeutrino::class),
+        Matter(Neutrino::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino::class),
     )
     init {
 

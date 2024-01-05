@@ -166,10 +166,10 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralUpPion
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiQuark
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralUpPion
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.AntiUp
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
@@ -182,24 +182,24 @@ import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Pion
  */
 open class NeutralUpPion(
-    private val matter: IMatter = Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
+    private val matter: IMatter = Matter(NeutralUpPion::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralUpPion::class),
 ) : Hadron(),
     IMatter by matter
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
     constructor() : this(
-        Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
+        Matter(NeutralUpPion::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralUpPion::class),
     )
     constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)
         this.add(Up())
-        this.add(AntiUp())
+        this.add(symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp())
 
         val up0 = get(0) as Up
-        val up1 = get(1) as AntiUp
+        val up1 = get(1) as symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp
         up0.z(Quark.Args(proton))
-        up1.z(AntiQuark.Args(neutron))
+        up1.z(symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark.Args(neutron))
 
         nuclearForce()
     }

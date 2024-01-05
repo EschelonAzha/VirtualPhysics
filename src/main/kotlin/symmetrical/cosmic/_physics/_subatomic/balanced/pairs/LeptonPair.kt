@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.AntiLepton
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
@@ -197,14 +197,14 @@ open class LeptonPair(
     }
 
     public lateinit var _lepton     : Lepton
-    public lateinit var _antiLepton : AntiLepton
+    public lateinit var _antiLepton : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
 
 
 //    constructor(lepton:Lepton, antiLepton:AntiLepton) {
 //        i(lepton, antiLepton)
 //    }
 
-    fun i(lepton:Lepton, antiLepton:AntiLepton) : LeptonPair {
+    fun i(lepton:Lepton, antiLepton: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton) : LeptonPair {
         this._lepton     = lepton;
         this._antiLepton = antiLepton
         return this
