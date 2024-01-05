@@ -1,7 +1,6 @@
 package applications.tests.dictionary
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics.atomic.substance.ions.Compound
+import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
 class AddressRow : Compound {
     public val name    : Name
