@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._dimensions
+package symmetrical.cosmic._physics.dimensions
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -172,11 +172,14 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
 /*
-https://en.wikipedia.org/wiki/Time_in_physics
+https://en.wikipedia.org/wiki/Temperature
  */
-class Time(private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle by field {
+class Temperature  (private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle by field {
 
-    override fun absorb(photon:Photon) : Photon {
+    fun i() : Temperature {
+        return this
+    }
+    override fun absorb(photon: Photon) : Photon {
         var remainder : Photon  = photon.propagate()
         remainder = field.absorb(remainder)
         return remainder
@@ -184,20 +187,20 @@ class Time(private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle by 
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    public fun getClassId() : String {
+    fun getClassId() : String {
         return getLocalClassId()
     }
     fun getField() : Field {
         return field.getField()
     }
-    fun setTime(content:Any?) : Any? {
-        return setContent(content)
+    fun setTemperature(value:Any?) : Any? {
+        return setContent(value)
     }
-    fun time() : Any? {
+    fun temperature() : Any? {
         return field.getContent()
     }
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(Time::class)
+        return Absorber.getClassId(Temperature::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

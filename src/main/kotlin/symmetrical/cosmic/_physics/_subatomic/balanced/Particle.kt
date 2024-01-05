@@ -168,7 +168,7 @@ Library.
 */
 import asymmetrical.physics.machine.vm.Classes
 import symmetrical.cosmic.transpectors.transpectors.Keys
-import symmetrical.cosmic._physics._dimensions.*
+import symmetrical.cosmic._physics.dimensions.*
 import symmetrical.cosmic._physics._subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin

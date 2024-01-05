@@ -169,7 +169,7 @@ Library.
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics._dimensions.*
+import symmetrical.cosmic._physics.dimensions.*
 
 class Dimentions : ClassGroup {
     constructor() {

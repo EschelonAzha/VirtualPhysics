@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._dimensions
+package symmetrical.cosmic._physics.dimensions
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -167,16 +167,22 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
+import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
 /*
-https://en.wikipedia.org/wiki/Temperature
+https://en.wikipedia.org/wiki/Space
  */
-class Temperature  (private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle by field {
+class Space (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
 
-    fun i() : Temperature {
+    private var space: IParticle? = null   // this may have to change to a Particle UniqueId when emitted
+
+    constructor() : this(
+        QuasiParticle()
+    )
+    fun i() : Space {
         return this
     }
     override fun absorb(photon: Photon) : Photon {
@@ -187,20 +193,24 @@ class Temperature  (private val field:QuasiParticle=QuasiParticle()) : IQuasiPar
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    fun getClassId() : String {
+    public fun getClassId() : String {
         return getLocalClassId()
     }
     fun getField() : Field {
         return field.getField()
     }
-    fun setTemperature(value:Any?) : Any? {
-        return setContent(value)
+    fun getSpace() : IParticle? {
+        return space
     }
-    fun temperature() : Any? {
+    fun setSpace(particle:IParticle?) : Any? {
+        this.space = particle
+        return null
+    }
+    fun space() : Any? {
         return field.getContent()
     }
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(Temperature::class)
+        return Absorber.getClassId(Space::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

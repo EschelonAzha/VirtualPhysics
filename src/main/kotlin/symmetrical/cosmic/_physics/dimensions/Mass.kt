@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._dimensions
+package symmetrical.cosmic._physics.dimensions
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
