@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
 /*
@@ -176,8 +176,8 @@ https://en.wikipedia.org/wiki/Time_in_physics
  */
 class Time(private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle by field {
 
-    override fun absorb(photon:Photon) : Photon {
-        var remainder : Photon  = photon.propagate()
+    override fun absorb(photon: Photon) : Photon {
+        var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)
         return remainder
     }

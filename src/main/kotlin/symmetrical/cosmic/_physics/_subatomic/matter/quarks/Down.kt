@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon

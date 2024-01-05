@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark

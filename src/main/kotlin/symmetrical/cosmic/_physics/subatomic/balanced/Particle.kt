@@ -173,8 +173,8 @@ import symmetrical.cosmic._physics.subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 /*
@@ -214,7 +214,7 @@ open class Particle(
     private     var spin            :Spin                   = Spin()
     private     var angularMomentum :AngularMomentum        = AngularMomentum()
 
-    override fun absorb(photon:Photon) : Photon {
+    override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = uniqueId.absorb(remainder)
         remainder = time.absorb(remainder)

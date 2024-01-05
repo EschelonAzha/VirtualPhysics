@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.IBeam
 /*
 https://en.wikipedia.org/wiki/Particle_beam

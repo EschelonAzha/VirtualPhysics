@@ -168,9 +168,9 @@ Library.
 */
 import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
@@ -178,6 +178,7 @@ import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 
@@ -223,7 +224,7 @@ open class Quark(
         matter.check(photon);
         this.gluon              = Red_AntiRed()  // this is need for JS Bug
 
-        var remainder : Photon  = photon.propagate()
+        var remainder : Photon = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
     }

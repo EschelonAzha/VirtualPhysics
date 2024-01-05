@@ -169,8 +169,8 @@ Library.
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
@@ -192,7 +192,7 @@ class Nucleons(
         IProtons             by _protons,
         INeutrons            by neutrons,
         INucleons,
-        IEmitter
+    IEmitter
 {
 
     constructor() : this(
@@ -287,7 +287,7 @@ class Nucleons(
 
     private fun cloneQuark(down:Quark) : Down {
 
-        val emission:Photon = down.emit()
+        val emission: Photon = down.emit()
         val (clone, _) = Absorber.materialize(emission)
         return clone as Down
     }

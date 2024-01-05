@@ -167,15 +167,16 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 
 open class AntiQuark(
     private val antiMatter: IAntiMatter = AntiMatter(Quark::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),

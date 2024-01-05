@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.bosons.gluons
+package symmetrical.cosmic._physics.subatomic.bosons
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,24 +166,10 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiBlue
-import symmetrical.cosmic._physics._subatomic.matter.colors.Red
-
-class Red_AntiBlue : Gluon {
-    constructor()
-    init {
-        color       = Red()
-        antiColor   = symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiBlue()
-    }
-
-    override fun i() : Red_AntiBlue {
-        super.i()
-        return this
-    }
-    fun green(charge: Gluon) : Green_AntiGreen {
-        var gluon = charge.green().green(charge)
-        gluon.manifestation = charge.manifestation
-        return gluon
-    }
+/*
+https://en.wikipedia.org/wiki/Emission_spectrum
+ */
+interface IEmitter {
+    fun absorb    (photon: Photon)      : Photon
+    fun emit      ()                    : Photon
 }

@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.bosons.gluons
+package symmetrical.cosmic._physics.subatomic.bosons.gluons
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -167,24 +167,23 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen
+import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiBlue
 import symmetrical.cosmic._physics._subatomic.matter.colors.Blue
-import symmetrical.cosmic._physics._subatomic.matter.colors.Red
 
-class Red_AntiGreen : Gluon {
+class Blue_AntiBlue : Gluon {
     constructor()
     init {
-        color       = Red()
-        antiColor   = symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen()
+        color       = Blue()
+        antiColor   = symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiBlue()
     }
 
-    override fun i() : Red_AntiGreen {
+
+    override fun i() : Blue_AntiBlue {
         super.i()
         return this
     }
+
     fun blue(charge: Gluon) : Blue_AntiBlue {
-        var gluon = Blue().blue(charge)
-        gluon.manifestation = charge.manifestation
-        return gluon
+        return this
     }
 }

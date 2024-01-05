@@ -168,8 +168,8 @@ Library.
 */
 
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.subatomic.balanced.color.ColorCharge
 import symmetrical.cosmic._physics.subatomic.balanced.color.IColorCharge

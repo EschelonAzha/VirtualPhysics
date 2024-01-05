@@ -169,7 +169,9 @@ Library.
 import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.absorber.class_groups.*
 import symmetrical.cosmic.transpectors.transpectors.Strings
-import symmetrical.cosmic._physics._subatomic.bosons.*
+import symmetrical.cosmic._physics.subatomic.bosons.*
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
 
 object Absorber : IAbsorber {

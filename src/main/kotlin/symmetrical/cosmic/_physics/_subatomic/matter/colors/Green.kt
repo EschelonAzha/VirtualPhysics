@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics.subatomic.balanced.color.QCD
-import symmetrical.cosmic._physics._subatomic.bosons.gluons.Green_AntiGreen
+import symmetrical.cosmic._physics.subatomic.bosons.gluons.Green_AntiGreen
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */

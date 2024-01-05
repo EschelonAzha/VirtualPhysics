@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
 /*
@@ -191,7 +191,7 @@ class Charge (private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle 
     }
 
     override fun absorb(photon: Photon) : Photon {
-        var remainder : Photon  = photon.propagate()
+        var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)
         return remainder
     }

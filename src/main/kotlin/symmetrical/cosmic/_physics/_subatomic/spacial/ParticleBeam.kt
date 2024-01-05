@@ -172,8 +172,8 @@ import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import kotlin.reflect.KClass
 /*
@@ -206,7 +206,7 @@ open class ParticleBeam(
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
-        val particleRemainder : Photon      = super.absorb(photon.propagate())
+        val particleRemainder : Photon = super.absorb(photon.propagate())
         val (size52:String, line:String)    = Strings.remainder(3, particleRemainder.radiate())
         val size:Int                        = Base52.toInt(size52)
         var remainder : String              = line

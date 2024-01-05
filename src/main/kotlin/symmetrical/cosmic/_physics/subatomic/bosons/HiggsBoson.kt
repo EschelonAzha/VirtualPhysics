@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.bosons.gluons
+package symmetrical.cosmic._physics.subatomic.bosons
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,21 +166,16 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen
-
-class Green_AntiGreen : Gluon {
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+/*
+https://en.wikipedia.org/wiki/Higgs_boson
+ */
+class HiggsBoson{
     constructor()
-    init {
-        color       = green()
-        antiColor   = symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen()
-    }
 
-    override fun i() : Green_AntiGreen {
-        super.i()
-        return this
-    }
-    fun green(charge: Gluon) : Green_AntiGreen {
+    fun i() : HiggsBoson {
         return this
     }
 }

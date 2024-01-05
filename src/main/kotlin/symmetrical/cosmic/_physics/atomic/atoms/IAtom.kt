@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics.subatomic.balanced.color.IColorCharge
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.INucleons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.IOrbitals
 /*

@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 
-import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
 

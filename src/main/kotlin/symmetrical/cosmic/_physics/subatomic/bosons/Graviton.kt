@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.bosons.gluons
+package symmetrical.cosmic._physics.subatomic.bosons
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,26 +166,28 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen
-import symmetrical.cosmic._physics._subatomic.matter.colors.Blue
-import symmetrical.cosmic._physics._subatomic.matter.colors.Red
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+/*
+https://en.wikipedia.org/wiki/Graviton
+ */
 
-
-class Blue_AntiGreen : Gluon {
+class Graviton {
     constructor()
-    init {
-        color       = Blue()
-        antiColor   = symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen()
-    }
 
-    override fun i() : Blue_AntiGreen {
-        super.i()
+    var center      : Graviton? = null
+    var _attract    : Unit?     = null
+    var radial      : Graviton? = null
+
+    fun i(center: Graviton, attract:Unit, radial: Graviton) : Graviton {
+        this.center     = center
+        this._attract   = attract
+        this.radial     = radial
         return this
     }
-    fun red(charge: Gluon) : Red_AntiRed {
-        var gluon = Red().red(charge)
-        gluon.manifestation = charge.manifestation
-        return gluon
+
+    fun attract() : Graviton {
+        return this
     }
 }

@@ -169,7 +169,7 @@ Library.
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
 import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down

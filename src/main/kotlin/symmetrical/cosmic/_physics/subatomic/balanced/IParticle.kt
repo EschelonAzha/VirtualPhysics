@@ -170,7 +170,7 @@ import symmetrical.cosmic._physics.dimensions.*
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
 
 /*
 https://en.wikipedia.org/wiki/Particle
