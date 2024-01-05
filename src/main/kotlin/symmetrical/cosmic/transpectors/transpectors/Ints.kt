@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.transpectors
+package symmetrical.cosmic.transpectors.transpectors
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,28 +166,13 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-object Doubles {
-    // This fixes a big where numbers with decimal points are reported as integers
-    // and integers are reported as doubles
-    fun isDouble(value: Any?): Boolean {
-        if (value == null)
-            return false
-        if (value is Double)
-            return value.toString().contains(".")
-        if (value is Int) {
-            val containsDot = value.toString().contains(".")
-            return containsDot
-        }
-        return false
-    }
-    fun isInt(value: Any?): Boolean {
-        if (value == null)
-            return false
-        if (value is Double)
-            return !value.toString().contains(".")
-        if (value is Int) {
-            return !value.toString().contains(".")
-        }
-        return false
+object Ints {
+    fun toByteArray(int: Int): ByteArray {
+        val bytes = ByteArray(4)
+        bytes[0] = (int ushr 24).toByte()
+        bytes[1] = (int ushr 16).toByte()
+        bytes[2] = (int ushr 8).toByte()
+        bytes[3] = int.toByte()
+        return bytes
     }
 }

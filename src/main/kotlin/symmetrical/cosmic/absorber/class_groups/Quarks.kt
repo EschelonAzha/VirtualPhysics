@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_quarks.*
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.Kaon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.MinusPion

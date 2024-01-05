@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.transpectors
+package symmetrical.cosmic.transpectors.transpectors
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,17 +166,21 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.printable_characters.Base52
+import kotlinx.datetime.Clock
 
-object Photons {
-    fun chopClassId(emission:String) : String {
-        return Strings.chop(2, emission)
+object Keys {
+    private var currentInstance = 1
+    fun getUniqueId() : String {
+        val longNumber:String  = Clock.System.now().toEpochMilliseconds().toString()
+        val frontHalf :String  = Base52.toBase52(longNumber.substring(0, 7).toInt())
+        val backHalf  :String  = Base52.toBase52(longNumber.substring(7).toInt())
+        val instance  :String  = Base52.toBase52(nextInstance())
+        val result = frontHalf+backHalf+instance
+        return result
     }
-
-    fun parse(lthLength:Int, emission:String) : Pair<String, String> {
-        val (base52Lth,line) = Strings.remainder(lthLength, emission)
-        val lth = Base52.toInt(base52Lth)
-        val (value, remainder) = Strings.remainder(lth, line)
-        return Pair<String, String>(value, remainder)
+    private fun nextInstance() : Int {
+        currentInstance++;
+        return currentInstance
     }
 }

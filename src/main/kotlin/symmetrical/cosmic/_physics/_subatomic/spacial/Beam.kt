@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic.__transpectors.transpectors.Strings
+import symmetrical.cosmic.transpectors.transpectors.Strings
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Particle_beam

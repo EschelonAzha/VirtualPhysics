@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import asymmetrical.physics.machine.config.Config
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
-import symmetrical.cosmic.__transpectors.transpectors.Photons
+import symmetrical.cosmic.transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.transpectors.Photons
 /*
 https://en.wikipedia.org/wiki/Photon
  */

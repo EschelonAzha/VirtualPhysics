@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.transpectors
+package symmetrical.cosmic.transpectors.transpectors
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,15 +166,17 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-object Shorts {
-    fun toByteArray(short: Short): ByteArray {
-        val bytes = ByteArray(2)
-        val int = short.toInt()
-        bytes[0] = ((int) ushr 8).toByte()
-        bytes[1] = short.toByte()
-        return bytes
+import symmetrical.cosmic.transpectors.printable_characters.Base52
+
+object Photons {
+    fun chopClassId(emission:String) : String {
+        return Strings.chop(2, emission)
     }
-    fun toByteArray(short:UShort) : ByteArray {
-        return toByteArray(short.toShort())
+
+    fun parse(lthLength:Int, emission:String) : Pair<String, String> {
+        val (base52Lth,line) = Strings.remainder(lthLength, emission)
+        val lth = Base52.toInt(base52Lth)
+        val (value, remainder) = Strings.remainder(lth, line)
+        return Pair<String, String>(value, remainder)
     }
 }

@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.atomic.atoms.elements.Helium
 import symmetrical.cosmic._physics.atomic.atoms.elements.Hydrogen

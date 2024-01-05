@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__transpectors.transpectors.Shorts
+import symmetrical.cosmic.transpectors.transpectors.Shorts
 
 open class Bits16 {
     constructor()

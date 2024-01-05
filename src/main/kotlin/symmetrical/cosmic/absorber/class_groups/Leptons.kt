@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic._physics._subatomic.anti_matter.anti_leptons.*
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.ElectronPositron
 import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair

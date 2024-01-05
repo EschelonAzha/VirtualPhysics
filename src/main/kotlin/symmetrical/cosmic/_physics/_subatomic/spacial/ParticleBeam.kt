@@ -168,8 +168,8 @@ Library.
 */
 import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
-import symmetrical.cosmic.__transpectors.transpectors.Strings
+import symmetrical.cosmic.transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter

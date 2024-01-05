@@ -168,7 +168,7 @@ Library.
 */
 import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.absorber.class_groups.*
-import symmetrical.cosmic.__transpectors.transpectors.Strings
+import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.bosons.*
 import kotlin.reflect.KClass
 

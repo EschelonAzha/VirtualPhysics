@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__transpectors.transpectors.Doubles
+import symmetrical.cosmic.transpectors.transpectors.Doubles
 class Field : IField {
     object Static {
         const val NULL      = "0"

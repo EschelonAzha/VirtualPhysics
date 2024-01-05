@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic._physics.atomic.atoms.states.booleans.QBoolean
 import symmetrical.cosmic._physics.atomic.atoms.states.bytes.QByte
 import symmetrical.cosmic._physics.atomic.atoms.states.doubles.QDouble

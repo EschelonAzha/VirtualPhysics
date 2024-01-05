@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.printable_characters
+package symmetrical.cosmic.transpectors.transpectors
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,16 +166,11 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+object Objects {
 
-class LowerCase : Characters {
-    companion object {
-        const val LOWERCASE: String = "abcdefghijklmnopqrstuvwxyz";
-    }
-    constructor() : super() {
+
+    fun unknown(instance:Any?) : Any? {
+        return null
     }
 
-    fun i() : LowerCase {
-        super.i(LOWERCASE);
-        return this;
-    }
 }

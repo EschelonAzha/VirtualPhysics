@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic.__transpectors.transpectors.Photons
-import symmetrical.cosmic.__transpectors.transpectors.Strings
+import symmetrical.cosmic.transpectors.transpectors.Photons
+import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.cosmic._physics._subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.balanced.values.IField
 import symmetrical.cosmic._physics._subatomic.bosons.Photon

@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.transpectors
+package symmetrical.cosmic.transpectors.printable_characters
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,11 +166,17 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-object Objects {
 
+class SpecialCharacters : Characters {
 
-    fun unknown(instance:Any?) : Any? {
-        return null
+    companion object {
+        const val SPECIAL: String = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~"
+    }
+    constructor() : super() {
     }
 
+    fun i() : SpecialCharacters {
+        super.i(SPECIAL);
+        return this;
+    }
 }

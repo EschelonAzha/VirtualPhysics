@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.transpectors
+package symmetrical.cosmic.transpectors.transpectors
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,17 +166,48 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-object Longs {
-    fun toByteArray(long: Long): ByteArray {
-        val bytes = ByteArray(8)
-        bytes[0] = (long ushr 56).toByte()
-        bytes[1] = (long ushr 48).toByte()
-        bytes[2] = (long ushr 40).toByte()
-        bytes[3] = (long ushr 32).toByte()
-        bytes[4] = (long ushr 24).toByte()
-        bytes[5] = (long ushr 16).toByte()
-        bytes[6] = (long ushr 8).toByte()
-        bytes[7] = long.toByte()
-        return bytes
+import symmetrical.cosmic.transpectors.printable_characters.LowerCase
+import symmetrical.cosmic.transpectors.printable_characters.Numbers
+import symmetrical.cosmic.transpectors.printable_characters.SpecialCharacters
+import symmetrical.cosmic.transpectors.printable_characters.UpperCase
+
+
+object Chars {
+    val lowerCase:String = LowerCase().getCharacters()
+    val numeric  :String = Numbers().getCharacters()
+    val special  :String = SpecialCharacters().getCharacters()
+    val upperCase:String = UpperCase().getCharacters()
+
+    fun isLowerCase(char:String) : Boolean {
+        val result = lowerCase.indexOf(char)
+        return result != -1
+    }
+    fun isNumeric(char:String) : Boolean {
+        val result = numeric.indexOf(char)
+        return result != -1
+    }
+    fun isSpace(char:String) : Boolean {
+        return char == " "
+    }
+    fun isSpecial(char:String) : Boolean {
+        val result = special.indexOf(char)
+        return result != -1
+    }
+    fun isText(char:String) : Boolean {
+        if (isLowerCase(char))
+            return true
+        if (isUpperCase(char))
+            return true
+        if (isNumeric(char))
+            return true
+        if (isSpace(char))
+            return true
+        if (isSpecial(char))
+            return true
+        return false
+    }
+    fun isUpperCase(char:String) : Boolean {
+        val result = upperCase.indexOf(char)
+        return result != -1
     }
 }

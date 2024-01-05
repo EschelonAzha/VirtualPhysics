@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.printable_characters
+package symmetrical.cosmic.transpectors.printable_characters
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

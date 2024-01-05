@@ -1,4 +1,4 @@
-package symmetrical.cosmic.__transpectors.transpectors
+package symmetrical.cosmic.transpectors.printable_characters
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,21 +166,16 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__transpectors.printable_characters.Base52
-import kotlinx.datetime.Clock
 
-object Keys {
-    private var currentInstance = 1
-    fun getUniqueId() : String {
-        val longNumber:String  = Clock.System.now().toEpochMilliseconds().toString()
-        val frontHalf :String  = Base52.toBase52(longNumber.substring(0, 7).toInt())
-        val backHalf  :String  = Base52.toBase52(longNumber.substring(7).toInt())
-        val instance  :String  = Base52.toBase52(nextInstance())
-        val result = frontHalf+backHalf+instance
-        return result
+class LowerCase : Characters {
+    companion object {
+        const val LOWERCASE: String = "abcdefghijklmnopqrstuvwxyz";
     }
-    private fun nextInstance() : Int {
-        currentInstance++;
-        return currentInstance
+    constructor() : super() {
+    }
+
+    fun i() : LowerCase {
+        super.i(LOWERCASE);
+        return this;
     }
 }
