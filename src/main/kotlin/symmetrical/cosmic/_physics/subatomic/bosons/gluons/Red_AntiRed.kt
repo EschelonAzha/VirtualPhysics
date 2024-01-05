@@ -166,14 +166,14 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
+import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiRed
-import symmetrical.cosmic._physics._subatomic.matter.colors.Red
+import symmetrical.cosmic._physics.subatomic.matter.colors.Red
 
 
-class Red_AntiRed : Gluon {
+class Red_AntiRed : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
     constructor()   init {
-        color       = Red()
+        color       = symmetrical.cosmic._physics.subatomic.matter.colors.Red()
         antiColor   = symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiRed()
     }
 
@@ -185,12 +185,12 @@ class Red_AntiRed : Gluon {
     override fun getAntiValue() : Any? {
         return color._value
     }
-    override fun setValue(value:Any?) : Gluon {
+    override fun setValue(value:Any?) : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
         color.setValue(value)
 
         return this
     }
-    fun red(charge: Gluon) : Red_AntiRed {
+    fun red(charge: symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
         return this
     }
 }

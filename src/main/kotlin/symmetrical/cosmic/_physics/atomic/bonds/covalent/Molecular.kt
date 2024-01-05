@@ -171,7 +171,7 @@ import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.angularMoment
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom

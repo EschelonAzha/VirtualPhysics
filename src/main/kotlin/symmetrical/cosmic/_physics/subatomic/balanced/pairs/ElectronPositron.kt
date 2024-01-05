@@ -168,9 +168,9 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
@@ -198,12 +198,12 @@ class ElectronPositron(
 //    fun decay(pion: PlusPion) : ElectronPositron<PlusPion> {
 //        return this
 //    }
-    fun decay(pion: PlusPion) : ElectronPositron {
+    fun decay(pion: symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion) : ElectronPositron {
         return this
     }
 
-    fun getElectron() : Electron {
-        return _lepton as Electron
+    fun getElectron() : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
+        return _lepton as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
     }
     fun getPositron() : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron {
         return _antiLepton as symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
@@ -216,7 +216,7 @@ class ElectronPositron(
 //        this.leptons[1] = positron
 //        return this
 //    }
-    private fun setElectron(electron: Electron) : ElectronPositron {
+    private fun setElectron(electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron) : ElectronPositron {
         this._lepton = electron
         return this
     }

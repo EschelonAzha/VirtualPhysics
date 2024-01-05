@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter

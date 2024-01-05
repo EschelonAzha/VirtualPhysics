@@ -168,8 +168,8 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 /*
 https://en.wikipedia.org/wiki/Atomic_orbital
@@ -182,11 +182,11 @@ interface IOrbitals {
     fun getClassId              ()              : String
     fun getElectronPhoton       ()              : Photon
     fun getElectronSpin         ()              : Spin
-    fun getElectronValue        ()              : Electron
+    fun getElectronValue        ()              : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
     fun getElectronWavelength   ()              : Any?
 
     fun setAtom                 (atom: Atom)    : Atom
     fun setElectronSpin         (spin: Spin)    : Atom
-    fun setElectronValue        (value:Any?)    : ZBoson
+    fun setElectronValue        (value:Any?)    : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
 
 }

@@ -170,8 +170,8 @@ import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
@@ -200,7 +200,7 @@ class Wavelength(
         fun content(atom: Atom, kClass: KClass<*>) : Any? {
             return content(atom.getProton(kClass))
         }
-        fun content(proton:Proton) : Any? {
+        fun content(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
@@ -210,7 +210,7 @@ class Wavelength(
         fun field(atom: Atom, kClass: KClass<*>) : Field {
             return field(atom.getProton(kClass))
         }
-        fun field(proton: Proton) : Field {
+        fun field(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }

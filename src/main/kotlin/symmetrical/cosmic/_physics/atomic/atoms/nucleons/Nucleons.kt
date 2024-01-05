@@ -172,10 +172,10 @@ import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
@@ -229,7 +229,7 @@ class Nucleons(
     }
 
     override fun betaMinusDecay() : Atom {
-        val proton      :Proton     = getProton(ValueProton::class)
+        val proton      : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton = getProton(ValueProton::class)
         val protonDown  :Down       = proton.getValueQuark()
         val space       : symmetrical.cosmic._physics.subatomic.balanced.IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
         val neutronDown :Down       = space as Down
@@ -242,7 +242,8 @@ class Nucleons(
     override fun betaPlusDecay() : Atom {
         val protonDown  :Down       = getProton(ValueProton::class).getValueQuark()
         val neutronDown :Down       = cloneQuark(protonDown)
-        val neutron     :Neutron    = Neutron()
+        val neutron     : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron =
+            symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron()
         neutron.set(2, neutronDown)
         crossLink(protonDown, neutronDown)
         neutrons.add(neutron)

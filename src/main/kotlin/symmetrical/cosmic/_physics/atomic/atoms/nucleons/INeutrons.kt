@@ -167,18 +167,18 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
 /*
 https://en.wikipedia.org/wiki/Neutron
  */
 
 interface INeutrons {
     fun absorb      (photon: Photon)     : Photon
-    fun addNeutron  (neutron: Neutron)  : Neutron
+    fun addNeutron  (neutron: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron)  : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
     fun emit        ()                  : Photon
     fun findNeutron (purpose:String)    : Int
     fun getClassId  ()                  : String
-    fun getNeutron  (pos:Int)           : Neutron
-    fun getNeutron  (purpose:String)    : Neutron
+    fun getNeutron  (pos:Int)           : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+    fun getNeutron  (purpose:String)    : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
     fun setNucleons (nucleons:Nucleons) : Nucleons
 }

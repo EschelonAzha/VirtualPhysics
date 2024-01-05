@@ -169,22 +169,22 @@ Library.
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
 
 class Hadrons : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), Baryon::class))
-        add(EntityId(Base52.classId(), Hadron::class))
-        add(EntityId(Base52.classId(), Neutron::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron::class))
         add(EntityId(Base52.classId(), Neutrons::class))
         add(EntityId(Base52.classId(), Nucleons::class))
-        add(EntityId(Base52.classId(), Proton::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton::class))
         add(EntityId(Base52.classId(), Protons::class))
     }
 }

@@ -169,7 +169,7 @@ Library.
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter

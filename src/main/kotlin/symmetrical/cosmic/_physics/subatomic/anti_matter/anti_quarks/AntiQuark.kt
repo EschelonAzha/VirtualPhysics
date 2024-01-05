@@ -168,14 +168,14 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
+import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
-import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics._subatomic.matter.colors.Green
+import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic._physics.subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 
 open class AntiQuark(
@@ -189,7 +189,7 @@ open class AntiQuark(
     )
 
 
-    private var gluon       : Gluon = Red_AntiRed()
+    private var gluon       : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon = Red_AntiRed()
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
@@ -215,7 +215,7 @@ open class AntiQuark(
         return this
     }
 
-    class Args(val value:Any?) : ZBoson()
+    class Args(val value:Any?) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson()
     fun z(boson: symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark.Args) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark.Args {
         red()
 
@@ -275,7 +275,7 @@ open class AntiQuark(
     }
 
 
-    fun setGreen(green: Green) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark {
+    fun setGreen(green: symmetrical.cosmic._physics.subatomic.matter.colors.Green) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark {
         gluon.setGreen(green)
         return this
     }

@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 /*
 https://en.wikipedia.org/wiki/DownQuark
  */

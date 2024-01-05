@@ -168,30 +168,31 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino
 import symmetrical.cosmic._physics.subatomic.balanced.pairs.LeptonPair
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
+import symmetrical.cosmic._physics.subatomic.matter.beta.BetaMinus
 /*
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class AntiBetaMinus(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiBetaMinus::class, BetaMinus::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiBetaMinus::class, symmetrical.cosmic._physics.subatomic.matter.beta.BetaMinus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 
 {
     constructor() : this(
-        AntiMatter(AntiBetaMinus::class, BetaMinus::class),
+        AntiMatter(AntiBetaMinus::class, symmetrical.cosmic._physics.subatomic.matter.beta.BetaMinus::class),
     )
 
-    fun decay(baryon: Baryon) : Up {
+    fun decay(baryon: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon) : Up {
         var down      : Down = baryon.get(1) as Down
 
-        var electron: Electron = Electron()
+        var electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron =
+            symmetrical.cosmic._physics.subatomic.matter.leptons.Electron()
         var antiNeutrino: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino =
             symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino()
 
@@ -209,14 +210,14 @@ class AntiBetaMinus(
     override fun getClassId() : String {
         return antiMatter.getClassId()
     }
-    fun getElectron() : Electron {
-        return _lepton as Electron
+    fun getElectron() : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
+        return _lepton as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
     }
     private fun setAntiNeutrino(antiNeutrino: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiNeutrino) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaMinus {
         this._antiLepton =  antiNeutrino
         return this
     }
-    private fun setElectron(electron: Electron) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaMinus {
+    private fun setElectron(electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaMinus {
         this._lepton = electron
         return this
     }

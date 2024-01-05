@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Top
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Top
 /*
 https://en.wikipedia.org/wiki/TopQuark
 */

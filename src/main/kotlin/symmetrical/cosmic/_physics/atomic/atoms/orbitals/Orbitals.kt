@@ -169,10 +169,10 @@ Library.
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
@@ -190,7 +190,7 @@ open class Orbitals(
     constructor() : this(
         MatterAntiMatter(Orbitals::class, Orbitals::class),
     ) init {
-        add(Electron())
+        add(symmetrical.cosmic._physics.subatomic.matter.leptons.Electron())
     }
 
     object Static {
@@ -208,7 +208,7 @@ open class Orbitals(
         remainder = super.absorb(remainder)
 
         for (i in 0 until size()) {
-            (get(i) as Electron).setOrbitals(this)
+            (get(i) as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron).setOrbitals(this)
         }
         return remainder
     }
@@ -220,13 +220,13 @@ open class Orbitals(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getElectronValue() : Electron {
+    override fun getElectronValue() : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
         if (size() == 0) {
-            val electron = Electron()
+            val electron = symmetrical.cosmic._physics.subatomic.matter.leptons.Electron()
             electron.setOrbitals(this)
             add(electron)
         }
-        return get(Static.VALUE) as Electron
+        return get(Static.VALUE) as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
     }
     override fun electronSpin() : Boolean {
 
@@ -257,7 +257,7 @@ open class Orbitals(
         getElectronValue().setSpin(spin)
         return p_atom
     }
-    override fun setElectronValue(value:Any?) : ZBoson {
+    override fun setElectronValue(value:Any?) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
         val zBoson = Quark.Args(value)
         getElectronValue().setWavelength(value)
         return zBoson

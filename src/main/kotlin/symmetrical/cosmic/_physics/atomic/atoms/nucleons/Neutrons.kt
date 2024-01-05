@@ -168,10 +168,10 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 
@@ -199,11 +199,11 @@ class Neutrons(
         remainder = super.absorb(remainder)
 
         for (i in 0 until size()) {
-            (get(i) as Neutron).setNeutrons(this)
+            (get(i) as symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron).setNeutrons(this)
         }
         return remainder
     }
-    override fun addNeutron(neutron: Neutron) : Neutron {
+    override fun addNeutron(neutron: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron {
         add(neutron)
         return neutron
     }
@@ -214,7 +214,7 @@ class Neutrons(
     override fun findNeutron(purpose:String) : Int {
         var i=0;
         while (i<size()) {
-            val baryon = get(i) as Proton
+            val baryon = get(i) as symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
             if ((baryon.get(2) as Quark).red() == purpose) {
                 return i
             }
@@ -225,16 +225,16 @@ class Neutrons(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getNeutron(pos:Int) : Neutron {
-        return get(pos) as Neutron
+    override fun getNeutron(pos:Int) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron {
+        return get(pos) as symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
     }
-    override fun getNeutron(purpose:String) : Neutron {
+    override fun getNeutron(purpose:String) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron {
         var pos = findNeutron(purpose)
 
         if (pos!=-1)
-            return getNeutron(pos) as Neutron
+            return getNeutron(pos) as symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
 
-        var neutron = Neutron()
+        var neutron = symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron()
         neutron.setPurpose(purpose)
         addNeutron(neutron)
         return neutron

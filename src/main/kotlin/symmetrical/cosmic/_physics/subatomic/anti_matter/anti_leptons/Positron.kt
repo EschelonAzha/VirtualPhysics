@@ -168,17 +168,17 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
 /*
 https://en.wikipedia.org/wiki/Positron
  */
 class Positron (
-    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, Electron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, symmetrical.cosmic._physics.subatomic.matter.leptons.Electron::class),
 ) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Positron::class, Electron::class),
+        AntiMatter(Positron::class, symmetrical.cosmic._physics.subatomic.matter.leptons.Electron::class),
     )
 
     override fun i() : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron {

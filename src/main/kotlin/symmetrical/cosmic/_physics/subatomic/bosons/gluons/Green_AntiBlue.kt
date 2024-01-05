@@ -166,11 +166,11 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
+import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiBlue
-import symmetrical.cosmic._physics._subatomic.matter.colors.Red
+import symmetrical.cosmic._physics.subatomic.matter.colors.Red
 
-class Green_AntiBlue : Gluon {
+class Green_AntiBlue : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
     constructor()
     init {
         color       = green()
@@ -182,8 +182,8 @@ class Green_AntiBlue : Gluon {
         super.i()
         return this
     }
-    fun red(charge: Gluon) : Red_AntiRed {
-        var gluon = Red().red(charge)
+    fun red(charge: symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
+        var gluon = symmetrical.cosmic._physics.subatomic.matter.colors.Red().red(charge)
         gluon.manifestation = charge.manifestation
         return gluon
     }

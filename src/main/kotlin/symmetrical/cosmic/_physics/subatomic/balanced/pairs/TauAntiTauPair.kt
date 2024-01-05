@@ -170,10 +170,10 @@ import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTau
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Tau
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Tau
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
@@ -216,14 +216,14 @@ class TauAntiTauPair(
         return this
     }
 
-    fun decay(pion: PlusPion) : TauAntiTauPair {
+    fun decay(pion: symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion) : TauAntiTauPair {
         return this
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun getElectron() : Electron {
-        return _lepton as Electron
+    fun getElectron() : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
+        return _lepton as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
     }
     fun getField() : Field {
         return TauAntiTauPair.field(this)
@@ -259,7 +259,7 @@ class TauAntiTauPair(
         getTemperature().setContent(value)
         return this
     }
-    private fun setElectron(electron: Electron) : TauAntiTauPair {
+    private fun setElectron(electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron) : TauAntiTauPair {
         this._lepton = electron
         return this
     }

@@ -168,29 +168,29 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics.subatomic.balanced.pairs.LeptonPair
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Neutrino
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
+import symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus
 
 /*
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class AntiBetaPlus(
-    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, BetaPlus::class),
+    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(AntiBetaPlus::class, BetaPlus::class),
+        AntiMatter(AntiBetaPlus::class, symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus::class),
     )
 
 
-    fun absorb(neutron: Baryon) : Up {
+    fun absorb(neutron: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon) : Up {
         var down    : Down = neutron.get(1) as Down
 
         (neutron.get(0)as Quark).gluon.setValue(getPositron().wavelength())
@@ -199,7 +199,7 @@ class AntiBetaPlus(
         return Up()
     }
 
-    fun decay(proton: Baryon) : Down {
+    fun decay(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon) : Down {
         var up      : Up = proton.get(0) as Up
 
         var positron: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron =

@@ -167,8 +167,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.atomic.atoms.Atom
 import kotlin.reflect.KClass
 /*
@@ -176,17 +176,17 @@ https://en.wikipedia.org/wiki/Nucleon
  */
 interface INucleons {
 
-    fun addNeutron      (proton: Neutron)   : Neutron
-    fun addProton       (proton: Proton)    : Proton
+    fun addNeutron      (proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron)   : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+    fun addProton       (proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton)    : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
     fun betaMinusDecay  ()                  : Atom
     fun betaPlusDecay   ()                  : Atom
     fun betaPlusDecay   (content:Any?)      : Atom
     fun findNeutron     (purpose:String)    : Int
     fun getAtomicNumber ()                  : Int
     fun getClassId      ()                  : String
-    fun getNeutron      (pos:Int)           : Neutron
-    fun getNeutron      (purpose:String)    : Neutron
-    fun getProton       (kClass: KClass<*>) : Proton
+    fun getNeutron      (pos:Int)           : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+    fun getNeutron      (purpose:String)    : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron
+    fun getProton       (kClass: KClass<*>) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
     fun setAtom         (atom: Atom)        : Atom
     fun setAtomicNumber (number:Int)        : Nucleons
 

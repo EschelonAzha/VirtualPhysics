@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
 
 /*
 https://en.wikipedia.org/wiki/Color_charge
@@ -222,7 +222,7 @@ open class ChromoCharge : symmetrical.cosmic._physics.subatomic.balanced.Particl
     fun reinitialize() : ChromoCharge {
         return this
     }
-    fun setBaryon(baryon: Baryon) : ChromoCharge {
+    fun setBaryon(baryon: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon) : ChromoCharge {
         // setQuark(baryon.quarks[0].value)
         return this
     }

@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
+import symmetrical.cosmic._physics.subatomic.matter.leptons.Neutrino
 /*
 https://en.wikipedia.org/wiki/Neutrino
  */

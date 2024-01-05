@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.colors.Color
+import symmetrical.cosmic._physics.subatomic.matter.colors.Color
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */

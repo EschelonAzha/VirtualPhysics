@@ -170,11 +170,12 @@ import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.*
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.Kaon
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.MinusPion
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralDownPion
-import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.NeutralUpPion
-import symmetrical.cosmic._physics._subatomic.matter.quarks.*
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.Kaon
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.MinusPion
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.NeutralDownPion
+import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.NeutralUpPion
+import symmetrical.cosmic._physics.subatomic.matter.quarks.*
+import symmetrical.cosmic._physics.subatomic.matter.quarks.*
 
 
 class Quarks : ClassGroup {
@@ -189,10 +190,10 @@ class Quarks : ClassGroup {
         add(EntityId(Base52.classId(), Bottom::class))
         add(EntityId(Base52.classId(), Charm::class))
         add(EntityId(Base52.classId(), Down::class))
-        add(EntityId(Base52.classId(), Kaon::class))
-        add(EntityId(Base52.classId(), MinusPion::class))
-        add(EntityId(Base52.classId(), NeutralDownPion::class))
-        add(EntityId(Base52.classId(), NeutralUpPion::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.Kaon::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.MinusPion::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.NeutralDownPion::class))
+        add(EntityId(Base52.classId(), symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.NeutralUpPion::class))
         add(EntityId(Base52.classId(), Quark::class))
         add(EntityId(Base52.classId(), Strange::class))
         add(EntityId(Base52.classId(), Top::class))

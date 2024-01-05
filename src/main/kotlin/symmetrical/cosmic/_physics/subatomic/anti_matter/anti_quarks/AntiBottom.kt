@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.matter.quarks.Bottom
+import symmetrical.cosmic._physics.subatomic.matter.quarks.Bottom
 /*
 https://en.wikipedia.org/wiki/BottomQuark
  */
