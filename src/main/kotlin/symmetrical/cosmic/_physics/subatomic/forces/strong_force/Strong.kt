@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.forces.gravity
+package symmetrical.cosmic._physics.subatomic.forces.strong_force
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,38 +166,25 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.bosons.Graviton
+import asymmetrical.physics.machine.threads.Energy
 
 /*
-https://en.wikipedia.org/wiki/Gravity
+https://en.wikipedia.org/wiki/Strong_interaction
  */
 
-open class Gravity {
-    constructor()
-
-    // Spin 2
-
-    private val gravitons : ArrayList<Graviton> = ArrayList<Graviton>()
+open class Strong: Energy {
+    constructor() : super()
 
     companion object {
-        private lateinit var gravity : Gravity
+        lateinit var strong : Strong
 
-        fun setForce(gravity: Gravity) : Gravity {
-            this.gravity = gravity
-            return gravity
+        fun setForce(strong: Strong) : Strong {
+            Companion.strong = strong
+            return strong
         }
     }
 
 //    fun run() : Unit {
-//        for (graviton in gravitons) {
-//            graviton.attract()
-//        }
-//
+//        println("StrongForce")
 //    }
-
-    fun graviton(center: Graviton, attract:Unit, radial: Graviton) : Unit {
-        val graviton = Graviton().i(center, attract, radial)
-        gravitons.add(graviton)
-        return attract
-    }
 }

@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.forces.weak_force
+package symmetrical.cosmic._physics.subatomic.forces.weak_force.neutral
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,9 +166,15 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 /*
 https://en.wikipedia.org/wiki/Weak_interaction
  */
-open interface Weak  {
+class ChargedWeakForce {
+    constructor()
 
+    fun i() : ChargedWeakForce {
+        return this
+    }
 }

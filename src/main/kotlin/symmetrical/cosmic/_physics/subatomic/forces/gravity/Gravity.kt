@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.forces.magnetism
+package symmetrical.cosmic._physics.subatomic.forces.gravity
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,28 +166,38 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.physics.machine.threads.Energy
+import symmetrical.cosmic._physics.subatomic.bosons.Graviton
 
 /*
-https://en.wikipedia.org/wiki/Magnetism
+https://en.wikipedia.org/wiki/Gravity
  */
 
-open class Magnetism: Energy
-
-{
-    constructor() : super()
+open class Gravity {
+    constructor()
 
     // Spin 2
-    companion object {
-        lateinit var magnetism : Magnetism
 
-        fun setForce(magnetism: Magnetism) : Magnetism {
-            this.magnetism = magnetism
-            return magnetism
+    private val gravitons : ArrayList<Graviton> = ArrayList<Graviton>()
+
+    companion object {
+        private lateinit var gravity : Gravity
+
+        fun setForce(gravity: Gravity) : Gravity {
+            Companion.gravity = gravity
+            return gravity
         }
     }
 
 //    fun run() : Unit {
-//        println("Magnetism")
+//        for (graviton in gravitons) {
+//            graviton.attract()
+//        }
+//
 //    }
+
+    fun graviton(center: Graviton, attract:Unit, radial: Graviton) : Unit {
+        val graviton = Graviton().i(center, attract, radial)
+        gravitons.add(graviton)
+        return attract
+    }
 }

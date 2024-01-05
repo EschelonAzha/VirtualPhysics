@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.forces.weak_force
+package symmetrical.cosmic._physics.subatomic.forces.weak_force
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
