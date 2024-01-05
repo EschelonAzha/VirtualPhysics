@@ -169,12 +169,12 @@ Library.
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
-import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle
+import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
+import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
 /*
 https://en.wikipedia.org/wiki/Charge_(physics)
  */
-class Charge (private val field:QuasiParticle=QuasiParticle()) : IQuasiParticle by field {
+class Charge (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
 
     object Static {
         const val PLUS:Byte  = +1

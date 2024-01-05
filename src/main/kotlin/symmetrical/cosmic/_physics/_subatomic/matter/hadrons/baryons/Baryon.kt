@@ -177,21 +177,21 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 
 /*
 https://en.wikipedia.org/wiki/Baryon
  */
 open class Baryon(
-    private val matter: IMatter = Matter(Baryon::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon::class),
+    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Baryon::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon::class),
+        Matter(Baryon::class, AntiBaryon::class),
     )
     init {
         super.i(3)

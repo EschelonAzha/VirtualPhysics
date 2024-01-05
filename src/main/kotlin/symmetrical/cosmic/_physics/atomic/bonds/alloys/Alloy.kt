@@ -167,10 +167,10 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.atomic.substance.Substance
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/Alloy
  */

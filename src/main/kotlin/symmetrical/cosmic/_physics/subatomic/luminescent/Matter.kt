@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.luminescent
+package symmetrical.cosmic._physics.subatomic.luminescent
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,9 +166,12 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-
+import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Matter
  */
-interface IMatter : IMatterAntiMatter {
+class Matter : MatterAntiMatter, IMatter {
+    constructor(positive: KClass<*>, negative: KClass<*>) : super(positive, negative){
+
+    }
 }

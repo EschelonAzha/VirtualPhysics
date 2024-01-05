@@ -166,20 +166,20 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Bottom
 /*
 https://en.wikipedia.org/wiki/BottomQuark
  */
 
 class AntiBottom(
-    private val antiMatter: IAntiMatter = AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom::class, Bottom::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiBottom::class, Bottom::class),
 ) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom::class, Bottom::class),
+        AntiMatter(AntiBottom::class, Bottom::class),
     )
 
     override fun getClassId() : String {

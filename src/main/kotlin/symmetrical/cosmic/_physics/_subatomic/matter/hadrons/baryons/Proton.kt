@@ -171,7 +171,7 @@ import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics.subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -179,18 +179,21 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
 
 /*
 https://en.wikipedia.org/wiki/Proton
  */
 open class Proton(
-    private val matter: IMatter = Matter(Proton::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton::class),
+    private val matter: IMatter = Matter(Proton::class, AntiProton::class),
 ) : Baryon(),
     IMatter by matter
 {
     var _quark:Quark
     constructor() : this(
-        Matter(Proton::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton::class),
+        Matter(Proton::class, AntiProton::class),
     ) init {
         _quark = this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -281,7 +284,7 @@ open class Proton(
 
         val newValue  : Field                       = zBoson.getNewField()
         val valueQuark: Down                        = getValueQuark()
-        val wavelength: QuasiParticle                = valueQuark.getWavelength().getQuantumField()
+        val wavelength: QuasiParticle = valueQuark.getWavelength().getQuantumField()
         zBoson.setOldValue(wavelength.getContent())
 
         if (!noChange(zBoson).isAccepted())
@@ -329,7 +332,7 @@ open class Proton(
     private fun noChange(zBoson:ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
         val valueQuark: Down                    = getValueQuark()
-        val wavelength: QuasiParticle            = valueQuark.getWavelength().getQuantumField()
+        val wavelength: QuasiParticle = valueQuark.getWavelength().getQuantumField()
         if (!wavelength.isChange(newValue)) {
             zBoson.setAccepted(false)
         }

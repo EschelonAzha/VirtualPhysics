@@ -172,20 +172,20 @@ import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 /*
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class AntiBetaMinus(
-    private val antiMatter: IAntiMatter = AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaMinus::class, BetaMinus::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiBetaMinus::class, BetaMinus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaMinus::class, BetaMinus::class),
+        AntiMatter(AntiBetaMinus::class, BetaMinus::class),
     )
 
     fun decay(baryon: Baryon) : Up {

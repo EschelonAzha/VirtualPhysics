@@ -174,19 +174,19 @@ import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 
 /*
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class BetaPlus(
-    private val matter: IMatter = Matter(BetaPlus::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaPlus::class),
+    private val matter: IMatter = Matter(BetaPlus::class, AntiBetaPlus::class),
 ) : LeptonPair(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(BetaPlus::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaPlus::class),
+        Matter(BetaPlus::class, AntiBetaPlus::class),
     )
 
 

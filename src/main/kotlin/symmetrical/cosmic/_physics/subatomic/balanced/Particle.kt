@@ -175,21 +175,25 @@ import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics.subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
+
 /*
 https://en.wikipedia.org/wiki/Particle
  */
 
 open class Particle(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(symmetrical.cosmic._physics.subatomic.balanced.Particle::class, symmetrical.cosmic._physics.subatomic.anti_matter.AntiParticle::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, AntiParticle::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
     symmetrical.cosmic._physics.subatomic.balanced.IParticle,
     IEmitter
 {
     constructor() : this(
-        MatterAntiMatter(symmetrical.cosmic._physics.subatomic.balanced.Particle::class, symmetrical.cosmic._physics.subatomic.anti_matter.AntiParticle::class),
+        MatterAntiMatter(Particle::class, AntiParticle::class),
     ) {
         time.setContent(200)
     }
@@ -202,7 +206,7 @@ open class Particle(
 
     private lateinit var self   : symmetrical.cosmic._physics.subatomic.balanced.IParticle
 
-    private     var uniqueId        :QuasiParticle           = QuasiParticle()
+    private     var uniqueId        : QuasiParticle = QuasiParticle()
 
     private     val time            :Time                   = Time()
     private     val charge          :Charge                 = Charge()

@@ -171,24 +171,26 @@ import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics.subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.dictionary.protons.ValueProton
 /*
 https://en.wikipedia.org/wiki/Nucleon
  */
 
 class Nucleons(
-    private val matterAntiMatter :IMatterAntiMatter      = MatterAntiMatter(Nucleons::class, Nucleons::class),
+    private val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(Nucleons::class, Nucleons::class),
     private var _protons         :Protons                = Protons(),
     private var neutrons         :Neutrons               = Neutrons(),
 
     ) :
-        IMatterAntiMatter    by matterAntiMatter,
+        IMatterAntiMatter by matterAntiMatter,
         IProtons             by _protons,
         INeutrons            by neutrons,
         INucleons,

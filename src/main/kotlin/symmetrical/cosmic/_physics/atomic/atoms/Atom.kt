@@ -180,13 +180,15 @@ import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics.subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 /*
@@ -194,12 +196,12 @@ https://en.wikipedia.org/wiki/Atom
  */
 
 open class Atom(
-    private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter(Atom::class, Atom::class),
+    private   val matterAntiMatter  : IMatterAntiMatter = MatterAntiMatter(Atom::class, Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var _nucleons         : Nucleons              = Nucleons()
 
 ) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
-    IMatterAntiMatter       by matterAntiMatter,
+    IMatterAntiMatter by matterAntiMatter,
     IOrbitals               by orbitals,
     INucleons               by _nucleons,
     Element,

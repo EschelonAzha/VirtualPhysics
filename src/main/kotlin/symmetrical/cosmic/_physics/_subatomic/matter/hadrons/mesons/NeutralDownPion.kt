@@ -170,21 +170,21 @@ import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_meson
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 
 /*
 https://en.wikipedia.org/wiki/Pion
  */
 open class NeutralDownPion(
-    private val matter: IMatter = Matter(NeutralDownPion::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralDownPion::class),
+    private val matter: IMatter = Matter(NeutralDownPion::class, AntiNeutralDownPion::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(NeutralDownPion::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiNeutralDownPion::class),
+        Matter(NeutralDownPion::class, AntiNeutralDownPion::class),
     )   init {
         super.i(2)
         this.set(0, Down())

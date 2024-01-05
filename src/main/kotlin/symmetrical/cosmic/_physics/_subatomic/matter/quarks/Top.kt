@@ -168,20 +168,20 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiTop
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/TopQuark
  */
 class Top(
-    private val matter: IMatter = Matter(Top::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiTop::class),
+    private val matter: IMatter = Matter(Top::class, AntiTop::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Top::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiTop::class),
+        Matter(Top::class, AntiTop::class),
     )
     init {
     }

@@ -169,19 +169,19 @@ Library.
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 /*
 https://en.wikipedia.org/wiki/UpQuark
  */
 class Up(
-    private val matter: IMatter = Matter(Up::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp::class),
+    private val matter: IMatter = Matter(Up::class, AntiUp::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Up::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp::class),
+        Matter(Up::class, AntiUp::class),
     )
     init {
     }

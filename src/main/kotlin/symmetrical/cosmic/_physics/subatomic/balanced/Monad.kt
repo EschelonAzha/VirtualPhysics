@@ -169,17 +169,17 @@ Library.
 
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 
 open class Monad(
-    private val matter: IMatter = Matter(symmetrical.cosmic._physics.subatomic.balanced.Monad::class, symmetrical.cosmic._physics.subatomic.balanced.Monad::class),
+    private val matter: IMatter = Matter(Monad::class, Monad::class),
 ) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic._physics.subatomic.balanced.Monad::class, symmetrical.cosmic._physics.subatomic.balanced.Monad::class),
+        Matter(Monad::class, Monad::class),
     )
     fun i() : symmetrical.cosmic._physics.subatomic.balanced.Monad {
         return this

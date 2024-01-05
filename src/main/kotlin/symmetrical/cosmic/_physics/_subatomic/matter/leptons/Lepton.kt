@@ -170,20 +170,23 @@ import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics.subatomic.luminescent.*
 
 import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+
 /*
 https://en.wikipedia.org/wiki/Lepton
  */
 open class Lepton(
-    private val matter: IMatter = Matter(Lepton::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton::class),
+    private val matter: IMatter = Matter(Lepton::class, AntiLepton::class),
 ) : Particle(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(Lepton::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton::class),
+        Matter(Lepton::class, AntiLepton::class),
     )
 
     open fun i() : Lepton {

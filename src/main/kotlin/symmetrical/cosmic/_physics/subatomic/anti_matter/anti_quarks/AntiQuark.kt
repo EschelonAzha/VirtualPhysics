@@ -173,19 +173,19 @@ import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 
 open class AntiQuark(
-    private val antiMatter: IAntiMatter = AntiMatter(Quark::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Quark::class, AntiQuark::class),
 ) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IAntiMatter by antiMatter,
     IEmitter
 {
     constructor() : this(
-        AntiMatter(Quark::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),
+        AntiMatter(Quark::class, AntiQuark::class),
     )
 
 

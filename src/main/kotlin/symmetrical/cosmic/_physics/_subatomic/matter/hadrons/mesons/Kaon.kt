@@ -170,21 +170,21 @@ import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_meson
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Strange
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 
 /*
 https://en.wikipedia.org/wiki/Kaon
  */
 open class Kaon(
-    private val matter: IMatter = Matter(Kaon::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiKaon::class),
+    private val matter: IMatter = Matter(Kaon::class, AntiKaon::class),
 ) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Kaon::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiKaon::class),
+        Matter(Kaon::class, AntiKaon::class),
     )
 
     lateinit var antiQuark  : symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp

@@ -166,19 +166,19 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Charm
 /*
 https://en.wikipedia.org/wiki/CharmQuark
  */
 class AntiCharm (
-    private val antiMatter: IAntiMatter = AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiCharm::class, Charm::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiCharm::class, Charm::class),
 ) : symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiCharm::class, Charm::class),
+        AntiMatter(AntiCharm::class, Charm::class),
     )
 
 

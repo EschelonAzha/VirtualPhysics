@@ -169,20 +169,20 @@ Library.
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 /*
 https://en.wikipedia.org/wiki/DownQuark
  */
 
 class Down(
-    private val matter: IMatter = Matter(Down::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown::class),
+    private val matter: IMatter = Matter(Down::class, AntiDown::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Down::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown::class),
+        Matter(Down::class, AntiDown::class),
     )
     init {
     }

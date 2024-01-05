@@ -171,20 +171,20 @@ import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 
 /*
 https://en.wikipedia.org/wiki/Hadron
  */
 open class Hadron(
-    private val matter: IMatter = Matter(Hadron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.AntiHadron::class),
+    private val matter: IMatter = Matter(Hadron::class, AntiHadron::class),
 ) : ParticleBeam(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(Hadron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.AntiHadron::class),
+        Matter(Hadron::class, AntiHadron::class),
     )
 
 

@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.luminescent
+package symmetrical.cosmic._physics.subatomic.luminescent
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,14 +166,12 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.spacial.IParticleBeam
+import kotlin.reflect.KClass
 /*
-https://en.wikipedia.org/wiki/Annihilation
+https://en.wikipedia.org/wiki/Antimatter
  */
-interface IMatterAntiMatter {
-    fun annihilate      ()                  : Photon
-    fun check           (photon: Photon)    : Unit
-    fun getClassId      ()                  : String
-    fun getIlluminations()                  : IParticleBeam
+class AntiMatter : MatterAntiMatter, IAntiMatter {
+    constructor(positive:KClass<*>, negative:KClass<*>) : super(positive, negative){
+
+    }
 }

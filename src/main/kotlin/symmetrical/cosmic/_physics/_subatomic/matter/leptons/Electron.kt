@@ -176,19 +176,19 @@ import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics._subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
 /*
 https://en.wikipedia.org/wiki/Electron
  */
 class Electron(
-    private val matter: IMatter = Matter(Electron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron::class),
+    private val matter: IMatter = Matter(Electron::class, Positron::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Electron::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron::class),
+        Matter(Electron::class, Positron::class),
     )
     init {
     }

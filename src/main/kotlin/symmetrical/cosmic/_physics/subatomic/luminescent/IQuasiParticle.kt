@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.luminescent
+package symmetrical.cosmic._physics.subatomic.luminescent
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

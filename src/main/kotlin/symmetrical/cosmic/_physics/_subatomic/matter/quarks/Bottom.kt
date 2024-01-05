@@ -168,20 +168,20 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/BottomQuark
  */
 class Bottom(
-    private val matter: IMatter = Matter(Bottom::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom::class),
+    private val matter: IMatter = Matter(Bottom::class, AntiBottom::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Bottom::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiBottom::class),
+        Matter(Bottom::class, AntiBottom::class),
     )
     init {
 

@@ -168,20 +168,20 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiStrange
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/StrangeQuark
  */
 class Strange(
-    private val matter: IMatter = Matter(Strange::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiStrange::class),
+    private val matter: IMatter = Matter(Strange::class, AntiStrange::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Strange::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiStrange::class),
+        Matter(Strange::class, AntiStrange::class),
     )
     init {
     }

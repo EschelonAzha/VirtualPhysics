@@ -167,20 +167,20 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiMuonNeutrino
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.Matter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/MuonNeutrino
  */
 class MuonNeutrino(
-    private val matter: IMatter = Matter(MuonNeutrino::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiMuonNeutrino::class),
+    private val matter: IMatter = Matter(MuonNeutrino::class, AntiMuonNeutrino::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(MuonNeutrino::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiMuonNeutrino::class),
+        Matter(MuonNeutrino::class, AntiMuonNeutrino::class),
     )
     init {
 

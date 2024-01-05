@@ -169,21 +169,21 @@ Library.
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Lepton
 
 /*
 https://en.wikipedia.org/wiki/Lepton
  */
 open class AntiLepton(
-    private val antiMatter: IAntiMatter = AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton::class, Lepton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class),
 ) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IAntiMatter by antiMatter,
     IEmitter
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton::class, Lepton::class),
+        AntiMatter(AntiLepton::class, Lepton::class),
     )
 
     open fun i() : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton {

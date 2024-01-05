@@ -174,13 +174,15 @@ import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.luminescent.*
+import symmetrical.cosmic._physics.subatomic.luminescent.*
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Particle_beam
  */
 open class ParticleBeam(
-    private   val matterAntiMatter : IMatterAntiMatter  = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
+    private   val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
     protected val _beam            : Beam               = Beam()
 ) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IMatterAntiMatter by matterAntiMatter,
