@@ -174,7 +174,7 @@ import symmetrical.cosmic._physics.subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics.subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics.subatomic.matter.leptons.*
-import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
+import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics.subatomic.matter.leptons.*
 
 class Leptons : ClassGroup {

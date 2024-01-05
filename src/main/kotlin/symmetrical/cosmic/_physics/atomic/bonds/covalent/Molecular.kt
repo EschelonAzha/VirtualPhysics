@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.atomic.bonds.covalent
+package symmetrical.cosmic.physics.atomic.bonds.covalent
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -172,8 +172,7 @@ import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
+import symmetrical.cosmic.physics.atomic.atoms.states.strings.QString
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 
@@ -184,7 +183,7 @@ open class Molecular(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecular::class, Molecular::class),
     private var particleBeam: ParticleBeam = ParticleBeam(),
 
-    ) : Atom(),
+    ) : symmetrical.cosmic.physics.atomic.atoms.Atom(),
     IMatterAntiMatter by matterAntiMatter,
     IParticleBeam by particleBeam,
     symmetrical.cosmic._physics.subatomic.balanced.IParticle
@@ -222,35 +221,35 @@ open class Molecular(
 
     fun applyQuarkMomentum(momentum: AngularMomentum) : Molecular {
         for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
+            val atom: symmetrical.cosmic.physics.atomic.atoms.Atom = get(i) as symmetrical.cosmic.physics.atomic.atoms.Atom
             Quark.value(this).setAngularMomentum(momentum)
         }
         return this
     }
     fun applyQuarkSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
+            val atom: symmetrical.cosmic.physics.atomic.atoms.Atom = get(i) as symmetrical.cosmic.physics.atomic.atoms.Atom
             Quark.value(this).setSpin(spin)
         }
         return this
     }
     fun applyElectronSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
+            val atom: symmetrical.cosmic.physics.atomic.atoms.Atom = get(i) as symmetrical.cosmic.physics.atomic.atoms.Atom
             atom.setElectronSpin(spin)
         }
         return this
     }
-    override fun betaMinusDecay() : Atom {
+    override fun betaMinusDecay() : symmetrical.cosmic.physics.atomic.atoms.Atom {
         for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
+            val atom: symmetrical.cosmic.physics.atomic.atoms.Atom = get(i) as symmetrical.cosmic.physics.atomic.atoms.Atom
             atom.betaMinusDecay()
         }
         return this
     }
-    override fun betaPlusDecay() : Atom {
+    override fun betaPlusDecay() : symmetrical.cosmic.physics.atomic.atoms.Atom {
         for (i in 0 until size()) {
-            val atom:Atom = get(i) as Atom
+            val atom: symmetrical.cosmic.physics.atomic.atoms.Atom = get(i) as symmetrical.cosmic.physics.atomic.atoms.Atom
             atom.betaPlusDecay()
         }
         return this

@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.atomic.substance.ions
+package symmetrical.cosmic.physics.atomic.substance.ions
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

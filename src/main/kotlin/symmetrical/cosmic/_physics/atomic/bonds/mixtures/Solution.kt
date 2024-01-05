@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.atomic.bonds.mixtures
+package symmetrical.cosmic.physics.atomic.bonds.mixtures
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

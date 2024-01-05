@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.atomic.bonds.ionic
+package symmetrical.cosmic.physics.atomic.bonds.ionic
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

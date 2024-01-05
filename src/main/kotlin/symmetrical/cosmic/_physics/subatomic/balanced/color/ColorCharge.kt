@@ -167,13 +167,13 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.matter.colors.Green
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */
 class ColorCharge : IColorCharge {
-    lateinit var atom     : Atom
+    lateinit var atom     : symmetrical.cosmic.physics.atomic.atoms.Atom
     constructor()
 
     override fun blue() : String {
@@ -189,11 +189,11 @@ class ColorCharge : IColorCharge {
         return ""
     }
 
-    override fun setAtom(atom: Atom) : Atom {
+    override fun setAtom(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : symmetrical.cosmic.physics.atomic.atoms.Atom {
         this.atom = atom
         return atom
     }
-    override fun setGreen(green: symmetrical.cosmic._physics.subatomic.matter.colors.Green) : Atom {
+    override fun setGreen(green: symmetrical.cosmic._physics.subatomic.matter.colors.Green) : symmetrical.cosmic.physics.atomic.atoms.Atom {
         atom._nucleons.getProton(ValueProton::class).setGreen(green)
         return atom
     }

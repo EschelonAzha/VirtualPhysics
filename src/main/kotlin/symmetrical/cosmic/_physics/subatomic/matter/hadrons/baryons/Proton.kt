@@ -173,7 +173,7 @@ import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics.atomic.atoms.nucleons.Protons
+import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle

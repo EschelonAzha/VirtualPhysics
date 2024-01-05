@@ -174,7 +174,7 @@ import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 /*
@@ -191,22 +191,22 @@ open class AngularMomentum(
     )
 
     companion object {
-        fun field(atom:Atom) : Field {
+        fun field(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return field(proton)
         }
-        fun field(atom:Atom, kClass:KClass<*>) : Field {
+        fun field(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass:KClass<*>) : Field {
             val proton = atom.getProton(kClass)
             return field(proton)
         }
         fun field(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Field {
             return proton.getValueQuark().getAngularMomentum().getField()
         }
-        fun run(atom: Atom) : Field {
+        fun run(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return run(proton)
         }
-        fun run(atom: Atom, kClass:KClass<*>) : Field {
+        fun run(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass:KClass<*>) : Field {
             val proton = atom.getProton(kClass)
             return run(proton)
         }

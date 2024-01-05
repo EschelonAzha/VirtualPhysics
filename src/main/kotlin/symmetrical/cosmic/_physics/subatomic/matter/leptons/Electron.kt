@@ -171,7 +171,7 @@ import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
+import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 

@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiNeutron
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.atomic.atoms.nucleons.Neutrons
+import symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
@@ -191,7 +191,7 @@ open class Neutron(
         // -1/3 wavelength(?),                     Spin(?),                    AngularMomentum(Ptr to Next Neutron),
     }
 
-    lateinit var __neutrons: Neutrons
+    lateinit var __neutrons: symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons
 
 
     override fun absorb(photon: Photon) : Photon {
@@ -209,7 +209,7 @@ open class Neutron(
         return matter.getClassId()
     }
 
-    fun setNeutrons(neutrons:Neutrons) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron {
+    fun setNeutrons(neutrons: symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Neutron {
         this.__neutrons = neutrons
         return this
     }

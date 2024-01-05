@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.atomic.matter
+package symmetrical.cosmic.physics.atomic.matter
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007

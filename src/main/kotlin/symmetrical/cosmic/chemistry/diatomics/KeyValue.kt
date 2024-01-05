@@ -167,10 +167,10 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.atomic.bonds.covalent.Diatomic
+import symmetrical.cosmic.physics.atomic.bonds.covalent.Diatomic
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 
 open class KeyValue(
     private val matter: IMatter = Matter(KeyValue::class, KeyValue::class),
@@ -187,7 +187,7 @@ open class KeyValue(
     constructor() : this(
         Matter(KeyValue::class, KeyValue::class),
     )
-    constructor(key: Atom, value:Atom) : this(){
+    constructor(key: symmetrical.cosmic.physics.atomic.atoms.Atom, value: symmetrical.cosmic.physics.atomic.atoms.Atom) : this(){
         add(key)
         add(value)
         val size = size();
@@ -210,14 +210,14 @@ open class KeyValue(
         return matter.getClassId()
     }
 
-    fun getKey() : Atom? {
+    fun getKey() : symmetrical.cosmic.physics.atomic.atoms.Atom? {
         if (size()>0)
-            return get(Static.KEY) as Atom
+            return get(Static.KEY) as symmetrical.cosmic.physics.atomic.atoms.Atom
         return null
     }
-    fun getValue() : Atom? {
+    fun getValue() : symmetrical.cosmic.physics.atomic.atoms.Atom? {
         if (size()>1)
-            return get(Static.VALUE) as Atom
+            return get(Static.VALUE) as symmetrical.cosmic.physics.atomic.atoms.Atom
         return null
     }
     private fun radiate() : String {

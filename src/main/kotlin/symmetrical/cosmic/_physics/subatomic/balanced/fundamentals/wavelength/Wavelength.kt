@@ -172,7 +172,7 @@ import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.*
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic.dictionary.protons.ValueProton
@@ -194,27 +194,27 @@ class Wavelength(
     }
 
     companion object {
-        fun content(atom: Atom) : Any? {
+        fun content(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Any? {
             return content(atom.getProton(ValueProton::class))
         }
-        fun content(atom: Atom, kClass: KClass<*>) : Any? {
+        fun content(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Any? {
             return content(atom.getProton(kClass))
         }
         fun content(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
-        fun field(atom: Atom) : Field {
+        fun field(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Field {
             return field(atom.getProton(ValueProton::class))
         }
-        fun field(atom: Atom, kClass: KClass<*>) : Field {
+        fun field(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Field {
             return field(atom.getProton(kClass))
         }
         fun field(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }
-        fun format(atom: Atom) : Field {
+        fun format(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             var quark  : Quark = proton.getValueQuark()
             return quark.getAngularMomentum().run(field(atom))

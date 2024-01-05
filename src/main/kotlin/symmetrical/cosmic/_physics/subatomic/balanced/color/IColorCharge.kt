@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.matter.colors.Green
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */
@@ -177,6 +177,6 @@ interface IColorCharge {
     fun green       ()                  : String
     fun red         ()                  : Any
 
-    fun setAtom     (atom: Atom)        : Atom
-    fun setGreen    (green: symmetrical.cosmic._physics.subatomic.matter.colors.Green)      : Atom
+    fun setAtom     (atom: symmetrical.cosmic.physics.atomic.atoms.Atom)        : symmetrical.cosmic.physics.atomic.atoms.Atom
+    fun setGreen    (green: symmetrical.cosmic._physics.subatomic.matter.colors.Green)      : symmetrical.cosmic.physics.atomic.atoms.Atom
 }

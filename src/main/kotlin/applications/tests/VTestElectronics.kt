@@ -1,7 +1,7 @@
 package applications.tests
 
 import symmetrical.cosmic._physics.subatomic.balanced.pairs.TauAntiTauPair
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import applications.tests.dictionary.Rejector
 
 class VTestElectronics {
@@ -30,9 +30,9 @@ class VTestElectronics {
         return true
     }
     private fun testDiodes() : Boolean {
-        val atom1: Atom = Rejector(ATOM1)
-        val atom2: Atom = Atom(ATOM2)
-        val atom3: Atom = Atom(ATOM3)
+        val atom1: symmetrical.cosmic.physics.atomic.atoms.Atom = Rejector(ATOM1)
+        val atom2: symmetrical.cosmic.physics.atomic.atoms.Atom = symmetrical.cosmic.physics.atomic.atoms.Atom(ATOM2)
+        val atom3: symmetrical.cosmic.physics.atomic.atoms.Atom = symmetrical.cosmic.physics.atomic.atoms.Atom(ATOM3)
 
         atom1.diode_(atom2).diode(atom3)
 
@@ -82,9 +82,9 @@ class VTestElectronics {
         return true
     }
     private fun testConductors() : Boolean {
-        val atom1: Atom = Atom(ATOM1)
-        val atom2: Atom = Atom(ATOM2)
-        val atom3: Atom = Atom(ATOM3)
+        val atom1: symmetrical.cosmic.physics.atomic.atoms.Atom = symmetrical.cosmic.physics.atomic.atoms.Atom(ATOM1)
+        val atom2: symmetrical.cosmic.physics.atomic.atoms.Atom = symmetrical.cosmic.physics.atomic.atoms.Atom(ATOM2)
+        val atom3: symmetrical.cosmic.physics.atomic.atoms.Atom = symmetrical.cosmic.physics.atomic.atoms.Atom(ATOM3)
 
         atom1.conductor_(atom2).conductor(atom3)
 

@@ -169,12 +169,12 @@ Library.
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics.atomic.atoms.states.booleans.QBoolean
-import symmetrical.cosmic._physics.atomic.atoms.states.bytes.QByte
-import symmetrical.cosmic._physics.atomic.atoms.states.doubles.QDouble
-import symmetrical.cosmic._physics.atomic.atoms.states.integers.QInt
-import symmetrical.cosmic._physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics.atomic.atoms.states.vectors.QMass
+import symmetrical.cosmic.physics.atomic.atoms.states.booleans.QBoolean
+import symmetrical.cosmic.physics.atomic.atoms.states.bytes.QByte
+import symmetrical.cosmic.physics.atomic.atoms.states.doubles.QDouble
+import symmetrical.cosmic.physics.atomic.atoms.states.integers.QInt
+import symmetrical.cosmic.physics.atomic.atoms.states.strings.QString
+import symmetrical.cosmic.physics.atomic.atoms.states.vectors.QMass
 
 class Atoms : ClassGroup {
     constructor() {

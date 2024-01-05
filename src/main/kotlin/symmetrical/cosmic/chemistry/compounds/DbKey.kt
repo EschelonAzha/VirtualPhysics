@@ -166,10 +166,10 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.atomic.substance.ions.Compound
+import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 
 class DbKey(
     private val matter: IMatter = Matter(DbKey::class, DbKey::class),
@@ -180,7 +180,7 @@ class DbKey(
         Matter(DbKey::class, DbKey::class),
     )
 
-    fun addKey(atom: Atom) : DbKey {
+    fun addKey(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : DbKey {
         add(atom)
         return this;
     }

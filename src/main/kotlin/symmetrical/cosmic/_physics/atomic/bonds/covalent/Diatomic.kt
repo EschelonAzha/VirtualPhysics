@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.atomic.bonds.covalent
+package symmetrical.cosmic.physics.atomic.bonds.covalent
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -169,7 +169,7 @@ Library.
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 /*
 https://en.wikipedia.org/wiki/Diatomic_molecule
  */
@@ -185,7 +185,7 @@ open class Diatomic(
         const val LAST      : Int = -1
     }
 
-    constructor(atom1: Atom, atom2:Atom) : this() {
+    constructor(atom1: symmetrical.cosmic.physics.atomic.atoms.Atom, atom2: symmetrical.cosmic.physics.atomic.atoms.Atom) : this() {
         add(atom1)
         add(atom2)
     }

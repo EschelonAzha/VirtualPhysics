@@ -1,6 +1,6 @@
 package applications.tests.dictionary
 
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
@@ -11,7 +11,7 @@ import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 
 class Rejector(
     private val matter: IMatter = Matter(Rejector::class, Rejector::class),
-) : Atom(),
+) : symmetrical.cosmic.physics.atomic.atoms.Atom(),
     IMatter by matter
 {
     constructor() : this(

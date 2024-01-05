@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.atomic.substance.molecules
+package symmetrical.cosmic.physics.atomic.substance.molecules
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -168,8 +168,8 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics.atomic.bonds.covalent.Covalent
-import symmetrical.cosmic._physics.atomic.bonds.covalent.Molecular
+import symmetrical.cosmic.physics.atomic.bonds.covalent.Covalent
+import symmetrical.cosmic.physics.atomic.bonds.covalent.Molecular
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 

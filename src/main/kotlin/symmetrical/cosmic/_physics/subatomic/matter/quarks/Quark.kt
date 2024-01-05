@@ -177,7 +177,7 @@ import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.luminescent.*
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic._physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.Matter
@@ -207,11 +207,11 @@ open class Quark(
     protected lateinit var p_baryon     : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
 
     companion object {
-        fun value(atom: Atom) : Quark {
+        fun value(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Quark {
             val proton = atom.getProton(ValueProton::class)
             return value(proton)
         }
-        fun value(atom: Atom, kClass: KClass<*>) : Quark {
+        fun value(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Quark {
             val proton = atom.getProton(kClass)
             return value(proton)
         }
