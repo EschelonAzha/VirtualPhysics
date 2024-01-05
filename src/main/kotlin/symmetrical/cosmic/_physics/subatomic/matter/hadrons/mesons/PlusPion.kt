@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiPlusPion
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiPlusPion
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.subatomic.balanced.pairs.ElectronPositron
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron
@@ -180,18 +180,18 @@ import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Pion
  */
 open class PlusPion(
-    private val matter: IMatter = Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion::class, AntiPlusPion::class),
+    private val matter: IMatter = Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiPlusPion::class),
 ) : symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron(),
     IMatter by matter
 {
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
     constructor() : this(
-        Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion::class, AntiPlusPion::class),
+        Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiPlusPion::class),
     )    init {
         super.i(2)
         this.set(0, Up())
-        this.set(1, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown())
+        this.set(1, symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiDown())
     }
 
     override fun getClassId() : String {

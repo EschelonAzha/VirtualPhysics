@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiCharm
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiCharm
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
@@ -176,12 +176,12 @@ import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/CharmQuark
  */
 class Charm(
-    private val matter: IMatter = Matter(Charm::class, AntiCharm::class),
+    private val matter: IMatter = Matter(Charm::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiCharm::class),
 ) : Quark(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Charm::class, AntiCharm::class),
+        Matter(Charm::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiCharm::class),
     )
     init {
     }

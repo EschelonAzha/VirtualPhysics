@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiTop
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiTop
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter

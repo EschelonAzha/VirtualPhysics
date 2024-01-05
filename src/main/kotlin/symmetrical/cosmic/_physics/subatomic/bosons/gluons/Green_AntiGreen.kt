@@ -167,13 +167,13 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen
 
 class Green_AntiGreen : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
     constructor()
     init {
         color       = green()
-        antiColor   = symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiGreen()
+        antiColor   = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen()
     }
 
     override fun i() : Green_AntiGreen {

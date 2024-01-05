@@ -168,7 +168,7 @@ Library.
 */
 import asymmetrical.physics.machine.vm.Classes
 import symmetrical.cosmic.transpectors.transpectors.Keys
-import symmetrical.cosmic._physics.subatomic.anti_matter.AntiParticle
+import symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
@@ -185,14 +185,14 @@ https://en.wikipedia.org/wiki/Particle
  */
 
 open class Particle(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, AntiParticle::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
     symmetrical.cosmic._physics.subatomic.balanced.IParticle,
     IEmitter
 {
     constructor() : this(
-        MatterAntiMatter(Particle::class, AntiParticle::class),
+        MatterAntiMatter(Particle::class, symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle::class),
     ) {
         time.setContent(200)
     }

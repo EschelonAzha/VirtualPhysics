@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics.subatomic.matter.colors.Color
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiColor
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiColor
 import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.matter.colors.Green
 
@@ -182,7 +182,7 @@ open class Gluon : symmetrical.cosmic._physics.subatomic.balanced.Particle {
     // Gluons are confined within
     // Spin 1
     lateinit var color      : symmetrical.cosmic._physics.subatomic.matter.colors.Color
-    lateinit var antiColor  : symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiColor
+    lateinit var antiColor  : symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiColor
 
     var manifestation : symmetrical.cosmic._physics.subatomic.matter.colors.Green =
         symmetrical.cosmic._physics.subatomic.matter.colors.Green()

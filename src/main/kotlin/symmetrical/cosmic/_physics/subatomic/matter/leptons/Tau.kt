@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiTau
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
@@ -177,12 +177,12 @@ https://en.wikipedia.org/wiki/Tau
  */
 
 class Tau(
-    private val matter: IMatter = Matter(Tau::class, AntiTau::class),
+    private val matter: IMatter = Matter(Tau::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Tau::class, AntiTau::class),
+        Matter(Tau::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau::class),
     )
     init {
 

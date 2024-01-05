@@ -193,14 +193,14 @@ open class LeptonPair(
     }
 
     public lateinit var _lepton     : Lepton
-    public lateinit var _antiLepton : symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton
+    public lateinit var _antiLepton : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton
 
 
 //    constructor(lepton:Lepton, antiLepton:AntiLepton) {
 //        i(lepton, antiLepton)
 //    }
 
-    fun i(lepton:Lepton, antiLepton: symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.AntiLepton) : LeptonPair {
+    fun i(lepton:Lepton, antiLepton: symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton) : LeptonPair {
         this._lepton     = lepton;
         this._antiLepton = antiLepton
         return this

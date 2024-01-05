@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiKaon
-import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiKaon
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Strange
 import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
@@ -179,15 +179,15 @@ import symmetrical.cosmic._physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Kaon
  */
 open class Kaon(
-    private val matter: IMatter = Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.Kaon::class, AntiKaon::class),
-) : symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron(),
+    private val matter: IMatter = Matter(Kaon::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiKaon::class),
+) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.Kaon::class, AntiKaon::class),
+        Matter(Kaon::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiKaon::class),
     )
 
-    lateinit var antiQuark  : symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiUp
+    lateinit var antiQuark  : AntiUp
     lateinit var quark      : Strange
 
 
