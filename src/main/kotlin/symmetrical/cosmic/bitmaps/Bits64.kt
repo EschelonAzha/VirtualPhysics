@@ -1,4 +1,4 @@
-package symmetrical.cosmic._bitmaps
+package symmetrical.cosmic.bitmaps
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,27 +166,30 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-class Bits24 {
+class Bits64 {
     constructor()
 
-    var bottom  : Bits08 = Bits08()
-    var middle  : Bits08 = Bits08()
-    var top     : Bits08 = Bits08()
+    private var high   : Bits32 = Bits32()
+    private var low    : Bits32 = Bits32()
 
-    constructor(byte1:UByte, byte2:UByte, byte3:UByte) : this() {
-        top     = Bits08(byte1)
-        middle  = Bits08(byte2)
-        bottom  = Bits08(byte3)
+    init {
+        high  = Bits32(0u, 0u, 0u, 0u)
+        low   = Bits32(0u, 0u, 0u, 0u)
     }
 
-
-    fun size() : Int {
-        return 3
+    constructor(byte1:UByte=0u, byte2:UByte=0u, byte3:UByte=0u, byte4:UByte=0u, byte5:UByte=0u, byte6:UByte=0u, byte7:UByte=0u, byte8:UByte=0u) : this() {
+        high  = Bits32(byte1, byte2, byte3, byte4)
+        low   = Bits32(byte5, byte6, byte7, byte8)
+    }
+    constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte(),byteArray[2].toUByte(), byteArray[3].toUByte(),byteArray[4].toUByte(), byteArray[5].toUByte(),byteArray[6].toUByte(), byteArray[7].toUByte()) {
+    }
+    fun toDecimal() : Long {
+        val high:Long = high.toDecimal() * 4294967296
+        val low :Long = low.toDecimal().toLong()
+        return high + low
     }
     override fun toString() : String {
-        return "$top : $middle : $bottom"
+        return "$high :: $low"
     }
 }

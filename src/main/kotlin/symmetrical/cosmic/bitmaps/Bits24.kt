@@ -1,4 +1,4 @@
-package symmetrical.cosmic._bitmaps
+package symmetrical.cosmic.bitmaps
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,41 +166,25 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__transpectors.transpectors.Shorts
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-open class Bits16 {
+class Bits24 {
     constructor()
 
-    private var high: Bits08 = Bits08()
-    private var low : Bits08 = Bits08()
+    var bottom  : Bits08 = Bits08()
+    var middle  : Bits08 = Bits08()
+    var top     : Bits08 = Bits08()
 
-    constructor(byte1:UByte, byte2:UByte) : this() {
-        high = Bits08(byte1)
-        low  = Bits08(byte2)
-    }
-    constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte()) {
-    }
-    constructor(value:UShort) : this() {
-        val byteArray = Shorts.toByteArray(value)
-        high = Bits08(byteArray[0].toUByte())
-        low  = Bits08(byteArray[1].toUByte())
+    constructor(byte1:UByte, byte2:UByte, byte3:UByte) : this() {
+        top     = Bits08(byte1)
+        middle  = Bits08(byte2)
+        bottom  = Bits08(byte3)
     }
 
-    fun getByteArray() : ByteArray {
-        var result = ByteArray(2)
-        result[0] = high.getByte().toByte()
-        result[1] = low.getByte().toByte()
-        return result
-    }
+
     fun size() : Int {
-        return 2
-    }
-    fun toDecimal(): Int {
-        return (high.getByte().toInt() shl 8) or (low.getByte().toInt() and 0xFF)
+        return 3
     }
     override fun toString() : String {
-        return "$high : $low"
+        return "$top : $middle : $bottom"
     }
 }

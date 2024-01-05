@@ -1,4 +1,4 @@
-package symmetrical.cosmic._bitmaps
+package symmetrical.cosmic.bitmaps
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,49 +166,39 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.__transpectors.transpectors.Ints
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+import symmetrical.cosmic.__transpectors.transpectors.Shorts
 
-open class Bits32 {
+open class Bits16 {
     constructor()
 
-    private var high   : Bits16 = Bits16()
-    private var low    : Bits16 = Bits16()
+    private var high: Bits08 = Bits08()
+    private var low : Bits08 = Bits08()
 
-    constructor(byte1:UByte, byte2:UByte, byte3:UByte, byte4:UByte) : this() {
-        high  = Bits16(byte1, byte2)
-        low   = Bits16(byte3, byte4)
-
+    constructor(byte1:UByte, byte2:UByte) : this() {
+        high = Bits08(byte1)
+        low  = Bits08(byte2)
     }
-    constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte(),byteArray[2].toUByte(), byteArray[3].toUByte()) {
+    constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte()) {
     }
-    constructor(value:Int=0) : this() {
-        val byteArray = Ints.toByteArray(value)
-        high = Bits16(byteArray[0].toUByte(), byteArray[1].toUByte())
-        low  = Bits16(byteArray[2].toUByte(), byteArray[3].toUByte())
+    constructor(value:UShort) : this() {
+        val byteArray = Shorts.toByteArray(value)
+        high = Bits08(byteArray[0].toUByte())
+        low  = Bits08(byteArray[1].toUByte())
     }
-
 
     fun getByteArray() : ByteArray {
-        var result = ByteArray(4)
-        val highArray:ByteArray  = high.getByteArray()
-        val lowArray :ByteArray  = low.getByteArray()
-        result[0] = highArray[0]
-        result[1] = highArray[1]
-        result[2] = lowArray[0]
-        result[3] = lowArray[1]
+        var result = ByteArray(2)
+        result[0] = high.getByte().toByte()
+        result[1] = low.getByte().toByte()
         return result
     }
     fun size() : Int {
-        return 4
+        return 2
     }
-    fun toDecimal() : Int {
-        val high:Int = high.toDecimal() * 65536
-        val low :Int = low.toDecimal()
-        return high + low
+    fun toDecimal(): Int {
+        return (high.getByte().toInt() shl 8) or (low.getByte().toInt() and 0xFF)
     }
     override fun toString() : String {
-        return "$high :: $low"
+        return "$high : $low"
     }
 }

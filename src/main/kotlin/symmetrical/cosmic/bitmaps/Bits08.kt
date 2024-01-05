@@ -1,4 +1,4 @@
-package symmetrical.cosmic._bitmaps
+package symmetrical.cosmic.bitmaps
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,32 +166,46 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 
-class Bits64 {
+open class Bits08 {
     constructor()
 
-    private var high   : Bits32 = Bits32()
-    private var low    : Bits32 = Bits32()
+    lateinit var high: Bits04
+    lateinit var low: Bits04
 
-    init {
-        high  = Bits32(0u, 0u, 0u, 0u)
-        low   = Bits32(0u, 0u, 0u, 0u)
+    private var byte: UByte = 0u
+
+
+    constructor(byte: UByte) : this() {
+        this.byte = byte
+        setDecimal(byte)
+    }
+    constructor(high: Bits04, low: Bits04) : this() {
+        this.high = high
+        this.low  = low
+        this.byte = toDecimal().toUByte()
     }
 
-    constructor(byte1:UByte=0u, byte2:UByte=0u, byte3:UByte=0u, byte4:UByte=0u, byte5:UByte=0u, byte6:UByte=0u, byte7:UByte=0u, byte8:UByte=0u) : this() {
-        high  = Bits32(byte1, byte2, byte3, byte4)
-        low   = Bits32(byte5, byte6, byte7, byte8)
+    fun getByte() : UByte {
+        return byte
     }
-    constructor(byteArray:ByteArray) :this(byteArray[0].toUByte(), byteArray[1].toUByte(),byteArray[2].toUByte(), byteArray[3].toUByte(),byteArray[4].toUByte(), byteArray[5].toUByte(),byteArray[6].toUByte(), byteArray[7].toUByte()) {
+    fun setDecimal(value:UByte) : Bits08 {
+        this.byte = value
+        val highNibble: UByte = ((byte.toInt() shr 4) and 0x0F).toUByte()
+        val lowNibble: UByte = (byte and 15u).toUByte()
+        high = Bits04(highNibble)
+        low = Bits04(lowNibble)
+        return this
     }
-    fun toDecimal() : Long {
-        val high:Long = high.toDecimal() * 4294967296
-        val low :Long = low.toDecimal().toLong()
-        return high + low
+    fun size() : Int {
+        return 1
+    }
+    fun toDecimal() : Int {
+        val upper: Int = high.toDecimal() * 16
+        val lower: Int = low.toDecimal()
+        return upper+lower;
     }
     override fun toString() : String {
-        return "$high :: $low"
+        return "$high $low"
     }
 }
