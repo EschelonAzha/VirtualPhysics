@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.spacial
+package symmetrical.cosmic._physics.subatomic.spacial
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,28 +166,49 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import kotlin.reflect.KClass
-/*
-https://en.wikipedia.org/wiki/Particle_beam
- */
-interface IBeam {
-    fun add             (obj:Any?)                      : Any?
-    fun addAll          (beam: IBeam)                    : IBeam
-    fun clear           ()                              : IBeam
-    fun compress        ()                              : IBeam
-    fun contract        (newSize:Int)                   : IBeam
-    fun expand          (newSize:Int)                   : IBeam
-    fun get             (pos:Int)                       : Any?
-    fun getClassId      ()                              : String
-    fun getCore         ()                              : Array<Any?>
-    fun find            (item:Any)                      : Int
-    fun find            (kClass: KClass<*>)             : Int
-    fun isEmpty         ()                              : Boolean
-    fun isNotEmpty      ()                              : Boolean
-    fun popLeft         ()                              : Any?
-    fun remove          (item:Any)                      : Any
-    fun removeAt        (pos:Int)                       : Any?
-    fun set             (pos:Int, any: Any?)            : Any?
-    fun shrink          ()                              : IBeam
-    fun size            ()                              : Int
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+
+open class Composition(
+    private val matter: IMatter = Matter(Composition::class, Composition::class),
+) : ParticleBeam(),
+    IMatter by matter
+{
+    constructor() : this(
+        Matter(Composition::class, Composition::class),
+    )
+
+    object Static {
+        const val FIRST  = ParticleBeam.Static.LAST + 1
+        const val LAST  = ParticleBeam.Static.LAST + 2
+    }
+
+    constructor(first: symmetrical.cosmic._physics.subatomic.balanced.IParticle, last: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : this() {
+        add(first)
+        add(last)
+    }
+
+    override fun absorb(photon: Photon) : Photon {
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+    fun getFirst() : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
+        return get(Static.FIRST) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    }
+    fun getLast() : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
+        return get(Static.LAST) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    }
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
+    }
 }

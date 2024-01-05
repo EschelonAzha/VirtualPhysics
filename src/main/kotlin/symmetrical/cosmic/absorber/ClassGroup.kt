@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.spacial.Beam
+import symmetrical.cosmic._physics.subatomic.spacial.Beam
 
 open class ClassGroup : Beam {
     constructor() : super(500) {

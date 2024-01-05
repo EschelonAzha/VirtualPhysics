@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics._subatomic.spacial
+package symmetrical.cosmic._physics.subatomic.spacial
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,112 +166,207 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic.transpectors.transpectors.Strings
-import symmetrical.cosmic._physics.subatomic.balanced.IParticle
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Particle_beam
  */
-open class ParticleBeam(
-    private   val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
-    protected val _beam            : Beam               = Beam()
-) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
-    IMatterAntiMatter by matterAntiMatter,
-    IBeam by _beam,
-    IParticleBeam,
-    IEmitter
-{
-    constructor() : this(
-        MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
-        Beam()
-    )
-    init {
-    }
+
+open class Beam : IBeam {
+
     object Static {
+        const val NORMAL    : Int = 0
+        const val ADD_1     : Int = 1
+
         const val LAST      : Int = -1
     }
 
-    open fun i() : ParticleBeam {
-        _beam.i()
+    private var count                   :Int = 0;
+    private lateinit var _memoryBlock   :Array<Any?>
+    private var expandMode              :Int = Static.NORMAL
+
+    private var capacity                :Int = 0
+    constructor(capacity:Int=1)  {
+        _memoryBlock    = createBlock(capacity)
+        this.capacity   = capacity
+    }
+
+
+
+    open fun i() : Beam {
         return this
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        val particleRemainder : Photon = super.absorb(photon.propagate())
-        val (size52:String, line:String)    = Strings.remainder(3, particleRemainder.radiate())
-        val size:Int                        = Base52.toInt(size52)
-        var remainder : String              = line
-        
-        for (i in 0 until size) {
-            val (emitter, line) = Absorber.materialize(remainder)
-            add(emitter)
-            remainder = line
+    override fun add(obj:Any?) : Any? {
+        if (obj == null)
+            return null
+        if (isOverflow(count)) {
+            expand(expandSizeTo())
         }
-        shrink()
-        return Photon(remainder)
+        set(count++, obj)
+        return obj
     }
-    override fun add(particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
-        return _beam.add(particle) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    override fun addAll(beam: IBeam) : IBeam {
+        for (i in 0 until beam.size()) {
+            add(beam.get(i))
+        }
+        return this
+    }
+    override fun clear() : IBeam {
+        _memoryBlock = createBlock(capacity)
+        count = 0
+        return this
     }
 
-    override fun emit() : Photon {
-        return Photon(radiate())
+    override fun compress() : IBeam {
+        count = 0
+        var result = createBlock(_memoryBlock.size)
+        var pos :Int = 0
+        for (i in _memoryBlock.indices) {
+            if (_memoryBlock[i] == Unit) {
+                continue
+            }
+            if (_memoryBlock[i] != null) {
+                result[pos++] = _memoryBlock[i]
+                count++
+            }
+        }
+        _memoryBlock = result
+        return this
     }
-    fun find(particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : Int {
-        return _beam.find(particle)
+
+    override fun contract(newSize:Int) : IBeam {
+        var result = createBlock(newSize)
+        for (i in result.indices) {
+            result[i] = _memoryBlock[i]
+        }
+        _memoryBlock = result
+        return this
+    }
+    override fun expand(size:Int) : IBeam {
+        var result = createBlock(size)
+        for (i in _memoryBlock.indices) {
+            result[i] = _memoryBlock[i]
+        }
+        _memoryBlock = result
+        return this
     }
     override fun find(item:Any) : Int {
-        return _beam.find(item)
+        for (i:Int in 0 until count) {
+            if (get(i)==item) {
+                return i
+            }
+        }
+        return -1
     }
     override fun find(kClass: KClass<*>) : Int {
-        return _beam.find(kClass)
+        for (i:Int in 0 until count) {
+            if (get(i)!!::class==kClass) {
+                return i
+            }
+        }
+        return -1
     }
 
+    override fun get(pos:Int) : Any? {
+        if (isOverflow(pos)) {
+            return null
+        }
+        return _memoryBlock[pos]
+    }
     override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
+        return getLocalClassId()
     }
-    override operator fun get(pos:Int): symmetrical.cosmic._physics.subatomic.balanced.IParticle {
-        val result = _beam.get(pos)
-        return result as symmetrical.cosmic._physics.subatomic.balanced.IParticle
-    }
-    override fun getParticleCore() : Array<symmetrical.cosmic._physics.subatomic.balanced.IParticle> {
-        return getCore() as Array<symmetrical.cosmic._physics.subatomic.balanced.IParticle>
-    }
-    override fun set(pos:Int, particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
-        return _beam.set(pos, particle) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    override fun getCore() : Array<Any?> {
+        return _memoryBlock
     }
 
-    private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
-            println("ParticleBeam")
-        }
-        val classId     :String = matterAntiMatter.getClassId()
-        val particle    :String = super.emit().radiate()
-        if (size() > 140606) {
-            println("ParticleBeam::radiate() ************************** MAXIMUM ARRAY SIZE EXCEEDED *********************")
-            println("ParticleBeam::radiate() ************************** MAXIMUM ARRAY SIZE EXCEEDED *********************")
-            println("ParticleBeam::radiate() ************************** MAXIMUM ARRAY SIZE EXCEEDED *********************")
-        }
-        val base52Size  :String = Base52.toFixedBase52(Config.getBase52ArraySize(), size())
+    override fun isEmpty() : Boolean {
+        return count == 0
+    }
+    override fun isNotEmpty() : Boolean {
+        return !isEmpty()
+    }
+    override fun popLeft() : Any? {
+        if (count == 0)
+            return null
+        val value:Any = _memoryBlock[0] as Any
+        _memoryBlock[0] = null
+        compress()
+        return value
+    }
 
-        var emission = classId+particle+base52Size
-        for (i:Int in 0 until size()) {
-            val emitter: IEmitter = get(i) as IEmitter
-            emission+=emitter.emit().radiate()
+    fun print() : Beam {
+        for (i:Int in 0 until count) {
+            println(get(i).toString())
+        }
+        return this
+    }
+
+    override fun remove(item:Any) : Any {
+        for (i in 0 until count) {
+            if (item == get(i)) {
+                set(i, null)
+            }
+        }
+        count--
+        compress()
+        return item
+    }
+    override fun removeAt(pos:Int) : Any? {
+        val item = get(pos)
+        if (item == null)
+            return item
+
+        return remove(item)
+    }
+    override fun set(pos:Int, any:Any?) : Any? {
+        if (isOverflow(pos))
+            expand(pos+1)
+
+        _memoryBlock[pos] = any
+        if (pos+1 > count)
+            count = pos+1
+        return any
+    }
+    override fun shrink() : IBeam {
+        contract(count)
+        return this;
+    }
+    override fun size() : Int {
+        return count
+    }
+    override fun toString() : String {
+        return Strings.toDelimitedString("::", _memoryBlock)
+    }
+    private fun createBlock(size:Int) : Array<Any?> {
+        return Array(size){}
+    }
+    private fun executeExpandMode() : Unit {
+        if (expandMode == Static.NORMAL) {
+            expand(_memoryBlock.size * 2)
+            return
         }
 
-        return emission
+        expand(_memoryBlock.size + 1)
+    }
+    private fun expandSizeTo() : Int {
+        var result:Int = count + 1
+        if (expandMode == Static.NORMAL) {
+            result = (count+1) * 2
+        }
+        if (expandMode == Static.ADD_1) {
+            result = count + 1
+        }
+        return result
+    }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Beam::class)
+    }
+
+    private fun isOverflow(pos:Int) : Boolean {
+        return pos >= _memoryBlock.size
     }
 
 }
