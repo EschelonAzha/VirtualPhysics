@@ -166,13 +166,13 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
 /*
 https://en.wikipedia.org/wiki/Weak_interaction
  */
-class ChargedWeak : Particle {
+class ChargedWeak : symmetrical.cosmic._physics.subatomic.balanced.Particle {
     constructor()
 
     fun i() : ChargedWeak {

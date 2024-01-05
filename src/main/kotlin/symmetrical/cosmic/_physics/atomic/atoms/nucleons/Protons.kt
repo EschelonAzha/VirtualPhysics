@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -267,7 +267,7 @@ class Protons(
 
 
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Protons")
         }
         val classId:String = matterAntiMatter.getClassId()

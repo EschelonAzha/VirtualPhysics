@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -260,7 +260,7 @@ open class Orbitals(
         return zBoson
     }
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Orbitals")
         }
         return matterAntiMatter.getClassId()+

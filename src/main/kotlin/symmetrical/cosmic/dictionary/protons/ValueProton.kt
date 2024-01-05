@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.Matter
@@ -200,7 +200,7 @@ class ValueProton(
         return matter.getClassId()
     }
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("ValueProton")
         }
         val classId : String = matter.getClassId()

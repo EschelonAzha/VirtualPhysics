@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
-import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics.subatomic.balanced.pairs.TauAntiTauPair
+import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 
 /*
 https://en.wikipedia.org/wiki/W_and_Z_bosons

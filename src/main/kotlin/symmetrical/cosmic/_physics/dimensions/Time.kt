@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic._physics._subatomic.luminescent.QuasiParticle

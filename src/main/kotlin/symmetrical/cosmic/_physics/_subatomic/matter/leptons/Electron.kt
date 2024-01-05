@@ -167,10 +167,10 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics.subatomic.balanced.IParticle
+import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
@@ -266,8 +266,8 @@ class Electron(
 
     }
     private fun setElectron(electron:Electron) : Electron {
-        val particle: IParticle = electron as IParticle
-        val pos = particleBeam.find(electron as IParticle)
+        val particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle = electron as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+        val pos = particleBeam.find(electron as symmetrical.cosmic._physics.subatomic.balanced.IParticle)
         if (pos == -1)
             particleBeam.add(electron)
 

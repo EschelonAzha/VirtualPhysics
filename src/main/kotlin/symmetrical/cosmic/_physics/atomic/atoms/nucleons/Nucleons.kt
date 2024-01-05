@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.IParticle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
@@ -229,7 +229,7 @@ class Nucleons(
     override fun betaMinusDecay() : Atom {
         val proton      :Proton     = getProton(ValueProton::class)
         val protonDown  :Down       = proton.getValueQuark()
-        val space       :IParticle  = protonDown.getSpace().getSpace()  ?: return p_atom
+        val space       : symmetrical.cosmic._physics.subatomic.balanced.IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
         val neutronDown :Down       = space as Down
         neutronDown.getSpace().setSpace(null)
         neutrons.remove(neutronDown.getBaryon())
@@ -296,7 +296,7 @@ class Nucleons(
         quark2.getSpace().setSpace(quark1)
     }
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Nucleons")
         }
         val classId :String = matterAntiMatter.getClassId()

@@ -166,17 +166,17 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
+import symmetrical.cosmic._physics.subatomic.balanced.IParticle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.spacial.IBeam
 /*
 https://en.wikipedia.org/wiki/Particle_beam
  */
 interface IParticleBeam : IBeam {
-                        fun add                 (particle: IParticle)           : IParticle
+                        fun add                 (particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle)           : symmetrical.cosmic._physics.subatomic.balanced.IParticle
                         fun emit                ()                              : Photon
-    override operator   fun get                 (pos:Int)                       : IParticle
+    override operator   fun get                 (pos:Int)                       : symmetrical.cosmic._physics.subatomic.balanced.IParticle
         override        fun getClassId          ()                              : String
-                        fun getParticleCore     ()                              : Array<IParticle>
-                        fun set                 (pos:Int, particle: IParticle)  : IParticle
+                        fun getParticleCore     ()                              : Array<symmetrical.cosmic._physics.subatomic.balanced.IParticle>
+                        fun set                 (pos:Int, particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle)  : symmetrical.cosmic._physics.subatomic.balanced.IParticle
 }

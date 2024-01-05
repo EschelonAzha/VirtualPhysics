@@ -169,7 +169,7 @@ Library.
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic._physics._subatomic.matter.colors.Color
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_colors.AntiColor
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 
 /*
@@ -177,7 +177,7 @@ https://en.wikipedia.org/wiki/Gluon
  */
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
-open class Gluon : Particle {
+open class Gluon : symmetrical.cosmic._physics.subatomic.balanced.Particle {
     constructor()
     // Gluons are confined within
     // Spin 1

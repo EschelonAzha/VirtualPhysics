@@ -169,7 +169,7 @@ Library.
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_mesons.AntiPlusPion
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics._subatomic.balanced.pairs.ElectronPositron
+import symmetrical.cosmic._physics.subatomic.balanced.pairs.ElectronPositron
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.Hadron
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter

@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics._subatomic.balanced.values.IField
+import symmetrical.cosmic._physics.subatomic.balanced.values.IField
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 /*
 https://en.wikipedia.org/wiki/Quasiparticle

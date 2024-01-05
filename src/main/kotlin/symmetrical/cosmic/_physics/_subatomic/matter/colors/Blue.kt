@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics._subatomic.matter.bosons.Gluon
-import symmetrical.cosmic._physics._subatomic.balanced.color.QCD
+import symmetrical.cosmic._physics.subatomic.balanced.color.QCD
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.Blue_AntiBlue
 /*
 https://en.wikipedia.org/wiki/Color_charge

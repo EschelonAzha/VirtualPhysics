@@ -167,9 +167,11 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
-import symmetrical.cosmic._physics._subatomic.balanced.color.ChromoCharge
+import symmetrical.cosmic._physics.subatomic.balanced.color.ChromoCharge
 import symmetrical.cosmic._physics._subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic._physics._subatomic.luminescent.AntiMatter
+
+
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */

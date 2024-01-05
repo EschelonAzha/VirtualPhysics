@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.IParticle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
@@ -292,7 +292,7 @@ open class Baryon(
     fun red() : Any? {
         return (this.get(0) as Quark).red()
     }
-    override fun set(pos:Int, quark:IParticle) : IParticle {
+    override fun set(pos:Int, quark: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
         super.set(pos, quark)
         (quark as Quark).setBaryon(this)
         return quark
@@ -320,7 +320,7 @@ open class Baryon(
     }
 
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Baryon")
         }
         val classId:String = matter.getClassId()

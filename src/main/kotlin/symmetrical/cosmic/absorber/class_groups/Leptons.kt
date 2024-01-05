@@ -169,8 +169,8 @@ Library.
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics._subatomic.balanced.pairs.ElectronPositron
-import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
+import symmetrical.cosmic._physics.subatomic.balanced.pairs.ElectronPositron
+import symmetrical.cosmic._physics.subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic._physics._subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic._physics._subatomic.matter.leptons.*

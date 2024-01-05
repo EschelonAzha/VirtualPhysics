@@ -167,19 +167,19 @@ permanent authorization for you to choose that version for the
 Library.
 */
 
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics._subatomic.balanced.color.ColorCharge
-import symmetrical.cosmic._physics._subatomic.balanced.color.IColorCharge
-import symmetrical.cosmic._physics._subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics._subatomic.balanced.pairs.TauAntiTauPair
+import symmetrical.cosmic._physics.subatomic.balanced.color.ColorCharge
+import symmetrical.cosmic._physics.subatomic.balanced.color.IColorCharge
+import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic._physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.INucleons
 import symmetrical.cosmic._physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.cosmic._physics.atomic.atoms.orbitals.Orbitals
-import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
@@ -198,7 +198,7 @@ open class Atom(
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var _nucleons         : Nucleons              = Nucleons()
 
-) : Particle(),
+) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IMatterAntiMatter       by matterAntiMatter,
     IOrbitals               by orbitals,
     INucleons               by _nucleons,
@@ -357,7 +357,7 @@ open class Atom(
     }
 
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Atom")
         }
         val classId :String = matterAntiMatter.getClassId()

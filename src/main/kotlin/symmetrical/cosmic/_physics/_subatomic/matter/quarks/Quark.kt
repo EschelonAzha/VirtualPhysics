@@ -173,7 +173,7 @@ import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.bosons.gluons.*
 import symmetrical.cosmic._physics._subatomic.matter.colors.Green
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics._subatomic.matter.hadrons.baryons.Proton
@@ -184,7 +184,7 @@ import kotlin.reflect.KClass
 
 open class Quark(
     private val matter: IMatter = Matter(Quark::class, symmetrical.cosmic._physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),
-) : Particle(),
+) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IMatter by matter,
     IEmitter
 {
@@ -312,7 +312,7 @@ open class Quark(
         return boson
     }
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Quark")
         }
 

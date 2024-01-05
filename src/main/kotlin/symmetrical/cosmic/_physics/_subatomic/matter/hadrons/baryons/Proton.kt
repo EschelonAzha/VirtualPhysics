@@ -167,9 +167,9 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
-import symmetrical.cosmic._physics._subatomic.balanced.IParticle
-import symmetrical.cosmic._physics._subatomic.balanced.Particle
-import symmetrical.cosmic._physics._subatomic.balanced.values.Field
+import symmetrical.cosmic._physics.subatomic.balanced.IParticle
+import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics._subatomic.bosons.Photon
 import symmetrical.cosmic._physics._subatomic.luminescent.*
 import symmetrical.cosmic._physics._subatomic.matter.bosons.ZBoson
@@ -300,7 +300,7 @@ open class Proton(
 
         return zBoson  // this returns only the local changes
     }
-    override fun set(pos:Int, quark: IParticle) : IParticle {
+    override fun set(pos:Int, quark: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
         super.set(pos, quark)
         if (pos == 0)
             _quark = quark as Quark
@@ -337,7 +337,7 @@ open class Proton(
         return zBoson
     }
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Proton")
         }
 

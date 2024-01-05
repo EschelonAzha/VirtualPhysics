@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_beta.AntiBetaPlus
 import symmetrical.cosmic._physics.subatomic.anti_matter.anti_leptons.Positron
-import symmetrical.cosmic._physics._subatomic.balanced.pairs.LeptonPair
+import symmetrical.cosmic._physics.subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics._subatomic.matter.leptons.Neutrino
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics._subatomic.matter.quarks.Down
