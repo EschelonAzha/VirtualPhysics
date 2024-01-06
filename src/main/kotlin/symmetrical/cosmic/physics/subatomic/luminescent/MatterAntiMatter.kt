@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
 import kotlin.reflect.KClass

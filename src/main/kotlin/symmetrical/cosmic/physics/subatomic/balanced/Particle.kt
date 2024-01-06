@@ -171,8 +171,8 @@ import symmetrical.cosmic.transpectors.transpectors.Keys
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter

@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter

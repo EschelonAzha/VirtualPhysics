@@ -2,7 +2,7 @@ package applications.tests.dictionary
 
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down

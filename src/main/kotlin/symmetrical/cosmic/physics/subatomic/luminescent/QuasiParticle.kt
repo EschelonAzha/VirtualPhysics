@@ -171,7 +171,7 @@ import symmetrical.cosmic.transpectors.transpectors.Photons
 import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.balanced.values.IField
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 
 /*
 https://en.wikipedia.org/wiki/Quasiparticle

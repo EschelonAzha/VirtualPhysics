@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.bosons.gluons
+package symmetrical.cosmic.physics.subatomic.bosons
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,24 +166,72 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiRed
-import symmetrical.cosmic._physics.subatomic.matter.colors.Blue
-
-class Green_AntiRed : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
+import asymmetrical.physics.machine.config.Config
+import symmetrical.cosmic.transpectors.printable_characters.Base52
+import symmetrical.cosmic.transpectors.transpectors.Photons
+/*
+https://en.wikipedia.org/wiki/Photon
+ */
+open class Photon{
     constructor()
-    init {
-        color       = green()
-        antiColor   = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiRed()
+
+    companion object {
+        fun toPhoton(value:Any?, lth:Int= Config.getPhotonLength()) : String {
+            if (value == null)
+                return Base52.toFixedBase52(lth, 0)
+            val str = value.toString()
+            val lth = Base52.toFixedBase52(lth, str.length)
+            return lth+str
+        }
+        fun toPhoton1(value:Any?, lth:Int=1) : String {
+            if (value == null)
+                return Base52.toFixedBase52(lth, 0)
+            val str = value.toString()
+            val lth = Base52.toFixedBase52(lth, str.length)
+            return lth+str
+        }
+        fun toPhoton2(value:Any?, lth:Int=2) : String {
+            if (value == null)
+                return Base52.toFixedBase52(lth, 0)
+            val str = value.toString()
+            val lth = Base52.toFixedBase52(lth, str.length)
+            return lth+str
+        }
+        fun toPhoton3(value:Any?, lth:Int=3) : String {
+            if (value == null)
+                return Base52.toFixedBase52(lth, 0)
+            val str = value.toString()
+            val lth = Base52.toFixedBase52(lth, str.length)
+            return lth+str
+        }
+
+
     }
 
-    override fun i() : Green_AntiRed {
-        super.i()
+    lateinit    var emitter     : IEmitter
+                var radiation   : String = ""
+
+    // Spin 1
+    constructor(radiation:String) : this() {
+        this.radiation = radiation;
+        return
+    }
+
+
+    fun i() : Photon {
         return this
     }
-    fun blue(charge: symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon) : Blue_AntiBlue {
-        var gluon = symmetrical.cosmic._physics.subatomic.matter.colors.Blue().blue(charge)
-        gluon.manifestation = charge.manifestation
-        return gluon
+
+    fun propagate() : Photon {
+        return Photon(Photons.chopClassId(radiation))
     }
+    fun radiate() : String {
+        return radiation
+    }
+
+    fun setEmitter(emitter: IEmitter) : Photon {
+        this.emitter = emitter
+        return this
+    }
+
 }

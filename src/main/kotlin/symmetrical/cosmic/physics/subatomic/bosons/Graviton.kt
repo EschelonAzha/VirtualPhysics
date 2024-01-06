@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.bosons
+package symmetrical.cosmic.physics.subatomic.bosons
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -167,9 +167,24 @@ permanent authorization for you to choose that version for the
 Library.
 */
 /*
-https://en.wikipedia.org/wiki/Emission_spectrum
+https://en.wikipedia.org/wiki/Graviton
  */
-interface IEmitter {
-    fun absorb    (photon: Photon)      : Photon
-    fun emit      ()                    : Photon
+
+class Graviton {
+    constructor()
+
+    var center      : Graviton? = null
+    var _attract    : Unit?     = null
+    var radial      : Graviton? = null
+
+    fun i(center: Graviton, attract:Unit, radial: Graviton) : Graviton {
+        this.center     = center
+        this._attract   = attract
+        this.radial     = radial
+        return this
+    }
+
+    fun attract() : Graviton {
+        return this
+    }
 }

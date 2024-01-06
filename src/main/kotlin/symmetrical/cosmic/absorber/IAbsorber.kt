@@ -1,7 +1,7 @@
 package symmetrical.cosmic.absorber
 
-import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
 
 interface IAbsorber {

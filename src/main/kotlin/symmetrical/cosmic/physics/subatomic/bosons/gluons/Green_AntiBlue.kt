@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.bosons
+package symmetrical.cosmic.physics.subatomic.bosons.gluons
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,13 +166,25 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-/*
-https://en.wikipedia.org/wiki/Higgs_boson
- */
-class HiggsBoson{
-    constructor()
+import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiBlue
+import symmetrical.cosmic._physics.subatomic.matter.colors.Red
 
-    fun i() : HiggsBoson {
+class Green_AntiBlue : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
+    constructor()
+    init {
+        color       = green()
+        antiColor   = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiBlue()
+    }
+
+
+    override fun i() : Green_AntiBlue {
+        super.i()
         return this
+    }
+    fun red(charge: symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
+        var gluon = symmetrical.cosmic._physics.subatomic.matter.colors.Red().red(charge)
+        gluon.manifestation = charge.manifestation
+        return gluon
     }
 }
