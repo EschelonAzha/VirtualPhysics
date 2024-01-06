@@ -172,7 +172,7 @@ import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
+import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter

@@ -169,9 +169,9 @@ Library.
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic._physics.subatomic.spacial.Beam
-import symmetrical.cosmic._physics.subatomic.spacial.Composition
-import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
+import symmetrical.cosmic.physics.subatomic.spacial.Beam
+import symmetrical.cosmic.physics.subatomic.spacial.Composition
+import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 
 class Spacial : ClassGroup {
     constructor() {

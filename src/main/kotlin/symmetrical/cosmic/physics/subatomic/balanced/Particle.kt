@@ -173,7 +173,7 @@ import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
+import symmetrical.cosmic.physics.subatomic.spacial.IParticleBeam
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle

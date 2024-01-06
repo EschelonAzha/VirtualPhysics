@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.forces.strong_force
+package symmetrical.cosmic.physics.subatomic.forces.weak_force
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,25 +166,9 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import asymmetrical.physics.machine.threads.Energy
-
 /*
-https://en.wikipedia.org/wiki/Strong_interaction
+https://en.wikipedia.org/wiki/Weak_interaction
  */
+open interface Weak  {
 
-open class Strong: Energy {
-    constructor() : super()
-
-    companion object {
-        lateinit var strong : Strong
-
-        fun setForce(strong: Strong) : Strong {
-            Companion.strong = strong
-            return strong
-        }
-    }
-
-//    fun run() : Unit {
-//        println("StrongForce")
-//    }
 }

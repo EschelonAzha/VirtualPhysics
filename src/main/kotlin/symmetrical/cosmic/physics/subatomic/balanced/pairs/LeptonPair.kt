@@ -170,7 +170,7 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
+import symmetrical.cosmic.physics.subatomic.spacial.IParticleBeam
 /*
 https://en.wikipedia.org/wiki/Pair_production
  */

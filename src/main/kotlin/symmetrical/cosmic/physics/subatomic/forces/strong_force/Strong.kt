@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.forces.weak_force.neutral
+package symmetrical.cosmic.physics.subatomic.forces.strong_force
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,13 +166,25 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-/*
-https://en.wikipedia.org/wiki/Weak_interaction
- */
-class ChargedWeakForce {
-    constructor()
+import asymmetrical.physics.machine.threads.Energy
 
-    fun i() : ChargedWeakForce {
-        return this
+/*
+https://en.wikipedia.org/wiki/Strong_interaction
+ */
+
+open class Strong: Energy {
+    constructor() : super()
+
+    companion object {
+        lateinit var strong : Strong
+
+        fun setForce(strong: Strong) : Strong {
+            Companion.strong = strong
+            return strong
+        }
     }
+
+//    fun run() : Unit {
+//        println("StrongForce")
+//    }
 }

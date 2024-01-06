@@ -168,8 +168,8 @@ Library.
 */
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
-import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
+import symmetrical.cosmic.physics.subatomic.spacial.IParticleBeam
+import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Annihilation

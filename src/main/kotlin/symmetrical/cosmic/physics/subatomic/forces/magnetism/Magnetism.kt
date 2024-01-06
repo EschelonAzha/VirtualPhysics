@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.spacial
+package symmetrical.cosmic.physics.subatomic.forces.magnetism
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,49 +166,28 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import asymmetrical.physics.machine.threads.Energy
 
-open class Composition(
-    private val matter: IMatter = Matter(Composition::class, Composition::class),
-) : ParticleBeam(),
-    IMatter by matter
+/*
+https://en.wikipedia.org/wiki/Magnetism
+ */
+
+open class Magnetism: Energy
+
 {
-    constructor() : this(
-        Matter(Composition::class, Composition::class),
-    )
+    constructor() : super()
 
-    object Static {
-        const val FIRST  = ParticleBeam.Static.LAST + 1
-        const val LAST  = ParticleBeam.Static.LAST + 2
-    }
+    // Spin 2
+    companion object {
+        lateinit var magnetism : Magnetism
 
-    constructor(first: symmetrical.cosmic.physics.subatomic.balanced.IParticle, last: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : this() {
-        add(first)
-        add(last)
+        fun setForce(magnetism: Magnetism) : Magnetism {
+            Companion.magnetism = magnetism
+            return magnetism
+        }
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
-    }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matter.getClassId()
-    }
-    fun getFirst() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
-        return get(Static.FIRST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
-    }
-    fun getLast() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
-        return get(Static.LAST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
-    }
-
-    private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
-    }
+//    fun run() : Unit {
+//        println("Magnetism")
+//    }
 }

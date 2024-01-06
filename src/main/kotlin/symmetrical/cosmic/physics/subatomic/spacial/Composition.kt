@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.spacial
+package symmetrical.cosmic.physics.subatomic.spacial
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -167,15 +167,48 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.spacial.IBeam
-/*
-https://en.wikipedia.org/wiki/Particle_beam
- */
-interface IParticleBeam : IBeam {
-                        fun add                 (particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle)           : symmetrical.cosmic.physics.subatomic.balanced.IParticle
-                        fun emit                ()                              : Photon
-    override operator   fun get                 (pos:Int)                       : symmetrical.cosmic.physics.subatomic.balanced.IParticle
-        override        fun getClassId          ()                              : String
-                        fun getParticleCore     ()                              : Array<symmetrical.cosmic.physics.subatomic.balanced.IParticle>
-                        fun set                 (pos:Int, particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle)  : symmetrical.cosmic.physics.subatomic.balanced.IParticle
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+
+open class Composition(
+    private val matter: IMatter = Matter(Composition::class, Composition::class),
+) : ParticleBeam(),
+    IMatter by matter
+{
+    constructor() : this(
+        Matter(Composition::class, Composition::class),
+    )
+
+    object Static {
+        const val FIRST  = ParticleBeam.Static.LAST + 1
+        const val LAST  = ParticleBeam.Static.LAST + 2
+    }
+
+    constructor(first: symmetrical.cosmic.physics.subatomic.balanced.IParticle, last: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : this() {
+        add(first)
+        add(last)
+    }
+
+    override fun absorb(photon: Photon) : Photon {
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
+    }
+
+    override fun getClassId() : String {
+        return matter.getClassId()
+    }
+    fun getFirst() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+        return get(Static.FIRST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    }
+    fun getLast() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+        return get(Static.LAST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    }
+
+    private fun radiate() : String {
+        return matter.getClassId()+super.emit().radiate()
+    }
 }

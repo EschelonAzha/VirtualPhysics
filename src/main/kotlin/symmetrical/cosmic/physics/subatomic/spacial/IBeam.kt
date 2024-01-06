@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.forces.weak_force
+package symmetrical.cosmic.physics.subatomic.spacial
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,9 +166,28 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import kotlin.reflect.KClass
 /*
-https://en.wikipedia.org/wiki/Weak_interaction
+https://en.wikipedia.org/wiki/Particle_beam
  */
-open interface Weak  {
-
+interface IBeam {
+    fun add             (obj:Any?)                      : Any?
+    fun addAll          (beam: IBeam)                    : IBeam
+    fun clear           ()                              : IBeam
+    fun compress        ()                              : IBeam
+    fun contract        (newSize:Int)                   : IBeam
+    fun expand          (newSize:Int)                   : IBeam
+    fun get             (pos:Int)                       : Any?
+    fun getClassId      ()                              : String
+    fun getCore         ()                              : Array<Any?>
+    fun find            (item:Any)                      : Int
+    fun find            (kClass: KClass<*>)             : Int
+    fun isEmpty         ()                              : Boolean
+    fun isNotEmpty      ()                              : Boolean
+    fun popLeft         ()                              : Any?
+    fun remove          (item:Any)                      : Any
+    fun removeAt        (pos:Int)                       : Any?
+    fun set             (pos:Int, any: Any?)            : Any?
+    fun shrink          ()                              : IBeam
+    fun size            ()                              : Int
 }
