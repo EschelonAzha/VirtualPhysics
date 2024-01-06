@@ -169,7 +169,7 @@ Library.
 import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.matter.leptons.Tau
+import symmetrical.cosmic.physics.subatomic.matter.leptons.Tau
 /*
 https://en.wikipedia.org/wiki/Tau
  */

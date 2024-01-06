@@ -170,7 +170,7 @@ import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
+import symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton
 
 /*
 https://en.wikipedia.org/wiki/Lepton

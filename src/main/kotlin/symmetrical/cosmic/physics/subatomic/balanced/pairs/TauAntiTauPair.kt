@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
-import symmetrical.cosmic._physics.subatomic.matter.leptons.Tau
+import symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton
+import symmetrical.cosmic.physics.subatomic.matter.leptons.Tau
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 /*
@@ -209,14 +209,14 @@ class TauAntiTauPair(
         return this
     }
 
-    fun decay(pion: symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion) : TauAntiTauPair {
+    fun decay(pion: symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.PlusPion) : TauAntiTauPair {
         return this
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun getElectron() : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
-        return _lepton as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
+    fun getElectron() : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+        return _lepton as symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
     }
     fun getField() : Field {
         return TauAntiTauPair.field(this)
@@ -252,7 +252,7 @@ class TauAntiTauPair(
         getTemperature().setContent(value)
         return this
     }
-    private fun setElectron(electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron) : TauAntiTauPair {
+    private fun setElectron(electron: symmetrical.cosmic.physics.subatomic.matter.leptons.Electron) : TauAntiTauPair {
         this._lepton = electron
         return this
     }

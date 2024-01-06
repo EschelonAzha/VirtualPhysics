@@ -3,10 +3,10 @@ package applications.tests.dictionary
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 class Rejector(
     private val matter: IMatter = Matter(Rejector::class, Rejector::class),
@@ -21,7 +21,7 @@ class Rejector(
     constructor(content:Any?) : this(){
         Quark.value(this).setWavelength(content)
     }
-    override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
+    override fun valueChange(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
      //   accept(valueQuark, zBoson)
 
         reject(20, "Nope!", zBoson)

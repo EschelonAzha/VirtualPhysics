@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 class QByte(
     private val matter: IMatter = Matter(QByte::class, QByte::class),

@@ -166,15 +166,15 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
+import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen
-import symmetrical.cosmic._physics.subatomic.matter.colors.Blue
-import symmetrical.cosmic._physics.subatomic.matter.colors.Red
+import symmetrical.cosmic.physics.subatomic.matter.colors.Blue
+import symmetrical.cosmic.physics.subatomic.matter.colors.Red
 
-class Red_AntiGreen : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
+class Red_AntiGreen : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
     constructor()
     init {
-        color       = symmetrical.cosmic._physics.subatomic.matter.colors.Red()
+        color       = symmetrical.cosmic.physics.subatomic.matter.colors.Red()
         antiColor   = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen()
     }
 
@@ -182,8 +182,8 @@ class Red_AntiGreen : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon 
         super.i()
         return this
     }
-    fun blue(charge: symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon) : Blue_AntiBlue {
-        var gluon = symmetrical.cosmic._physics.subatomic.matter.colors.Blue().blue(charge)
+    fun blue(charge: symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon) : Blue_AntiBlue {
+        var gluon = symmetrical.cosmic.physics.subatomic.matter.colors.Blue().blue(charge)
         gluon.manifestation = charge.manifestation
         return gluon
     }

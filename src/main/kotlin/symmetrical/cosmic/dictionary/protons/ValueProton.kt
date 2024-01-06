@@ -172,7 +172,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class ValueProton(
     private val matter: IMatter = Matter(ValueProton::class, ValueProton::class),
-) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton(),
+) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton(),
     IMatter by matter
 {
     constructor() : this(

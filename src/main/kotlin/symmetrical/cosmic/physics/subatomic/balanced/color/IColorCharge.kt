@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.matter.colors.Green
+import symmetrical.cosmic.physics.subatomic.matter.colors.Green
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 /*
 https://en.wikipedia.org/wiki/Color_charge
@@ -178,5 +178,5 @@ interface IColorCharge {
     fun red         ()                  : Any
 
     fun setAtom     (atom: symmetrical.cosmic.physics.atomic.atoms.Atom)        : symmetrical.cosmic.physics.atomic.atoms.Atom
-    fun setGreen    (green: symmetrical.cosmic._physics.subatomic.matter.colors.Green)      : symmetrical.cosmic.physics.atomic.atoms.Atom
+    fun setGreen    (green: symmetrical.cosmic.physics.subatomic.matter.colors.Green)      : symmetrical.cosmic.physics.atomic.atoms.Atom
 }

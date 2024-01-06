@@ -168,14 +168,14 @@ Library.
 */
 import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
-import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
+import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.bosons.gluons.*
-import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics.subatomic.matter.colors.Green
+import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic.physics.subatomic.matter.colors.Green
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.physics.subatomic.bosons.gluons.*
 
 open class AntiQuark(
@@ -189,7 +189,7 @@ open class AntiQuark(
     )
 
 
-    private var gluon       : Gluon = Red_AntiRed()
+    private var gluon       : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon = Red_AntiRed()
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
@@ -215,7 +215,7 @@ open class AntiQuark(
         return this
     }
 
-    class Args(val value:Any?) : ZBoson()
+    class Args(val value:Any?) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson()
     fun z(boson: Args) : Args {
         red()
 
@@ -275,7 +275,7 @@ open class AntiQuark(
     }
 
 
-    fun setGreen(green: Green) : AntiQuark {
+    fun setGreen(green: symmetrical.cosmic.physics.subatomic.matter.colors.Green) : AntiQuark {
         gluon.setGreen(green)
         return this
     }

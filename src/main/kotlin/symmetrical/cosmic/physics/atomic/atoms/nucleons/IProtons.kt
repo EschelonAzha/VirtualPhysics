@@ -167,18 +167,18 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Proton
  */
 interface IProtons {
     fun absorb          (photon: Photon)    : Photon
-    fun addProton       (proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton)    : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+    fun addProton       (proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton)    : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
     fun emit            ()                  : Photon
     fun getAtomicNumber ()                  : Int
     fun getClassId      ()                  : String
-    fun getProton       (kClass: KClass<*>) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+    fun getProton       (kClass: KClass<*>) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
     fun setAtomicNumber (number:Int)        : symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons
     fun setNucleons     (nucleons: symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons) : symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons

@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.matter.colors.Green
+import symmetrical.cosmic.physics.subatomic.matter.colors.Green
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 /*
@@ -193,7 +193,7 @@ class ColorCharge : IColorCharge {
         this.atom = atom
         return atom
     }
-    override fun setGreen(green: symmetrical.cosmic._physics.subatomic.matter.colors.Green) : symmetrical.cosmic.physics.atomic.atoms.Atom {
+    override fun setGreen(green: symmetrical.cosmic.physics.subatomic.matter.colors.Green) : symmetrical.cosmic.physics.atomic.atoms.Atom {
         atom._nucleons.getProton(ValueProton::class).setGreen(green)
         return atom
     }

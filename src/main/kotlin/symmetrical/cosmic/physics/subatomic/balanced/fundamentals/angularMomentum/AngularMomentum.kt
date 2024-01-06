@@ -172,7 +172,7 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 /*
@@ -197,7 +197,7 @@ open class AngularMomentum(
             val proton = atom.getProton(kClass)
             return field(proton)
         }
-        fun field(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun field(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
             return proton.getValueQuark().getAngularMomentum().getField()
         }
         fun run(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Field {
@@ -208,7 +208,7 @@ open class AngularMomentum(
             val proton = atom.getProton(kClass)
             return run(proton)
         }
-        fun run(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun run(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getAngularMomentum().run(Wavelength.field(proton))
         }

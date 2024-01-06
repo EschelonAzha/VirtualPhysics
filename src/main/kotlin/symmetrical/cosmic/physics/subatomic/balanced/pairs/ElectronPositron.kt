@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
+import symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 
@@ -192,12 +192,12 @@ class ElectronPositron(
 //    fun decay(pion: PlusPion) : ElectronPositron<PlusPion> {
 //        return this
 //    }
-    fun decay(pion: symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion) : ElectronPositron {
+    fun decay(pion: symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.PlusPion) : ElectronPositron {
         return this
     }
 
-    fun getElectron() : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
-        return _lepton as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
+    fun getElectron() : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+        return _lepton as symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
     }
     fun getPositron() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron {
         return _antiLepton as symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron
@@ -210,7 +210,7 @@ class ElectronPositron(
 //        this.leptons[1] = positron
 //        return this
 //    }
-    private fun setElectron(electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron) : ElectronPositron {
+    private fun setElectron(electron: symmetrical.cosmic.physics.subatomic.matter.leptons.Electron) : ElectronPositron {
         this._lepton = electron
         return this
     }

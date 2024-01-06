@@ -171,7 +171,7 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 /*
@@ -202,7 +202,7 @@ class Spin(
         fun isMinus(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Boolean {
             return isMinus(atom.getProton(kClass))
         }
-        fun isMinus(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isMinus(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isMinus(quark)
         }
@@ -215,7 +215,7 @@ class Spin(
         fun isPlus(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Boolean {
             return isPlus(atom.getProton(kClass))
         }
-        fun isPlus(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isPlus(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isPlus(quark)
         }
@@ -229,7 +229,7 @@ class Spin(
         fun isZero(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Boolean {
             return isZero(atom.getProton(kClass))
         }
-        fun isZero(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isZero(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isZero(quark)
         }

@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.dictionary.protons.ValueProton
@@ -182,7 +182,7 @@ class Protons(
     IMatterAntiMatter by matterAntiMatter,
     symmetrical.cosmic.physics.atomic.atoms.nucleons.IProtons
 {
-    val _valueProton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+    val _valueProton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
     constructor() : this(
         MatterAntiMatter(Protons::class, Protons::class),
     )    init {
@@ -201,15 +201,15 @@ class Protons(
         remainder = super.absorb(remainder)
 
         for (i in 0 until size()) {
-            (get(i) as symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton).setProtons(this)
+            (get(i) as symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton).setProtons(this)
         }
         return remainder
     }
-    override fun addProton(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton {
+    override fun addProton(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton {
         add(proton)
         return proton
     }
-    fun capacitanceChange(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
+    fun capacitanceChange(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
         return getAtom().capacitanceChange(proton, valueQuark, zBoson)
     }
 
@@ -229,26 +229,26 @@ class Protons(
         return size()
     }
 
-    fun getElectron(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
+    fun getElectron(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
         val electronNum = _beam.find(proton)
         return getAtom().getElectron(electronNum)
     }
-    override fun getProton(kClass:KClass<*>) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton {
-        return get(find(kClass)) as symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+    override fun getProton(kClass:KClass<*>) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton {
+        return get(find(kClass)) as symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
     }
 
     override fun setAtomicNumber(number:Int) : Nucleons {
         var i=size()
         while (i<number) {
             add(
-                symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon()
-                    .Proton() as symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
+                symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon()
+                    .Proton() as symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
             )
             i++
         }
         return p_nucleons as Nucleons
     }
-    fun setCurrentValue(zBoson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
+    fun setCurrentValue(zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
         getProton(ValueProton::class).interact(zBoson)
         return zBoson
     }
@@ -257,7 +257,7 @@ class Protons(
         return nucleons
     }
 
-    fun valueChange(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
+    fun valueChange(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
         return getAtom().valueChange(proton, valueQuark, zBoson)
     }
 

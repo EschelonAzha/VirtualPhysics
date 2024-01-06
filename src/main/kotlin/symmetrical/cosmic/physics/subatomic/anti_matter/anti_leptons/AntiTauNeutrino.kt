@@ -168,7 +168,7 @@ Library.
 */
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.matter.leptons.TauNeutrino
+import symmetrical.cosmic.physics.subatomic.matter.leptons.TauNeutrino
 /*
 https://en.wikipedia.org/wiki/TauNeutrino
  */

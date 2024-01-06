@@ -169,13 +169,13 @@ Library.
 
 import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic.physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
+import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
@@ -205,7 +205,7 @@ open class Atom(
         fun content(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Any? {
             return symmetrical.cosmic.physics.atomic.atoms.Atom.Companion.content(atom.getProton(kClass))
         }
-        fun content(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Any? {
+        fun content(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
@@ -215,7 +215,7 @@ open class Atom(
         fun field(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Field {
             return symmetrical.cosmic.physics.atomic.atoms.Atom.Companion.field(atom.getProton(kClass))
         }
-        fun field(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun field(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }
@@ -253,12 +253,12 @@ open class Atom(
         return remainder
     }
 
-    fun accept(valueQuark: Down, zBoson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.atomic.atoms.Atom {
+    fun accept(valueQuark: Down, zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.atomic.atoms.Atom {
         valueQuark.getWavelength().setContent(zBoson.getNewValue())
         zBoson.setAccepted(true)
         return this
     }
-    open fun capacitanceChange(me: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
+    open fun capacitanceChange(me: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
         return zBoson
     }
     fun capacitor_(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : symmetrical.cosmic.physics.atomic.atoms.Atom {
@@ -282,8 +282,8 @@ open class Atom(
         atom.diode(this, autoFlow)
     }
     fun capacitor(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Unit {
-        val me : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton = getCurrentValueProton()
-        val you: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton = atom.getCurrentValueProton()
+        val me : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton = getCurrentValueProton()
+        val you: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton = atom.getCurrentValueProton()
 
         me.ionicBond(you)
     }
@@ -296,8 +296,8 @@ open class Atom(
         return this
     }
     fun diode(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, autoFlow:Boolean=true) : Unit {
-        val me : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton = getCurrentValueProton()
-        val you: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton = atom.getCurrentValueProton()
+        val me : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton = getCurrentValueProton()
+        val you: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton = atom.getCurrentValueProton()
 
         me.covalentBond(you, autoFlow)
     }
@@ -314,11 +314,11 @@ open class Atom(
     fun getCurrentValue() : Any? {
         return _nucleons.getProtons().getProton(ValueProton::class)
     }
-    private fun getCurrentValueProton() : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton {
+    private fun getCurrentValueProton() : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton {
         return getProtons().getProton(ValueProton::class)
     }
-    fun getElectron(pos:Int) : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
-        return orbitals.get(pos) as symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
+    fun getElectron(pos:Int) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+        return orbitals.get(pos) as symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
     }
     fun getField() : Field {
         return symmetrical.cosmic.physics.atomic.atoms.Atom.Companion.field(this)
@@ -329,7 +329,7 @@ open class Atom(
     fun getProtons() : Protons {
         return _nucleons.getProtons()
     }
-    fun reject(reasonCode:Int, reason:String, boson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.atomic.atoms.Atom {
+    fun reject(reasonCode:Int, reason:String, boson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.atomic.atoms.Atom {
         boson.setAccepted(false)
         boson.setReasonCode(reasonCode)
         boson.setReason(reason)
@@ -342,9 +342,9 @@ open class Atom(
     }
     fun setContent(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().setCurrentValue(
-            symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson().i(Field(value), constructing)).decay()
+            symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson().i(Field(value), constructing)).decay()
     }
-    open fun valueChange(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
+    open fun valueChange(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
         accept(valueQuark, zBoson)
         return zBoson
     }
