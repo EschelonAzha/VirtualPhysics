@@ -184,7 +184,7 @@ open class Composition(
         const val LAST  = ParticleBeam.Static.LAST + 2
     }
 
-    constructor(first: symmetrical.cosmic._physics.subatomic.balanced.IParticle, last: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : this() {
+    constructor(first: symmetrical.cosmic.physics.subatomic.balanced.IParticle, last: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : this() {
         add(first)
         add(last)
     }
@@ -201,11 +201,11 @@ open class Composition(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    fun getFirst() : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
-        return get(Static.FIRST) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    fun getFirst() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+        return get(Static.FIRST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
     }
-    fun getLast() : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
-        return get(Static.LAST) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    fun getLast() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+        return get(Static.LAST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
     }
 
     private fun radiate() : String {

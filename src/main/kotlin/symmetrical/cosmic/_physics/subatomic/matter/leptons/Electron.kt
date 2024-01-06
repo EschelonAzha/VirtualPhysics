@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
@@ -180,7 +180,7 @@ https://en.wikipedia.org/wiki/Electron
  */
 class Electron(
     private val matter: IMatter = Matter(Electron::class, Positron::class),
-) : symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton(),
+) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
@@ -244,11 +244,11 @@ class Electron(
         this.proton = proton
         return this
     }
-    fun setSpin(spin:Int) : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
+    fun setSpin(spin:Int) : Electron {
         getSpin().setSpin(spin)
         return this
     }
-    private fun flow(electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
+    private fun flow(electron: Electron) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
         val terminal: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton? = electron!!.proton
 
         if (terminal == null)
@@ -262,8 +262,8 @@ class Electron(
 
     }
     private fun setElectron(electron: symmetrical.cosmic._physics.subatomic.matter.leptons.Electron) : symmetrical.cosmic._physics.subatomic.matter.leptons.Electron {
-        val particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle = electron as symmetrical.cosmic._physics.subatomic.balanced.IParticle
-        val pos = particleBeam.find(electron as symmetrical.cosmic._physics.subatomic.balanced.IParticle)
+        val particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle = electron as symmetrical.cosmic.physics.subatomic.balanced.IParticle
+        val pos = particleBeam.find(electron as symmetrical.cosmic.physics.subatomic.balanced.IParticle)
         if (pos == -1)
             particleBeam.add(electron)
 

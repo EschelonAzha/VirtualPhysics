@@ -166,8 +166,9 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.values.Field
+import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
@@ -210,7 +211,7 @@ open class Proton(
     private var autoFlow        : Boolean  = true
     private var flowing         : Boolean  = false
 
-    fun i(protons:Protons) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton {
+    fun i(protons:Protons) : Proton {
         this.p_protons = protons
         return this
     }
@@ -226,13 +227,13 @@ open class Proton(
         _quark    = get(0) as Quark
         return remainder
     }
-    fun capacitanceChange(zBoson: symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson {
+    fun capacitanceChange(zBoson: ZBoson) : ZBoson {
         if (p_protons != null)
             p_protons!!.capacitanceChange(this, getValueQuark(), zBoson)
 
         return zBoson
     }
-    fun covalentBond(proton: symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton, autoFlow:Boolean = true) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton {
+    fun covalentBond(proton: Proton, autoFlow:Boolean = true) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton {
         proton.autoFlow = autoFlow
         val myElectron  = getElectron()
         val youElectron = proton.getElectron()
@@ -298,7 +299,7 @@ open class Proton(
 
         return zBoson  // this returns only the local changes
     }
-    override fun set(pos:Int, quark: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
+    override fun set(pos:Int, quark: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
         super.set(pos, quark)
         if (pos == 0)
             _quark = quark as Quark
@@ -335,7 +336,7 @@ open class Proton(
         return zBoson
     }
     private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Proton")
         }
 

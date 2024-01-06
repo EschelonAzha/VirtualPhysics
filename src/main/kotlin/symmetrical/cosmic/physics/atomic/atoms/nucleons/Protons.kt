@@ -263,7 +263,7 @@ class Protons(
 
 
     private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Protons")
         }
         val classId:String = matterAntiMatter.getClassId()

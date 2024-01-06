@@ -172,10 +172,10 @@ import symmetrical.cosmic._physics.subatomic.spacial.IBeam
 https://en.wikipedia.org/wiki/Particle_beam
  */
 interface IParticleBeam : IBeam {
-                        fun add                 (particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle)           : symmetrical.cosmic._physics.subatomic.balanced.IParticle
+                        fun add                 (particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle)           : symmetrical.cosmic.physics.subatomic.balanced.IParticle
                         fun emit                ()                              : Photon
-    override operator   fun get                 (pos:Int)                       : symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    override operator   fun get                 (pos:Int)                       : symmetrical.cosmic.physics.subatomic.balanced.IParticle
         override        fun getClassId          ()                              : String
-                        fun getParticleCore     ()                              : Array<symmetrical.cosmic._physics.subatomic.balanced.IParticle>
-                        fun set                 (pos:Int, particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle)  : symmetrical.cosmic._physics.subatomic.balanced.IParticle
+                        fun getParticleCore     ()                              : Array<symmetrical.cosmic.physics.subatomic.balanced.IParticle>
+                        fun set                 (pos:Int, particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle)  : symmetrical.cosmic.physics.subatomic.balanced.IParticle
 }

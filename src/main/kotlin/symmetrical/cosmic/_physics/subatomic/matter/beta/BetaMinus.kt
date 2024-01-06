@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.pairs.LeptonPair
+import symmetrical.cosmic.physics.subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_beta.AntiBetaMinus

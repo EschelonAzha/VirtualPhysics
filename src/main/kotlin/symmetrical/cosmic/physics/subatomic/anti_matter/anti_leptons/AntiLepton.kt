@@ -177,7 +177,7 @@ https://en.wikipedia.org/wiki/Lepton
  */
 open class AntiLepton(
     private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class),
-) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
+) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
     IAntiMatter by antiMatter,
     IEmitter
 {

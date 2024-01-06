@@ -169,7 +169,7 @@ Library.
 /*
 https://en.wikipedia.org/wiki/Weak_interaction
  */
-class ChargedWeak : symmetrical.cosmic._physics.subatomic.balanced.Particle {
+class ChargedWeak : symmetrical.cosmic.physics.subatomic.balanced.Particle {
     constructor()
 
     fun i() : ChargedWeak {

@@ -173,5 +173,6 @@ import symmetrical.cosmic.physics.atomic.atoms.orbitals.IOrbitals
 https://en.wikipedia.org/wiki/Atom
  */
 interface IAtom : symmetrical.cosmic.physics.atomic.atoms.Element, IEmitter, IOrbitals,
-    symmetrical.cosmic.physics.atomic.atoms.nucleons.INucleons, symmetrical.cosmic._physics.subatomic.balanced.IParticle {
+    symmetrical.cosmic.physics.atomic.atoms.nucleons.INucleons,
+    symmetrical.cosmic.physics.subatomic.balanced.IParticle {
 }

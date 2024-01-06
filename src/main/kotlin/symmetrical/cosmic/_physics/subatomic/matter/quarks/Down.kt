@@ -216,7 +216,7 @@ class Down(
 
 
     private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Down")
         }
         val classId : String = matter.getClassId()

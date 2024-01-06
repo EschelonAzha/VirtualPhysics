@@ -169,8 +169,8 @@ Library.
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic.transpectors.transpectors.Photons
 import symmetrical.cosmic.transpectors.transpectors.Strings
-import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics.subatomic.balanced.values.IField
+import symmetrical.cosmic.physics.subatomic.balanced.values.Field
+import symmetrical.cosmic.physics.subatomic.balanced.values.IField
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 
 /*

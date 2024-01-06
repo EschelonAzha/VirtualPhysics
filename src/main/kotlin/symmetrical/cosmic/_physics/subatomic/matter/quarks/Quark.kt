@@ -178,7 +178,7 @@ import kotlin.reflect.KClass
 
 open class Quark(
     private val matter: IMatter = Matter(Quark::class, AntiQuark::class),
-) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
+) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
     IMatter by matter,
     IEmitter
 {
@@ -306,7 +306,7 @@ open class Quark(
         return boson
     }
     private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Quark")
         }
 

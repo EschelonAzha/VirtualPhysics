@@ -166,8 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
-import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
@@ -186,7 +186,7 @@ open class Molecular(
     ) : symmetrical.cosmic.physics.atomic.atoms.Atom(),
     IMatterAntiMatter by matterAntiMatter,
     IParticleBeam by particleBeam,
-    symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    symmetrical.cosmic.physics.subatomic.balanced.IParticle
 {
     constructor() : this(
         MatterAntiMatter(Molecular::class, Molecular::class),

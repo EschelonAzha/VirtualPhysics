@@ -166,9 +166,9 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 /*
 https://en.wikipedia.org/wiki/W_and_Z_bosons
  */
-class AntiWBosonPlus : symmetrical.cosmic._physics.subatomic.balanced.Particle() {
+class AntiWBosonPlus : symmetrical.cosmic.physics.subatomic.balanced.Particle() {
 }

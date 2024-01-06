@@ -225,7 +225,7 @@ class Nucleons(
     override fun betaMinusDecay() : symmetrical.cosmic.physics.atomic.atoms.Atom {
         val proton      : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton = getProton(ValueProton::class)
         val protonDown  :Down       = proton.getValueQuark()
-        val space       : symmetrical.cosmic._physics.subatomic.balanced.IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
+        val space       : symmetrical.cosmic.physics.subatomic.balanced.IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
         val neutronDown :Down       = space as Down
         neutronDown.getSpace().setSpace(null)
         neutrons.remove(neutronDown.getBaryon())
@@ -293,7 +293,7 @@ class Nucleons(
         quark2.getSpace().setSpace(quark1)
     }
     private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Nucleons")
         }
         val classId :String = matterAntiMatter.getClassId()

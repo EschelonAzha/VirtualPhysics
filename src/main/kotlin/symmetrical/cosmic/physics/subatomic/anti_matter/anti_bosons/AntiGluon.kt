@@ -166,9 +166,9 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 /*
 https://en.wikipedia.org/wiki/Gluon
  */
-class AntiGluon : symmetrical.cosmic._physics.subatomic.balanced.Particle() {
+class AntiGluon : symmetrical.cosmic.physics.subatomic.balanced.Particle() {
 }

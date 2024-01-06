@@ -166,7 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
@@ -179,7 +179,7 @@ import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 
 open class AntiQuark(
     private val antiMatter: IAntiMatter = AntiMatter(Quark::class, AntiQuark::class),
-) : Particle(),
+) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
     IAntiMatter by antiMatter,
     IEmitter
 {

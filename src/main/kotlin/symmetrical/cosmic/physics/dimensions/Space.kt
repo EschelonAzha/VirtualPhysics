@@ -167,7 +167,7 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.absorber.Absorber
-import symmetrical.cosmic._physics.subatomic.balanced.values.Field
+import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
@@ -176,7 +176,7 @@ https://en.wikipedia.org/wiki/Space
  */
 class Space (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
 
-    private var space: symmetrical.cosmic._physics.subatomic.balanced.IParticle? = null   // this may have to change to a Particle UniqueId when emitted
+    private var space: symmetrical.cosmic.physics.subatomic.balanced.IParticle? = null   // this may have to change to a Particle UniqueId when emitted
 
     constructor() : this(
         QuasiParticle()
@@ -198,10 +198,10 @@ class Space (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticl
     fun getField() : Field {
         return field.getField()
     }
-    fun getSpace() : symmetrical.cosmic._physics.subatomic.balanced.IParticle? {
+    fun getSpace() : symmetrical.cosmic.physics.subatomic.balanced.IParticle? {
         return space
     }
-    fun setSpace(particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle?) : Any? {
+    fun setSpace(particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle?) : Any? {
         this.space = particle
         return null
     }

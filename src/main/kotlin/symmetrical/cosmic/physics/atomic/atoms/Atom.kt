@@ -170,11 +170,11 @@ Library.
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
-import symmetrical.cosmic._physics.subatomic.balanced.pairs.TauAntiTauPair
+import symmetrical.cosmic.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
-import symmetrical.cosmic._physics.subatomic.balanced.values.Field
+import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
@@ -190,7 +190,7 @@ open class Atom(
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var _nucleons         : Nucleons              = Nucleons()
 
-) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
+) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
     IMatterAntiMatter by matterAntiMatter,
     IOrbitals               by orbitals,
     symmetrical.cosmic.physics.atomic.atoms.nucleons.INucleons by _nucleons,
@@ -350,7 +350,7 @@ open class Atom(
     }
 
     private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Atom")
         }
         val classId :String = matterAntiMatter.getClassId()

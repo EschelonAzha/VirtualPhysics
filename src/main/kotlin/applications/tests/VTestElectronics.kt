@@ -1,6 +1,6 @@
 package applications.tests
 
-import symmetrical.cosmic._physics.subatomic.balanced.pairs.TauAntiTauPair
+import symmetrical.cosmic.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import applications.tests.dictionary.Rejector
 

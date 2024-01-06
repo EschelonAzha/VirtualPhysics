@@ -172,14 +172,14 @@ import symmetrical.cosmic._physics.subatomic.bosons.gluons.Red_AntiRed
 https://en.wikipedia.org/wiki/Color_charge
 */
 // ACTUAL VALUE
-open class Red : symmetrical.cosmic._physics.subatomic.matter.colors.Color {
+open class Red : Color {
     constructor()
     init {
         color = RED
     }
 
-    override fun clone() : symmetrical.cosmic._physics.subatomic.matter.colors.Red {
-        var result      = symmetrical.cosmic._physics.subatomic.matter.colors.Red()
+    override fun clone() : Red {
+        var result      = Red()
         result.setValue(_value)
         return result
     }

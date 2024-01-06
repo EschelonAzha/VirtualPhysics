@@ -181,7 +181,7 @@ https://en.wikipedia.org/wiki/Particle_beam
 open class ParticleBeam(
     private   val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
     protected val _beam            : Beam = Beam()
-) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
+) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
     IMatterAntiMatter by matterAntiMatter,
     IBeam by _beam,
     IParticleBeam,
@@ -218,14 +218,14 @@ open class ParticleBeam(
         shrink()
         return Photon(remainder)
     }
-    override fun add(particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
-        return _beam.add(particle) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    override fun add(particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+        return _beam.add(particle) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
     }
 
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    fun find(particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : Int {
+    fun find(particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : Int {
         return _beam.find(particle)
     }
     override fun find(item:Any) : Int {
@@ -238,19 +238,19 @@ open class ParticleBeam(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override operator fun get(pos:Int): symmetrical.cosmic._physics.subatomic.balanced.IParticle {
+    override operator fun get(pos:Int): symmetrical.cosmic.physics.subatomic.balanced.IParticle {
         val result = _beam.get(pos)
-        return result as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+        return result as symmetrical.cosmic.physics.subatomic.balanced.IParticle
     }
-    override fun getParticleCore() : Array<symmetrical.cosmic._physics.subatomic.balanced.IParticle> {
-        return getCore() as Array<symmetrical.cosmic._physics.subatomic.balanced.IParticle>
+    override fun getParticleCore() : Array<symmetrical.cosmic.physics.subatomic.balanced.IParticle> {
+        return getCore() as Array<symmetrical.cosmic.physics.subatomic.balanced.IParticle>
     }
-    override fun set(pos:Int, particle: symmetrical.cosmic._physics.subatomic.balanced.IParticle) : symmetrical.cosmic._physics.subatomic.balanced.IParticle {
-        return _beam.set(pos, particle) as symmetrical.cosmic._physics.subatomic.balanced.IParticle
+    override fun set(pos:Int, particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+        return _beam.set(pos, particle) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
     }
 
     private fun radiate() : String {
-        if (symmetrical.cosmic._physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("ParticleBeam")
         }
         val classId     :String = matterAntiMatter.getClassId()

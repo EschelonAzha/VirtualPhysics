@@ -171,10 +171,10 @@ import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiRed
 import symmetrical.cosmic._physics.subatomic.matter.colors.Red
 
 
-class Red_AntiRed : symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon {
+class Red_AntiRed : Gluon {
     constructor()   init {
-        color       = symmetrical.cosmic._physics.subatomic.matter.colors.Red()
-        antiColor   = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiRed()
+        color       = Red()
+        antiColor   = AntiRed()
     }
 
 
