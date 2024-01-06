@@ -170,6 +170,7 @@ import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 
 /*
 https://en.wikipedia.org/wiki/UpQuark
@@ -184,7 +185,7 @@ class Up(
     )
     init {
     }
-    constructor(baryon: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : this() {
+    constructor(baryon: Baryon) : this() {
         this.p_baryon = baryon
     }
     override fun i() : Up {

@@ -166,6 +166,8 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
@@ -176,7 +178,7 @@ https://en.wikipedia.org/wiki/Pair_production
  */
 open class LeptonPair(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(LeptonPair::class, LeptonPair::class),
-) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
@@ -193,14 +195,14 @@ open class LeptonPair(
     }
 
     public lateinit var _lepton     : Lepton
-    public lateinit var _antiLepton : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton
+    public lateinit var _antiLepton : AntiLepton
 
 
 //    constructor(lepton:Lepton, antiLepton:AntiLepton) {
 //        i(lepton, antiLepton)
 //    }
 
-    fun i(lepton:Lepton, antiLepton: symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton) : LeptonPair {
+    fun i(lepton:Lepton, antiLepton: AntiLepton) : LeptonPair {
         this._lepton     = lepton;
         this._antiLepton = antiLepton
         return this

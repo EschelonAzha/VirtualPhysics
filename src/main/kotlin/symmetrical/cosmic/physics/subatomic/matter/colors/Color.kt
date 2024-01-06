@@ -175,7 +175,7 @@ open class Color : ChromoCharge {
 
     constructor()
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.matter.colors.Color {
+    override fun i() : Color {
         super.i()
         return this
     }

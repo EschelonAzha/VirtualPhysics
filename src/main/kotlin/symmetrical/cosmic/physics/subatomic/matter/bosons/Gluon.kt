@@ -184,17 +184,16 @@ open class Gluon : Particle {
     constructor()
     // Gluons are confined within
     // Spin 1
-    lateinit var color      : symmetrical.cosmic.physics.subatomic.matter.colors.Color
+    lateinit var color      : Color
     lateinit var antiColor  : AntiColor
 
-    var manifestation : symmetrical.cosmic.physics.subatomic.matter.colors.Green =
-        symmetrical.cosmic.physics.subatomic.matter.colors.Green()
+    var manifestation : Green = Green()
 
 
-    open fun i() : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
+    open fun i() : Gluon {
         return this
     }
-    fun exchange() : symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.PlusPion {
+    fun exchange() : PlusPion {
         // incomplete.  My thinking is that value will be
         // reflected in Neutrons that are inert
         // get the new value, then become charged (proton)
@@ -203,7 +202,7 @@ open class Gluon : Particle {
         // but something to think about.
 
 
-        var pion = symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.PlusPion() // pull quarks from the vacuum
+        var pion = PlusPion() // pull quarks from the vacuum
 //        pion.quarks[0].gluon.setValue(color.value)
 //
 //        color.value = antiColor.value
@@ -212,14 +211,14 @@ open class Gluon : Particle {
     open fun getAntiValue() : Any? {
         return antiColor._value
     }
-    fun green() : symmetrical.cosmic.physics.subatomic.matter.colors.Green {
+    fun green() : Green {
         return manifestation.clone()
     }
-    fun setGreen(green: symmetrical.cosmic.physics.subatomic.matter.colors.Green) : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
+    fun setGreen(green: Green) : Gluon {
         this.manifestation = green
         return this
     }
-    public open fun setValue(value:Any?) : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
+    public open fun setValue(value:Any?) : Gluon {
         color.setValue(value)
         antiColor.setValue(value)
 

@@ -174,7 +174,7 @@ https://en.wikipedia.org/wiki/CharmQuark
  */
 class AntiCharm (
     private val antiMatter: IAntiMatter = AntiMatter(AntiCharm::class, Charm::class),
-) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiQuark(),
+) : AntiQuark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(

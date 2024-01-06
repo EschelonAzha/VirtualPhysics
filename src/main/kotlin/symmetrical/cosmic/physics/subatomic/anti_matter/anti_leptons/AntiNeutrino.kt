@@ -174,14 +174,14 @@ https://en.wikipedia.org/wiki/Neutrino
  */
 class AntiNeutrino (
     private val antiMatter: IAntiMatter = AntiMatter(AntiNeutrino::class, Neutrino::class),
-) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
+) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
         AntiMatter(AntiNeutrino::class, Neutrino::class),
     )
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino {
+    override fun i() : AntiNeutrino {
         super.i()
         return this
     }

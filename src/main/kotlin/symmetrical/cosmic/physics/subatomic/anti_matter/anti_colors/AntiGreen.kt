@@ -170,7 +170,7 @@ Library.
 https://en.wikipedia.org/wiki/Color_charge
 */
 // ORIGINAL VALUE
-open class AntiGreen : symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiColor {
+open class AntiGreen : AntiColor {
     constructor()
 
     init {
@@ -178,12 +178,12 @@ open class AntiGreen : symmetrical.cosmic.physics.subatomic.anti_matter.anti_col
     }
 
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen {
+    override fun i() : AntiGreen {
         super.i()
         return this
     }
-    override fun clone() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen {
-        var result      = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen()
+    override fun clone() : AntiGreen {
+        var result      = AntiGreen()
         result.setValue(_value)
         return result
     }

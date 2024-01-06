@@ -172,14 +172,21 @@ import symmetrical.cosmic.physics.subatomic.bosons.gluons.*
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiQuark
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.bosons.gluons.*
+import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
+import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic.physics.subatomic.matter.colors.Green
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 
 
 open class Quark(
     private val matter: IMatter = Matter(Quark::class, AntiQuark::class),
-) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IMatter by matter,
     IEmitter
 {
@@ -188,26 +195,26 @@ open class Quark(
     ) {
         this.gluon         = Red_AntiRed()
     }
-    constructor(baryon: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : this() {
+    constructor(baryon: Baryon) : this() {
         this.p_baryon = baryon
     }
 
     init {
     }
 
-    lateinit var gluon                  : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
-    protected lateinit var p_baryon     : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
+    lateinit var gluon                  : Gluon
+    protected lateinit var p_baryon     : Baryon
 
     companion object {
-        fun value(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Quark {
+        fun value(atom: Atom) : Quark {
             val proton = atom.getProton(ValueProton::class)
             return value(proton)
         }
-        fun value(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Quark {
+        fun value(atom: Atom, kClass: KClass<*>) : Quark {
             val proton = atom.getProton(kClass)
             return value(proton)
         }
-        fun value(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Quark {
+        fun value(proton: Proton) : Quark {
             return proton.getValueQuark()
         }
     }
@@ -227,13 +234,13 @@ open class Quark(
         return Photon(radiate())
     }
 
-    fun getBaryon() : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun getBaryon() : Baryon {
         return p_baryon
     }
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    class Args(val value:Any?) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson()
+    class Args(val value:Any?) : ZBoson()
 
 
 
@@ -276,7 +283,7 @@ open class Quark(
         return gluon.color._value
     }
 
-    fun setBaryon(baryon: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : Quark {
+    fun setBaryon(baryon: Baryon) : Quark {
         this.p_baryon = baryon
         return this
     }
@@ -285,7 +292,7 @@ open class Quark(
         return this
     }
 
-    fun setGreen(green: symmetrical.cosmic.physics.subatomic.matter.colors.Green) : Quark {
+    fun setGreen(green: Green) : Quark {
         gluon.setGreen(green)
         return this
     }
@@ -307,7 +314,7 @@ open class Quark(
         return boson
     }
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Quark")
         }
 

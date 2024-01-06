@@ -175,19 +175,20 @@ import symmetrical.cosmic.physics.subatomic.matter.beta.BetaMinus
 import symmetrical.cosmic.physics.subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic.physics.subatomic.matter.leptons.*
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.*
 import symmetrical.cosmic.physics.subatomic.matter.leptons.*
 
 class Leptons : ClassGroup {
     constructor() {
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiMuon::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiMuonNeutrino::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.matter.beta.BetaMinus::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.matter.beta.BetaPlus::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.matter.leptons.Electron::class))
+        add(EntityId(Base52.classId(), AntiLepton::class))
+        add(EntityId(Base52.classId(), AntiMuon::class))
+        add(EntityId(Base52.classId(), AntiMuonNeutrino::class))
+        add(EntityId(Base52.classId(), AntiNeutrino::class))
+        add(EntityId(Base52.classId(), AntiTau::class))
+        add(EntityId(Base52.classId(), AntiTauNeutrino::class))
+        add(EntityId(Base52.classId(), BetaMinus::class))
+        add(EntityId(Base52.classId(), BetaPlus::class))
+        add(EntityId(Base52.classId(), Electron::class))
         add(EntityId(Base52.classId(), ElectronPositron::class))
         add(EntityId(Base52.classId(), Lepton::class))
         add(EntityId(Base52.classId(), LeptonPair::class))

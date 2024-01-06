@@ -166,6 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.subatomic.balanced.IParticle
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
@@ -184,7 +185,7 @@ open class Composition(
         const val LAST  = ParticleBeam.Static.LAST + 2
     }
 
-    constructor(first: symmetrical.cosmic.physics.subatomic.balanced.IParticle, last: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : this() {
+    constructor(first: IParticle, last: IParticle) : this() {
         add(first)
         add(last)
     }
@@ -201,11 +202,11 @@ open class Composition(
     override fun getClassId() : String {
         return matter.getClassId()
     }
-    fun getFirst() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
-        return get(Static.FIRST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    fun getFirst() : IParticle {
+        return get(Static.FIRST) as IParticle
     }
-    fun getLast() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
-        return get(Static.LAST) as symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    fun getLast() : IParticle {
+        return get(Static.LAST) as IParticle
     }
 
     private fun radiate() : String {

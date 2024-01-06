@@ -176,7 +176,7 @@ https://en.wikipedia.org/wiki/Tau
 
 class AntiTau(
     private val antiMatter: IAntiMatter = AntiMatter(AntiTau::class, Tau::class),
-) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
+) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
@@ -187,7 +187,7 @@ class AntiTau(
     }
 
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau {
+    override fun i() : AntiTau {
         super.i()
         return this
     }

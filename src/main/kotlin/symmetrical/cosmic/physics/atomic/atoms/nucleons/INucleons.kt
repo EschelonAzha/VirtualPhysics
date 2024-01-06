@@ -176,19 +176,19 @@ https://en.wikipedia.org/wiki/Nucleon
  */
 interface INucleons {
 
-    fun addNeutron      (proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron)   : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
-    fun addProton       (proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton)    : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
-    fun betaMinusDecay  ()                  : symmetrical.cosmic.physics.atomic.atoms.Atom
-    fun betaPlusDecay   ()                  : symmetrical.cosmic.physics.atomic.atoms.Atom
-    fun betaPlusDecay   (content:Any?)      : symmetrical.cosmic.physics.atomic.atoms.Atom
+    fun addNeutron      (proton: Neutron)   : Neutron
+    fun addProton       (proton: Proton)    : Proton
+    fun betaMinusDecay  ()                  : Atom
+    fun betaPlusDecay   ()                  : Atom
+    fun betaPlusDecay   (content:Any?)      : Atom
     fun findNeutron     (purpose:String)    : Int
     fun getAtomicNumber ()                  : Int
     fun getClassId      ()                  : String
-    fun getNeutron      (pos:Int)           : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
-    fun getNeutron      (purpose:String)    : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
-    fun getProton       (kClass: KClass<*>) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
-    fun setAtom         (atom: symmetrical.cosmic.physics.atomic.atoms.Atom)        : symmetrical.cosmic.physics.atomic.atoms.Atom
-    fun setAtomicNumber (number:Int)        : symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons
+    fun getNeutron      (pos:Int)           : Neutron
+    fun getNeutron      (purpose:String)    : Neutron
+    fun getProton       (kClass: KClass<*>) : Proton
+    fun setAtom         (atom: Atom)        : Atom
+    fun setAtomicNumber (number:Int)        : Nucleons
 
 
 }

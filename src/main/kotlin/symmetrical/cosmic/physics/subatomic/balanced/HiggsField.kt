@@ -174,15 +174,15 @@ open class HiggsField{
     constructor()
     // Spin 0
     companion object {
-        lateinit var higgsField : symmetrical.cosmic.physics.subatomic.balanced.HiggsField
+        lateinit var higgsField : HiggsField
 
-        fun setForce(higgs: symmetrical.cosmic.physics.subatomic.balanced.HiggsField) : symmetrical.cosmic.physics.subatomic.balanced.HiggsField {
-            symmetrical.cosmic.physics.subatomic.balanced.HiggsField.Companion.higgsField = higgs
+        fun setForce(higgs: HiggsField) : HiggsField {
+            HiggsField.Companion.higgsField = higgs
             return higgs
         }
     }
 
-    open fun materialize() : symmetrical.cosmic.physics.subatomic.balanced.HiggsField {
+    open fun materialize() : HiggsField {
         println("Higgs")
         return this
     }

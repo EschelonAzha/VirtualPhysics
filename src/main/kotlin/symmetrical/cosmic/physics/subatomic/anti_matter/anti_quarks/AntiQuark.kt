@@ -180,7 +180,7 @@ import symmetrical.cosmic.physics.subatomic.bosons.gluons.*
 
 open class AntiQuark(
     private val antiMatter: IAntiMatter = AntiMatter(Quark::class, AntiQuark::class),
-) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IAntiMatter by antiMatter,
     IEmitter
 {
@@ -189,7 +189,7 @@ open class AntiQuark(
     )
 
 
-    private var gluon       : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon = Red_AntiRed()
+    private var gluon       : Gluon = Red_AntiRed()
 
     override fun absorb(photon: Photon) : Photon {
         antiMatter.check(photon);
@@ -215,7 +215,7 @@ open class AntiQuark(
         return this
     }
 
-    class Args(val value:Any?) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson()
+    class Args(val value:Any?) : ZBoson()
     fun z(boson: Args) : Args {
         red()
 

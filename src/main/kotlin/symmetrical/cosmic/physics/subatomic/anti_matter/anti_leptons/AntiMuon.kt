@@ -174,7 +174,7 @@ https://en.wikipedia.org/wiki/Muon
  */
 open class AntiMuon(
     private val antiMatter: IAntiMatter = AntiMatter(AntiMuon::class, Muon::class),
-) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
+) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
@@ -182,7 +182,7 @@ open class AntiMuon(
     )
 
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiMuon {
+    override fun i() : AntiMuon {
         super.i()
         return this
     }

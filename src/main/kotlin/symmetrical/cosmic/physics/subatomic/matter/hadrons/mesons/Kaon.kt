@@ -177,12 +177,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Kaon
  */
 open class Kaon(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.Kaon::class, AntiKaon::class),
-) : symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron(),
+    private val matter: IMatter = Matter(Kaon::class, AntiKaon::class),
+) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.Kaon::class, AntiKaon::class),
+        Matter(Kaon::class, AntiKaon::class),
     )
 
     lateinit var antiQuark  : AntiUp

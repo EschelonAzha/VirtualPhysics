@@ -171,9 +171,9 @@ import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiRed
 import symmetrical.cosmic.physics.subatomic.matter.colors.Red
 
 
-class Red_AntiRed : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
+class Red_AntiRed : Gluon {
     constructor()   init {
-        color       = symmetrical.cosmic.physics.subatomic.matter.colors.Red()
+        color       = Red()
         antiColor   = AntiRed()
     }
 
@@ -185,12 +185,12 @@ class Red_AntiRed : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
     override fun getAntiValue() : Any? {
         return color._value
     }
-    override fun setValue(value:Any?) : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
+    override fun setValue(value:Any?) : Gluon {
         color.setValue(value)
 
         return this
     }
-    fun red(charge: symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
+    fun red(charge: Gluon) : Red_AntiRed {
         return this
     }
 }

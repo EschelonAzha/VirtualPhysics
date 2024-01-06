@@ -166,6 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.spacial.Beam
 import symmetrical.cosmic.physics.subatomic.spacial.IBeam
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
@@ -174,7 +175,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 open class QMass(
     private val matter: IMatter = Matter(QMass::class, QMass::class),
-) : symmetrical.cosmic.physics.atomic.atoms.Atom(),
+) : Atom(),
     IMatter by matter
 {
     constructor() : this(

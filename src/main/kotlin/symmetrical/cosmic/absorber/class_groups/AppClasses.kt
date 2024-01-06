@@ -178,7 +178,7 @@ class AppClasses : ClassGroup {
 
         add(EntityId(Base52.classId(), KeyValue::class))
         add(EntityId(Base52.classId(), Metal::class))
-        add(EntityId(Base52.classId(), symmetrical.cosmic.physics.subatomic.balanced.Monad::class))
+        add(EntityId(Base52.classId(), Monad::class))
 
     }
 }

@@ -166,13 +166,15 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
 class ValueProton(
     private val matter: IMatter = Matter(ValueProton::class, ValueProton::class),
-) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton(),
+) : Proton(),
     IMatter by matter
 {
     constructor() : this(
@@ -196,7 +198,7 @@ class ValueProton(
         return matter.getClassId()
     }
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("ValueProton")
         }
         val classId : String = matter.getClassId()

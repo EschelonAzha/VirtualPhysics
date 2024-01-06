@@ -173,6 +173,8 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Spin_(physics)
@@ -196,26 +198,26 @@ class Spin(
     }
 
     companion object {
-        fun isMinus(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Boolean {
+        fun isMinus(atom: Atom) : Boolean {
             return isMinus(atom.getProton(ValueProton::class))
         }
-        fun isMinus(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Boolean {
+        fun isMinus(atom: Atom, kClass: KClass<*>) : Boolean {
             return isMinus(atom.getProton(kClass))
         }
-        fun isMinus(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isMinus(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isMinus(quark)
         }
         fun isMinus(quark: Quark) : Boolean {
             return quark.getSpin().spin().toBoolean()
         }
-        fun isPlus(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Boolean {
+        fun isPlus(atom: Atom) : Boolean {
             return isPlus(atom.getProton(ValueProton::class))
         }
-        fun isPlus(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Boolean {
+        fun isPlus(atom: Atom, kClass: KClass<*>) : Boolean {
             return isPlus(atom.getProton(kClass))
         }
-        fun isPlus(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isPlus(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isPlus(quark)
         }
@@ -223,13 +225,13 @@ class Spin(
             return quark.getSpin().spin().toBoolean()
         }
         //
-        fun isZero(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Boolean {
+        fun isZero(atom: Atom) : Boolean {
             return isZero(atom.getProton(ValueProton::class))
         }
-        fun isZero(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass: KClass<*>) : Boolean {
+        fun isZero(atom: Atom, kClass: KClass<*>) : Boolean {
             return isZero(atom.getProton(kClass))
         }
-        fun isZero(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isZero(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isZero(quark)
         }

@@ -166,6 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
@@ -182,13 +183,13 @@ class Hydrogen(
     )
 
 
-    lateinit var atom : symmetrical.cosmic.physics.atomic.atoms.Atom
+    lateinit var atom : Atom
 
 
-    constructor(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : this() {
+    constructor(atom: Atom) : this() {
         this.atom = atom
     }
-    fun i(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : symmetrical.cosmic.physics.atomic.atoms.elements.Hydrogen {
+    fun i(atom: Atom) : Hydrogen {
         this.atom = atom
         atom.setAtomicNumber(1)
         return this

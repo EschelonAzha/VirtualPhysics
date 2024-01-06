@@ -174,6 +174,8 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Angular_momentum
@@ -189,26 +191,26 @@ open class AngularMomentum(
     )
 
     companion object {
-        fun field(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Field {
+        fun field(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return field(proton)
         }
-        fun field(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass:KClass<*>) : Field {
+        fun field(atom: Atom, kClass:KClass<*>) : Field {
             val proton = atom.getProton(kClass)
             return field(proton)
         }
-        fun field(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun field(proton: Proton) : Field {
             return proton.getValueQuark().getAngularMomentum().getField()
         }
-        fun run(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : Field {
+        fun run(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return run(proton)
         }
-        fun run(atom: symmetrical.cosmic.physics.atomic.atoms.Atom, kClass:KClass<*>) : Field {
+        fun run(atom: Atom, kClass:KClass<*>) : Field {
             val proton = atom.getProton(kClass)
             return run(proton)
         }
-        fun run(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun run(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getAngularMomentum().run(Wavelength.field(proton))
         }

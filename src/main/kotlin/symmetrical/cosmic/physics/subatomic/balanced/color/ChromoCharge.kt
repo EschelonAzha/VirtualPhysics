@@ -172,7 +172,7 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */
-open class ChromoCharge : symmetrical.cosmic.physics.subatomic.balanced.Particle {
+open class ChromoCharge : Particle {
     constructor()
 
     public var _value: Any? = null
@@ -222,7 +222,7 @@ open class ChromoCharge : symmetrical.cosmic.physics.subatomic.balanced.Particle
     fun reinitialize() : ChromoCharge {
         return this
     }
-    fun setBaryon(baryon: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : ChromoCharge {
+    fun setBaryon(baryon: Baryon) : ChromoCharge {
         // setQuark(baryon.quarks[0].value)
         return this
     }

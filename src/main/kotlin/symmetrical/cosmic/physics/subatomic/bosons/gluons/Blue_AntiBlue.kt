@@ -170,11 +170,11 @@ import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiBlue
 import symmetrical.cosmic.physics.subatomic.matter.colors.Blue
 
-class Blue_AntiBlue : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
+class Blue_AntiBlue : Gluon {
     constructor()
     init {
-        color       = symmetrical.cosmic.physics.subatomic.matter.colors.Blue()
-        antiColor   = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiBlue()
+        color       = Blue()
+        antiColor   = AntiBlue()
     }
 
 
@@ -183,7 +183,7 @@ class Blue_AntiBlue : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
         return this
     }
 
-    fun blue(charge: symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon) : Blue_AntiBlue {
+    fun blue(charge: Gluon) : Blue_AntiBlue {
         return this
     }
 }

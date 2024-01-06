@@ -173,15 +173,15 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Monad(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.subatomic.balanced.Monad::class, symmetrical.cosmic.physics.subatomic.balanced.Monad::class),
+    private val matter: IMatter = Matter(Monad::class, Monad::class),
 ) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.subatomic.balanced.Monad::class, symmetrical.cosmic.physics.subatomic.balanced.Monad::class),
+        Matter(Monad::class, Monad::class),
     )
-    fun i() : symmetrical.cosmic.physics.subatomic.balanced.Monad {
+    fun i() : Monad {
         return this
     }
     override fun absorb(photon: Photon) : Photon {

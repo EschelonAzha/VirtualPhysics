@@ -166,6 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.atomic.bonds.covalent.Diatomic
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
@@ -186,7 +187,7 @@ open class KeyValue(
     constructor() : this(
         Matter(KeyValue::class, KeyValue::class),
     )
-    constructor(key: symmetrical.cosmic.physics.atomic.atoms.Atom, value: symmetrical.cosmic.physics.atomic.atoms.Atom) : this(){
+    constructor(key: Atom, value: Atom) : this(){
         add(key)
         add(value)
         val size = size();
@@ -209,14 +210,14 @@ open class KeyValue(
         return matter.getClassId()
     }
 
-    fun getKey() : symmetrical.cosmic.physics.atomic.atoms.Atom? {
+    fun getKey() : Atom? {
         if (size()>0)
-            return get(Static.KEY) as symmetrical.cosmic.physics.atomic.atoms.Atom
+            return get(Static.KEY) as Atom
         return null
     }
-    fun getValue() : symmetrical.cosmic.physics.atomic.atoms.Atom? {
+    fun getValue() : Atom? {
         if (size()>1)
-            return get(Static.VALUE) as symmetrical.cosmic.physics.atomic.atoms.Atom
+            return get(Static.VALUE) as Atom
         return null
     }
     private fun radiate() : String {

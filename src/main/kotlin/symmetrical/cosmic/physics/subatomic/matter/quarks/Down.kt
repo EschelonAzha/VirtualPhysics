@@ -168,8 +168,10 @@ Library.
 */
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiDown
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 
 /*
 https://en.wikipedia.org/wiki/DownQuark
@@ -185,7 +187,7 @@ class Down(
     )
     init {
     }
-    constructor(baryon: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : this() {
+    constructor(baryon: Baryon) : this() {
         this.p_baryon = baryon
     }
     companion object {
@@ -216,7 +218,7 @@ class Down(
 
 
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Down")
         }
         val classId : String = matter.getClassId()

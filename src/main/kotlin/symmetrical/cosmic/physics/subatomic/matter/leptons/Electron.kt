@@ -172,27 +172,30 @@ import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron
+import symmetrical.cosmic.physics.subatomic.balanced.IParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
 /*
 https://en.wikipedia.org/wiki/Electron
  */
 class Electron(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.subatomic.matter.leptons.Electron::class, Positron::class),
-) : symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton(),
+    private val matter: IMatter = Matter(Electron::class, Positron::class),
+) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.subatomic.matter.leptons.Electron::class, Positron::class),
+        Matter(Electron::class, Positron::class),
     )
     init {
     }
             lateinit var orbitals       : Orbitals
     private          var particleBeam   : ParticleBeam = ParticleBeam()
-    private lateinit var proton         : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+    private lateinit var proton         : Proton
 
-    fun i(orbitals:Orbitals) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+    fun i(orbitals:Orbitals) : Electron {
         super.i()
         this.orbitals = orbitals
         return this
@@ -203,7 +206,7 @@ class Electron(
         remainder = super.absorb(remainder)
         return remainder
     }
-    fun covalentBond(you: symmetrical.cosmic.physics.subatomic.matter.leptons.Electron) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+    fun covalentBond(you: Electron) : Electron {
         you.setElectron(this)
         this.setSpin(Spin.Static.PLUS)
         return this
@@ -211,7 +214,7 @@ class Electron(
     fun flow() : ParticleBeam {
         val result : ParticleBeam = ParticleBeam()
         for (i:Int in 0 until particleBeam.size()) {
-            val electron = particleBeam.get(i) as symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
+            val electron = particleBeam.get(i) as Electron
             result.add(flow(electron))
         }
 
@@ -225,13 +228,13 @@ class Electron(
         return matter.getClassId()
     }
 
-    fun ionicBond(you: symmetrical.cosmic.physics.subatomic.matter.leptons.Electron) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+    fun ionicBond(you: Electron) : Electron {
         you.setElectron(this)
         this.setSpin(Spin.Static.MINUS)
         return this
     }
 
-    fun setOrbitals(orbitals: Orbitals) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+    fun setOrbitals(orbitals: Orbitals) : Electron {
         this.orbitals = orbitals
         return this
     }
@@ -240,30 +243,30 @@ class Electron(
         return matter.getClassId()+
                 super.emit().radiate()
     }
-    fun setProton(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+    fun setProton(proton: Proton) : Electron {
         this.proton = proton
         return this
     }
-    fun setSpin(spin:Int) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
+    fun setSpin(spin:Int) : Electron {
         getSpin().setSpin(spin)
         return this
     }
-    private fun flow(electron: symmetrical.cosmic.physics.subatomic.matter.leptons.Electron) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
-        val terminal: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton? = electron!!.proton
+    private fun flow(electron: Electron) : ZBoson {
+        val terminal: Proton? = electron!!.proton
 
         if (terminal == null)
-            return symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson().i(Wavelength.field(proton))
+            return ZBoson().i(Wavelength.field(proton))
         if (electron.getSpin().isPlus()) {
-            return terminal.interact(symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson().i(Wavelength.field(proton)))
+            return terminal.interact(ZBoson().i(Wavelength.field(proton)))
         } else {
             val field = Wavelength.field(terminal)
-            return terminal.capacitanceChange(symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson().i(Wavelength.field(proton)).setOldValue(field.getContent()))
+            return terminal.capacitanceChange(ZBoson().i(Wavelength.field(proton)).setOldValue(field.getContent()))
         }
 
     }
-    private fun setElectron(electron: symmetrical.cosmic.physics.subatomic.matter.leptons.Electron) : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron {
-        val particle: symmetrical.cosmic.physics.subatomic.balanced.IParticle = electron as symmetrical.cosmic.physics.subatomic.balanced.IParticle
-        val pos = particleBeam.find(electron as symmetrical.cosmic.physics.subatomic.balanced.IParticle)
+    private fun setElectron(electron: Electron) : Electron {
+        val particle: IParticle = electron as IParticle
+        val pos = particleBeam.find(electron as IParticle)
         if (pos == -1)
             particleBeam.add(electron)
 

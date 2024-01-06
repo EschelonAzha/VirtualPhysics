@@ -172,7 +172,7 @@ https://en.wikipedia.org/wiki/W_and_Z_bosons
 class WBosonMinus{
     constructor()
 
-    fun i() : symmetrical.cosmic.physics.subatomic.matter.bosons.WBosonMinus {
+    fun i() : WBosonMinus {
         return this
     }
 }

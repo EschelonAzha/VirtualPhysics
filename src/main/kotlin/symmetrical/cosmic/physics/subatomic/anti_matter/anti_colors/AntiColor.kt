@@ -182,6 +182,6 @@ open class AntiColor : ChromoCharge {
         return this
     }
     override fun clone() : ChromoCharge {
-        return symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiColor()
+        return AntiColor()
     }
 }

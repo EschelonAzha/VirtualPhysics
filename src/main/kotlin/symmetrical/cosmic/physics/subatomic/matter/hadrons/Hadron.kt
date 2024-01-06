@@ -170,6 +170,7 @@ import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.AntiHadron
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
@@ -177,13 +178,13 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Hadron
  */
 open class Hadron(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron::class, AntiHadron::class),
+    private val matter: IMatter = Matter(Hadron::class, AntiHadron::class),
 ) : ParticleBeam(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron::class, AntiHadron::class),
+        Matter(Hadron::class, AntiHadron::class),
     )
 
 
@@ -191,7 +192,7 @@ open class Hadron(
         const val LAST : Int = ParticleBeam.Static.LAST
 
     }
-    fun i(size:Int) : symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron {
+    fun i(size:Int) : Hadron {
         return this
     }
 
@@ -213,7 +214,7 @@ open class Hadron(
     }
 
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Hadron")
         }
         val classId      : String = matter.getClassId()

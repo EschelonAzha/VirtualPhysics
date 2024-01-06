@@ -170,5 +170,5 @@ import symmetrical.cosmic.physics.subatomic.balanced.Particle
 /*
 https://en.wikipedia.org/wiki/W_and_Z_bosons
  */
-class AntiWBosonMinus : symmetrical.cosmic.physics.subatomic.balanced.Particle() {
+class AntiWBosonMinus : Particle() {
 }

@@ -182,11 +182,11 @@ interface IOrbitals {
     fun getClassId              ()              : String
     fun getElectronPhoton       ()              : Photon
     fun getElectronSpin         ()              : Spin
-    fun getElectronValue        ()              : symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
+    fun getElectronValue        ()              : Electron
     fun getElectronWavelength   ()              : Any?
 
-    fun setAtom                 (atom: symmetrical.cosmic.physics.atomic.atoms.Atom)    : symmetrical.cosmic.physics.atomic.atoms.Atom
-    fun setElectronSpin         (spin: Spin)    : symmetrical.cosmic.physics.atomic.atoms.Atom
-    fun setElectronValue        (value:Any?)    : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
+    fun setAtom                 (atom: Atom)    : Atom
+    fun setElectronSpin         (spin: Spin)    : Atom
+    fun setElectronValue        (value:Any?)    : ZBoson
 
 }

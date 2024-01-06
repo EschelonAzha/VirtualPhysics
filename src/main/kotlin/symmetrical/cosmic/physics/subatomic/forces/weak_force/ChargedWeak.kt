@@ -1,4 +1,7 @@
 package symmetrical.cosmic.physics.subatomic.forces.weak_force
+
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
+
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -169,7 +172,7 @@ Library.
 /*
 https://en.wikipedia.org/wiki/Weak_interaction
  */
-class ChargedWeak : symmetrical.cosmic.physics.subatomic.balanced.Particle {
+class ChargedWeak : Particle {
     constructor()
 
     fun i() : ChargedWeak {

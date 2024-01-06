@@ -174,7 +174,7 @@ https://en.wikipedia.org/wiki/TauNeutrino
  */
 class AntiTauNeutrino  (
     private val antiMatter: IAntiMatter = AntiMatter(AntiTauNeutrino::class, TauNeutrino::class),
-) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
+) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
@@ -183,7 +183,7 @@ class AntiTauNeutrino  (
 
 
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino {
+    override fun i() : AntiTauNeutrino {
         super.i()
         return this
     }

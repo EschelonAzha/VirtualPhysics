@@ -173,15 +173,15 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Positron
  */
 class Positron (
-    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, symmetrical.cosmic.physics.subatomic.matter.leptons.Electron::class),
-) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
+    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, Electron::class),
+) : AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(Positron::class, symmetrical.cosmic.physics.subatomic.matter.leptons.Electron::class),
+        AntiMatter(Positron::class, Electron::class),
     )
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron {
+    override fun i() : Positron {
         super.i()
         return this
     }

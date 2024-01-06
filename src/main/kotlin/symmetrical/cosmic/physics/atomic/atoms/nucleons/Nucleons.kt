@@ -174,32 +174,38 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.subatomic.balanced.IParticle
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+
 /*
 https://en.wikipedia.org/wiki/Nucleon
  */
 
 class Nucleons(
     private val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(Nucleons::class, Nucleons::class),
-    private var _protons         :Protons                = Protons(),
-    private var neutrons         : symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons = symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons(),
+    private var _protons         : Protons  = Protons(),
+    private var neutrons         : Neutrons = Neutrons(),
 
     ) :
         IMatterAntiMatter by matterAntiMatter,
-        symmetrical.cosmic.physics.atomic.atoms.nucleons.IProtons by _protons,
-        symmetrical.cosmic.physics.atomic.atoms.nucleons.INeutrons by neutrons,
-    symmetrical.cosmic.physics.atomic.atoms.nucleons.INucleons,
-    IEmitter
+        IProtons by _protons,
+        INeutrons by neutrons,
+        INucleons,
+        IEmitter
 {
 
     constructor() : this(
         MatterAntiMatter(Nucleons::class, Nucleons::class),
         Protons(),
-        symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons()
+        Neutrons()
     )   init {
         setNucleons(this)
     }
 
-    private lateinit var p_atom: symmetrical.cosmic.physics.atomic.atoms.Atom
+    private lateinit var p_atom: Atom
 
 
     override fun absorb(photon: Photon) : Photon {
@@ -215,17 +221,17 @@ class Nucleons(
         return remainder
     }
 
-    override fun betaPlusDecay(content:Any?) : symmetrical.cosmic.physics.atomic.atoms.Atom {
+    override fun betaPlusDecay(content:Any?) : Atom {
         betaPlusDecay()
         _protons.getProton(ValueProton::class).getValueQuark().setContent(content)
 
         return p_atom
     }
 
-    override fun betaMinusDecay() : symmetrical.cosmic.physics.atomic.atoms.Atom {
-        val proton      : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton = getProton(ValueProton::class)
-        val protonDown  :Down       = proton.getValueQuark()
-        val space       : symmetrical.cosmic.physics.subatomic.balanced.IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
+    override fun betaMinusDecay() : Atom {
+        val proton      : Proton = getProton(ValueProton::class)
+        val protonDown  : Down      = proton.getValueQuark()
+        val space       : IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
         val neutronDown :Down       = space as Down
         neutronDown.getSpace().setSpace(null)
         neutrons.remove(neutronDown.getBaryon())
@@ -233,11 +239,10 @@ class Nucleons(
 
         return p_atom
     }
-    override fun betaPlusDecay() : symmetrical.cosmic.physics.atomic.atoms.Atom {
+    override fun betaPlusDecay() : Atom {
         val protonDown  :Down       = getProton(ValueProton::class).getValueQuark()
         val neutronDown :Down       = cloneQuark(protonDown)
-        val neutron     : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron =
-            symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron()
+        val neutron     : Neutron   = Neutron()
         neutron.set(2, neutronDown)
         crossLink(protonDown, neutronDown)
         neutrons.add(neutron)
@@ -261,7 +266,7 @@ class Nucleons(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    fun getAtom() : symmetrical.cosmic.physics.atomic.atoms.Atom {
+    fun getAtom() : Atom {
         return this.p_atom
     }
     override fun getClassId() : String {
@@ -272,7 +277,7 @@ class Nucleons(
         return _protons
     }
 
-    override fun setAtom(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : symmetrical.cosmic.physics.atomic.atoms.Atom {
+    override fun setAtom(atom: Atom) :Atom {
         this.p_atom = atom
         return atom
     }
@@ -293,7 +298,7 @@ class Nucleons(
         quark2.getSpace().setSpace(quark1)
     }
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Nucleons")
         }
         val classId :String = matterAntiMatter.getClassId()

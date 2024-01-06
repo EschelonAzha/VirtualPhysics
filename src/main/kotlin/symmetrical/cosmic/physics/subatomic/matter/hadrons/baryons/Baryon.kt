@@ -171,26 +171,32 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
+import symmetrical.cosmic.physics.subatomic.balanced.IParticle
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.beta.BetaMinus
+import symmetrical.cosmic.physics.subatomic.matter.beta.BetaPlus
+import symmetrical.cosmic.physics.subatomic.matter.colors.Green
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 
 /*
 https://en.wikipedia.org/wiki/Baryon
  */
 open class Baryon(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon::class, AntiBaryon::class),
-) : symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron(),
+    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class),
+) : Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon::class, AntiBaryon::class),
+        Matter(Baryon::class, AntiBaryon::class),
     )
     init {
         super.i(3)
     }
 
     object Static {
-        const val LAST : Int = symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron.Static.LAST
+        const val LAST : Int = Hadron.Static.LAST
     }
 
 
@@ -203,7 +209,7 @@ open class Baryon(
         return remainder
     }
     // Proton absorbs BetaMinus and becomes Neutron
-    fun absorb(beta: symmetrical.cosmic.physics.subatomic.matter.beta.BetaMinus) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun absorb(beta: BetaMinus) : Baryon {
 
         set(1, Down())
         val up: Up = get(0) as Up
@@ -214,7 +220,7 @@ open class Baryon(
         return this
     }
     // Neutron absorbs BetaPlus and becomes Proton
-    fun absorb(beta: symmetrical.cosmic.physics.subatomic.matter.beta.BetaPlus) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun absorb(beta: BetaPlus) : Baryon {
 
         set(1, Up())
 
@@ -226,15 +232,15 @@ open class Baryon(
         return this
     }
 
-    fun betaPlusDecay() : Pair<symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon, symmetrical.cosmic.physics.subatomic.matter.beta.BetaPlus> {
-        var beta        = symmetrical.cosmic.physics.subatomic.matter.beta.BetaPlus()
+    fun betaPlusDecay() : Pair<Baryon, BetaPlus> {
+        var beta        = BetaPlus()
         this.set(1, beta.decay(this))
         return Pair(this, beta)
     }
     override fun emit() : Photon {
         return Photon(radiate())
     }
-    fun exchange(baryon: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun exchange(baryon: Baryon) : Baryon {
         return this
     }
 
@@ -247,7 +253,7 @@ open class Baryon(
     fun isProton() : Boolean {
         return (this.get(1) as Quark) is Up
     }
-    fun Neutron() : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun Neutron() : Baryon {
         this.add(Up(this))    // value
         this.add(Down(this))  // When down Points to Proton
         this.add(Down(this))  // type
@@ -265,8 +271,8 @@ open class Baryon(
 
 
     // Turn this Neutron into a Proton
-    fun betaMinusDecay() : Pair<symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon, symmetrical.cosmic.physics.subatomic.matter.beta.BetaMinus> {
-        var beta        = symmetrical.cosmic.physics.subatomic.matter.beta.BetaMinus()
+    fun betaMinusDecay() : Pair<Baryon, BetaMinus> {
+        var beta        = BetaMinus()
         this.set(1, beta.decay(this))
         return Pair(this, beta)
     }
@@ -284,27 +290,27 @@ open class Baryon(
     fun red() : Any? {
         return (this.get(0) as Quark).red()
     }
-    override fun set(pos:Int, quark: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    override fun set(pos:Int, quark: IParticle) : IParticle {
         super.set(pos, quark)
         (quark as Quark).setBaryon(this)
         return quark
     }
-    fun setBinding(boundTo: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun setBinding(boundTo: Baryon) : Baryon {
         val up: Quark = this.get(1) as Quark
         (this.get(1) as Quark).z(Quark.Args(boundTo))
         return this
     }
-    fun setGreen(green: symmetrical.cosmic.physics.subatomic.matter.colors.Green) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun setGreen(green: Green) : Baryon {
         (get(0) as Quark).setGreen(green)
         return this
     }
-    fun setPurpose(value:Any?) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun setPurpose(value:Any?) : Baryon {
         var item = this.get(0)
         var down: Down = this.get(0) as Down
         down.z(Quark.Args(value))
         return this
     }
-    public fun setValue(value:Any?) : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
+    public fun setValue(value:Any?) : Baryon {
         var down: Down = this.get(0) as Down
         //  up.setValue(value)
         down.z(Quark.Args(value))
@@ -312,7 +318,7 @@ open class Baryon(
     }
 
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Baryon")
         }
         val classId:String = matter.getClassId()

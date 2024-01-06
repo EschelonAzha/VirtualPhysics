@@ -170,5 +170,5 @@ Library.
 https://en.wikipedia.org/wiki/Neutron
 */
 
-class AntiNeutron : symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon() {
+class AntiNeutron : AntiBaryon() {
 }

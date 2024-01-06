@@ -175,7 +175,7 @@ https://en.wikipedia.org/wiki/BottomQuark
 
 class AntiBottom(
     private val antiMatter: IAntiMatter = AntiMatter(AntiBottom::class, Bottom::class),
-) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiQuark(),
+) : AntiQuark(),
     IAntiMatter by antiMatter
 {
     constructor() : this(

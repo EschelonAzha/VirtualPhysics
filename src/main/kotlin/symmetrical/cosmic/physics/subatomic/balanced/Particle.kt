@@ -185,14 +185,14 @@ https://en.wikipedia.org/wiki/Particle
  */
 
 open class Particle(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(symmetrical.cosmic.physics.subatomic.balanced.Particle::class, AntiParticle::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, AntiParticle::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
-    symmetrical.cosmic.physics.subatomic.balanced.IParticle,
+    IParticle,
     IEmitter
 {
     constructor() : this(
-        MatterAntiMatter(symmetrical.cosmic.physics.subatomic.balanced.Particle::class, AntiParticle::class),
+        MatterAntiMatter(Particle::class, AntiParticle::class),
     ) {
         time.setContent(200)
     }
@@ -203,15 +203,15 @@ open class Particle(
 
 
 
-    private lateinit var self   : symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    private lateinit var self   : IParticle
 
-    private     var uniqueId        : QuasiParticle = QuasiParticle()
+    private     var uniqueId        : QuasiParticle         = QuasiParticle()
 
-    private     val time            : Time = Time()
-    private     val charge          : Charge = Charge()
-    private     val space           : Space = Space()
-    private     val mass            : Mass = Mass()
-    private     val temperature     : Temperature = Temperature()
+    private     val time            : Time                  = Time()
+    private     val charge          : Charge                = Charge()
+    private     val space           : Space                 = Space()
+    private     val mass            : Mass                  = Mass()
+    private     val temperature     : Temperature           = Temperature()
 
     private     val _wavelength     :Wavelength             = Wavelength()
     private     var spin            :Spin                   = Spin()
@@ -246,7 +246,7 @@ open class Particle(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun createUniqueId(): symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    override fun createUniqueId(): IParticle {
         uniqueId.setContent(getClassId()+Keys.getUniqueId())
         return getSelf()
     }
@@ -265,7 +265,7 @@ open class Particle(
         return mass
     }
 
-    override fun getSelf() : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    override fun getSelf() : IParticle {
         if (::self.isInitialized)
             return self
         else return this
@@ -293,15 +293,15 @@ open class Particle(
         return _wavelength
     }
 
-    override fun setSelf(self: symmetrical.cosmic.physics.subatomic.balanced.IParticle) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    override fun setSelf(self: IParticle) : IParticle {
         this.self = self
         return getSelf()
     }
-    override fun setSpin(spin:Spin) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    override fun setSpin(spin:Spin) : IParticle {
         this.spin = spin
         return this
     }
-    fun setUniqueId(id:String) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    fun setUniqueId(id:String) : IParticle {
         this.uniqueId.setContent(id)
         return getSelf()
     }
@@ -313,13 +313,13 @@ open class Particle(
     }
 
 
-    override fun setAngularMomentum(angularMomentum:AngularMomentum) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    override fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle {
         this.angularMomentum = angularMomentum
         return this;
     }
 
 
-    override fun setWavelength(value:Any?) : symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+    override fun setWavelength(value:Any?) : IParticle {
         this.getWavelength().setContent(value)
         return this
     }
@@ -335,7 +335,7 @@ open class Particle(
     }
 
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Particle")
         }
         val classId         : String = matterAntiMatter.getClassId()

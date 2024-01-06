@@ -166,6 +166,7 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
@@ -185,7 +186,7 @@ open class Diatomic(
         const val LAST      : Int = -1
     }
 
-    constructor(atom1: symmetrical.cosmic.physics.atomic.atoms.Atom, atom2: symmetrical.cosmic.physics.atomic.atoms.Atom) : this() {
+    constructor(atom1: Atom, atom2: Atom) : this() {
         add(atom1)
         add(atom2)
     }

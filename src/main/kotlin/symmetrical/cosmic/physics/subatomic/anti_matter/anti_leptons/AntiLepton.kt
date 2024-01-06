@@ -185,7 +185,7 @@ open class AntiLepton(
         AntiMatter(AntiLepton::class, Lepton::class),
     )
 
-    open fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton {
+    open fun i() : AntiLepton {
         return this
     }
     override fun absorb(photon: Photon) : Photon {

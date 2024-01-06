@@ -169,5 +169,5 @@ Library.
 /*
 https://en.wikipedia.org/wiki/Proton
  */
-class AntiProton : symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon() {
+class AntiProton : AntiBaryon() {
 }

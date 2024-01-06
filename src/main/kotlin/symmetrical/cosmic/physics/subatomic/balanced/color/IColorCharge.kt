@@ -177,6 +177,6 @@ interface IColorCharge {
     fun green       ()                  : String
     fun red         ()                  : Any
 
-    fun setAtom     (atom: symmetrical.cosmic.physics.atomic.atoms.Atom)        : symmetrical.cosmic.physics.atomic.atoms.Atom
-    fun setGreen    (green: symmetrical.cosmic.physics.subatomic.matter.colors.Green)      : symmetrical.cosmic.physics.atomic.atoms.Atom
+    fun setAtom     (atom: Atom)        : Atom
+    fun setGreen    (green: Green)      : Atom
 }

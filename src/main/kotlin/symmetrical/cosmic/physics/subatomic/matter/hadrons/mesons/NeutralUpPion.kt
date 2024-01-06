@@ -174,21 +174,22 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 
 /*
 https://en.wikipedia.org/wiki/Pion
  */
 open class NeutralUpPion(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.NeutralUpPion::class, AntiNeutralUpPion::class),
-) : symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron(),
+    private val matter: IMatter = Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
+) : Hadron(),
     IMatter by matter
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.NeutralUpPion::class, AntiNeutralUpPion::class),
+        Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
     )
-    constructor(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon, neutron: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon) : this() {
+    constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)
         this.add(Up())
         this.add(AntiUp())
@@ -207,13 +208,13 @@ open class NeutralUpPion(
 
 
 
-    fun getNeutron() : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
-        return (get(1) as Quark).red() as symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
+    fun getNeutron() : Baryon {
+        return (get(1) as Quark).red() as Baryon
     }
-    fun getProton() : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon {
-        return (get(1) as Quark).red() as symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
+    fun getProton() : Baryon {
+        return (get(1) as Quark).red() as Baryon
     }
-    fun nuclearForce() : symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.NeutralUpPion {
+    fun nuclearForce() : NeutralUpPion {
         val protonQ1 = getProton().get(1) as Quark
         val neutronQ1 = getNeutron().get(1) as Quark
 

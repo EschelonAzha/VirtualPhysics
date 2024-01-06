@@ -166,13 +166,14 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.physics.atomic.atoms.nucleons.INucleons
 import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 
 import symmetrical.cosmic.physics.atomic.atoms.orbitals.IOrbitals
+import symmetrical.cosmic.physics.subatomic.balanced.IParticle
+
 /*
 https://en.wikipedia.org/wiki/Atom
  */
-interface IAtom : symmetrical.cosmic.physics.atomic.atoms.Element, IEmitter, IOrbitals,
-    symmetrical.cosmic.physics.atomic.atoms.nucleons.INucleons,
-    symmetrical.cosmic.physics.subatomic.balanced.IParticle {
+interface IAtom : Element, IEmitter, IOrbitals, INucleons, IParticle {
 }

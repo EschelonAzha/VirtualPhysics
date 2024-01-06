@@ -170,5 +170,5 @@ import symmetrical.cosmic.physics.subatomic.balanced.Particle
 /*
 https://en.wikipedia.org/wiki/Gluon
  */
-class AntiGluon : symmetrical.cosmic.physics.subatomic.balanced.Particle() {
+class AntiGluon : Particle() {
 }

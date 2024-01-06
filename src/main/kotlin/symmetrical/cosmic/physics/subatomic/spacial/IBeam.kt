@@ -172,7 +172,7 @@ https://en.wikipedia.org/wiki/Particle_beam
  */
 interface IBeam {
     fun add             (obj:Any?)                      : Any?
-    fun addAll          (beam: IBeam)                    : IBeam
+    fun addAll          (beam: IBeam)                   : IBeam
     fun clear           ()                              : IBeam
     fun compress        ()                              : IBeam
     fun contract        (newSize:Int)                   : IBeam

@@ -173,12 +173,12 @@ https://en.wikipedia.org/wiki/Neutron
  */
 
 interface INeutrons {
-    fun absorb      (photon: Photon)     : Photon
-    fun addNeutron  (neutron: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron)  : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
-    fun emit        ()                  : Photon
-    fun findNeutron (purpose:String)    : Int
-    fun getClassId  ()                  : String
-    fun getNeutron  (pos:Int)           : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
-    fun getNeutron  (purpose:String)    : symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
-    fun setNucleons (nucleons: symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons) : symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons
+    fun absorb      (photon: Photon)        : Photon
+    fun addNeutron  (neutron: Neutron)      : Neutron
+    fun emit        ()                      : Photon
+    fun findNeutron (purpose:String)        : Int
+    fun getClassId  ()                      : String
+    fun getNeutron  (pos:Int)               : Neutron
+    fun getNeutron  (purpose:String)        : Neutron
+    fun setNucleons (nucleons: Nucleons)    : Nucleons
 }

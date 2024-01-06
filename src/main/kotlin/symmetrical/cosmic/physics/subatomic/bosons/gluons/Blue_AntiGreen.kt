@@ -172,19 +172,19 @@ import symmetrical.cosmic.physics.subatomic.matter.colors.Blue
 import symmetrical.cosmic.physics.subatomic.matter.colors.Red
 
 
-class Blue_AntiGreen : symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon {
+class Blue_AntiGreen : Gluon {
     constructor()
     init {
-        color       = symmetrical.cosmic.physics.subatomic.matter.colors.Blue()
-        antiColor   = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen()
+        color       = Blue()
+        antiColor   = AntiGreen()
     }
 
     override fun i() : Blue_AntiGreen {
         super.i()
         return this
     }
-    fun red(charge: symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
-        var gluon = symmetrical.cosmic.physics.subatomic.matter.colors.Red().red(charge)
+    fun red(charge: Gluon) : Red_AntiRed {
+        var gluon = Red().red(charge)
         gluon.manifestation = charge.manifestation
         return gluon
     }

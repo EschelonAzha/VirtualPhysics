@@ -171,18 +171,18 @@ https://en.wikipedia.org/wiki/Color_charge
 */
 
 // ORIGINAL VALUE
-open class AntiBlue : symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiColor {
+open class AntiBlue : AntiColor {
     constructor()
     init {
         color = ANTI_BLUE
     }
 
-    override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiBlue {
+    override fun i() : AntiBlue {
         super.i()
         return this
     }
-    override fun clone() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiBlue {
-        var result      = symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiBlue()
+    override fun clone() : AntiBlue {
+        var result      = AntiBlue()
         result.setValue(_value)
         return result
     }

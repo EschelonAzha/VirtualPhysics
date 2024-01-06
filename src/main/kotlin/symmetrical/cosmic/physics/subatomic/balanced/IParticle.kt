@@ -178,11 +178,11 @@ https://en.wikipedia.org/wiki/Particle
  */
 
 interface IParticle {
-    fun createUniqueId()                    : symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    fun createUniqueId()                    : IParticle
     fun getUniqueId   ()                    : String
     fun getClassId    ()                    : String
-    fun getSelf       ()                    : symmetrical.cosmic.physics.subatomic.balanced.IParticle
-    fun setSelf       (self: symmetrical.cosmic.physics.subatomic.balanced.IParticle)     : symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    fun getSelf       ()                    : IParticle
+    fun setSelf       (self: IParticle)     : IParticle
 
     fun getAngularMomentum() : AngularMomentum
 
@@ -196,9 +196,9 @@ interface IParticle {
     fun getWavelength() : Wavelength
 
     fun getPhoton() : Photon
-    fun setAngularMomentum(angularMomentum:AngularMomentum) : symmetrical.cosmic.physics.subatomic.balanced.IParticle
-    fun setSpin(spin: Spin) : symmetrical.cosmic.physics.subatomic.balanced.IParticle
-    fun setWavelength(value:Any?) : symmetrical.cosmic.physics.subatomic.balanced.IParticle
+    fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle
+    fun setSpin(spin: Spin) : IParticle
+    fun setWavelength(value:Any?) : IParticle
     fun spin() : Boolean
     fun wavelength() : Any?
     fun wavelengthStr() : String
