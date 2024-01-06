@@ -169,11 +169,9 @@ Library.
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IQuasiParticle
-import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
+import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
-import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 /*

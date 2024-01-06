@@ -169,20 +169,20 @@ Library.
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 
 /*
 https://en.wikipedia.org/wiki/Neutron
  */
 class Neutrons(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons::class, symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Neutrons::class, Neutrons::class),
 ) : ParticleBeam(),
     IMatterAntiMatter by matterAntiMatter,
     symmetrical.cosmic.physics.atomic.atoms.nucleons.INeutrons
 {
     constructor()  : this(
-        MatterAntiMatter(symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons::class, symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons::class),
+        MatterAntiMatter(Neutrons::class, Neutrons::class),
     )
 
     lateinit var p_nucleons: symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons

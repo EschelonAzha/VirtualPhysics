@@ -166,33 +166,24 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.matter.bosons.Gluon
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
-import symmetrical.cosmic._physics.subatomic.matter.colors.Green
-import symmetrical.cosmic._physics.subatomic.matter.bosons.ZBoson
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
-import symmetrical.cosmic._physics.subatomic.luminescent.*
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics.subatomic.bosons.gluons.*
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiQuark
 import kotlin.reflect.KClass
 
 
 open class Quark(
-    private val matter: IMatter = Matter(Quark::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),
+    private val matter: IMatter = Matter(Quark::class, AntiQuark::class),
 ) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(Quark::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiQuark::class),
+        Matter(Quark::class, AntiQuark::class),
     ) {
         this.gluon         = Red_AntiRed()
     }

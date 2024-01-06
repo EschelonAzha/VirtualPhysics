@@ -169,8 +169,8 @@ Library.
 
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Monad(
     private val matter: IMatter = Matter(Monad::class, Monad::class),

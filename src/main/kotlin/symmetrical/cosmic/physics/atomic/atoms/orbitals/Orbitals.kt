@@ -170,9 +170,8 @@ import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 
 /*
 https://en.wikipedia.org/wiki/Atomic_orbital

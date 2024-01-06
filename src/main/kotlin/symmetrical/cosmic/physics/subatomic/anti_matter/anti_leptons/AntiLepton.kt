@@ -166,24 +166,23 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
 
 /*
 https://en.wikipedia.org/wiki/Lepton
  */
 open class AntiLepton(
-    private val antiMatter: IAntiMatter = AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton::class, Lepton::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class),
 ) : symmetrical.cosmic._physics.subatomic.balanced.Particle(),
     IAntiMatter by antiMatter,
     IEmitter
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton::class, Lepton::class),
+        AntiMatter(AntiLepton::class, Lepton::class),
     )
 
     open fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton {

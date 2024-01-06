@@ -166,19 +166,19 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
 /*
 https://en.wikipedia.org/wiki/Positron
  */
 class Positron (
-    private val antiMatter: IAntiMatter = AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron::class, symmetrical.cosmic._physics.subatomic.matter.leptons.Electron::class),
+    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, Electron::class),
 ) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron::class, symmetrical.cosmic._physics.subatomic.matter.leptons.Electron::class),
+        AntiMatter(Positron::class, Electron::class),
     )
 
     override fun i() : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron {

@@ -169,9 +169,8 @@ Library.
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.dictionary.protons.ValueProton
 import kotlin.reflect.KClass
 /*

@@ -168,10 +168,8 @@ Library.
 */
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiStrange
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/StrangeQuark
  */

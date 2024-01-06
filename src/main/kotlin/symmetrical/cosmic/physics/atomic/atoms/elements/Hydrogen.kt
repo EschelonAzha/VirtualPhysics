@@ -166,19 +166,19 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+
 /*
 https://en.wikipedia.org/wiki/Hydrogen
  */
 class Hydrogen(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.atomic.atoms.elements.Hydrogen::class, symmetrical.cosmic.physics.atomic.atoms.elements.AntiHydrogen::class),
+    private val matter: IMatter = Matter(Hydrogen::class, AntiHydrogen::class),
 ) :
     IMatter by matter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.atomic.atoms.elements.Hydrogen::class, symmetrical.cosmic.physics.atomic.atoms.elements.AntiHydrogen::class),
+        Matter(Hydrogen::class, AntiHydrogen::class),
     )
 
 

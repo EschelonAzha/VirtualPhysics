@@ -166,13 +166,9 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class ValueProton(
     private val matter: IMatter = Matter(ValueProton::class, ValueProton::class),

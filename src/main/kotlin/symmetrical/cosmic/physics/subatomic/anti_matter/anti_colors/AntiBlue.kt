@@ -166,9 +166,6 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.matter.colors.Color
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */

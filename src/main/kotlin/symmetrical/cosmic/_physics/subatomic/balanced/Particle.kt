@@ -168,31 +168,31 @@ Library.
 */
 import asymmetrical.physics.machine.vm.Classes
 import symmetrical.cosmic.transpectors.transpectors.Keys
-import symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic._physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic.physics.dimensions.*
+import symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle
 
 /*
 https://en.wikipedia.org/wiki/Particle
  */
 
 open class Particle(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, AntiParticle::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
     symmetrical.cosmic._physics.subatomic.balanced.IParticle,
     IEmitter
 {
     constructor() : this(
-        MatterAntiMatter(Particle::class, symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle::class),
+        MatterAntiMatter(Particle::class, AntiParticle::class),
     ) {
         time.setContent(200)
     }

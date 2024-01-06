@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.luminescent
+package symmetrical.cosmic.physics.subatomic.luminescent
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,14 +166,10 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
+import symmetrical.cosmic._physics.subatomic.balanced.values.IField
+import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 /*
-https://en.wikipedia.org/wiki/Annihilation
+https://en.wikipedia.org/wiki/Quasiparticle
  */
-interface IMatterAntiMatter {
-    fun annihilate      ()                  : Photon
-    fun check           (photon: Photon)    : Unit
-    fun getClassId      ()                  : String
-    fun getIlluminations()                  : IParticleBeam
+interface IQuasiParticle : IField, IEmitter {
 }

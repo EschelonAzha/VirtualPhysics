@@ -172,8 +172,8 @@ import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Particle_beam

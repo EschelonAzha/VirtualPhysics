@@ -166,18 +166,11 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.mesons.PlusPion
-import symmetrical.cosmic._physics.subatomic.matter.leptons.Electron
 import symmetrical.cosmic._physics.subatomic.matter.leptons.Lepton
 import symmetrical.cosmic._physics.subatomic.matter.leptons.Tau
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 /*
 https://en.wikipedia.org/wiki/Pair_production
  */

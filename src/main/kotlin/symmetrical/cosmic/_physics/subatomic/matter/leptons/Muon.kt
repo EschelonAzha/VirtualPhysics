@@ -167,20 +167,18 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiMuon
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/Muon
  */
 class Muon(
-    private val matter: IMatter = Matter(Muon::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiMuon::class),
+    private val matter: IMatter = Matter(Muon::class, AntiMuon::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Muon::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiMuon::class),
+        Matter(Muon::class, AntiMuon::class),
     )
     init {
     }

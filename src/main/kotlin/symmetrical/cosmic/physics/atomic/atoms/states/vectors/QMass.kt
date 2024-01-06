@@ -168,10 +168,9 @@ Library.
 */
 import symmetrical.cosmic._physics.subatomic.spacial.Beam
 import symmetrical.cosmic._physics.subatomic.spacial.IBeam
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
-import symmetrical.cosmic.physics.atomic.atoms.Atom
 
 open class QMass(
     private val matter: IMatter = Matter(QMass::class, QMass::class),

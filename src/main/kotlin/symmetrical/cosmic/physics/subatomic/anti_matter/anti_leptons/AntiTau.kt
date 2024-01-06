@@ -167,20 +167,20 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.matter.leptons.Tau
 /*
 https://en.wikipedia.org/wiki/Tau
  */
 
 class AntiTau(
-    private val antiMatter: IAntiMatter = AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau::class, Tau::class),
+    private val antiMatter: IAntiMatter = AntiMatter(AntiTau::class, Tau::class),
 ) : symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau::class, Tau::class),
+        AntiMatter(AntiTau::class, Tau::class),
     )
     constructor(oldValue : Field) : this() {
         getWavelength().setField(oldValue)

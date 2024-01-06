@@ -166,11 +166,9 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.dictionary.protons.ValueProton
 
 class QByte(
     private val matter: IMatter = Matter(QByte::class, QByte::class),

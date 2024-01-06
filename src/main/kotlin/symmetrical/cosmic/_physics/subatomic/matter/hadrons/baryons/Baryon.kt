@@ -166,32 +166,24 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
-import symmetrical.cosmic._physics.subatomic.balanced.IParticle
-import symmetrical.cosmic._physics.subatomic.balanced.Particle
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.matter.colors.Green
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics.subatomic.matter.beta.BetaMinus
-import symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 /*
 https://en.wikipedia.org/wiki/Baryon
  */
 open class Baryon(
-    private val matter: IMatter = Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon::class),
+    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class),
 ) : symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon::class),
+        Matter(Baryon::class, AntiBaryon::class),
     )
     init {
         super.i(3)

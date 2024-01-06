@@ -166,27 +166,25 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.Positron
 import symmetrical.cosmic._physics.subatomic.balanced.pairs.LeptonPair
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
-import symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic._physics.subatomic.matter.leptons.Neutrino
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus
 
 /*
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class AntiBetaPlus(
-    private val antiMatter: AntiMatter = AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_beta.AntiBetaPlus::class, symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus::class),
+    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, BetaPlus::class),
 ) : LeptonPair(),
     IAntiMatter by antiMatter
 {
     constructor() : this(
-        AntiMatter(symmetrical.cosmic.physics.subatomic.anti_matter.anti_beta.AntiBetaPlus::class, symmetrical.cosmic._physics.subatomic.matter.beta.BetaPlus::class),
+        AntiMatter(AntiBetaPlus::class, BetaPlus::class),
     )
 
 

@@ -166,24 +166,24 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.AntiHadron
 import symmetrical.cosmic._physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.AntiHadron
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 /*
 https://en.wikipedia.org/wiki/Hadron
  */
 open class Hadron(
-    private val matter: IMatter = Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.AntiHadron::class),
+    private val matter: IMatter = Matter(Hadron::class, AntiHadron::class),
 ) : ParticleBeam(),
     IMatter by matter,
     IEmitter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.Hadron::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.AntiHadron::class),
+        Matter(Hadron::class, AntiHadron::class),
     )
 
 

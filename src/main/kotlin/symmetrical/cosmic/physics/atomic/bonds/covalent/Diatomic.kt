@@ -167,9 +167,9 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+
 /*
 https://en.wikipedia.org/wiki/Diatomic_molecule
  */

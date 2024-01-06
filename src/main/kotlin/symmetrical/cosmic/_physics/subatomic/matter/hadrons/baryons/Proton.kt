@@ -166,7 +166,6 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
 import symmetrical.cosmic._physics.subatomic.balanced.values.Field
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
@@ -174,21 +173,22 @@ import symmetrical.cosmic._physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic._physics.subatomic.matter.quarks.Up
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic._physics.subatomic.luminescent.QuasiParticle
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
+import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
 
 /*
 https://en.wikipedia.org/wiki/Proton
  */
 open class Proton(
-    private val matter: IMatter = Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton::class),
+    private val matter: IMatter = Matter(Proton::class, AntiProton::class),
 ) : symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Baryon(),
     IMatter by matter
 {
     var _quark:Quark
     constructor() : this(
-        Matter(symmetrical.cosmic._physics.subatomic.matter.hadrons.baryons.Proton::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton::class),
+        Matter(Proton::class, AntiProton::class),
     ) init {
         _quark = this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),

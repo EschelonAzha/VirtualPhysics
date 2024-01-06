@@ -1,4 +1,4 @@
-package symmetrical.cosmic._physics.subatomic.luminescent
+package symmetrical.cosmic.physics.subatomic.luminescent
 /*
                  GNU LESSER GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
@@ -166,12 +166,44 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
+import symmetrical.cosmic.absorber.Absorber
+import symmetrical.cosmic._physics.subatomic.bosons.Photon
+import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
+import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
 import kotlin.reflect.KClass
 /*
-https://en.wikipedia.org/wiki/Antimatter
+https://en.wikipedia.org/wiki/Annihilation
  */
-class AntiMatter : MatterAntiMatter, IAntiMatter {
-    constructor(positive:KClass<*>, negative:KClass<*>) : super(positive, negative){
+open class MatterAntiMatter: IMatterAntiMatter {
+    object Illuminations {
+        public val beam: ParticleBeam = ParticleBeam()
+    }
+
+    private var positive   : KClass<*>
+    private var negative   : KClass<*>
+
+    constructor(positive: KClass<*>, negative: KClass<*>) {
+        this.positive = positive
+        this.negative = negative;
 
     }
+    override fun annihilate() : Photon {
+        return Photon()
+    }
+    override fun check(photon: Photon) : Unit {
+        val classId = getClassId()
+
+        val radiation = photon.radiate()
+        if (radiation.startsWith(classId))
+            return
+        println("Radiation Leak in: "+this::class.simpleName);
+        return;
+    }
+    override fun getClassId() : String {
+        return Absorber.getClassId(this.positive)
+    }
+    override fun getIlluminations() : IParticleBeam {
+        return Illuminations.beam
+    }
+
 }

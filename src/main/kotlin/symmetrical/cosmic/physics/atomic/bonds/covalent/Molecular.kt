@@ -173,8 +173,8 @@ import symmetrical.cosmic._physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic._physics.subatomic.spacial.IParticleBeam
 import symmetrical.cosmic._physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic.physics.atomic.atoms.states.strings.QString
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 
 /*
 https://en.wikipedia.org/wiki/Molecule

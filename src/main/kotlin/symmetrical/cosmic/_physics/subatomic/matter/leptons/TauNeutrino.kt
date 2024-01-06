@@ -167,20 +167,18 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino
-import symmetrical.cosmic._physics.subatomic.luminescent.IAntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.AntiMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 /*
 https://en.wikipedia.org/wiki/TauNeutrino
  */
 class TauNeutrino(
-    private val matter: IMatter = Matter(TauNeutrino::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino::class),
+    private val matter: IMatter = Matter(TauNeutrino::class, AntiTauNeutrino::class),
 ) : Lepton(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(TauNeutrino::class, symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTauNeutrino::class),
+        Matter(TauNeutrino::class, AntiTauNeutrino::class),
     )
     init {
     }

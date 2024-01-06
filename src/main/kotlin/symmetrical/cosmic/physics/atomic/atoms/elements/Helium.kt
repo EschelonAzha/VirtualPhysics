@@ -166,20 +166,20 @@ apply, that proxy’s public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 */
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+
 /*
 https://en.wikipedia.org/wiki/Helium
  */
 
 class Helium(
-    private val matter: IMatter = Matter(symmetrical.cosmic.physics.atomic.atoms.elements.Helium::class, symmetrical.cosmic.physics.atomic.atoms.elements.AntiHelium::class),
+    private val matter: IMatter = Matter(Helium::class, AntiHelium::class),
 ) :
     IMatter by matter
 {
     constructor() : this(
-        Matter(symmetrical.cosmic.physics.atomic.atoms.elements.Helium::class, symmetrical.cosmic.physics.atomic.atoms.elements.AntiHelium::class),
+        Matter(Helium::class, AntiHelium::class),
     )
 
 

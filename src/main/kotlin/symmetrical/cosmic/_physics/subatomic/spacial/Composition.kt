@@ -167,8 +167,8 @@ permanent authorization for you to choose that version for the
 Library.
 */
 import symmetrical.cosmic._physics.subatomic.bosons.Photon
-import symmetrical.cosmic._physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic._physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Composition(
     private val matter: IMatter = Matter(Composition::class, Composition::class),
