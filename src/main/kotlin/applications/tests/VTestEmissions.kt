@@ -23,8 +23,8 @@ class VTestEmissions {
     }
 
     private fun testEmissions() : Boolean {
-        val atom : symmetrical.cosmic.physics.atomic.atoms.Atom = symmetrical.cosmic.physics.atomic.atoms.Atom(ATOM1)
-        val city : symmetrical.cosmic.physics.atomic.atoms.Atom = Rejector(CITY)
+        val atom : Atom = Atom(ATOM1)
+        val city : Atom = Rejector(CITY)
 
         val atomEmission = atom.emit()
         val (atomClone, atomRemainder) = Absorber.materialize(atomEmission)
@@ -32,10 +32,10 @@ class VTestEmissions {
         val cityEmission = city.emit()
         val (cityClone, cityRemainder) = Absorber.materialize(cityEmission)
 
-        if ((cityClone as symmetrical.cosmic.physics.atomic.atoms.Atom).getField().toString() != city.getField().toString())
+        if ((cityClone as Atom).getField().toString() != city.getField().toString())
             return false
 
-        if ((atomClone as symmetrical.cosmic.physics.atomic.atoms.Atom).getField().toString() != atom.getField().toString())
+        if ((atomClone as Atom).getField().toString() != atom.getField().toString())
             return false
 
         return true

@@ -28,7 +28,7 @@ class VTestNeutrons {
     }
 
     private fun testNeutrons(): Boolean {
-        val atom: symmetrical.cosmic.physics.atomic.atoms.Atom = symmetrical.cosmic.physics.atomic.atoms.Atom(ATOM1)
+        val atom: Atom = Atom(ATOM1)
 
         val original : String = atom.getField().toString()
 

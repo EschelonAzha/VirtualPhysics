@@ -21,7 +21,7 @@ class Rejector(
     constructor(content:Any?) : this(){
         Quark.value(this).setWavelength(content)
     }
-    override fun valueChange(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson) : symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson {
+    override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
      //   accept(valueQuark, zBoson)
 
         reject(20, "Nope!", zBoson)
