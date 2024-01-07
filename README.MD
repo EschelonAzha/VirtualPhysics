@@ -101,7 +101,7 @@ val atom3: Atom = Atom("ATOM3")
 
 **atom1.conductor(atom2).conductor(atom3)**
 
-//if any atomic value changes they all will change
+// if any atomic value changes they all will change
 
 and here is a code snippet to demonstrate diodes (one-way databinding)
 atom1.diode(atom2).diode(atom3)
