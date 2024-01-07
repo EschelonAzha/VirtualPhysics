@@ -1,5 +1,6 @@
 package applications.tests.dictionary
 
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
@@ -10,7 +11,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 class Resistor(
     private val matter: IMatter = Matter(Resistor::class, Resistor::class),
-) : symmetrical.cosmic.physics.atomic.atoms.Atom(),
+) : Atom(),
     IMatter by matter
 {
     constructor() : this(
