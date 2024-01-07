@@ -138,7 +138,9 @@ Chemically equivalent Atoms with different numbers of neutrons, representing dif
 ### Sample Code
 
 val atom = Atom("InitialValue")
+
 atom.betaPlusDecay("new value") // Atom now has a new value
+
 atom.betaMinusDecay()           // Atom rolled back to its original value "InitialValue"
 
 **This functionality is built in to all Atoms, Compounds, and Molecules**
