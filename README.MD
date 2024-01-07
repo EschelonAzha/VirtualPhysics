@@ -71,19 +71,19 @@ From a user's perspective, Virtual Physics works its magic at the atomic level. 
 
 Imagine virtual electrons seamlessly weaving data connections between Atoms. Just like their real-world counterparts, these connections come in different flavors:
 
-* ** Conductors: ** Allow data to flow freely in both directions, enabling two-way data binding.
-* ** Diodes: ** Act as one-way valves, directing data flow like a digital traffic light, perfect for one-way data binding.
-* ** Capacitors: ** Don't directly transmit data, but instead accumulate changes in potential like miniature data batteries. When triggered, they send notifications to bound Atoms, enabling reactive data binding without actual data exchange.
+* **Conductors:** Allow data to flow freely in both directions, enabling two-way data binding.
+* **Diodes:** Act as one-way valves, directing data flow like a digital traffic light, perfect for one-way data binding.
+* **Capacitors:** Don't directly transmit data, but instead accumulate changes in potential like miniature data batteries. When triggered, they send notifications to bound Atoms, enabling reactive data binding without actual data exchange.
 
 Think of a Capacitor as a watchful gatekeeper, alerting an Atom when its bound partner experiences a "voltage spike" in its value. This allows the Atom to react without directly receiving the new value, opening up possibilities for sophisticated conditional responses.
 
-** The Power of Simplicity **
+**The Power of Simplicity**
 
 This "atomic" approach to data binding offers several advantages:
 
-* ** Ease of Use: ** Bind data with just a few lines of code, eliminating complex binding frameworks.
-* ** Flexibility: ** Choose the right "circuit" for your needs, be it unidirectional, bidirectional, or reactive.
-* ** Efficiency: ** Leverage built-in mechanisms for minimal overhead and optimal performance.
+* **Ease of Use:** Bind data with just a few lines of code, eliminating complex binding frameworks.
+* **Flexibility:** Choose the right "circuit" for your needs, be it unidirectional, bidirectional, or reactive.
+* **Efficiency:** Leverage built-in mechanisms for minimal overhead and optimal performance.
 
 Virtual Physics Data Binding empowers you to build dynamic, responsive applications with intuitive ease. Unleash the power of the atom and watch your data dance!
 
