@@ -48,7 +48,7 @@ Virtual Physics reimagines data transmission by drawing inspiration from the fun
 val addressRec = AddressRec()       
 val emission  = addressRec.emit()   
 
-// ... Transmit the photon emission....
+// ... Transmit the emission to the other machine....
 
 // Machine 2
 
