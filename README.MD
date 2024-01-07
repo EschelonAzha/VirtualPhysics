@@ -88,6 +88,7 @@ This "atomic" approach to data binding offers several advantages:
 Virtual Physics Data Binding empowers you to build dynamic, responsive applications with intuitive ease. Unleash the power of the atom and watch your data dance!
 
 **Conductors in Action: A Code Example**
+
 To illustrate this atomic ballet in action, let's examine a code snippet that demonstrates two-way data binding using conductors:
 
 val atom1: Atom = Atom(ATOM1)
