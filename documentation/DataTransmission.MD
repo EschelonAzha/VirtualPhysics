@@ -30,8 +30,8 @@ val emission  = addressRec.emit()   // emit() on first machine
 // Transmit the photon emission to second machine .......
 
 
-val (clone, _) = Absorber.materialize(emission)   // re-absorb photon emissions to reconstruct exact replica
-val addressRecClone = clone as AddressRec         // clone is an exact replica of original object
+val (clone, _) = Absorber.materialize(emission)  
+val addressRecClone = clone as AddressRec        
 
 
 
