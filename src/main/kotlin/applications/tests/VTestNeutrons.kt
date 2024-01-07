@@ -32,11 +32,20 @@ class VTestNeutrons {
 
         val original : String = atom.getField().toString()
 
-        atom.betaPlusDecay("NewStuff")
+                                                // beta decay converts protons into Neutrons creating new Isotopes that
+                                                // that are chemically equivalent.
 
-        val afterDecay : String = atom.getField().toString()
+        atom.betaPlusDecay("NewStuff")  // The current proton value is stored in a Neutron creating a heavier Isotope
 
-        atom.betaMinusDecay()
+        val afterDecay : String = atom.getField().toString() // after decay the new value contains "NewStuff"
+
+        atom.betaMinusDecay()  // convert Neutron back into Proton and restore original values.
+                                // particles derived from Atoms are capable of creating new Isotopes of themselves
+                                // and have the ability to do rollbacks.   All Atoms and Molecules have the ability
+                                // do change and rollback at an atomic level.
+                                // They also have the ability to emit and absorb themselves over a distance (network)
+                                // and can use electron flows to do one and two-way data binding via diodes/conductors
+                                // and capacitors.
 
         val restored : String = atom.getField().toString()
 
@@ -48,7 +57,7 @@ class VTestNeutrons {
 
     private fun testMoleculeRollback() : Boolean {
         val row: AddressRow = AddressRow()
-        row.betaPlusDecay()
+        row.betaPlusDecay()     // whole records (Molecules and Compounds) can convert all their Atoms into Isotopes
         row.print()
 
 
@@ -58,7 +67,8 @@ class VTestNeutrons {
         row.state.setContent("state2")
         row.print()
 
-        row.betaMinusDecay()
+        row.betaMinusDecay()    // and can be rolled back as a complete record by decaying their neutrons and restoring
+                                // their original Proton values.
         row.print()
 
 

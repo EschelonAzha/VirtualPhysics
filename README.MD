@@ -18,8 +18,9 @@ Virtual Physics provides a universal set of building blocks, just like the funda
 ## Get Started:
 
 * **Download the library**
+* **Explore code examples:**  documentation/SampleCode.MD
 * **Dive into our detailed documentation:** coming soon.
-* **Explore code examples:**  coming soon.
+
 * **Join the discussion on our forum:**  coming soon.
 * **Watch our video tutorials on our Physics Monastery website:**  coming soon.
 

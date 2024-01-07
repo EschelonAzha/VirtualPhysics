@@ -30,18 +30,24 @@ class VTestElectronics {
         return true
     }
     private fun testDiodes() : Boolean {
-        val atom1: Atom = Resistor(ATOM1)
+
+
+        val atom1: Atom = Resistor(ATOM1)  //Resistor extends Atom and resists changes
         val atom2: Atom = Atom(ATOM2)
         val atom3: Atom = Atom(ATOM3)
 
-        atom1.diode_(atom2).diode(atom3)
+        atom1.diode_(atom2).diode(atom3)  // diodes act like one-way data-binding.  Note atom1 is a resistor
 
-        val pair1 : TauAntiTauPair = atom3.setContent(ATOM3NEW)
-        val pair2 : TauAntiTauPair = atom1.setContent(ATOM1NEW)
+        val pair1 : TauAntiTauPair = atom3.setContent(ATOM3NEW) // New value being set
+        val pair2 : TauAntiTauPair = atom1.setContent(ATOM1NEW) // New value being set
+                                                                // Tau contains the new Value
+                                                                // AntiTau contains previous value
+                                                                // TauAntiTauPair returns success/fail and
+                                                                // reason for rejection if fail
 
-        val accepted    : Boolean    = pair2.isAccepted()
-        val reason      : String     = pair2.getReason()
-        val reasonCode  : Int        = pair2.getReasonCode()
+        val accepted    : Boolean    = pair2.isAccepted()       // check if value change is accepted
+        val reason      : String     = pair2.getReason()        // get reason if failed
+        val reasonCode  : Int        = pair2.getReasonCode()    // get reason code
 
         if (accepted)
             return false
@@ -54,7 +60,7 @@ class VTestElectronics {
         val atom2Val1 = atom2.getField().toString()
         val atom3Val1 = atom3.getField().toString()
 
-        if (atom1Val1!=ATOM1)  // change was rejected by City
+        if (atom1Val1!=ATOM1)
             return false
         if (atom2Val1!=ATOM3NEW)
             return false
@@ -86,8 +92,9 @@ class VTestElectronics {
         val atom2: Atom = Atom(ATOM2)
         val atom3: Atom = Atom(ATOM3)
 
-        atom1.conductor_(atom2).conductor(atom3)
-
+        atom1.conductor_(atom2).conductor(atom3)    // Conductors are the equivalent of two-way data binding
+                                                    // Diodes control electrical flow to one way flow, conductors
+                                                    // can flow both directions
         val pair : TauAntiTauPair = atom1.setContent(ATOM1NEW)
 
         val atom1Val1 = atom1.getField().toString()

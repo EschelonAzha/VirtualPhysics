@@ -25,13 +25,18 @@ class VTestEmissions {
     private fun testEmissions() : Boolean {
         val atom : Atom = Atom(ATOM1)
         val city : Atom = Resistor(CITY)
+                                                // Particles don't need JSON or XML to serialize themselves
+                                                // and don't need 3rd party parsers such as GSON, or Jackson
 
-        val atomEmission = atom.emit()
-        val (atomClone, atomRemainder) = Absorber.materialize(atomEmission)
+        val atomEmission = atom.emit()  // Simply emit the particle to a super condensed photon emission
+        val (atomClone, atomRemainder) = Absorber.materialize(atomEmission) // reabsorb it and make an
+                                                                                           // Identical clone
 
-        val cityEmission = city.emit()
-        val (cityClone, cityRemainder) = Absorber.materialize(cityEmission)
-
+                                                // JSON loses class information and requires parsing and reconstruction
+                                                // of the class hierarchy
+        val cityEmission = city.emit()  // Photon emission and absorption is built in and reconstructs
+        val (cityClone, cityRemainder) = Absorber.materialize(cityEmission) // identical clones
+                                                                                           // with no extra steps
         if ((cityClone as Atom).getField().toString() != city.getField().toString())
             return false
 
