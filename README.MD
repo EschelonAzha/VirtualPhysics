@@ -104,14 +104,16 @@ val atom3: Atom = Atom("ATOM3")
 // if any atomic value changes they all will change
 
 and here is a code snippet to demonstrate diodes (one-way data-binding)
-atom1.diode(atom2).diode(atom3)
+
+**atom1.diode(atom2).diode(atom3)**
 
 // if atom2 changes, so will atom1 which is downstream from atom2
 // atom3 will remain unchanged
 // however if atom 3 changes, all three will change
 // furthermore, if we then added
 
-atom1.diode(atom2).diode(atom3).diode(atom1)
+**atom1.diode(atom2).diode(atom3).diode(atom1)**
+
 // This becomes a circular circuit and any change
 // in one atom will change all.  Also note this will not
 // cause an infinite loop.   It will execute as expected
