@@ -17,7 +17,7 @@ Virtual Physics provides a universal set of building blocks, just like the funda
 
 # Virtual Physics Superpowers:
 
-## Effortless Data Transmission
+# Effortless Data Transmission
 
 Virtual Physics reimagines data transmission by drawing inspiration from the fundamental laws of physics. It introduces a unique approach that eliminates the need for traditional serialization formats like JSON or XML, resulting in efficient and precise data exchange.
 
@@ -63,11 +63,11 @@ val addressRecClone = clone as AddressRec
 Virtual Physics offers a powerful and innovative approach to data transmission, inspired by the laws of nature. Embrace these superpowers to streamline data exchange in your applications.
 
 
-## Virtual Physics Data Binding: Simplifying the Complex with Atomic Power
+# Virtual Physics Data Binding: Simplifying the Complex with Atomic Power
 
 From a user's perspective, Virtual Physics works its magic at the atomic level. You don't need to delve into the intricate interactions of subatomic particles to harness the power packed within each "Atom." These fundamental building blocks of data, like their real-world counterparts, possess an innate ability to bind together. This opens up a universe of possibilities – a world of effortless data binding built right into the atoms themselves.
 
-**Connecting the Dots: Circuits of Data Flow**
+## Connecting the Dots: Circuits of Data Flow
 
 Imagine virtual electrons seamlessly weaving data connections between Atoms. Just like their real-world counterparts, these connections come in different flavors:
 
@@ -77,7 +77,7 @@ Imagine virtual electrons seamlessly weaving data connections between Atoms. Jus
 
 Think of a Capacitor as a watchful gatekeeper, alerting an Atom when its bound partner experiences a "voltage spike" in its value. This allows the Atom to react without directly receiving the new value, opening up possibilities for sophisticated conditional responses.
 
-**The Power of Simplicity**
+## The Power of Simplicity
 
 This "atomic" approach to data binding offers several advantages:
 
@@ -87,7 +87,7 @@ This "atomic" approach to data binding offers several advantages:
 
 Virtual Physics Data Binding empowers you to build dynamic, responsive applications with intuitive ease. Unleash the power of the atom and watch your data dance!
 
-**Conductors in Action: A Code Example**
+## Conductors in Action: A Code Example
 
 To illustrate this atomic ballet in action, let's examine a code snippet that demonstrates two-way data binding using conductors:
 
@@ -128,7 +128,7 @@ All Atoms and Molecules at any time can be converted into new isotopes that stor
 Neutrons.  Yes it makes the atom heavier as in the real world, but it also gives all atoms the capability to
 do built in rollbacks at any time.
 
-**Key Concepts:**
+### Key Concepts:
 
 * **Beta Decay:**
 Mimics the natural process of converting protons into neutrons, creating new isotopes.
