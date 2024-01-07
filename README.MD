@@ -115,10 +115,8 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
 
 ### atom1.diode(atom2).diode(atom3).diode(atom1)
 
-// if any value changes all values will change in order
-
-// Note:  This will not cause an infinite loop  
-
+// if any value changes all values will change in order and this will not create an infinite loop
+ 
 
 # Beta Decay in Virtual Physics: Unlocking Data Rollback using Isotopes
 
