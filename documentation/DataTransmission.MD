@@ -17,7 +17,7 @@ Virtual Physics reimagines data transmission by drawing inspiration from the fun
 
 ## Advantages
 
-- **Compact Size:** Photon strings are often 10% smaller than JSON.
+- **Compact Size:** Photon strings are often 90% smaller than JSON.
 - **Lossless Transmission:** No class information is lost.
 - **No External Dependencies:** Eliminates the need for third-party serialization libraries.
 - **Ease of Use:** Serialization and deserialization require only a single line of code each.
