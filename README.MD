@@ -111,7 +111,7 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
 
 // however if atom3 changes, all three will change in order
 
-// furthermore, if we created a circular dependency
+// furthermore, we can create circular dependencies:
 
 ### atom1.diode(atom2).diode(atom3).diode(atom1)
 
