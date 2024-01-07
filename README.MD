@@ -91,9 +91,11 @@ Virtual Physics Data Binding empowers you to build dynamic, responsive applicati
 
 To illustrate this atomic ballet in action, let's examine a code snippet that demonstrates two-way data binding using conductors:
 
-val atom1: Atom = Atom(ATOM1)
-val atom2: Atom = Atom(ATOM2)
-val atom3: Atom = Atom(ATOM3)
+val atom1: Atom = Atom("ATOM1")
+
+val atom2: Atom = Atom("ATOM2")
+
+val atom3: Atom = Atom("ATOM3")
 
 // Connect atom1 to atom2 and atom3, forming a synchronized circuit
 atom1.conductor(atom2).conductor(atom3)
