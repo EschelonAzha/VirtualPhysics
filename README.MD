@@ -107,17 +107,19 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
 
 **atom1.diode(atom2).diode(atom3)**
 
-// if atom2 changes, so will atom1 which is downstream from atom2
-// atom3 will remain unchanged
-// however if atom 3 changes, all three will change
-// furthermore, if we then added
+// if atom2 changes, so will atom1 which is downstream from atom2 while atom3 will remain unchanged (upstream)
+
+// however if atom3 changes, all three will change in order
+
+// furthermore, if we created a circular dependency
 
 **atom1.diode(atom2).diode(atom3).diode(atom1)**
 
-// This becomes a circular circuit and any change
-// in one atom will change all.  Also note this will not
-// cause an infinite loop.   It will execute as expected
-// in the order or the electronic circuit
+// if any value changes all values will change in order
+
+// Note:  This will not cause an infinite circular loop  
+
+// as in electronics, this will execute as expected.
 
 ## Get Started:
 
