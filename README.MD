@@ -117,9 +117,8 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
 
 // if any value changes all values will change in order
 
-// Note:  This will not cause an infinite circular loop  
+// Note:  This will not cause an infinite loop  
 
-// as in electronics, this will execute as expected.
 
 ## Beta Decay in Virtual Physics: Unlocking Data Rollback using Isotopes
 
