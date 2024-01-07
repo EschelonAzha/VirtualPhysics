@@ -8,13 +8,13 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
-class Rejector(
-    private val matter: IMatter = Matter(Rejector::class, Rejector::class),
+class Resistor(
+    private val matter: IMatter = Matter(Resistor::class, Resistor::class),
 ) : symmetrical.cosmic.physics.atomic.atoms.Atom(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(Rejector::class, Rejector::class),
+        Matter(Resistor::class, Resistor::class),
     ) init {
 
     }

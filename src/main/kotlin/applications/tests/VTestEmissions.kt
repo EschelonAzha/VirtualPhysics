@@ -1,7 +1,7 @@
 package applications.tests
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
-import applications.tests.dictionary.Rejector
+import applications.tests.dictionary.Resistor
 import symmetrical.cosmic.absorber.Absorber
 
 class VTestEmissions {
@@ -24,7 +24,7 @@ class VTestEmissions {
 
     private fun testEmissions() : Boolean {
         val atom : Atom = Atom(ATOM1)
-        val city : Atom = Rejector(CITY)
+        val city : Atom = Resistor(CITY)
 
         val atomEmission = atom.emit()
         val (atomClone, atomRemainder) = Absorber.materialize(atomEmission)
