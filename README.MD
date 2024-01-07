@@ -99,7 +99,7 @@ val atom3: Atom = Atom("ATOM3")
 
 **// Connect atom1 to atom2 and atom3, forming a synchronized circuit**
 
-atom1.conductor(atom2).conductor(atom3)
+**atom1.conductor(atom2).conductor(atom3)**
 
 //if any atomic value changes they all will change
 
