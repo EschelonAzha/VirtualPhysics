@@ -17,7 +17,7 @@ Virtual Physics provides a universal set of building blocks, just like the funda
 
 # Virtual Physics Superpowers:
 
-# Effortless Data Transmission
+## Effortless Data Transmission
 
 Virtual Physics reimagines data transmission by drawing inspiration from the fundamental laws of physics. It introduces a unique approach that eliminates the need for traditional serialization formats like JSON or XML, resulting in efficient and precise data exchange.
 
