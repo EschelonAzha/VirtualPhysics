@@ -43,12 +43,13 @@ Virtual Physics reimagines data transmission by drawing inspiration from the fun
 
 ## Code Example
 
-val addressRec = AddressRec()       // inherits from Compound
-val emission  = addressRec.emit()   // emit() on first machine
+// Machine 1
+val addressRec = AddressRec()       
+val emission  = addressRec.emit()   
 
-// Transmit the photon emission to second machine .......
+// ... Transmit the photon emission....
 
-
+// Machine 2
 val (clone, _) = Absorber.materialize(emission)   // re-absorb photon emissions to reconstruct exact replica
 val addressRecClone = clone as AddressRec         // clone is an exact replica of original object
 
