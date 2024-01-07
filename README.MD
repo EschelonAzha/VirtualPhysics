@@ -87,7 +87,31 @@ This "atomic" approach to data binding offers several advantages:
 
 Virtual Physics Data Binding empowers you to build dynamic, responsive applications with intuitive ease. Unleash the power of the atom and watch your data dance!
 
+**Conductors in Action: A Code Example**
+To illustrate this atomic ballet in action, let's examine a code snippet that demonstrates two-way data binding using conductors:
 
+val atom1: Atom = Atom(ATOM1)
+val atom2: Atom = Atom(ATOM2)
+val atom3: Atom = Atom(ATOM3)
+
+// Connect atom1 to atom2 and atom3, forming a synchronized circuit
+atom1.conductor(atom2).conductor(atom3)
+
+//if any atomic value changes they all will change
+
+and here is a code snippet to demonstrate diodes (one-way databinding)
+atom1.diode(atom2).diode(atom3)
+
+// if atom2 changes, so will atom1 which is downstream from atom2
+// atom3 will remain unchanged
+// however if atom 3 changes, all three will change
+// furthermore, if we then added
+
+atom1.diode(atom2).diode(atom3).diode(atom1)
+// This becomes a circular circuit and any change
+// in one atom will change all.  Also note this will not
+// cause an infinite loop.   It will execute as expected
+// in the order or the electronic circuit
 
 ## Get Started:
 
