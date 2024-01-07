@@ -67,7 +67,6 @@ Virtual Physics offers a powerful and innovative approach to data transmission, 
 ## Get Started:
 
 * **Download the library**
-* **Read Documentation in /documentation folder: :**  coming soon
 * **Dive into our detailed documentation:** coming soon.
 
 * **Join the discussion on our forum:**  coming soon.
