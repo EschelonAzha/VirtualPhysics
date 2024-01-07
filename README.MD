@@ -121,6 +121,22 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
 
 // as in electronics, this will execute as expected.
 
+
+----
+## Beta Decay in Virtual Physics: Unlocking Data Rollback using Isotopes
+
+Virtual Physics draws inspiration from nuclear physics to introduce a powerful concept: beta decay. This mechanism enables flexible data manipulation and rollback capabilities within Atoms and Molecules.
+
+**Key Concepts:**
+
+* **Beta Decay:**
+Mimics the natural process of converting protons into neutrons, creating new isotopes.
+Serves as a mechanism for storing previous values and enabling rollbacks.
+* **Isotopes:**
+Chemically equivalent Atoms with different numbers of neutrons, representing different states of data.
+
+
+----
 ## Get Started:
 
 * **Download the library**
