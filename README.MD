@@ -67,7 +67,7 @@ Virtual Physics offers a powerful and innovative approach to data transmission, 
 
 From a user's perspective, Virtual Physics works its magic at the atomic level. You don't need to delve into the intricate interactions of subatomic particles to harness the power packed within each "Atom." These fundamental building blocks of data, like their real-world counterparts, possess an innate ability to bind together. This opens up a universe of possibilities – a world of effortless data binding built right into the atoms themselves.
 
-** Connecting the Dots: Circuits of Data Flow **
+**Connecting the Dots: Circuits of Data Flow**
 
 Imagine virtual electrons seamlessly weaving data connections between Atoms. Just like their real-world counterparts, these connections come in different flavors:
 
