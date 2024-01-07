@@ -121,11 +121,12 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
 
 // as in electronics, this will execute as expected.
 
-
-----
 ## Beta Decay in Virtual Physics: Unlocking Data Rollback using Isotopes
 
-Virtual Physics draws inspiration from nuclear physics to introduce a powerful concept: beta decay. This mechanism enables flexible data manipulation and rollback capabilities within Atoms and Molecules.
+Virtual Physics draws inspiration from nuclear physics to introduce a powerful concept called beta decay. This mechanism enables flexible data manipulation and rollback capabilities within Atoms and Molecules.
+All Atoms and Molecules at any time can be converted into new isotopes that store their previous values in 
+Neutrons.  Yes it makes the atom heavier as in the real world, but it also gives all atoms the capability to
+do built in rollbacks at any time.
 
 **Key Concepts:**
 
@@ -135,8 +136,15 @@ Serves as a mechanism for storing previous values and enabling rollbacks.
 * **Isotopes:**
 Chemically equivalent Atoms with different numbers of neutrons, representing different states of data.
 
+**Sample Code**
 
-----
+val atom = Atom("InitialValue")
+atom.betaPlusDecay("new value") // Atom now has a new value
+atom.betaMinusDecay()           // Atom rolled back to its original value "InitialValue"
+
+**This functionality is built in to all Atoms, Compounds, and Molecules**
+
+
 ## Get Started:
 
 * **Download the library**
