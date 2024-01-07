@@ -15,9 +15,9 @@ Virtual Physics provides a universal set of building blocks, just like the funda
 * **Intuitive understanding:** Learn the language of Virtual Physics, and complex concepts become natural and familiar.
 * **Universal foundation:** Create diverse software architectures from a single set of core principles.
 
-# --- Virtual Physics Superpowers---
+# Virtual Physics Superpowers:
 
-   # Effortless Data Transmission
+# Effortless Data Transmission
 
 Virtual Physics reimagines data transmission by drawing inspiration from the fundamental laws of physics. It introduces a unique approach that eliminates the need for traditional serialization formats like JSON or XML, resulting in efficient and precise data exchange.
 
