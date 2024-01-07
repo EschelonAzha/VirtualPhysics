@@ -135,7 +135,7 @@ Serves as a mechanism for storing previous values and enabling rollbacks.
 * **Isotopes:**
 Chemically equivalent Atoms with different numbers of neutrons, representing different states of data.
 
-**Sample Code**
+### Sample Code
 
 val atom = Atom("InitialValue")
 atom.betaPlusDecay("new value") // Atom now has a new value
