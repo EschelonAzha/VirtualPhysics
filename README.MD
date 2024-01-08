@@ -155,5 +155,5 @@ atom.betaMinusDecay()           // Atom rolled back to its original value "Initi
 
 ## Virtual Physics. Unleash the engineer within.
 
-**Visit www.PhysicsMonastery.net to learn more.**
+**Visit www.PhysicsMonastery.earth to learn more.**
 
