@@ -16,6 +16,13 @@ class VTestChemistry {
     }
 
     fun test() : Boolean {
+        if (!testCatalyst()) {
+            println("VTestChemistry::testCatalyst FAILED!!!!!!!!!!!!!!!!!!!!")
+            return false
+        }
+        return true
+    }
+    private fun testCatalyst() : Boolean {
         val result = Filter(polymer)
             .where(Name("name2"))
             .where(City("city2"))
