@@ -18,10 +18,9 @@ class VTestChemistry {
     fun test() : Boolean {
         val result = Filter(polymer)
             .where(Name("name2"))
-         //   .where(City("city2"))
+            .where(City("city2"))
             .activate() as Polymer
 
-
-        return true
+        return result.size() == 1
     }
 }
