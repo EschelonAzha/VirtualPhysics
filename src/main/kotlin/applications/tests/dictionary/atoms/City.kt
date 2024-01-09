@@ -1,9 +1,9 @@
-package applications.tests.dictionary
+package applications.tests.dictionary.atoms
 
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 
-class State : Atom {
+class City : Atom {
     constructor(content:String) {
         Quark.value(this).setWavelength(content)
     }

@@ -1,7 +1,7 @@
 package applications.tests
 
 
-import applications.tests.dictionary.AddressRow
+import applications.tests.dictionary.composites.AddressRow
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 
 class VTestNeutrons {

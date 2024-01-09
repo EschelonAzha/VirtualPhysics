@@ -2,7 +2,7 @@ package applications.tests
 
 import symmetrical.cosmic.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic.physics.atomic.atoms.Atom
-import applications.tests.dictionary.Resistor
+import applications.tests.dictionary.atoms.Resistor
 
 class VTestElectronics {
     val ATOM1:String = "Atom1"

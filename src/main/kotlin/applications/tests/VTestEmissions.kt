@@ -1,7 +1,7 @@
 package applications.tests
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
-import applications.tests.dictionary.Resistor
+import applications.tests.dictionary.atoms.Resistor
 import symmetrical.cosmic.absorber.Absorber
 
 class VTestEmissions {
