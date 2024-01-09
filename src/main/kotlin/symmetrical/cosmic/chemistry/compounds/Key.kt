@@ -23,16 +23,16 @@ import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
-class DbKey(
-    private val matter: IMatter = Matter(DbKey::class, DbKey::class),
+class Key(
+    private val matter: IMatter = Matter(Key::class, Key::class),
 ) : Compound(),
     IMatter by matter
 {
     constructor() : this(
-        Matter(DbKey::class, DbKey::class),
+        Matter(Key::class, Key::class),
     )
 
-    fun addKey(atom: Atom) : DbKey {
+    fun addKey(atom: Atom) : Key {
         add(atom)
         return this;
     }

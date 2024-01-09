@@ -19,6 +19,7 @@ package symmetrical.cosmic.physics.atomic.bonds.covalent
  */
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
@@ -28,7 +29,7 @@ https://en.wikipedia.org/wiki/Diatomic_molecule
  */
 open class Diatomic(
     private val matter: IMatter = Matter(Diatomic::class, Diatomic::class),
-) : Molecular(),
+) : Compound(),
     IMatter by matter
 {
     constructor() : this(
