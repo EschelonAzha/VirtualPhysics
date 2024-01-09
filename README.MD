@@ -159,11 +159,11 @@ Rows morph into molecules, data fields become atoms and queries become catalytic
 * Code Example:
 
 Kotlin
-class VTestChemistry {
-private val polymer = Polymer()
 
-    init {  // Add rows to polymers (natures repeating molecular structure) 
+    class VTestChemistry {
+        private val polymer = Polymer()
 
+    init { // Add rows to polymers (natures repeating molecular structure)
         polymer.bind(AddressRow("name1", "address1", "city1", "state1"))
         polymer.bind(AddressRow("name2", "address1", "city1", "state1"))
         polymer.bind(AddressRow("name2", "address1", "city2", "state1"))
