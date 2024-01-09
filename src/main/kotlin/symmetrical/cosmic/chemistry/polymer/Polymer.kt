@@ -18,6 +18,7 @@ package symmetrical.cosmic.chemistry.polymer
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import symmetrical.cosmic.chemistry.monomer.IMonomer
 import symmetrical.cosmic.chemistry.monomer.Monomer
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
@@ -54,6 +55,12 @@ open class Polymer(
         return remainder
     }
 
+    fun bind(monomer: IMonomer) : IMonomer {
+        this.add(monomer)
+        monomer.setPolymer(this)
+        return monomer
+    }
+
     override fun emit() : Photon {
         return Photon(radiate())
     }
@@ -62,9 +69,10 @@ open class Polymer(
         return matter.getClassId()
     }
 
-    fun bind(monomer: Monomer) : Polymer {
-        return this
+    fun getMonomer(pos:Int) : IMonomer {
+        return get(pos) as IMonomer
     }
+
 
     private fun radiate() : String {
         return matter.getClassId()+

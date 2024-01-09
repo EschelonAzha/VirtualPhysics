@@ -8,13 +8,15 @@ import symmetrical.cosmic.chemistry.monomer.IMonomer
 import symmetrical.cosmic.chemistry.monomer.Monomer
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
-class AddressRow(monomer: Monomer=Monomer()) : Compound(), IMonomer by monomer {
-    public var name    : Name       = add(Name      ("name"))       as Name
-    public var address : Address    = add(Address   ("address"))    as Address
-    public var city    : City       = add(City      ("city"))       as City
-    public var state   : State      = add(State     ("state"))      as State
+class AddressRow(name:String, address:String, city:String, state:String,  private val monomer: Monomer=Monomer()) : Compound(), IMonomer by monomer {
+    public var name    : Name       = add(Name      (name))       as Name
+    public var address : Address    = add(Address   (address))    as Address
+    public var city    : City       = add(City      (city))       as City
+    public var state   : State      = add(State     (state))      as State
 
-    constructor() : this(Monomer())
+    constructor(name:String, address:String, city:String, state:String) : this(name, address, city, state, Monomer()) {
+        monomer.setSelf(this)
+    }
 
     fun print() : Unit {
         println(name.getContent())

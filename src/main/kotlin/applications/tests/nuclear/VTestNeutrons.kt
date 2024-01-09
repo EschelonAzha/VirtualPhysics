@@ -1,4 +1,4 @@
-package applications.tests
+package applications.tests.nuclear
 
 
 import applications.tests.dictionary.composites.AddressRow
@@ -56,7 +56,7 @@ class VTestNeutrons {
     }
 
     private fun testMoleculeRollback() : Boolean {
-        val row: AddressRow = AddressRow()
+        val row: AddressRow = AddressRow("name", "address", "city", "state")
         row.betaPlusDecay()     // whole records (Molecules and Compounds) can convert all their Atoms into Isotopes
         row.print()
 

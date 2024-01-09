@@ -1,4 +1,4 @@
-package applications.tests
+package applications.tests.radiation
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import applications.tests.dictionary.atoms.Resistor

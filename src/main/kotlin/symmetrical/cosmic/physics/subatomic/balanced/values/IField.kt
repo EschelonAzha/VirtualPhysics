@@ -26,6 +26,8 @@ interface IField {
     fun asDouble()              : Double?
     fun asInt()                 : Int?
     fun asString()              : String?
+
+    fun equals(field:Field)     : Boolean
     fun getContent()            : Any?
     fun getType()               : String
 

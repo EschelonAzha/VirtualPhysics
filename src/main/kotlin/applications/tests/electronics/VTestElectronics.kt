@@ -1,4 +1,4 @@
-package applications.tests
+package applications.tests.electronics
 
 import symmetrical.cosmic.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic.physics.atomic.atoms.Atom

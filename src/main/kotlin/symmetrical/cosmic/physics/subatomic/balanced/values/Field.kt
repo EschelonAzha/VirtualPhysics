@@ -64,6 +64,13 @@ class Field : IField {
     override fun asString() : String? {
         return Converter(this).asString()
     }
+
+
+    override fun equals(field:Field) : Boolean {
+        if (type != field.type)
+            return false
+        return content == field.getContent()
+    }
     override fun getType() : String {
         return type
     }

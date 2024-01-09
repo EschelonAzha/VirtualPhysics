@@ -35,11 +35,11 @@ https://en.wikipedia.org/wiki/Molecule
  */
 open class Molecular(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecular::class, Molecular::class),
-    private var particleBeam: ParticleBeam = ParticleBeam(),
+    private var _particleBeam: ParticleBeam = ParticleBeam(),
 
-    ) : symmetrical.cosmic.physics.atomic.atoms.Atom(),
+    ) : Atom(),
     IMatterAntiMatter by matterAntiMatter,
-    IParticleBeam by particleBeam,
+    IParticleBeam by _particleBeam,
     IParticle
 {
     constructor() : this(
@@ -51,7 +51,7 @@ open class Molecular(
     }
 
     open fun i() : Molecular {
-        particleBeam.i()
+        _particleBeam.i()
         return this
     }
 
@@ -60,7 +60,7 @@ open class Molecular(
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
-        remainder = this.particleBeam.absorb(remainder)
+        remainder = this._particleBeam.absorb(remainder)
         shrink()
         return remainder
     }
@@ -120,6 +120,9 @@ open class Molecular(
 //        return -1
 //    }
 
+    open fun getAtom(pos:Int) : Atom {
+        return get(pos) as Atom
+    }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
@@ -144,6 +147,6 @@ open class Molecular(
 
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()+
-                particleBeam.emit().radiate()
+                _particleBeam.emit().radiate()
     }
 }

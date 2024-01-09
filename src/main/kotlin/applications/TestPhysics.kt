@@ -1,8 +1,9 @@
 package applications
 
-import applications.tests.VTestElectronics
-import applications.tests.VTestEmissions
-import applications.tests.VTestNeutrons
+import applications.tests.chemistry.VTestChemistry
+import applications.tests.electronics.VTestElectronics
+import applications.tests.radiation.VTestEmissions
+import applications.tests.nuclear.VTestNeutrons
 import symmetrical.cosmic.absorber.Absorber
 
 object TestPhysics {
@@ -16,6 +17,7 @@ object TestPhysics {
         VTestElectronics().test()
         VTestEmissions().test()
         VTestNeutrons().test()
+        VTestChemistry().test()
     }
 
 }

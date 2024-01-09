@@ -1,4 +1,4 @@
-package symmetrical.cosmic.chemistry.monomer
+package symmetrical.cosmic.chemistry.catalysts
 /*
  * This file is part of Virtual Physics.
  *
@@ -17,12 +17,35 @@ package symmetrical.cosmic.chemistry.monomer
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import symmetrical.cosmic.chemistry.catalysts.Catalyst
+import symmetrical.cosmic.chemistry.monomer.IMonomer
+import symmetrical.cosmic.chemistry.monomer.Monomer
 import symmetrical.cosmic.chemistry.polymer.Polymer
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
-interface IMonomer {
-    fun setPolymer(polymer: Polymer) : IMonomer
-    fun setSelf   (compound: Compound) : IMonomer
-    fun filter    (catalyst: Catalyst) : Boolean
+open class Filter : Catalyst {
+    constructor(polymer: Polymer) : super(polymer){
+
+    }
+
+    fun where(atom: Atom) : Filter {
+        add(atom)
+        return this
+    }
+
+    override fun activate() : Compound {
+        val result:Polymer = Polymer()
+        for (i in 0 until getPolymer().size()) {
+            val monomer: IMonomer = getPolymer().getMonomer(i)
+            if (monomer.filter(this))
+                result.bind(monomer)
+        }
+        result.shrink()
+        return result
+    }
+
+
+    private fun getPolymer() : Polymer {
+        return getCompound() as Polymer
+    }
 }

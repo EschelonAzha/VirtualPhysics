@@ -33,7 +33,7 @@ import symmetrical.cosmic.physics.atomic.matter.Material
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 import symmetrical.cosmic.physics.atomic.substance.molecules.Molecule
 
-class Compounds : ClassGroup {
+open class Compounds : ClassGroup {
     constructor() {
         add(EntityId(Base52.classId(), Alloy::class))
         add(EntityId(Base52.classId(), Atom::class))
