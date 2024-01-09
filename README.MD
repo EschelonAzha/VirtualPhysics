@@ -143,7 +143,7 @@ atom.betaMinusDecay()           // Atom rolled back to its original value "Initi
 
 **This functionality is built in to all Atoms, Compounds, and Molecules**
 
-## Building Blocks of Insight: Data's Chemical Revolution ##
+# Building Blocks of Insight: Data's Chemical Revolution #
 
 Rows morph into molecules, data fields become atoms and queries become catalytic filters, extracting insights with the precision of a chemist.
 
