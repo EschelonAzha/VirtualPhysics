@@ -182,7 +182,7 @@ private val polymer = Polymer()
 
 **// Filter acts as a "catalytic function", extracting specific data.**
 
-**// All other applied data-binding circuits and rollback capability still exist in the result.**
+**// All other applied data-binding circuits and rollback capability still exist in the result set.**
 
 
 ## Get Started:
