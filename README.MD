@@ -179,7 +179,9 @@ private val polymer = Polymer()
 }
 
 // This sample builds a Polymer chain using AddressRow "molecules".
+
 // Filter acts as a "catalytic function", extracting specific data.
+
 // All other applied data-binding circuits and rollback capability still exist in the result.
 
 
