@@ -196,11 +196,11 @@ Kotlin
 
 * **Review Documentation and UML diagrams:**
     The UML diagrams will help you gain a comprehensive understanding of the intricate relationship between programming and physics.  Many class files include Wikipedia links, allowing you to explore particle details and observe how their patterns are interpreted and implemented in the programs.
-* 
+
 * **Dive into our detailed documentation:** coming soon.
 
 * **Join the discussion on our forum:**  Available Now.
-* 
+
 * **Watch our video tutorials on our Physics Monastery website:**  coming soon.
 
 
