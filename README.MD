@@ -199,7 +199,8 @@ Kotlin
 * 
 * **Dive into our detailed documentation:** coming soon.
 
-* **Join the discussion on our forum:**  coming soon.
+* **Join the discussion on our forum:**  Available Now.
+* 
 * **Watch our video tutorials on our Physics Monastery website:**  coming soon.
 
 
