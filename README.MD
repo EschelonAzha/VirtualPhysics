@@ -188,6 +188,9 @@ Kotlin
 ## Get Started:
 
 * **Download the library**
+* **Review Documentation and UML diagrams:**
+    The UML diagrams will help you gain a comprehensive understanding of the intricate relationship between programming and physics.  Many class files include Wikipedia links, allowing you to explore particle details and observe how their patterns are interpreted and implemented in programming.
+* 
 * **Dive into our detailed documentation:** coming soon.
 
 * **Join the discussion on our forum:**  coming soon.
