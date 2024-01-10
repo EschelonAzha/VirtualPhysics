@@ -44,8 +44,9 @@ class Resistor(
         return matter.getClassId()
     }
     private fun radiate() : String {
-        return matter.getClassId()+
-                super.emit().radiate();
+        val classId = matter.getClassId()
+        val atom = super.emit().radiate()
+        return classId+atom
     }
 
 

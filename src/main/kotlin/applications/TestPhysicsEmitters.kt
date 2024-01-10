@@ -1,6 +1,7 @@
 package applications
 
-import applications.tests.dictionary.atoms.Resistor
+import applications.tests.dictionary.atoms.*
+import applications.tests.dictionary.composites.AddressRow
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
@@ -22,7 +23,12 @@ class TestPhysicsEmitters : ClassGroup {
     // that is all that is needed!
 
     constructor() {
-        add(EntityId(Base52.classId(), Resistor::class))  // <-- Add to list
+        add(EntityId(Base52.classId(), Address::class))  // <-- Add to list
+        add(EntityId(Base52.classId(), AddressRow::class))
+        add(EntityId(Base52.classId(), City::class))
+        add(EntityId(Base52.classId(), Name::class))
+        add(EntityId(Base52.classId(), Resistor::class))
+        add(EntityId(Base52.classId(), State::class))
 
     }
 }

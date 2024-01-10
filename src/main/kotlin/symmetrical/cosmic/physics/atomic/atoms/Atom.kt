@@ -103,8 +103,9 @@ open class Atom(
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
-        remainder = _nucleons.absorb(remainder)
         remainder = orbitals.absorb(remainder)
+        remainder = _nucleons.absorb(remainder)
+
 
         setAtom(this)
         return remainder
@@ -212,8 +213,9 @@ open class Atom(
         }
         val classId :String = matterAntiMatter.getClassId()
         val particle:String = super.emit().radiate()
-        val nucleons:String = _nucleons.emit().radiate()
         val orbitals:String = orbitals.emit().radiate()
-        return classId+particle+nucleons+orbitals
+        val nucleons:String = _nucleons.emit().radiate()
+
+        return classId+particle+orbitals+nucleons
     }
 }

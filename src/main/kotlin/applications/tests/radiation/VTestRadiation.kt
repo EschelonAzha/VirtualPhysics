@@ -2,9 +2,10 @@ package applications.tests.radiation
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import applications.tests.dictionary.atoms.Resistor
+import applications.tests.dictionary.composites.AddressRow
 import symmetrical.cosmic.absorber.Absorber
 
-class VTestEmissions {
+class VTestRadiation {
     val ATOM1:String = "!!!!!!!!!!!!!!!"
     val CITY :String = "???????????????"
 
@@ -14,6 +15,11 @@ class VTestEmissions {
     }
 
     fun test() : Boolean {
+
+        if (!testAddressEmission()) {
+            println("VTestEmissions::testAddressEmission FAILED!!!!!!!!!!!!!!!!!!!!")
+            return false
+        }
         if (!testEmissions()) {
             println("VTestEmissions::testEmissions FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
@@ -22,6 +28,19 @@ class VTestEmissions {
         return true
     }
 
+    private fun testAddressEmission() : Boolean {
+        val address = AddressRow("Bob", "main st", "New York", "NY")
+        val emission = address.emit()
+
+        val (clone, _) = Absorber.materialize(emission)
+
+        val restored = clone as AddressRow
+
+        val clonedName = restored.getName().getContent()
+        val originalName = address.getName().getContent()
+        return clonedName == originalName
+
+    }
     private fun testEmissions() : Boolean {
         val atom : Atom = Atom(ATOM1)
         val city : Atom = Resistor(CITY)

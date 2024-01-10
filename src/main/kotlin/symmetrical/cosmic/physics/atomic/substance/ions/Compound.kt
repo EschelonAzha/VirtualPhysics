@@ -61,7 +61,8 @@ open class Compound(
         return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        return matterAntiMatter.getClassId()+
-                super.emit().radiate()
+        val classId = matterAntiMatter.getClassId()
+        val molecular = super.emit().radiate()
+        return classId+molecular
     }
 }
