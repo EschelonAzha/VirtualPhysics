@@ -191,7 +191,7 @@ Kotlin
 
     The quickest way to use it is to clone it, then
     open the VirtualPhysics directory using IntelliJ.   
-    Intellij has full support for Kotlin.   There is nothing to "install".
+    Intellij has full support for Kotlin.   There is nothing to "install" since VirtualPhysics has no dependencies beyond Kotlin itself and the JVM.
 
 
 * **Review Documentation and UML diagrams:**
