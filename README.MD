@@ -187,7 +187,13 @@ Kotlin
 
 ## Get Started:
 
-* **Download the library**
+* **Download the library**:
+
+    The quickest way to use it is to clone it, then
+    open the VirtualPhysics directory using IntelliJ.   
+    Intellij has full support for Kotlin.   There is nothing to "install".
+
+
 * **Review Documentation and UML diagrams:**
     The UML diagrams will help you gain a comprehensive understanding of the intricate relationship between programming and physics.  Many class files include Wikipedia links, allowing you to explore particle details and observe how their patterns are interpreted and implemented in the programs.
 * 
