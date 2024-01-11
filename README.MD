@@ -120,7 +120,7 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
  
 **Note:** 
 
-An underscore after the diode_,  **atom1.diode_(atom2)** means the atom on the right will be returned as the target for the next diode.
+An underscore after the diode_ ,  **atom1.diode_(atom2)** means the atom on the right will be returned as the target for the next diode.
 
 An underscore before the _diode,  **atom1._diode(atom2)** means the atom (atom1) on the left will be returned as the target for the next diode.
 
