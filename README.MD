@@ -99,13 +99,13 @@ val atom3: Atom = Atom("ATOM3")
 
 // Connect atom1 to atom2 and atom3, forming a synchronized circuit
 
-### atom1.conductor(atom2).conductor(atom3) 
+### atom1.conductor_(atom2).conductor(atom3) 
 
 // if any atomic value changes they all will change
 
 and here is a code snippet to demonstrate diodes (one-way data-binding)
 
-### atom1.diode(atom2).diode(atom3)
+### atom1.diode_(atom2).diode(atom3)
 
 // if atom2 changes, so will atom1 which is downstream from atom2 while atom3 will remain unchanged (upstream)
 
@@ -113,10 +113,20 @@ and here is a code snippet to demonstrate diodes (one-way data-binding)
 
 **// furthermore, we can create circular dependencies:**
 
-### atom1.diode(atom2).diode(atom3).diode(atom1)
+### atom1.diode_(atom2).diode_(atom3).diode_(atom1)
 
 // if any value changes all values will change in order and this will not create an infinite loop
+//
  
+**Note:** 
+
+An underscore after the diode_ **atom1.diode_(atom2)** means the atom on the right will be returned as the target for the next diode.
+
+An underscore before the _diode **atom1._diode(atom2)** means the atom (atom1) on the left will be returned as the target for the next diode.
+
+Effectively, the _ points to the argument that will be returned next.  This allows diodes to be chained in sequence, or for tree shaped arrangements
+
+**atom1._diode(atom2).diode(atom3)**  // atom2 and atom3 BOTH connect to Atom1
 
 # Beta Decay in Virtual Physics: Unlocking Data Rollback using Isotopes
 
