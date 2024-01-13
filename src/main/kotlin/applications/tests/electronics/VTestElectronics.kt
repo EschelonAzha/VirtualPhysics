@@ -1,5 +1,6 @@
 package applications.tests.electronics
 
+import applications.tests.dictionary.atoms.Capacitor
 import symmetrical.cosmic.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import applications.tests.dictionary.atoms.Resistor
@@ -24,6 +25,10 @@ class VTestElectronics {
         }
         if (!testConductors()) {
             println("VTestElectronics::testConductors FAILED!!!!!!!!!!!!!!!!!!!!")
+            return false
+        }
+        if (!testCapacitor()) {
+            println("VTestElectronics::testCapacitor FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
         }
 
@@ -118,6 +123,17 @@ class VTestElectronics {
         if (antiLepton != ATOM1) {
             return false
         }
+
+        return true
+    }
+
+    private fun testCapacitor() : Boolean {
+        val receiver: Capacitor = Capacitor("Me")
+        val atom     : Atom      = Atom("Hello")
+
+        receiver.capacitor(atom)
+
+        atom.setContent("GoodBye")
 
         return true
     }
