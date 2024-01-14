@@ -211,7 +211,7 @@ Kotlin
 
 * **Join the discussion on our forum:**  Available Now.
 
-* **Watch our video tutorials on our Physics Monastery website:**  
+* **Watch our video tutorials:**  
       Intro to Virtual Physics:   https://www.youtube.com/watch?v=0u_rUdT7cTg&t=99s
 
 
