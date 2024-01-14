@@ -218,5 +218,4 @@ Kotlin
 
 ## Virtual Physics. Unleash the engineer within.
 
-**Visit www.PhysicsMonastery.earth to learn more.**
 
