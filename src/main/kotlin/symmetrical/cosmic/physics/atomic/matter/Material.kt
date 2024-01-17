@@ -24,14 +24,14 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Material
  */
 class Material(
-    private val matter: IMatter = Matter(Material::class, Material::class),
+    private val matterAntiMatter: IMatter = Matter(Material::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Material::class, Material::class),
+        Matter(Material::class),
     )
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

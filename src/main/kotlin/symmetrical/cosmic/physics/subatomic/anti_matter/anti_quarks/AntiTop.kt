@@ -26,15 +26,15 @@ https://en.wikipedia.org/wiki/TopQuark
 */
 
 class AntiTop(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiTop::class, Top::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiTop::class),
 ) : AntiQuark(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiTop::class, Top::class),
+        AntiMatter(AntiTop::class),
     )
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

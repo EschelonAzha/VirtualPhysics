@@ -30,20 +30,20 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 
 open class AntiQuark(
-    private val antiMatter: IAntiMatter = AntiMatter(Quark::class, AntiQuark::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(Quark::class),
 ) : Particle(),
-    IAntiMatter by antiMatter,
+    IAntiMatter by matterAntiMatter,
     IEmitter
 {
     constructor() : this(
-        AntiMatter(Quark::class, AntiQuark::class),
+        AntiMatter(Quark::class),
     )
 
 
     private var gluon       : Gluon = Red_AntiRed()
 
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matterAntiMatter.check(photon);
         this.gluon                                 = Red_AntiRed()  // this is need for JS Bug
 
         var remainder = photon.propagate()
@@ -55,10 +55,10 @@ open class AntiQuark(
         return Photon(radiate())
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 

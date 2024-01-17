@@ -26,12 +26,12 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 
 open class QString(
-    private val matter: IMatter = Matter(QString::class, QString::class),
+    private val matterAntiMatter: IMatter = Matter(QString::class),
 ) : Atom(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(QString::class, QString::class),
+        Matter(QString::class),
     )   init {
         setString("")
     }
@@ -40,7 +40,7 @@ open class QString(
         setString(value)
     }
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon)
+        matterAntiMatter.check(photon)
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
@@ -50,7 +50,7 @@ open class QString(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun setString(value:String) : QString {
 
@@ -58,7 +58,7 @@ open class QString(
         return this
     }
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

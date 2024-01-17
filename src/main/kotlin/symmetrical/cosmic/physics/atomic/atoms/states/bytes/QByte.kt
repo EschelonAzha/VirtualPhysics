@@ -24,18 +24,18 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 class QByte(
-    private val matter: IMatter = Matter(QByte::class, QByte::class),
+    private val matterAntiMatter: IMatter = Matter(QByte::class),
 ) : Atom(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(QByte::class, QByte::class),
+        Matter(QByte::class),
     ) init {
         setByte(" ".toByte())
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun setByte(value:Byte) : QByte {
         Quark.value(this).setWavelength(value)

@@ -28,13 +28,13 @@ import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 https://en.wikipedia.org/wiki/Chemical_compound
  */
 open class Compound(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Compound::class, Compound::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Compound::class),
 ) : Molecular(),
     IMatterAntiMatter by matterAntiMatter,
     Ionic
 {
     constructor() : this(
-        MatterAntiMatter(Compound::class, Compound::class),
+        MatterAntiMatter(Compound::class),
     )
     object Static {
         const val LAST      : Int = -1

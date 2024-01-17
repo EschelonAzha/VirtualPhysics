@@ -24,15 +24,15 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Solution_(chemistry)
  */
 class Solution(
-    private val matter: IMatter = Matter(Solution::class, Solution::class),
+    private val matterAntiMatter: IMatter = Matter(Solution::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Solution::class, Solution::class),
+        Matter(Solution::class),
     )
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

@@ -7,12 +7,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class State(
-    private val matter: IMatter,
+    private val matterAntiMatter: IMatter,
 ) : Atom(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(State::class, State::class),
+        Matter(State::class),
     )   init {
     Quark.value(this).setWavelength("")
 }
@@ -22,7 +22,7 @@ class State(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon)
+        matterAntiMatter.check(photon)
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
@@ -32,11 +32,11 @@ class State(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
-        val classId = matter.getClassId()
+        val classId = matterAntiMatter.getClassId()
         val atom = super.emit().radiate()
         return classId+atom
     }

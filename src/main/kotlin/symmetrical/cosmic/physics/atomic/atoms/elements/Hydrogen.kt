@@ -26,12 +26,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Hydrogen
  */
 class Hydrogen(
-    private val matter: IMatter = Matter(Hydrogen::class, AntiHydrogen::class),
+    private val matterAntiMatter: IMatter = Matter(Hydrogen::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Hydrogen::class, AntiHydrogen::class),
+        Matter(Hydrogen::class),
     )
 
 
@@ -48,6 +48,6 @@ class Hydrogen(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

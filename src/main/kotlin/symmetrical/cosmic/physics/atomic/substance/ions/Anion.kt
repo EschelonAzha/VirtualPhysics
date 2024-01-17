@@ -24,15 +24,15 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Ion#Anions_and_cations
  */
 class Anion(
-    private val matter: IMatter = Matter(Anion::class, Anion::class),
+    private val matterAntiMatter: IMatter = Matter(Anion::class),
 ) : Ion(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Anion::class, Anion::class),
+        Matter(Anion::class),
     )
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     // Negative charge
 }

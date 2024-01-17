@@ -32,12 +32,12 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class BetaMinus(
-    private val matter: IMatter = Matter(BetaMinus::class, AntiBetaMinus::class),
+    private val matterAntiMatter: IMatter = Matter(BetaMinus::class),
 ) : LeptonPair(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(BetaMinus::class, AntiBetaMinus::class),
+        Matter(BetaMinus::class),
     )
     fun decay(baryon: Baryon) : Up {
         var down      : Down = baryon.get(1) as Down
@@ -57,7 +57,7 @@ class BetaMinus(
         return _antiLepton as AntiNeutrino
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun getElectron() : Electron {
         return _lepton as Electron

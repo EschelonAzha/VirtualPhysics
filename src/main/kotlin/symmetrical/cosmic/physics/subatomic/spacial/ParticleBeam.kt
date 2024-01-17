@@ -33,7 +33,7 @@ import kotlin.reflect.KClass
 https://en.wikipedia.org/wiki/Particle_beam
  */
 open class ParticleBeam(
-    private   val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
+    private   val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(ParticleBeam::class),
     protected val _beam            : Beam = Beam()
 ) : Particle(),
     IMatterAntiMatter by matterAntiMatter,
@@ -42,7 +42,7 @@ open class ParticleBeam(
     IEmitter
 {
     constructor() : this(
-        MatterAntiMatter(ParticleBeam::class, ParticleBeam::class),
+        MatterAntiMatter(ParticleBeam::class),
         Beam()
     )
     init {

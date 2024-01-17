@@ -24,17 +24,17 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Mixture
  */
 class Mixture(
-    private val matter: IMatter = Matter(Mixture::class, Mixture::class),
+    private val matterAntiMatter: IMatter = Matter(Mixture::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Mixture::class, Mixture::class),
+        Matter(Mixture::class),
     )
     // mixtures may be regular classes with all kinds of things
     // mixed together that are other classes but not Atoms or Molecules
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

@@ -29,12 +29,12 @@ import symmetrical.cosmic.physics.subatomic.spacial.IParticleBeam
 https://en.wikipedia.org/wiki/Pair_production
  */
 open class LeptonPair(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(LeptonPair::class, LeptonPair::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(LeptonPair::class),
 ) : Particle(),
     IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        MatterAntiMatter(LeptonPair::class, LeptonPair::class),
+        MatterAntiMatter(LeptonPair::class),
     )
 
     companion object {

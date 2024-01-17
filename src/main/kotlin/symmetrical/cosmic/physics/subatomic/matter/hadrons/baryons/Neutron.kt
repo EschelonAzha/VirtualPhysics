@@ -28,12 +28,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Neutron
 */
 open class Neutron(
-    private val matter: IMatter = Matter(Neutron::class, AntiNeutron::class),
+    private val matterAntiMatter: IMatter = Matter(Neutron::class),
 ) : Baryon(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Neutron::class, AntiNeutron::class),
+        Matter(Neutron::class),
     ) init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -45,7 +45,7 @@ open class Neutron(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -56,7 +56,7 @@ open class Neutron(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun setNeutrons(neutrons: Neutrons) : Neutron {
@@ -65,7 +65,7 @@ open class Neutron(
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

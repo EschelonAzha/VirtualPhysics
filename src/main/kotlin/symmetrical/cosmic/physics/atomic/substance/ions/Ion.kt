@@ -24,15 +24,15 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Ion
  */
 open class Ion(
-    private val matter: IMatter = Matter(Ion::class, Ion::class),
+    private val matterAntiMatter: IMatter = Matter(Ion::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
 
     constructor() : this(
-        Matter(Ion::class, Ion::class),
+        Matter(Ion::class),
     )
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

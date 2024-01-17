@@ -25,12 +25,12 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Muon
 https://en.wikipedia.org/wiki/Muon
  */
 open class AntiMuon(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiMuon::class, Muon::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiMuon::class),
 ) : AntiLepton(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiMuon::class, Muon::class),
+        AntiMatter(AntiMuon::class),
     )
 
 
@@ -39,6 +39,6 @@ open class AntiMuon(
         return this
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

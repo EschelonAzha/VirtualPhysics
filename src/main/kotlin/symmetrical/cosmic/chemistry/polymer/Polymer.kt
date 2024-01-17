@@ -30,12 +30,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Diatomic_molecule
  */
 open class Polymer(
-    private val matter: IMatter = Matter(Polymer::class, Polymer::class),
+    private val matterAntiMatter: IMatter = Matter(Polymer::class),
 ) : Compound(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Polymer::class, Polymer::class),
+        Matter(Polymer::class),
     )
     object Static {
         const val LAST      : Int = -1
@@ -48,7 +48,7 @@ open class Polymer(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -66,7 +66,7 @@ open class Polymer(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun getMonomer(pos:Int) : IMonomer {
@@ -75,7 +75,7 @@ open class Polymer(
 
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

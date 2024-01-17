@@ -43,7 +43,7 @@ https://en.wikipedia.org/wiki/Atom
  */
 
 open class Atom(
-    private   val matterAntiMatter  : IMatterAntiMatter = MatterAntiMatter(Atom::class, Atom::class),
+    private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter(Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var _nucleons         : Nucleons              = Nucleons()
 
@@ -62,7 +62,7 @@ open class Atom(
         fun content(atom: Atom, kClass: KClass<*>) : Any? {
             return Companion.content(atom.getProton(kClass))
         }
-        fun content(proton: symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton) : Any? {
+        fun content(proton: Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
@@ -83,7 +83,7 @@ open class Atom(
         }
     }
     constructor() : this(
-        MatterAntiMatter(Atom::class, Atom::class),
+        MatterAntiMatter(Atom::class),
         Orbitals(),
         Nucleons()
 

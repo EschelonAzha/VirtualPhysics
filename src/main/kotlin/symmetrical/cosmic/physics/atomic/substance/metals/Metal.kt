@@ -24,15 +24,15 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Metal
  */
 class Metal(
-    private val matter: IMatter = Matter(Metal::class, Metal::class),
+    private val matterAntiMatter: IMatter = Matter(Metal::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
 
     constructor() : this(
-        Matter(Metal::class, Metal::class),
+        Matter(Metal::class),
     )
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

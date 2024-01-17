@@ -37,13 +37,13 @@ import kotlin.reflect.KClass
 
 
 open class Quark(
-    private val matter: IMatter = Matter(Quark::class, AntiQuark::class),
+    private val matterAntiMatter: IMatter = Matter(Quark::class),
 ) : Particle(),
-    IMatter by matter,
+    IMatter by matterAntiMatter,
     IEmitter
 {
     constructor() : this(
-        Matter(Quark::class, AntiQuark::class),
+        Matter(Quark::class),
     ) {
         this.gluon         = Red_AntiRed()
     }
@@ -74,7 +74,7 @@ open class Quark(
         return this
     }
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
         this.gluon              = Red_AntiRed()  // this is need for JS Bug
 
         var remainder : Photon = photon.propagate()
@@ -90,7 +90,7 @@ open class Quark(
         return p_baryon
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     class Args(val value:Any?) : ZBoson()
 
@@ -170,7 +170,7 @@ open class Quark(
             println("Quark")
         }
 
-        val classId  : String = matter.getClassId()
+        val classId  : String = matterAntiMatter.getClassId()
         val particle : String = super.emit().radiate()
         return classId+particle
     }

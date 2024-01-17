@@ -37,14 +37,14 @@ https://en.wikipedia.org/wiki/Particle
  */
 
 open class Particle(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class, AntiParticle::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Particle::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
     IParticle,
     IEmitter
 {
     constructor() : this(
-        MatterAntiMatter(Particle::class, AntiParticle::class),
+        MatterAntiMatter(Particle::class),
     ) {
         time.setContent(200)
     }

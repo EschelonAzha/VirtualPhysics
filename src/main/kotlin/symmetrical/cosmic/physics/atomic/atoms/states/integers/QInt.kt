@@ -26,19 +26,19 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 // Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
-    private val matter: IMatter = Matter(QInt::class, QInt::class),
+    private val matterAntiMatter: IMatter = Matter(QInt::class),
 ) : Atom(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
 
     constructor() : this(
-        Matter(QInt::class, QInt::class),
+        Matter(QInt::class),
     )   init {
         setInt(0)
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun setInt(value:Int) : QInt {
         Quark.value(this).setWavelength(value)

@@ -30,13 +30,13 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Hadron
  */
 open class Hadron(
-    private val matter: IMatter = Matter(Hadron::class, AntiHadron::class),
+    private val matterAntiMatter: IMatter = Matter(Hadron::class),
 ) : ParticleBeam(),
-    IMatter by matter,
+    IMatter by matterAntiMatter,
     IEmitter
 {
     constructor() : this(
-        Matter(Hadron::class, AntiHadron::class),
+        Matter(Hadron::class),
     )
 
 
@@ -49,7 +49,7 @@ open class Hadron(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -62,14 +62,14 @@ open class Hadron(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Hadron")
         }
-        val classId      : String = matter.getClassId()
+        val classId      : String = matterAntiMatter.getClassId()
         val particleBeam : String = super.emit().radiate()
         return classId+particleBeam
     }

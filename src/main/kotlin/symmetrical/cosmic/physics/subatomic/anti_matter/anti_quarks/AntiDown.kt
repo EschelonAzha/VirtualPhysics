@@ -25,15 +25,15 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 https://en.wikipedia.org/wiki/DownQuark
  */
 class AntiDown(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiDown::class, Down::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiDown::class),
 ) : AntiQuark(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiDown::class, Down::class),
+        AntiMatter(AntiDown::class),
     )
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

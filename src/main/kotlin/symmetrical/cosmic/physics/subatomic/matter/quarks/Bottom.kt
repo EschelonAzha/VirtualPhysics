@@ -26,12 +26,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/BottomQuark
  */
 class Bottom(
-    private val matter: IMatter = Matter(Bottom::class, AntiBottom::class),
+    private val matterAntiMatter: IMatter = Matter(Bottom::class),
 ) : Quark(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Bottom::class, AntiBottom::class),
+        Matter(Bottom::class),
     )
     init {
 
@@ -50,11 +50,11 @@ class Bottom(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

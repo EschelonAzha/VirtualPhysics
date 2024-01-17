@@ -28,12 +28,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Diatomic_molecule
  */
 open class Diatomic(
-    private val matter: IMatter = Matter(Diatomic::class, Diatomic::class),
+    private val matterAntiMatter: IMatter = Matter(Diatomic::class),
 ) : Compound(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Diatomic::class, Diatomic::class),
+        Matter(Diatomic::class),
     )
     object Static {
         const val LAST      : Int = -1
@@ -46,7 +46,7 @@ open class Diatomic(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -58,11 +58,11 @@ open class Diatomic(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

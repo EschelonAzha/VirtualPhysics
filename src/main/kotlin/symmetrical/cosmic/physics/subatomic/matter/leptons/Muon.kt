@@ -25,12 +25,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Muon
  */
 class Muon(
-    private val matter: IMatter = Matter(Muon::class, AntiMuon::class),
+    private val matterAntiMatter: IMatter = Matter(Muon::class),
 ) : Lepton(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Muon::class, AntiMuon::class),
+        Matter(Muon::class),
     )
     init {
     }
@@ -40,7 +40,7 @@ class Muon(
         return this
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
 }

@@ -31,13 +31,13 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Lepton
  */
 open class Lepton(
-    private val matter: IMatter = Matter(Lepton::class, AntiLepton::class),
+    private val matterAntiMatter: IMatter = Matter(Lepton::class),
 ) : Particle(),
-    IMatter by matter,
+    IMatter by matterAntiMatter,
     IEmitter
 {
     constructor() : this(
-        Matter(Lepton::class, AntiLepton::class),
+        Matter(Lepton::class),
     )
 
     open fun i() : Lepton {
@@ -45,7 +45,7 @@ open class Lepton(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -57,7 +57,7 @@ open class Lepton(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
 //    fun getValue() : Any? {
@@ -65,10 +65,10 @@ open class Lepton(
 //        return wavelength.wavelength()
 //    }
     override fun getIlluminations() : IParticleBeam {
-        return matter.getIlluminations()
+        return matterAntiMatter.getIlluminations()
     }
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 

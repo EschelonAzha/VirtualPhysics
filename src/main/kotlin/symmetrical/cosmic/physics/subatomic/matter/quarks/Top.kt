@@ -26,12 +26,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/TopQuark
  */
 class Top(
-    private val matter: IMatter = Matter(Top::class, AntiTop::class),
+    private val matterAntiMatter: IMatter = Matter(Top::class),
 ) : Quark(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Top::class, AntiTop::class),
+        Matter(Top::class),
     )
     init {
     }
@@ -49,11 +49,11 @@ class Top(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

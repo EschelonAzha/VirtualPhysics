@@ -29,13 +29,13 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 https://en.wikipedia.org/wiki/Pion
  */
 open class MinusPion (
-    private val matter: IMatter = Matter(MinusPion::class, AntiMinusPion::class),
+    private val matterAntiMatter: IMatter = Matter(MinusPion::class),
 ) : Hadron(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
 
     constructor() : this(
-        Matter(MinusPion::class, AntiMinusPion::class),
+        Matter(MinusPion::class),
     ) init {
         super.i(2);
         this.set(0, Down())
@@ -43,7 +43,7 @@ open class MinusPion (
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 //    fun decay() : ElectronPositron {
 //        return ElectronPositron().decay(this)

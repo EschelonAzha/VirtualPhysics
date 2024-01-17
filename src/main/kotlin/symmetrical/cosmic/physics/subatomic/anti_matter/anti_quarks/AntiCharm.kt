@@ -25,16 +25,16 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Charm
 https://en.wikipedia.org/wiki/CharmQuark
  */
 class AntiCharm (
-    private val antiMatter: IAntiMatter = AntiMatter(AntiCharm::class, Charm::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiCharm::class),
 ) : AntiQuark(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiCharm::class, Charm::class),
+        AntiMatter(AntiCharm::class),
     )
 
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

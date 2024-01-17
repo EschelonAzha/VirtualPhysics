@@ -24,12 +24,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Composition(
-    private val matter: IMatter = Matter(Composition::class, Composition::class),
+    private val matterAntiMatter: IMatter = Matter(Composition::class),
 ) : ParticleBeam(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Composition::class, Composition::class),
+        Matter(Composition::class),
     )
 
     object Static {
@@ -52,7 +52,7 @@ open class Composition(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun getFirst() : IParticle {
         return get(Static.FIRST) as IParticle
@@ -62,6 +62,6 @@ open class Composition(
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+super.emit().radiate()
+        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
 }

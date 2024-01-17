@@ -25,19 +25,19 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Monad(
-    private val matter: IMatter = Matter(Monad::class, Monad::class),
-) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
-    IMatter by matter,
+    private val matterAntiMatter: IMatter = Matter(Monad::class),
+) : Particle(),
+    IMatter by matterAntiMatter,
     IEmitter
 {
     constructor() : this(
-        Matter(Monad::class, Monad::class),
+        Matter(Monad::class),
     )
     fun i() : Monad {
         return this
     }
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -49,11 +49,11 @@ open class Monad(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

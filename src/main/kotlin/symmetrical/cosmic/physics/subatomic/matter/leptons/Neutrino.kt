@@ -27,12 +27,12 @@ https://en.wikipedia.org/wiki/Neutrino
  */
 
 class Neutrino(
-    private val matter: IMatter = Matter(Neutrino::class, AntiNeutrino::class),
+    private val matterAntiMatter: IMatter = Matter(Neutrino::class),
 ) : Lepton(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Neutrino::class, AntiNeutrino::class),
+        Matter(Neutrino::class),
     )
     init {
 
@@ -44,7 +44,7 @@ class Neutrino(
 
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
 //    fun getOrigin(): Particle? {

@@ -37,7 +37,7 @@ https://en.wikipedia.org/wiki/Nucleon
  */
 
 class Nucleons(
-    private val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(Nucleons::class, Nucleons::class),
+    private val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(Nucleons::class),
     private var _protons         : Protons  = Protons(),
     private var neutrons         : Neutrons = Neutrons(),
 
@@ -50,7 +50,7 @@ class Nucleons(
 {
 
     constructor() : this(
-        MatterAntiMatter(Nucleons::class, Nucleons::class),
+        MatterAntiMatter(Nucleons::class),
         Protons(),
         Neutrons()
     )   init {

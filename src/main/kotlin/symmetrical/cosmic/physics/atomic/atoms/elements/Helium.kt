@@ -26,12 +26,12 @@ https://en.wikipedia.org/wiki/Helium
  */
 
 class Helium(
-    private val matter: IMatter = Matter(Helium::class, AntiHelium::class),
+    private val matterAntiMatter: IMatter = Matter(Helium::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Helium::class, AntiHelium::class),
+        Matter(Helium::class),
     )
 
 
@@ -45,6 +45,6 @@ class Helium(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

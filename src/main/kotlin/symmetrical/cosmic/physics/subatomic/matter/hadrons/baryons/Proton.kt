@@ -38,13 +38,13 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Proton
  */
 open class Proton(
-    private val matter: IMatter = Matter(Proton::class, AntiProton::class),
+    private val matterAntiMatter: IMatter = Matter(Proton::class),
 ) : Baryon(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     var _quark:Quark
     constructor() : this(
-        Matter(Proton::class, AntiProton::class),
+        Matter(Proton::class),
     ) init {
         _quark = this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -72,7 +72,7 @@ open class Proton(
     }
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         clear()
         var remainder = photon.propagate()
@@ -101,12 +101,12 @@ open class Proton(
     }
 
     override fun emit() : Photon {
-        val classId = matter.getClassId()
+        val classId = matterAntiMatter.getClassId()
         return Photon(radiate())
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun getConstraintsQuark() : Up {
         return get(Proton.QuarkType.CONSTRAINTS.value) as Up
@@ -195,7 +195,7 @@ open class Proton(
             println("Proton")
         }
 
-        val classId : String = matter.getClassId()
+        val classId : String = matterAntiMatter.getClassId()
         val baryon  : String = super.emit().radiate()
         return classId+baryon
     }

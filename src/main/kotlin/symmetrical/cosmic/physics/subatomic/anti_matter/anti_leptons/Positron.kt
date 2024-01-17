@@ -25,12 +25,12 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Positron
  */
 class Positron (
-    private val antiMatter: IAntiMatter = AntiMatter(Positron::class, Electron::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(Positron::class),
 ) : AntiLepton(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(Positron::class, Electron::class),
+        AntiMatter(Positron::class),
     )
 
     override fun i() : Positron {
@@ -38,7 +38,7 @@ class Positron (
         return this
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
 }

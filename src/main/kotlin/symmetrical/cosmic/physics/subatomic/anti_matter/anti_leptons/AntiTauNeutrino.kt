@@ -25,12 +25,12 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.TauNeutrino
 https://en.wikipedia.org/wiki/TauNeutrino
  */
 class AntiTauNeutrino  (
-    private val antiMatter: IAntiMatter = AntiMatter(AntiTauNeutrino::class, TauNeutrino::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiTauNeutrino::class),
 ) : AntiLepton(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiTauNeutrino::class, TauNeutrino::class),
+        AntiMatter(AntiTauNeutrino::class),
     )
 
 
@@ -40,6 +40,6 @@ class AntiTauNeutrino  (
         return this
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

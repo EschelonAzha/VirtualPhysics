@@ -31,13 +31,11 @@ open class MatterAntiMatter: IMatterAntiMatter {
         public val beam: ParticleBeam = ParticleBeam()
     }
 
-    private var positive   : KClass<*>
-    private var negative   : KClass<*>
+    private var kClass   : KClass<*>
 
-    constructor(positive: KClass<*>, negative: KClass<*>) {
-        this.positive = positive
-        this.negative = negative;
 
+    constructor(kClass: KClass<*>) {
+        this.kClass = kClass
     }
     override fun annihilate() : Photon {
         return Photon()
@@ -52,7 +50,7 @@ open class MatterAntiMatter: IMatterAntiMatter {
         return;
     }
     override fun getClassId() : String {
-        return Absorber.getClassId(this.positive)
+        return Absorber.getClassId(this.kClass)
     }
     override fun getIlluminations() : IParticleBeam {
         return Illuminations.beam

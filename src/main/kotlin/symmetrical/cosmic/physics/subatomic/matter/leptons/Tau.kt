@@ -27,12 +27,12 @@ https://en.wikipedia.org/wiki/Tau
  */
 
 class Tau(
-    private val matter: IMatter = Matter(Tau::class, AntiTau::class),
+    private val matterAntiMatter: IMatter = Matter(Tau::class),
 ) : Lepton(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Tau::class, AntiTau::class),
+        Matter(Tau::class),
     )
     init {
 
@@ -46,7 +46,7 @@ class Tau(
         return this
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
 }

@@ -26,12 +26,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/CharmQuark
  */
 class Charm(
-    private val matter: IMatter = Matter(Charm::class, AntiCharm::class),
+    private val matterAntiMatter: IMatter = Matter(Charm::class),
 ) : Quark(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Charm::class, AntiCharm::class),
+        Matter(Charm::class),
     )
     init {
     }
@@ -49,11 +49,11 @@ class Charm(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

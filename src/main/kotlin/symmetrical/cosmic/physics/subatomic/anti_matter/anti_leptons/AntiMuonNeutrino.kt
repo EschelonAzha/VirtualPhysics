@@ -25,12 +25,12 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.MuonNeutrino
 https://en.wikipedia.org/wiki/MuonNeutrino
  */
 class AntiMuonNeutrino(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiMuonNeutrino::class, MuonNeutrino::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiMuonNeutrino::class),
 ) : AntiLepton(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiMuonNeutrino::class, MuonNeutrino::class),
+        AntiMatter(AntiMuonNeutrino::class),
     )
 
     override fun i() : AntiMuonNeutrino {
@@ -38,6 +38,6 @@ class AntiMuonNeutrino(
         return this
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

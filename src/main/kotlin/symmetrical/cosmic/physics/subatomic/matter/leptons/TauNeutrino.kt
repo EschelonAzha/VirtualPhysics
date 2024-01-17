@@ -25,12 +25,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/TauNeutrino
  */
 class TauNeutrino(
-    private val matter: IMatter = Matter(TauNeutrino::class, AntiTauNeutrino::class),
+    private val matterAntiMatter: IMatter = Matter(TauNeutrino::class),
 ) : Lepton(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(TauNeutrino::class, AntiTauNeutrino::class),
+        Matter(TauNeutrino::class),
     )
     init {
     }
@@ -39,7 +39,7 @@ class TauNeutrino(
         return this
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
 }

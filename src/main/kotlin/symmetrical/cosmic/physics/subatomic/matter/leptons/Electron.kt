@@ -34,12 +34,12 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 https://en.wikipedia.org/wiki/Electron
  */
 class Electron(
-    private val matter: IMatter = Matter(Electron::class, Positron::class),
+    private val matterAntiMatter: IMatter = Matter(Electron::class),
 ) : Lepton(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Electron::class, Positron::class),
+        Matter(Electron::class),
     )
     init {
     }
@@ -53,7 +53,7 @@ class Electron(
         return this
     }
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
@@ -77,7 +77,7 @@ class Electron(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun ionicBond(you: Electron) : Electron {
@@ -92,7 +92,7 @@ class Electron(
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
     fun setProton(proton: Proton) : Electron {

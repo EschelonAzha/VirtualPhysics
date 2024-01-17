@@ -35,14 +35,14 @@ import kotlin.reflect.KClass
 https://en.wikipedia.org/wiki/Proton
  */
 class Protons(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Protons::class, Protons::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Protons::class),
 ) : ParticleBeam(),
     IMatterAntiMatter by matterAntiMatter,
     IProtons
 {
     val _valueProton: Proton
     constructor() : this(
-        MatterAntiMatter(Protons::class, Protons::class),
+        MatterAntiMatter(Protons::class),
     )    init {
         _valueProton = add(ValueProton().setProtons(this)) as ValueProton
     }

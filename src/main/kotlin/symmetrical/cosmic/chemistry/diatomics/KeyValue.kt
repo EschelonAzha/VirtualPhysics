@@ -25,9 +25,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class KeyValue(
-    private val matter: IMatter = Matter(KeyValue::class, KeyValue::class),
+    private val matterAntiMatter: IMatter = Matter(KeyValue::class),
 ) : Diatomic(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
 
     object Static {
@@ -37,7 +37,7 @@ open class KeyValue(
         const val LAST      : Int = VALUE
     }
     constructor() : this(
-        Matter(KeyValue::class, KeyValue::class),
+        Matter(KeyValue::class),
     )
     constructor(key: Atom, value: Atom) : this(){
         add(key)
@@ -47,7 +47,7 @@ open class KeyValue(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -59,7 +59,7 @@ open class KeyValue(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun getKey() : Atom? {
@@ -73,7 +73,7 @@ open class KeyValue(
         return null
     }
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

@@ -25,16 +25,16 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Up
 https://en.wikipedia.org/wiki/UpQuark
  */
 class AntiUp(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiUp::class, Up::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiUp::class),
 ) : AntiQuark(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiUp::class, Up::class),
+        AntiMatter(AntiUp::class),
     )
 
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

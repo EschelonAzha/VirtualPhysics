@@ -33,12 +33,12 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Pair_production
  */
 class TauAntiTauPair(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(TauAntiTauPair::class),
 ) : LeptonPair(),
     IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        MatterAntiMatter(TauAntiTauPair::class, TauAntiTauPair::class),
+        MatterAntiMatter(TauAntiTauPair::class),
     ) init {
         setAccepted(true)
         setReason("")

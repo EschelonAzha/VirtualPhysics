@@ -24,12 +24,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class Key(
-    private val matter: IMatter = Matter(Key::class, Key::class),
+    private val matterAntiMatter: IMatter = Matter(Key::class),
 ) : Compound(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Key::class, Key::class),
+        Matter(Key::class),
     )
 
     fun addKey(atom: Atom) : Key {
@@ -37,6 +37,6 @@ class Key(
         return this;
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

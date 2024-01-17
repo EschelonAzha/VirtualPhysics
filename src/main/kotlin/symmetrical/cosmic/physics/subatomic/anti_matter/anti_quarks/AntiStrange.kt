@@ -25,15 +25,15 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Strange
 https://en.wikipedia.org/wiki/StrangeQuark
  */
 class AntiStrange(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiStrange::class, Strange::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiStrange::class),
 ) : AntiQuark(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiStrange::class, Strange::class),
+        AntiMatter(AntiStrange::class),
     )
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

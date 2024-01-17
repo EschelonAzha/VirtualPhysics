@@ -33,12 +33,12 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class AntiBetaPlus(
-    private val antiMatter: AntiMatter = AntiMatter(AntiBetaPlus::class, BetaPlus::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiBetaPlus::class),
 ) : LeptonPair(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiBetaPlus::class, BetaPlus::class),
+        AntiMatter(AntiBetaPlus::class),
     )
 
 
@@ -66,7 +66,7 @@ class AntiBetaPlus(
         return Down()
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun getNeutrino() : Neutrino {
         return _lepton as Neutrino

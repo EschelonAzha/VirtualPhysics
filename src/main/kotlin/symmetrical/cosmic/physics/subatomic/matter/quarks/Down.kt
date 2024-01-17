@@ -30,12 +30,12 @@ https://en.wikipedia.org/wiki/DownQuark
  */
 
 class Down(
-    private val matter: IMatter = Matter(Down::class, AntiDown::class),
+    private val matterAntiMatter: IMatter = Matter(Down::class),
 ) : Quark(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Down::class, AntiDown::class),
+        Matter(Down::class),
     )
     init {
     }
@@ -65,7 +65,7 @@ class Down(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
 
@@ -73,7 +73,7 @@ class Down(
         if (Particle.Static.debuggingOn) {
             println("Down")
         }
-        val classId : String = matter.getClassId()
+        val classId : String = matterAntiMatter.getClassId()
         val quark   : String = super.emit().radiate()
         return classId+quark
 

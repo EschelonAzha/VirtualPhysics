@@ -27,12 +27,12 @@ https://en.wikipedia.org/wiki/Tau
  */
 
 class AntiTau(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiTau::class, Tau::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiTau::class),
 ) : AntiLepton(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiTau::class, Tau::class),
+        AntiMatter(AntiTau::class),
     )
     constructor(oldValue : Field) : this() {
         getWavelength().setField(oldValue)
@@ -44,6 +44,6 @@ class AntiTau(
         return this
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

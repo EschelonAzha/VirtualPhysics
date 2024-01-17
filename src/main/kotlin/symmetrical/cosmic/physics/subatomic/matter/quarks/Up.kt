@@ -28,12 +28,12 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 https://en.wikipedia.org/wiki/UpQuark
  */
 class Up(
-    private val matter: IMatter = Matter(Up::class, AntiUp::class),
+    private val matterAntiMatter: IMatter = Matter(Up::class),
 ) : Quark(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Up::class, AntiUp::class),
+        Matter(Up::class),
     )
     init {
     }
@@ -54,7 +54,7 @@ class Up(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     override fun dissipate() : Unit {
@@ -64,7 +64,7 @@ class Up(
         if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("Up")
         }
-        val classId:String = matter.getClassId()
+        val classId:String = matterAntiMatter.getClassId()
         val quark  :String = super.emit().radiate()
         return classId+quark
     }

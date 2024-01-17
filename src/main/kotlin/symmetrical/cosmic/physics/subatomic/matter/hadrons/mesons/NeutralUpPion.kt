@@ -32,14 +32,14 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 https://en.wikipedia.org/wiki/Pion
  */
 open class NeutralUpPion(
-    private val matter: IMatter = Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
+    private val matter: IMatter = Matter(NeutralUpPion::class),
 ) : Hadron(),
     IMatter by matter
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
     constructor() : this(
-        Matter(NeutralUpPion::class, AntiNeutralUpPion::class),
+        Matter(NeutralUpPion::class),
     )
     constructor(proton: Baryon, neutron: Baryon) : this() {
         super.i(2)

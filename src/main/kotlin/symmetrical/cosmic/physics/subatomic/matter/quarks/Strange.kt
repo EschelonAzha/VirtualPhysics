@@ -26,12 +26,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/StrangeQuark
  */
 class Strange(
-    private val matter: IMatter = Matter(Strange::class, AntiStrange::class),
+    private val matterAntiMatter: IMatter = Matter(Strange::class),
 ) : Quark(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Strange::class, AntiStrange::class),
+        Matter(Strange::class),
     )
     init {
     }
@@ -51,11 +51,11 @@ class Strange(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     private fun radiate() : String {
-        return matter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 }

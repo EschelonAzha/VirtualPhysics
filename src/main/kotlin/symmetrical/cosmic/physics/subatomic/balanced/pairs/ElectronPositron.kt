@@ -30,12 +30,12 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Pair_production
  */
 class ElectronPositron(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(ElectronPositron::class, ElectronPositron::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(ElectronPositron::class),
 ) : LeptonPair(),
     IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        MatterAntiMatter(ElectronPositron::class, ElectronPositron::class),
+        MatterAntiMatter(ElectronPositron::class),
     )
 
     constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {

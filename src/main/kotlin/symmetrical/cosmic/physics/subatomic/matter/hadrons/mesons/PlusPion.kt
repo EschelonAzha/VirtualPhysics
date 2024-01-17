@@ -30,14 +30,14 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 https://en.wikipedia.org/wiki/Pion
  */
 open class PlusPion(
-    private val matter: IMatter = Matter(PlusPion::class, AntiPlusPion::class),
+    private val matterAntiMatter: IMatter = Matter(PlusPion::class),
 ) : Hadron(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
     constructor() : this(
-        Matter(PlusPion::class, AntiPlusPion::class),
+        Matter(PlusPion::class),
     )    init {
         super.i(2)
         this.set(0, Up())
@@ -45,7 +45,7 @@ open class PlusPion(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 //    fun decay() : ElectronPositron<PlusPion> {
 //        return ElectronPositron<PlusPion>().decay(this)

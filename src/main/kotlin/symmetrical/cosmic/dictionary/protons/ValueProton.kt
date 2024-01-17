@@ -25,35 +25,35 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
 class ValueProton(
-    private val matter: IMatter = Matter(ValueProton::class, ValueProton::class),
+    private val matterAntiMatter: IMatter = Matter(ValueProton::class),
 ) : Proton(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(ValueProton::class, ValueProton::class),
+        Matter(ValueProton::class),
     ) init {
 
     }
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
     }
     override fun emit() : Photon {
-        val classId = matter.getClassId()
+        val classId = matterAntiMatter.getClassId()
         return Photon(radiate())
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("ValueProton")
         }
-        val classId : String = matter.getClassId()
+        val classId : String = matterAntiMatter.getClassId()
         val proton  : String = super.emit().radiate()
         return classId+proton
 

@@ -36,12 +36,12 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 https://en.wikipedia.org/wiki/Baryon
  */
 open class Baryon(
-    private val matter: IMatter = Matter(Baryon::class, AntiBaryon::class),
+    private val matterAntiMatter: IMatter = Matter(Baryon::class),
 ) : Hadron(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Baryon::class, AntiBaryon::class),
+        Matter(Baryon::class),
     )
     init {
         super.i(3)
@@ -54,7 +54,7 @@ open class Baryon(
 
 
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -97,7 +97,7 @@ open class Baryon(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun isNeutron() : Boolean {
         return (this.get(1) as Quark) is Down
@@ -173,7 +173,7 @@ open class Baryon(
         if (Particle.Static.debuggingOn) {
             println("Baryon")
         }
-        val classId:String = matter.getClassId()
+        val classId:String = matterAntiMatter.getClassId()
         val hadron :String = super.emit().radiate()
         return classId+hadron
     }

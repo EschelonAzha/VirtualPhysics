@@ -28,20 +28,20 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton
 https://en.wikipedia.org/wiki/Lepton
  */
 open class AntiLepton(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiLepton::class, Lepton::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiLepton::class),
 ) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
-    IAntiMatter by antiMatter,
+    IAntiMatter by matterAntiMatter,
     IEmitter
 {
     constructor() : this(
-        AntiMatter(AntiLepton::class, Lepton::class),
+        AntiMatter(AntiLepton::class),
     )
 
     open fun i() : AntiLepton {
         return this
     }
     override fun absorb(photon: Photon) : Photon {
-        antiMatter.check(photon);
+        matterAntiMatter.check(photon);
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
@@ -51,10 +51,10 @@ open class AntiLepton(
         return Photon(radiate())
     }
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        return antiMatter.getClassId()+
+        return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
 

@@ -29,12 +29,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Kaon
  */
 open class Kaon(
-    private val matter: IMatter = Matter(Kaon::class, AntiKaon::class),
+    private val matterAntiMatter: IMatter = Matter(Kaon::class),
 ) : Hadron(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Kaon::class, AntiKaon::class),
+        Matter(Kaon::class),
     )
 
     lateinit var antiQuark  : AntiUp
@@ -42,6 +42,6 @@ open class Kaon(
 
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

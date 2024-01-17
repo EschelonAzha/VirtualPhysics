@@ -26,15 +26,15 @@ https://en.wikipedia.org/wiki/BottomQuark
  */
 
 class AntiBottom(
-    private val antiMatter: IAntiMatter = AntiMatter(AntiBottom::class, Bottom::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiBottom::class),
 ) : AntiQuark(),
-    IAntiMatter by antiMatter
+    IAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        AntiMatter(AntiBottom::class, Bottom::class),
+        AntiMatter(AntiBottom::class),
     )
 
     override fun getClassId() : String {
-        return antiMatter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 }

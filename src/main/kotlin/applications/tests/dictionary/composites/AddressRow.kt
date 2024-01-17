@@ -40,7 +40,7 @@ class AddressRow(name:String="",
         city,
         state,
         Monomer(),
-        MatterAntiMatter(AddressRow::class, AddressRow::class),
+        MatterAntiMatter(AddressRow::class),
     ) {
         monomer.setSelf(this)
         add(Name      (name))

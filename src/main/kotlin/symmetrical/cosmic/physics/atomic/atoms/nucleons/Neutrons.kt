@@ -30,13 +30,13 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 https://en.wikipedia.org/wiki/Neutron
  */
 class Neutrons(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Neutrons::class, Neutrons::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Neutrons::class),
 ) : ParticleBeam(),
     IMatterAntiMatter by matterAntiMatter,
     INeutrons
 {
     constructor()  : this(
-        MatterAntiMatter(Neutrons::class, Neutrons::class),
+        MatterAntiMatter(Neutrons::class),
     )
 
     lateinit var p_nucleons: Nucleons

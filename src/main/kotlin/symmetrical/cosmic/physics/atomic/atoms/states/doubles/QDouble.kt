@@ -25,18 +25,18 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 
 class QDouble(
-    private val matter: IMatter = Matter(QDouble::class, QDouble::class),
+    private val matterAntiMatter: IMatter = Matter(QDouble::class),
 ) : Atom(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(QDouble::class, QDouble::class),
+        Matter(QDouble::class),
     ) init {
         setDouble(0.0)
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     override fun getElectronWavelength() : Double {
         return super.getElectronWavelength() as Double

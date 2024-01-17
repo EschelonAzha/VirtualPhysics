@@ -24,12 +24,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 
 class QBoolean(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(QBoolean::class, QBoolean::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(QBoolean::class),
 ) : Atom(),
     IMatterAntiMatter by matterAntiMatter
 {
     constructor() : this(
-        MatterAntiMatter(QBoolean::class, QBoolean::class),
+        MatterAntiMatter(QBoolean::class),
     )  init {
         setBoolean(false)
     }

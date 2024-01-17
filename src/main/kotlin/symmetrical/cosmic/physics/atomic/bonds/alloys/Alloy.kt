@@ -27,13 +27,13 @@ https://en.wikipedia.org/wiki/Alloy
 
 open class Alloy(
     val mixtures: Substance? = null,
-    private val matter: IMatter = Matter(Alloy::class, Alloy::class),
+    private val matterAntiMatter: IMatter = Matter(Alloy::class),
 ) :
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
         null,
-        Matter(Alloy::class, Alloy::class),
+        Matter(Alloy::class),
     )
     var derived = ArrayList<Substance>()
     var mixture = ArrayList<Substance>()
@@ -46,7 +46,7 @@ open class Alloy(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
 
     fun getSubstance(pos:Int) : Substance {

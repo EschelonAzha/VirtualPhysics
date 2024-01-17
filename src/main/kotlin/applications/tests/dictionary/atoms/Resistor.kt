@@ -10,12 +10,12 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 class Resistor(
-    private val matter: IMatter,
+    private val matterAntiMatter: IMatter,
 ) : Atom(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
-        Matter(Resistor::class, Resistor::class),
+        Matter(Resistor::class),
     ) init {
 
     }
@@ -30,21 +30,21 @@ class Resistor(
         return zBoson
     }
     override fun absorb(photon: Photon) : Photon {
-        matter.check(photon);
+        matterAntiMatter.check(photon);
 
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
     }
     override fun emit() : Photon {
-        val classId = matter.getClassId()
+        val classId = matterAntiMatter.getClassId()
         return Photon(radiate())
     }
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        val classId = matter.getClassId()
+        val classId = matterAntiMatter.getClassId()
         val atom = super.emit().radiate()
         return classId+atom
     }

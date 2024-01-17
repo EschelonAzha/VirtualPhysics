@@ -28,13 +28,13 @@ import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 https://en.wikipedia.org/wiki/Molecule
  */
 open class Molecule(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecule::class, Molecule::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecule::class),
 ) : Molecular(),
     IMatterAntiMatter by matterAntiMatter,
     Covalent
 {
     constructor() : this(
-        MatterAntiMatter(Molecule::class, Molecule::class),
+        MatterAntiMatter(Molecule::class),
     )
     object Static {
         const val LAST      : Int = -1
