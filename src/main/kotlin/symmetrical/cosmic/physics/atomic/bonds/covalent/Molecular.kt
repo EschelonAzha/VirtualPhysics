@@ -57,21 +57,13 @@ open class Molecular(
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
-
+        clear();
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         remainder = this._particleBeam.absorb(remainder)
         shrink()
         return remainder
     }
-//    override fun absorb(photon:Photon) : Photon {
-//        clear()
-//        val remainderAtom:Photon                        = super.absorb(Photon(photon.propagate()))
-//        val (particleBeam:Emitter, remainder:String)    = Absorber.materialize(remainderAtom.radiate())
-//        this.particleBeam                               = particleBeam as ParticleBeam
-//        shrink()
-//        return Photon(remainder)
-//    }
 
     fun applyQuarkMomentum(momentum: AngularMomentum) : Molecular {
         for (i in 0 until size()) {
@@ -111,14 +103,7 @@ open class Molecular(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-//    fun findString(value:String) : Int {
-//        for (i in 0 until size()) {
-//            val atom:Atom = get(i) as Atom
-//            if (atom.red().toString() == value)
-//                return i
-//        }
-//        return -1
-//    }
+
 
     open fun getAtom(pos:Int) : Atom {
         return get(pos) as Atom
@@ -127,14 +112,6 @@ open class Molecular(
         return matterAntiMatter.getClassId()
     }
 
-//    fun findContainsString(contains:String) : Int {
-//        for (i in 0 until size()) {
-//            val atom:Atom = get(i) as Atom
-//            if (atom.red().toString().contains(contains))
-//                return i
-//        }
-//        return -1
-//    }
 
     fun materialize(strings:List<String>) : Molecular {
         for (item in strings) {

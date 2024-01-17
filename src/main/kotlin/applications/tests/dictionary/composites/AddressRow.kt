@@ -50,7 +50,7 @@ class AddressRow(name:String="",
     }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
-        clear()
+
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
