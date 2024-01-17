@@ -8,7 +8,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class Name (
-    private val matter: IMatter = Matter(Name::class, Name::class),
+    private val matter: IMatter,
 ) : Atom(),
     IMatter by matter
 {

@@ -7,7 +7,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class City(
-    private val matter: IMatter = Matter(City::class, City::class),
+    private val matter: IMatter,
 ) : Atom(),
     IMatter by matter
 {
