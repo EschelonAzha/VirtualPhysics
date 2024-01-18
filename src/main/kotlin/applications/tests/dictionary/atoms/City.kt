@@ -14,8 +14,8 @@ class City(
     constructor() : this(
         Matter(City::class),
     )   init {
-    Quark.value(this).setWavelength("")
-}
+        setContent("", true)
+    }
 
     constructor(value:String) : this() {
         Quark.value(this).setWavelength(value)

@@ -20,7 +20,7 @@ class Resistor(
 
     }
     constructor(content:Any?) : this(){
-        Quark.value(this).setWavelength(content)
+        setContent("", true)
     }
     override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
      //   accept(valueQuark, zBoson)

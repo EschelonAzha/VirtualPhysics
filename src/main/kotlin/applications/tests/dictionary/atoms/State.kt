@@ -13,12 +13,12 @@ class State(
 {
     constructor() : this(
         Matter(State::class),
-    )   init {
-    Quark.value(this).setWavelength("")
-}
+    ) init {
+        setContent("", true)
+    }
 
     constructor(value:String) : this() {
-        Quark.value(this).setWavelength(value)
+        setContent("", true)
     }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())

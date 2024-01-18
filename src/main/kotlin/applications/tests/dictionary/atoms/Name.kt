@@ -15,11 +15,11 @@ class Name (
     constructor() : this(
         Matter(Name::class),
     )   init {
-        Quark.value(this).setWavelength("")
+            setContent("", true)
     }
 
     constructor(value:String) : this() {
-        Quark.value(this).setWavelength(value)
+        setContent("", true)
     }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())

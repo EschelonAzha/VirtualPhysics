@@ -14,11 +14,11 @@ class Address(
     constructor() : this(
         Matter(Address::class),
     )   init {
-    Quark.value(this).setWavelength("")
-}
+        setContent("", true)
+    }
 
     constructor(value:String) : this() {
-        Quark.value(this).setWavelength(value)
+        setContent("", true)
     }
 
     override fun absorb(photon: Photon) : Photon {
