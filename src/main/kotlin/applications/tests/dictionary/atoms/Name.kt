@@ -22,8 +22,7 @@ class Name (
         Quark.value(this).setWavelength(value)
     }
     override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon)
-        return super.absorb(photon.propagate())
+        return super.absorb(matterAntiMatter.check(photon).propagate())
     }
     override fun emit() : Photon {
         return Photon(radiate())
