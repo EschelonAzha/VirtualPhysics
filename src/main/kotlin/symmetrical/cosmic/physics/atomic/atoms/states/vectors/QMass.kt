@@ -26,9 +26,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 open class QMass(
-    private val matter: IMatter = Matter(QMass::class),
+    private val matterAntiMatter: IMatter = Matter(QMass::class),
 ) : Atom(),
-    IMatter by matter
+    IMatter by matterAntiMatter
 {
     constructor() : this(
         Matter(QMass::class),
@@ -38,7 +38,7 @@ open class QMass(
     }
 
     override fun getClassId() : String {
-        return matter.getClassId()
+        return matterAntiMatter.getClassId()
     }
     fun setMass(value: IBeam) : QMass {
         Quark.value(this).setWavelength(value)
