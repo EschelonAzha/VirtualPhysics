@@ -72,10 +72,6 @@ class AddressRow(name:String="",
         return get(Static.STATE) as State
     }
 
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
     fun print() : Unit {
         println(getName().getContent())
         println(getAddress().getContent())
@@ -85,7 +81,4 @@ class AddressRow(name:String="",
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
-
-
-
 }

@@ -40,9 +40,6 @@ class Resistor(
         val classId = matterAntiMatter.getClassId()
         return Photon(radiate())
     }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
