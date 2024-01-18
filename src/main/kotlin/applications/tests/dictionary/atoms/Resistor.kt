@@ -30,11 +30,8 @@ class Resistor(
         return zBoson
     }
     override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
+        matterAntiMatter.check(photon)
+        return super.absorb(photon.propagate())
     }
     override fun emit() : Photon {
         val classId = matterAntiMatter.getClassId()

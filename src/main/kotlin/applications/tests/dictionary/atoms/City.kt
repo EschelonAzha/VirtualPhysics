@@ -23,9 +23,7 @@ class City(
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon)
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
+        return super.absorb(photon.propagate())
     }
     override fun emit() : Photon {
         return Photon(radiate())
