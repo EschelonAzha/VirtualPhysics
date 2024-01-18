@@ -40,14 +40,14 @@ open class MatterAntiMatter: IMatterAntiMatter {
     override fun annihilate() : Photon {
         return Photon()
     }
-    override fun check(photon: Photon) : Unit {
+    override fun check(photon: Photon) : Photon {
         val classId = getClassId()
 
         val radiation = photon.radiate()
         if (radiation.startsWith(classId))
-            return
+            return photon
         println("Radiation Leak in: "+this::class.simpleName);
-        return;
+        return photon
     }
     override fun getClassId() : String {
         return Absorber.getClassId(this.kClass)

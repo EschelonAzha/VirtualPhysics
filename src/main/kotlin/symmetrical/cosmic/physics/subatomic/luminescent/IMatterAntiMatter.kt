@@ -25,7 +25,7 @@ https://en.wikipedia.org/wiki/Annihilation
  */
 interface IMatterAntiMatter {
     fun annihilate      ()                  : Photon
-    fun check           (photon: Photon)    : Unit
+    fun check           (photon: Photon)    : Photon
     fun getClassId      ()                  : String
     fun getIlluminations()                  : IParticleBeam
 }
