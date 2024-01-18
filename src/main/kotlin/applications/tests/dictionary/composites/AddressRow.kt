@@ -21,18 +21,7 @@ class AddressRow(name:String="",
     IMonomer by monomer,
     IMatterAntiMatter by matterAntiMatter
 {
-    object Static {
-
-        const val NAME      : Int = Compound.Static.LAST+1
-        const val ADDRESS   : Int = NAME+1
-        const val CITY      : Int = ADDRESS+1
-        const val STATE     : Int = CITY+1
-        const val LAST      : Int = STATE+1
-
-    }
-
     constructor() : this("", "","","") {
-
     }
     constructor(name:String, address:String, city:String, state:String) : this(
         name,
@@ -43,10 +32,18 @@ class AddressRow(name:String="",
         MatterAntiMatter(AddressRow::class),
     ) {
         monomer.setSelf(this)
-        add(Name      (name))
-        add(Address   (address))
-        add(City      (city))
-        add(State     (state))
+        add(Name       (name))
+        add(Address    (address))
+        add(City       (city))
+        add(State      (state))
+    }
+    object Static {
+
+        const val NAME      : Int = Compound.Static.LAST    +   1
+        const val ADDRESS   : Int = NAME                    +   1
+        const val CITY      : Int = ADDRESS                 +   1
+        const val STATE     : Int = CITY                    +   1
+        const val LAST      : Int = STATE                   +   1
     }
     fun getAddress() : Address {
         return get(Static.ADDRESS) as Address
