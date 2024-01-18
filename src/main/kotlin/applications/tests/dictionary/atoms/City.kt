@@ -27,7 +27,6 @@ class City(
     override fun emit() : Photon {
         return Photon(radiate())
     }
-
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }

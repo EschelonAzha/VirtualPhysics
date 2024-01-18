@@ -48,12 +48,6 @@ class AddressRow(name:String="",
         add(City      (city))
         add(State     (state))
     }
-    override fun absorb(photon: Photon) : Photon {
-        return super.absorb(matterAntiMatter.check(photon).propagate())
-    }
-    override fun emit() : Photon {
-        return Photon(radiate())
-    }
     fun getAddress() : Address {
         return get(Static.ADDRESS) as Address
     }
@@ -72,6 +66,12 @@ class AddressRow(name:String="",
         println(getAddress().getContent())
         println(getCity().getContent())
         println(getState().getContent())
+    }
+    override fun absorb(photon: Photon) : Photon {
+        return super.absorb(matterAntiMatter.check(photon).propagate())
+    }
+    override fun emit() : Photon {
+        return Photon(radiate())
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()

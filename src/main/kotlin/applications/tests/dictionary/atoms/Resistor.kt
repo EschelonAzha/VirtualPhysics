@@ -39,5 +39,4 @@ class Resistor(
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
-
 }
