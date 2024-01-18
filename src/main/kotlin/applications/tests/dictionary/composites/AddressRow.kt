@@ -83,10 +83,7 @@ class AddressRow(name:String="",
         println(getState().getContent())
     }
     private fun radiate() : String {
-        val classId = matterAntiMatter.getClassId()
-        val remainder = super.emit().radiate()
-        return classId+remainder
-
+        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
 
 

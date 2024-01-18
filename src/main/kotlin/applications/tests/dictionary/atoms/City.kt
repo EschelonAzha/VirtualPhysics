@@ -36,9 +36,7 @@ class City(
     }
 
     private fun radiate() : String {
-        val classId = matterAntiMatter.getClassId()
-        val atom = super.emit().radiate()
-        return classId+atom
+        return matterAntiMatter.getClassId()+super.emit().radiate()
     }
 
 }
