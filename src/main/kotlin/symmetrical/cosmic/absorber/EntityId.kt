@@ -22,19 +22,19 @@ import asymmetrical.physics.machine.vm.Classes
 import kotlin.reflect.KClass
 
 class EntityId {
-    val id:String
-    val kClass:KClass<*>
-    constructor(id:String, kClass: KClass<*>) {
-        this.id = id
-        this.kClass = kClass
+    val classId:String
+    val classType:KClass<*>
+    constructor(classId:String, classType: KClass<*>) {
+        this.classId    = classId
+        this.classType  = classType
     }
-    fun has(kClass:KClass<*>) : Boolean {
-        return this.kClass == kClass
+    fun has(classType:KClass<*>) : Boolean {
+        return this.classType == classType
     }
     fun newInstance() : Any? {
-        return Classes.createInstance(kClass)
+        return Classes.createInstance(classType)
     }
     override fun toString() : String {
-        return "["+id+":"+kClass.simpleName+"]"
+        return "["+classId+":"+classType.simpleName+"]"
     }
 }

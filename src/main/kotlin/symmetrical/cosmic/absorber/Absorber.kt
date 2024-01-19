@@ -51,11 +51,11 @@ object Absorber : IAbsorber {
         beam.addAll(group)
         return this
     }
-    override fun createInstance(id:String) : Any? {
+    override fun createInstance(classId:String) : Any? {
         for (i in 0 until beam.size()) {
             val entityId = beam.get(i) as EntityId
-            if (entityId.id == id) {
-                return newInstance(entityId.kClass)
+            if (entityId.classId == classId) {
+                return newInstance(entityId.classType)
             }
         }
         return null
@@ -64,8 +64,8 @@ object Absorber : IAbsorber {
 
         for (i in 0 until beam.size()) {
             val entityId = beam.get(i) as EntityId
-            if (entityId.kClass == kClass)
-                return entityId.id
+            if (entityId.classType == kClass)
+                return entityId.classId
         }
         println("")
         println("!!!!!!!!!!!!!!!!!!!")
