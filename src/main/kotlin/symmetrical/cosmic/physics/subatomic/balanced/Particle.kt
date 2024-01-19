@@ -20,7 +20,7 @@ package symmetrical.cosmic.physics.subatomic.balanced
 
 import asymmetrical.physics.machine.vm.Classes
 import symmetrical.cosmic.transpectors.transpectors.Keys
-import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
@@ -30,7 +30,6 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic.physics.dimensions.*
-import symmetrical.cosmic.physics.subatomic.anti_matter.AntiParticle
 
 /*
 https://en.wikipedia.org/wiki/Particle
@@ -67,7 +66,7 @@ open class Particle(
 
     private     val _wavelength     :Wavelength             = Wavelength()
     private     var spin            :Spin                   = Spin()
-    private     var angularMomentum :AngularMomentum        = AngularMomentum()
+    private     var angularMomentum : AngularMomentum = AngularMomentum()
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
@@ -165,7 +164,7 @@ open class Particle(
     }
 
 
-    override fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle {
+    override fun setAngularMomentum(angularMomentum: AngularMomentum) : IParticle {
         this.angularMomentum = angularMomentum
         return this;
     }

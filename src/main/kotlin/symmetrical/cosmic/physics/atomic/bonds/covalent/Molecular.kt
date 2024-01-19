@@ -19,7 +19,7 @@ package symmetrical.cosmic.physics.atomic.bonds.covalent
  */
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark

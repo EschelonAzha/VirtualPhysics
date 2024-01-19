@@ -1,4 +1,4 @@
-package symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angularMomentum
+package symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angular_momentum
 /*
  * This file is part of Virtual Physics.
  *

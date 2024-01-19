@@ -19,7 +19,7 @@ package symmetrical.cosmic.physics.subatomic.balanced
  */
 
 import symmetrical.cosmic.physics.dimensions.*
-import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angularMomentum.AngularMomentum
+import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
@@ -48,7 +48,7 @@ interface IParticle {
     fun getWavelength() : Wavelength
 
     fun getPhoton() : Photon
-    fun setAngularMomentum(angularMomentum:AngularMomentum) : IParticle
+    fun setAngularMomentum(angularMomentum: AngularMomentum) : IParticle
     fun setSpin(spin: Spin) : IParticle
     fun setWavelength(value:Any?) : IParticle
     fun spin() : Boolean
