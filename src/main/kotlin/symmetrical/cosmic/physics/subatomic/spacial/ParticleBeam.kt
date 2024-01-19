@@ -41,10 +41,11 @@ open class ParticleBeam(
     IParticleBeam,
     IEmitter
 {
-    constructor() : this(
+    constructor(initialCapacity:Int=1) : this(
         MatterAntiMatter(ParticleBeam::class),
-        Beam()
+        Beam(initialCapacity)
     )
+
     init {
     }
     object Static {
@@ -85,8 +86,8 @@ open class ParticleBeam(
     override fun find(item:Any) : Int {
         return _beam.find(item)
     }
-    override fun find(kClass: KClass<*>) : Int {
-        return _beam.find(kClass)
+    override fun findByType(kClass: KClass<*>) : Int {
+        return _beam.findByType(kClass)
     }
 
     override fun getClassId() : String {

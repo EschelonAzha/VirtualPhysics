@@ -92,7 +92,7 @@ class Protons(
         return getAtom().getElectron(electronNum)
     }
     override fun getProton(kClass:KClass<*>) : Proton {
-        return get(find(kClass)) as Proton
+        return get(findByType(kClass)) as Proton
     }
 
     override fun setAtomicNumber(number:Int) : Nucleons {

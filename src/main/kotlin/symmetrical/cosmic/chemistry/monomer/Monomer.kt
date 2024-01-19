@@ -32,7 +32,7 @@ class Monomer : IMonomer {
     override fun filter(catalyst: Catalyst) : Boolean {
         for (i in 0 until catalyst.size()) {
             val criteria: Atom = catalyst.getAtom(i)
-            val pos = self.find(criteria::class)
+            val pos = self.findByType(criteria::class)
             if (pos == -1)
                 return false
             val atom = self.getAtom(pos)
