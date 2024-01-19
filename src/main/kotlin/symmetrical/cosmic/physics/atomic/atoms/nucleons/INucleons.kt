@@ -28,19 +28,19 @@ https://en.wikipedia.org/wiki/Nucleon
  */
 interface INucleons {
 
-    fun addNeutron      (proton: Neutron)   : Neutron
-    fun addProton       (proton: Proton)    : Proton
-    fun betaMinusDecay  ()                  : Atom
-    fun betaPlusDecay   ()                  : Atom
-    fun betaPlusDecay   (content:Any?)      : Atom
-    fun findNeutron     (purpose:String)    : Int
-    fun getAtomicNumber ()                  : Int
-    fun getClassId      ()                  : String
-    fun getNeutron      (pos:Int)           : Neutron
-    fun getNeutron      (purpose:String)    : Neutron
-    fun getProton       (kClass: KClass<*>) : Proton
-    fun setAtom         (atom: Atom)        : Atom
-    fun setAtomicNumber (number:Int)        : Nucleons
+    fun addNeutron      (proton: Neutron)       : Neutron
+    fun addProton       (proton: Proton)        : Proton
+    fun betaMinusDecay  ()                      : Atom
+    fun betaPlusDecay   ()                      : Atom
+    fun betaPlusDecay   (content:Any?)          : Atom
+    fun findNeutron     (purpose:String)        : Int
+    fun getAtomicNumber ()                      : Int
+    fun getClassId      ()                      : String
+    fun getNeutron      (pos:Int)               : Neutron
+    fun getNeutron      (purpose:String)        : Neutron
+    fun getProton       (classType: KClass<*>)  : Proton
+    fun setAtom         (atom: Atom)            : Atom
+    fun setAtomicNumber (number:Int)            : Nucleons
 
 
 }

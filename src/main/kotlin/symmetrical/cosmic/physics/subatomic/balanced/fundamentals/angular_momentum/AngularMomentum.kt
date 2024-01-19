@@ -47,8 +47,8 @@ open class AngularMomentum(
             val proton = atom.getProton(ValueProton::class)
             return field(proton)
         }
-        fun field(atom: Atom, kClass:KClass<*>) : Field {
-            val proton = atom.getProton(kClass)
+        fun field(atom: Atom, classType:KClass<*>) : Field {
+            val proton = atom.getProton(classType)
             return field(proton)
         }
         fun field(proton: Proton) : Field {
@@ -58,8 +58,8 @@ open class AngularMomentum(
             val proton = atom.getProton(ValueProton::class)
             return run(proton)
         }
-        fun run(atom: Atom, kClass:KClass<*>) : Field {
-            val proton = atom.getProton(kClass)
+        fun run(atom: Atom, classType:KClass<*>) : Field {
+            val proton = atom.getProton(classType)
             return run(proton)
         }
         fun run(proton: Proton) : Field {

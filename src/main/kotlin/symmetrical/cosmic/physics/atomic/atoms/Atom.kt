@@ -59,8 +59,8 @@ open class Atom(
         fun content(atom: Atom) : Any? {
             return Companion.content(atom.getProton(ValueProton::class))
         }
-        fun content(atom: Atom, kClass: KClass<*>) : Any? {
-            return Companion.content(atom.getProton(kClass))
+        fun content(atom: Atom, classType: KClass<*>) : Any? {
+            return Companion.content(atom.getProton(classType))
         }
         fun content(proton: Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
@@ -69,8 +69,8 @@ open class Atom(
         fun field(atom: Atom) : Field {
             return Companion.field(atom.getProton(ValueProton::class))
         }
-        fun field(atom: Atom, kClass: KClass<*>) : Field {
-            return Companion.field(atom.getProton(kClass))
+        fun field(atom: Atom, classType: KClass<*>) : Field {
+            return Companion.field(atom.getProton(classType))
         }
         fun field(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()

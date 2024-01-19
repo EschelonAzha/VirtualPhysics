@@ -60,16 +60,16 @@ object Absorber : IAbsorber {
         }
         return null
     }
-    override fun getClassId(kClass: KClass<*>) : String {
+    override fun getClassId(classType: KClass<*>) : String {
 
         for (i in 0 until beam.size()) {
             val entityId = beam.get(i) as EntityId
-            if (entityId.classType == kClass)
+            if (entityId.classType == classType)
                 return entityId.classId
         }
         println("")
         println("!!!!!!!!!!!!!!!!!!!")
-        println("PhotonDetector::getClassId(kClass:KClass could not find: $kClass")
+        println("PhotonDetector::getClassId(classType:KClass could not find: $classType")
         println("!!!!!!!!!!!!!!!!!!!")
         println("")
         return ""
@@ -93,10 +93,10 @@ object Absorber : IAbsorber {
         return materialize(photon.radiate())
     }
 
-    override fun newInstance(kClass:KClass<*>) : Any? {
+    override fun newInstance(classType:KClass<*>) : Any? {
         for (i:Int in 0 until beam.size()) {
             val entityId:EntityId = beam.get(i) as EntityId
-            if (entityId.has(kClass))
+            if (entityId.has(classType))
                 return entityId.newInstance()
         }
         return null

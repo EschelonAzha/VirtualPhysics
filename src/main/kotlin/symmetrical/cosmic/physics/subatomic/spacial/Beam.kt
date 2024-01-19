@@ -112,9 +112,9 @@ open class Beam : IBeam {
         }
         return -1
     }
-    override fun findByType(kClass: KClass<*>) : Int {
+    override fun findByType(classType: KClass<*>) : Int {
         for (i:Int in 0 until count) {
-            if (get(i)!!::class==kClass) {
+            if (get(i)!!::class==classType) {
                 return i
             }
         }

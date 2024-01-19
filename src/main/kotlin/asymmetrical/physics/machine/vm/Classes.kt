@@ -21,9 +21,9 @@ package asymmetrical.physics.machine.vm
 import kotlin.reflect.KClass
 
 object Classes {
-    fun <T:Any> createInstance(kClass:KClass<T>) : Any? {
+    fun <T:Any> createInstance(classType:KClass<T>) : Any? {
 
-        val constructors = kClass.constructors
+        val constructors = classType.constructors
         for (constructor in constructors) {
             if (constructor.parameters.isEmpty())
                 return constructor.call()
@@ -31,8 +31,8 @@ object Classes {
         return null
     }
     fun getSimpleName(obj:Any) : String {
-        val kClass = obj::class
-        return kClass.simpleName as String
+        val classType = obj::class
+        return classType.simpleName as String
     }
 }
 

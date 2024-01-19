@@ -91,8 +91,8 @@ class Protons(
         val electronNum = _beam.find(proton)
         return getAtom().getElectron(electronNum)
     }
-    override fun getProton(kClass:KClass<*>) : Proton {
-        return get(findByType(kClass)) as Proton
+    override fun getProton(classType:KClass<*>) : Proton {
+        return get(findByType(classType)) as Proton
     }
 
     override fun setAtomicNumber(number:Int) : Nucleons {

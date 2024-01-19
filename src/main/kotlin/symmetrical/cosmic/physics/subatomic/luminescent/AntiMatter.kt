@@ -23,7 +23,7 @@ import kotlin.reflect.KClass
 https://en.wikipedia.org/wiki/Antimatter
  */
 class AntiMatter : MatterAntiMatter, IAntiMatter {
-    constructor(kClass:KClass<*>) : super(kClass){
+    constructor(classType:KClass<*>) : super(classType){
 
     }
 }

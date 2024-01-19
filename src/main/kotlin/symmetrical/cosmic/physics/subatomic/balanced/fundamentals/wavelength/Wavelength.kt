@@ -48,8 +48,8 @@ class Wavelength(
         fun content(atom: Atom) : Any? {
             return content(atom.getProton(ValueProton::class))
         }
-        fun content(atom: Atom, kClass: KClass<*>) : Any? {
-            return content(atom.getProton(kClass))
+        fun content(atom: Atom, classType: KClass<*>) : Any? {
+            return content(atom.getProton(classType))
         }
         fun content(proton: Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
@@ -58,8 +58,8 @@ class Wavelength(
         fun field(atom: Atom) : Field {
             return field(atom.getProton(ValueProton::class))
         }
-        fun field(atom: Atom, kClass: KClass<*>) : Field {
-            return field(atom.getProton(kClass))
+        fun field(atom: Atom, classType: KClass<*>) : Field {
+            return field(atom.getProton(classType))
         }
         fun field(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()

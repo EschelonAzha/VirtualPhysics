@@ -62,8 +62,8 @@ open class Quark(
             val proton = atom.getProton(ValueProton::class)
             return value(proton)
         }
-        fun value(atom: Atom, kClass: KClass<*>) : Quark {
-            val proton = atom.getProton(kClass)
+        fun value(atom: Atom, classType: KClass<*>) : Quark {
+            val proton = atom.getProton(classType)
             return value(proton)
         }
         fun value(proton: Proton) : Quark {

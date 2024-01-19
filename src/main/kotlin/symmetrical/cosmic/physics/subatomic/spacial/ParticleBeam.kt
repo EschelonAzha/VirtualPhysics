@@ -86,8 +86,8 @@ open class ParticleBeam(
     override fun find(item:Any) : Int {
         return _beam.find(item)
     }
-    override fun findByType(kClass: KClass<*>) : Int {
-        return _beam.findByType(kClass)
+    override fun findByType(classType: KClass<*>) : Int {
+        return _beam.findByType(classType)
     }
 
     override fun getClassId() : String {

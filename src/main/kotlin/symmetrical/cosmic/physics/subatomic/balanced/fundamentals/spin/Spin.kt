@@ -53,8 +53,8 @@ class Spin(
         fun isMinus(atom: Atom) : Boolean {
             return isMinus(atom.getProton(ValueProton::class))
         }
-        fun isMinus(atom: Atom, kClass: KClass<*>) : Boolean {
-            return isMinus(atom.getProton(kClass))
+        fun isMinus(atom: Atom, classType: KClass<*>) : Boolean {
+            return isMinus(atom.getProton(classType))
         }
         fun isMinus(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
@@ -66,8 +66,8 @@ class Spin(
         fun isPlus(atom: Atom) : Boolean {
             return isPlus(atom.getProton(ValueProton::class))
         }
-        fun isPlus(atom: Atom, kClass: KClass<*>) : Boolean {
-            return isPlus(atom.getProton(kClass))
+        fun isPlus(atom: Atom, classType: KClass<*>) : Boolean {
+            return isPlus(atom.getProton(classType))
         }
         fun isPlus(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
@@ -80,8 +80,8 @@ class Spin(
         fun isZero(atom: Atom) : Boolean {
             return isZero(atom.getProton(ValueProton::class))
         }
-        fun isZero(atom: Atom, kClass: KClass<*>) : Boolean {
-            return isZero(atom.getProton(kClass))
+        fun isZero(atom: Atom, classType: KClass<*>) : Boolean {
+            return isZero(atom.getProton(classType))
         }
         fun isZero(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
