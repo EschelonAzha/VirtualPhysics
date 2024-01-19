@@ -26,7 +26,10 @@ import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 /*
 https://en.wikipedia.org/wiki/Charge_(physics)
  */
-class Charge (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
+class Charge (
+    private val field: QuasiParticle = QuasiParticle()
+) :
+    IQuasiParticle by field {
 
     object Static {
         const val PLUS:Byte  = +1
