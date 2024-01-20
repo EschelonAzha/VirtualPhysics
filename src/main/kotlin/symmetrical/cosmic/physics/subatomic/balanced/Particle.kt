@@ -64,9 +64,9 @@ open class Particle(
     private     val mass            : Mass                  = Mass()
     private     val temperature     : Temperature           = Temperature()
 
-    private     val _wavelength     :Wavelength             = Wavelength()
-    private     var spin            :Spin                   = Spin()
-    private     var angularMomentum : AngularMomentum = AngularMomentum()
+    private     val _wavelength     : Wavelength            = Wavelength()
+    private     var spin            : Spin                  = Spin()
+    private     var angularMomentum : AngularMomentum       = AngularMomentum()
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()

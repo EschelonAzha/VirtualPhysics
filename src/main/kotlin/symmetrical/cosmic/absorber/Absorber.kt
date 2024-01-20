@@ -21,7 +21,6 @@ package symmetrical.cosmic.absorber
 import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.absorber.class_groups.*
 import symmetrical.cosmic.transpectors.transpectors.Strings
-import symmetrical.cosmic.physics.subatomic.bosons.*
 import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
@@ -31,7 +30,7 @@ object Absorber : IAbsorber {
     init {
         beam.addAll(AppClasses())
         beam.addAll(Atoms())
-        beam.addAll(Dimentions())
+        beam.addAll(Dimensions())
         beam.addAll(Charges())
         beam.addAll(Compounds())
         beam.addAll(Cosmic())

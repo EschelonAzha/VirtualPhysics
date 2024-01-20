@@ -29,7 +29,6 @@ import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
-import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiProton
 import symmetrical.cosmic.physics.subatomic.balanced.IParticle
 import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
