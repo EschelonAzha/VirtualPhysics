@@ -19,6 +19,7 @@ package symmetrical.cosmic.physics.subatomic.matter.quarks
  */
 
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiUp
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
@@ -61,7 +62,7 @@ class Up(
       //  Recycler.Up_dissipate(this)
     }
     private fun radiate() : String {
-        if (symmetrical.cosmic.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Up")
         }
         val classId:String = matterAntiMatter.getClassId()

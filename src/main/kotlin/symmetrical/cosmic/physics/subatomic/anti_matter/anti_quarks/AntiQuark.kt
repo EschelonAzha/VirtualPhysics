@@ -26,6 +26,7 @@ import symmetrical.cosmic.physics.subatomic.bosons.gluons.*
 import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
+import symmetrical.cosmic.physics.subatomic.matter.colors.Green
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 
@@ -126,7 +127,7 @@ open class AntiQuark(
     }
 
 
-    fun setGreen(green: symmetrical.cosmic.physics.subatomic.matter.colors.Green) : AntiQuark {
+    fun setGreen(green: Green) : AntiQuark {
         gluon.setGreen(green)
         return this
     }

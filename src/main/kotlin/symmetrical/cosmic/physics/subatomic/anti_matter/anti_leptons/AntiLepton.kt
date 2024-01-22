@@ -18,6 +18,7 @@ package symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
@@ -29,7 +30,7 @@ https://en.wikipedia.org/wiki/Lepton
  */
 open class AntiLepton(
     private val matterAntiMatter: IAntiMatter = AntiMatter(AntiLepton::class),
-) : symmetrical.cosmic.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IAntiMatter by matterAntiMatter,
     IEmitter
 {

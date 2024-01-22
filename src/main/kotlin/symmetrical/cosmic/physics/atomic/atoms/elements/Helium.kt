@@ -18,6 +18,7 @@ package symmetrical.cosmic.physics.atomic.atoms.elements
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
@@ -35,10 +36,10 @@ class Helium(
     )
 
 
-    lateinit var atom : symmetrical.cosmic.physics.atomic.atoms.Atom
+    lateinit var atom : Atom
 
 
-    fun i(atom: symmetrical.cosmic.physics.atomic.atoms.Atom) : symmetrical.cosmic.physics.atomic.atoms.elements.Helium {
+    fun i(atom: Atom) : Helium {
         this.atom = atom
         atom.setAtomicNumber(2)
         return this
