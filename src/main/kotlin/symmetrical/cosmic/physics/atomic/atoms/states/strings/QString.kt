@@ -30,14 +30,13 @@ open class QString(
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(QString::class),
-    )   init {
+    init {
         setString("")
     }
 
-    constructor(value:String) : this() {
+    fun with(value:String) : QString {
         setString(value)
+        return this
     }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon)

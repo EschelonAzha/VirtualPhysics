@@ -111,7 +111,7 @@ open class Molecular(
 
     fun materialize(strings:List<String>) : Molecular {
         for (item in strings) {
-            add(QString(item))
+            add(QString().with(item))
         }
         shrink()
         return this

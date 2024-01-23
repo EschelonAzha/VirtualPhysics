@@ -36,13 +36,11 @@ open class KeyValue(
 
         const val LAST      : Int = VALUE
     }
-    constructor() : this(
-        Matter(KeyValue::class),
-    )
-    constructor(key: Atom, value: Atom) : this(){
+
+    fun with(key: Atom, value: Atom) : KeyValue {
         add(key)
         add(value)
-        val size = size();
+        return this
     }
 
 
