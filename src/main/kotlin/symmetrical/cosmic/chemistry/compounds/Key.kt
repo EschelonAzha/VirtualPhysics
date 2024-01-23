@@ -28,10 +28,6 @@ class Key(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Key::class),
-    )
-
     fun addKey(atom: Atom) : Key {
         add(atom)
         return this;
