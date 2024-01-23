@@ -35,23 +35,19 @@ https://en.wikipedia.org/wiki/Molecule
  */
 open class Molecular(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecular::class),
-    private var _particleBeam: ParticleBeam = ParticleBeam(),
+    private var _particleBeam   : ParticleBeam      = ParticleBeam(),
 
     ) : Atom(),
     IMatterAntiMatter by matterAntiMatter,
     IParticleBeam by _particleBeam,
     IParticle
 {
-    constructor() : this(
-        MatterAntiMatter(Molecular::class),
-        ParticleBeam(),
-    )
     object Static {
         const val LAST      : Int = -1
     }
 
-    open fun i() : Molecular {
-        _particleBeam.i()
+    open fun with(initialCapacity:Int) : Molecular {
+        _particleBeam.with(initialCapacity)
         return this
     }
 

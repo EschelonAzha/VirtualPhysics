@@ -41,19 +41,12 @@ open class ParticleBeam(
     IParticleBeam,
     IEmitter
 {
-    constructor(initialCapacity:Int=1) : this(
-        MatterAntiMatter(ParticleBeam::class),
-        Beam(initialCapacity)
-    )
-
-    init {
-    }
     object Static {
         const val LAST      : Int = -1
     }
 
-    open fun i() : ParticleBeam {
-        _beam.i()
+    open fun with(initialCapacity:Int=1) : ParticleBeam {
+        _beam.with(initialCapacity)
         return this
     }
 
