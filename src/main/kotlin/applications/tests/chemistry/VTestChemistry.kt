@@ -23,7 +23,7 @@ class VTestChemistry {
         return true
     }
     private fun testCatalyst() : Boolean {
-        val result = Filter(polymer)
+        val result = Filter().with(polymer)
             .where(Name("name2"))
             .where(City("city2"))
             .activate() as Polymer

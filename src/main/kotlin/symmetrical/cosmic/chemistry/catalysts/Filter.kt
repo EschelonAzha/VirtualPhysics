@@ -23,9 +23,10 @@ import symmetrical.cosmic.chemistry.polymer.Polymer
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
-open class Filter : Catalyst {
-    constructor(polymer: Polymer) : super(polymer){
-
+open class Filter : Catalyst() {
+    fun with(polymer: Polymer) : Filter {
+        super.with(polymer)
+        return this
     }
 
     fun where(atom: Atom) : Filter {

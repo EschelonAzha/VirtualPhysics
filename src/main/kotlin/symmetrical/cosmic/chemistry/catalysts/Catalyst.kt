@@ -20,11 +20,12 @@ package symmetrical.cosmic.chemistry.catalysts
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
-open class Catalyst : Compound {
-    private val compound: Compound
+open class Catalyst : Compound() {
+    private lateinit var compound: Compound
 
-    constructor(compound:Compound) {
+    fun with(compound:Compound) : Catalyst {
         this.compound = compound
+        return this
     }
 
     open fun activate() : Compound {
