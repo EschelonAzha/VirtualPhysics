@@ -19,15 +19,16 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.booleans
  */
 
 class BooleanString {
-    val value : Boolean?
-    constructor(value:Boolean?) {
+    var value : Boolean? = null
+    fun with(value:Boolean?) : BooleanString {
         this.value = value
+        return this
     }
     fun asString() : String? {
         if (value == null)
             return null
         var result:String = "true"
-        if (value)
+        if (value as Boolean)
             return result
 
         result = "false"

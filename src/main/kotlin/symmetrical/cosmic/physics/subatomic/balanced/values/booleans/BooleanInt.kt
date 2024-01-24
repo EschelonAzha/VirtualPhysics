@@ -19,15 +19,16 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.booleans
  */
 
 class BooleanInt {
-    val value : Boolean?
-    constructor(value:Boolean?) {
+    var value : Boolean? = null
+    fun with(value:Boolean?) : BooleanInt {
         this.value = value
+        return this
     }
     fun asInt() : Int? {
         if (value == null)
             return null
         var result:Int = 1
-        if (value)
+        if (value as Boolean)
             return result
 
         result = 0

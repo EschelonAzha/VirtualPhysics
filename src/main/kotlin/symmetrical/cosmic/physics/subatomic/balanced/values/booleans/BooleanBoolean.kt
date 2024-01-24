@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.booleans
  */
 
 class BooleanBoolean {
-    val value : Boolean?
-    constructor(value:Boolean?) {
+    var value : Boolean? = null
+    fun with(value:Boolean?) : BooleanBoolean {
         this.value = value
+        return this
     }
     fun asBoolean() : Boolean? {
         return value;
