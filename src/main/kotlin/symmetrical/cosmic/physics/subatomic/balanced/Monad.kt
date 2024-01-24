@@ -30,12 +30,7 @@ open class Monad(
     IMatter by matterAntiMatter,
     IEmitter
 {
-    constructor() : this(
-        Matter(Monad::class),
-    )
-    fun i() : Monad {
-        return this
-    }
+
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 

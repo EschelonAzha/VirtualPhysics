@@ -19,7 +19,7 @@ package symmetrical.cosmic.physics.subatomic.balanced.values
  */
 
 import symmetrical.cosmic.transpectors.transpectors.Doubles
-class Field : IField {
+class Field() : IField {
     object Static {
         const val NULL      = "0"
         const val BOOLEAN   = "B"
@@ -41,10 +41,10 @@ class Field : IField {
     }
     private var type   :String = "0"
     private var content:Any?   = null
-    constructor() {
-    }
-    constructor(content:Any?) {
+
+    fun with(content:Any?) : Field {
         setContent(content)
+        return this
     }
     override fun asArray() : Array<Any> {
         return Converter(this).asArray()

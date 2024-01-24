@@ -22,8 +22,8 @@ package symmetrical.cosmic.physics.subatomic.balanced
 https://en.wikipedia.org/wiki/Higgs_boson#Higgs_field
  */
 
-open class HiggsField{
-    constructor()
+open class HiggsField(){
+
     // Spin 0
     companion object {
         lateinit var higgsField : HiggsField

@@ -42,19 +42,7 @@ open class Particle(
     IParticle,
     IEmitter
 {
-    constructor() : this(
-        MatterAntiMatter(Particle::class),
-    ) {
-        time.setContent(200)
-    }
-
-    object Static {
-        public val debuggingOn :Boolean = false
-    }
-
-
-
-    private lateinit var self   : IParticle
+    private lateinit var self       : IParticle
 
     private     var uniqueId        : QuasiParticle         = QuasiParticle()
 
@@ -68,6 +56,13 @@ open class Particle(
     private     var spin            : Spin                  = Spin()
     private     var angularMomentum : AngularMomentum       = AngularMomentum()
 
+    init {
+        time.setContent(200)
+    }
+
+    object Static {
+        public val debuggingOn :Boolean = false
+    }
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = uniqueId.absorb(remainder)
