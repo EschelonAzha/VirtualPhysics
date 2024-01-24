@@ -36,10 +36,7 @@ class Bottom(
     init {
 
     }
-    override fun i() : Bottom {
-        super.i()
-        return this
-    }
+
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)

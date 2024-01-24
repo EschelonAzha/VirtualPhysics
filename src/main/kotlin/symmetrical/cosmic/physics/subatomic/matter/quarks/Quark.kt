@@ -67,9 +67,6 @@ open class Quark(
             return proton.getValueQuark()
         }
     }
-    open fun i() : Quark {
-        return this
-    }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
         this.gluon              = Red_AntiRed()  // this is need for JS Bug

@@ -36,11 +36,6 @@ class Strange(
     init {
     }
 
-    override fun i() : Strange {
-        super.i()
-        return this
-    }
-
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)

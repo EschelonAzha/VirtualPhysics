@@ -33,12 +33,8 @@ class Charm(
     constructor() : this(
         Matter(Charm::class),
     )
-    init {
-    }
-    override fun i() : Charm {
-        super.i()
-        return this
-    }
+
+
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)

@@ -47,10 +47,7 @@ class Down(
         const val FIELD_NAME       = "FIELD-NAME"
         const val TEST_PROPERTY    = "TEST_PROPERTY"
     }
-    override fun i() : Down {
-        super.i()
-        return this
-    }
+
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()

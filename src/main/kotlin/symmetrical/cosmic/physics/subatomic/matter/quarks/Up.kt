@@ -41,10 +41,7 @@ class Up(
     constructor(baryon: Baryon) : this() {
         this.p_baryon = baryon
     }
-    override fun i() : Up {
-        super.i()
-        return this
-    }
+
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)

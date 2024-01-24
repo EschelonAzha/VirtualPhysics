@@ -33,12 +33,7 @@ class Top(
     constructor() : this(
         Matter(Top::class),
     )
-    init {
-    }
-    override fun i() : Top {
-        super.i()
-        return this
-    }
+
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
