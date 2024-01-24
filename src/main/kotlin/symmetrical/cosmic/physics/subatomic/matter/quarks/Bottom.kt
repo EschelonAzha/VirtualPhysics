@@ -30,12 +30,6 @@ class Bottom(
 ) : Quark(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Bottom::class),
-    )
-    init {
-
-    }
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
