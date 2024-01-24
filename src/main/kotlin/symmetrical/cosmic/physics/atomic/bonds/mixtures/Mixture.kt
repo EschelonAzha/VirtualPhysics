@@ -28,9 +28,7 @@ class Mixture(
 ) :
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Mixture::class),
-    )
+
     // mixtures may be regular classes with all kinds of things
     // mixed together that are other classes but not Atoms or Molecules
 

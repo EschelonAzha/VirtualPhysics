@@ -28,9 +28,6 @@ class Material(
 ) :
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Material::class),
-    )
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

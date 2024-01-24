@@ -28,9 +28,6 @@ class Solution(
 ) :
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Solution::class),
-    )
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
