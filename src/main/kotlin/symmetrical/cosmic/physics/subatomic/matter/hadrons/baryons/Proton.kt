@@ -42,9 +42,7 @@ open class Proton(
     IMatter by matterAntiMatter
 {
     var _quark:Quark
-    constructor() : this(
-        Matter(Proton::class),
-    ) init {
+    init {
         _quark = this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
         // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),

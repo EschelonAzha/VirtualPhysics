@@ -33,13 +33,9 @@ open class Kaon(
 ) : Hadron(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Kaon::class),
-    )
 
     lateinit var antiQuark  : AntiUp
     lateinit var quark      : Strange
-
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
