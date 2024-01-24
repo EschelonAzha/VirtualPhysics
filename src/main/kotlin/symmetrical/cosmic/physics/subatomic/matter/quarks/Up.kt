@@ -33,11 +33,7 @@ class Up(
 ) : Quark(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Up::class),
-    )
-    init {
-    }
+
     constructor(baryon: Baryon) : this() {
         this.p_baryon = baryon
     }
