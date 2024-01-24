@@ -16,7 +16,7 @@ class City(
     }
 
     fun with(value:String) : City {
-        Quark.value(this).setWavelength(value)
+        setContent(value, true)
         return this
     }
 
