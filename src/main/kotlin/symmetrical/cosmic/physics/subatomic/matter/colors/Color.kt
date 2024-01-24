@@ -25,7 +25,4 @@ https://en.wikipedia.org/wiki/Color_charge
 */
 open class Color : ChromoCharge() {
 
-
-
-
 }

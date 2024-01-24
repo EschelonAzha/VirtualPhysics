@@ -33,13 +33,10 @@ class QuasiParticle(
 ) : IField by _field,
     IQuasiParticle
 {
-    constructor() : this(
-        Field()
-    )
-    constructor(value:Any?) : this(
-        Field()
-    ){
+
+    fun with(value:Any?) : QuasiParticle {
         _field.setContent(value)
+        return this
     }
 
     override fun absorb(photon: Photon) : Photon {

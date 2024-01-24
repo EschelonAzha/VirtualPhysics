@@ -40,18 +40,13 @@ open class Baryon(
 ) : Hadron(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Baryon::class),
-    )
     init {
-        super.i(3)
+        super.with(3)
     }
 
     object Static {
         const val LAST : Int = Hadron.Static.LAST
     }
-
-
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);

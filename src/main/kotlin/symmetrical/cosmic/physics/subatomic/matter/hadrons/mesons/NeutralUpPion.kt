@@ -38,11 +38,9 @@ open class NeutralUpPion(
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
-    constructor() : this(
-        Matter(NeutralUpPion::class),
-    )
-    constructor(proton: Baryon, neutron: Baryon) : this() {
-        super.i(2)
+
+    fun with(proton: Baryon, neutron: Baryon) : NeutralUpPion {
+        super.with(2)
         this.add(Up())
         this.add(AntiUp())
 
@@ -52,6 +50,7 @@ open class NeutralUpPion(
         up1.z(AntiQuark.Args(neutron))
 
         nuclearForce()
+        return this
     }
 
     override fun getClassId() : String {

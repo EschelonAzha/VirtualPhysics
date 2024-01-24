@@ -32,7 +32,7 @@ import kotlin.reflect.KClass
 https://en.wikipedia.org/wiki/Spin_(physics)
  */
 class Spin(
-    private val field: QuasiParticle = QuasiParticle(Static.PLUS)
+    private val field: QuasiParticle = QuasiParticle().with(Static.PLUS)
 ) :
     IQuasiParticle by field {
 

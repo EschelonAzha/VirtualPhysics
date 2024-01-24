@@ -24,8 +24,7 @@ import symmetrical.cosmic.physics.subatomic.bosons.gluons.Red_AntiRed
 https://en.wikipedia.org/wiki/Color_charge
 */
 // ACTUAL VALUE
-open class Red : Color {
-    constructor()
+open class Red : Color() {
     init {
         color = RED
     }

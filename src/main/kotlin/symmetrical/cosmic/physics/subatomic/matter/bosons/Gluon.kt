@@ -32,8 +32,7 @@ https://en.wikipedia.org/wiki/Gluon
  */
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
-open class Gluon : Particle {
-    constructor()
+open class Gluon : Particle() {
     // Gluons are confined within
     // Spin 1
     lateinit var color      : Color
@@ -42,9 +41,6 @@ open class Gluon : Particle {
     var manifestation : Green = Green()
 
 
-    open fun i() : Gluon {
-        return this
-    }
     fun exchange() : PlusPion {
         // incomplete.  My thinking is that value will be
         // reflected in Neutrons that are inert

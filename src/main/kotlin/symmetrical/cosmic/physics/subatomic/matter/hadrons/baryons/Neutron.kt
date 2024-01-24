@@ -32,9 +32,7 @@ open class Neutron(
 ) : Baryon(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Neutron::class),
-    ) init {
+    init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
         // -1/3 wavelength(?),                     Spin(?),                    AngularMomentum(Ptr to Proton),

@@ -24,8 +24,7 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 /*
 https://en.wikipedia.org/wiki/W_and_Z_bosons
  */
-open class ZBoson{
-    constructor()
+open class ZBoson(){
 
     // Neutral Charge
     // Spin 1
@@ -40,7 +39,7 @@ open class ZBoson{
 
 
 
-    fun i(newValue: Field, constructing:Boolean = false) : ZBoson {
+    fun with(newValue: Field, constructing:Boolean = false) : ZBoson {
         this.newValue     = newValue
         this.constructing = constructing
         return this

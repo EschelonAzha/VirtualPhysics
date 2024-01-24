@@ -36,9 +36,7 @@ class BetaMinus(
 ) : LeptonPair(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(BetaMinus::class),
-    )
+
     fun decay(baryon: Baryon) : Up {
         var down      : Down = baryon.get(1) as Down
 

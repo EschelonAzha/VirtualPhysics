@@ -37,10 +37,6 @@ class BetaPlus(
 ) : LeptonPair(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(BetaPlus::class),
-    )
-
 
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down

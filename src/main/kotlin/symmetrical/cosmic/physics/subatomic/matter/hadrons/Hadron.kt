@@ -35,16 +35,12 @@ open class Hadron(
     IMatter by matterAntiMatter,
     IEmitter
 {
-    constructor() : this(
-        Matter(Hadron::class),
-    )
-
-
     object Static {
         const val LAST : Int = ParticleBeam.Static.LAST
 
     }
-    fun i(size:Int) : Hadron {
+    override fun with(size:Int) : Hadron {
+        super.with(size)
         return this
     }
 

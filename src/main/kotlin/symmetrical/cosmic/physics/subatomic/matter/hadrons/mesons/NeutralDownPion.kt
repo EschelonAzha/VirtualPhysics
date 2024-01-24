@@ -33,10 +33,8 @@ open class NeutralDownPion(
 ) : Hadron(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(NeutralDownPion::class),
-    )   init {
-        super.i(2)
+    init {
+        super.with(2)
         this.set(0, Down())
         this.set(1, AntiDown())
     }
