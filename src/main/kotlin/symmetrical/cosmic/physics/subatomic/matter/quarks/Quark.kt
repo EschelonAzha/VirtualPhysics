@@ -42,20 +42,17 @@ open class Quark(
     IMatter by matterAntiMatter,
     IEmitter
 {
-    constructor() : this(
-        Matter(Quark::class),
-    ) {
+
+    lateinit var gluon                  : Gluon
+    protected lateinit var p_baryon     : Baryon
+    init {
         this.gluon         = Red_AntiRed()
     }
     constructor(baryon: Baryon) : this() {
         this.p_baryon = baryon
     }
 
-    init {
-    }
 
-    lateinit var gluon                  : Gluon
-    protected lateinit var p_baryon     : Baryon
 
     companion object {
         fun value(atom: Atom) : Quark {
