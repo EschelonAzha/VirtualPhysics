@@ -28,9 +28,7 @@ class QBoolean(
 ) : Atom(),
     IMatterAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        MatterAntiMatter(QBoolean::class),
-    )  init {
+    init {
         setBoolean(false)
     }
 

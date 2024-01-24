@@ -38,9 +38,7 @@ open class Orbitals(
     IMatterAntiMatter by matterAntiMatter,
     IOrbitals
 {
-    constructor() : this(
-        MatterAntiMatter(Orbitals::class),
-    ) init {
+    init {
         add(Electron())
     }
 

@@ -28,9 +28,7 @@ class QByte(
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(QByte::class),
-    ) init {
+    init {
         setByte(" ".toByte())
     }
 

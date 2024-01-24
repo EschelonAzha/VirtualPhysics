@@ -30,9 +30,6 @@ open class QMass(
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(QMass::class),
-    )
     init {
         setMass(Beam(0))
     }

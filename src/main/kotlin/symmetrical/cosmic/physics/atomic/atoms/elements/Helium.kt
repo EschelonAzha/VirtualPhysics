@@ -31,15 +31,11 @@ class Helium(
 ) :
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Helium::class),
-    )
-
 
     lateinit var atom : Atom
 
 
-    fun i(atom: Atom) : Helium {
+    fun with(atom: Atom) : Helium {
         this.atom = atom
         atom.setAtomicNumber(2)
         return this

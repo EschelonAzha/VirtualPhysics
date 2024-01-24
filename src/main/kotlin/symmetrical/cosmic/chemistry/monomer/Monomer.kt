@@ -22,12 +22,9 @@ import symmetrical.cosmic.chemistry.polymer.Polymer
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
-class Monomer : IMonomer {
+class Monomer() : IMonomer {
     private lateinit var polymer:Polymer
     private lateinit var self:Compound
-    constructor() {
-
-    }
 
     override fun filter(catalyst: Catalyst) : Boolean {
         for (i in 0 until catalyst.size()) {

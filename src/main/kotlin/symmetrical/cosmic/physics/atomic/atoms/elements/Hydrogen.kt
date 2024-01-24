@@ -30,18 +30,11 @@ class Hydrogen(
 ) :
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Hydrogen::class),
-    )
 
 
     lateinit var atom : Atom
 
-
-    constructor(atom: Atom) : this() {
-        this.atom = atom
-    }
-    fun i(atom: Atom) : Hydrogen {
+    fun with(atom: Atom) : Hydrogen {
         this.atom = atom
         atom.setAtomicNumber(1)
         return this

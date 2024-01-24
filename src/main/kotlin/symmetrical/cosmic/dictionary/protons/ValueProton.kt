@@ -29,11 +29,6 @@ class ValueProton(
 ) : Proton(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(ValueProton::class),
-    ) init {
-
-    }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 

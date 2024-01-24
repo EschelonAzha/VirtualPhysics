@@ -23,17 +23,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
-
-// Where do I add Validators?   Are they Neutrons or Protons
 class QInt(
     private val matterAntiMatter: IMatter = Matter(QInt::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-
-    constructor() : this(
-        Matter(QInt::class),
-    )   init {
+    init {
         setInt(0)
     }
 

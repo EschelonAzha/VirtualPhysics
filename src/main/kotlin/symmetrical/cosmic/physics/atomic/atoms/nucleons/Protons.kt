@@ -41,12 +41,9 @@ class Protons(
     IProtons
 {
     val _valueProton: Proton
-    constructor() : this(
-        MatterAntiMatter(Protons::class),
-    )    init {
+    init {
         _valueProton = add(ValueProton().setProtons(this)) as ValueProton
     }
-
 
     private lateinit var p_nucleons   : Nucleons
 

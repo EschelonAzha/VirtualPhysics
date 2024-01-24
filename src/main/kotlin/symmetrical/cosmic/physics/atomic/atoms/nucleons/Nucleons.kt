@@ -48,12 +48,7 @@ class Nucleons(
         INucleons,
         IEmitter
 {
-
-    constructor() : this(
-        MatterAntiMatter(Nucleons::class),
-        Protons(),
-        Neutrons()
-    )   init {
+    init {
         setNucleons(this)
     }
 

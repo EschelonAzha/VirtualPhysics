@@ -34,16 +34,14 @@ open class Polymer(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Polymer::class),
-    )
     object Static {
         const val LAST      : Int = -1
     }
 
-    constructor(atom1: Atom, atom2: Atom) : this() {
+    fun with(atom1: Atom, atom2: Atom) : Polymer {
         add(atom1)
         add(atom2)
+        return this
     }
 
 

@@ -35,10 +35,6 @@ class Neutrons(
     IMatterAntiMatter by matterAntiMatter,
     INeutrons
 {
-    constructor()  : this(
-        MatterAntiMatter(Neutrons::class),
-    )
-
     lateinit var p_nucleons: Nucleons
 
     override fun absorb(photon: Photon) : Photon {

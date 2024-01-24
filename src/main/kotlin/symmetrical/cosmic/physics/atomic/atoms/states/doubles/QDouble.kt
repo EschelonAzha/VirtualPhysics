@@ -29,9 +29,7 @@ class QDouble(
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(QDouble::class),
-    ) init {
+    init {
         setDouble(0.0)
     }
 
