@@ -56,7 +56,7 @@ class TauAntiTauPair(
         super.with(lepton, antiLepton)
         return this
     }
-    fun i(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
+    fun with(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
         super.with(Tau(newValue), AntiTau().with(oldValue))
         setAccepted(accepted)
         setReasonCode(reasonCode)

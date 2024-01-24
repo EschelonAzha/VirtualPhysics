@@ -46,7 +46,7 @@ open class ZBoson{
         return this
     }
     fun decay() : TauAntiTauPair {
-        return TauAntiTauPair().i(accepted, reasonCode, reason, newValue, oldValue)
+        return TauAntiTauPair().with(accepted, reasonCode, reason, newValue, oldValue)
     }
     fun getNewField() : Field {
         return this.newValue;
