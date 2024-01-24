@@ -36,13 +36,6 @@ class Wavelength(
 ) :
     IQuasiParticle by _field {
 
-    constructor() : this(
-        QuasiParticle()
-    )
-
-    fun i() : Wavelength {
-        return this
-    }
 
     companion object {
         fun content(atom: Atom) : Any? {

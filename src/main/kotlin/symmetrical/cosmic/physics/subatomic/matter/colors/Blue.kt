@@ -25,17 +25,12 @@ import symmetrical.cosmic.physics.subatomic.bosons.gluons.Blue_AntiBlue
 https://en.wikipedia.org/wiki/Color_charge
 */
 // PHOTON VALUE
-open class Blue : Color {
+open class Blue : Color() {
 
-    constructor()
     init {
         color = BLUE
     }
 
-    override fun i() : Blue {
-        super.i()
-        return this
-    }
     override fun clone() : Blue {
         var result      = Blue()
         result.setValue(_value)

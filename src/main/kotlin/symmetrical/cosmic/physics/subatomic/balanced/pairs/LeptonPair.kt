@@ -33,9 +33,6 @@ open class LeptonPair(
 ) : Particle(),
     IMatterAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        MatterAntiMatter(LeptonPair::class),
-    )
 
     companion object {
         fun field(pair:LeptonPair) : Field {
@@ -50,11 +47,8 @@ open class LeptonPair(
     public lateinit var _antiLepton : AntiLepton
 
 
-//    constructor(lepton:Lepton, antiLepton:AntiLepton) {
-//        i(lepton, antiLepton)
-//    }
 
-    fun i(lepton:Lepton, antiLepton: AntiLepton) : LeptonPair {
+    open fun with(lepton:Lepton, antiLepton: AntiLepton) : LeptonPair {
         this._lepton     = lepton;
         this._antiLepton = antiLepton
         return this

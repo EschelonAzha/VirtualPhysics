@@ -25,17 +25,12 @@ import symmetrical.cosmic.physics.subatomic.bosons.gluons.Green_AntiGreen
 https://en.wikipedia.org/wiki/Color_charge
 */
 // FORMATTED VALUE
-open class Green : Color {
-    constructor()
+open class Green : Color() {
+
     init {
         color = GREEN
     }
 
-
-    override fun i() : Green {
-        super.i()
-        return this
-    }
     override fun clone() : Green {
         var result      = Green()
         result.setValue(_value)

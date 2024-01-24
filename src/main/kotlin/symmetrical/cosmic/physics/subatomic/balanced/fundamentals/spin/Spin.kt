@@ -36,11 +36,10 @@ class Spin(
 ) :
     IQuasiParticle by field {
 
-    constructor() : this(
-        QuasiParticle(Static.ZERO)
-    )
-    constructor(content:Int) : this() {
+
+    fun with(content:Int) : Spin {
         field.setContent(content)
+        return this
     }
 
     object Static {
@@ -94,9 +93,6 @@ class Spin(
 
     }
 
-    fun i() : Spin {
-        return this
-    }
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()

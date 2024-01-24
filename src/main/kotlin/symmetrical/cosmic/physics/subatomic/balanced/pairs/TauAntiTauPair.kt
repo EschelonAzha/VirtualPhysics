@@ -37,9 +37,7 @@ class TauAntiTauPair(
 ) : LeptonPair(),
     IMatterAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        MatterAntiMatter(TauAntiTauPair::class),
-    ) init {
+    init {
         setAccepted(true)
         setReason("")
         setReasonCode(0)
@@ -54,13 +52,12 @@ class TauAntiTauPair(
         }
     }
 
-
-
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
-        i(lepton, antiLepton)
+    override fun with(lepton: Lepton, antiLepton: AntiLepton) : TauAntiTauPair {
+        super.with(lepton, antiLepton)
+        return this
     }
     fun i(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
-        super.i(Tau(newValue), AntiTau().with(oldValue))
+        super.with(Tau(newValue), AntiTau().with(oldValue))
         setAccepted(accepted)
         setReasonCode(reasonCode)
         setReason(reason)

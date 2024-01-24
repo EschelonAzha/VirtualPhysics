@@ -21,8 +21,8 @@ package symmetrical.cosmic.physics.subatomic.balanced.color
 /*
 https://en.wikipedia.org/wiki/Quantum_chromodynamics
  */
-class QCD {
-    constructor()
+class QCD() {
+
     /*
         ARRAY      A-???
         BOOLEAN    T-0/1
@@ -33,10 +33,6 @@ class QCD {
      */
 
 
-
-    fun i() : QCD {
-        return this
-    }
     fun blue(value:Any?) : Any {
         if (value == null) {
             return "N"

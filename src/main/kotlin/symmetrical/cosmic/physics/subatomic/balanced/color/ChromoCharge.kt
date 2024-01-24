@@ -24,8 +24,8 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */
-open class ChromoCharge : Particle {
-    constructor()
+open class ChromoCharge : Particle() {
+
 
     public var _value: Any? = null
 
@@ -39,12 +39,6 @@ open class ChromoCharge : Particle {
         const val ANTI_RED  :Short   = -1
         const val ANTI_BLUE :Short   = -2
         const val ANTI_GREEN:Short   = -3
-    }
-
-
-
-    open fun i() : ChromoCharge {
-        return this
     }
     open fun clone() : ChromoCharge {
         return ChromoCharge()

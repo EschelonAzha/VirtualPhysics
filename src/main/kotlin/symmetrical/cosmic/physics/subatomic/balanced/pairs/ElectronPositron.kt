@@ -34,12 +34,10 @@ class ElectronPositron(
 ) : LeptonPair(),
     IMatterAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        MatterAntiMatter(ElectronPositron::class),
-    )
 
-    constructor(lepton: Lepton, antiLepton: AntiLepton) : this() {
-        i(lepton, antiLepton)
+    override fun with(lepton: Lepton, antiLepton: AntiLepton) : ElectronPositron {
+        super.with(lepton, antiLepton)
+        return this
     }
 
     override fun getClassId() : String {

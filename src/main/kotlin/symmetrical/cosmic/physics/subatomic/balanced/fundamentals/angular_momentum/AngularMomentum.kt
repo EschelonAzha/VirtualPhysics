@@ -38,10 +38,6 @@ open class AngularMomentum(
     IQuasiParticle by field
 {
 
-    constructor() : this(
-        QuasiParticle()
-    )
-
     companion object {
         fun field(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
