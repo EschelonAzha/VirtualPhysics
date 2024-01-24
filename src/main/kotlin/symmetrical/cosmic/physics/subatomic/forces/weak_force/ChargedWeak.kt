@@ -23,10 +23,6 @@ import symmetrical.cosmic.physics.subatomic.balanced.Particle
 /*
 https://en.wikipedia.org/wiki/Weak_interaction
  */
-class ChargedWeak : Particle {
-    constructor()
+class ChargedWeak : Particle() {
 
-    fun i() : ChargedWeak {
-        return this
-    }
 }

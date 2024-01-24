@@ -24,8 +24,7 @@ import asymmetrical.physics.machine.threads.Energy
 https://en.wikipedia.org/wiki/Strong_interaction
  */
 
-open class Strong: Energy {
-    constructor() : super()
+open class Strong: Energy() {
 
     companion object {
         lateinit var strong : Strong

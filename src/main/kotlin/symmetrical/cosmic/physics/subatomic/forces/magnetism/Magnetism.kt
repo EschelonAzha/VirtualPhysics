@@ -24,10 +24,8 @@ import asymmetrical.physics.machine.threads.Energy
 https://en.wikipedia.org/wiki/Magnetism
  */
 
-open class Magnetism: Energy
+open class Magnetism: Energy() {
 
-{
-    constructor() : super()
 
     // Spin 2
     companion object {

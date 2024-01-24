@@ -24,10 +24,7 @@ import symmetrical.cosmic.physics.subatomic.bosons.Graviton
 https://en.wikipedia.org/wiki/Gravity
  */
 
-open class Gravity {
-    constructor()
-
-    // Spin 2
+open class Gravity() {
 
     private val gravitons : ArrayList<Graviton> = ArrayList<Graviton>()
 
