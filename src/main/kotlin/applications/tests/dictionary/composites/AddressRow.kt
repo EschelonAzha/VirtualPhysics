@@ -8,34 +8,31 @@ import symmetrical.cosmic.chemistry.monomer.IMonomer
 import symmetrical.cosmic.chemistry.monomer.Monomer
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
-class AddressRow(name:String="",
-                 address:String="",
-                 city:String="",
-                 state:String="",
-                 private val monomer         : Monomer,
-                 private val matterAntiMatter: IMatterAntiMatter,
+
+class AddressRow(private val monomer         : Monomer = Monomer(),
+                 private val matterAntiMatter: IMatter = Matter(AddressRow::class)
 ) : Compound(),
     IMonomer by monomer,
     IMatterAntiMatter by matterAntiMatter
 {
-    constructor() : this("", "","","") {
-    }
-    constructor(name:String, address:String, city:String, state:String) : this(
-        name,
-        address,
-        city,
-        state,
-        Monomer(),
-        MatterAntiMatter(AddressRow::class),
-    ) {
+    var name        :   String = ""
+    var address     :   String = ""
+    var city        :   String = ""
+    var state       :   String = ""
+
+    init {
         monomer.setSelf(this)
-        add(Name       (name))
-        add(Address    (address))
-        add(City       (city))
-        add(State      (state))
+    }
+    fun with(name:String, address:String, city:String, state:String) : AddressRow {
+        add(Name().with(name))
+        add(Address().with(address))
+        add(City().with(city))
+        add(State().with(state))
+        return this
     }
     object Static {
 

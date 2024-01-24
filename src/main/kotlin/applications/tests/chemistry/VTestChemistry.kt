@@ -10,9 +10,9 @@ import symmetrical.cosmic.chemistry.polymer.Polymer
 class VTestChemistry {
     private val polymer: Polymer = Polymer()
     constructor() {
-        polymer.bind(AddressRow("name1", "address1", "city1", "state1"))
-        polymer.bind(AddressRow("name2", "address1", "city1", "state1"))
-        polymer.bind(AddressRow("name2", "address1", "city2", "state1"))
+        polymer.bind(AddressRow().with("name1", "address1", "city1", "state1"))
+        polymer.bind(AddressRow().with("name2", "address1", "city1", "state1"))
+        polymer.bind(AddressRow().with("name2", "address1", "city2", "state1"))
     }
 
     fun test() : Boolean {
@@ -24,8 +24,8 @@ class VTestChemistry {
     }
     private fun testCatalyst() : Boolean {
         val result = Filter().with(polymer)
-            .where(Name("name2"))
-            .where(City("city2"))
+            .where(Name().with("name2"))
+            .where(City().with("city2"))
             .activate() as Polymer
 
         return result.size() == 1

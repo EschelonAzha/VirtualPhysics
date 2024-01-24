@@ -5,13 +5,13 @@ import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 
-class Capacitor : Atom {
-    constructor() {
+class Capacitor : Atom() {
 
+    fun with(content:String) : Capacitor {
+        super.with(content)
+        return this
     }
-    constructor(content:String) : super(content) {
 
-    }
     override fun capacitanceChange(me: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return zBoson
     }

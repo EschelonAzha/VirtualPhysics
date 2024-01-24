@@ -28,7 +28,7 @@ class VTestNeutrons {
     }
 
     private fun testNeutrons(): Boolean {
-        val atom: Atom = Atom(ATOM1)
+        val atom: Atom = Atom().with(ATOM1)
 
         val original : String = atom.getField().toString()
 
@@ -56,7 +56,7 @@ class VTestNeutrons {
     }
 
     private fun testMoleculeRollback() : Boolean {
-        val row: AddressRow = AddressRow("name", "address", "city", "state")
+        val row: AddressRow = AddressRow().with("name", "address", "city", "state")
         row.betaPlusDecay()     // whole records (Molecules and Compounds) can convert all their Atoms into Isotopes
         row.print()
 

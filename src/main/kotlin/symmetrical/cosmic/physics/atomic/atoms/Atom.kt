@@ -82,20 +82,15 @@ open class Atom(
             return quark.getAngularMomentum().run(Companion.field(atom))
         }
     }
-    constructor() : this(
-        MatterAntiMatter(Atom::class),
-        Orbitals(),
-        Nucleons()
-
-    )
     init {
         setAtom(this)
         this.orbitals.setAtom(this)
         this._nucleons.setAtom(this)
     }
 
-    constructor(content:Any?) : this() {
+    open fun with(content:Any?) : Atom {
         Quark.value(this).setWavelength(content)
+        return this
     }
 
     override fun absorb(photon: Photon) : Photon {

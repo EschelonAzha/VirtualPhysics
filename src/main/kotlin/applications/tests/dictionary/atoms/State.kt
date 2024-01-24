@@ -7,18 +7,17 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class State(
-    private val matterAntiMatter: IMatter,
+    private val matterAntiMatter: IMatter = Matter(State::class)
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(State::class),
-    ) init {
+    init {
         setContent("", true)
     }
 
-    constructor(value:String) : this() {
+    fun with(value:String) : State {
         setContent("", true)
+        return this
     }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())

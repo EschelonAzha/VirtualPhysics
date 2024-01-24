@@ -10,17 +10,14 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 class Resistor(
-    private val matterAntiMatter: IMatter,
+    private val matterAntiMatter: IMatter = Matter(Resistor::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Resistor::class),
-    ) init {
 
-    }
-    constructor(content:Any?) : this(){
+    override fun with(content:Any?) : Resistor {
         setContent("", true)
+        return this
     }
     override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
      //   accept(valueQuark, zBoson)

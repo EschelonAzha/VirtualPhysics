@@ -37,9 +37,9 @@ class VTestElectronics {
     private fun testDiodes() : Boolean {
 
 
-        val atom1: Atom = Resistor(ATOM1)  //Resistor extends Atom and resists changes
-        val atom2: Atom = Atom(ATOM2)
-        val atom3: Atom = Atom(ATOM3)
+        val atom1: Atom = Resistor().with(ATOM1)  //Resistor extends Atom and resists changes
+        val atom2: Atom = Atom().with(ATOM2)
+        val atom3: Atom = Atom().with(ATOM3)
 
         atom1.diode_(atom2).diode(atom3)  // diodes act like one-way data-binding.  Note atom1 is a resistor
 
@@ -93,9 +93,9 @@ class VTestElectronics {
         return true
     }
     private fun testConductors() : Boolean {
-        val atom1: Atom = Atom(ATOM1)
-        val atom2: Atom = Atom(ATOM2)
-        val atom3: Atom = Atom(ATOM3)
+        val atom1: Atom = Atom().with(ATOM1)
+        val atom2: Atom = Atom().with(ATOM2)
+        val atom3: Atom = Atom().with(ATOM3)
 
         atom1.conductor_(atom2).conductor(atom3)    // Conductors are the equivalent of two-way data binding
                                                     // Diodes control electrical flow to one way flow, conductors
@@ -128,8 +128,8 @@ class VTestElectronics {
     }
 
     private fun testCapacitor() : Boolean {
-        val receiver: Capacitor = Capacitor("Me")
-        val atom     : Atom      = Atom("Hello")
+        val receiver: Capacitor = Capacitor().with("Me")
+        val atom     : Atom      = Atom().with("Hello")
 
         receiver.capacitor(atom)
 

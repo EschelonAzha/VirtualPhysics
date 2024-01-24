@@ -7,18 +7,17 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class City(
-    private val matterAntiMatter: IMatter,
+    private val matterAntiMatter: IMatter = Matter(City::class)
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(City::class),
-    )   init {
+    init {
         setContent("", true)
     }
 
-    constructor(value:String) : this() {
+    fun with(value:String) : City {
         Quark.value(this).setWavelength(value)
+        return this
     }
 
     override fun absorb(photon: Photon) : Photon {

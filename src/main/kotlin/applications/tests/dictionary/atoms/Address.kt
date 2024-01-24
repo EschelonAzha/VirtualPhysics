@@ -7,18 +7,17 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class Address(
-    private val matterAntiMatter: IMatter,
+    private val matterAntiMatter: IMatter = Matter(Address::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Address::class),
-    )   init {
+    init {
         setContent("", true)
     }
 
-    constructor(value:String) : this() {
+    fun with(value:String) : Address {
         setContent("", true)
+        return this
     }
 
     override fun absorb(photon: Photon) : Photon {

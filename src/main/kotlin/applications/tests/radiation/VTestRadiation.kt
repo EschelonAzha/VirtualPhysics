@@ -29,7 +29,7 @@ class VTestRadiation {
     }
 
     private fun testAddressEmission() : Boolean {
-        val address = AddressRow("Bob", "main st", "New York", "NY")
+        val address = AddressRow().with("Bob", "main st", "New York", "NY")
         val emission = address.emit()
 
         val (clone, _) = Absorber.materialize(emission)
@@ -42,8 +42,8 @@ class VTestRadiation {
 
     }
     private fun testEmissions() : Boolean {
-        val atom : Atom = Atom(ATOM1)
-        val city : Atom = Resistor(CITY)
+        val atom : Atom = Atom().with(ATOM1)
+        val city : Atom = Resistor().with(CITY)
                                                 // Particles don't need JSON or XML to serialize themselves
                                                 // and don't need 3rd party parsers such as GSON, or Jackson
 
