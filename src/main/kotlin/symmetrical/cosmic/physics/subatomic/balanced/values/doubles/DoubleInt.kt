@@ -19,16 +19,17 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.doubles
  */
 
 class DoubleInt {
-    val value : Double?
-    constructor(value:Double?) {
+    var value : Double? = null
+    fun with(value:Double?) : DoubleInt {
         this.value = value
+        return this
     }
 
     fun asInt(): Int? {
         if (value == null)
             return null
 
-        return value.toInt()
+        return value!!.toInt()
     }
     fun toInt(): Int {
         return asInt() ?: return 0

@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.vector
  */
 
 class VectorDouble {
-    val value : Array<Any>
-    constructor(value:Array<Any>) {
+    lateinit var value : Array<Any>
+    fun with(value:Array<Any>) : VectorDouble {
         this.value = value
+        return this
     }
     fun asDouble() : Double? {
         if (value.isEmpty())

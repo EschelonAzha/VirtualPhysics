@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.nil
  */
 
 class NilVector {
-    val value : Any?
-    constructor(value:Any?) {
+    var value : Any? = null
+    fun with(value:Any?) : NilVector {
         this.value = value
+        return this
     }
     fun asArray() : Array<Any> {
         return emptyArray()

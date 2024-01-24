@@ -19,11 +19,12 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.ints
  */
 
 class IntVector {
-    val value : Int?
-    constructor(value:Int?) {
+    var value : Int? = null
+    fun with(value:Int?) : IntVector {
         this.value = value
+        return this
     }
-    fun asArray() : Array<Int>? {
+    fun asArray() : Array<out Int?> {
         if (value == null)
             return Array<Int>(0){0}
 

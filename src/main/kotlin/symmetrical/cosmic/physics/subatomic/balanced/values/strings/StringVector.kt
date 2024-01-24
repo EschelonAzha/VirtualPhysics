@@ -19,11 +19,12 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.strings
  */
 
 class StringVector {
-    val value : String?
-    constructor(value:String?) {
+    var value : String? = null
+    fun with(value:String?) : StringVector {
         this.value = value
+        return this
     }
-    fun asArray() : Array<String>? {
+    fun asArray() : Array<out String?> {
         if (value == null)
             return Array<String>(0){""}
 

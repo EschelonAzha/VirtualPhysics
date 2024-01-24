@@ -21,9 +21,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.strings
 import symmetrical.cosmic.transpectors.transpectors.Bytes
 
 class StringByte {
-    val value : String?
-    constructor(value:String?) {
+    var value : String? = null
+    fun with(value:String?) : StringByte {
         this.value = value
+        return this
     }
     fun asByte() : Byte? {
         return Bytes.toByte(value)

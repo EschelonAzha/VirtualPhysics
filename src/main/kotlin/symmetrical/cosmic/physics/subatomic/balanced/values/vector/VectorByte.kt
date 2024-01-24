@@ -20,9 +20,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.vector
 
 
 class VectorByte {
-    val value : Array<Any>
-    constructor(value:Array<Any>) {
+    lateinit var value : Array<Any>
+    fun with(value:Array<Any>) : VectorByte {
         this.value = value
+        return this
     }
     fun asByte() : Byte? {
         if (value.isEmpty())

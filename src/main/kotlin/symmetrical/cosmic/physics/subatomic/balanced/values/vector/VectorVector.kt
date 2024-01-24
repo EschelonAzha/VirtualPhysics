@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.vector
  */
 
 class VectorVector {
-    val value : Array<Any>
-    constructor(value:Array<Any>) {
+    lateinit var value : Array<Any>
+    fun with(value:Array<Any>) : VectorVector {
         this.value = value
+        return this
     }
     fun asArray() : Array<Any> {
        return value

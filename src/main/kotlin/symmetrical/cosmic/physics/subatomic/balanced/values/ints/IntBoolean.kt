@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.ints
  */
 
 class IntBoolean {
-    val value : Int?
-    constructor(value:Int?) {
+    var value : Int? = null
+    fun with(value:Int?) : IntBoolean{
         this.value = value
+        return this
     }
     fun asBoolean() : Boolean? {
         if (value == null)

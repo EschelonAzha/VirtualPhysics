@@ -19,11 +19,12 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.doubles
  */
 
 class DoubleVector {
-    val value : Double?
-    constructor(value:Double?) {
+    var value : Double? = null
+    fun with(value:Double?) : DoubleVector {
         this.value = value
+        return this
     }
-    fun asArray() : Array<Double>? {
+    fun asArray() : Array<out Double?> {
         if (value == null)
             return Array<Double>(0){0.0}
 

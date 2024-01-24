@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.doubles
  */
 
 class DoubleBoolean {
-    val value : Double?
-    constructor(value:Double?) {
+    var value : Double? = null
+    fun with(value:Double?) : DoubleBoolean {
         this.value = value
+        return this
     }
     fun asBoolean() : Boolean? {
         if (value == null)

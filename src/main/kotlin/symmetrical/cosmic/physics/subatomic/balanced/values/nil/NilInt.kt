@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.nil
  */
 
 class NilInt {
-    val value : Any?
-    constructor(value:Any?) {
+    var value : Any? = null
+    fun with(value:Any?) : NilInt {
         this.value = value
+        return this
     }
     fun asInt() : Int? {
         return null

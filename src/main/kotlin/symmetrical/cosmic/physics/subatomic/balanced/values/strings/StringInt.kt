@@ -19,15 +19,16 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.strings
  */
 
 class StringInt {
-    val value : String?
-    constructor(value:String?) {
+    var value : String? = null
+    fun with(value:String?) : StringInt {
         this.value = value
+        return this
     }
     fun asInt() : Int? {
         if (value == null)
             return null
         try {
-            return value.toInt()
+            return value!!.toInt()
         } catch (e:Exception) {
             return null
         }

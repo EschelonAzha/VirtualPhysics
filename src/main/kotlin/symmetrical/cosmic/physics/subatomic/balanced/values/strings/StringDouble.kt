@@ -20,15 +20,16 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.strings
 
 
 class StringDouble {
-    val value : String?
-    constructor(value:String?) {
+    var value : String? = null
+    fun with(value:String?) : StringDouble {
         this.value = value
+        return this
     }
     fun asDouble() : Double? {
         if (value == null)
             return null
         try {
-            return value.toDouble()
+            return value!!.toDouble()
         } catch (e:Exception) {
             return null
         }

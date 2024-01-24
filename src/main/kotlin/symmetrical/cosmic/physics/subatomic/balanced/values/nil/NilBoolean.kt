@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.nil
  */
 
 class NilBoolean {
-    val value : Any?
-    constructor(value:Any?) {
+    var value : Any? = null
+    fun with(value:Any?) : NilBoolean {
         this.value = value
+        return this
     }
     fun asBoolean() : Boolean? {
         return null

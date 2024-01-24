@@ -19,14 +19,15 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.doubles
  */
 
 class DoubleByte {
-    val value : Double?
-    constructor(value:Double?) {
+    var value : Double? = null
+    fun with(value:Double?) : DoubleByte{
         this.value = value
+        return this
     }
     fun asByte() : Byte? {
         if (value == null)
             return null
-        return value.toInt().toByte()
+        return value!!.toInt().toByte()
     }
     fun toByte(): Byte {
         return asByte() ?: return 0

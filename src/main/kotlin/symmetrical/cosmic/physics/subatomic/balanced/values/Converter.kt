@@ -46,23 +46,23 @@ class Converter {
 
     fun asArray() : Array<Any> {
         if (field.getType() == Field.Static.NULL)
-            return NilVector(field.getContent()).asArray()
+            return NilVector().with(field.getContent()).asArray()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanVector().with(field.getContent() as Boolean).asArray() as Array<Any>
         if (field.getType() == Field.Static.BYTE)
             return ByteVector().with(field.getContent() as Byte).asArray() as Array<Any>
         if (field.getType() == Field.Static.INT)
-            return IntVector(field.getContent() as Int).asArray() as Array<Any>
+            return IntVector().with(field.getContent() as Int).asArray() as Array<Any>
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleVector(field.getContent() as Double).asArray() as Array<Any>
+            return DoubleVector().with(field.getContent() as Double).asArray() as Array<Any>
         if (field.getType() == Field.Static.STRING1)
-            return StringVector(field.getContent() as String).asArray() as Array<Any>
+            return StringVector().with(field.getContent() as String).asArray() as Array<Any>
         if (field.getType() == Field.Static.STRING2)
-            return StringVector(field.getContent() as String).asArray() as Array<Any>
+            return StringVector().with(field.getContent() as String).asArray() as Array<Any>
         if (field.getType() == Field.Static.STRING3)
-            return StringVector(field.getContent() as String).asArray() as Array<Any>
+            return StringVector().with(field.getContent() as String).asArray() as Array<Any>
         if (field.getType() == Field.Static.VECTOR)
-            return VectorVector(field.getContent() as Array<Any>).asArray() as Array<Any>
+            return VectorVector().with(field.getContent() as Array<Any>).asArray() as Array<Any>
 
         println("Converter::asArray:  UnknownType")
         return Array<Any>(0){false}
@@ -70,250 +70,250 @@ class Converter {
 
     fun toArray() : Array<Any> {
         if (field.getType() == Field.Static.NULL)
-            return NilVector(field.getContent()).toArray()
+            return NilVector().with(field.getContent()).toArray()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanVector().with(field.getContent() as Boolean).toArray() as Array<Any>
         if (field.getType() == Field.Static.BYTE)
             return ByteVector().with(field.getContent() as Byte).toArray() as Array<Any>
         if (field.getType() == Field.Static.INT)
-            return IntVector(field.getContent() as Int).toArray() as Array<Any>
+            return IntVector().with(field.getContent() as Int).toArray() as Array<Any>
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleVector(field.getContent() as Double).toArray() as Array<Any>
+            return DoubleVector().with(field.getContent() as Double).toArray() as Array<Any>
         if (field.getType() == Field.Static.STRING1)
-            return StringVector(field.getContent() as String).toArray() as Array<Any>
+            return StringVector().with(field.getContent() as String).toArray() as Array<Any>
         if (field.getType() == Field.Static.STRING2)
-            return StringVector(field.getContent() as String).toArray() as Array<Any>
+            return StringVector().with(field.getContent() as String).toArray() as Array<Any>
         if (field.getType() == Field.Static.STRING3)
-            return StringVector(field.getContent() as String).toArray() as Array<Any>
+            return StringVector().with(field.getContent() as String).toArray() as Array<Any>
         if (field.getType() == Field.Static.VECTOR)
-            return VectorVector(field.getContent() as Array<Any>).toArray() as Array<Any>
+            return VectorVector().with(field.getContent() as Array<Any>).toArray() as Array<Any>
         println("Converter::toArray:  UnknownType")
         return Array<Any>(0){false}
     }
 
     fun asBoolean() : Boolean? {
         if (field.getType() == Field.Static.NULL)
-            return NilBoolean(field.getContent()).asBoolean()
+            return NilBoolean().with(field.getContent()).asBoolean()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanBoolean().with(field.getContent() as Boolean).asBoolean()
         if (field.getType() == Field.Static.BYTE)
             return ByteBoolean().with(field.getContent() as Byte).asBoolean()
         if (field.getType() == Field.Static.INT)
-            return IntBoolean(field.getContent() as Int).asBoolean()
+            return IntBoolean().with(field.getContent() as Int).asBoolean()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleBoolean(field.getContent() as Double).asBoolean()
+            return DoubleBoolean().with(field.getContent() as Double).asBoolean()
         if (field.getType() == Field.Static.STRING1)
-            return StringBoolean(field.getContent() as String).asBoolean()
+            return StringBoolean().with(field.getContent() as String).asBoolean()
         if (field.getType() == Field.Static.STRING2)
-            return StringBoolean(field.getContent() as String).asBoolean()
+            return StringBoolean().with(field.getContent() as String).asBoolean()
         if (field.getType() == Field.Static.STRING3)
-            return StringBoolean(field.getContent() as String).asBoolean()
+            return StringBoolean().with(field.getContent() as String).asBoolean()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorBoolean(field.getContent() as Array<Any>).asBoolean()
+            return VectorBoolean().with(field.getContent() as Array<Any>).asBoolean()
         println("Converter::asBoolean:  UnknownType")
         return null
     }
 
     fun toBoolean() : Boolean {
         if (field.getType() == Field.Static.NULL)
-            return NilBoolean(field.getContent()).toBoolean()
+            return NilBoolean().with(field.getContent()).toBoolean()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanBoolean().with(field.getContent() as Boolean).toBoolean()
         if (field.getType() == Field.Static.BYTE)
             return ByteBoolean().with(field.getContent() as Byte).toBoolean()
         if (field.getType() == Field.Static.INT)
-            return IntBoolean(field.getContent() as Int).toBoolean()
+            return IntBoolean().with(field.getContent() as Int).toBoolean()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleBoolean(field.getContent() as Double).toBoolean()
+            return DoubleBoolean().with(field.getContent() as Double).toBoolean()
         if (field.getType() == Field.Static.STRING1)
-            return StringBoolean(field.getContent() as String).toBoolean()
+            return StringBoolean().with(field.getContent() as String).toBoolean()
         if (field.getType() == Field.Static.STRING2)
-            return StringBoolean(field.getContent()as String).toBoolean()
+            return StringBoolean().with(field.getContent()as String).toBoolean()
         if (field.getType() == Field.Static.STRING3)
-            return StringBoolean(field.getContent() as String).toBoolean()
+            return StringBoolean().with(field.getContent() as String).toBoolean()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorBoolean(field.getContent() as Array<Any>).toBoolean()
+            return VectorBoolean().with(field.getContent() as Array<Any>).toBoolean()
         println("Converter::toBoolean:  UnknownType")
         return false
     }
     fun asByte() : Byte? {
         if (field.getType() == Field.Static.NULL)
-            return NilByte(field.getContent()).asByte()
+            return NilByte().with(field.getContent()).asByte()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanByte().with(field.getContent() as Boolean).asByte()
         if (field.getType() == Field.Static.BYTE)
             return ByteByte().with(field.getContent() as Byte).asByte()
         if (field.getType() == Field.Static.INT)
-            return IntByte(field.getContent() as Int).asByte()
+            return IntByte().with(field.getContent() as Int).asByte()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleByte(field.getContent() as Double).asByte()
+            return DoubleByte().with(field.getContent() as Double).asByte()
         if (field.getType() == Field.Static.STRING1)
-            return StringByte(field.getContent() as String).asByte()
+            return StringByte().with(field.getContent() as String).asByte()
         if (field.getType() == Field.Static.STRING2)
-            return StringByte(field.getContent() as String).asByte()
+            return StringByte().with(field.getContent() as String).asByte()
         if (field.getType() == Field.Static.STRING3)
-            return StringByte(field.getContent() as String).asByte()
+            return StringByte().with(field.getContent() as String).asByte()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorByte(field.getContent() as Array<Any>).asByte()
+            return VectorByte().with(field.getContent() as Array<Any>).asByte()
         println("Converter::asByte:  UnknownType")
         return null
     }
 
     fun toByte() : Byte {
         if (field.getType() == Field.Static.NULL)
-            return NilByte(field.getContent()).toByte()
+            return NilByte().with(field.getContent()).toByte()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanByte().with(field.getContent() as Boolean).toByte()
         if (field.getType() == Field.Static.BYTE)
             return ByteByte().with(field.getContent() as Byte).toByte()
         if (field.getType() == Field.Static.INT)
-            return IntByte(field.getContent() as Int).toByte()
+            return IntByte().with(field.getContent() as Int).toByte()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleByte(field.getContent() as Double).toByte()
+            return DoubleByte().with(field.getContent() as Double).toByte()
         if (field.getType() == Field.Static.STRING1)
-            return StringByte(field.getContent() as String).toByte()
+            return StringByte().with(field.getContent() as String).toByte()
         if (field.getType() == Field.Static.STRING2)
-            return StringByte(field.getContent() as String).toByte()
+            return StringByte().with(field.getContent() as String).toByte()
         if (field.getType() == Field.Static.STRING3)
-            return StringByte(field.getContent() as String).toByte()
+            return StringByte().with(field.getContent() as String).toByte()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorByte(field.getContent() as Array<Any>).toByte()
+            return VectorByte().with(field.getContent() as Array<Any>).toByte()
         println("Converter::toByte:  UnknownType")
         return 0
     }
     fun asInt() : Int? {
         if (field.getType() == Field.Static.NULL)
-            return NilInt(field.getContent()).asInt()
+            return NilInt().with(field.getContent()).asInt()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanInt().with(field.getContent() as Boolean).asInt()
         if (field.getType() == Field.Static.BYTE)
             return ByteInt().with(field.getContent() as Byte).asInt()
         if (field.getType() == Field.Static.INT)
-            return IntInt(field.getContent() as Int).asInt()
+            return IntInt().with(field.getContent() as Int).asInt()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleInt(field.getContent() as Double).asInt()
+            return DoubleInt().with(field.getContent() as Double).asInt()
         if (field.getType() == Field.Static.STRING1)
-            return StringInt(field.getContent() as String).asInt()
+            return StringInt().with(field.getContent() as String).asInt()
         if (field.getType() == Field.Static.STRING2)
-            return StringInt(field.getContent() as String).asInt()
+            return StringInt().with(field.getContent() as String).asInt()
         if (field.getType() == Field.Static.STRING3)
-            return StringInt(field.getContent() as String).asInt()
+            return StringInt().with(field.getContent() as String).asInt()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorInt(field.getContent() as Array<Any>).asInt()
+            return VectorInt().with(field.getContent() as Array<Any>).asInt()
         println("Converter::asInt:  UnknownType")
         return null
     }
 
     fun toInt() : Int {
         if (field.getType() == Field.Static.NULL)
-            return NilInt(field.getContent()).toInt()
+            return NilInt().with(field.getContent()).toInt()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanInt().with(field.getContent() as Boolean).toInt()
         if (field.getType() == Field.Static.BYTE)
             return ByteInt().with(field.getContent() as Byte).toInt()
         if (field.getType() == Field.Static.INT)
-            return IntInt(field.getContent() as Int).toInt()
+            return IntInt().with(field.getContent() as Int).toInt()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleInt(field.getContent() as Double).toInt()
+            return DoubleInt().with(field.getContent() as Double).toInt()
         if (field.getType() == Field.Static.STRING1)
-            return StringInt(field.getContent() as String).toInt()
+            return StringInt().with(field.getContent() as String).toInt()
         if (field.getType() == Field.Static.STRING2)
-            return StringInt(field.getContent() as String).toInt()
+            return StringInt().with(field.getContent() as String).toInt()
         if (field.getType() == Field.Static.STRING3)
-            return StringInt(field.getContent() as String).toInt()
+            return StringInt().with(field.getContent() as String).toInt()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorInt(field.getContent() as Array<Any>).toInt()
+            return VectorInt().with(field.getContent() as Array<Any>).toInt()
         println("Converter::toInt:  UnknownType")
         return 0
     }
     fun asDouble() : Double? {
         if (field.getType() == Field.Static.NULL)
-            return NilDouble(field.getContent()).asDouble()
+            return NilDouble().with(field.getContent()).asDouble()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanDouble().with(field.getContent() as Boolean).asDouble()
         if (field.getType() == Field.Static.BYTE)
             return ByteDouble().with(field.getContent() as Byte).asDouble()
         if (field.getType() == Field.Static.INT)
-            return IntDouble(field.getContent() as Int).asDouble()
+            return IntDouble().with(field.getContent() as Int).asDouble()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleDouble(field.getContent() as Double).asDouble()
+            return DoubleDouble().with(field.getContent() as Double).asDouble()
         if (field.getType() == Field.Static.STRING1)
-            return StringDouble(field.getContent() as String).asDouble()
+            return StringDouble().with(field.getContent() as String).asDouble()
         if (field.getType() == Field.Static.STRING2)
-            return StringDouble(field.getContent() as String).asDouble()
+            return StringDouble().with(field.getContent() as String).asDouble()
         if (field.getType() == Field.Static.STRING3)
-            return StringDouble(field.getContent() as String).asDouble()
+            return StringDouble().with(field.getContent() as String).asDouble()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorDouble(field.getContent() as Array<Any>).asDouble()
+            return VectorDouble().with(field.getContent() as Array<Any>).asDouble()
         println("Converter::asDouble:  UnknownType")
         return null
     }
 
     fun toDouble() : Double {
         if (field.getType() == Field.Static.NULL)
-            return NilDouble(field.getContent()).toDouble()
+            return NilDouble().with(field.getContent()).toDouble()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanDouble().with(field.getContent() as Boolean).toDouble()
         if (field.getType() == Field.Static.BYTE)
             return ByteDouble().with(field.getContent() as Byte).toDouble()
         if (field.getType() == Field.Static.INT)
-            return IntDouble(field.getContent() as Int).toDouble()
+            return IntDouble().with(field.getContent() as Int).toDouble()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleDouble(field.getContent() as Double).toDouble()
+            return DoubleDouble().with(field.getContent() as Double).toDouble()
         if (field.getType() == Field.Static.STRING1)
-            return StringDouble(field.getContent() as String).toDouble()
+            return StringDouble().with(field.getContent() as String).toDouble()
         if (field.getType() == Field.Static.STRING2)
-            return StringDouble(field.getContent() as String).toDouble()
+            return StringDouble().with(field.getContent() as String).toDouble()
         if (field.getType() == Field.Static.STRING3)
-            return StringDouble(field.getContent() as String).toDouble()
+            return StringDouble().with(field.getContent() as String).toDouble()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorDouble(field.getContent() as Array<Any>).toDouble()
+            return VectorDouble().with(field.getContent() as Array<Any>).toDouble()
         println("Converter::toDouble:  UnknownType")
         return 0.0
     }
 
     fun asString() : String? {
         if (field.getType() == Field.Static.NULL)
-            return NilString(field.getContent()).asString()
+            return NilString().with(field.getContent()).asString()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanString().with(field.getContent() as Boolean).asString()
         if (field.getType() == Field.Static.BYTE)
             return ByteString().with(field.getContent() as Byte).asString()
         if (field.getType() == Field.Static.INT)
-            return IntString(field.getContent() as Int).asString()
+            return IntString().with(field.getContent() as Int).asString()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleString(field.getContent() as Double).asString()
+            return DoubleString().with(field.getContent() as Double).asString()
         if (field.getType() == Field.Static.STRING1)
-            return StringString(field.getContent() as String).asString()
+            return StringString().with(field.getContent() as String).asString()
         if (field.getType() == Field.Static.STRING2)
-            return StringString(field.getContent() as String).asString()
+            return StringString().with(field.getContent() as String).asString()
         if (field.getType() == Field.Static.STRING3)
-            return StringString(field.getContent() as String).asString()
+            return StringString().with(field.getContent() as String).asString()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorString(field.getContent() as Array<Any>).asString()
+            return VectorString().with(field.getContent() as Array<Any>).asString()
         println("Converter::asString:  UnknownType")
         return null
     }
 
     override fun toString() : String {
         if (field.getType() == Field.Static.NULL)
-            return NilString(field.getContent()).toString()
+            return NilString().with(field.getContent()).toString()
         if (field.getType() == Field.Static.BOOLEAN)
             return BooleanString().with(field.getContent() as Boolean).toString()
         if (field.getType() == Field.Static.BYTE)
             return ByteString().with(field.getContent() as Byte).toString()
         if (field.getType() == Field.Static.INT)
-            return IntString(field.getContent() as Int).toString()
+            return IntString().with(field.getContent() as Int).toString()
         if (field.getType() == Field.Static.DOUBLE)
-            return DoubleString(field.getContent() as Double).toString()
+            return DoubleString().with(field.getContent() as Double).toString()
         if (field.getType() == Field.Static.STRING1)
-            return StringString(field.getContent() as String).toString()
+            return StringString().with(field.getContent() as String).toString()
         if (field.getType() == Field.Static.STRING2)
-            return StringString(field.getContent() as String).toString()
+            return StringString().with(field.getContent() as String).toString()
         if (field.getType() == Field.Static.STRING3)
-            return StringString(field.getContent() as String).toString()
+            return StringString().with(field.getContent() as String).toString()
         if (field.getType() == Field.Static.VECTOR)
-            return VectorString(field.getContent() as Array<Any>).toString()
+            return VectorString().with(field.getContent() as Array<Any>).toString()
         println("Converter::toString:  UnknownType")
         return ""
     }

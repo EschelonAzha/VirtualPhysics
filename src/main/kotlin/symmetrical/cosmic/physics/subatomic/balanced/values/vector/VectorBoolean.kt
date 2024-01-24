@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.vector
  */
 
 class VectorBoolean {
-    val value : Array<Any>
-    constructor(value:Array<Any>) {
+    lateinit var value : Array<Any>
+    fun with(value:Array<Any>) : VectorBoolean {
         this.value = value
+        return this
     }
     fun asBoolean() : Boolean? {
         if (value.isEmpty())

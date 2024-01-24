@@ -18,7 +18,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class ActionReaction(private var field:Field=Field()) : IField by field {
+class ActionReaction(
+    private var field:Field=Field()
+) :
+    IField by field {
     private var eventsOn = true
 
 }

@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.strings
  */
 
 class StringString {
-    val value : String?
-    constructor(value:String?) {
+    var value : String? = null
+    fun with(value:String?) : StringString{
         this.value = value
+        return this
     }
     fun asString() : String? {
         return value;

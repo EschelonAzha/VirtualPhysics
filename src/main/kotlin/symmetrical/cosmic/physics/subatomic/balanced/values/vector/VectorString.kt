@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.vector
  */
 
 class VectorString {
-    val value : Array<Any>
-    constructor(value:Array<Any>) {
+    lateinit var value : Array<Any>
+    fun with(value:Array<Any>) : VectorString {
         this.value = value
+        return this
     }
     fun asString() : String? {
         if (value.isEmpty())

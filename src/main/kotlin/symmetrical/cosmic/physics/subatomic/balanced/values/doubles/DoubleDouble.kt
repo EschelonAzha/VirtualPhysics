@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.doubles
  */
 
 class DoubleDouble {
-    val value : Double?
-    constructor(value:Double?) {
+    var value : Double? = null
+    fun with(value:Double?) : DoubleDouble {
         this.value = value
+        return this
     }
     fun asDouble() : Double? {
         return value

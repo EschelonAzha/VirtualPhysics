@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.nil
  */
 
 class NilDouble {
-    val value : Any?
-    constructor(value:Any?) {
+    var value : Any? = null
+    fun with(value:Any?) : NilDouble {
         this.value = value
+        return this
     }
     fun asDouble() : Double? {
         return null

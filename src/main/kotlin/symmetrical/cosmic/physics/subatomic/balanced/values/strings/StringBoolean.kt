@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.strings
  */
 
 class StringBoolean {
-    val value : String?
-    constructor(value:String?) {
+    var value : String? = null
+    fun with(value:String?) : StringBoolean {
         this.value = value
+        return this
     }
     fun asBoolean() : Boolean {
         return value != null

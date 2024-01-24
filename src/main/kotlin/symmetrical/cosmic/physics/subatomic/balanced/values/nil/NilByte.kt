@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.nil
  */
 
 class NilByte {
-    val value : Any?
-    constructor(value:Any?) {
+    var value : Any? = null
+    fun with(value:Any?) : NilByte {
         this.value = value
+        return this
     }
     fun asByte() : Byte? {
         return null
