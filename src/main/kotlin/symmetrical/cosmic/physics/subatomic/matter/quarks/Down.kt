@@ -61,7 +61,7 @@ class Down(
         // Recycler.Down_dissipate(this)
     }
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
 
     override fun getClassId() : String {

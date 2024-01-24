@@ -48,7 +48,7 @@ open class Gravity {
 //    }
 
     fun graviton(center: Graviton, attract:Unit, radial: Graviton) : Unit {
-        val graviton = Graviton().i(center, attract, radial)
+        val graviton = Graviton().with(center, attract, radial)
         gravitons.add(graviton)
         return attract
     }

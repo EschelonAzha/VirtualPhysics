@@ -24,8 +24,7 @@ import symmetrical.cosmic.transpectors.transpectors.Photons
 /*
 https://en.wikipedia.org/wiki/Photon
  */
-open class Photon{
-    constructor()
+open class Photon(){
 
     companion object {
         fun toPhoton(value:Any?, lth:Int= Config.getPhotonLength()) : String {
@@ -64,18 +63,14 @@ open class Photon{
                 var radiation   : String = ""
 
     // Spin 1
-    constructor(radiation:String) : this() {
+    fun with(radiation:String) : Photon {
         this.radiation = radiation;
-        return
-    }
-
-
-    fun i() : Photon {
         return this
     }
 
+
     fun propagate() : Photon {
-        return Photon(Photons.chopClassId(radiation))
+        return Photon().with(Photons.chopClassId(radiation))
     }
     fun radiate() : String {
         return radiation

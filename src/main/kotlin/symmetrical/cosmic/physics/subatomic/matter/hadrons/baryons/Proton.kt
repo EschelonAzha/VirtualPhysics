@@ -101,7 +101,7 @@ open class Proton(
 
     override fun emit() : Photon {
         val classId = matterAntiMatter.getClassId()
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
 
     override fun getClassId() : String {

@@ -97,7 +97,7 @@ open class Molecular(
         return this
     }
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
 
 

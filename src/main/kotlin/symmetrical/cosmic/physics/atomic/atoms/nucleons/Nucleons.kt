@@ -111,7 +111,7 @@ class Nucleons(
 //    }
 
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
     fun getAtom() : Atom {
         return this.p_atom

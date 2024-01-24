@@ -83,7 +83,7 @@ open class Quark(
     }
 
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
 
     fun getBaryon() : Baryon {

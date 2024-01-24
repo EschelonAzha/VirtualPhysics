@@ -56,7 +56,7 @@ class Neutrons(
     }
 
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
     override fun findNeutron(purpose:String) : Int {
         var i=0;

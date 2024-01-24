@@ -47,7 +47,7 @@ class Strange(
         return remainder
     }
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
 
     override fun getClassId() : String {

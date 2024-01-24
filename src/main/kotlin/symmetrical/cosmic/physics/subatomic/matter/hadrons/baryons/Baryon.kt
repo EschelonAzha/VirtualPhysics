@@ -90,7 +90,7 @@ open class Baryon(
         return Pair(this, beta)
     }
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
     fun exchange(baryon: Baryon) : Baryon {
         return this

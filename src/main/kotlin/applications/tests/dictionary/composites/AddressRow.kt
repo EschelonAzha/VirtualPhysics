@@ -65,7 +65,7 @@ class AddressRow(private val monomer         : Monomer = Monomer(),
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()

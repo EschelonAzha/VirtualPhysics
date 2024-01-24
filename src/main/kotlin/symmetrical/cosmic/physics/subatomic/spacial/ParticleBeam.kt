@@ -64,14 +64,14 @@ open class ParticleBeam(
             remainder = line
         }
         shrink()
-        return Photon(remainder)
+        return Photon().with(remainder)
     }
     override fun add(particle: IParticle) : IParticle {
         return _beam.add(particle) as IParticle
     }
 
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
     fun find(particle: IParticle) : Int {
         return _beam.find(particle)

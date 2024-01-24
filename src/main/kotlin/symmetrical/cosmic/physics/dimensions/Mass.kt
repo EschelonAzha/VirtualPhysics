@@ -57,7 +57,7 @@ class Mass (
         return remainder
     }
     override fun emit() : Photon {
-        return Photon(radiate())
+        return Photon().with(radiate())
     }
 
     fun getClassId() : String {
