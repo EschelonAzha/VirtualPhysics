@@ -29,16 +29,8 @@ class Muon(
 ) : Lepton(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Muon::class),
-    )
-    init {
-    }
 
-    override fun i() : Muon {
-        super.i()
-        return this
-    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

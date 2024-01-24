@@ -29,15 +29,7 @@ class TauNeutrino(
 ) : Lepton(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(TauNeutrino::class),
-    )
-    init {
-    }
-    override fun i() : TauNeutrino {
-        super.i()
-        return this
-    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

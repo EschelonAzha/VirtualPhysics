@@ -31,20 +31,12 @@ class Tau(
 ) : Lepton(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Tau::class),
-    )
-    init {
 
-    }
 
     constructor(newValue : Field) : this() {
         getWavelength().setField(newValue)
     }
-    override fun i() : Tau {
-        super.i()
-        return this
-    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

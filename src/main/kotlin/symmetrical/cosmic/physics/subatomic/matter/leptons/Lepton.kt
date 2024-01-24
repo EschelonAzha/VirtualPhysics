@@ -36,13 +36,6 @@ open class Lepton(
     IMatter by matterAntiMatter,
     IEmitter
 {
-    constructor() : this(
-        Matter(Lepton::class),
-    )
-
-    open fun i() : Lepton {
-        return this
-    }
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);

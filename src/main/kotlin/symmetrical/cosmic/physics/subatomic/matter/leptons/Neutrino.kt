@@ -31,12 +31,7 @@ class Neutrino(
 ) : Lepton(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Neutrino::class),
-    )
-    init {
 
-    }
 
     lateinit var __beam: ParticleBeam
     // lateinit var weakRef: WeakRef<Particle>

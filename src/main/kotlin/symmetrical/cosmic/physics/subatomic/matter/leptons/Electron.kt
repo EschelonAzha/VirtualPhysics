@@ -38,17 +38,12 @@ class Electron(
 ) : Lepton(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Electron::class),
-    )
-    init {
-    }
+
             lateinit var orbitals       : Orbitals
     private          var particleBeam   : ParticleBeam = ParticleBeam()
     private lateinit var proton         : Proton
 
-    fun i(orbitals:Orbitals) : Electron {
-        super.i()
+    fun with(orbitals:Orbitals) : Electron {
         this.orbitals = orbitals
         return this
     }
