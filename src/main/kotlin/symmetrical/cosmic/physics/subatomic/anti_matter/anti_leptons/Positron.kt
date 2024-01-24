@@ -29,14 +29,6 @@ class Positron (
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        AntiMatter(Positron::class),
-    )
-
-    override fun i() : Positron {
-        super.i()
-        return this
-    }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

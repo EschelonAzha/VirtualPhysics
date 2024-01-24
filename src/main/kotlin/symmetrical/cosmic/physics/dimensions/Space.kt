@@ -27,16 +27,14 @@ import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 /*
 https://en.wikipedia.org/wiki/Space
  */
-class Space (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
+class Space (
+    private val field: QuasiParticle = QuasiParticle()
+) :
+    IQuasiParticle by field
+{
 
     private var space: IParticle? = null   // this may have to change to a Particle UniqueId when emitted
 
-    constructor() : this(
-        QuasiParticle()
-    )
-    fun i() : Space {
-        return this
-    }
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)

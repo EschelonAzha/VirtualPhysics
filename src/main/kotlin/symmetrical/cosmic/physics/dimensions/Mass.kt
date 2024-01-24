@@ -26,7 +26,11 @@ import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 /*
 https://en.wikipedia.org/wiki/Mass
  */
-class Mass (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
+class Mass (
+    private val field: QuasiParticle = QuasiParticle()
+) :
+    IQuasiParticle by field
+{
 
     object Static {
             const val PHOTON        : Byte = 0
@@ -44,13 +48,8 @@ class Mass (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle
             const val NEUTRON       : Byte = 12
     }
 
-    constructor() : this(
-        QuasiParticle()
-    ) {
+    init {
         setMass(Static.PHOTON)
-    }
-    fun i() : Mass {
-        return this
     }
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()

@@ -29,16 +29,7 @@ class AntiTauNeutrino  (
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        AntiMatter(AntiTauNeutrino::class),
-    )
 
-
-
-    override fun i() : AntiTauNeutrino {
-        super.i()
-        return this
-    }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

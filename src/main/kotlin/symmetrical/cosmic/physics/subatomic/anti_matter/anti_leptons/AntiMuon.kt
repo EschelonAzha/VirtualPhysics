@@ -29,15 +29,7 @@ open class AntiMuon(
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        AntiMatter(AntiMuon::class),
-    )
 
-
-    override fun i() : AntiMuon {
-        super.i()
-        return this
-    }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

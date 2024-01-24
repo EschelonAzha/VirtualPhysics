@@ -31,18 +31,11 @@ class AntiTau(
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        AntiMatter(AntiTau::class),
-    )
-    constructor(oldValue : Field) : this() {
+    fun with(oldValue : Field) : AntiTau {
         getWavelength().setField(oldValue)
-    }
-
-
-    override fun i() : AntiTau {
-        super.i()
         return this
     }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

@@ -36,10 +36,6 @@ open class AntiQuark(
     IAntiMatter by matterAntiMatter,
     IEmitter
 {
-    constructor() : this(
-        AntiMatter(Quark::class),
-    )
-
 
     private var gluon       : Gluon = Red_AntiRed()
 

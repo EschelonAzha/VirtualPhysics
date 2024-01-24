@@ -37,10 +37,6 @@ class AntiBetaMinus(
     IAntiMatter by matterAntiMatter
 
 {
-    constructor() : this(
-        AntiMatter(AntiBetaMinus::class),
-    )
-
     fun decay(baryon: Baryon) : Up {
         var down      : Down = baryon.get(1) as Down
 

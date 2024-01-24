@@ -25,8 +25,4 @@ class Dimensions {
     val time        : Time = Time()
     val temperature : Temperature = Temperature()
 
-    constructor() {
-
-    }
-
 }

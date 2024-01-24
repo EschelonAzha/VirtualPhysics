@@ -28,9 +28,6 @@ class Cation(
 ) : Ion(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Cation::class),
-    )
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

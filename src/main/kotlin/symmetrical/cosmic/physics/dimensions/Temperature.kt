@@ -26,11 +26,12 @@ import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 /*
 https://en.wikipedia.org/wiki/Temperature
  */
-class Temperature  (private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
+class Temperature  (
+    private val field: QuasiParticle = QuasiParticle()
+) :
+    IQuasiParticle by field
+{
 
-    fun i() : Temperature {
-        return this
-    }
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)

@@ -26,7 +26,11 @@ import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 /*
 https://en.wikipedia.org/wiki/Time_in_physics
  */
-class Time(private val field: QuasiParticle = QuasiParticle()) : IQuasiParticle by field {
+class Time(
+    private val field: QuasiParticle = QuasiParticle()
+) :
+    IQuasiParticle by field
+{
 
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()

@@ -29,9 +29,6 @@ class AntiStrange(
 ) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        AntiMatter(AntiStrange::class),
-    )
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()

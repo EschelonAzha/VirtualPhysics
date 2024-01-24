@@ -29,14 +29,8 @@ class AntiNeutrino (
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        AntiMatter(AntiNeutrino::class),
-    )
 
-    override fun i() : AntiNeutrino {
-        super.i()
-        return this
-    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

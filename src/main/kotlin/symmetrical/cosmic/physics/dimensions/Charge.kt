@@ -36,13 +36,8 @@ class Charge (
         const val ZERO:Byte  = 0
         const val MINUS:Byte = -1
     }
-    constructor() : this(
-        QuasiParticle()
-    ) {
+    init {
         setCharge(Static.ZERO)
-    }
-    fun i() : Charge {
-        return this
     }
 
     override fun absorb(photon: Photon) : Photon {

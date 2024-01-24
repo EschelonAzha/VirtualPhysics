@@ -29,9 +29,6 @@ open class Ion(
     IMatter by matterAntiMatter
 {
 
-    constructor() : this(
-        Matter(Ion::class),
-    )
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

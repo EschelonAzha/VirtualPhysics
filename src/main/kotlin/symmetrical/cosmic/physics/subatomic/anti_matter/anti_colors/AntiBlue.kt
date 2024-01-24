@@ -23,16 +23,12 @@ https://en.wikipedia.org/wiki/Color_charge
 */
 
 // ORIGINAL VALUE
-open class AntiBlue : AntiColor {
-    constructor()
+open class AntiBlue : AntiColor() {
+
     init {
         color = ANTI_BLUE
     }
 
-    override fun i() : AntiBlue {
-        super.i()
-        return this
-    }
     override fun clone() : AntiBlue {
         var result      = AntiBlue()
         result.setValue(_value)

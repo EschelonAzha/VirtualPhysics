@@ -33,9 +33,6 @@ open class Molecule(
     IMatterAntiMatter by matterAntiMatter,
     Covalent
 {
-    constructor() : this(
-        MatterAntiMatter(Molecule::class),
-    )
     object Static {
         const val LAST      : Int = -1
     }

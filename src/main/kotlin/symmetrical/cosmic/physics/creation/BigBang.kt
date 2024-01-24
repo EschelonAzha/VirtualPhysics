@@ -26,7 +26,7 @@ class BigBang  {
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()
-    fun i(universe: Universe) : BigBang {
+    fun with(universe: Universe) : BigBang {
         this.universe = universe;
         //  BootConfig.UNIVERSE = universe
         return this;

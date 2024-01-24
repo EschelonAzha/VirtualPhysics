@@ -30,9 +30,6 @@ class AntiBottom(
 ) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {
-    constructor() : this(
-        AntiMatter(AntiBottom::class),
-    )
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()

@@ -34,13 +34,6 @@ open class AntiLepton(
     IAntiMatter by matterAntiMatter,
     IEmitter
 {
-    constructor() : this(
-        AntiMatter(AntiLepton::class),
-    )
-
-    open fun i() : AntiLepton {
-        return this
-    }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
         var remainder = photon.propagate()
