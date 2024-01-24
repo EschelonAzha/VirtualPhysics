@@ -30,11 +30,6 @@ class Strange(
 ) : Quark(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Strange::class),
-    )
-    init {
-    }
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
