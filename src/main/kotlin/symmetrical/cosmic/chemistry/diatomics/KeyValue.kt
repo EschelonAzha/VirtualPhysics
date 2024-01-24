@@ -37,7 +37,7 @@ open class KeyValue(
         const val LAST      : Int = VALUE
     }
 
-    fun with(key: Atom, value: Atom) : KeyValue {
+    override fun with(key: Atom, value: Atom) : KeyValue {
         add(key)
         add(value)
         return this
