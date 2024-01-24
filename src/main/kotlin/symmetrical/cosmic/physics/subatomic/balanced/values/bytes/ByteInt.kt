@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.bytes
  */
 
 class ByteInt {
-    val value : Byte?
-    constructor(value:Byte?) {
+    var value : Byte? = null
+    fun with(value:Byte?) : ByteInt {
         this.value = value
+        return this
     }
 
     fun asInt(): Int? {

@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.bytes
  */
 
 class ByteDouble {
-    val value : Byte?
-    constructor(value:Byte?) {
+    var value : Byte? = null
+    fun with(value:Byte?) : ByteDouble {
         this.value = value
+        return this
     }
 
     fun asDouble(): Double? {

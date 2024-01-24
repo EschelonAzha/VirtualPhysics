@@ -19,11 +19,12 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.bytes
  */
 
 class ByteVector {
-    val value : Byte?
-    constructor(value:Byte?) {
+    var value : Byte? = null
+    fun with(value:Byte?) : ByteVector {
         this.value = value
+        return this
     }
-    fun asArray() : Array<Byte>? {
+    fun asArray() : Array<out Byte?> {
         if (value == null)
             return Array<Byte>(0){0}
 

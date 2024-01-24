@@ -19,9 +19,10 @@ package symmetrical.cosmic.physics.subatomic.balanced.values.bytes
  */
 
 class ByteBoolean {
-    val value : Byte?
-    constructor(value:Byte?) {
+    var value : Byte? = null
+    fun with(value:Byte?) : ByteBoolean{
         this.value = value
+        return this
     }
     fun asBoolean() : Boolean? {
         if (value == null)
