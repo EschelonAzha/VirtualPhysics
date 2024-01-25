@@ -30,11 +30,11 @@ import symmetrical.cosmic.physics.atomic.atoms.states.vectors.QMass
 
 class Atoms : ClassGroup() {
     init {
-        add(EntityId(Base52.classId(), QBoolean::class))
-        add(EntityId(Base52.classId(), QByte::class))
-        add(EntityId(Base52.classId(), QDouble::class))
-        add(EntityId(Base52.classId(), QInt::class))
-        add(EntityId(Base52.classId(), QMass::class))
-        add(EntityId(Base52.classId(), QString::class))
+        add(EntityId().with(Base52.classId(), QBoolean::class))
+        add(EntityId().with(Base52.classId(), QByte::class))
+        add(EntityId().with(Base52.classId(), QDouble::class))
+        add(EntityId().with(Base52.classId(), QInt::class))
+        add(EntityId().with(Base52.classId(), QMass::class))
+        add(EntityId().with(Base52.classId(), QString::class))
     }
 }

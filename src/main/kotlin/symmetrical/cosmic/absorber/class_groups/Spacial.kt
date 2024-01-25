@@ -27,8 +27,8 @@ import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 
 class Spacial : ClassGroup() {
     init {
-        add(EntityId(Base52.classId(), Beam::class))
-        add(EntityId(Base52.classId(), Composition::class))
-        add(EntityId(Base52.classId(), ParticleBeam::class))
+        add(EntityId().with(Base52.classId(), Beam::class))
+        add(EntityId().with(Base52.classId(), Composition::class))
+        add(EntityId().with(Base52.classId(), ParticleBeam::class))
     }
 }

@@ -29,10 +29,10 @@ import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 
 class FundamentalProperties : ClassGroup() {
     init {
-        add(EntityId(Base52.classId(), AngularMomentum::class))
-        add(EntityId(Base52.classId(), Particle::class))
-        add(EntityId(Base52.classId(), QuasiParticle::class))
-        add(EntityId(Base52.classId(), Spin::class))
-        add(EntityId(Base52.classId(), Wavelength::class))
+        add(EntityId().with(Base52.classId(), AngularMomentum::class))
+        add(EntityId().with(Base52.classId(), Particle::class))
+        add(EntityId().with(Base52.classId(), QuasiParticle::class))
+        add(EntityId().with(Base52.classId(), Spin::class))
+        add(EntityId().with(Base52.classId(), Wavelength::class))
     }
 }

@@ -9,10 +9,6 @@ class VTestNeutrons {
     val NEXT : String = "???????????????"
 
 
-    constructor() {
-
-    }
-
     fun test(): Boolean {
         if (!testNeutrons()) {
             println("VTestNeutrons::testNeutrons FAILED!!!!!!!!!!!!!!!!!!!!")

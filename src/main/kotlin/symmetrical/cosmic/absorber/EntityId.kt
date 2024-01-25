@@ -21,12 +21,13 @@ package symmetrical.cosmic.absorber
 import asymmetrical.physics.machine.vm.Classes
 import kotlin.reflect.KClass
 
-class EntityId {
-    val classId:String
-    val classType:KClass<*>
-    constructor(classId:String, classType: KClass<*>) {
+class EntityId() {
+    lateinit var classId:String
+    lateinit var classType:KClass<*>
+    fun with(classId:String, classType: KClass<*>) : EntityId {
         this.classId    = classId
         this.classType  = classType
+        return this
     }
     fun has(classType:KClass<*>) : Boolean {
         return this.classType == classType

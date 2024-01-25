@@ -9,7 +9,7 @@ import symmetrical.cosmic.chemistry.polymer.Polymer
 
 class VTestChemistry {
     private val polymer: Polymer = Polymer()
-    constructor() {
+    init {
         polymer.bind(AddressRow().with("name1", "address1", "city1", "state1"))
         polymer.bind(AddressRow().with("name2", "address1", "city1", "state1"))
         polymer.bind(AddressRow().with("name2", "address1", "city2", "state1"))

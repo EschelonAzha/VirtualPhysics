@@ -25,6 +25,6 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 
 class DictionaryGroup : ClassGroup() {
     init {
-        add(EntityId(Base52.classId(), ValueProton::class))
+        add(EntityId().with(Base52.classId(), ValueProton::class))
     }
 }

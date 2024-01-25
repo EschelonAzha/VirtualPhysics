@@ -23,11 +23,11 @@ class TestPhysicsEmitters : ClassGroup() {
     // that is all that is needed!
 
     init {
-        add(EntityId(Base52.classId(), Address::class))  // <-- Add to list
-        add(EntityId(Base52.classId(), AddressRow::class))
-        add(EntityId(Base52.classId(), City::class))
-        add(EntityId(Base52.classId(), Name::class))
-        add(EntityId(Base52.classId(), Resistor::class))
-        add(EntityId(Base52.classId(), State::class))
+        add(EntityId().with(Base52.classId(), Address::class))  // <-- Add to list
+        add(EntityId().with(Base52.classId(), AddressRow::class))
+        add(EntityId().with(Base52.classId(), City::class))
+        add(EntityId().with(Base52.classId(), Name::class))
+        add(EntityId().with(Base52.classId(), Resistor::class))
+        add(EntityId().with(Base52.classId(), State::class))
     }
 }

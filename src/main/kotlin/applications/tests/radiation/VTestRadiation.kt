@@ -10,10 +10,6 @@ class VTestRadiation {
     val CITY :String = "???????????????"
 
 
-    constructor() {
-
-    }
-
     fun test() : Boolean {
 
         if (!testAddressEmission()) {

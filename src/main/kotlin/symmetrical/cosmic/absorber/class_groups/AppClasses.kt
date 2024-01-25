@@ -27,8 +27,8 @@ import symmetrical.cosmic.chemistry.diatomics.KeyValue
 
 class AppClasses : ClassGroup() {
     init  {
-        add(EntityId(Base52.classId(), KeyValue::class))
-        add(EntityId(Base52.classId(), Metal::class))
-        add(EntityId(Base52.classId(), Monad::class))
+        add(EntityId().with(Base52.classId(), KeyValue::class))
+        add(EntityId().with(Base52.classId(), Metal::class))
+        add(EntityId().with(Base52.classId(), Monad::class))
     }
 }

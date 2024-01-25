@@ -14,10 +14,6 @@ class VTestElectronics {
     val ATOM3NEW:String = "Atom3NEW"
 
 
-    constructor() {
-
-    }
-
     fun test() : Boolean {
         if (!testDiodes()) {
             println("VTestElectronics::testDiodes FAILED!!!!!!!!!!!!!!!!!!!!")

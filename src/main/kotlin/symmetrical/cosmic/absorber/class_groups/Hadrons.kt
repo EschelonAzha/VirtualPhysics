@@ -31,12 +31,12 @@ import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
 
 class Hadrons : ClassGroup() {
     init {
-        add(EntityId(Base52.classId(), Baryon::class))
-        add(EntityId(Base52.classId(), Hadron::class))
-        add(EntityId(Base52.classId(), Neutron::class))
-        add(EntityId(Base52.classId(), Neutrons::class))
-        add(EntityId(Base52.classId(), Nucleons::class))
-        add(EntityId(Base52.classId(), Proton::class))
-        add(EntityId(Base52.classId(), Protons::class))
+        add(EntityId().with(Base52.classId(), Baryon::class))
+        add(EntityId().with(Base52.classId(), Hadron::class))
+        add(EntityId().with(Base52.classId(), Neutron::class))
+        add(EntityId().with(Base52.classId(), Neutrons::class))
+        add(EntityId().with(Base52.classId(), Nucleons::class))
+        add(EntityId().with(Base52.classId(), Proton::class))
+        add(EntityId().with(Base52.classId(), Protons::class))
     }
 }

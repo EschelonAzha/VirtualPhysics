@@ -27,11 +27,11 @@ import symmetrical.cosmic.physics.dimensions.*
 class Dimensions : ClassGroup() {
     init {
 
-        add(EntityId(Base52.classId(), Charge::class))
-        add(EntityId(Base52.classId(), Mass::class))
-        add(EntityId(Base52.classId(), Space::class))
-        add(EntityId(Base52.classId(), Temperature::class))
-        add(EntityId(Base52.classId(), Time::class))
+        add(EntityId().with(Base52.classId(), Charge::class))
+        add(EntityId().with(Base52.classId(), Mass::class))
+        add(EntityId().with(Base52.classId(), Space::class))
+        add(EntityId().with(Base52.classId(), Temperature::class))
+        add(EntityId().with(Base52.classId(), Time::class))
 
     }
 }
