@@ -21,13 +21,12 @@ package symmetrical.cosmic.transpectors.printable_characters
 
 
 
-open class Characters {
+open class Characters() {
 
     private var _characters:String  = "";
-    constructor() {
-    }
 
-    fun i(characters:String) : Characters {
+
+    fun with(characters:String) : Characters {
         this._characters = characters;
         return this;
     }

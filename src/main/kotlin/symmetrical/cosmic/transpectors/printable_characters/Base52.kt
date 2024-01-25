@@ -22,13 +22,13 @@ import symmetrical.cosmic.transpectors.transpectors.Strings
 import kotlin.math.floor
 
 
-class Base52 {
+class Base52() {
 
     object Static {
         public var current:String = "ba"
     }
     companion object {
-        private val characters = Characters().i(LowerCase.LOWERCASE + UpperCase.UPPERCASE);
+        private val characters = Characters().with(LowerCase.LOWERCASE + UpperCase.UPPERCASE);
 
 
         fun classId() : String {
@@ -91,10 +91,5 @@ class Base52 {
             return value;
         }
     }
-    constructor() {
-    }
 
-    fun i() : Base52 {
-        return this;
-    }
 }

@@ -18,16 +18,13 @@ package symmetrical.cosmic.transpectors.printable_characters
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class Numbers : Characters {
+class Numbers : Characters() {
 
     companion object {
         const val NUMBERS: String = "01234567890";
     }
-    constructor() : super() {
+    init {
+        super.with(NUMBERS)
     }
 
-    fun i() : Numbers {
-        super.i(NUMBERS);
-        return this;
-    }
 }

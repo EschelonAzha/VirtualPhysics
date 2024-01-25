@@ -19,15 +19,12 @@ package symmetrical.cosmic.transpectors.printable_characters
  */
 
 
-class LowerCase : Characters {
+class LowerCase : Characters() {
     companion object {
         const val LOWERCASE: String = "abcdefghijklmnopqrstuvwxyz";
     }
-    constructor() : super() {
+    init {
+        super.with(LOWERCASE)
     }
 
-    fun i() : LowerCase {
-        super.i(LOWERCASE);
-        return this;
-    }
 }
