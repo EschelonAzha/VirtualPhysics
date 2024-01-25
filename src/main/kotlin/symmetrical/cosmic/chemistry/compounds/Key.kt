@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class Key(
-    private val matterAntiMatter: IMatter = Matter(Key::class),
+    private val matterAntiMatter: IMatter = Matter().with(Key::class),
 ) : Compound(),
     IMatter by matterAntiMatter
 {

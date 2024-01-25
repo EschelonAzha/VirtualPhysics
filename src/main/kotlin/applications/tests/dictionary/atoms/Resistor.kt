@@ -10,7 +10,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Down
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 class Resistor(
-    private val matterAntiMatter: IMatter = Matter(Resistor::class),
+    private val matterAntiMatter: IMatter = Matter().with(Resistor::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {

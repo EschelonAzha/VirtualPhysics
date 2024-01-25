@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Muon
  */
 class Muon(
-    private val matterAntiMatter: IMatter = Matter(Muon::class),
+    private val matterAntiMatter: IMatter = Matter().with(Muon::class),
 ) : Lepton(),
     IMatter by matterAntiMatter
 {

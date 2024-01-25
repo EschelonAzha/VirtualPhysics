@@ -29,7 +29,7 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 https://en.wikipedia.org/wiki/UpQuark
  */
 class Up(
-    private val matterAntiMatter: IMatter = Matter(Up::class),
+    private val matterAntiMatter: IMatter = Matter().with(Up::class),
 ) : Quark(),
     IMatter by matterAntiMatter
 {

@@ -30,7 +30,7 @@ https://en.wikipedia.org/wiki/DownQuark
  */
 
 class Down(
-    private val matterAntiMatter: IMatter = Matter(Down::class),
+    private val matterAntiMatter: IMatter = Matter().with(Down::class),
 ) : Quark(),
     IMatter by matterAntiMatter
 {

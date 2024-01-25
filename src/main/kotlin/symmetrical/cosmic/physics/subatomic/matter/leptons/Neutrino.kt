@@ -27,7 +27,7 @@ https://en.wikipedia.org/wiki/Neutrino
  */
 
 class Neutrino(
-    private val matterAntiMatter: IMatter = Matter(Neutrino::class),
+    private val matterAntiMatter: IMatter = Matter().with(Neutrino::class),
 ) : Lepton(),
     IMatter by matterAntiMatter
 {

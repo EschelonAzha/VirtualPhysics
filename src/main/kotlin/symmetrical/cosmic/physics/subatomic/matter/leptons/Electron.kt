@@ -34,7 +34,7 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 https://en.wikipedia.org/wiki/Electron
  */
 class Electron(
-    private val matterAntiMatter: IMatter = Matter(Electron::class),
+    private val matterAntiMatter: IMatter = Matter().with(Electron::class),
 ) : Lepton(),
     IMatter by matterAntiMatter
 {

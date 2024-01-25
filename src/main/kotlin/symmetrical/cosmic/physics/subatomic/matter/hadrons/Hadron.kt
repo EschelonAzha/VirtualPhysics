@@ -30,7 +30,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Hadron
  */
 open class Hadron(
-    private val matterAntiMatter: IMatter = Matter(Hadron::class),
+    private val matterAntiMatter: IMatter = Matter().with(Hadron::class),
 ) : ParticleBeam(),
     IMatter by matterAntiMatter,
     IEmitter

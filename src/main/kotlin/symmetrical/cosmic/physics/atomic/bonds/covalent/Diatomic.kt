@@ -28,7 +28,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Diatomic_molecule
  */
 open class Diatomic(
-    private val matterAntiMatter: IMatter = Matter(Diatomic::class),
+    private val matterAntiMatter: IMatter = Matter().with(Diatomic::class),
 ) : Compound(),
     IMatter by matterAntiMatter
 {

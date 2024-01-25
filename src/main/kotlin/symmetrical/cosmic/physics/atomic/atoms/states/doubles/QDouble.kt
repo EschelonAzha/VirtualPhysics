@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 
 class QDouble(
-    private val matterAntiMatter: IMatter = Matter(QDouble::class),
+    private val matterAntiMatter: IMatter = Matter().with(QDouble::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {

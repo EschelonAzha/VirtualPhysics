@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Up
 https://en.wikipedia.org/wiki/UpQuark
  */
 class AntiUp(
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiUp::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiUp::class),
 ) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {

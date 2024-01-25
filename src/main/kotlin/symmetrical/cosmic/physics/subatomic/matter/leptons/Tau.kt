@@ -27,7 +27,7 @@ https://en.wikipedia.org/wiki/Tau
  */
 
 class Tau(
-    private val matterAntiMatter: IMatter = Matter(Tau::class),
+    private val matterAntiMatter: IMatter = Matter().with(Tau::class),
 ) : Lepton(),
     IMatter by matterAntiMatter
 {

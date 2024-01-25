@@ -22,8 +22,10 @@ import kotlin.reflect.KClass
 /*
 https://en.wikipedia.org/wiki/Antimatter
  */
-class AntiMatter : MatterAntiMatter, IAntiMatter {
-    constructor(classType:KClass<*>) : super(classType){
-
+class AntiMatter : MatterAntiMatter(), IAntiMatter {
+    override fun with(kClass:KClass<*>) : IAntiMatter {
+        super.with(kClass)
+        return this
     }
+
 }

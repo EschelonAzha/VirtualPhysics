@@ -7,7 +7,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 class Address(
-    private val matterAntiMatter: IMatter = Matter(Address::class),
+    private val matterAntiMatter: IMatter = Matter().with(Address::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {

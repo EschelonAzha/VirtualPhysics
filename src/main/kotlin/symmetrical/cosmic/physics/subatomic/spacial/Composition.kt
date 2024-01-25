@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Composition(
-    private val matterAntiMatter: IMatter = Matter(Composition::class),
+    private val matterAntiMatter: IMatter = Matter().with(Composition::class),
 ) : ParticleBeam(),
     IMatter by matterAntiMatter
 {

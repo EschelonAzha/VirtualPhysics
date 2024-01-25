@@ -32,7 +32,7 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class BetaMinus(
-    private val matterAntiMatter: IMatter = Matter(BetaMinus::class),
+    private val matterAntiMatter: IMatter = Matter().with(BetaMinus::class),
 ) : LeptonPair(),
     IMatter by matterAntiMatter
 {

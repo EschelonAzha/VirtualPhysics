@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Ion#Anions_and_cations
  */
 class Anion(
-    private val matterAntiMatter: IMatter = Matter(Anion::class),
+    private val matterAntiMatter: IMatter = Matter().with(Anion::class),
 ) : Ion(),
     IMatter by matterAntiMatter
 {

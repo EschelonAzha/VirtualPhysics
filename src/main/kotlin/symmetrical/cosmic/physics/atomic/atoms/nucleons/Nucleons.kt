@@ -37,7 +37,7 @@ https://en.wikipedia.org/wiki/Nucleon
  */
 
 class Nucleons(
-    private val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter(Nucleons::class),
+    private val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter().with(Nucleons::class),
     private var _protons         : Protons  = Protons(),
     private var neutrons         : Neutrons = Neutrons(),
 

@@ -26,7 +26,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 open class QMass(
-    private val matterAntiMatter: IMatter = Matter(QMass::class),
+    private val matterAntiMatter: IMatter = Matter().with(QMass::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {

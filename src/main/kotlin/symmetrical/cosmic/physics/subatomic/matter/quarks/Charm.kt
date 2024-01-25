@@ -26,7 +26,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/CharmQuark
  */
 class Charm(
-    private val matterAntiMatter: IMatter = Matter(Charm::class),
+    private val matterAntiMatter: IMatter = Matter().with(Charm::class),
 ) : Quark(),
     IMatter by matterAntiMatter
 {

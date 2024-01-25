@@ -29,7 +29,7 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 https://en.wikipedia.org/wiki/Pion
  */
 open class NeutralDownPion(
-    private val matterAntiMatter: IMatter = Matter(NeutralDownPion::class),
+    private val matterAntiMatter: IMatter = Matter().with(NeutralDownPion::class),
 ) : Hadron(),
     IMatter by matterAntiMatter
 {

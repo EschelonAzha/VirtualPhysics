@@ -36,7 +36,7 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 https://en.wikipedia.org/wiki/Baryon
  */
 open class Baryon(
-    private val matterAntiMatter: IMatter = Matter(Baryon::class),
+    private val matterAntiMatter: IMatter = Matter().with(Baryon::class),
 ) : Hadron(),
     IMatter by matterAntiMatter
 {

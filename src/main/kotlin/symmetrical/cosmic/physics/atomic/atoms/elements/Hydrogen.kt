@@ -26,7 +26,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Hydrogen
  */
 class Hydrogen(
-    private val matterAntiMatter: IMatter = Matter(Hydrogen::class),
+    private val matterAntiMatter: IMatter = Matter().with(Hydrogen::class),
 ) :
     IMatter by matterAntiMatter
 {

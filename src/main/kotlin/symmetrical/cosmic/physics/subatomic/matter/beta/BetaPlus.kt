@@ -33,7 +33,7 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 https://en.wikipedia.org/wiki/Beta_decay
  */
 class BetaPlus(
-    private val matterAntiMatter: IMatter = Matter(BetaPlus::class),
+    private val matterAntiMatter: IMatter = Matter().with(BetaPlus::class),
 ) : LeptonPair(),
     IMatter by matterAntiMatter
 {

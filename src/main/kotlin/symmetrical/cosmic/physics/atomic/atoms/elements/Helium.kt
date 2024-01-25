@@ -27,7 +27,7 @@ https://en.wikipedia.org/wiki/Helium
  */
 
 class Helium(
-    private val matterAntiMatter: IMatter = Matter(Helium::class),
+    private val matterAntiMatter: IMatter = Matter().with(Helium::class),
 ) :
     IMatter by matterAntiMatter
 {

@@ -31,7 +31,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Lepton
  */
 open class Lepton(
-    private val matterAntiMatter: IMatter = Matter(Lepton::class),
+    private val matterAntiMatter: IMatter = Matter().with(Lepton::class),
 ) : Particle(),
     IMatter by matterAntiMatter,
     IEmitter

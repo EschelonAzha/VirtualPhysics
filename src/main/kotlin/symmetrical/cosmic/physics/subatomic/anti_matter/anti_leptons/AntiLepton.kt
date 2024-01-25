@@ -29,7 +29,7 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Lepton
 https://en.wikipedia.org/wiki/Lepton
  */
 open class AntiLepton(
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiLepton::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiLepton::class),
 ) : Particle(),
     IAntiMatter by matterAntiMatter,
     IEmitter

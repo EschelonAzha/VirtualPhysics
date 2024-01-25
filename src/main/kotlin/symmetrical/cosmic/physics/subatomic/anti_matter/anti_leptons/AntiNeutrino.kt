@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Neutrino
 https://en.wikipedia.org/wiki/Neutrino
  */
 class AntiNeutrino (
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiNeutrino::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiNeutrino::class),
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {

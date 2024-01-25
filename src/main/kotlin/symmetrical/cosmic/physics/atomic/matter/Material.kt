@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Material
  */
 class Material(
-    private val matterAntiMatter: IMatter = Matter(Material::class),
+    private val matterAntiMatter: IMatter = Matter().with(Material::class),
 ) :
     IMatter by matterAntiMatter
 {

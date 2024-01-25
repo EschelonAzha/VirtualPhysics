@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Charm
 https://en.wikipedia.org/wiki/CharmQuark
  */
 class AntiCharm (
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiCharm::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiCharm::class),
 ) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {

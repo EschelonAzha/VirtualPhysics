@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Solution_(chemistry)
  */
 class Solution(
-    private val matterAntiMatter: IMatter = Matter(Solution::class),
+    private val matterAntiMatter: IMatter = Matter().with(Solution::class),
 ) :
     IMatter by matterAntiMatter
 {

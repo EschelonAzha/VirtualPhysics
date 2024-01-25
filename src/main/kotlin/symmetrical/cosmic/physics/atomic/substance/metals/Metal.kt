@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Metal
  */
 class Metal(
-    private val matterAntiMatter: IMatter = Matter(Metal::class),
+    private val matterAntiMatter: IMatter = Matter().with(Metal::class),
 ) :
     IMatter by matterAntiMatter
 {

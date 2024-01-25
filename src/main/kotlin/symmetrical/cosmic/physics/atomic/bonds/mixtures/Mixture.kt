@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Mixture
  */
 class Mixture(
-    private val matterAntiMatter: IMatter = Matter(Mixture::class),
+    private val matterAntiMatter: IMatter = Matter().with(Mixture::class),
 ) :
     IMatter by matterAntiMatter
 {

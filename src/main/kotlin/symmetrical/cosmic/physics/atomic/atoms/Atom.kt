@@ -43,7 +43,7 @@ https://en.wikipedia.org/wiki/Atom
  */
 
 open class Atom(
-    private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter(Atom::class),
+    private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter().with(Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var _nucleons         : Nucleons              = Nucleons()
 

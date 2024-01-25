@@ -24,7 +24,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/Ion
  */
 open class Ion(
-    private val matterAntiMatter: IMatter = Matter(Ion::class),
+    private val matterAntiMatter: IMatter = Matter().with(Ion::class),
 ) :
     IMatter by matterAntiMatter
 {

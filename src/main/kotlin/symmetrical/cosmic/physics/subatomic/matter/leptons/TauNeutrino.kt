@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/TauNeutrino
  */
 class TauNeutrino(
-    private val matterAntiMatter: IMatter = Matter(TauNeutrino::class),
+    private val matterAntiMatter: IMatter = Matter().with(TauNeutrino::class),
 ) : Lepton(),
     IMatter by matterAntiMatter
 {

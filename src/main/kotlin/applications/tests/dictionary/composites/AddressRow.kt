@@ -14,7 +14,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 
 class AddressRow(private val monomer         : Monomer = Monomer(),
-                 private val matterAntiMatter: IMatter = Matter(AddressRow::class)
+                 private val matterAntiMatter: IMatter = Matter().with(AddressRow::class)
 ) : Compound(),
     IMonomer by monomer,
     IMatterAntiMatter by matterAntiMatter

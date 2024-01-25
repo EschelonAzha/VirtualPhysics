@@ -33,7 +33,7 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Atomic_orbital
  */
 open class Orbitals(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Orbitals::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Orbitals::class),
 ) : ParticleBeam(),
     IMatterAntiMatter by matterAntiMatter,
     IOrbitals

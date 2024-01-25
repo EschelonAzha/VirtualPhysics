@@ -26,7 +26,7 @@ https://en.wikipedia.org/wiki/TopQuark
 */
 
 class AntiTop(
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiTop::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiTop::class),
 ) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {

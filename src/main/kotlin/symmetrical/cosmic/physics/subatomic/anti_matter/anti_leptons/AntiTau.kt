@@ -27,7 +27,7 @@ https://en.wikipedia.org/wiki/Tau
  */
 
 class AntiTau(
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiTau::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiTau::class),
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {

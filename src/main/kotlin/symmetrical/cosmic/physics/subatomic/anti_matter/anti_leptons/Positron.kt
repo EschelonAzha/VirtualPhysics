@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 https://en.wikipedia.org/wiki/Positron
  */
 class Positron (
-    private val matterAntiMatter: IAntiMatter = AntiMatter(Positron::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(Positron::class),
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {

@@ -37,7 +37,7 @@ import kotlin.reflect.KClass
 
 
 open class Quark(
-    private val matterAntiMatter: IMatter = Matter(Quark::class),
+    private val matterAntiMatter: IMatter = Matter().with(Quark::class),
 ) : Particle(),
     IMatter by matterAntiMatter,
     IEmitter

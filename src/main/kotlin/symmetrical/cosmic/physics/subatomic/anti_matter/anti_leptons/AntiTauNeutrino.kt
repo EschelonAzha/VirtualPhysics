@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.TauNeutrino
 https://en.wikipedia.org/wiki/TauNeutrino
  */
 class AntiTauNeutrino  (
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiTauNeutrino::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiTauNeutrino::class),
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {

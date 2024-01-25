@@ -26,7 +26,7 @@ https://en.wikipedia.org/wiki/Alloy
  */
 
 open class Alloy(
-    private val matterAntiMatter: IMatter = Matter(Alloy::class),
+    private val matterAntiMatter: IMatter = Matter().with(Alloy::class),
 ) :
     IMatter by matterAntiMatter
 {

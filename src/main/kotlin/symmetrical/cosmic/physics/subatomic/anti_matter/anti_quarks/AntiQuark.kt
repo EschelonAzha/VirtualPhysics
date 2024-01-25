@@ -31,7 +31,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 
 open class AntiQuark(
-    private val matterAntiMatter: IAntiMatter = AntiMatter(Quark::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(Quark::class),
 ) : Particle(),
     IAntiMatter by matterAntiMatter,
     IEmitter

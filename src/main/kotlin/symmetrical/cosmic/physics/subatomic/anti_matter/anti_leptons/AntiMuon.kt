@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.matter.leptons.Muon
 https://en.wikipedia.org/wiki/Muon
  */
 open class AntiMuon(
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiMuon::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiMuon::class),
 ) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {

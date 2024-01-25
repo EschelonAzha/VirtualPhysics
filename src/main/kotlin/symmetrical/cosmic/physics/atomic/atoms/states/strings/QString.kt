@@ -26,7 +26,7 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
 
 open class QString(
-    private val matterAntiMatter: IMatter = Matter(QString::class),
+    private val matterAntiMatter: IMatter = Matter().with(QString::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {

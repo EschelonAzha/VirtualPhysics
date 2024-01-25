@@ -20,6 +20,8 @@ package symmetrical.cosmic.physics.subatomic.luminescent
 
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.spacial.IParticleBeam
+import kotlin.reflect.KClass
+
 /*
 https://en.wikipedia.org/wiki/Annihilation
  */
@@ -28,4 +30,6 @@ interface IMatterAntiMatter {
     fun check           (photon: Photon)    : Photon
     fun getClassId      ()                  : String
     fun getIlluminations()                  : IParticleBeam
+
+    fun with(kClass: KClass<*>)             : IMatterAntiMatter
 }

@@ -25,7 +25,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Monad(
-    private val matterAntiMatter: IMatter = Matter(Monad::class),
+    private val matterAntiMatter: IMatter = Matter().with(Monad::class),
 ) : Particle(),
     IMatter by matterAntiMatter,
     IEmitter

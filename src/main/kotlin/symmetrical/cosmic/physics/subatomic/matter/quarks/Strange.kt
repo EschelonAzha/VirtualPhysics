@@ -26,7 +26,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 https://en.wikipedia.org/wiki/StrangeQuark
  */
 class Strange(
-    private val matterAntiMatter: IMatter = Matter(Strange::class),
+    private val matterAntiMatter: IMatter = Matter().with(Strange::class),
 ) : Quark(),
     IMatter by matterAntiMatter
 {

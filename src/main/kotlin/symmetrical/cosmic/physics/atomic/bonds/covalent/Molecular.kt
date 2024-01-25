@@ -34,7 +34,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 https://en.wikipedia.org/wiki/Molecule
  */
 open class Molecular(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter(Molecular::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Molecular::class),
     private var _particleBeam   : ParticleBeam      = ParticleBeam(),
 
     ) : Atom(),

@@ -26,7 +26,7 @@ https://en.wikipedia.org/wiki/BottomQuark
  */
 
 class AntiBottom(
-    private val matterAntiMatter: IAntiMatter = AntiMatter(AntiBottom::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiBottom::class),
 ) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {

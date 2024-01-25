@@ -31,11 +31,12 @@ open class MatterAntiMatter: IMatterAntiMatter {
         public val beam: ParticleBeam = ParticleBeam()
     }
 
-    private var classType   : KClass<*>
+    private lateinit var classType   : KClass<*>
 
 
-    constructor(classType: KClass<*>) {
+    override fun with(classType: KClass<*>) : IMatterAntiMatter{
         this.classType = classType
+        return this
     }
     override fun annihilate() : Photon {
         return Photon()
