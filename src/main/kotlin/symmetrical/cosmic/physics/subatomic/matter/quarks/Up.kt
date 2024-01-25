@@ -34,10 +34,6 @@ class Up(
     IMatter by matterAntiMatter
 {
 
-    constructor(baryon: Baryon) : this() {
-        this.p_baryon = baryon
-    }
-
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)

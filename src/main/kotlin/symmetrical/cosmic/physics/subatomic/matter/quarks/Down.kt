@@ -34,9 +34,7 @@ class Down(
 ) : Quark(),
     IMatter by matterAntiMatter
 {
-    constructor(baryon: Baryon) : this() {
-        this.p_baryon = baryon
-    }
+
     companion object {
         const val VALUE            = "VALUE"
         const val FIELD_NAME       = "FIELD-NAME"

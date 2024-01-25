@@ -42,7 +42,7 @@ class VTestNeutrons {
         atom.betaMinusDecay()  // convert Neutron back into Proton and restore original values.
                                 // particles derived from Atoms are capable of creating new Isotopes of themselves
                                 // and have the ability to do rollbacks.   All Atoms and Molecules have the ability
-                                // do change and rollback at an atomic level.
+                                // to change and rollback at an atomic level.
                                 // They also have the ability to emit and absorb themselves over a distance (network)
                                 // and can use electron flows to do one and two-way data binding via diodes/conductors
                                 // and capacitors.

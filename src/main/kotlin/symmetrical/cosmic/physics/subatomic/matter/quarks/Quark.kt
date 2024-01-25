@@ -48,8 +48,9 @@ open class Quark(
     init {
         this.gluon         = Red_AntiRed()
     }
-    constructor(baryon: Baryon) : this() {
+    fun with(baryon: Baryon) : Quark {
         this.p_baryon = baryon
+        return this
     }
 
 
