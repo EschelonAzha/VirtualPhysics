@@ -40,12 +40,12 @@ class Protons(
     IMatterAntiMatter by matterAntiMatter,
     IProtons
 {
-    val _valueProton: Proton
+    val _valueProton    : Proton
+    private lateinit    var p_nucleons      : Nucleons
+
     init {
         _valueProton = add(ValueProton().setProtons(this)) as ValueProton
     }
-
-    private lateinit var p_nucleons   : Nucleons
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);

@@ -34,7 +34,6 @@ class Helium(
 
     lateinit var atom : Atom
 
-
     fun with(atom: Atom) : Helium {
         this.atom = atom
         atom.setAtomicNumber(2)

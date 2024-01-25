@@ -100,7 +100,4 @@ open class AngularMomentum(
         return arg
     }
 
-    fun i() : AngularMomentum {
-        return this
-    }
 }

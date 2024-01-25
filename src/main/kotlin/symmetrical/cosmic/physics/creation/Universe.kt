@@ -20,8 +20,6 @@ package symmetrical.cosmic.physics.creation
 
 
 open class Universe()  {
-
-
     open fun run() {
 //        while (true) {
 //            Energy.sleep(4)

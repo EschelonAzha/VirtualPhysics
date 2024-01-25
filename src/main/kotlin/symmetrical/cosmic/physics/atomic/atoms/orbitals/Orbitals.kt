@@ -38,6 +38,8 @@ open class Orbitals(
     IMatterAntiMatter by matterAntiMatter,
     IOrbitals
 {
+    private lateinit var p_atom: Atom
+
     init {
         add(Electron())
     }
@@ -46,8 +48,6 @@ open class Orbitals(
         const val VALUE     : Int = ParticleBeam.Static.LAST+1
         const val LAST      : Int = VALUE
     }
-    private lateinit var p_atom: Atom
-
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);

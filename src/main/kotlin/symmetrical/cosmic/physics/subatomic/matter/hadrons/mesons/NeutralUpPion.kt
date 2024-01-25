@@ -57,8 +57,6 @@ open class NeutralUpPion(
         return matterAntiMatter.getClassId()
     }
 
-
-
     fun getNeutron() : Baryon {
         return (get(1) as Quark).red() as Baryon
     }

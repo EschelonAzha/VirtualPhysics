@@ -42,13 +42,14 @@ open class Molecular(
     IParticleBeam by _particleBeam,
     IParticle
 {
-    object Static {
-        const val LAST      : Int = -1
-    }
 
     open fun with(initialCapacity:Int) : Molecular {
         _particleBeam.with(initialCapacity)
         return this
+    }
+
+    object Static {
+        const val LAST      : Int = -1
     }
 
     override fun absorb(photon: Photon) : Photon {

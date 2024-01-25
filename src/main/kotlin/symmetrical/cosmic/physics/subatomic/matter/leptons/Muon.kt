@@ -29,8 +29,6 @@ class Muon(
 ) : Lepton(),
     IMatter by matterAntiMatter
 {
-
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

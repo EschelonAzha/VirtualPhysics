@@ -32,6 +32,8 @@ open class Neutron(
 ) : Baryon(),
     IMatter by matterAntiMatter
 {
+    lateinit var __neutrons: Neutrons
+
     init {
         this.Neutron()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
@@ -39,7 +41,7 @@ open class Neutron(
         // -1/3 wavelength(?),                     Spin(?),                    AngularMomentum(Ptr to Next Neutron),
     }
 
-    lateinit var __neutrons: Neutrons
+
 
 
     override fun absorb(photon: Photon) : Photon {

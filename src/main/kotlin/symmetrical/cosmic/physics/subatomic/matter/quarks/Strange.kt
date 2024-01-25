@@ -30,7 +30,6 @@ class Strange(
 ) : Quark(),
     IMatter by matterAntiMatter
 {
-
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)

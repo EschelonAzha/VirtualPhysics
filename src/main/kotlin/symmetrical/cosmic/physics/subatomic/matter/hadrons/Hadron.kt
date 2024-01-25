@@ -35,13 +35,13 @@ open class Hadron(
     IMatter by matterAntiMatter,
     IEmitter
 {
-    object Static {
-        const val LAST : Int = ParticleBeam.Static.LAST
-
-    }
     override fun with(size:Int) : Hadron {
         super.with(size)
         return this
+    }
+
+    object Static {
+        const val LAST : Int = ParticleBeam.Static.LAST
     }
 
     override fun absorb(photon: Photon) : Photon {

@@ -20,12 +20,11 @@ package symmetrical.cosmic.transpectors.printable_characters
 
 
 class SpecialCharacters : Characters() {
-
-    companion object {
-        const val SPECIAL: String = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~"
-    }
     init {
         super.with(SPECIAL)
+    }
+    companion object {
+        const val SPECIAL: String = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~"
     }
 
 }

@@ -30,8 +30,6 @@ class Hydrogen(
 ) :
     IMatter by matterAntiMatter
 {
-
-
     lateinit var atom : Atom
 
     fun with(atom: Atom) : Hydrogen {

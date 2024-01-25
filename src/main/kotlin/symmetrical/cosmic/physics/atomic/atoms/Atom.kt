@@ -55,6 +55,16 @@ open class Atom(
     IEmitter,
     IAtom
 {
+    init {
+        setAtom(this)
+        this.orbitals.setAtom(this)
+        this._nucleons.setAtom(this)
+    }
+
+    open fun with(content:Any?) : Atom {
+        Quark.value(this).setWavelength(content)
+        return this
+    }
     companion object {
         fun content(atom: Atom) : Any? {
             return Companion.content(atom.getProton(ValueProton::class))
@@ -82,16 +92,7 @@ open class Atom(
             return quark.getAngularMomentum().run(Companion.field(atom))
         }
     }
-    init {
-        setAtom(this)
-        this.orbitals.setAtom(this)
-        this._nucleons.setAtom(this)
-    }
 
-    open fun with(content:Any?) : Atom {
-        Quark.value(this).setWavelength(content)
-        return this
-    }
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);

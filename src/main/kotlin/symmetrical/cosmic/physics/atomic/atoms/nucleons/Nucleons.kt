@@ -48,11 +48,11 @@ class Nucleons(
         INucleons,
         IEmitter
 {
+    private lateinit var p_atom: Atom
+
     init {
         setNucleons(this)
     }
-
-    private lateinit var p_atom: Atom
 
 
     override fun absorb(photon: Photon) : Photon {

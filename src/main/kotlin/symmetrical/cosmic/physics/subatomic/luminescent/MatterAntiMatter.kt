@@ -27,16 +27,16 @@ import kotlin.reflect.KClass
 https://en.wikipedia.org/wiki/Annihilation
  */
 open class MatterAntiMatter: IMatterAntiMatter {
-    object Illuminations {
-        public val beam: ParticleBeam = ParticleBeam()
-    }
+
 
     private lateinit var classType   : KClass<*>
-
 
     override fun with(classType: KClass<*>) : IMatterAntiMatter{
         this.classType = classType
         return this
+    }
+    object Illuminations {
+        public val beam: ParticleBeam = ParticleBeam()
     }
     override fun annihilate() : Photon {
         return Photon()

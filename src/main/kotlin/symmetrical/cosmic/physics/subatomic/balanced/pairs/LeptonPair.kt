@@ -33,7 +33,14 @@ open class LeptonPair(
 ) : Particle(),
     IMatterAntiMatter by matterAntiMatter
 {
+    public lateinit var _lepton     : Lepton
+    public lateinit var _antiLepton : AntiLepton
 
+    open fun with(lepton:Lepton, antiLepton: AntiLepton) : LeptonPair {
+        this._lepton     = lepton;
+        this._antiLepton = antiLepton
+        return this
+    }
     companion object {
         fun field(pair:LeptonPair) : Field {
             return pair._lepton.getWavelength().getField()
@@ -41,17 +48,6 @@ open class LeptonPair(
         fun _field(pair:LeptonPair) : Field {
             return pair._antiLepton.getWavelength().getField()
         }
-    }
-
-    public lateinit var _lepton     : Lepton
-    public lateinit var _antiLepton : AntiLepton
-
-
-
-    open fun with(lepton:Lepton, antiLepton: AntiLepton) : LeptonPair {
-        this._lepton     = lepton;
-        this._antiLepton = antiLepton
-        return this
     }
 
     override fun getClassId() : String {

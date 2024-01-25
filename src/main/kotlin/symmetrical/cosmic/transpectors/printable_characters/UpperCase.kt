@@ -21,10 +21,10 @@ package symmetrical.cosmic.transpectors.printable_characters
 
 class UpperCase : Characters() {
 
-    companion object {
-        const val UPPERCASE: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    }
     init {
         super.with(UPPERCASE)
+    }
+    companion object {
+        const val UPPERCASE: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
 }

@@ -32,17 +32,15 @@ open class Diatomic(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-
-    object Static {
-        const val LAST      : Int = -1
-    }
-
     open fun with(atom1: Atom, atom2: Atom) : Diatomic {
         add(atom1)
         add(atom2)
         return this
     }
 
+    object Static {
+        const val LAST      : Int = -1
+    }
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);

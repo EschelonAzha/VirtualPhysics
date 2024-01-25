@@ -31,13 +31,14 @@ class Charge (
 ) :
     IQuasiParticle by field {
 
+    init {
+        setCharge(Static.ZERO)
+    }
+
     object Static {
         const val PLUS:Byte  = +1
         const val ZERO:Byte  = 0
         const val MINUS:Byte = -1
-    }
-    init {
-        setCharge(Static.ZERO)
     }
 
     override fun absorb(photon: Photon) : Photon {

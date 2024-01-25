@@ -33,13 +33,12 @@ open class Compound(
     IMatterAntiMatter by matterAntiMatter,
     Ionic
 {
-    object Static {
-        const val LAST      : Int = -1
-    }
-
     override fun with(initialCapacity:Int) : Compound {
         super.with(initialCapacity);
         return this
+    }
+    object Static {
+        const val LAST      : Int = -1
     }
 
     override fun absorb(photon: Photon) : Photon {

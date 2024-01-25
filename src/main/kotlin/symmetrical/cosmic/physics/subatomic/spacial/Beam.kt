@@ -27,13 +27,6 @@ https://en.wikipedia.org/wiki/Particle_beam
 
 open class Beam() : IBeam {
 
-    object Static {
-        const val NORMAL    : Int = 0
-        const val ADD_1     : Int = 1
-
-        const val LAST      : Int = -1
-    }
-
     private var count                   :Int = 0;
     private lateinit var _memoryBlock   :Array<Any?>
     private var expandMode              :Int = Static.NORMAL
@@ -47,6 +40,12 @@ open class Beam() : IBeam {
         _memoryBlock    = createBlock(capacity)
         this.capacity   = capacity
         return this
+    }
+    object Static {
+        const val NORMAL    : Int = 0
+        const val ADD_1     : Int = 1
+
+        const val LAST      : Int = -1
     }
 
     override fun add(obj:Any?) : Any? {

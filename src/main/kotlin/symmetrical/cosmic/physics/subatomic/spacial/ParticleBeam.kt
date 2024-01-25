@@ -41,13 +41,14 @@ open class ParticleBeam(
     IParticleBeam,
     IEmitter
 {
-    object Static {
-        const val LAST      : Int = -1
-    }
 
     open fun with(initialCapacity:Int=1) : ParticleBeam {
         _beam.with(initialCapacity)
         return this
+    }
+
+    object Static {
+        const val LAST      : Int = -1
     }
 
     override fun absorb(photon: Photon) : Photon {

@@ -34,16 +34,14 @@ open class Polymer(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    object Static {
-        const val LAST      : Int = -1
-    }
-
     fun with(atom1: Atom, atom2: Atom) : Polymer {
         add(atom1)
         add(atom2)
         return this
     }
-
+    object Static {
+        const val LAST      : Int = -1
+    }
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);

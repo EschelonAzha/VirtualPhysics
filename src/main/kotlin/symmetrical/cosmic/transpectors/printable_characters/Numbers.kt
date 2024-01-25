@@ -19,12 +19,11 @@ package symmetrical.cosmic.transpectors.printable_characters
  */
 
 class Numbers : Characters() {
-
-    companion object {
-        const val NUMBERS: String = "01234567890";
-    }
     init {
         super.with(NUMBERS)
     }
 
+    companion object {
+        const val NUMBERS: String = "01234567890";
+    }
 }

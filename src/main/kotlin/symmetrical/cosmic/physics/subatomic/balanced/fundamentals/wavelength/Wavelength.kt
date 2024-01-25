@@ -36,7 +36,6 @@ class Wavelength(
 ) :
     IQuasiParticle by _field {
 
-
     companion object {
         fun content(atom: Atom) : Any? {
             return content(atom.getProton(ValueProton::class))

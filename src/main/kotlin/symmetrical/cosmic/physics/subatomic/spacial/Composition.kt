@@ -30,15 +30,14 @@ open class Composition(
 {
 
 
-    object Static {
-        const val FIRST  = ParticleBeam.Static.LAST + 1
-        const val LAST  = ParticleBeam.Static.LAST + 2
-    }
-
     open fun with(first: IParticle, last: IParticle) : Composition {
         add(first)
         add(last)
         return this
+    }
+    object Static {
+        const val FIRST  = ParticleBeam.Static.LAST + 1
+        const val LAST  = ParticleBeam.Static.LAST + 2
     }
 
     override fun absorb(photon: Photon) : Photon {

@@ -89,8 +89,6 @@ class Spin(
         fun isZero(quark: Quark) : Boolean {
             return quark.getSpin().spin().toBoolean()
         }
-
-
     }
 
 

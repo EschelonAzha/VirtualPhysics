@@ -53,8 +53,6 @@ open class Quark(
         return this
     }
 
-
-
     companion object {
         fun value(atom: Atom) : Quark {
             val proton = atom.getProton(ValueProton::class)

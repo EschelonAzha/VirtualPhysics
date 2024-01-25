@@ -42,11 +42,19 @@ open class Proton(
     IMatter by matterAntiMatter
 {
     var _quark:Quark
+    private var p_protons       : Protons? = null
+    private var autoFlow        : Boolean  = true
+    private var flowing         : Boolean  = false
+
     init {
         _quark = this.Proton()
         // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
         // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
         // -1/3 wavelength(Type Of Proton),        Spin(?),
+    }
+    fun with(protons:Protons) : Proton {
+        this.p_protons = protons
+        return this
     }
 
     enum class QuarkType(val value:Int) {
@@ -56,16 +64,6 @@ open class Proton(
     }
 
     object Static {
-
-    }
-
-    private var p_protons       : Protons? = null
-    private var autoFlow        : Boolean  = true
-    private var flowing         : Boolean  = false
-
-    fun i(protons:Protons) : Proton {
-        this.p_protons = protons
-        return this
     }
 
     override fun absorb(photon: Photon) : Photon {

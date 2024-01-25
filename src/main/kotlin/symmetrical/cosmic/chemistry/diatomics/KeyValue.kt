@@ -30,19 +30,18 @@ open class KeyValue(
     IMatter by matterAntiMatter
 {
 
-    object Static {
-        const val KEY       : Int = Diatomic.Static.LAST+1
-        const val VALUE     : Int = Diatomic.Static.LAST+2
-
-        const val LAST      : Int = VALUE
-    }
-
     override fun with(key: Atom, value: Atom) : KeyValue {
         add(key)
         add(value)
         return this
     }
 
+    object Static {
+        const val KEY       : Int = Diatomic.Static.LAST+1
+        const val VALUE     : Int = Diatomic.Static.LAST+2
+
+        const val LAST      : Int = VALUE
+    }
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
