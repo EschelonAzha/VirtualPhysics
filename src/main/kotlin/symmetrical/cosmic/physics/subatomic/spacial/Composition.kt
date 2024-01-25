@@ -28,18 +28,17 @@ open class Composition(
 ) : ParticleBeam(),
     IMatter by matterAntiMatter
 {
-    constructor() : this(
-        Matter(Composition::class),
-    )
+
 
     object Static {
         const val FIRST  = ParticleBeam.Static.LAST + 1
         const val LAST  = ParticleBeam.Static.LAST + 2
     }
 
-    constructor(first: IParticle, last: IParticle) : this() {
+    open fun with(first: IParticle, last: IParticle) : Composition {
         add(first)
         add(last)
+        return this
     }
 
     override fun absorb(photon: Photon) : Photon {
