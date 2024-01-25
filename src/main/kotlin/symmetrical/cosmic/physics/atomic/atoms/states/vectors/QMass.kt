@@ -31,7 +31,7 @@ open class QMass(
     IMatter by matterAntiMatter
 {
     init {
-        setMass(Beam(0))
+        setMass(Beam().with(0))
     }
 
     override fun getClassId() : String {

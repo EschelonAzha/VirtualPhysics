@@ -25,7 +25,7 @@ import kotlin.reflect.KClass
 https://en.wikipedia.org/wiki/Particle_beam
  */
 
-open class Beam : IBeam {
+open class Beam() : IBeam {
 
     object Static {
         const val NORMAL    : Int = 0
@@ -39,8 +39,8 @@ open class Beam : IBeam {
     private var expandMode              :Int = Static.NORMAL
 
     private var capacity                :Int = 0
-    constructor(capacity:Int=1)  {
-        with(capacity)
+    init {
+        with(1)
     }
 
     open fun with(capacity:Int=1) : Beam {
