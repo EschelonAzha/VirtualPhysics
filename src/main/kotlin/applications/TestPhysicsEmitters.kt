@@ -7,7 +7,7 @@ import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
 
 
-class TestPhysicsEmitters : ClassGroup {
+class TestPhysicsEmitters : ClassGroup() {
     // Custom user Particles (such as Resistor)
     // should be added to the emitters list if you want them to be able
     // to emit() themselves (serialize), and then be
@@ -22,13 +22,12 @@ class TestPhysicsEmitters : ClassGroup {
     // one line of code on the second macine:  clone = Absorber.materialize(emission)
     // that is all that is needed!
 
-    constructor() {
+    init {
         add(EntityId(Base52.classId(), Address::class))  // <-- Add to list
         add(EntityId(Base52.classId(), AddressRow::class))
         add(EntityId(Base52.classId(), City::class))
         add(EntityId(Base52.classId(), Name::class))
         add(EntityId(Base52.classId(), Resistor::class))
         add(EntityId(Base52.classId(), State::class))
-
     }
 }
