@@ -29,8 +29,8 @@ import symmetrical.cosmic.physics.atomic.atoms.nucleons.Neutrons
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Nucleons
 import symmetrical.cosmic.physics.atomic.atoms.nucleons.Protons
 
-class Hadrons : ClassGroup {
-    constructor() {
+class Hadrons : ClassGroup() {
+    init {
         add(EntityId(Base52.classId(), Baryon::class))
         add(EntityId(Base52.classId(), Hadron::class))
         add(EntityId(Base52.classId(), Neutron::class))

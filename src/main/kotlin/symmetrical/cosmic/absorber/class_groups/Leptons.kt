@@ -30,8 +30,8 @@ import symmetrical.cosmic.physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.*
 import symmetrical.cosmic.physics.subatomic.matter.leptons.*
 
-class Leptons : ClassGroup {
-    constructor() {
+class Leptons : ClassGroup() {
+    init {
         add(EntityId(Base52.classId(), AntiLepton::class))
         add(EntityId(Base52.classId(), AntiMuon::class))
         add(EntityId(Base52.classId(), AntiMuonNeutrino::class))
@@ -50,8 +50,5 @@ class Leptons : ClassGroup {
         add(EntityId(Base52.classId(), Orbitals::class))
         add(EntityId(Base52.classId(), Tau::class))
         add(EntityId(Base52.classId(), TauNeutrino::class))
-
-
-
     }
 }

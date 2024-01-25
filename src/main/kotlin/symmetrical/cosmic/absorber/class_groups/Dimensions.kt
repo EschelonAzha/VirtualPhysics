@@ -24,8 +24,8 @@ import symmetrical.cosmic.transpectors.printable_characters.Base52
 
 import symmetrical.cosmic.physics.dimensions.*
 
-class Dimensions : ClassGroup {
-    constructor() {
+class Dimensions : ClassGroup() {
+    init {
 
         add(EntityId(Base52.classId(), Charge::class))
         add(EntityId(Base52.classId(), Mass::class))

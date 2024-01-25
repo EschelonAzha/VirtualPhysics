@@ -25,8 +25,8 @@ import symmetrical.cosmic.physics.atomic.substance.ions.Anion
 import symmetrical.cosmic.physics.atomic.substance.ions.Cation
 import symmetrical.cosmic.physics.atomic.substance.ions.Ion
 
-class Ions : ClassGroup {
-    constructor() {
+class Ions : ClassGroup() {
+    init {
         add(EntityId(Base52.classId(), Anion::class))
         add(EntityId(Base52.classId(), Cation::class))
         add(EntityId(Base52.classId(), Ion::class))

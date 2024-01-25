@@ -29,8 +29,8 @@ import symmetrical.cosmic.physics.subatomic.matter.quarks.*
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.*
 
 
-class Quarks : ClassGroup {
-    constructor() {
+class Quarks : ClassGroup() {
+    init {
         add(EntityId(Base52.classId(), AntiBottom::class))
         add(EntityId(Base52.classId(), AntiCharm::class))
         add(EntityId(Base52.classId(), AntiDown::class))

@@ -25,12 +25,10 @@ import symmetrical.cosmic.physics.subatomic.balanced.Monad
 import symmetrical.cosmic.physics.atomic.substance.metals.Metal
 import symmetrical.cosmic.chemistry.diatomics.KeyValue
 
-class AppClasses : ClassGroup {
-    constructor() {
-
+class AppClasses : ClassGroup() {
+    init  {
         add(EntityId(Base52.classId(), KeyValue::class))
         add(EntityId(Base52.classId(), Metal::class))
         add(EntityId(Base52.classId(), Monad::class))
-
     }
 }

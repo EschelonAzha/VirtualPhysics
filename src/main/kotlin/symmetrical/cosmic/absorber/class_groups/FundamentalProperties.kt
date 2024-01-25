@@ -27,8 +27,8 @@ import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 
-class FundamentalProperties : ClassGroup {
-    constructor() {
+class FundamentalProperties : ClassGroup() {
+    init {
         add(EntityId(Base52.classId(), AngularMomentum::class))
         add(EntityId(Base52.classId(), Particle::class))
         add(EntityId(Base52.classId(), QuasiParticle::class))
