@@ -24,9 +24,9 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 /*
 https://en.wikipedia.org/wiki/Color_charge
 */
-class ColorCharge : IColorCharge {
+class ColorCharge() : IColorCharge {
     lateinit var atom     : Atom
-    constructor()
+
 
     override fun blue() : String {
         return atom._nucleons.getProton(ValueProton::class).blue() as String

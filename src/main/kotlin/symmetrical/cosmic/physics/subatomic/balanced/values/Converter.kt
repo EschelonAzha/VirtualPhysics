@@ -38,10 +38,11 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.vector.*
         const val STRING3   = "!"
         const val VECTOR    = "V"
  */
-class Converter {
-    val field : Field
-    constructor(field:Field) {
+class Converter() {
+    lateinit var field : Field
+    fun with(field:Field) : Converter {
         this.field = field
+        return this
     }
 
     fun asArray() : Array<Any> {

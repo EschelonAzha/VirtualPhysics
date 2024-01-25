@@ -57,7 +57,7 @@ class TauAntiTauPair(
         return this
     }
     fun with(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
-        super.with(Tau(newValue), AntiTau().with(oldValue))
+        super.with(Tau().with(newValue), AntiTau().with(oldValue))
         setAccepted(accepted)
         setReasonCode(reasonCode)
         setReason(reason)

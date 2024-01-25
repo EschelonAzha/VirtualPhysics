@@ -21,8 +21,8 @@ package symmetrical.cosmic.physics.creation
 
 import asymmetrical.physics.machine.threads.Cores
 
-class BigBang  {
-    constructor()
+class BigBang()  {
+
 
     private lateinit var universe       : Universe
     var cores                           : Cores = Cores()

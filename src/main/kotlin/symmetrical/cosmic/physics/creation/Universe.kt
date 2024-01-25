@@ -19,8 +19,8 @@ package symmetrical.cosmic.physics.creation
  */
 
 
-open class Universe  {
-    constructor()
+open class Universe()  {
+
 
     open fun run() {
 //        while (true) {

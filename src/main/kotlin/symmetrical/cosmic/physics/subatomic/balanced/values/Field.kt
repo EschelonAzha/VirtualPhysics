@@ -47,22 +47,22 @@ class Field() : IField {
         return this
     }
     override fun asArray() : Array<Any> {
-        return Converter(this).asArray()
+        return Converter().with(this).asArray()
     }
     override fun asBoolean() : Boolean? {
-        return Converter(this).asBoolean()
+        return Converter().with(this).asBoolean()
     }
     override fun asByte() : Byte? {
-        return Converter(this).asByte()
+        return Converter().with(this).asByte()
     }
     override fun asDouble() : Double? {
-        return Converter(this).asDouble()
+        return Converter().with(this).asDouble()
     }
     override fun asInt() : Int? {
-        return Converter(this).asInt()
+        return Converter().with(this).asInt()
     }
     override fun asString() : String? {
-        return Converter(this).asString()
+        return Converter().with(this).asString()
     }
 
 
@@ -96,26 +96,26 @@ class Field() : IField {
         return previous
     }
     override fun toArray() : Array<Any> {
-        return Converter(this).toArray()
+        return Converter().with(this).toArray()
     }
     override fun toBoolean() : Boolean {
-        return Converter(this).toBoolean()
+        return Converter().with(this).toBoolean()
     }
 
     override fun toByte() : Byte {
-        return Converter(this).toByte()
+        return Converter().with(this).toByte()
     }
 
     override fun toDouble() : Double {
-        return Converter(this).toDouble()
+        return Converter().with(this).toDouble()
     }
 
     override fun toInt() : Int {
-        return Converter(this).toInt()
+        return Converter().with(this).toInt()
     }
 
     override fun toString() : String {
-        return Converter(this).toString()
+        return Converter().with(this).toString()
     }
 
 

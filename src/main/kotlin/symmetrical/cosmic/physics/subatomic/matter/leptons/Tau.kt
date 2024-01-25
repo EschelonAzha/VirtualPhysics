@@ -33,8 +33,9 @@ class Tau(
 {
 
 
-    constructor(newValue : Field) : this() {
+    fun with(newValue : Field) : Tau {
         getWavelength().setField(newValue)
+        return this
     }
 
     override fun getClassId() : String {

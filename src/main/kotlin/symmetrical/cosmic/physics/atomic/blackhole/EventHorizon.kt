@@ -21,8 +21,8 @@ package symmetrical.cosmic.physics.atomic.blackhole
 /*
 https://en.wikipedia.org/wiki/Event_horizon
  */
-class EventHorizon  {
-    constructor()
+class EventHorizon()  {
+
 
 
     // Event horizon is the API to external libraries and frameworks
