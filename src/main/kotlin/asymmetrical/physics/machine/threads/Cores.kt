@@ -18,10 +18,10 @@ package asymmetrical.physics.machine.threads
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class Cores {
+class Cores() {
     var processors = 1
-    constructor() {
+    init {
   //      processors = Runtime.getRuntime().availableProcessors()
-        return
+
     }
 }

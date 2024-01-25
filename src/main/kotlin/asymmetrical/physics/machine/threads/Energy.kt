@@ -20,11 +20,9 @@ package asymmetrical.physics.machine.threads
 
 import asymmetrical.physics.machine.config.Config
 
-open class Energy : Thread  {
+open class Energy : Thread()  {
     @Volatile protected var running     = false
     @Volatile protected var updating    = false
-    constructor() {
-    }
 
     fun acquireRunning() : Boolean {
         while (updating) {
