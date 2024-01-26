@@ -15,9 +15,9 @@ object TestPhysics {
         // test cases and step through the code in the debugger to see
         // some of the inner workings of physics
         VTestRadiation().test()
-        VTestElectronics().test()
         VTestNeutrons().test()
         VTestChemistry().test()
+        VTestElectronics().test()
     }
 
 }

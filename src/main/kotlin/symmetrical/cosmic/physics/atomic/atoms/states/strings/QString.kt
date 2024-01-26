@@ -34,7 +34,7 @@ open class QString(
         setString("")
     }
 
-    fun with(value:String) : QString {
+    open fun with(value:String) : QString {
         setString(value)
         return this
     }

@@ -15,10 +15,6 @@ class Resistor(
     IMatter by matterAntiMatter
 {
 
-    override fun with(content:Any?) : Resistor {
-        setContent("", true)
-        return this
-    }
     override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
      //   accept(valueQuark, zBoson)
 

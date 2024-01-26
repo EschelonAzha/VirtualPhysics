@@ -15,10 +15,7 @@ class VTestElectronics {
 
 
     fun test() : Boolean {
-        if (!testDiodes()) {
-            println("VTestElectronics::testDiodes FAILED!!!!!!!!!!!!!!!!!!!!")
-            return false
-        }
+
         if (!testConductors()) {
             println("VTestElectronics::testConductors FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
@@ -27,7 +24,10 @@ class VTestElectronics {
             println("VTestElectronics::testCapacitor FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
         }
-
+        if (!testDiodes()) {
+            println("VTestElectronics::testDiodes FAILED!!!!!!!!!!!!!!!!!!!!")
+            return false
+        }
         return true
     }
     private fun testDiodes() : Boolean {
@@ -36,6 +36,7 @@ class VTestElectronics {
         val atom1: Atom = Resistor().with(ATOM1)  //Resistor extends Atom and resists changes
         val atom2: Atom = Atom().with(ATOM2)
         val atom3: Atom = Atom().with(ATOM3)
+
 
         atom1.diode_(atom2).diode(atom3)  // diodes act like one-way data-binding.  Note atom1 is a resistor
 
