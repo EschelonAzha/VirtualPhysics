@@ -33,12 +33,13 @@ interface INucleons {
     fun betaMinusDecay  ()                      : Atom
     fun betaPlusDecay   ()                      : Atom
     fun betaPlusDecay   (content:Any?)          : Atom
-    fun findNeutron     (purpose:String)        : Int
     fun getAtomicNumber ()                      : Int
     fun getClassId      ()                      : String
     fun getNeutron      (pos:Int)               : Neutron
-    fun getNeutron      (purpose:String)        : Neutron
+    fun getNeutrons     ()                      : Neutrons
     fun getProton       (classType: KClass<*>)  : Proton
+
+    fun getProtons      ()                      : Protons
     fun setAtom         (atom: Atom)            : Atom
     fun setAtomicNumber (number:Int)            : Nucleons
 

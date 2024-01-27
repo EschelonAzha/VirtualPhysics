@@ -120,7 +120,11 @@ class Nucleons(
         return matterAntiMatter.getClassId()
     }
 
-    fun getProtons() : Protons {
+    override fun getNeutrons() : Neutrons {
+        return neutrons
+    }
+
+    override fun getProtons() : Protons {
         return _protons
     }
 

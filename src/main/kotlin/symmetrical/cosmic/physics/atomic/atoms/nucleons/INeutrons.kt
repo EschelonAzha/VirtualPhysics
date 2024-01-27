@@ -28,9 +28,7 @@ interface INeutrons {
     fun absorb      (photon: Photon)        : Photon
     fun addNeutron  (neutron: Neutron)      : Neutron
     fun emit        ()                      : Photon
-    fun findNeutron (purpose:String)        : Int
     fun getClassId  ()                      : String
     fun getNeutron  (pos:Int)               : Neutron
-    fun getNeutron  (purpose:String)        : Neutron
     fun setNucleons (nucleons: Nucleons)    : Nucleons
 }

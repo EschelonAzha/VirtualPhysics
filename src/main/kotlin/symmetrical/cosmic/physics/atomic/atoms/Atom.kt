@@ -180,9 +180,7 @@ open class Atom(
     fun getField(proton:KClass<*>) : Field {
         return Companion.field(this, proton)
     }
-    fun getProtons() : Protons {
-        return _nucleons.getProtons()
-    }
+
     fun reject(reasonCode:Int, reason:String, boson: ZBoson) : Atom {
         boson.setAccepted(false)
         boson.setReasonCode(reasonCode)

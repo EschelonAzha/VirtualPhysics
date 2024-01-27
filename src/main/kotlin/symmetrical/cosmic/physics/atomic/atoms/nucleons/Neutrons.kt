@@ -58,34 +58,14 @@ class Neutrons(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-    override fun findNeutron(purpose:String) : Int {
-        var i=0;
-        while (i<size()) {
-            val baryon = get(i) as Proton
-            if ((baryon.get(2) as Quark).red() == purpose) {
-                return i
-            }
-            i++
-        }
-        return -1
-    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
     override fun getNeutron(pos:Int) : Neutron {
         return get(pos) as Neutron
     }
-    override fun getNeutron(purpose:String) : Neutron {
-        var pos = findNeutron(purpose)
 
-        if (pos!=-1)
-            return getNeutron(pos) as Neutron
-
-        var neutron = Neutron()
-        neutron.setPurpose(purpose)
-        addNeutron(neutron)
-        return neutron
-    }
     override fun setNucleons(nucleons: Nucleons) : Nucleons {
         this.p_nucleons = nucleons
         return nucleons

@@ -40,8 +40,8 @@ class Protons(
     IMatterAntiMatter by matterAntiMatter,
     IProtons
 {
-    val _valueProton    : Proton
-    private lateinit    var p_nucleons      : Nucleons
+    private val _valueProton    : Proton
+    private lateinit var p_nucleons      : Nucleons
 
     init {
         _valueProton = add(ValueProton().setProtons(this)) as ValueProton
