@@ -23,7 +23,7 @@ import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-
+// For more information visit:   https://en.wikipedia.org/wiki/Monad_(philosophy)
 open class Monad(
     private val matterAntiMatter: IMatter = Matter().with(Monad::class),
 ) : Particle(),

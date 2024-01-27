@@ -31,9 +31,9 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 import kotlin.reflect.KClass
-/*
-https://en.wikipedia.org/wiki/Proton
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Proton
+
 class Protons(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Protons::class),
 ) : ParticleBeam(),

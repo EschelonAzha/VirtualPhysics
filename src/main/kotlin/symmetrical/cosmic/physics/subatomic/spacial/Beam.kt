@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.spacial
 import symmetrical.cosmic.absorber.Absorber
 import symmetrical.cosmic.transpectors.transpectors.Strings
 import kotlin.reflect.KClass
-/*
-https://en.wikipedia.org/wiki/Particle_beam
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Particle_beam
+
 
 open class Beam() : IBeam {
 

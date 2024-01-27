@@ -29,7 +29,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic.physics.subatomic.matter.colors.Green
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Quark
 
-
+// For more information visit:   https://en.wikipedia.org/wiki/Quark
 open class AntiQuark(
     private val matterAntiMatter: IAntiMatter = AntiMatter().with(Quark::class),
 ) : Particle(),

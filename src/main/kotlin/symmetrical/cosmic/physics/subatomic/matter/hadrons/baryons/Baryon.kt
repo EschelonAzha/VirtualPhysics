@@ -32,9 +32,9 @@ import symmetrical.cosmic.physics.subatomic.matter.beta.BetaPlus
 import symmetrical.cosmic.physics.subatomic.matter.colors.Green
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 
-/*
-https://en.wikipedia.org/wiki/Baryon
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Baryon
+
 open class Baryon(
     private val matterAntiMatter: IMatter = Matter().with(Baryon::class),
 ) : Hadron(),

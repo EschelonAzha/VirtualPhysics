@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Bottom
-/*
-https://en.wikipedia.org/wiki/BottomQuark
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/BottomQuark
+
 
 class AntiBottom(
     private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiBottom::class),

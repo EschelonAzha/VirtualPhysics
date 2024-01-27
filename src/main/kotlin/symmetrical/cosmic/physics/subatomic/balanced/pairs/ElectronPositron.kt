@@ -26,9 +26,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.mesons.PlusPion
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 
-/*
-https://en.wikipedia.org/wiki/Pair_production
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Pair_production
+
 class ElectronPositron(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(ElectronPositron::class),
 ) : LeptonPair(),

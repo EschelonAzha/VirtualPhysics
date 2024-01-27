@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.bosons
 import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic.transpectors.transpectors.Photons
-/*
-https://en.wikipedia.org/wiki/Photon
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Photon
+
 open class Photon(){
     lateinit    var emitter     : IEmitter
     var radiation   : String = ""

@@ -27,9 +27,9 @@ import symmetrical.cosmic.physics.subatomic.balanced.Particle
 
 
 
-/*
-https://en.wikipedia.org/wiki/Gluon
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Gluon
+
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
 open class Gluon : Particle() {

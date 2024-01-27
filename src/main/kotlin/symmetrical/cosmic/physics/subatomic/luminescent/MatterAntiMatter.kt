@@ -23,9 +23,9 @@ import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.spacial.IParticleBeam
 import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 import kotlin.reflect.KClass
-/*
-https://en.wikipedia.org/wiki/Annihilation
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Annihilation
+
 open class MatterAntiMatter: IMatterAntiMatter {
 
 

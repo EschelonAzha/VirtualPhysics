@@ -22,9 +22,9 @@ import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiCharm
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/CharmQuark
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/CharmQuark
+
 class Charm(
     private val matterAntiMatter: IMatter = Matter().with(Charm::class),
 ) : Quark(),

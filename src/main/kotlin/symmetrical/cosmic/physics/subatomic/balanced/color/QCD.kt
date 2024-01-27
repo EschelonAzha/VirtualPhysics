@@ -18,9 +18,9 @@ package symmetrical.cosmic.physics.subatomic.balanced.color
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/Quantum_chromodynamics
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Quantum_chromodynamics
+
 class QCD() {
 
     /*

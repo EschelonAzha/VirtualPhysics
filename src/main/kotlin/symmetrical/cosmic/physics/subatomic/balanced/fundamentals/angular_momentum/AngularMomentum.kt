@@ -29,9 +29,9 @@ import symmetrical.cosmic.dictionary.protons.ValueProton
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
-/*
-https://en.wikipedia.org/wiki/Angular_momentum
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Angular_momentum
+
 open class AngularMomentum(
     private val field: QuasiParticle = QuasiParticle()
 ) :

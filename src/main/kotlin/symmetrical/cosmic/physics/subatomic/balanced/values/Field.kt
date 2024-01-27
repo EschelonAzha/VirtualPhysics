@@ -19,6 +19,7 @@ package symmetrical.cosmic.physics.subatomic.balanced.values
  */
 
 import symmetrical.cosmic.transpectors.transpectors.Doubles
+// For more information visit:   https://en.wikipedia.org/wiki/Scalar_field
 class Field() : IField {
 
     private var type   :String = "0"

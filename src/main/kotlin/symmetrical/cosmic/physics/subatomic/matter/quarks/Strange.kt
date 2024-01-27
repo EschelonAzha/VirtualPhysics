@@ -22,9 +22,9 @@ import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiStrange
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/StrangeQuark
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/StrangeQuark
+
 class Strange(
     private val matterAntiMatter: IMatter = Matter().with(Strange::class),
 ) : Quark(),

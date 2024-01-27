@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.matter.bosons
 import symmetrical.cosmic.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 
-/*
-https://en.wikipedia.org/wiki/W_and_Z_bosons
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/W_and_Z_bosons
+
 open class ZBoson(){
 
     // Neutral Charge

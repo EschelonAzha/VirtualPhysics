@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.subatomic.forces.strong_force
 
 import asymmetrical.physics.machine.threads.Energy
 
-/*
-https://en.wikipedia.org/wiki/Strong_interaction
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Strong_interaction
+
 
 open class Strong: Energy() {
 

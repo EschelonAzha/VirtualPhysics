@@ -25,9 +25,9 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.balanced.values.IField
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 
-/*
-https://en.wikipedia.org/wiki/Quasiparticle
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Quasiparticle
+
 class QuasiParticle(
     private val _field:Field=Field()
 ) : IField by _field,

@@ -24,9 +24,9 @@ import symmetrical.cosmic.physics.atomic.bonds.ionic.Ionic
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 
-/*
-https://en.wikipedia.org/wiki/Chemical_compound
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Chemical_compound
+
 open class Compound(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Compound::class),
 ) : Molecular(),

@@ -22,9 +22,9 @@ import symmetrical.cosmic.physics.subatomic.spacial.ParticleBeam
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/Neutrino
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Neutrino
+
 
 class Neutrino(
     private val matterAntiMatter: IMatter = Matter().with(Neutrino::class),

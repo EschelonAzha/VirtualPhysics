@@ -21,10 +21,9 @@ package symmetrical.cosmic.physics.subatomic.matter.colors
 import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.balanced.color.QCD
 import symmetrical.cosmic.physics.subatomic.bosons.gluons.Green_AntiGreen
-/*
-https://en.wikipedia.org/wiki/Color_charge
-*/
-// FORMATTED VALUE
+
+// For more information visit:   https://en.wikipedia.org/wiki/Color_charge
+
 open class Green : Color() {
 
     init {

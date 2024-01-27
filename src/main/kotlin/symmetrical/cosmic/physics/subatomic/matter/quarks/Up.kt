@@ -25,9 +25,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 
-/*
-https://en.wikipedia.org/wiki/UpQuark
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/UpQuark
+
 class Up(
     private val matterAntiMatter: IMatter = Matter().with(Up::class),
 ) : Quark(),

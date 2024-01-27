@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.atomic.bonds.alloys
 import symmetrical.cosmic.physics.atomic.substance.Substance
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/Alloy
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Alloy
+
 
 open class Alloy(
     private val matterAntiMatter: IMatter = Matter().with(Alloy::class),

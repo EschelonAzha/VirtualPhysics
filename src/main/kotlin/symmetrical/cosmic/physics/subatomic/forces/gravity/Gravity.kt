@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.subatomic.forces.gravity
 
 import symmetrical.cosmic.physics.subatomic.bosons.Graviton
 
-/*
-https://en.wikipedia.org/wiki/Gravity
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Gravity
+
 
 open class Gravity() {
 

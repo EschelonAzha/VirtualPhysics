@@ -32,9 +32,9 @@ import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Neutron
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
-/*
-https://en.wikipedia.org/wiki/Nucleon
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Nucleon
+
 
 class Nucleons(
     private val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter().with(Nucleons::class),

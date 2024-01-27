@@ -24,9 +24,9 @@ import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
-/*
-https://en.wikipedia.org/wiki/Neutron
-*/
+
+// For more information visit:   https://en.wikipedia.org/wiki/Neutron
+
 open class Neutron(
     private val matterAntiMatter: IMatter = Matter().with(Neutron::class),
 ) : Baryon(),

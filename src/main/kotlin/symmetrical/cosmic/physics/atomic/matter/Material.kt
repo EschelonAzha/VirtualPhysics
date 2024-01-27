@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.atomic.matter
 
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/Material
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Material
+
 class Material(
     private val matterAntiMatter: IMatter = Matter().with(Material::class),
 ) :

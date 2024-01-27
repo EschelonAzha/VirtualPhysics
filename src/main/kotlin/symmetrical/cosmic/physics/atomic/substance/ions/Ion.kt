@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.atomic.substance.ions
 
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/Ion
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Ion
+
 open class Ion(
     private val matterAntiMatter: IMatter = Matter().with(Ion::class),
 ) :

@@ -22,9 +22,9 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiTau
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/Tau
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Tau
+
 
 class Tau(
     private val matterAntiMatter: IMatter = Matter().with(Tau::class),

@@ -22,9 +22,9 @@ import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks.AntiBottom
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/BottomQuark
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/BottomQuark
+
 class Bottom(
     private val matterAntiMatter: IMatter = Matter().with(Bottom::class),
 ) : Quark(),

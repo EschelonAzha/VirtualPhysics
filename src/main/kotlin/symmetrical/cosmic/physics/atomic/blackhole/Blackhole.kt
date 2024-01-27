@@ -19,9 +19,9 @@ package symmetrical.cosmic.physics.atomic.blackhole
  */
 
 
-/*
-https://en.wikipedia.org/wiki/Black_hole
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Black_hole
+
 class Blackhole()  {
 
 

@@ -18,7 +18,7 @@ package symmetrical.cosmic.physics.creation
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
+// For more information visit:   https://en.wikipedia.org/wiki/Universe
 open class Universe()  {
     open fun run() {
 //        while (true) {

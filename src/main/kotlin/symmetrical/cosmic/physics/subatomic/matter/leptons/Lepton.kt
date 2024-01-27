@@ -27,9 +27,9 @@ import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiLepton
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
-/*
-https://en.wikipedia.org/wiki/Lepton
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Lepton
+
 open class Lepton(
     private val matterAntiMatter: IMatter = Matter().with(Lepton::class),
 ) : Particle(),

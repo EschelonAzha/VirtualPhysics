@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.atomic.substance.metals
 
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/Metal
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Metal
+
 class Metal(
     private val matterAntiMatter: IMatter = Matter().with(Metal::class),
 ) :

@@ -31,9 +31,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.cosmic.physics.dimensions.*
 
-/*
-https://en.wikipedia.org/wiki/Particle
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Particle
+
 
 open class Particle(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Particle::class),

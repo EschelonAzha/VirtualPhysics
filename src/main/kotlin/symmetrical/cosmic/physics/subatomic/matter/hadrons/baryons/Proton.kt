@@ -33,9 +33,9 @@ import symmetrical.cosmic.physics.subatomic.balanced.IParticle
 import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 
-/*
-https://en.wikipedia.org/wiki/Proton
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Proton
+
 open class Proton(
     private val matterAntiMatter: IMatter = Matter().with(Proton::class),
 ) : Baryon(),

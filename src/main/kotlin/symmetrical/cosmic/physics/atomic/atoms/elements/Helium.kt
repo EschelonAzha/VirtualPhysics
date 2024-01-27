@@ -22,9 +22,8 @@ import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
-/*
-https://en.wikipedia.org/wiki/Helium
- */
+// For more information visit:   https://en.wikipedia.org/wiki/Helium
+
 
 class Helium(
     private val matterAntiMatter: IMatter = Matter().with(Helium::class),

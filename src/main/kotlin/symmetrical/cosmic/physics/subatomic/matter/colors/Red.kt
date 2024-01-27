@@ -20,10 +20,9 @@ package symmetrical.cosmic.physics.subatomic.matter.colors
 
 import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.bosons.gluons.Red_AntiRed
-/*
-https://en.wikipedia.org/wiki/Color_charge
-*/
-// ACTUAL VALUE
+
+// For more information visit:   https://en.wikipedia.org/wiki/Color_charge
+
 open class Red : Color() {
     init {
         color = RED

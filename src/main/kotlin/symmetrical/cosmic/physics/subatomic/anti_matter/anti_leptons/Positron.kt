@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
-/*
-https://en.wikipedia.org/wiki/Positron
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Positron
+
 class Positron (
     private val matterAntiMatter: IAntiMatter = AntiMatter().with(Positron::class),
 ) : AntiLepton(),

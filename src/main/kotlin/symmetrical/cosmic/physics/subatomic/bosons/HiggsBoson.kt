@@ -18,9 +18,9 @@ package symmetrical.cosmic.physics.subatomic.bosons
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/Higgs_boson
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Higgs_boson
+
 class HiggsBoson() {
 
 }

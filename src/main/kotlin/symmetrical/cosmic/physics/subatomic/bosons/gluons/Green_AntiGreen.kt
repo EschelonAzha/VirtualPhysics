@@ -20,7 +20,7 @@ package symmetrical.cosmic.physics.subatomic.bosons.gluons
 
 import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen
-
+// For more information visit:   https://en.wikipedia.org/wiki/Gluon
 class Green_AntiGreen : Gluon() {
     init {
         color       = green()

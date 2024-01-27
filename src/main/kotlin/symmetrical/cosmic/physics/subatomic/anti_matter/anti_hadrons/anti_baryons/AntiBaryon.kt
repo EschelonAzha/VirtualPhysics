@@ -20,8 +20,8 @@ package symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_baryo
 
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.AntiHadron
 
-/*
-https://en.wikipedia.org/wiki/Baryon
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Baryon
+
 open class AntiBaryon : AntiHadron() {
 }

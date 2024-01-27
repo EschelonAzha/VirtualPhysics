@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.anti_matter.anti_quarks
 import symmetrical.cosmic.physics.subatomic.luminescent.IAntiMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.AntiMatter
 import symmetrical.cosmic.physics.subatomic.matter.quarks.Strange
-/*
-https://en.wikipedia.org/wiki/StrangeQuark
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/StrangeQuark
+
 class AntiStrange(
     private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiStrange::class),
 ) : AntiQuark(),

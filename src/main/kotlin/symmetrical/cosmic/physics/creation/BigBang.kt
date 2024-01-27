@@ -20,7 +20,7 @@ package symmetrical.cosmic.physics.creation
 
 
 import asymmetrical.physics.machine.threads.Cores
-
+// For more information visit:  https://en.wikipedia.org/wiki/Big_Bang
 class BigBang()  {
 
 

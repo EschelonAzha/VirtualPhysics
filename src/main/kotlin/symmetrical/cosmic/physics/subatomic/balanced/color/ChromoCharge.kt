@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.balanced.color
 import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 
-/*
-https://en.wikipedia.org/wiki/Color_charge
-*/
+
+// For more information visit:   https://en.wikipedia.org/wiki/Color_charge
+
 open class ChromoCharge : Particle() {
 
 

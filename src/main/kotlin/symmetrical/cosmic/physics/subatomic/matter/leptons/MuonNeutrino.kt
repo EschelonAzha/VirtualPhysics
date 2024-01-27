@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.matter.leptons
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_leptons.AntiMuonNeutrino
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/MuonNeutrino
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/MuonNeutrino
+
 class MuonNeutrino(
     private val matterAntiMatter: IMatter = Matter().with(MuonNeutrino::class),
 ) : Lepton(),

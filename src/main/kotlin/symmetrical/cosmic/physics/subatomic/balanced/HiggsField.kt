@@ -18,9 +18,8 @@ package symmetrical.cosmic.physics.subatomic.balanced
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/Higgs_boson#Higgs_field
- */
+// For more information visit:   https://en.wikipedia.org/wiki/Higgs_boson#Higgs_field
+
 
 open class HiggsField(){
 

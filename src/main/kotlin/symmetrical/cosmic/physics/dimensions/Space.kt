@@ -24,9 +24,9 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
-/*
-https://en.wikipedia.org/wiki/Space
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Space
+
 class Space (
     private val field: QuasiParticle = QuasiParticle()
 ) :

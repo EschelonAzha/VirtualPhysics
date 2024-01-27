@@ -22,7 +22,7 @@ import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.anti_matter.anti_colors.AntiGreen
 import symmetrical.cosmic.physics.subatomic.matter.colors.Blue
 import symmetrical.cosmic.physics.subatomic.matter.colors.Red
-
+// For more information visit:   https://en.wikipedia.org/wiki/Gluon
 class Red_AntiGreen : Gluon() {
     init {
         color       = Red()

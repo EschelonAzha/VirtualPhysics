@@ -18,6 +18,7 @@ package symmetrical.cosmic.physics.dimensions
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// For more information visit:   https://en.wikipedia.org/wiki/Measurement
 class Dimensions {
     val charge      : Charge = Charge()
     val mass        : Mass = Mass()

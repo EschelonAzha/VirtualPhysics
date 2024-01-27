@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.subatomic.forces.weak_force
 
 import symmetrical.cosmic.physics.subatomic.balanced.Particle
 
-/*
-https://en.wikipedia.org/wiki/Weak_interaction
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Weak_interaction
+
 class ChargedWeak : Particle() {
 
 }

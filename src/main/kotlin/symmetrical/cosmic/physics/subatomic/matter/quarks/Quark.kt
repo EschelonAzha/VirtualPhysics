@@ -35,7 +35,7 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 
-
+// For more information visit:   https://en.wikipedia.org/wiki/Quark
 open class Quark(
     private val matterAntiMatter: IMatter = Matter().with(Quark::class),
 ) : Particle(),

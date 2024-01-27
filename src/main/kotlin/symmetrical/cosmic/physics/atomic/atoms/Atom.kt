@@ -38,9 +38,9 @@ import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 import kotlin.reflect.KClass
-/*
-https://en.wikipedia.org/wiki/Atom
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Atom
+
 
 open class Atom(
     private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter().with(Atom::class),

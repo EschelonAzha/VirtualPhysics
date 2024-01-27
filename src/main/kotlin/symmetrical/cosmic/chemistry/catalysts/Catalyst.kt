@@ -20,6 +20,8 @@ package symmetrical.cosmic.chemistry.catalysts
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
+// For more information visit:   https://en.wikipedia.org/wiki/Catalysis
+
 open class Catalyst : Compound() {
     private lateinit var compound: Compound
 

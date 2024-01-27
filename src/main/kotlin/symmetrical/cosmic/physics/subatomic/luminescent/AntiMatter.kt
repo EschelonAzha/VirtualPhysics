@@ -19,9 +19,9 @@ package symmetrical.cosmic.physics.subatomic.luminescent
  */
 
 import kotlin.reflect.KClass
-/*
-https://en.wikipedia.org/wiki/Antimatter
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Antimatter
+
 class AntiMatter : MatterAntiMatter(), IAntiMatter {
     override fun with(kClass:KClass<*>) : IAntiMatter {
         super.with(kClass)

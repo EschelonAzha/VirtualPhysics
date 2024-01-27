@@ -26,9 +26,8 @@ import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
-/*
-https://en.wikipedia.org/wiki/Diatomic_molecule
- */
+// For more information visit:    https://en.wikipedia.org/wiki/Polymer
+
 open class Polymer(
     private val matterAntiMatter: IMatter = Matter().with(Polymer::class),
 ) : Compound(),

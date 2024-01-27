@@ -26,9 +26,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.Hadron
 
-/*
-https://en.wikipedia.org/wiki/Pion
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Pion
+
 open class PlusPion(
     private val matterAntiMatter: IMatter = Matter().with(PlusPion::class),
 ) : Hadron(),

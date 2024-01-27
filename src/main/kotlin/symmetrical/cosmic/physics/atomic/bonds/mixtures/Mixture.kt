@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.atomic.bonds.mixtures
 
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-/*
-https://en.wikipedia.org/wiki/Mixture
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Mixture
+
 class Mixture(
     private val matterAntiMatter: IMatter = Matter().with(Mixture::class),
 ) :

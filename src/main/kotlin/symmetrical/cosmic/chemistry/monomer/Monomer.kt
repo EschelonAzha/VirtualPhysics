@@ -22,6 +22,7 @@ import symmetrical.cosmic.chemistry.polymer.Polymer
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
+// For more information visit:   https://en.wikipedia.org/wiki/Monomer
 class Monomer() : IMonomer {
     private lateinit var polymer:Polymer
     private lateinit var self:Compound

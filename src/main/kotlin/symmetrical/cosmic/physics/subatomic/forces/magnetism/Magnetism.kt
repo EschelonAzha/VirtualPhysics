@@ -20,9 +20,9 @@ package symmetrical.cosmic.physics.subatomic.forces.magnetism
 
 import asymmetrical.physics.machine.threads.Energy
 
-/*
-https://en.wikipedia.org/wiki/Magnetism
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Magnetism
+
 
 open class Magnetism: Energy() {
 

@@ -21,10 +21,10 @@ package symmetrical.cosmic.physics.subatomic.matter.colors
 import symmetrical.cosmic.physics.subatomic.matter.bosons.Gluon
 import symmetrical.cosmic.physics.subatomic.balanced.color.QCD
 import symmetrical.cosmic.physics.subatomic.bosons.gluons.Blue_AntiBlue
-/*
-https://en.wikipedia.org/wiki/Color_charge
-*/
-// PHOTON VALUE
+
+// For more information visit:   https://en.wikipedia.org/wiki/Color_charge
+
+
 open class Blue : Color() {
 
     init {

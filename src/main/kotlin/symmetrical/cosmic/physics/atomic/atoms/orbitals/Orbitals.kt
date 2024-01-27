@@ -29,9 +29,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
 
-/*
-https://en.wikipedia.org/wiki/Atomic_orbital
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Atomic_orbital
+
 open class Orbitals(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Orbitals::class),
 ) : ParticleBeam(),

@@ -18,8 +18,8 @@ package symmetrical.cosmic.physics.subatomic.anti_matter.anti_hadrons.anti_meson
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/Kaon
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Kaon
+
 class AntiKaon {
 }

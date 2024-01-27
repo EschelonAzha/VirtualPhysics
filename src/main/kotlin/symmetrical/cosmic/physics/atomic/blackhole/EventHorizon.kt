@@ -18,9 +18,9 @@ package symmetrical.cosmic.physics.atomic.blackhole
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/Event_horizon
- */
+
+// For more information visit:  https://en.wikipedia.org/wiki/Event_horizon
+
 class EventHorizon()  {
 
 

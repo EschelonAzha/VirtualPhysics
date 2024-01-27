@@ -18,9 +18,9 @@ package symmetrical.cosmic.physics.subatomic.matter.bosons
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/W_and_Z_bosons
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/W_and_Z_bosons
+
 class WBosonPlus() {
 
 

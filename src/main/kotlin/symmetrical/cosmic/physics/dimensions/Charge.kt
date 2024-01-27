@@ -23,9 +23,9 @@ import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
-/*
-https://en.wikipedia.org/wiki/Charge_(physics)
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Charge_(physics)
+
 class Charge (
     private val field: QuasiParticle = QuasiParticle()
 ) :

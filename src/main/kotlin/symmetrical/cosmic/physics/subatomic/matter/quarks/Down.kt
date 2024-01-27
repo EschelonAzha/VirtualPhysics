@@ -25,9 +25,9 @@ import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Baryon
 
-/*
-https://en.wikipedia.org/wiki/DownQuark
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/DownQuark
+
 
 class Down(
     private val matterAntiMatter: IMatter = Matter().with(Down::class),

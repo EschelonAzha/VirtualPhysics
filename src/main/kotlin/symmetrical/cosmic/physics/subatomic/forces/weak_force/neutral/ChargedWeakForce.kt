@@ -18,9 +18,9 @@ package symmetrical.cosmic.physics.subatomic.forces.weak_force.neutral
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/Weak_interaction
- */
+
+// For more information visit:   https://en.wikipedia.org/wiki/Weak_interaction
+
 class ChargedWeakForce() {
 
 

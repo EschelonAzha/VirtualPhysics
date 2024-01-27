@@ -21,9 +21,9 @@ package symmetrical.cosmic.physics.subatomic.balanced.color
 import symmetrical.cosmic.physics.subatomic.matter.colors.Green
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.dictionary.protons.ValueProton
-/*
-https://en.wikipedia.org/wiki/Color_charge
-*/
+
+// For more information visit:   https://en.wikipedia.org/wiki/Color_charge
+
 class ColorCharge() : IColorCharge {
     lateinit var atom     : Atom
 
