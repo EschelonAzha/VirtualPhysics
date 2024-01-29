@@ -124,19 +124,6 @@ open class Atom(
         conductor(atom, autoFlow);
         return atom
     }
-    fun _conductor(atom: Atom, autoFlow:Boolean=true) : Atom {
-        conductor(atom, autoFlow);
-        return this
-    }
-    fun conductor(atom: Atom, autoFlow:Boolean=true) : Unit {
-        diode(atom, autoFlow)
-        atom.diode(this, autoFlow)
-    }
-
-//    fun diode_(atom: Atom, autoFlow:Boolean=true) : Atom {
-//        diode(atom, autoFlow)
-//        return atom
-//    }
 
     override fun emit() : Photon {
         return Photon().with(radiate())
