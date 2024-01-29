@@ -62,8 +62,7 @@ class Nucleons(
         remainder = _protons.absorb(remainder)
         remainder = neutrons.absorb(remainder)
 
-        this._protons.setNucleons(this)
-        this.neutrons.setNucleons(this)
+        setNucleons(this)
 
         return remainder
     }
@@ -132,7 +131,7 @@ class Nucleons(
         this.p_atom = atom
         return atom
     }
-    override fun setNucleons(nucleons:Nucleons) : Nucleons {
+    final override fun setNucleons(nucleons:Nucleons) : Nucleons {
         neutrons.setNucleons(nucleons)
         _protons.setNucleons(nucleons)
         return nucleons

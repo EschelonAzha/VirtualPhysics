@@ -136,8 +136,8 @@ open class Atom(
         atom.diode(this, autoFlow)
     }
     fun capacitor(atom: Atom) : Unit {
-        val me : Proton = getCurrentValueProton()
-        val you: Proton = atom.getCurrentValueProton()
+        val me : Proton = getValueProton()
+        val you: Proton = atom.getValueProton()
 
         me.ionicBond(you)
     }
@@ -150,8 +150,8 @@ open class Atom(
         return this
     }
     fun diode(atom: Atom, autoFlow:Boolean=true) : Unit {
-        val me : Proton = getCurrentValueProton()
-        val you: Proton = atom.getCurrentValueProton()
+        val me : Proton = getValueProton()
+        val you: Proton = atom.getValueProton()
 
         me.covalentBond(you, autoFlow)
     }
@@ -165,10 +165,7 @@ open class Atom(
     fun getContent() : Any? {
         return getField().getContent()
     }
-    fun getCurrentValue() : Any? {
-        return _nucleons.getProtons().getProton(ValueProton::class)
-    }
-    private fun getCurrentValueProton() : Proton {
+    private fun getValueProton() : Proton {
         return getProtons().getProton(ValueProton::class)
     }
     fun getElectron(pos:Int) : Electron {
@@ -193,7 +190,7 @@ open class Atom(
         return this
     }
     fun setContent(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
-        return getProtons().setCurrentValue(
+        return getProtons().interact(
             ZBoson().with(Field().with(value), constructing)).decay()
     }
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {

@@ -102,7 +102,7 @@ class Protons(
         }
         return p_nucleons as Nucleons
     }
-    fun setCurrentValue(zBoson: ZBoson) : ZBoson {
+    fun interact(zBoson: ZBoson) : ZBoson {
         getProton(ValueProton::class).interact(zBoson)
         return zBoson
     }
@@ -114,7 +114,6 @@ class Protons(
     fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return getAtom().valueChange(proton, valueQuark, zBoson)
     }
-
 
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {

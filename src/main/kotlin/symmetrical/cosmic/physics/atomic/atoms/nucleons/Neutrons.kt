@@ -66,7 +66,7 @@ class Neutrons(
         return get(pos) as Neutron
     }
 
-    override fun setNucleons(nucleons: Nucleons) : Nucleons {
+    final override fun setNucleons(nucleons: Nucleons) : Nucleons {
         this.p_nucleons = nucleons
         return nucleons
     }
