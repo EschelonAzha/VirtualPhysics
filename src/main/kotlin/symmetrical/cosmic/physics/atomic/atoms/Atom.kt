@@ -120,11 +120,6 @@ open class Atom(
         return zBoson
     }
 
-    fun conductor_(atom: Atom, autoFlow:Boolean=true) : Atom {
-        conductor(atom, autoFlow);
-        return atom
-    }
-
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
