@@ -37,6 +37,8 @@ import symmetrical.cosmic.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.cosmic.physics.subatomic.matter.leptons.Electron
+import symmetrical.electronics.Electronics
+import symmetrical.electronics.IElectronics
 import kotlin.reflect.KClass
 
 // For more information visit:  https://en.wikipedia.org/wiki/Atom
@@ -45,12 +47,14 @@ import kotlin.reflect.KClass
 open class Atom(
     private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter().with(Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
-    public    var _nucleons         : Nucleons              = Nucleons()
+    public    var _nucleons         : Nucleons              = Nucleons(),
+    public    var electronics       : Electronics           = Electronics()
 
 ) : Particle(),
     IMatterAntiMatter   by matterAntiMatter,
     IOrbitals           by orbitals,
     INucleons           by _nucleons,
+    IElectronics by electronics,
     Element,
     IEmitter,
     IAtom
@@ -115,14 +119,7 @@ open class Atom(
     open fun capacitanceChange(me: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return zBoson
     }
-    fun capacitor_(atom: Atom) : Atom {
-        capacitor(atom);
-        return atom
-    }
-    fun _capacitor(atom: Atom) : Atom {
-        capacitor(atom);
-        return this
-    }
+
     fun conductor_(atom: Atom, autoFlow:Boolean=true) : Atom {
         conductor(atom, autoFlow);
         return atom
@@ -135,12 +132,7 @@ open class Atom(
         diode(atom, autoFlow)
         atom.diode(this, autoFlow)
     }
-    fun capacitor(atom: Atom) : Unit {
-        val me : Proton = getValueProton()
-        val you: Proton = atom.getValueProton()
 
-        me.ionicBond(you)
-    }
     fun diode_(atom: Atom, autoFlow:Boolean=true) : Atom {
         diode(atom, autoFlow)
         return atom
@@ -165,9 +157,7 @@ open class Atom(
     fun getContent() : Any? {
         return getField().getContent()
     }
-    private fun getValueProton() : Proton {
-        return getProtons().getProton(ValueProton::class)
-    }
+
     fun getElectron(pos:Int) : Electron {
         return orbitals.get(pos) as Electron
     }
@@ -176,6 +166,9 @@ open class Atom(
     }
     fun getField(proton:KClass<*>) : Field {
         return Companion.field(this, proton)
+    }
+    fun getValueProton() : Proton {
+        return getProtons().getProton(ValueProton::class)
     }
 
     fun reject(reasonCode:Int, reason:String, boson: ZBoson) : Atom {
@@ -187,6 +180,7 @@ open class Atom(
     final override fun setAtom(atom: Atom) : Atom {
         orbitals.setAtom(this)
         _nucleons.setAtom(this)
+        electronics.setAtom(this)
         return this
     }
     fun setContent(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
