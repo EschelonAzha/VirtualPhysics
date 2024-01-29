@@ -137,16 +137,7 @@ open class Atom(
         diode(atom, autoFlow)
         return atom
     }
-    fun _diode(atom: Atom, autoFlow:Boolean=true) : Atom {
-        diode(atom, autoFlow)
-        return this
-    }
-//    fun diode(atom: Atom, autoFlow:Boolean=true) : Unit {
-//        val me : Proton = getValueProton()
-//        val you: Proton = atom.getValueProton()
-//
-//        me.covalentBond(you, autoFlow)
-//    }
+
     override fun emit() : Photon {
         return Photon().with(radiate())
     }

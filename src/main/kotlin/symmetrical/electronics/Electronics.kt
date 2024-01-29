@@ -25,7 +25,10 @@ class Electronics() : IElectronics  {
 
         me.ionicBond(you)
     }
-
+    override fun _diode(atom: Atom, autoFlow:Boolean) : Atom {
+        diode(atom, autoFlow)
+        return this.atom
+    }
     override fun diode(atom: Atom, autoFlow:Boolean) : Unit {
         val me : Proton = this.atom.getValueProton()
         val you: Proton = atom.getValueProton()
