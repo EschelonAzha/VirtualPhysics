@@ -25,6 +25,10 @@ class Electronics() : IElectronics  {
 
         me.ionicBond(you)
     }
+    override fun diode_(atom: Atom, autoFlow:Boolean) : Atom {
+        diode(atom, autoFlow)
+        return atom
+    }
     override fun _diode(atom: Atom, autoFlow:Boolean) : Atom {
         diode(atom, autoFlow)
         return this.atom

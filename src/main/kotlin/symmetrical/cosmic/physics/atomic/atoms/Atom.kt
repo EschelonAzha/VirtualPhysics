@@ -133,10 +133,10 @@ open class Atom(
         atom.diode(this, autoFlow)
     }
 
-    fun diode_(atom: Atom, autoFlow:Boolean=true) : Atom {
-        diode(atom, autoFlow)
-        return atom
-    }
+//    fun diode_(atom: Atom, autoFlow:Boolean=true) : Atom {
+//        diode(atom, autoFlow)
+//        return atom
+//    }
 
     override fun emit() : Photon {
         return Photon().with(radiate())
