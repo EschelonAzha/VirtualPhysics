@@ -95,7 +95,7 @@ class Nucleons(
         neutrons.add(neutron)
         return p_atom
     }
-//    private fun betaPlusDecayx() : Nucleons {
+    private fun betaPlusDecayPlaceholder() : Nucleons {    // Placeholder for future work
 //        val pos = _protons.getProton(ValueProton::class)
 //
 //        var (neutron, betaPlus) = (_protons.removeAt(pos) as Proton).betaPlusDecay()
@@ -107,8 +107,8 @@ class Nucleons(
 //
 //        NeutralUpPion(proton, neutron)  // exert Nuclear force
 //
-//        return this
-//    }
+        return this
+    }
 
     override fun emit() : Photon {
         return Photon().with(radiate())

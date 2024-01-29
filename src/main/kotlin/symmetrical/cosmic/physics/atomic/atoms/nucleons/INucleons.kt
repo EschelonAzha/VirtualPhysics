@@ -28,14 +28,10 @@ https://en.wikipedia.org/wiki/Nucleon
  */
 interface INucleons {
 
-    fun addNeutron      (proton: Neutron)       : Neutron
-    fun addProton       (proton: Proton)        : Proton
     fun betaMinusDecay  ()                      : Atom
     fun betaPlusDecay   ()                      : Atom
     fun betaPlusDecay   (content:Any?)          : Atom
-    fun getAtomicNumber ()                      : Int
     fun getClassId      ()                      : String
-    fun getNeutron      (pos:Int)               : Neutron
     fun getNeutrons     ()                      : Neutrons
     fun getProton       (classType: KClass<*>)  : Proton
 
