@@ -26,4 +26,11 @@ class Electronics() : IElectronics  {
         me.ionicBond(you)
     }
 
+    override fun diode(atom: Atom, autoFlow:Boolean) : Unit {
+        val me : Proton = this.atom.getValueProton()
+        val you: Proton = atom.getValueProton()
+
+        me.covalentBond(you, autoFlow)
+    }
+
 }

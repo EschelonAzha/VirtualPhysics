@@ -7,6 +7,7 @@ interface IElectronics {
     fun _capacitor(atom:Atom) : Atom
     fun capacitor(atom:Atom) : Unit
 
+    fun diode(atom:Atom, autoFlow:Boolean=true) : Unit
     fun setAtom(atom: Atom) : Atom
 
 
