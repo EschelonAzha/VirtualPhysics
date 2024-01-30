@@ -54,7 +54,7 @@ open class Atom(
     IMatterAntiMatter   by matterAntiMatter,
     IOrbitals           by orbitals,
     INucleons           by _nucleons,
-    IElectronics by electronics,
+    IElectronics        by electronics,
     Element,
     IEmitter,
     IAtom

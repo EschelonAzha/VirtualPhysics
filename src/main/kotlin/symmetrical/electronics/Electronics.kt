@@ -5,6 +5,20 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
 class Electronics() : IElectronics  {
     lateinit var atom: Atom
+
+    override fun capacitor(atom: Atom) : Unit {
+        val me : Proton = this.atom.getValueProton()
+        val you: Proton = atom.getValueProton()
+
+        me.ionicBond(you)
+    }
+    override fun diode(atom: Atom, autoFlow:Boolean) : Unit {
+        val me : Proton = this.atom.getValueProton()
+        val you: Proton = atom.getValueProton()
+
+        me.covalentBond(you, autoFlow)
+    }
+
     override fun setAtom(atom:Atom) : Atom {
         this.atom = atom
         return atom
@@ -19,12 +33,7 @@ class Electronics() : IElectronics  {
         return this.atom
     }
 
-    override fun capacitor(atom: Atom) : Unit {
-        val me : Proton = this.atom.getValueProton()
-        val you: Proton = atom.getValueProton()
 
-        me.ionicBond(you)
-    }
     override fun conductor_(atom: Atom, autoFlow:Boolean) : Atom {
         conductor(atom, autoFlow);
         return atom
@@ -45,11 +54,6 @@ class Electronics() : IElectronics  {
         diode(atom, autoFlow)
         return this.atom
     }
-    override fun diode(atom: Atom, autoFlow:Boolean) : Unit {
-        val me : Proton = this.atom.getValueProton()
-        val you: Proton = atom.getValueProton()
 
-        me.covalentBond(you, autoFlow)
-    }
 
 }
