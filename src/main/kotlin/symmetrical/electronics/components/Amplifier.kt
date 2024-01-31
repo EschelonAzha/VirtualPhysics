@@ -21,4 +21,11 @@ package symmetrical.electronics.components
 
 // for more information see:   https://en.wikipedia.org/wiki/Error_amplifier_(electronics)
 class Amplifier {
+    /*
+        You can think of an Amplifier as a collection of Transistors
+        like passing a sequence of "on" switches before full output
+        can flow.
+     */
+
+    // Work in progress
 }

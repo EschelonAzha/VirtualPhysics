@@ -21,4 +21,14 @@ package symmetrical.electronics.components
 
 // for more information see:  https://en.wikipedia.org/wiki/Resistor
 class Resistor {
+    /* Resistors can be used as components in a circuit to evaluate
+       data and resist their flow if the data doesn't meet the criteria.
+       they are different than capacitors because capacitors can resist
+       but they can also change the arriving data into something else
+       and pass it through.   Resistors should only validate and block.
+       It doesn't mean no data goes through, it only means it resists
+       the flow of data.   In this case, passing validation is the resistance.
+     */
+
+    // Work in progress
 }

@@ -21,5 +21,17 @@ package symmetrical.electronics.components
 
 // for more information see:  https://en.wikipedia.org/wiki/Rectifier
 
+
 class Rectifier {
+/* Rectifiers convert AC(Alternating Current) to DC (Direct Current)
+
+   A Typical Request/Response system is like AC, data flows back and forth like alternating current.
+   By using two diodes we can convert AC to pulsating DC which can be useful pattern for logging
+   or serializing the meaningful parts of the interaction and saving to a database
+
+
+ */
+
+    // Work in progress
+
 }

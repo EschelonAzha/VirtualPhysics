@@ -22,4 +22,12 @@ package symmetrical.electronics.components
 // for more information see: https://en.wikipedia.org/wiki/Transistor
 
 class Transistor {
+    /* Transistors are useful for controlling the flow of data.
+       They can fall in between conductors and diodes.   We can allow certain
+       people/transactions to flow while others may not be authorized.
+       taking two inputs (who and what) yields to a single output.   Flow or no flow.
+
+     */
+
+    // Work in progress
 }
