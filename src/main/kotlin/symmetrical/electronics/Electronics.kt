@@ -1,36 +1,28 @@
 package symmetrical.electronics
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.electronics.components.Capacitor
+import symmetrical.electronics.components.Conductor
+import symmetrical.electronics.components.Diode
+import symmetrical.electronics.interfaces.ICapacitor
+import symmetrical.electronics.interfaces.IConductor
+import symmetrical.electronics.interfaces.IDiode
+
 
 class Electronics(
-    val capacitor:ICapacitor = Capacitor(),
-    val diode    :IDiode     = Diode(),
-
+    private val capacitor: ICapacitor   = Capacitor(),
+    private val diode    : IDiode       = Diode(),
+    private val conductor: IConductor   = Conductor()
 ) :
-    ICapacitor by capacitor,
-    IDiode     by diode,
+    ICapacitor  by capacitor,
+    IDiode      by diode,
+    IConductor  by conductor,
     IElectronics
 {
-    lateinit var atom: Atom
-
     override fun setAtom(atom:Atom) : Atom {
-        this.atom = atom
         capacitor.setAtom(atom)
+        conductor.setAtom(atom)
         diode.setAtom(atom)
         return atom
-    }
-
-    override fun conductor_(atom: Atom, autoFlow:Boolean) : Atom {
-        conductor(atom, autoFlow);
-        return atom
-    }
-    override fun _conductor(atom: Atom, autoFlow:Boolean) : Atom {
-        conductor(atom, autoFlow);
-        return this.atom
-    }
-    override fun conductor(atom: Atom, autoFlow:Boolean) : Unit {
-        diode(atom, autoFlow)
-        atom.diode(this.atom, autoFlow)
     }
 }

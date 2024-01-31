@@ -1,15 +1,9 @@
 package symmetrical.electronics
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.electronics.interfaces.ICapacitor
+import symmetrical.electronics.interfaces.IConductor
+import symmetrical.electronics.interfaces.IDiode
 
-interface IElectronics : ICapacitor, IDiode {
-
-
-    fun conductor_(atom: Atom, autoFlow:Boolean=true) : Atom
-    fun _conductor(atom: Atom, autoFlow:Boolean=true) : Atom
-    fun conductor(atom: Atom, autoFlow:Boolean=true) : Unit
-
-    override fun setAtom(atom: Atom) : Atom
-
+interface IElectronics : ICapacitor, IDiode, IConductor {
 
 }

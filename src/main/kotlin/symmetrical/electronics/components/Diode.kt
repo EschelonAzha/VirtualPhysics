@@ -1,16 +1,15 @@
-package symmetrical.electronics
+package symmetrical.electronics.components
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.electronics.interfaces.IDiode
 
+// for more information see:  https://en.wikipedia.org/wiki/Diode
 class Diode : IDiode {
 
     private lateinit var atom: Atom
 
-    override fun setAtom(atom: Atom) : Atom {
-        this.atom = atom
-        return this.atom
-    }
+
     override fun diode(atom: Atom, autoFlow:Boolean) : Unit {
         val me : Proton = this.atom.getValueProton()
         val you: Proton = atom.getValueProton()
@@ -23,6 +22,10 @@ class Diode : IDiode {
     }
     override fun _diode(atom: Atom, autoFlow:Boolean) : Atom {
         diode(atom, autoFlow)
+        return this.atom
+    }
+    override fun setAtom(atom: Atom) : Atom {
+        this.atom = atom
         return this.atom
     }
 }

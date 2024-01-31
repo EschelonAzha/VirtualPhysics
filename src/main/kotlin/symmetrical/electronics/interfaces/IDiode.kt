@@ -1,4 +1,4 @@
-package symmetrical.electronics
+package symmetrical.electronics.interfaces
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 
