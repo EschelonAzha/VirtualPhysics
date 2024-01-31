@@ -3,15 +3,15 @@ package symmetrical.electronics
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
-class Electronics() : IElectronics  {
+class Electronics(
+    val capacitor:ICapacitor = Capacitor()
+) :
+    ICapacitor by capacitor,
+    IElectronics
+{
     lateinit var atom: Atom
 
-    override fun capacitor(atom: Atom) : Unit {
-        val me : Proton = this.atom.getValueProton()
-        val you: Proton = atom.getValueProton()
 
-        me.ionicBond(you)
-    }
     override fun diode(atom: Atom, autoFlow:Boolean) : Unit {
         val me : Proton = this.atom.getValueProton()
         val you: Proton = atom.getValueProton()
@@ -21,18 +21,9 @@ class Electronics() : IElectronics  {
 
     override fun setAtom(atom:Atom) : Atom {
         this.atom = atom
+        capacitor.setAtom(atom)
         return atom
     }
-
-    override fun capacitor_(atom: Atom) : Atom {
-        capacitor(atom);
-        return atom
-    }
-    override fun _capacitor(atom: Atom) : Atom {
-        capacitor(atom);
-        return this.atom
-    }
-
 
     override fun conductor_(atom: Atom, autoFlow:Boolean) : Atom {
         conductor(atom, autoFlow);
