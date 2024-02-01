@@ -22,6 +22,7 @@ import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
 // For more information visit:   https://en.wikipedia.org/wiki/Helium
 
@@ -31,6 +32,9 @@ class Helium(
 ) : Atom(),
     IMatter by matterAntiMatter
 {
+    fun with(proton: Proton) : Helium {
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }

@@ -52,8 +52,8 @@ open class Proton(
         // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
         // -1/3 wavelength(Type Of Proton),        Spin(?),
     }
-    fun with(protons:Protons) : Proton {
-        this.p_protons = protons
+    fun with(value:Any?) : Proton {
+        getValueQuark().setContent(value)
         return this
     }
 
@@ -148,12 +148,6 @@ open class Proton(
         }
 
         return zBoson  // this returns only the local changes
-    }
-    override fun set(pos:Int, quark: IParticle) : IParticle {
-        super.set(pos, quark)
-        if (pos == 0)
-            _quark = quark as Quark
-        return quark
     }
 
     fun setProtons(protons:Protons) : Proton {
