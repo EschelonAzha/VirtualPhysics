@@ -17,7 +17,7 @@ class Resistor(
 {
 
     override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
-     //   accept(valueQuark, zBoson)
+        // accept(valueQuark, zBoson)
 
         reject(20, "Nope!", zBoson)
 

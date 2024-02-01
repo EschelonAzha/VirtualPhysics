@@ -62,7 +62,7 @@ class VTestElectronics {
         val atom2Val1 = atom2.getField().toString()
         val atom3Val1 = atom3.getField().toString()
 
-        if (atom1Val1!=ATOM1)
+        if (atom1Val1!="")  // Atom1 is a resistor and all changes are rejected.
             return false
         if (atom2Val1!=ATOM3NEW)
             return false
@@ -84,7 +84,7 @@ class VTestElectronics {
         if (antiLepton1 != ATOM3){
             return false
         }
-        if (antiLepton2 != ATOM1) {
+        if (antiLepton2 != "") { // This never got a value because the first Value is a resistor
             return false
         }
         return true

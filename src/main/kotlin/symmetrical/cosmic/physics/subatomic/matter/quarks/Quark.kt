@@ -87,8 +87,6 @@ open class Quark(
     }
     class Args(val value:Any?) : ZBoson()
 
-
-
     fun blue() : String {
         if (gluon.color.isBlue())
             return gluon.color._value as String

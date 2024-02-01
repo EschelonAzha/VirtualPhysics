@@ -66,7 +66,7 @@ open class Atom(
     }
 
     open fun with(content:Any?) : Atom {
-        Quark.value(this).setWavelength(content)
+        setContent(content, true)
         return this
     }
     companion object {
