@@ -32,6 +32,10 @@ open class Hydrogen(
 ) : Element(),
     IMatter by matterAntiMatter
 {
+    override fun with(value:Any?) : Hydrogen {
+        super.with(value)
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }

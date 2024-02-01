@@ -12,6 +12,10 @@ open class Lithium (
 ) : Element(),
     IMatter by matterAntiMatter
 {
+    override fun with(value:Any?) : Lithium {
+        super.with(value)
+        return this
+    }
     fun protons(proton1: Proton, proton2:Proton) : Lithium {
         addProtons(arrayOf(proton1, proton2))
         return this

@@ -33,6 +33,10 @@ open class Helium(
 ) : Element(),
     IMatter by matterAntiMatter
 {
+    override fun with(value:Any?) : Helium {
+        super.with(value)
+        return this
+    }
     fun protons(proton:Proton) : Helium {
         addProtons(arrayOf(proton))
         return this

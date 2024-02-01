@@ -1,9 +1,15 @@
 package symmetrical.cosmic.physics.atomic.atoms
 
+import symmetrical.cosmic.dictionary.protons.AccessLevelProton
+import symmetrical.cosmic.dictionary.protons.FieldNameProton
+import symmetrical.cosmic.dictionary.protons.ValueProton
 import symmetrical.cosmic.physics.atomic.atoms.elements.Hydrogen
+import symmetrical.cosmic.physics.subatomic.balanced.values.Field
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+import kotlin.reflect.KClass
 
 /*
  * This file is part of Virtual Physics.
@@ -39,6 +45,21 @@ open class Element (
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
+    }
+
+    fun getAccessLevel() : Field {
+        return getProtonField(AccessLevelProton::class)
+    }
+    fun getFieldName() : Field {
+        return getProtonField(FieldNameProton::class)
+    }
+    fun getValue() : Field {
+        return getProtonField(ValueProton::class)
+    }
+
+    private fun getProtonField(kClass: KClass<*>) : Field {
+        val proton:Proton = getProton(kClass)
+        return proton.getValueQuark().getWavelength().getField()
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
