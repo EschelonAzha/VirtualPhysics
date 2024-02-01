@@ -91,17 +91,6 @@ class Protons(
     override fun getProton(classType:KClass<*>) : Proton {
         return get(findByType(classType)) as Proton
     }
-
-    override fun setAtomicNumber(number:Int) : Nucleons {
-        var i=size()
-        while (i<number) {
-            add(
-                Baryon().Proton() as Baryon
-            )
-            i++
-        }
-        return p_nucleons as Nucleons
-    }
     fun interact(zBoson: ZBoson) : ZBoson {
         getProton(ValueProton::class).interact(zBoson)
         return zBoson

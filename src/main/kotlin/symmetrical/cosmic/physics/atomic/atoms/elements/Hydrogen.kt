@@ -34,7 +34,6 @@ class Hydrogen(
 
     fun with(atom: Atom) : Hydrogen {
         this.atom = atom
-        atom.setAtomicNumber(1)
         return this
     }
 

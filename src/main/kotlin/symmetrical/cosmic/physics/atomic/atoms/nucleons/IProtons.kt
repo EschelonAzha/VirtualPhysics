@@ -31,7 +31,5 @@ interface IProtons {
     fun getAtomicNumber ()                      : Int
     fun getClassId      ()                      : String
     fun getProton       (classType: KClass<*>)  : Proton
-
-    fun setAtomicNumber (number:Int)            : Nucleons
     fun setNucleons     (nucleons: Nucleons)    : Nucleons
 }

@@ -37,7 +37,6 @@ interface INucleons {
 
     fun getProtons      ()                      : Protons
     fun setAtom         (atom: Atom)            : Atom
-    fun setAtomicNumber (number:Int)            : Nucleons
 
 
 }

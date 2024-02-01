@@ -1,4 +1,5 @@
-package symmetrical.cosmic.physics.atomic.atoms.elements
+package symmetrical.cosmic.dictionary.protons
+
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,27 +19,40 @@ package symmetrical.cosmic.physics.atomic.atoms.elements
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.subatomic.balanced.Particle
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 
-// For more information visit:   https://en.wikipedia.org/wiki/Helium
-
-
-class Helium(
-    private val matterAntiMatter: IMatter = Matter().with(Helium::class),
-) :
+class FieldNameProton(
+    private val matterAntiMatter: IMatter = Matter().with(FieldNameProton::class),
+) : Proton(),
     IMatter by matterAntiMatter
 {
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
 
-    lateinit var atom : Atom
-
-    fun with(atom: Atom) : Helium {
-        this.atom = atom
-        return this
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        val classId = matterAntiMatter.getClassId()
+        return Photon().with(radiate())
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
+    private fun radiate() : String {
+        if (Particle.Static.debuggingOn) {
+            println("FieldNameProton")
+        }
+        val classId : String = matterAntiMatter.getClassId()
+        val proton  : String = super.emit().radiate()
+        return classId+proton
+
+    }
+
 }
