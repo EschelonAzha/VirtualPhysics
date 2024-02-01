@@ -69,6 +69,15 @@ open class Atom(
         setContent(content, true)
         return this
     }
+    open fun protons(protons:Array<Proton>) : Atom {
+        for (proton:Proton in protons) {
+            _nucleons.addProton(proton)
+        }
+        return this
+    }
+
+
+
     companion object {
         fun content(atom: Atom) : Any? {
             return Companion.content(atom.getProton(ValueProton::class))

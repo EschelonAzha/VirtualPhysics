@@ -32,9 +32,6 @@ class Helium(
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    fun with(proton: Proton) : Helium {
-        return this
-    }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }
