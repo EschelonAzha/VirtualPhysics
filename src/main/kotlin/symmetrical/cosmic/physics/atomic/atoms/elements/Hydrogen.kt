@@ -19,6 +19,7 @@ package symmetrical.cosmic.physics.atomic.atoms.elements
  */
 
 import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.cosmic.physics.atomic.atoms.Element
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
@@ -28,7 +29,7 @@ import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
 open class Hydrogen(
     private val matterAntiMatter: IMatter = Matter().with(Hydrogen::class),
-) : Atom(),
+) : Element(),
     IMatter by matterAntiMatter
 {
     override fun absorb(photon: Photon) : Photon {

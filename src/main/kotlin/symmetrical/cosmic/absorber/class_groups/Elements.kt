@@ -5,6 +5,7 @@ import symmetrical.cosmic.absorber.EntityId
 import symmetrical.cosmic.dictionary.protons.AccessLevelProton
 import symmetrical.cosmic.dictionary.protons.FieldNameProton
 import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.cosmic.physics.atomic.atoms.Element
 import symmetrical.cosmic.physics.atomic.atoms.elements.Helium
 import symmetrical.cosmic.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.cosmic.physics.atomic.atoms.elements.Lithium
@@ -15,6 +16,8 @@ class Elements : ClassGroup() {
         add(EntityId().with(Base52.classId(), ValueProton::class))
         add(EntityId().with(Base52.classId(), FieldNameProton::class))
         add(EntityId().with(Base52.classId(), AccessLevelProton::class))
+
+        add(EntityId().with(Base52.classId(), Element::class))
 
         add(EntityId().with(Base52.classId(), Hydrogen::class))
         add(EntityId().with(Base52.classId(), Helium::class))

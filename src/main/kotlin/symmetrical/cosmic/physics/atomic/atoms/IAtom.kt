@@ -27,5 +27,5 @@ import symmetrical.cosmic.physics.subatomic.balanced.IParticle
 /*
 https://en.wikipedia.org/wiki/Atom
  */
-interface IAtom : Element, IEmitter, IOrbitals, INucleons, IParticle {
+interface IAtom : IEmitter, IOrbitals, INucleons, IParticle {
 }

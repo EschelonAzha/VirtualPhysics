@@ -55,7 +55,6 @@ open class Atom(
     IOrbitals           by orbitals,
     INucleons           by _nucleons,
     IElectronics        by electronics,
-    Element,
     IEmitter,
     IAtom
 {

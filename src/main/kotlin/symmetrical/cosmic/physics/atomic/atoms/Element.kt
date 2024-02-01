@@ -1,4 +1,10 @@
 package symmetrical.cosmic.physics.atomic.atoms
+
+import symmetrical.cosmic.physics.atomic.atoms.elements.Hydrogen
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
+import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
+import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+
 /*
  * This file is part of Virtual Physics.
  *
@@ -23,6 +29,18 @@ package symmetrical.cosmic.physics.atomic.atoms
 https://en.wikipedia.org/wiki/Chemical_element
  */
 
-interface Element {
-
+open class Element (
+    private val matterAntiMatter: IMatter = Matter().with(Element::class),
+) : Atom(),
+    IMatter by matterAntiMatter
+{
+    override fun absorb(photon: Photon) : Photon {
+        return super.absorb(matterAntiMatter.check(photon).propagate())
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+super.emit().radiate()
+    }
 }
