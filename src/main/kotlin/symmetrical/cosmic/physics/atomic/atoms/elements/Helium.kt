@@ -27,11 +27,15 @@ import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
 // For more information visit:   https://en.wikipedia.org/wiki/Helium
 
 
-class Helium(
+open class Helium(
     private val matterAntiMatter: IMatter = Matter().with(Helium::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
+    fun protons(proton:Proton) : Helium {
+        addProtons(arrayOf(proton))
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }

@@ -69,7 +69,7 @@ open class Atom(
         setContent(content, true)
         return this
     }
-    open fun protons(protons:Array<Proton>) : Atom {
+    open fun addProtons(protons:Array<Proton>) : Atom {
         for (proton:Proton in protons) {
             _nucleons.addProton(proton)
         }
