@@ -194,7 +194,23 @@ Kotlin
 
 **// All other applied data-binding circuits and rollback capability still exist in the result set.**
 
+## Elements Are Here !!
+**Elements:** Elements are Self-Describing Building Blocks for Virtual Physics.
+Elements serve as runtime interfaces in Virtual Physics, ensuring each element has the correct number of protons (e.g., Hydrogen: 1, Helium: 2, Lithium: 3).
 
+**Key Attributes**
+* **Value:** This core property represents the element's fundamental data relevant to your application e.g., ZipCode), and is the smallest Atom you can use (Hydrogen).
+* **FieldName:** Specifies the name associated with the Value for clarity and organization.
+* **Access Level:** Controls access and modification permissions for the Value within your application.
+* **Alias Name:** Provides an alternative name for the FieldName, promoting readability and flexibility.
+* **Custom Protons:** Beyond the minimum atomic number, additional protons can store application-specific metadata, making each element truly self-describing, and you can use and mix any combination of protons to create any element you need. -- The periodic Table gives us over a hundred elements we can choose from! 
+
+**Unique Advantages**
+* **Self-Describing:** Elements carry all necessary information, eliminating the need for external parsing tools (like for JSON or XML) to carry the meta-data.
+* **Transmissible and Absorbable:** Atoms can be emitted and absorbed, facilitating data exchange and communication between different parts of your application.
+* **Seamless Integration:** Works directly within your Virtual Physics environment, offering a natural and efficient way to represent and manipulate physical entities.
+
+* ** Examples and sample code are coming soon **  
 ## Get Started:
 
 * **Download the library**:
