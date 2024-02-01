@@ -19,10 +19,6 @@ class AddressRow(private val monomer         : Monomer = Monomer(),
     IMonomer by monomer,
     IMatterAntiMatter by matterAntiMatter
 {
-    var name        :   String = ""
-    var address     :   String = ""
-    var city        :   String = ""
-    var state       :   String = ""
 
     init {
         monomer.setSelf(this)
