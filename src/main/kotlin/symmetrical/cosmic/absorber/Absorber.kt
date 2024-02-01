@@ -35,6 +35,7 @@ object Absorber : IAbsorber {
         beam.addAll(Compounds())
         beam.addAll(Cosmic())
         beam.addAll(DictionaryGroup())
+        beam.addAll(Elements())
         beam.addAll(Encodings())
         beam.addAll(FundamentalProperties())
         beam.addAll(Hadrons())

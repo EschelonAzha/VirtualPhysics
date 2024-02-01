@@ -20,11 +20,13 @@ package symmetrical.cosmic.absorber.class_groups
 
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
+import symmetrical.cosmic.dictionary.protons.FieldNameProton
 import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.cosmic.dictionary.protons.ValueProton
 
 class DictionaryGroup : ClassGroup() {
     init {
         add(EntityId().with(Base52.classId(), ValueProton::class))
+        add(EntityId().with(Base52.classId(), FieldNameProton::class))
     }
 }
