@@ -41,7 +41,7 @@ open class Baryon(
     IMatter by matterAntiMatter
 {
     init {
-        super.with(3)
+        super.capacity(3)
     }
 
     object Static {

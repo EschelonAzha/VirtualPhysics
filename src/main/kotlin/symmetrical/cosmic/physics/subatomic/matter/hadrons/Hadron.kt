@@ -35,8 +35,8 @@ open class Hadron(
     IMatter by matterAntiMatter,
     IEmitter
 {
-    override fun with(size:Int) : Hadron {
-        super.with(size)
+    override fun capacity(size:Int) : Hadron {
+        super.capacity(size)
         return this
     }
 

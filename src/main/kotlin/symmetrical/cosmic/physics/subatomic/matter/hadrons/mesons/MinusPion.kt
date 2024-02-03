@@ -35,7 +35,7 @@ open class MinusPion (
 {
 
     init {
-        super.with(2);
+        super.capacity(2);
         this.set(0, Down())
         this.set(1, AntiUp())
     }

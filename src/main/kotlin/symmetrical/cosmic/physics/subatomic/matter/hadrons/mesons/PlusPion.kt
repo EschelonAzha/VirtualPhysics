@@ -37,7 +37,7 @@ open class PlusPion(
     // The plus pion binds Protons together by carrying the color
     // charge of one to the other
     init {
-        super.with(2)
+        super.capacity(2)
         this.set(0, Up())
         this.set(1, AntiDown())
     }

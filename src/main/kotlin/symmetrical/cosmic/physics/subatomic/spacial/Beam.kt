@@ -33,10 +33,10 @@ open class Beam() : IBeam {
 
     private var _capacity                :Int = 0
     init {
-        with(1)
+        capacity(1)
     }
 
-    open fun with(capacity:Int=1) : Beam {
+    open fun capacity(capacity:Int=1) : Beam {
         _memoryBlock    = createBlock(capacity)
         this._capacity   = capacity
         return this

@@ -40,7 +40,7 @@ open class NeutralUpPion(
     // by binding the pointers together
 
     fun with(proton: Baryon, neutron: Baryon) : NeutralUpPion {
-        super.with(2)
+        super.capacity(2)
         this.add(Up())
         this.add(AntiUp())
 

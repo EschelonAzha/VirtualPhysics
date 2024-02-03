@@ -33,8 +33,8 @@ open class Compound(
     IMatterAntiMatter by matterAntiMatter,
     Ionic
 {
-    override fun with(initialCapacity:Int) : Compound {
-        super.with(initialCapacity);
+    override fun capacity(initialCapacity:Int) : Compound {
+        super.capacity(initialCapacity);
         return this
     }
     object Static {

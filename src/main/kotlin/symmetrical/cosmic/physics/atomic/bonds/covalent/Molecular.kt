@@ -43,8 +43,8 @@ open class Molecular(
     IParticle
 {
 
-    open fun with(initialCapacity:Int) : Molecular {
-        _particleBeam.with(initialCapacity)
+    open fun capacity(initialCapacity:Int) : Molecular {
+        _particleBeam.capacity(initialCapacity)
         return this
     }
 

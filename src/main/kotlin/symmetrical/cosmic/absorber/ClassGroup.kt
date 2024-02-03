@@ -23,7 +23,7 @@ import symmetrical.cosmic.physics.subatomic.spacial.Beam
 open class ClassGroup : Beam() {
 
     init {
-        with(500)
+        capacity(500)
     }
     
 }

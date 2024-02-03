@@ -42,8 +42,8 @@ open class ParticleBeam(
     IEmitter
 {
 
-    open fun with(initialCapacity:Int=1) : ParticleBeam {
-        _beam.with(initialCapacity)
+    open fun capacity(initialCapacity:Int=1) : ParticleBeam {
+        _beam.capacity(initialCapacity)
         return this
     }
 
