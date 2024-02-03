@@ -19,11 +19,11 @@ package symmetrical.chemistry.polymer
  */
 
 import symmetrical.chemistry.monomer.IMonomer
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.atomic.substance.ions.Compound
-import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.substance.ions.Compound
+import symmetrical.physics.subatomic.bosons.Photon
+import symmetrical.physics.subatomic.luminescent.IMatter
+import symmetrical.physics.subatomic.luminescent.Matter
 
 // For more information visit:    https://en.wikipedia.org/wiki/Polymer
 
@@ -32,7 +32,7 @@ open class Polymer(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    fun with(atom1: Atom, atom2: Atom) : Polymer {
+    fun with(atom1: symmetrical.physics.atomic.atoms.Atom, atom2: symmetrical.physics.atomic.atoms.Atom) : Polymer {
         add(atom1)
         add(atom2)
         return this

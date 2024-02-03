@@ -2,7 +2,7 @@ package applications.tests.nuclear
 
 
 import applications.tests.dictionary.composites.AddressRow
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.Atom
 
 class VTestNeutrons {
     val ATOM1: String = "!!!!!!!!!!!!!!!"
@@ -24,7 +24,7 @@ class VTestNeutrons {
     }
 
     private fun testNeutrons(): Boolean {
-        val atom: Atom = Atom().with(ATOM1)
+        val atom: symmetrical.physics.atomic.atoms.Atom = symmetrical.physics.atomic.atoms.Atom().with(ATOM1)
 
         val original : String = atom.getField().toString()
 

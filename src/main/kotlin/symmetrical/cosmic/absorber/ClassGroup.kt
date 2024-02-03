@@ -18,7 +18,7 @@ package symmetrical.cosmic.absorber
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.physics.subatomic.spacial.Beam
+import symmetrical.physics.subatomic.spacial.Beam
 
 open class ClassGroup : Beam() {
 

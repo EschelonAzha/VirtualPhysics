@@ -1,6 +1,6 @@
 package applications.tests.radiation
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.Atom
 import applications.tests.dictionary.atoms.Resistor
 import applications.tests.dictionary.composites.AddressRow
 import symmetrical.cosmic.absorber.Absorber
@@ -38,8 +38,8 @@ class VTestRadiation {
 
     }
     private fun testEmissions() : Boolean {
-        val atom : Atom = Atom().with(ATOM1)
-        val city : Atom = Resistor().with(CITY)
+        val atom : symmetrical.physics.atomic.atoms.Atom = symmetrical.physics.atomic.atoms.Atom().with(ATOM1)
+        val city : symmetrical.physics.atomic.atoms.Atom = Resistor().with(CITY)
                                                 // Particles don't need JSON or XML to serialize themselves
                                                 // and don't need 3rd party parsers such as GSON, or Jackson
 
@@ -52,10 +52,10 @@ class VTestRadiation {
         val cityEmission = city.emit()  // Photon emission and absorption is built in and reconstructs
         val (cityClone, cityRemainder) = Absorber.materialize(cityEmission) // identical clones
                                                                                            // with no extra steps
-        if ((cityClone as Atom).getField().toString() != city.getField().toString())
+        if ((cityClone as symmetrical.physics.atomic.atoms.Atom).getField().toString() != city.getField().toString())
             return false
 
-        if ((atomClone as Atom).getField().toString() != atom.getField().toString())
+        if ((atomClone as symmetrical.physics.atomic.atoms.Atom).getField().toString() != atom.getField().toString())
             return false
 
         return true

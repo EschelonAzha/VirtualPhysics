@@ -6,11 +6,11 @@ import applications.tests.dictionary.atoms.Name
 import applications.tests.dictionary.atoms.State
 import symmetrical.chemistry.monomer.IMonomer
 import symmetrical.chemistry.monomer.Monomer
-import symmetrical.cosmic.physics.atomic.substance.ions.Compound
-import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.IMatterAntiMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.physics.atomic.substance.ions.Compound
+import symmetrical.physics.subatomic.bosons.Photon
+import symmetrical.physics.subatomic.luminescent.IMatter
+import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
+import symmetrical.physics.subatomic.luminescent.Matter
 
 
 class AddressRow(private val monomer         : Monomer = Monomer(),

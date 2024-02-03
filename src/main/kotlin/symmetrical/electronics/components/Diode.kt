@@ -19,31 +19,31 @@ package symmetrical.electronics.components
  */
 
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.electronics.interfaces.IDiode
 
 // for more information see:  https://en.wikipedia.org/wiki/Diode
 class Diode : IDiode {
 
-    private lateinit var atom: Atom
+    private lateinit var atom: symmetrical.physics.atomic.atoms.Atom
 
 
-    override fun diode(atom: Atom, autoFlow:Boolean) : Unit {
-        val me : Proton = this.atom.getValueProton()
-        val you: Proton = atom.getValueProton()
+    override fun diode(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean) : Unit {
+        val me : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton = this.atom.getValueProton()
+        val you: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton = atom.getValueProton()
 
         me.covalentBond(you, autoFlow)
     }
-    override fun diode_(atom: Atom, autoFlow:Boolean) : Atom {
+    override fun diode_(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean) : symmetrical.physics.atomic.atoms.Atom {
         diode(atom, autoFlow)
         return atom
     }
-    override fun _diode(atom: Atom, autoFlow:Boolean) : Atom {
+    override fun _diode(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean) : symmetrical.physics.atomic.atoms.Atom {
         diode(atom, autoFlow)
         return this.atom
     }
-    override fun setAtom(atom: Atom) : Atom {
+    override fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
         this.atom = atom
         return this.atom
     }

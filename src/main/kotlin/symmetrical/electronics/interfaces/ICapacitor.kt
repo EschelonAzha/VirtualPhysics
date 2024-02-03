@@ -19,12 +19,12 @@ package symmetrical.electronics.interfaces
  */
 
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.Atom
 
 interface ICapacitor {
-    fun capacitor_(atom: Atom) : Atom
-    fun _capacitor(atom: Atom) : Atom
-    fun capacitor(atom: Atom) : Unit
+    fun capacitor_(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom
+    fun _capacitor(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom
+    fun capacitor(atom: symmetrical.physics.atomic.atoms.Atom) : Unit
 
-    fun setAtom(atom:Atom) : Atom
+    fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom
 }

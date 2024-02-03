@@ -18,11 +18,11 @@ package symmetrical.chemistry.diatomics
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic.physics.atomic.bonds.covalent.Diatomic
-import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.subatomic.bosons.Photon
+import symmetrical.physics.atomic.bonds.covalent.Diatomic
+import symmetrical.physics.subatomic.luminescent.IMatter
+import symmetrical.physics.subatomic.luminescent.Matter
 
 open class KeyValue(
     private val matterAntiMatter: IMatter = Matter().with(KeyValue::class),
@@ -30,7 +30,7 @@ open class KeyValue(
     IMatter by matterAntiMatter
 {
 
-    override fun with(key: Atom, value: Atom) : KeyValue {
+    override fun with(key: symmetrical.physics.atomic.atoms.Atom, value: symmetrical.physics.atomic.atoms.Atom) : KeyValue {
         add(key)
         add(value)
         return this
@@ -59,14 +59,14 @@ open class KeyValue(
         return matterAntiMatter.getClassId()
     }
 
-    fun getKey() : Atom? {
+    fun getKey() : symmetrical.physics.atomic.atoms.Atom? {
         if (size()>0)
-            return get(Static.KEY) as Atom
+            return get(Static.KEY) as symmetrical.physics.atomic.atoms.Atom
         return null
     }
-    fun getValue() : Atom? {
+    fun getValue() : symmetrical.physics.atomic.atoms.Atom? {
         if (size()>1)
-            return get(Static.VALUE) as Atom
+            return get(Static.VALUE) as symmetrical.physics.atomic.atoms.Atom
         return null
     }
     private fun radiate() : String {

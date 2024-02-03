@@ -19,17 +19,17 @@ package symmetrical.chemistry.monomer
  */
 import symmetrical.chemistry.catalysts.Catalyst
 import symmetrical.chemistry.polymer.Polymer
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.atomic.substance.ions.Compound
+import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.substance.ions.Compound
 
 // For more information visit:   https://en.wikipedia.org/wiki/Monomer
 class Monomer() : IMonomer {
     private lateinit var polymer: Polymer
-    private lateinit var self:Compound
+    private lateinit var self: Compound
 
     override fun filter(catalyst: Catalyst) : Boolean {
         for (i in 0 until catalyst.size()) {
-            val criteria: Atom = catalyst.getAtom(i)
+            val criteria: symmetrical.physics.atomic.atoms.Atom = catalyst.getAtom(i)
             val pos = self.findByType(criteria::class)
             if (pos == -1)
                 return false
@@ -44,7 +44,7 @@ class Monomer() : IMonomer {
         return this
     }
 
-    override fun setSelf(compound:Compound) : IMonomer {
+    override fun setSelf(compound: Compound) : IMonomer {
         this.self = compound
         return this
     }

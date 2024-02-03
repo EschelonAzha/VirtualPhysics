@@ -21,8 +21,8 @@ package symmetrical.cosmic.absorber
 import asymmetrical.physics.machine.config.Config
 import symmetrical.cosmic.absorber.class_groups.*
 import symmetrical.cosmic.transpectors.transpectors.Strings
-import symmetrical.cosmic.physics.subatomic.bosons.IEmitter
-import symmetrical.cosmic.physics.subatomic.bosons.Photon
+import symmetrical.physics.subatomic.bosons.IEmitter
+import symmetrical.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
 
 object Absorber : IAbsorber {

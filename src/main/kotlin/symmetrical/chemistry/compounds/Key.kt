@@ -18,17 +18,17 @@ package symmetrical.chemistry.compounds
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.atomic.substance.ions.Compound
-import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.Matter
+import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.substance.ions.Compound
+import symmetrical.physics.subatomic.luminescent.IMatter
+import symmetrical.physics.subatomic.luminescent.Matter
 
 class Key(
     private val matterAntiMatter: IMatter = Matter().with(Key::class),
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    fun addKey(atom: Atom) : Key {
+    fun addKey(atom: symmetrical.physics.atomic.atoms.Atom) : Key {
         add(atom)
         return this;
     }

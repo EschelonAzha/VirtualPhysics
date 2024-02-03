@@ -19,7 +19,7 @@ package symmetrical.electronics
  */
 
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.electronics.components.Capacitor
 import symmetrical.electronics.components.Conductor
 import symmetrical.electronics.components.Diode
@@ -38,7 +38,7 @@ class Electronics(
     IConductor  by conductor,
     IElectronics
 {
-    override fun setAtom(atom:Atom) : Atom {
+    override fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
         capacitor.setAtom(atom)
         conductor.setAtom(atom)
         diode.setAtom(atom)

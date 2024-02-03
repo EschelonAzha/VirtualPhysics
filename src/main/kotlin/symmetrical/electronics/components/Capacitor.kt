@@ -19,33 +19,33 @@ package symmetrical.electronics.components
  */
 
 
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.electronics.interfaces.ICapacitor
 
 // for more information see:   https://en.wikipedia.org/wiki/Capacitor
 
 class Capacitor : ICapacitor {
 
-    private lateinit var atom:Atom
+    private lateinit var atom: symmetrical.physics.atomic.atoms.Atom
 
-    override fun capacitor(atom: Atom) : Unit {
-        val me : Proton = this.atom.getValueProton()
-        val you: Proton = atom.getValueProton()
+    override fun capacitor(atom: symmetrical.physics.atomic.atoms.Atom) : Unit {
+        val me : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton = this.atom.getValueProton()
+        val you: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton = atom.getValueProton()
 
         me.ionicBond(you)
     }
 
-    override fun capacitor_(atom: Atom) : Atom {
+    override fun capacitor_(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
         capacitor(atom);
         return atom
     }
-    override fun _capacitor(atom: Atom) : Atom {
+    override fun _capacitor(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
         capacitor(atom);
         return this.atom
     }
 
-    override fun setAtom(atom:Atom) : Atom {
+    override fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
         this.atom = atom
         return this.atom
     }

@@ -19,7 +19,7 @@ package symmetrical.chemistry.monomer
  */
 import symmetrical.chemistry.catalysts.Catalyst
 import symmetrical.chemistry.polymer.Polymer
-import symmetrical.cosmic.physics.atomic.substance.ions.Compound
+import symmetrical.physics.atomic.substance.ions.Compound
 
 interface IMonomer {
     fun setPolymer(polymer: Polymer) : IMonomer

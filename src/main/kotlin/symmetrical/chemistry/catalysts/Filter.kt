@@ -19,8 +19,8 @@ package symmetrical.chemistry.catalysts
  */
 import symmetrical.chemistry.monomer.IMonomer
 import symmetrical.chemistry.polymer.Polymer
-import symmetrical.cosmic.physics.atomic.atoms.Atom
-import symmetrical.cosmic.physics.atomic.substance.ions.Compound
+import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.substance.ions.Compound
 
 open class Filter : Catalyst() {
     fun with(polymer: Polymer) : Filter {
@@ -28,7 +28,7 @@ open class Filter : Catalyst() {
         return this
     }
 
-    fun where(atom: Atom) : Filter {
+    fun where(atom: symmetrical.physics.atomic.atoms.Atom) : Filter {
         add(atom)
         return this
     }

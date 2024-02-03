@@ -18,15 +18,15 @@ package symmetrical.cosmic.dictionary.protons
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.physics.subatomic.balanced.Particle
-import symmetrical.cosmic.physics.subatomic.bosons.Photon
-import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
-import symmetrical.cosmic.physics.subatomic.luminescent.Matter
-import symmetrical.cosmic.physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.physics.subatomic.balanced.Particle
+import symmetrical.physics.subatomic.bosons.Photon
+import symmetrical.physics.subatomic.luminescent.IMatter
+import symmetrical.physics.subatomic.luminescent.Matter
+import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 class ValueProton(
     private val matterAntiMatter: IMatter = Matter().with(ValueProton::class),
-) : Proton(),
+) : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton(),
     IMatter by matterAntiMatter
 {
     override fun absorb(photon: Photon) : Photon {
@@ -45,7 +45,7 @@ class ValueProton(
         return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        if (Particle.Static.debuggingOn) {
+        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
             println("ValueProton")
         }
         val classId : String = matterAntiMatter.getClassId()

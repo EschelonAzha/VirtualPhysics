@@ -20,17 +20,17 @@ package symmetrical.cosmic.absorber.class_groups
 
 import symmetrical.cosmic.absorber.ClassGroup
 import symmetrical.cosmic.absorber.EntityId
-import symmetrical.cosmic.physics.subatomic.balanced.Particle
+import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
-import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.spin.Spin
-import symmetrical.cosmic.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
-import symmetrical.cosmic.physics.subatomic.luminescent.QuasiParticle
+import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
+import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
+import symmetrical.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
+import symmetrical.physics.subatomic.luminescent.QuasiParticle
 
 class FundamentalProperties : ClassGroup() {
     init {
         add(EntityId().with(Base52.classId(), AngularMomentum::class))
-        add(EntityId().with(Base52.classId(), Particle::class))
+        add(EntityId().with(Base52.classId(), symmetrical.physics.subatomic.balanced.Particle::class))
         add(EntityId().with(Base52.classId(), QuasiParticle::class))
         add(EntityId().with(Base52.classId(), Spin::class))
         add(EntityId().with(Base52.classId(), Wavelength::class))
