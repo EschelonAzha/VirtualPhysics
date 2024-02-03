@@ -37,8 +37,9 @@ open class Helium(
         super.with(value)
         return this
     }
-    fun protons(proton:Proton) : Helium {
-        addProtons(arrayOf(proton))
+
+    fun protons(proton:Proton) : Helium {   // All Atoms are  automatically constructed with one Proton
+        addProtons(arrayOf(proton))         // To make Helium we must supply the second proton
         return this
     }
     override fun absorb(photon: Photon) : Photon {

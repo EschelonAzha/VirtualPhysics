@@ -32,6 +32,7 @@ open class Hydrogen(
 ) : Element(),
     IMatter by matterAntiMatter
 {
+    // Hydrogen is automatically constructed with one Proton (ValueProton) and can have no others
     override fun with(value:Any?) : Hydrogen {
         super.with(value)
         return this

@@ -33,8 +33,8 @@ open class Lithium (
         super.with(value)
         return this
     }
-    fun protons(proton1: Proton, proton2:Proton) : Lithium {
-        addProtons(arrayOf(proton1, proton2))
+    fun protons(proton1: Proton, proton2:Proton) : Lithium {    // All Atoms are  automatically constructed with one Proton
+        addProtons(arrayOf(proton1, proton2))                   // To make Lithium we must supply two more protons
         return this
     }
     override fun absorb(photon: Photon) : Photon {
