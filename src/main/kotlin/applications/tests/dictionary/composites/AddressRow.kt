@@ -52,10 +52,10 @@ class AddressRow(private val monomer         : Monomer = Monomer(),
     }
 
     fun print() : Unit {
-        println(getName().getContent())
-        println(getAddress().getContent())
-        println(getCity().getContent())
-        println(getState().getContent())
+        println(getName().toString())
+        println(getAddress().toString())
+        println(getCity().toString())
+        println(getState().toString())
     }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())

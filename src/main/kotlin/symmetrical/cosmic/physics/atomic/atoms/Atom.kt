@@ -173,6 +173,10 @@ open class Atom(
         return zBoson
     }
 
+    override fun toString() : String {
+        return getField().toString()
+    }
+
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Atom")
