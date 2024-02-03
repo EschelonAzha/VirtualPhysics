@@ -51,7 +51,7 @@ class VTestElements {
         val lithiumClone = clone as Lithium
 
         val fieldNameClone      : String      = lithiumClone.getFieldName().toString()
-        val accessLevelClone    : String      = lithiumClone.getAccessLevel().toString()
+        val accessLevelClone    : Int         = lithiumClone.getAccessLevel().toInt()
         val valueClone          : String      = lithiumClone.getValue().toString()
 
         if (valueClone != "Elements!")

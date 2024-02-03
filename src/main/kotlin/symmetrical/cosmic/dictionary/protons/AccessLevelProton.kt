@@ -29,9 +29,9 @@ class AccessLevelProton (
     IMatter by matterAntiMatter
 {
     object Static {
-        const val NO_ACCESS = "-1"
-        const val READ_ONLY = "0"
-        const val UPDATE    = "1"
+        const val NO_ACCESS = -1
+        const val READ_ONLY = 0
+        const val UPDATE    = 1
     }
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
