@@ -1,4 +1,4 @@
-package symmetrical.cosmic.chemistry.compounds
+package symmetrical.chemistry.polymer
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,21 +18,58 @@ package symmetrical.cosmic.chemistry.compounds
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import symmetrical.chemistry.monomer.IMonomer
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
+import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter
 import symmetrical.cosmic.physics.subatomic.luminescent.Matter
 
-class Key(
-    private val matterAntiMatter: IMatter = Matter().with(Key::class),
+// For more information visit:    https://en.wikipedia.org/wiki/Polymer
+
+open class Polymer(
+    private val matterAntiMatter: IMatter = Matter().with(Polymer::class),
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    fun addKey(atom: Atom) : Key {
-        add(atom)
-        return this;
+    fun with(atom1: Atom, atom2: Atom) : Polymer {
+        add(atom1)
+        add(atom2)
+        return this
     }
+    object Static {
+        const val LAST      : Int = -1
+    }
+
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+
+    fun bind(monomer: IMonomer) : IMonomer {
+        this.add(monomer)
+        monomer.setPolymer(this)
+        return monomer
+    }
+
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
+    }
+
+    fun getMonomer(pos:Int) : IMonomer {
+        return get(pos) as IMonomer
+    }
+
+
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+
+                super.emit().radiate()
     }
 }

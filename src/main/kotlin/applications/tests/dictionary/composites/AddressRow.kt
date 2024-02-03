@@ -4,8 +4,8 @@ import applications.tests.dictionary.atoms.Address
 import applications.tests.dictionary.atoms.City
 import applications.tests.dictionary.atoms.Name
 import applications.tests.dictionary.atoms.State
-import symmetrical.cosmic.chemistry.monomer.IMonomer
-import symmetrical.cosmic.chemistry.monomer.Monomer
+import symmetrical.chemistry.monomer.IMonomer
+import symmetrical.chemistry.monomer.Monomer
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 import symmetrical.cosmic.physics.subatomic.bosons.Photon
 import symmetrical.cosmic.physics.subatomic.luminescent.IMatter

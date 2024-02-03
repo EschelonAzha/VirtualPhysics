@@ -1,4 +1,4 @@
-package symmetrical.cosmic.chemistry.monomer
+package symmetrical.chemistry.monomer
 /*
  * This file is part of Virtual Physics.
  *
@@ -17,14 +17,14 @@ package symmetrical.cosmic.chemistry.monomer
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import symmetrical.cosmic.chemistry.catalysts.Catalyst
-import symmetrical.cosmic.chemistry.polymer.Polymer
+import symmetrical.chemistry.catalysts.Catalyst
+import symmetrical.chemistry.polymer.Polymer
 import symmetrical.cosmic.physics.atomic.atoms.Atom
 import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
 // For more information visit:   https://en.wikipedia.org/wiki/Monomer
 class Monomer() : IMonomer {
-    private lateinit var polymer:Polymer
+    private lateinit var polymer: Polymer
     private lateinit var self:Compound
 
     override fun filter(catalyst: Catalyst) : Boolean {
@@ -39,7 +39,7 @@ class Monomer() : IMonomer {
         }
         return true
     }
-    override fun setPolymer(polymer:Polymer) : IMonomer {
+    override fun setPolymer(polymer: Polymer) : IMonomer {
         this.polymer = polymer
         return this
     }

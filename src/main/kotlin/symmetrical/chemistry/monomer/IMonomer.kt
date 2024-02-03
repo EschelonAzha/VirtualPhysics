@@ -1,4 +1,4 @@
-package symmetrical.cosmic.absorber.class_groups
+package symmetrical.chemistry.monomer
 /*
  * This file is part of Virtual Physics.
  *
@@ -17,18 +17,12 @@ package symmetrical.cosmic.absorber.class_groups
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import symmetrical.chemistry.catalysts.Catalyst
+import symmetrical.chemistry.polymer.Polymer
+import symmetrical.cosmic.physics.atomic.substance.ions.Compound
 
-import symmetrical.cosmic.absorber.ClassGroup
-import symmetrical.cosmic.absorber.EntityId
-import symmetrical.cosmic.transpectors.printable_characters.*
-import symmetrical.cosmic.physics.subatomic.balanced.Monad
-import symmetrical.cosmic.physics.atomic.substance.metals.Metal
-import symmetrical.chemistry.diatomics.KeyValue
-
-class AppClasses : ClassGroup() {
-    init  {
-        add(EntityId().with(Base52.classId(), KeyValue::class))
-        add(EntityId().with(Base52.classId(), Metal::class))
-        add(EntityId().with(Base52.classId(), Monad::class))
-    }
+interface IMonomer {
+    fun setPolymer(polymer: Polymer) : IMonomer
+    fun setSelf   (compound: Compound) : IMonomer
+    fun filter    (catalyst: Catalyst) : Boolean
 }

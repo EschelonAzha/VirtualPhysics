@@ -1,4 +1,4 @@
-package symmetrical.cosmic.chemistry.diatomics
+package symmetrical.chemistry.diatomics
 /*
  * This file is part of Virtual Physics.
  *

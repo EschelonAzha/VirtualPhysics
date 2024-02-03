@@ -3,9 +3,8 @@ package applications.tests.chemistry
 import applications.tests.dictionary.atoms.City
 import applications.tests.dictionary.atoms.Name
 import applications.tests.dictionary.composites.AddressRow
-import symmetrical.cosmic.chemistry.catalysts.Filter
-import symmetrical.cosmic.chemistry.monomer.IMonomer
-import symmetrical.cosmic.chemistry.polymer.Polymer
+import symmetrical.chemistry.catalysts.Filter
+import symmetrical.chemistry.polymer.Polymer
 
 class VTestChemistry {
     private val polymer: Polymer = Polymer()

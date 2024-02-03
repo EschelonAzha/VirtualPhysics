@@ -1,4 +1,4 @@
-package symmetrical.cosmic.chemistry.catalysts
+package symmetrical.chemistry.catalysts
 /*
  * This file is part of Virtual Physics.
  *
