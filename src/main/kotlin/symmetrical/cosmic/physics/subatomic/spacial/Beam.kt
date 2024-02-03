@@ -31,14 +31,14 @@ open class Beam() : IBeam {
     private lateinit var _memoryBlock   :Array<Any?>
     private var expandMode              :Int = Static.NORMAL
 
-    private var capacity                :Int = 0
+    private var _capacity                :Int = 0
     init {
         with(1)
     }
 
     open fun with(capacity:Int=1) : Beam {
         _memoryBlock    = createBlock(capacity)
-        this.capacity   = capacity
+        this._capacity   = capacity
         return this
     }
     object Static {
@@ -64,7 +64,7 @@ open class Beam() : IBeam {
         return this
     }
     override fun clear() : IBeam {
-        _memoryBlock = createBlock(capacity)
+        _memoryBlock = createBlock(_capacity)
         count = 0
         return this
     }
