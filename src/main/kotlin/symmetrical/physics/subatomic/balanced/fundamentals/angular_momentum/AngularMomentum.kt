@@ -78,7 +78,7 @@ open class AngularMomentum(
     }
 
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(AngularMomentum::class)
+        return Absorber.getClassId(AngularMomentum::class)
     }
 
     public open fun getClassId() : String {

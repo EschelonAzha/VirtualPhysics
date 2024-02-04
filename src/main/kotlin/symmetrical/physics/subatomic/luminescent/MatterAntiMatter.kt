@@ -51,7 +51,7 @@ open class MatterAntiMatter: IMatterAntiMatter {
         return photon
     }
     override fun getClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(this.classType)
+        return Absorber.getClassId(this.classType)
     }
     override fun getIlluminations() : IParticleBeam {
         return Illuminations.beam

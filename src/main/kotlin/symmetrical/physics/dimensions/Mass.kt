@@ -75,7 +75,7 @@ class Mass (
         return setContent(content)
     }
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Mass::class)
+        return Absorber.getClassId(Mass::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

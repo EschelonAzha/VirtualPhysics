@@ -129,6 +129,6 @@ class QuasiParticle(
     }
 
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(QuasiParticle::class)
+        return Absorber.getClassId(QuasiParticle::class)
     }
 }

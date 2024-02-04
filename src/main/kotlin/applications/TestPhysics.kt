@@ -11,7 +11,7 @@ import symmetrical.dictionary.absorber.Absorber
 object TestPhysics {
     @JvmStatic
     fun main(args: Array<String>) {
-        symmetrical.dictionary.absorber.Absorber.initialize(TestPhysicsEmitters())
+        Absorber.initialize(TestPhysicsEmitters())
 
         // To see Virtual Physics in action, it is best to run thse
         // test cases and step through the code in the debugger to see

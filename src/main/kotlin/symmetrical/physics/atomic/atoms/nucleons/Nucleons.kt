@@ -140,7 +140,7 @@ class Nucleons(
     private fun cloneQuark(down:Quark) : Down {
 
         val emission: Photon = down.emit()
-        val (clone, _) = symmetrical.dictionary.absorber.Absorber.materialize(emission)
+        val (clone, _) = Absorber.materialize(emission)
         return clone as Down
     }
     private fun crossLink(quark1:Quark, quark2:Quark) : Unit {

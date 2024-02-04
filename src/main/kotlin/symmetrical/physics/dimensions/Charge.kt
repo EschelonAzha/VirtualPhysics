@@ -63,7 +63,7 @@ class Charge (
     }
 
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Charge::class)
+        return Absorber.getClassId(Charge::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

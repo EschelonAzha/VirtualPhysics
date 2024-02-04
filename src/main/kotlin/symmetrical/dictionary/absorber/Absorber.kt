@@ -25,45 +25,45 @@ import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
 
-object Absorber : symmetrical.dictionary.absorber.IAbsorber {
-    val beam: symmetrical.dictionary.absorber.ClassGroup = symmetrical.dictionary.absorber.ClassGroup()
+object Absorber : IAbsorber {
+    val beam: ClassGroup = ClassGroup()
     init {
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(AppClasses())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Atoms())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Dimensions())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Charges())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Compounds())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Cosmic())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(DictionaryGroup())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Elements())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Encodings())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(FundamentalProperties())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Hadrons())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Ions())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Leptons())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Quarks())
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(Spacial())
+        Absorber.beam.addAll(AppClasses())
+        Absorber.beam.addAll(Atoms())
+        Absorber.beam.addAll(Dimensions())
+        Absorber.beam.addAll(Charges())
+        Absorber.beam.addAll(Compounds())
+        Absorber.beam.addAll(Cosmic())
+        Absorber.beam.addAll(DictionaryGroup())
+        Absorber.beam.addAll(Elements())
+        Absorber.beam.addAll(Encodings())
+        Absorber.beam.addAll(FundamentalProperties())
+        Absorber.beam.addAll(Hadrons())
+        Absorber.beam.addAll(Ions())
+        Absorber.beam.addAll(Leptons())
+        Absorber.beam.addAll(Quarks())
+        Absorber.beam.addAll(Spacial())
 
     }
 
 
-    override fun addAll(group: symmetrical.dictionary.absorber.ClassGroup) : symmetrical.dictionary.absorber.Absorber {
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(group)
+    override fun addAll(group: ClassGroup) : Absorber {
+        Absorber.beam.addAll(group)
         return this
     }
     override fun createInstance(classId:String) : Any? {
-        for (i in 0 until symmetrical.dictionary.absorber.Absorber.beam.size()) {
-            val entityId = symmetrical.dictionary.absorber.Absorber.beam.get(i) as symmetrical.dictionary.absorber.EntityId
+        for (i in 0 until Absorber.beam.size()) {
+            val entityId = Absorber.beam.get(i) as EntityId
             if (entityId.classId == classId) {
-                return symmetrical.dictionary.absorber.Absorber.newInstance(entityId.classType)
+                return Absorber.newInstance(entityId.classType)
             }
         }
         return null
     }
     override fun getClassId(classType: KClass<*>) : String {
 
-        for (i in 0 until symmetrical.dictionary.absorber.Absorber.beam.size()) {
-            val entityId = symmetrical.dictionary.absorber.Absorber.beam.get(i) as symmetrical.dictionary.absorber.EntityId
+        for (i in 0 until Absorber.beam.size()) {
+            val entityId = Absorber.beam.get(i) as EntityId
             if (entityId.classType == classType)
                 return entityId.classId
         }
@@ -74,28 +74,28 @@ object Absorber : symmetrical.dictionary.absorber.IAbsorber {
         println("")
         return ""
     }
-    override fun initialize() : symmetrical.dictionary.absorber.Absorber {
-        symmetrical.dictionary.absorber.Absorber.beam.print()
+    override fun initialize() : Absorber {
+        Absorber.beam.print()
         return this
     }
-    override fun initialize(group: symmetrical.dictionary.absorber.ClassGroup) : symmetrical.dictionary.absorber.Absorber {
-        symmetrical.dictionary.absorber.Absorber.beam.addAll(group)
-        symmetrical.dictionary.absorber.Absorber.beam.print()
+    override fun initialize(group: ClassGroup) : Absorber {
+        Absorber.beam.addAll(group)
+        Absorber.beam.print()
         return this
     }
     override fun materialize(emission:String) : Pair<IEmitter, String> {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
-        val clone = symmetrical.dictionary.absorber.Absorber.createInstance(classId) as IEmitter
+        val clone = Absorber.createInstance(classId) as IEmitter
         val remainderPhoton: Photon = clone.absorb(Photon().with(emission))
         return Pair<IEmitter, String>(clone, remainderPhoton.radiate())
     }
     override fun materialize(photon: Photon) : Pair<IEmitter, String> {
-        return symmetrical.dictionary.absorber.Absorber.materialize(photon.radiate())
+        return Absorber.materialize(photon.radiate())
     }
 
     override fun newInstance(classType:KClass<*>) : Any? {
-        for (i:Int in 0 until symmetrical.dictionary.absorber.Absorber.beam.size()) {
-            val entityId: symmetrical.dictionary.absorber.EntityId = symmetrical.dictionary.absorber.Absorber.beam.get(i) as symmetrical.dictionary.absorber.EntityId
+        for (i:Int in 0 until Absorber.beam.size()) {
+            val entityId: EntityId = Absorber.beam.get(i) as EntityId
             if (entityId.has(classType))
                 return entityId.newInstance()
         }

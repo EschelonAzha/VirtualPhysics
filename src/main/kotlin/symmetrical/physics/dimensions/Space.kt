@@ -60,7 +60,7 @@ class Space (
         return field.getContent()
     }
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Space::class)
+        return Absorber.getClassId(Space::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

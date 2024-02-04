@@ -212,7 +212,7 @@ open class Beam() : IBeam {
         return result
     }
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Beam::class)
+        return Absorber.getClassId(Beam::class)
     }
 
     private fun isOverflow(pos:Int) : Boolean {

@@ -23,11 +23,11 @@ import symmetrical.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
 
 interface IAbsorber {
-    fun addAll(group:ClassGroup)            : symmetrical.dictionary.absorber.Absorber
+    fun addAll(group:ClassGroup)            : Absorber
     fun createInstance(id:String)           : Any?
     fun getClassId(classType: KClass<*>)    : String
-    fun initialize()                        : symmetrical.dictionary.absorber.Absorber
-    fun initialize(group:ClassGroup)        : symmetrical.dictionary.absorber.Absorber
+    fun initialize()                        : Absorber
+    fun initialize(group:ClassGroup)        : Absorber
     fun materialize(emission:String)        : Pair<IEmitter, String>
     fun materialize(photon: Photon)         : Pair<IEmitter, String>
     fun newInstance(classType:KClass<*>)    : Any?

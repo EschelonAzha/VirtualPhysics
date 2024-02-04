@@ -40,7 +40,7 @@ class VTestElements {
 
 
         val emission = lithium.emit()
-        val (clone, _) = symmetrical.dictionary.absorber.Absorber.materialize(emission)
+        val (clone, _) = Absorber.materialize(emission)
 
         val lithiumClone = clone as Lithium
 

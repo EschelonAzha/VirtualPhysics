@@ -89,7 +89,7 @@ class Wavelength(
     }
 
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Wavelength::class)
+        return Absorber.getClassId(Wavelength::class)
     }
     fun setWavelength(value:Any?) : Any? {
         return setContent(value)

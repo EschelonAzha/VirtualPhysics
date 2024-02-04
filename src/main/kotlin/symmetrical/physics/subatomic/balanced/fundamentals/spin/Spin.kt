@@ -113,7 +113,7 @@ class Spin(
     }
 
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Spin::class)
+        return Absorber.getClassId(Spin::class)
     }
     fun isPlus() : Boolean {
         return field.toInt() == 1

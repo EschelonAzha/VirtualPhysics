@@ -53,7 +53,7 @@ class Temperature  (
         return field.getContent()
     }
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Temperature::class)
+        return Absorber.getClassId(Temperature::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

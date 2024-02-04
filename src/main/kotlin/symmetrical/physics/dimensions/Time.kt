@@ -53,7 +53,7 @@ class Time(
         return field.getContent()
     }
     private fun getLocalClassId() : String {
-        return symmetrical.dictionary.absorber.Absorber.getClassId(Time::class)
+        return Absorber.getClassId(Time::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

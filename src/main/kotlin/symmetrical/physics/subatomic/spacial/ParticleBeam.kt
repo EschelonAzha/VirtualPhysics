@@ -60,7 +60,7 @@ open class ParticleBeam(
         var remainder : String              = line
         
         for (i in 0 until size) {
-            val (emitter, line) = symmetrical.dictionary.absorber.Absorber.materialize(remainder)
+            val (emitter, line) = Absorber.materialize(remainder)
             add(emitter)
             remainder = line
         }
