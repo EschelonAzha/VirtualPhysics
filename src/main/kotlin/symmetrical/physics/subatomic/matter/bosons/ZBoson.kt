@@ -39,7 +39,7 @@ open class ZBoson(){
 
 
 
-    fun with(newValue: Field, constructing:Boolean = false) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun with(newValue: Field, constructing:Boolean = false) : ZBoson {
         this.newValue     = newValue
         this.constructing = constructing
         return this
@@ -66,23 +66,23 @@ open class ZBoson(){
     fun isConstructing() : Boolean {
         return constructing
     }
-    fun setAccepted(accepted:  Boolean) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun setAccepted(accepted:  Boolean) : ZBoson {
         this.accepted = accepted
         return this
     }
-    fun setNewValue(content:Any?) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun setNewValue(content:Any?) : ZBoson {
         this.newValue.setContent(content)
         return this
     }
-    fun setOldValue(content:Any?) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun setOldValue(content:Any?) : ZBoson {
         this.oldValue.setContent(content)
         return this
     }
-    fun setReason(reason:String) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun setReason(reason:String) : ZBoson {
         this.reason = reason
         return this
     }
-    fun setReasonCode(code:Int) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun setReasonCode(code:Int) : ZBoson {
         this.reasonCode = code
         return this
     }

@@ -25,15 +25,15 @@ import symmetrical.physics.subatomic.luminescent.Matter
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 open class Lithium (
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.atomic.atoms.elements.Lithium::class),
-) : symmetrical.physics.atomic.atoms.Element(),
+    private val matterAntiMatter: IMatter = Matter().with(Lithium::class),
+) : Element(),
     IMatter by matterAntiMatter
 {
-    override fun with(value:Any?) : symmetrical.physics.atomic.atoms.elements.Lithium {
+    override fun with(value:Any?) : Lithium {
         super.with(value)
         return this
     }
-    fun protons(proton1: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton, proton2: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.physics.atomic.atoms.elements.Lithium {    // All Atoms are  automatically constructed with one Proton
+    fun protons(proton1: Proton, proton2: Proton) : Lithium {    // All Atoms are  automatically constructed with one Proton
         addProtons(arrayOf(proton1, proton2))                   // To make Lithium we must supply two more protons
         return this
     }

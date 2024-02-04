@@ -23,5 +23,5 @@ import symmetrical.physics.subatomic.anti_matter.anti_hadrons.AntiHadron
 
 // For more information visit:   https://en.wikipedia.org/wiki/Baryon
 
-open class AntiBaryon : symmetrical.physics.subatomic.anti_matter.anti_hadrons.AntiHadron() {
+open class AntiBaryon : AntiHadron() {
 }

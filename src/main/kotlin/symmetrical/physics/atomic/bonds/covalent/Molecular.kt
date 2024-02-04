@@ -37,10 +37,10 @@ open class Molecular(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Molecular::class),
     private var _particleBeam   : ParticleBeam = ParticleBeam(),
 
-    ) : symmetrical.physics.atomic.atoms.Atom(),
+    ) : Atom(),
     IMatterAntiMatter by matterAntiMatter,
     IParticleBeam by _particleBeam,
-    symmetrical.physics.subatomic.balanced.IParticle
+    IParticle
 {
 
     open fun capacity(initialCapacity:Int) : Molecular {
@@ -64,35 +64,35 @@ open class Molecular(
 
     fun applyQuarkMomentum(momentum: AngularMomentum) : Molecular {
         for (i in 0 until size()) {
-            val atom: symmetrical.physics.atomic.atoms.Atom = get(i) as symmetrical.physics.atomic.atoms.Atom
+            val atom: Atom = get(i) as Atom
             Quark.value(this).setAngularMomentum(momentum)
         }
         return this
     }
     fun applyQuarkSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
-            val atom: symmetrical.physics.atomic.atoms.Atom = get(i) as symmetrical.physics.atomic.atoms.Atom
+            val atom: Atom = get(i) as Atom
             Quark.value(this).setSpin(spin)
         }
         return this
     }
     fun applyElectronSpin(spin: Spin) : Molecular {
         for (i in 0 until size()) {
-            val atom: symmetrical.physics.atomic.atoms.Atom = get(i) as symmetrical.physics.atomic.atoms.Atom
+            val atom : Atom = get(i) as Atom
             atom.setElectronSpin(spin)
         }
         return this
     }
-    override fun betaMinusDecay() : symmetrical.physics.atomic.atoms.Atom {
+    override fun betaMinusDecay() : Atom {
         for (i in 0 until size()) {
-            val atom: symmetrical.physics.atomic.atoms.Atom = get(i) as symmetrical.physics.atomic.atoms.Atom
+            val atom: Atom = get(i) as Atom
             atom.betaMinusDecay()
         }
         return this
     }
-    override fun betaPlusDecay() : symmetrical.physics.atomic.atoms.Atom {
+    override fun betaPlusDecay() : Atom {
         for (i in 0 until size()) {
-            val atom: symmetrical.physics.atomic.atoms.Atom = get(i) as symmetrical.physics.atomic.atoms.Atom
+            val atom: Atom = get(i) as Atom
             atom.betaPlusDecay()
         }
         return this
@@ -102,8 +102,8 @@ open class Molecular(
     }
 
 
-    open fun getAtom(pos:Int) : symmetrical.physics.atomic.atoms.Atom {
-        return get(pos) as symmetrical.physics.atomic.atoms.Atom
+    open fun getAtom(pos:Int) : Atom {
+        return get(pos) as Atom
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()

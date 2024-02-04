@@ -27,6 +27,6 @@ import symmetrical.physics.subatomic.balanced.color.ChromoCharge
 open class AntiColor : ChromoCharge() {
 
     override fun clone() : ChromoCharge {
-        return symmetrical.physics.subatomic.anti_matter.anti_colors.AntiColor()
+        return AntiColor()
     }
 }

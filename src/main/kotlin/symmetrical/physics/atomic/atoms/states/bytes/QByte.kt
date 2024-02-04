@@ -25,7 +25,7 @@ import symmetrical.physics.subatomic.matter.quarks.Quark
 
 class QByte(
     private val matterAntiMatter: IMatter = Matter().with(QByte::class),
-) : symmetrical.physics.atomic.atoms.Atom(),
+) : Atom(),
     IMatter by matterAntiMatter
 {
     init {

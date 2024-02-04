@@ -26,9 +26,9 @@ https://en.wikipedia.org/wiki/Neutron
 
 interface INeutrons {
     fun absorb      (photon: Photon)        : Photon
-    fun addNeutron  (neutron: symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron)      : symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron
+    fun addNeutron  (neutron: Neutron)      : Neutron
     fun emit        ()                      : Photon
     fun getClassId  ()                      : String
-    fun getNeutron  (pos:Int)               : symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron
-    fun setNucleons (nucleons: symmetrical.physics.atomic.atoms.nucleons.Nucleons)    : symmetrical.physics.atomic.atoms.nucleons.Nucleons
+    fun getNeutron  (pos:Int)               : Neutron
+    fun setNucleons (nucleons: Nucleons)    : Nucleons
 }

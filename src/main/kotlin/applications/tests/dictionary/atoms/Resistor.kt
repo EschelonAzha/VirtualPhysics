@@ -12,11 +12,11 @@ import symmetrical.physics.subatomic.matter.quarks.Quark
 
 class Resistor(
     private val matterAntiMatter: IMatter = Matter().with(Resistor::class),
-) : symmetrical.physics.atomic.atoms.elements.Hydrogen(),
+) : Hydrogen(),
     IMatter by matterAntiMatter
 {
 
-    override fun valueChange(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    override fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         // accept(valueQuark, zBoson)
 
         reject(20, "Nope!", zBoson)

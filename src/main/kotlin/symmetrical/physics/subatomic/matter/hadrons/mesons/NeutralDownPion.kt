@@ -29,14 +29,14 @@ import symmetrical.physics.subatomic.matter.hadrons.Hadron
 // For more information visit:   https://en.wikipedia.org/wiki/Pion
 
 open class NeutralDownPion(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.hadrons.mesons.NeutralDownPion::class),
-) : symmetrical.physics.subatomic.matter.hadrons.Hadron(),
+    private val matterAntiMatter: IMatter = Matter().with(NeutralDownPion::class),
+) : Hadron(),
     IMatter by matterAntiMatter
 {
     init {
         super.capacity(2)
         this.set(0, Down())
-        this.set(1, symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiDown())
+        this.set(1, AntiDown())
     }
 
     override fun getClassId() : String {

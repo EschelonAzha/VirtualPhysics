@@ -26,10 +26,10 @@ https://en.wikipedia.org/wiki/Proton
  */
 interface IProtons {
     fun absorb          (photon: Photon)        : Photon
-    fun addProton       (proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton)        : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+    fun addProton       (proton: Proton)        : Proton
     fun emit            ()                      : Photon
     fun getAtomicNumber ()                      : Int
     fun getClassId      ()                      : String
-    fun getProton       (classType: KClass<*>)  : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
-    fun setNucleons     (nucleons: symmetrical.physics.atomic.atoms.nucleons.Nucleons)    : symmetrical.physics.atomic.atoms.nucleons.Nucleons
+    fun getProton       (classType: KClass<*>)  : Proton
+    fun setNucleons     (nucleons: Nucleons)    : Nucleons
 }

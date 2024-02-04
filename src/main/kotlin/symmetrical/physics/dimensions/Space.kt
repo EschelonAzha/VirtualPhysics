@@ -33,7 +33,7 @@ class Space (
     IQuasiParticle by field
 {
 
-    private var space: symmetrical.physics.subatomic.balanced.IParticle? = null   // this may have to change to a Particle UniqueId when emitted
+    private var space: IParticle? = null   // this may have to change to a Particle UniqueId when emitted
 
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
@@ -49,10 +49,10 @@ class Space (
     fun getField() : Field {
         return field.getField()
     }
-    fun getSpace() : symmetrical.physics.subatomic.balanced.IParticle? {
+    fun getSpace() : IParticle? {
         return space
     }
-    fun setSpace(particle: symmetrical.physics.subatomic.balanced.IParticle?) : Any? {
+    fun setSpace(particle: IParticle?) : Any? {
         this.space = particle
         return null
     }

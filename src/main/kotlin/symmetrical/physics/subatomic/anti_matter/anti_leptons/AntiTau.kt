@@ -27,11 +27,11 @@ import symmetrical.physics.subatomic.matter.leptons.Tau
 
 
 class AntiTau(
-    private val matterAntiMatter: IAntiMatter = AntiMatter().with(symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiTau::class),
-) : symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiTau::class),
+) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {
-    fun with(oldValue : Field) : symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiTau {
+    fun with(oldValue : Field) : AntiTau {
         getWavelength().setField(oldValue)
         return this
     }

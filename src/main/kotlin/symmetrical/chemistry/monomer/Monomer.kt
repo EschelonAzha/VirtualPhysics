@@ -29,7 +29,7 @@ class Monomer() : IMonomer {
 
     override fun filter(catalyst: Catalyst) : Boolean {
         for (i in 0 until catalyst.size()) {
-            val criteria: symmetrical.physics.atomic.atoms.Atom = catalyst.getAtom(i)
+            val criteria: Atom = catalyst.getAtom(i)
             val pos = self.findByType(criteria::class)
             if (pos == -1)
                 return false

@@ -32,7 +32,7 @@ import symmetrical.physics.subatomic.luminescent.Matter
 
 open class Lepton(
     private val matterAntiMatter: IMatter = Matter().with(Lepton::class),
-) : symmetrical.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IMatter by matterAntiMatter,
     IEmitter
 {

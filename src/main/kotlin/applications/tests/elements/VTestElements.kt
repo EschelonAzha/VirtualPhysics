@@ -41,14 +41,14 @@ class VTestElements {
  */
 
     private fun testElements() : Boolean {
-        val lithium : symmetrical.physics.atomic.atoms.elements.Lithium = Address().with("Elements!") // Address has 3 Protons
+        val lithium : Lithium = Address().with("Elements!") // Address has 3 Protons
                                                                   // Value, FieldName, AccessLevel
 
 
         val emission = lithium.emit()
         val (clone, _) = Absorber.materialize(emission)
 
-        val lithiumClone = clone as symmetrical.physics.atomic.atoms.elements.Lithium
+        val lithiumClone = clone as Lithium
 
         val fieldNameClone      : String      = lithiumClone.getFieldName().toString()
         val accessLevelClone    : Int         = lithiumClone.getAccessLevel().toInt()

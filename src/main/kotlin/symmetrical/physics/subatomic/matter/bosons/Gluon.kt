@@ -32,17 +32,16 @@ import symmetrical.physics.subatomic.balanced.Particle
 
 // Transformations are in Gluons and use different mixtures of colors to accomplish anything
 // for example AND and OR and XOR
-open class Gluon : symmetrical.physics.subatomic.balanced.Particle() {
+open class Gluon : Particle() {
     // Gluons are confined within
     // Spin 1
-    lateinit var color      : symmetrical.physics.subatomic.matter.colors.Color
-    lateinit var antiColor  : symmetrical.physics.subatomic.anti_matter.anti_colors.AntiColor
+    lateinit var color      : Color
+    lateinit var antiColor  : AntiColor
 
-    var manifestation : symmetrical.physics.subatomic.matter.colors.Green =
-        symmetrical.physics.subatomic.matter.colors.Green()
+    var manifestation : Green = Green()
 
 
-    fun exchange() : symmetrical.physics.subatomic.matter.hadrons.mesons.PlusPion {
+    fun exchange() : PlusPion {
         // incomplete.  My thinking is that value will be
         // reflected in Neutrons that are inert
         // get the new value, then become charged (proton)
@@ -51,7 +50,7 @@ open class Gluon : symmetrical.physics.subatomic.balanced.Particle() {
         // but something to think about.
 
 
-        var pion = symmetrical.physics.subatomic.matter.hadrons.mesons.PlusPion() // pull quarks from the vacuum
+        var pion = PlusPion() // pull quarks from the vacuum
 //        pion.quarks[0].gluon.setValue(color.value)
 //
 //        color.value = antiColor.value
@@ -60,14 +59,14 @@ open class Gluon : symmetrical.physics.subatomic.balanced.Particle() {
     open fun getAntiValue() : Any? {
         return antiColor._value
     }
-    fun green() : symmetrical.physics.subatomic.matter.colors.Green {
+    fun green() : Green {
         return manifestation.clone()
     }
-    fun setGreen(green: symmetrical.physics.subatomic.matter.colors.Green) : symmetrical.physics.subatomic.matter.bosons.Gluon {
+    fun setGreen(green: Green) : Gluon {
         this.manifestation = green
         return this
     }
-    public open fun setValue(value:Any?) : symmetrical.physics.subatomic.matter.bosons.Gluon {
+    public open fun setValue(value:Any?) : Gluon {
         color.setValue(value)
         antiColor.setValue(value)
 

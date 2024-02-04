@@ -51,7 +51,7 @@ class Up(
       //  Recycler.Up_dissipate(this)
     }
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Up")
         }
         val classId:String = matterAntiMatter.getClassId()

@@ -24,7 +24,7 @@ class VTestNeutrons {
     }
 
     private fun testNeutrons(): Boolean {
-        val atom: symmetrical.physics.atomic.atoms.Atom = symmetrical.physics.atomic.atoms.Atom().with(ATOM1)
+        val atom: Atom = Atom().with(ATOM1)
 
         val original : String = atom.getField().toString()
 

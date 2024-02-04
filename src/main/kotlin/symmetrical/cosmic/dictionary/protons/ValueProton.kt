@@ -26,7 +26,7 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 class ValueProton(
     private val matterAntiMatter: IMatter = Matter().with(ValueProton::class),
-) : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton(),
+) : Proton(),
     IMatter by matterAntiMatter
 {
     override fun absorb(photon: Photon) : Photon {
@@ -45,7 +45,7 @@ class ValueProton(
         return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("ValueProton")
         }
         val classId : String = matterAntiMatter.getClassId()

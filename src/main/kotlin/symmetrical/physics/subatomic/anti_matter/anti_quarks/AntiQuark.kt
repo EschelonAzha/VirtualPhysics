@@ -33,12 +33,12 @@ import symmetrical.physics.subatomic.bosons.gluons.*
 // For more information visit:   https://en.wikipedia.org/wiki/Quark
 open class AntiQuark(
     private val matterAntiMatter: IAntiMatter = AntiMatter().with(Quark::class),
-) : symmetrical.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IAntiMatter by matterAntiMatter,
     IEmitter
 {
 
-    private var gluon       : symmetrical.physics.subatomic.matter.bosons.Gluon = Red_AntiRed()
+    private var gluon       : Gluon = Red_AntiRed()
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
@@ -60,12 +60,9 @@ open class AntiQuark(
                 super.emit().radiate()
     }
 
-    open fun i() : symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark {
-        return this
-    }
 
-    class Args(val value:Any?) : symmetrical.physics.subatomic.matter.bosons.ZBoson()
-    fun z(boson: symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark.Args) : symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark.Args {
+    class Args(val value:Any?) : ZBoson()
+    fun z(boson: AntiQuark.Args) : AntiQuark.Args {
         red()
 
         // need a way to transmit errors back
@@ -124,7 +121,7 @@ open class AntiQuark(
     }
 
 
-    fun setGreen(green: symmetrical.physics.subatomic.matter.colors.Green) : symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark {
+    fun setGreen(green: Green) : AntiQuark {
         gluon.setGreen(green)
         return this
     }

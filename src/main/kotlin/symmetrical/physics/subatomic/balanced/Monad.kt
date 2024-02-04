@@ -25,8 +25,8 @@ import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 // For more information visit:   https://en.wikipedia.org/wiki/Monad_(philosophy)
 open class Monad(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.balanced.Monad::class),
-) : symmetrical.physics.subatomic.balanced.Particle(),
+    private val matterAntiMatter: IMatter = Matter().with(Monad::class),
+) : Particle(),
     IMatter by matterAntiMatter,
     IEmitter
 {

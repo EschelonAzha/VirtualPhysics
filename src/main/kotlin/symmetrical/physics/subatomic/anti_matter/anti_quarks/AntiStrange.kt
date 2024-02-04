@@ -25,8 +25,8 @@ import symmetrical.physics.subatomic.matter.quarks.Strange
 // For more information visit:   https://en.wikipedia.org/wiki/StrangeQuark
 
 class AntiStrange(
-    private val matterAntiMatter: IAntiMatter = AntiMatter().with(symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiStrange::class),
-) : symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark(),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiStrange::class),
+) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {
 

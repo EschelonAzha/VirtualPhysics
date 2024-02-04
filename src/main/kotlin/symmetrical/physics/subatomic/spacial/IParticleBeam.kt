@@ -25,10 +25,10 @@ import symmetrical.physics.subatomic.bosons.Photon
 https://en.wikipedia.org/wiki/Particle_beam
  */
 interface IParticleBeam : IBeam {
-                        fun add                 (particle: symmetrical.physics.subatomic.balanced.IParticle)           : symmetrical.physics.subatomic.balanced.IParticle
+                        fun add                 (particle: IParticle)           : IParticle
                         fun emit                ()                              : Photon
-    override operator   fun get                 (pos:Int)                       : symmetrical.physics.subatomic.balanced.IParticle
+    override operator   fun get                 (pos:Int)                       : IParticle
         override        fun getClassId          ()                              : String
-                        fun getParticleCore     ()                              : Array<symmetrical.physics.subatomic.balanced.IParticle>
-                        fun set                 (pos:Int, particle: symmetrical.physics.subatomic.balanced.IParticle)  : symmetrical.physics.subatomic.balanced.IParticle
+                        fun getParticleCore     ()                              : Array<IParticle>
+                        fun set                 (pos:Int, particle: IParticle)  : IParticle
 }

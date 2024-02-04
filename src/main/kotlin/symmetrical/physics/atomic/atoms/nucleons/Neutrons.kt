@@ -30,12 +30,12 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 // For more information visit:  https://en.wikipedia.org/wiki/Neutron
 
 class Neutrons(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(symmetrical.physics.atomic.atoms.nucleons.Neutrons::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Neutrons::class),
 ) : ParticleBeam(),
     IMatterAntiMatter by matterAntiMatter,
-    symmetrical.physics.atomic.atoms.nucleons.INeutrons
+    INeutrons
 {
-    lateinit var p_nucleons: symmetrical.physics.atomic.atoms.nucleons.Nucleons
+    lateinit var p_nucleons: Nucleons
 
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
@@ -46,11 +46,11 @@ class Neutrons(
         remainder = super.absorb(remainder)
 
         for (i in 0 until size()) {
-            (get(i) as symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron).setNeutrons(this)
+            (get(i) as Neutron).setNeutrons(this)
         }
         return remainder
     }
-    override fun addNeutron(neutron: symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron) : symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron {
+    override fun addNeutron(neutron: Neutron) : Neutron {
         add(neutron)
         return neutron
     }
@@ -62,11 +62,11 @@ class Neutrons(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getNeutron(pos:Int) : symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron {
-        return get(pos) as symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron
+    override fun getNeutron(pos:Int) : Neutron {
+        return get(pos) as Neutron
     }
 
-    final override fun setNucleons(nucleons: symmetrical.physics.atomic.atoms.nucleons.Nucleons) : symmetrical.physics.atomic.atoms.nucleons.Nucleons {
+    final override fun setNucleons(nucleons: Nucleons) : Nucleons {
         this.p_nucleons = nucleons
         return nucleons
     }

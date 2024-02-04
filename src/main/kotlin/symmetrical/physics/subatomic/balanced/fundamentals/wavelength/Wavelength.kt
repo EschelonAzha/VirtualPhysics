@@ -37,27 +37,27 @@ class Wavelength(
     IQuasiParticle by _field {
 
     companion object {
-        fun content(atom: symmetrical.physics.atomic.atoms.Atom) : Any? {
+        fun content(atom: Atom) : Any? {
             return content(atom.getProton(ValueProton::class))
         }
-        fun content(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Any? {
+        fun content(atom: Atom, classType: KClass<*>) : Any? {
             return content(atom.getProton(classType))
         }
-        fun content(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Any? {
+        fun content(proton: Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
-        fun field(atom: symmetrical.physics.atomic.atoms.Atom) : Field {
+        fun field(atom: Atom) : Field {
             return field(atom.getProton(ValueProton::class))
         }
-        fun field(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Field {
+        fun field(atom: Atom, classType: KClass<*>) : Field {
             return field(atom.getProton(classType))
         }
-        fun field(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun field(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }
-        fun format(atom: symmetrical.physics.atomic.atoms.Atom) : Field {
+        fun format(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             var quark  : Quark = proton.getValueQuark()
             return quark.getAngularMomentum().run(field(atom))

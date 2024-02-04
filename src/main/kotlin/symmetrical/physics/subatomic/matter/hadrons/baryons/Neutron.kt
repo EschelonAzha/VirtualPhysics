@@ -28,11 +28,11 @@ import symmetrical.physics.subatomic.luminescent.Matter
 // For more information visit:   https://en.wikipedia.org/wiki/Neutron
 
 open class Neutron(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron::class),
-) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon(),
+    private val matterAntiMatter: IMatter = Matter().with(Neutron::class),
+) : Baryon(),
     IMatter by matterAntiMatter
 {
-    lateinit var __neutrons: symmetrical.physics.atomic.atoms.nucleons.Neutrons
+    lateinit var __neutrons: Neutrons
 
     init {
         this.Neutron()
@@ -59,7 +59,7 @@ open class Neutron(
         return matterAntiMatter.getClassId()
     }
 
-    fun setNeutrons(neutrons: symmetrical.physics.atomic.atoms.nucleons.Neutrons) : symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron {
+    fun setNeutrons(neutrons: Neutrons) : Neutron {
         this.__neutrons = neutrons
         return this
     }

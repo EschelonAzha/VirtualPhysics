@@ -29,6 +29,6 @@ class AppClasses : ClassGroup() {
     init  {
         add(EntityId().with(Base52.classId(), KeyValue::class))
         add(EntityId().with(Base52.classId(), Metal::class))
-        add(EntityId().with(Base52.classId(), symmetrical.physics.subatomic.balanced.Monad::class))
+        add(EntityId().with(Base52.classId(), Monad::class))
     }
 }

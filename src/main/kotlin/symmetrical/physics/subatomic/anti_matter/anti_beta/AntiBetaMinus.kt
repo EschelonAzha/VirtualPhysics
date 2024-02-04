@@ -32,18 +32,16 @@ import symmetrical.physics.subatomic.matter.leptons.Electron
 // For more information visit:   https://en.wikipedia.org/wiki/Beta_decay
 
 class AntiBetaMinus(
-    private val matterAntiMatter: IAntiMatter = AntiMatter().with(symmetrical.physics.subatomic.anti_matter.anti_beta.AntiBetaMinus::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiBetaMinus::class),
 ) : LeptonPair(),
     IAntiMatter by matterAntiMatter
 
 {
-    fun decay(baryon: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : Up {
-        var down      : Down = baryon.get(1) as Down
+    fun decay(baryon: Baryon) : Up {
+        var down            : Down = baryon.get(1) as Down
 
-        var electron: symmetrical.physics.subatomic.matter.leptons.Electron =
-            symmetrical.physics.subatomic.matter.leptons.Electron()
-        var antiNeutrino: symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino =
-            symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino()
+        var electron        : Electron = Electron()
+        var antiNeutrino    : AntiNeutrino = AntiNeutrino()
 
         electron.setWavelength(down.red())
         antiNeutrino.setWavelength(baryon)
@@ -53,20 +51,20 @@ class AntiBetaMinus(
 
         return Up()
     }
-    fun getAntiNeutrino() : symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino {
-        return _antiLepton as symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino
+    fun getAntiNeutrino() : AntiNeutrino {
+        return _antiLepton as AntiNeutrino
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun getElectron() : symmetrical.physics.subatomic.matter.leptons.Electron {
-        return _lepton as symmetrical.physics.subatomic.matter.leptons.Electron
+    fun getElectron() : Electron {
+        return _lepton as Electron
     }
-    private fun setAntiNeutrino(antiNeutrino: symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiNeutrino) : symmetrical.physics.subatomic.anti_matter.anti_beta.AntiBetaMinus {
+    private fun setAntiNeutrino(antiNeutrino: AntiNeutrino) : AntiBetaMinus {
         this._antiLepton =  antiNeutrino
         return this
     }
-    private fun setElectron(electron: symmetrical.physics.subatomic.matter.leptons.Electron) : symmetrical.physics.subatomic.anti_matter.anti_beta.AntiBetaMinus {
+    private fun setElectron(electron: Electron) : AntiBetaMinus {
         this._lepton = electron
         return this
     }

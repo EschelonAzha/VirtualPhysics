@@ -25,7 +25,7 @@ import symmetrical.physics.subatomic.matter.quarks.Quark
 
 class QInt(
     private val matterAntiMatter: IMatter = Matter().with(QInt::class),
-) : symmetrical.physics.atomic.atoms.Atom(),
+) : Atom(),
     IMatter by matterAntiMatter
 {
     init {

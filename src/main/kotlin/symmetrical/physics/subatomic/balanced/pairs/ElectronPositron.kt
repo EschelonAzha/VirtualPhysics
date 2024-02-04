@@ -35,7 +35,7 @@ class ElectronPositron(
     IMatterAntiMatter by matterAntiMatter
 {
 
-    override fun with(lepton: Lepton, antiLepton: symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiLepton) : ElectronPositron {
+    override fun with(lepton: Lepton, antiLepton: AntiLepton) : ElectronPositron {
         super.with(lepton, antiLepton)
         return this
     }
@@ -46,15 +46,15 @@ class ElectronPositron(
 //    fun decay(pion: PlusPion) : ElectronPositron<PlusPion> {
 //        return this
 //    }
-    fun decay(pion: symmetrical.physics.subatomic.matter.hadrons.mesons.PlusPion) : ElectronPositron {
+    fun decay(pion: PlusPion) : ElectronPositron {
         return this
     }
 
-    fun getElectron() : symmetrical.physics.subatomic.matter.leptons.Electron {
-        return _lepton as symmetrical.physics.subatomic.matter.leptons.Electron
+    fun getElectron() : Electron {
+        return _lepton as Electron
     }
-    fun getPositron() : symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron {
-        return _antiLepton as symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron
+    fun getPositron() : Positron {
+        return _antiLepton as Positron
     }
 //    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
 //        this.leptons[0] = electron
@@ -64,11 +64,11 @@ class ElectronPositron(
 //        this.leptons[1] = positron
 //        return this
 //    }
-    private fun setElectron(electron: symmetrical.physics.subatomic.matter.leptons.Electron) : ElectronPositron {
+    private fun setElectron(electron: Electron) : ElectronPositron {
         this._lepton = electron
         return this
     }
-    private fun setPositron(positron: symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron) : ElectronPositron {
+    private fun setPositron(positron: Positron) : ElectronPositron {
         this._antiLepton = positron
         return this
     }

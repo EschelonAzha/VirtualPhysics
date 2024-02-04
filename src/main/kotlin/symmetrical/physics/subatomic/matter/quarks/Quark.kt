@@ -39,31 +39,31 @@ import kotlin.reflect.KClass
 // For more information visit:   https://en.wikipedia.org/wiki/Quark
 open class Quark(
     private val matterAntiMatter: IMatter = Matter().with(Quark::class),
-) : symmetrical.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IMatter by matterAntiMatter,
     IEmitter
 {
 
-    lateinit var gluon                  : symmetrical.physics.subatomic.matter.bosons.Gluon
-    protected lateinit var p_baryon     : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
+    lateinit var gluon                  : Gluon
+    protected lateinit var p_baryon     : Baryon
     init {
         this.gluon         = Red_AntiRed()
     }
-    fun with(baryon: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : Quark {
+    fun with(baryon: Baryon) : Quark {
         this.p_baryon = baryon
         return this
     }
 
     companion object {
-        fun value(atom: symmetrical.physics.atomic.atoms.Atom) : Quark {
+        fun value(atom: Atom) : Quark {
             val proton = atom.getProton(ValueProton::class)
             return value(proton)
         }
-        fun value(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Quark {
+        fun value(atom: Atom, classType: KClass<*>) : Quark {
             val proton = atom.getProton(classType)
             return value(proton)
         }
-        fun value(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Quark {
+        fun value(proton: Proton) : Quark {
             return proton.getValueQuark()
         }
     }
@@ -80,13 +80,13 @@ open class Quark(
         return Photon().with(radiate())
     }
 
-    fun getBaryon() : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun getBaryon() : Baryon {
         return p_baryon
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    class Args(val value:Any?) : symmetrical.physics.subatomic.matter.bosons.ZBoson()
+    class Args(val value:Any?) : ZBoson()
 
     fun blue() : String {
         if (gluon.color.isBlue())
@@ -127,7 +127,7 @@ open class Quark(
         return gluon.color._value
     }
 
-    fun setBaryon(baryon: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : Quark {
+    fun setBaryon(baryon: Baryon) : Quark {
         this.p_baryon = baryon
         return this
     }
@@ -136,7 +136,7 @@ open class Quark(
         return this
     }
 
-    fun setGreen(green: symmetrical.physics.subatomic.matter.colors.Green) : Quark {
+    fun setGreen(green: Green) : Quark {
         gluon.setGreen(green)
         return this
     }
@@ -158,7 +158,7 @@ open class Quark(
         return boson
     }
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Quark")
         }
 

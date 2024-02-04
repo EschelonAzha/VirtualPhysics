@@ -30,7 +30,7 @@ open class Composition(
 {
 
 
-    open fun with(first: symmetrical.physics.subatomic.balanced.IParticle, last: symmetrical.physics.subatomic.balanced.IParticle) : Composition {
+    open fun with(first: IParticle, last: IParticle) : Composition {
         add(first)
         add(last)
         return this
@@ -52,11 +52,11 @@ open class Composition(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun getFirst() : symmetrical.physics.subatomic.balanced.IParticle {
-        return get(Static.FIRST) as symmetrical.physics.subatomic.balanced.IParticle
+    fun getFirst() : IParticle {
+        return get(Static.FIRST) as IParticle
     }
-    fun getLast() : symmetrical.physics.subatomic.balanced.IParticle {
-        return get(Static.LAST) as symmetrical.physics.subatomic.balanced.IParticle
+    fun getLast() : IParticle {
+        return get(Static.LAST) as IParticle
     }
 
     private fun radiate() : String {

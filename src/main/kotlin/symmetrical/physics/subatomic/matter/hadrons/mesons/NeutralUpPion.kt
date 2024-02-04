@@ -32,22 +32,22 @@ import symmetrical.physics.subatomic.matter.hadrons.Hadron
 // For more information visit:   https://en.wikipedia.org/wiki/Pion
 
 open class NeutralUpPion(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.hadrons.mesons.NeutralUpPion::class),
-) : symmetrical.physics.subatomic.matter.hadrons.Hadron(),
+    private val matterAntiMatter: IMatter = Matter().with(NeutralUpPion::class),
+) : Hadron(),
     IMatter by matterAntiMatter
 {
     // The Neutral up Pion binds proton and neutron together
     // by binding the pointers together
 
-    fun with(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon, neutron: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : symmetrical.physics.subatomic.matter.hadrons.mesons.NeutralUpPion {
+    fun with(proton: Baryon, neutron: Baryon) : NeutralUpPion {
         super.capacity(2)
         this.add(Up())
-        this.add(symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiUp())
+        this.add(AntiUp())
 
         val up0 = get(0) as Up
-        val up1 = get(1) as symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiUp
+        val up1 = get(1) as AntiUp
         up0.z(Quark.Args(proton))
-        up1.z(symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark.Args(neutron))
+        up1.z(AntiQuark.Args(neutron))
 
         nuclearForce()
         return this
@@ -57,13 +57,13 @@ open class NeutralUpPion(
         return matterAntiMatter.getClassId()
     }
 
-    fun getNeutron() : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
-        return (get(1) as Quark).red() as symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
+    fun getNeutron() : Baryon {
+        return (get(1) as Quark).red() as Baryon
     }
-    fun getProton() : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
-        return (get(1) as Quark).red() as symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
+    fun getProton() : Baryon {
+        return (get(1) as Quark).red() as Baryon
     }
-    fun nuclearForce() : symmetrical.physics.subatomic.matter.hadrons.mesons.NeutralUpPion {
+    fun nuclearForce() : NeutralUpPion {
         val protonQ1 = getProton().get(1) as Quark
         val neutronQ1 = getNeutron().get(1) as Quark
 

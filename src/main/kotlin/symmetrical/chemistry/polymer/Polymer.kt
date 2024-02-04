@@ -32,7 +32,7 @@ open class Polymer(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    fun with(atom1: symmetrical.physics.atomic.atoms.Atom, atom2: symmetrical.physics.atomic.atoms.Atom) : Polymer {
+    fun with(atom1: Atom, atom2: Atom) : Polymer {
         add(atom1)
         add(atom2)
         return this

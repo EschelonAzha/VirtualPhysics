@@ -26,8 +26,8 @@ import symmetrical.physics.subatomic.matter.quarks.Top
 
 
 class AntiTop(
-    private val matterAntiMatter: IAntiMatter = AntiMatter().with(symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiTop::class),
-) : symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark(),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiTop::class),
+) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {
 

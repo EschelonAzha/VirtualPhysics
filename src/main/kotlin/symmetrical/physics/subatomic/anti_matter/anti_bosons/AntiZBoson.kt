@@ -22,5 +22,5 @@ import symmetrical.physics.subatomic.balanced.Particle
 
 // For more information visit:   https://en.wikipedia.org/wiki/W_and_Z_bosons
 
-class AntiZBoson : symmetrical.physics.subatomic.balanced.Particle() {
+class AntiZBoson : Particle() {
 }

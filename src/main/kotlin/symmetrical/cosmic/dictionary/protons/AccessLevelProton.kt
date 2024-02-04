@@ -25,7 +25,7 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 class AccessLevelProton (
     private val matterAntiMatter: IMatter = Matter().with(AccessLevelProton::class),
-) : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton(),
+) : Proton(),
     IMatter by matterAntiMatter
 {
     object Static {
@@ -49,7 +49,7 @@ class AccessLevelProton (
         return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("AccessLevelProton")
         }
         val classId : String = matterAntiMatter.getClassId()

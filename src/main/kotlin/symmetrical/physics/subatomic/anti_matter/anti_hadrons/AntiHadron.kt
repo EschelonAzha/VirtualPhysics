@@ -22,5 +22,5 @@ import symmetrical.physics.subatomic.balanced.Particle
 
 // For more information visit:   https://en.wikipedia.org/wiki/Hadron
 
-open class AntiHadron : symmetrical.physics.subatomic.balanced.Particle() {
+open class AntiHadron : Particle() {
 }

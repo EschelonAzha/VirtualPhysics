@@ -27,7 +27,7 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 class FieldNameProton(
     private val matterAntiMatter: IMatter = Matter().with(FieldNameProton::class),
-) : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton(),
+) : Proton(),
     IMatter by matterAntiMatter
 {
     override fun absorb(photon: Photon) : Photon {
@@ -46,7 +46,7 @@ class FieldNameProton(
         return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("FieldNameProton")
         }
         val classId : String = matterAntiMatter.getClassId()

@@ -28,7 +28,7 @@ class Key(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    fun addKey(atom: symmetrical.physics.atomic.atoms.Atom) : Key {
+    fun addKey(atom: Atom) : Key {
         add(atom)
         return this;
     }

@@ -28,12 +28,12 @@ import symmetrical.physics.subatomic.luminescent.Matter
 // For more information visit:  https://en.wikipedia.org/wiki/Hydrogen
 
 open class Hydrogen(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.atomic.atoms.elements.Hydrogen::class),
-) : symmetrical.physics.atomic.atoms.Element(),
+    private val matterAntiMatter: IMatter = Matter().with(Hydrogen::class),
+) : Element(),
     IMatter by matterAntiMatter
 {
     // Hydrogen is automatically constructed with one Proton (ValueProton) and can have no others
-    override fun with(value:Any?) : symmetrical.physics.atomic.atoms.elements.Hydrogen {
+    override fun with(value:Any?) : Hydrogen {
         super.with(value)
         return this
     }

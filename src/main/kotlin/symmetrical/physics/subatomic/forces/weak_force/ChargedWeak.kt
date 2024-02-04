@@ -23,6 +23,6 @@ import symmetrical.physics.subatomic.balanced.Particle
 
 // For more information visit:   https://en.wikipedia.org/wiki/Weak_interaction
 
-class ChargedWeak : symmetrical.physics.subatomic.balanced.Particle() {
+class ChargedWeak : Particle() {
 
 }

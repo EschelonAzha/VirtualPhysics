@@ -26,7 +26,7 @@ import symmetrical.physics.subatomic.matter.quarks.Quark
 
 class QDouble(
     private val matterAntiMatter: IMatter = Matter().with(QDouble::class),
-) : symmetrical.physics.atomic.atoms.Atom(),
+) : Atom(),
     IMatter by matterAntiMatter
 {
     init {

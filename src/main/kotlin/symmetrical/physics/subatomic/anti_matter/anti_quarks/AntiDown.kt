@@ -25,8 +25,8 @@ import symmetrical.physics.subatomic.matter.quarks.Down
 // For more information visit:   https://en.wikipedia.org/wiki/DownQuark
 
 class AntiDown(
-    private val matterAntiMatter: IAntiMatter = AntiMatter().with(symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiDown::class),
-) : symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark(),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiDown::class),
+) : AntiQuark(),
     IAntiMatter by matterAntiMatter
 {
 

@@ -39,26 +39,26 @@ open class AngularMomentum(
 {
 
     companion object {
-        fun field(atom: symmetrical.physics.atomic.atoms.Atom) : Field {
+        fun field(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return field(proton)
         }
-        fun field(atom: symmetrical.physics.atomic.atoms.Atom, classType:KClass<*>) : Field {
+        fun field(atom: Atom, classType:KClass<*>) : Field {
             val proton = atom.getProton(classType)
             return field(proton)
         }
-        fun field(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun field(proton: Proton) : Field {
             return proton.getValueQuark().getAngularMomentum().getField()
         }
-        fun run(atom: symmetrical.physics.atomic.atoms.Atom) : Field {
+        fun run(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             return run(proton)
         }
-        fun run(atom: symmetrical.physics.atomic.atoms.Atom, classType:KClass<*>) : Field {
+        fun run(atom : Atom, classType:KClass<*>) : Field {
             val proton = atom.getProton(classType)
             return run(proton)
         }
-        fun run(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun run(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getAngularMomentum().run(Wavelength.field(proton))
         }

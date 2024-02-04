@@ -22,8 +22,8 @@ package symmetrical.electronics.interfaces
 import symmetrical.physics.atomic.atoms.Atom
 
 interface IDiode {
-    fun diode_(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean=true) : symmetrical.physics.atomic.atoms.Atom
-    fun _diode(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean=true) : symmetrical.physics.atomic.atoms.Atom
-    fun diode(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean=true) : Unit
-    fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom
+    fun diode_(atom: Atom, autoFlow:Boolean=true) : Atom
+    fun _diode(atom: Atom, autoFlow:Boolean=true) : Atom
+    fun diode(atom: Atom, autoFlow:Boolean=true) : Unit
+    fun setAtom(atom: Atom) : Atom
 }

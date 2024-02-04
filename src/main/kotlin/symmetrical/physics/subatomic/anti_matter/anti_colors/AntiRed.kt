@@ -22,14 +22,14 @@ package symmetrical.physics.subatomic.anti_matter.anti_colors
 // For more information visit:   https://en.wikipedia.org/wiki/Color_charge
 
 
-open class AntiRed : symmetrical.physics.subatomic.anti_matter.anti_colors.AntiColor() {
+open class AntiRed : AntiColor() {
 
     init {
         color = ANTI_RED
     }
 
-    override fun clone() : symmetrical.physics.subatomic.anti_matter.anti_colors.AntiRed {
-        var result      = symmetrical.physics.subatomic.anti_matter.anti_colors.AntiRed()
+    override fun clone() : AntiRed {
+        var result      = AntiRed()
         result.setValue(_value)
         return result
     }

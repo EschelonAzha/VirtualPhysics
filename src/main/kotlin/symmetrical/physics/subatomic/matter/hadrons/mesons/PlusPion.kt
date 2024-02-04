@@ -30,8 +30,8 @@ import symmetrical.physics.subatomic.matter.hadrons.Hadron
 // For more information visit:   https://en.wikipedia.org/wiki/Pion
 
 open class PlusPion(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.hadrons.mesons.PlusPion::class),
-) : symmetrical.physics.subatomic.matter.hadrons.Hadron(),
+    private val matterAntiMatter: IMatter = Matter().with(PlusPion::class),
+) : Hadron(),
     IMatter by matterAntiMatter
 {
     // The plus pion binds Protons together by carrying the color
@@ -39,7 +39,7 @@ open class PlusPion(
     init {
         super.capacity(2)
         this.set(0, Up())
-        this.set(1, symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiDown())
+        this.set(1, AntiDown())
     }
 
     override fun getClassId() : String {

@@ -29,16 +29,16 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 
 open class Helium(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.atomic.atoms.elements.Helium::class),
-) : symmetrical.physics.atomic.atoms.Element(),
+    private val matterAntiMatter: IMatter = Matter().with(Helium::class),
+) : Element(),
     IMatter by matterAntiMatter
 {
-    override fun with(value:Any?) : symmetrical.physics.atomic.atoms.elements.Helium {
+    override fun with(value:Any?) : Helium {
         super.with(value)
         return this
     }
 
-    fun protons(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.physics.atomic.atoms.elements.Helium {   // All Atoms are  automatically constructed with one Proton
+    fun protons(proton: Proton) : Helium {   // All Atoms are  automatically constructed with one Proton
         addProtons(arrayOf(proton))         // To make Helium we must supply the second proton
         return this
     }

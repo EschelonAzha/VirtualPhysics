@@ -60,7 +60,7 @@ class Down(
 
 
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Down")
         }
         val classId : String = matterAntiMatter.getClassId()

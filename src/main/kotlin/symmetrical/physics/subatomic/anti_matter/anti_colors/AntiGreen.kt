@@ -20,14 +20,14 @@ package symmetrical.physics.subatomic.anti_matter.anti_colors
 
 
 // For more information visit:   https://en.wikipedia.org/wiki/Color_charge
-open class AntiGreen : symmetrical.physics.subatomic.anti_matter.anti_colors.AntiColor() {
+open class AntiGreen : AntiColor() {
 
     init {
         color = ANTI_GREEN
     }
 
-    override fun clone() : symmetrical.physics.subatomic.anti_matter.anti_colors.AntiGreen {
-        var result      = symmetrical.physics.subatomic.anti_matter.anti_colors.AntiGreen()
+    override fun clone() : AntiGreen {
+        var result      = AntiGreen()
         result.setValue(_value)
         return result
     }

@@ -33,11 +33,11 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 // For more information visit:   https://en.wikipedia.org/wiki/Beta_decay
 
 class AntiBetaPlus(
-    private val matterAntiMatter: IAntiMatter = AntiMatter().with(symmetrical.physics.subatomic.anti_matter.anti_beta.AntiBetaPlus::class),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiBetaPlus::class),
 ) : LeptonPair(),
     IAntiMatter by matterAntiMatter
 {
-    fun absorb(neutron: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : Up {
+    fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down
 
         (neutron.get(0)as Quark).gluon.setValue(getPositron().wavelength())
@@ -46,11 +46,10 @@ class AntiBetaPlus(
         return Up()
     }
 
-    fun decay(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : Down {
+    fun decay(proton: Baryon) : Down {
         var up      : Up = proton.get(0) as Up
 
-        var positron: symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron =
-            symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron()
+        var positron: Positron = Positron()
         var neutrino: Neutrino = Neutrino()
 
         positron.setWavelength(up.red())
@@ -67,14 +66,14 @@ class AntiBetaPlus(
     fun getNeutrino() : Neutrino {
         return _lepton as Neutrino
     }
-    fun getPositron() : symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron {
-        return _antiLepton as symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron
+    fun getPositron() : Positron {
+        return _antiLepton as Positron
     }
-    private fun setNeutrino(neutrino: Neutrino) : symmetrical.physics.subatomic.anti_matter.anti_beta.AntiBetaPlus {
+    private fun setNeutrino(neutrino: Neutrino) : AntiBetaPlus {
         this._lepton = neutrino
         return this
     }
-    private fun setPositron(positron: symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron) : symmetrical.physics.subatomic.anti_matter.anti_beta.AntiBetaPlus {
+    private fun setPositron(positron: Positron) : AntiBetaPlus {
         this._antiLepton = positron
         return this
     }

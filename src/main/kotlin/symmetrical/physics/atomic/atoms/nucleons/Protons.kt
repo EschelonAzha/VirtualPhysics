@@ -38,9 +38,9 @@ class Protons(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Protons::class),
 ) : ParticleBeam(),
     IMatterAntiMatter by matterAntiMatter,
-    symmetrical.physics.atomic.atoms.nucleons.IProtons
+    IProtons
 {
-    private val _valueProton    : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+    private val _valueProton    : Proton
     private lateinit var p_nucleons      : Nucleons
 
     init {
@@ -56,15 +56,15 @@ class Protons(
         remainder = super.absorb(remainder)
 
         for (i in 0 until size()) {
-            (get(i) as symmetrical.physics.subatomic.matter.hadrons.baryons.Proton).setProtons(this)
+            (get(i) as Proton).setProtons(this)
         }
         return remainder
     }
-    override fun addProton(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton {
+    override fun addProton(proton: Proton) : Proton {
         add(proton)
         return proton
     }
-    fun capacitanceChange(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun capacitanceChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return getAtom().capacitanceChange(proton, valueQuark, zBoson)
     }
 
@@ -77,21 +77,21 @@ class Protons(
     }
 
 
-    fun getAtom() : symmetrical.physics.atomic.atoms.Atom {
+    fun getAtom() : Atom {
         return p_nucleons.getAtom()
     }
     override fun getAtomicNumber() : Int {
         return size()
     }
 
-    fun getElectron(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.physics.subatomic.matter.leptons.Electron {
+    fun getElectron(proton: Proton) : Electron {
         val electronNum = _beam.find(proton)
         return getAtom().getElectron(electronNum)
     }
-    override fun getProton(classType:KClass<*>) : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton {
-        return get(findByType(classType)) as symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+    override fun getProton(classType:KClass<*>) : Proton {
+        return get(findByType(classType)) as Proton
     }
-    fun interact(zBoson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun interact(zBoson: ZBoson) : ZBoson {
         getProton(ValueProton::class).interact(zBoson)
         return zBoson
     }
@@ -100,12 +100,12 @@ class Protons(
         return nucleons
     }
 
-    fun valueChange(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return getAtom().valueChange(proton, valueQuark, zBoson)
     }
 
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Protons")
         }
         val classId:String = matterAntiMatter.getClassId()

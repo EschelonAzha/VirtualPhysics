@@ -22,5 +22,5 @@ import symmetrical.physics.subatomic.balanced.Particle
 
 // For more information visit:   https://en.wikipedia.org/wiki/Gluon
 
-class AntiGluon : symmetrical.physics.subatomic.balanced.Particle() {
+class AntiGluon : Particle() {
 }

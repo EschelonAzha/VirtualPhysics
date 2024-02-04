@@ -30,7 +30,7 @@ open class KeyValue(
     IMatter by matterAntiMatter
 {
 
-    override fun with(key: symmetrical.physics.atomic.atoms.Atom, value: symmetrical.physics.atomic.atoms.Atom) : KeyValue {
+    override fun with(key: Atom, value: Atom) : KeyValue {
         add(key)
         add(value)
         return this
@@ -59,14 +59,14 @@ open class KeyValue(
         return matterAntiMatter.getClassId()
     }
 
-    fun getKey() : symmetrical.physics.atomic.atoms.Atom? {
+    fun getKey() : Atom? {
         if (size()>0)
-            return get(Static.KEY) as symmetrical.physics.atomic.atoms.Atom
+            return get(Static.KEY) as Atom
         return null
     }
-    fun getValue() : symmetrical.physics.atomic.atoms.Atom? {
+    fun getValue() : Atom? {
         if (size()>1)
-            return get(Static.VALUE) as symmetrical.physics.atomic.atoms.Atom
+            return get(Static.VALUE) as Atom
         return null
     }
     private fun radiate() : String {

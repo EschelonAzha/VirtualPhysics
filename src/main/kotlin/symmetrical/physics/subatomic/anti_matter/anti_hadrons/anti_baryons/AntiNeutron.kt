@@ -22,5 +22,5 @@ package symmetrical.physics.subatomic.anti_matter.anti_hadrons.anti_baryons
 // For more information visit:   https://en.wikipedia.org/wiki/Neutron
 
 
-class AntiNeutron : symmetrical.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon() {
+class AntiNeutron : AntiBaryon() {
 }

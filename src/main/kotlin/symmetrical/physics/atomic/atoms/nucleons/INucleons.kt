@@ -28,15 +28,15 @@ https://en.wikipedia.org/wiki/Nucleon
  */
 interface INucleons {
 
-    fun betaMinusDecay  ()                      : symmetrical.physics.atomic.atoms.Atom
-    fun betaPlusDecay   ()                      : symmetrical.physics.atomic.atoms.Atom
-    fun betaPlusDecay   (content:Any?)          : symmetrical.physics.atomic.atoms.Atom
+    fun betaMinusDecay  ()                      : Atom
+    fun betaPlusDecay   ()                      : Atom
+    fun betaPlusDecay   (content:Any?)          : Atom
     fun getClassId      ()                      : String
-    fun getNeutrons     ()                      : symmetrical.physics.atomic.atoms.nucleons.Neutrons
-    fun getProton       (classType: KClass<*>)  : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+    fun getNeutrons     ()                      : Neutrons
+    fun getProton       (classType: KClass<*>)  : Proton
 
-    fun getProtons      ()                      : symmetrical.physics.atomic.atoms.nucleons.Protons
-    fun setAtom         (atom: symmetrical.physics.atomic.atoms.Atom)            : symmetrical.physics.atomic.atoms.Atom
+    fun getProtons      ()                      : Protons
+    fun setAtom         (atom: Atom)            : Atom
 
 
 }

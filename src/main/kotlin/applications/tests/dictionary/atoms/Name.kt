@@ -15,14 +15,14 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 class Name (
     private val matterAntiMatter: IMatter = Matter().with(Name::class),
-) : symmetrical.physics.atomic.atoms.elements.Lithium(),
+) : Lithium(),
     IMatter by matterAntiMatter
 {
     init {
         setContent("", true)
 
-        val fieldName   : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton = FieldNameProton().with("Name")
-        val accessLevel : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton = AccessLevelProton().with(AccessLevelProton.Static.READ_ONLY)
+        val fieldName   : Proton = FieldNameProton().with("Name")
+        val accessLevel : Proton = AccessLevelProton().with(AccessLevelProton.Static.READ_ONLY)
         protons(fieldName, accessLevel)
     }
 

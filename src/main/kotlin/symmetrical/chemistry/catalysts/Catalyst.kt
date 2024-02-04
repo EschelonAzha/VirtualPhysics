@@ -34,8 +34,8 @@ open class Catalyst : Compound() {
         return compound
     }
 
-    override fun getAtom(pos:Int) : symmetrical.physics.atomic.atoms.Atom {
-        return get(pos) as symmetrical.physics.atomic.atoms.Atom
+    override fun getAtom(pos:Int) : Atom {
+        return get(pos) as Atom
     }
 
     fun getCompound() : Compound {

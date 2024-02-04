@@ -23,17 +23,17 @@ import symmetrical.physics.subatomic.bosons.gluons.Red_AntiRed
 
 // For more information visit:   https://en.wikipedia.org/wiki/Color_charge
 
-open class Red : symmetrical.physics.subatomic.matter.colors.Color() {
+open class Red : Color() {
     init {
         color = RED
     }
 
-    override fun clone() : symmetrical.physics.subatomic.matter.colors.Red {
-        var result      = symmetrical.physics.subatomic.matter.colors.Red()
+    override fun clone() : Red {
+        var result      = Red()
         result.setValue(_value)
         return result
     }
-    fun red(charge: symmetrical.physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
+    fun red(charge: Gluon) : Red_AntiRed {
         var gluon = Red_AntiRed()
         gluon.setValue    (charge.getAntiValue())
         return gluon

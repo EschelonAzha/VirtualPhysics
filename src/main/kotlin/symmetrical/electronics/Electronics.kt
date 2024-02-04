@@ -38,7 +38,7 @@ class Electronics(
     IConductor  by conductor,
     IElectronics
 {
-    override fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
+    override fun setAtom(atom: Atom) : Atom {
         capacitor.setAtom(atom)
         conductor.setAtom(atom)
         diode.setAtom(atom)

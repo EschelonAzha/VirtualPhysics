@@ -17,10 +17,10 @@ class Elements : ClassGroup() {
         add(EntityId().with(Base52.classId(), FieldNameProton::class))
         add(EntityId().with(Base52.classId(), AccessLevelProton::class))
 
-        add(EntityId().with(Base52.classId(), symmetrical.physics.atomic.atoms.Element::class))
+        add(EntityId().with(Base52.classId(), Element::class))
 
-        add(EntityId().with(Base52.classId(), symmetrical.physics.atomic.atoms.elements.Hydrogen::class))
-        add(EntityId().with(Base52.classId(), symmetrical.physics.atomic.atoms.elements.Helium::class))
-        add(EntityId().with(Base52.classId(), symmetrical.physics.atomic.atoms.elements.Lithium::class))
+        add(EntityId().with(Base52.classId(), Hydrogen::class))
+        add(EntityId().with(Base52.classId(), Helium::class))
+        add(EntityId().with(Base52.classId(), Lithium::class))
     }
 }

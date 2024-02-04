@@ -49,26 +49,26 @@ class Spin(
     }
 
     companion object {
-        fun isMinus(atom: symmetrical.physics.atomic.atoms.Atom) : Boolean {
+        fun isMinus(atom: Atom) : Boolean {
             return isMinus(atom.getProton(ValueProton::class))
         }
-        fun isMinus(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Boolean {
+        fun isMinus(atom: Atom, classType: KClass<*>) : Boolean {
             return isMinus(atom.getProton(classType))
         }
-        fun isMinus(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isMinus(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isMinus(quark)
         }
         fun isMinus(quark: Quark) : Boolean {
             return quark.getSpin().spin().toBoolean()
         }
-        fun isPlus(atom: symmetrical.physics.atomic.atoms.Atom) : Boolean {
+        fun isPlus(atom: Atom) : Boolean {
             return isPlus(atom.getProton(ValueProton::class))
         }
-        fun isPlus(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Boolean {
+        fun isPlus(atom: Atom, classType: KClass<*>) : Boolean {
             return isPlus(atom.getProton(classType))
         }
-        fun isPlus(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isPlus(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isPlus(quark)
         }
@@ -76,13 +76,13 @@ class Spin(
             return quark.getSpin().spin().toBoolean()
         }
         //
-        fun isZero(atom: symmetrical.physics.atomic.atoms.Atom) : Boolean {
+        fun isZero(atom: Atom) : Boolean {
             return isZero(atom.getProton(ValueProton::class))
         }
-        fun isZero(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Boolean {
+        fun isZero(atom: Atom, classType: KClass<*>) : Boolean {
             return isZero(atom.getProton(classType))
         }
-        fun isZero(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Boolean {
+        fun isZero(proton: Proton) : Boolean {
             var quark  : Quark = proton.getValueQuark()
             return isZero(quark)
         }

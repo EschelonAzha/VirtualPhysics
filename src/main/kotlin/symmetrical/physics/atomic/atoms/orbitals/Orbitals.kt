@@ -38,10 +38,10 @@ open class Orbitals(
     IMatterAntiMatter by matterAntiMatter,
     IOrbitals
 {
-    private lateinit var p_atom: symmetrical.physics.atomic.atoms.Atom
+    private lateinit var p_atom: Atom
 
     init {
-        add(symmetrical.physics.subatomic.matter.leptons.Electron())
+        add(Electron())
     }
 
     object Static {
@@ -57,7 +57,7 @@ open class Orbitals(
         remainder = super.absorb(remainder)
 
         for (i in 0 until size()) {
-            (get(i) as symmetrical.physics.subatomic.matter.leptons.Electron).setOrbitals(this)
+            (get(i) as Electron).setOrbitals(this)
         }
         return remainder
     }
@@ -69,13 +69,13 @@ open class Orbitals(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getElectronValue() : symmetrical.physics.subatomic.matter.leptons.Electron {
+    override fun getElectronValue() : Electron {
         if (size() == 0) {
-            val electron = symmetrical.physics.subatomic.matter.leptons.Electron()
+            val electron = Electron()
             electron.setOrbitals(this)
             add(electron)
         }
-        return get(Static.VALUE) as symmetrical.physics.subatomic.matter.leptons.Electron
+        return get(Static.VALUE) as Electron
     }
     override fun electronSpin() : Boolean {
 
@@ -96,23 +96,23 @@ open class Orbitals(
     override fun getElectronWavelength() : Any? {
         return getElectronValue().getWavelength()
     }
-    override fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
+    override fun setAtom(atom: Atom) : Atom {
         //   add(Electron().i(atom))
         this.p_atom = atom
         return atom
     }
 
-    override fun setElectronSpin(spin: Spin) : symmetrical.physics.atomic.atoms.Atom {
+    override fun setElectronSpin(spin: Spin) : Atom {
         getElectronValue().setSpin(spin)
         return p_atom
     }
-    override fun setElectronValue(value:Any?) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    override fun setElectronValue(value:Any?) : ZBoson {
         val zBoson = Quark.Args(value)
         getElectronValue().setWavelength(value)
         return zBoson
     }
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Orbitals")
         }
         return matterAntiMatter.getClassId()+

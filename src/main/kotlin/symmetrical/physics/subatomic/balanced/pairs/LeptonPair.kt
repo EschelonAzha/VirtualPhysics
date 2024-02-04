@@ -30,13 +30,13 @@ import symmetrical.physics.subatomic.spacial.IParticleBeam
 
 open class LeptonPair(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(LeptonPair::class),
-) : symmetrical.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IMatterAntiMatter by matterAntiMatter
 {
     public lateinit var _lepton     : Lepton
-    public lateinit var _antiLepton : symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiLepton
+    public lateinit var _antiLepton : AntiLepton
 
-    open fun with(lepton:Lepton, antiLepton: symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiLepton) : LeptonPair {
+    open fun with(lepton:Lepton, antiLepton: AntiLepton) : LeptonPair {
         this._lepton     = lepton;
         this._antiLepton = antiLepton
         return this

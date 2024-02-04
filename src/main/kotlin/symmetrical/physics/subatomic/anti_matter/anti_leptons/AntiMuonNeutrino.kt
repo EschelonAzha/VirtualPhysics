@@ -25,8 +25,8 @@ import symmetrical.physics.subatomic.matter.leptons.MuonNeutrino
 // For more information visit:   https://en.wikipedia.org/wiki/MuonNeutrino
 
 class AntiMuonNeutrino(
-    private val matterAntiMatter: IAntiMatter = AntiMatter().with(symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiMuonNeutrino::class),
-) : symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiLepton(),
+    private val matterAntiMatter: IAntiMatter = AntiMatter().with(AntiMuonNeutrino::class),
+) : AntiLepton(),
     IAntiMatter by matterAntiMatter
 {
 

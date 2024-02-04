@@ -37,13 +37,13 @@ import symmetrical.physics.dimensions.*
 
 
 open class Particle(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(symmetrical.physics.subatomic.balanced.Particle::class),
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Particle::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
-    symmetrical.physics.subatomic.balanced.IParticle,
+    IParticle,
     IEmitter
 {
-    private lateinit var self       : symmetrical.physics.subatomic.balanced.IParticle
+    private lateinit var self       : IParticle
 
     private     var uniqueId        : QuasiParticle = QuasiParticle()
 
@@ -93,7 +93,7 @@ open class Particle(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun createUniqueId(): symmetrical.physics.subatomic.balanced.IParticle {
+    override fun createUniqueId(): IParticle {
         uniqueId.setContent(getClassId()+Keys.getUniqueId())
         return getSelf()
     }
@@ -112,7 +112,7 @@ open class Particle(
         return mass
     }
 
-    override fun getSelf() : symmetrical.physics.subatomic.balanced.IParticle {
+    override fun getSelf() : IParticle {
         if (::self.isInitialized)
             return self
         else return this
@@ -140,15 +140,15 @@ open class Particle(
         return _wavelength
     }
 
-    override fun setSelf(self: symmetrical.physics.subatomic.balanced.IParticle) : symmetrical.physics.subatomic.balanced.IParticle {
+    override fun setSelf(self: IParticle) : IParticle {
         this.self = self
         return getSelf()
     }
-    override fun setSpin(spin:Spin) : symmetrical.physics.subatomic.balanced.IParticle {
+    override fun setSpin(spin:Spin) : IParticle {
         this.spin = spin
         return this
     }
-    fun setUniqueId(id:String) : symmetrical.physics.subatomic.balanced.IParticle {
+    fun setUniqueId(id:String) : IParticle {
         this.uniqueId.setContent(id)
         return getSelf()
     }
@@ -160,13 +160,13 @@ open class Particle(
     }
 
 
-    override fun setAngularMomentum(angularMomentum: AngularMomentum) : symmetrical.physics.subatomic.balanced.IParticle {
+    override fun setAngularMomentum(angularMomentum: AngularMomentum) : IParticle {
         this.angularMomentum = angularMomentum
         return this;
     }
 
 
-    override fun setWavelength(value:Any?) : symmetrical.physics.subatomic.balanced.IParticle {
+    override fun setWavelength(value:Any?) : IParticle {
         this.getWavelength().setContent(value)
         return this
     }
@@ -182,7 +182,7 @@ open class Particle(
     }
 
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Particle")
         }
         val classId         : String = matterAntiMatter.getClassId()

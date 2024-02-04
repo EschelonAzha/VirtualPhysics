@@ -25,18 +25,18 @@ import symmetrical.physics.subatomic.bosons.gluons.Blue_AntiBlue
 // For more information visit:   https://en.wikipedia.org/wiki/Color_charge
 
 
-open class Blue : symmetrical.physics.subatomic.matter.colors.Color() {
+open class Blue : Color() {
 
     init {
         color = BLUE
     }
 
-    override fun clone() : symmetrical.physics.subatomic.matter.colors.Blue {
-        var result      = symmetrical.physics.subatomic.matter.colors.Blue()
+    override fun clone() : Blue {
+        var result      = Blue()
         result.setValue(_value)
         return result
     }
-    fun blue(charge: symmetrical.physics.subatomic.matter.bosons.Gluon) : Blue_AntiBlue {
+    fun blue(charge: Gluon) : Blue_AntiBlue {
         var gluon = Blue_AntiBlue()
         gluon.color.setValue    (QCD().blue(charge.getAntiValue()))
         gluon.antiColor.setValue(charge.getAntiValue())

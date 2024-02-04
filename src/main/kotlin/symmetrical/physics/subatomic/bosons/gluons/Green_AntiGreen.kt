@@ -21,13 +21,13 @@ package symmetrical.physics.subatomic.bosons.gluons
 import symmetrical.physics.subatomic.matter.bosons.Gluon
 import symmetrical.physics.subatomic.anti_matter.anti_colors.AntiGreen
 // For more information visit:   https://en.wikipedia.org/wiki/Gluon
-class Green_AntiGreen : symmetrical.physics.subatomic.matter.bosons.Gluon() {
+class Green_AntiGreen : Gluon() {
     init {
         color       = green()
-        antiColor   = symmetrical.physics.subatomic.anti_matter.anti_colors.AntiGreen()
+        antiColor   = AntiGreen()
     }
 
-    fun green(charge: symmetrical.physics.subatomic.matter.bosons.Gluon) : Green_AntiGreen {
+    fun green(charge: Gluon) : Green_AntiGreen {
         return this
     }
 }

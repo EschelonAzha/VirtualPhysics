@@ -24,14 +24,14 @@ import symmetrical.physics.subatomic.matter.colors.Blue
 import symmetrical.physics.subatomic.matter.colors.Red
 
 // For more information visit:   https://en.wikipedia.org/wiki/Gluon
-class Blue_AntiGreen : symmetrical.physics.subatomic.matter.bosons.Gluon() {
+class Blue_AntiGreen : Gluon() {
     init {
-        color       = symmetrical.physics.subatomic.matter.colors.Blue()
-        antiColor   = symmetrical.physics.subatomic.anti_matter.anti_colors.AntiGreen()
+        color       = Blue()
+        antiColor   = AntiGreen()
     }
 
-    fun red(charge: symmetrical.physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
-        var gluon = symmetrical.physics.subatomic.matter.colors.Red().red(charge)
+    fun red(charge: Gluon) : Red_AntiRed {
+        var gluon = Red().red(charge)
         gluon.manifestation = charge.manifestation
         return gluon
     }

@@ -35,7 +35,7 @@ import kotlin.reflect.KClass
 open class ParticleBeam(
     private   val matterAntiMatter : IMatterAntiMatter = MatterAntiMatter().with(ParticleBeam::class),
     protected val _beam            : Beam = Beam()
-) : symmetrical.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IMatterAntiMatter by matterAntiMatter,
     IBeam by _beam,
     IParticleBeam,
@@ -67,14 +67,14 @@ open class ParticleBeam(
         shrink()
         return Photon().with(remainder)
     }
-    override fun add(particle: symmetrical.physics.subatomic.balanced.IParticle) : symmetrical.physics.subatomic.balanced.IParticle {
-        return _beam.add(particle) as symmetrical.physics.subatomic.balanced.IParticle
+    override fun add(particle: IParticle) : IParticle {
+        return _beam.add(particle) as IParticle
     }
 
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-    fun find(particle: symmetrical.physics.subatomic.balanced.IParticle) : Int {
+    fun find(particle: IParticle) : Int {
         return _beam.find(particle)
     }
     override fun find(item:Any) : Int {
@@ -87,19 +87,19 @@ open class ParticleBeam(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override operator fun get(pos:Int): symmetrical.physics.subatomic.balanced.IParticle {
+    override operator fun get(pos:Int): IParticle {
         val result = _beam.get(pos)
-        return result as symmetrical.physics.subatomic.balanced.IParticle
+        return result as IParticle
     }
-    override fun getParticleCore() : Array<symmetrical.physics.subatomic.balanced.IParticle> {
-        return getCore() as Array<symmetrical.physics.subatomic.balanced.IParticle>
+    override fun getParticleCore() : Array<IParticle> {
+        return getCore() as Array<IParticle>
     }
-    override fun set(pos:Int, particle: symmetrical.physics.subatomic.balanced.IParticle) : symmetrical.physics.subatomic.balanced.IParticle {
-        return _beam.set(pos, particle) as symmetrical.physics.subatomic.balanced.IParticle
+    override fun set(pos:Int, particle: IParticle) : IParticle {
+        return _beam.set(pos, particle) as IParticle
     }
 
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("ParticleBeam")
         }
         val classId     :String = matterAntiMatter.getClassId()

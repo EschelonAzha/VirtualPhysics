@@ -30,12 +30,12 @@ import symmetrical.physics.subatomic.luminescent.Matter
 // For more information visit:   https://en.wikipedia.org/wiki/Hadron
 
 open class Hadron(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.hadrons.Hadron::class),
+    private val matterAntiMatter: IMatter = Matter().with(Hadron::class),
 ) : ParticleBeam(),
     IMatter by matterAntiMatter,
     IEmitter
 {
-    override fun capacity(size:Int) : symmetrical.physics.subatomic.matter.hadrons.Hadron {
+    override fun capacity(size:Int) : Hadron {
         super.capacity(size)
         return this
     }
@@ -62,7 +62,7 @@ open class Hadron(
     }
 
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Hadron")
         }
         val classId      : String = matterAntiMatter.getClassId()

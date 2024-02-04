@@ -32,7 +32,7 @@ open class Diatomic(
 ) : Compound(),
     IMatter by matterAntiMatter
 {
-    open fun with(atom1: symmetrical.physics.atomic.atoms.Atom, atom2: symmetrical.physics.atomic.atoms.Atom) : Diatomic {
+    open fun with(atom1: Atom, atom2: Atom) : Diatomic {
         add(atom1)
         add(atom2)
         return this

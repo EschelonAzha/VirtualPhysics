@@ -34,11 +34,11 @@ interface IOrbitals {
     fun getClassId              ()              : String
     fun getElectronPhoton       ()              : Photon
     fun getElectronSpin         ()              : Spin
-    fun getElectronValue        ()              : symmetrical.physics.subatomic.matter.leptons.Electron
+    fun getElectronValue        ()              : Electron
     fun getElectronWavelength   ()              : Any?
 
-    fun setAtom                 (atom: symmetrical.physics.atomic.atoms.Atom)    : symmetrical.physics.atomic.atoms.Atom
-    fun setElectronSpin         (spin: Spin)    : symmetrical.physics.atomic.atoms.Atom
-    fun setElectronValue        (value:Any?)    : symmetrical.physics.subatomic.matter.bosons.ZBoson
+    fun setAtom                 (atom: Atom)    : Atom
+    fun setElectronSpin         (spin: Spin)    : Atom
+    fun setElectronValue        (value:Any?)    : ZBoson
 
 }

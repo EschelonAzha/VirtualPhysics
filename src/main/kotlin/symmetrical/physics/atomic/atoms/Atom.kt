@@ -45,18 +45,18 @@ import kotlin.reflect.KClass
 
 
 open class Atom(
-    private   val matterAntiMatter  : IMatterAntiMatter = MatterAntiMatter().with(symmetrical.physics.atomic.atoms.Atom::class),
+    private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter().with(Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var _nucleons         : Nucleons              = Nucleons(),
     public    var electronics       : Electronics           = Electronics()
 
-) : symmetrical.physics.subatomic.balanced.Particle(),
+) : Particle(),
     IMatterAntiMatter by matterAntiMatter,
     IOrbitals           by orbitals,
-    symmetrical.physics.atomic.atoms.nucleons.INucleons by _nucleons,
+    INucleons by _nucleons,
     IElectronics        by electronics,
     IEmitter,
-    symmetrical.physics.atomic.atoms.IAtom
+    IAtom
 {
     init {
         setAtom(this)
@@ -64,12 +64,12 @@ open class Atom(
         this._nucleons.setAtom(this)
     }
 
-    open fun with(content:Any?) : symmetrical.physics.atomic.atoms.Atom {
+    open fun with(content:Any?) : Atom {
         setContent(content, true)
         return this
     }
-    open fun addProtons(protons:Array<symmetrical.physics.subatomic.matter.hadrons.baryons.Proton>) : symmetrical.physics.atomic.atoms.Atom {
-        for (proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton in protons) {
+    open fun addProtons(protons:Array<Proton>) : Atom {
+        for (proton: Proton in protons) {
             _nucleons.addProton(proton)
         }
         return this
@@ -78,30 +78,30 @@ open class Atom(
 
 
     companion object {
-        fun content(atom: symmetrical.physics.atomic.atoms.Atom) : Any? {
-            return symmetrical.physics.atomic.atoms.Atom.Companion.content(atom.getProton(ValueProton::class))
+        fun content(atom: Atom) : Any? {
+            return Atom.Companion.content(atom.getProton(ValueProton::class))
         }
-        fun content(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Any? {
-            return symmetrical.physics.atomic.atoms.Atom.Companion.content(atom.getProton(classType))
+        fun content(atom: Atom, classType: KClass<*>) : Any? {
+            return Atom.Companion.content(atom.getProton(classType))
         }
-        fun content(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Any? {
+        fun content(proton: Proton) : Any? {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField().getContent()
         }
-        fun field(atom: symmetrical.physics.atomic.atoms.Atom) : Field {
-            return symmetrical.physics.atomic.atoms.Atom.Companion.field(atom.getProton(ValueProton::class))
+        fun field(atom: Atom) : Field {
+            return Atom.Companion.field(atom.getProton(ValueProton::class))
         }
-        fun field(atom: symmetrical.physics.atomic.atoms.Atom, classType: KClass<*>) : Field {
-            return symmetrical.physics.atomic.atoms.Atom.Companion.field(atom.getProton(classType))
+        fun field(atom: Atom, classType: KClass<*>) : Field {
+            return Atom.Companion.field(atom.getProton(classType))
         }
-        fun field(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : Field {
+        fun field(proton: Proton) : Field {
             var quark  : Quark = proton.getValueQuark()
             return quark.getWavelength().getField()
         }
-        fun format(atom: symmetrical.physics.atomic.atoms.Atom) : Field {
+        fun format(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)
             var quark  : Quark = proton.getValueQuark()
-            return quark.getAngularMomentum().run(symmetrical.physics.atomic.atoms.Atom.Companion.field(atom))
+            return quark.getAngularMomentum().run(Atom.Companion.field(atom))
         }
     }
 
@@ -119,12 +119,12 @@ open class Atom(
         return remainder
     }
 
-    fun accept(valueQuark: Down, zBoson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.atomic.atoms.Atom {
+    fun accept(valueQuark: Down, zBoson: ZBoson) : Atom {
         valueQuark.getWavelength().setContent(zBoson.getNewValue())
         zBoson.setAccepted(true)
         return this
     }
-    open fun capacitanceChange(me: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    open fun capacitanceChange(me: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return zBoson
     }
 
@@ -139,26 +139,26 @@ open class Atom(
         return getField().getContent()
     }
 
-    fun getElectron(pos:Int) : symmetrical.physics.subatomic.matter.leptons.Electron {
-        return orbitals.get(pos) as symmetrical.physics.subatomic.matter.leptons.Electron
+    fun getElectron(pos:Int) : Electron {
+        return orbitals.get(pos) as Electron
     }
     fun getField() : Field {
-        return symmetrical.physics.atomic.atoms.Atom.Companion.field(this)
+        return Atom.Companion.field(this)
     }
     fun getField(proton:KClass<*>) : Field {
-        return symmetrical.physics.atomic.atoms.Atom.Companion.field(this, proton)
+        return Atom.Companion.field(this, proton)
     }
-    fun getValueProton() : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton {
+    fun getValueProton() : Proton {
         return getProtons().getProton(ValueProton::class)
     }
 
-    fun reject(reasonCode:Int, reason:String, boson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.atomic.atoms.Atom {
+    fun reject(reasonCode:Int, reason:String, boson: ZBoson) : Atom {
         boson.setAccepted(false)
         boson.setReasonCode(reasonCode)
         boson.setReason(reason)
         return this;
     }
-    final override fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom {
+    final override fun setAtom(atom: Atom) : Atom {
         orbitals.setAtom(this)
         _nucleons.setAtom(this)
         electronics.setAtom(this)
@@ -166,9 +166,9 @@ open class Atom(
     }
     fun setContent(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().interact(
-            symmetrical.physics.subatomic.matter.bosons.ZBoson().with(Field().with(value), constructing)).decay()
+            ZBoson().with(Field().with(value), constructing)).decay()
     }
-    open fun valueChange(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton, valueQuark: Down, zBoson: symmetrical.physics.subatomic.matter.bosons.ZBoson) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
+    open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         accept(valueQuark, zBoson)
         return zBoson
     }
@@ -178,7 +178,7 @@ open class Atom(
     }
 
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Atom")
         }
         val classId :String = matterAntiMatter.getClassId()

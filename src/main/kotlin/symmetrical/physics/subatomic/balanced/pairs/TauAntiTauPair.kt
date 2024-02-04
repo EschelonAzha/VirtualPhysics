@@ -42,12 +42,12 @@ class TauAntiTauPair(
         setReason("")
         setReasonCode(0)
     }
-    override fun with(lepton: Lepton, antiLepton: symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiLepton) : TauAntiTauPair {
+    override fun with(lepton: Lepton, antiLepton: AntiLepton) : TauAntiTauPair {
         super.with(lepton, antiLepton)
         return this
     }
     fun with(accepted:Boolean, reasonCode:Int, reason:String, newValue: Field, oldValue: Field) : TauAntiTauPair {
-        super.with(Tau().with(newValue), symmetrical.physics.subatomic.anti_matter.anti_leptons.AntiTau().with(oldValue))
+        super.with(Tau().with(newValue), AntiTau().with(oldValue))
         setAccepted(accepted)
         setReasonCode(reasonCode)
         setReason(reason)
@@ -63,14 +63,14 @@ class TauAntiTauPair(
         }
     }
 
-    fun decay(pion: symmetrical.physics.subatomic.matter.hadrons.mesons.PlusPion) : TauAntiTauPair {
+    fun decay(pion: PlusPion) : TauAntiTauPair {
         return this
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun getElectron() : symmetrical.physics.subatomic.matter.leptons.Electron {
-        return _lepton as symmetrical.physics.subatomic.matter.leptons.Electron
+    fun getElectron() : Electron {
+        return _lepton as Electron
     }
     fun getField() : Field {
         return TauAntiTauPair.field(this)
@@ -78,8 +78,8 @@ class TauAntiTauPair(
     fun getAntiField() : Field {
         return TauAntiTauPair._field(this)
     }
-    fun getPositron() : symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron {
-        return _antiLepton as symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron
+    fun getPositron() : Positron {
+        return _antiLepton as Positron
     }
 
     fun getReason() : String {
@@ -106,11 +106,11 @@ class TauAntiTauPair(
         getTemperature().setContent(value)
         return this
     }
-    private fun setElectron(electron: symmetrical.physics.subatomic.matter.leptons.Electron) : TauAntiTauPair {
+    private fun setElectron(electron: Electron) : TauAntiTauPair {
         this._lepton = electron
         return this
     }
-    private fun setPositron(positron: symmetrical.physics.subatomic.anti_matter.anti_leptons.Positron) : TauAntiTauPair {
+    private fun setPositron(positron: Positron) : TauAntiTauPair {
         this._antiLepton = positron
         return this
     }

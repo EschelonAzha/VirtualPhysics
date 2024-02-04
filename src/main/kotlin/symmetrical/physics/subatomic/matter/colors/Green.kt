@@ -24,21 +24,21 @@ import symmetrical.physics.subatomic.bosons.gluons.Green_AntiGreen
 
 // For more information visit:   https://en.wikipedia.org/wiki/Color_charge
 
-open class Green : symmetrical.physics.subatomic.matter.colors.Color() {
+open class Green : Color() {
 
     init {
         color = GREEN
     }
 
-    override fun clone() : symmetrical.physics.subatomic.matter.colors.Green {
-        var result      = symmetrical.physics.subatomic.matter.colors.Green()
+    override fun clone() : Green {
+        var result      = Green()
         result.setValue(_value)
         return result
     }
     open fun format(redValue:Any?) : Any? {
         return QCD().green(redValue)
     }
-    open fun green(charge: symmetrical.physics.subatomic.matter.bosons.Gluon) : Green_AntiGreen {
+    open fun green(charge: Gluon) : Green_AntiGreen {
         var gluon               = Green_AntiGreen()
         gluon.antiColor.setValue(charge.getAntiValue())
         gluon.color.setValue    (format(charge.getAntiValue()))

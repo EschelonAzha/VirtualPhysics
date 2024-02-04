@@ -28,7 +28,7 @@ open class Filter : Catalyst() {
         return this
     }
 
-    fun where(atom: symmetrical.physics.atomic.atoms.Atom) : Filter {
+    fun where(atom: Atom) : Filter {
         add(atom)
         return this
     }

@@ -23,22 +23,22 @@ import symmetrical.physics.subatomic.anti_matter.anti_colors.AntiRed
 import symmetrical.physics.subatomic.matter.colors.Red
 
 // For more information visit:   https://en.wikipedia.org/wiki/Gluon
-class Red_AntiRed : symmetrical.physics.subatomic.matter.bosons.Gluon() {
+class Red_AntiRed : Gluon() {
 
     init {
-        color       = symmetrical.physics.subatomic.matter.colors.Red()
-        antiColor   = symmetrical.physics.subatomic.anti_matter.anti_colors.AntiRed()
+        color       = Red()
+        antiColor   = AntiRed()
     }
 
     override fun getAntiValue() : Any? {
         return color._value
     }
-    override fun setValue(value:Any?) : symmetrical.physics.subatomic.matter.bosons.Gluon {
+    override fun setValue(value:Any?) : Gluon {
         color.setValue(value)
 
         return this
     }
-    fun red(charge: symmetrical.physics.subatomic.matter.bosons.Gluon) : Red_AntiRed {
+    fun red(charge: Gluon) : Red_AntiRed {
         return this
     }
 }

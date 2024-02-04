@@ -22,9 +22,9 @@ package symmetrical.electronics.interfaces
 import symmetrical.physics.atomic.atoms.Atom
 
 interface IConductor {
-    fun conductor_(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean=true) : symmetrical.physics.atomic.atoms.Atom
-    fun _conductor(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean=true) : symmetrical.physics.atomic.atoms.Atom
-    fun conductor(atom: symmetrical.physics.atomic.atoms.Atom, autoFlow:Boolean=true) : Unit
+    fun conductor_(atom: Atom, autoFlow:Boolean=true) : Atom
+    fun _conductor(atom: Atom, autoFlow:Boolean=true) : Atom
+    fun conductor(atom: Atom, autoFlow:Boolean=true) : Unit
 
-    fun setAtom(atom: symmetrical.physics.atomic.atoms.Atom) : symmetrical.physics.atomic.atoms.Atom
+    fun setAtom(atom: Atom) : Atom
 }

@@ -25,15 +25,15 @@ open class HiggsField(){
 
     // Spin 0
     companion object {
-        lateinit var higgsField : symmetrical.physics.subatomic.balanced.HiggsField
+        lateinit var higgsField : HiggsField
 
-        fun setForce(higgs: symmetrical.physics.subatomic.balanced.HiggsField) : symmetrical.physics.subatomic.balanced.HiggsField {
-            symmetrical.physics.subatomic.balanced.HiggsField.Companion.higgsField = higgs
+        fun setForce(higgs: HiggsField) : HiggsField {
+            HiggsField.Companion.higgsField = higgs
             return higgs
         }
     }
 
-    open fun materialize() : symmetrical.physics.subatomic.balanced.HiggsField {
+    open fun materialize() : HiggsField {
         println("Higgs")
         return this
     }

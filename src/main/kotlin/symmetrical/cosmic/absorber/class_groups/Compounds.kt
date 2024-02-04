@@ -36,11 +36,11 @@ import symmetrical.physics.atomic.substance.molecules.Molecule
 open class Compounds : ClassGroup() {
     init {
         add(EntityId().with(Base52.classId(), Alloy::class))
-        add(EntityId().with(Base52.classId(), symmetrical.physics.atomic.atoms.Atom::class))
+        add(EntityId().with(Base52.classId(), Atom::class))
         add(EntityId().with(Base52.classId(), Compound::class))
         add(EntityId().with(Base52.classId(), Diatomic::class))
-        add(EntityId().with(Base52.classId(), symmetrical.physics.atomic.atoms.elements.Helium::class))
-        add(EntityId().with(Base52.classId(), symmetrical.physics.atomic.atoms.elements.Hydrogen::class))
+        add(EntityId().with(Base52.classId(), Helium::class))
+        add(EntityId().with(Base52.classId(), Hydrogen::class))
         add(EntityId().with(Base52.classId(), Material::class))
         add(EntityId().with(Base52.classId(), Mixture::class))
         add(EntityId().with(Base52.classId(), Molecular::class))

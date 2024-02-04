@@ -25,7 +25,7 @@ import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 
 class QBoolean(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(QBoolean::class),
-) : symmetrical.physics.atomic.atoms.Atom(),
+) : Atom(),
     IMatterAntiMatter by matterAntiMatter
 {
     init {

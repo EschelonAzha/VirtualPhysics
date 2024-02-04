@@ -29,12 +29,12 @@ import symmetrical.physics.subatomic.luminescent.Matter
 // For more information visit:   https://en.wikipedia.org/wiki/Kaon
 
 open class Kaon(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.hadrons.mesons.Kaon::class),
-) : symmetrical.physics.subatomic.matter.hadrons.Hadron(),
+    private val matterAntiMatter: IMatter = Matter().with(Kaon::class),
+) : Hadron(),
     IMatter by matterAntiMatter
 {
 
-    lateinit var antiQuark  : symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiUp
+    lateinit var antiQuark  : AntiUp
     lateinit var quark      : Strange
 
     override fun getClassId() : String {

@@ -21,5 +21,5 @@ package symmetrical.physics.subatomic.anti_matter.anti_hadrons.anti_baryons
 
 // For more information visit:   https://en.wikipedia.org/wiki/Proton
 
-class AntiProton : symmetrical.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon() {
+class AntiProton : AntiBaryon() {
 }

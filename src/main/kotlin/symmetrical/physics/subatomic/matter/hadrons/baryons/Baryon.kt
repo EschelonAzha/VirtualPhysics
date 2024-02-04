@@ -36,8 +36,8 @@ import symmetrical.physics.subatomic.matter.hadrons.Hadron
 // For more information visit:   https://en.wikipedia.org/wiki/Baryon
 
 open class Baryon(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon::class),
-) : symmetrical.physics.subatomic.matter.hadrons.Hadron(),
+    private val matterAntiMatter: IMatter = Matter().with(Baryon::class),
+) : Hadron(),
     IMatter by matterAntiMatter
 {
     init {
@@ -45,7 +45,7 @@ open class Baryon(
     }
 
     object Static {
-        const val LAST : Int = symmetrical.physics.subatomic.matter.hadrons.Hadron.Static.LAST
+        const val LAST : Int = Hadron.Static.LAST
     }
 
     override fun absorb(photon: Photon) : Photon {
@@ -56,7 +56,7 @@ open class Baryon(
         return remainder
     }
     // Proton absorbs BetaMinus and becomes Neutron
-    fun absorb(beta: symmetrical.physics.subatomic.matter.beta.BetaMinus) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun absorb(beta: BetaMinus) : Baryon {
 
         set(1, Down())
         val up: Up = get(0) as Up
@@ -67,7 +67,7 @@ open class Baryon(
         return this
     }
     // Neutron absorbs BetaPlus and becomes Proton
-    fun absorb(beta: symmetrical.physics.subatomic.matter.beta.BetaPlus) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun absorb(beta: BetaPlus) : Baryon {
 
         set(1, Up())
 
@@ -79,15 +79,15 @@ open class Baryon(
         return this
     }
 
-    fun betaPlusDecay() : Pair<symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon, symmetrical.physics.subatomic.matter.beta.BetaPlus> {
-        var beta        = symmetrical.physics.subatomic.matter.beta.BetaPlus()
+    fun betaPlusDecay() : Pair<Baryon, BetaPlus> {
+        var beta        = BetaPlus()
         this.set(1, beta.decay(this))
         return Pair(this, beta)
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-    fun exchange(baryon: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun exchange(baryon: Baryon) : Baryon {
         return this
     }
 
@@ -100,7 +100,7 @@ open class Baryon(
     fun isProton() : Boolean {
         return (this.get(1) as Quark) is Up
     }
-    fun Neutron() : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun Neutron() : Baryon {
         this.add(Up().with(this))    // value
         this.add(Down().with(this))  // When down Points to Proton
         this.add(Down().with(this))  // type
@@ -118,8 +118,8 @@ open class Baryon(
 
 
     // Turn this Neutron into a Proton
-    fun betaMinusDecay() : Pair<symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon, symmetrical.physics.subatomic.matter.beta.BetaMinus> {
-        var beta        = symmetrical.physics.subatomic.matter.beta.BetaMinus()
+    fun betaMinusDecay() : Pair<Baryon, BetaMinus> {
+        var beta        = BetaMinus()
         this.set(1, beta.decay(this))
         return Pair(this, beta)
     }
@@ -137,27 +137,27 @@ open class Baryon(
     fun red() : Any? {
         return (this.get(0) as Quark).red()
     }
-    override fun set(pos:Int, quark: symmetrical.physics.subatomic.balanced.IParticle) : symmetrical.physics.subatomic.balanced.IParticle {
+    override fun set(pos:Int, quark: IParticle) : IParticle {
         super.set(pos, quark)
         (quark as Quark).setBaryon(this)
         return quark
     }
-    fun setBinding(boundTo: symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun setBinding(boundTo: Baryon) : Baryon {
         val up: Quark = this.get(1) as Quark
         (this.get(1) as Quark).z(Quark.Args(boundTo))
         return this
     }
-    fun setGreen(green: symmetrical.physics.subatomic.matter.colors.Green) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun setGreen(green: Green) : Baryon {
         (get(0) as Quark).setGreen(green)
         return this
     }
-    fun setPurpose(value:Any?) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    fun setPurpose(value:Any?) : Baryon {
         var item = this.get(0)
         var down: Down = this.get(0) as Down
         down.z(Quark.Args(value))
         return this
     }
-    public fun setValue(value:Any?) : symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon {
+    public fun setValue(value:Any?) : Baryon {
         var down: Down = this.get(0) as Down
         //  up.setValue(value)
         down.z(Quark.Args(value))
@@ -165,7 +165,7 @@ open class Baryon(
     }
 
     private fun radiate() : String {
-        if (symmetrical.physics.subatomic.balanced.Particle.Static.debuggingOn) {
+        if (Particle.Static.debuggingOn) {
             println("Baryon")
         }
         val classId:String = matterAntiMatter.getClassId()

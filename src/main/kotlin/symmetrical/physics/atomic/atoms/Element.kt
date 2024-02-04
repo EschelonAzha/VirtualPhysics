@@ -36,8 +36,8 @@ https://en.wikipedia.org/wiki/Chemical_element
  */
 
 open class Element (
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.atomic.atoms.Element::class),
-) : symmetrical.physics.atomic.atoms.Atom(),
+    private val matterAntiMatter: IMatter = Matter().with(Element::class),
+) : Atom(),
     IMatter by matterAntiMatter
 {
     override fun absorb(photon: Photon) : Photon {
@@ -58,7 +58,7 @@ open class Element (
     }
 
     private fun getProtonField(kClass: KClass<*>) : Field {
-        val proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton = getProton(kClass)
+        val proton: Proton = getProton(kClass)
         return proton.getValueQuark().getWavelength().getField()
     }
     private fun radiate() : String {

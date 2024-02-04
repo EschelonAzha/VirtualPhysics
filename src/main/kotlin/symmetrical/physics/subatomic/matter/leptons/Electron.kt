@@ -34,16 +34,16 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 // For more information visit:   https://en.wikipedia.org/wiki/Electron
 
 class Electron(
-    private val matterAntiMatter: IMatter = Matter().with(symmetrical.physics.subatomic.matter.leptons.Electron::class),
-) : symmetrical.physics.subatomic.matter.leptons.Lepton(),
+    private val matterAntiMatter: IMatter = Matter().with(Electron::class),
+) : Lepton(),
     IMatter by matterAntiMatter
 {
 
             lateinit var orbitals       : Orbitals
     private          var particleBeam   : ParticleBeam = ParticleBeam()
-    private lateinit var proton         : symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+    private lateinit var proton         : Proton
 
-    fun with(orbitals:Orbitals) : symmetrical.physics.subatomic.matter.leptons.Electron {
+    fun with(orbitals:Orbitals) : Electron {
         this.orbitals = orbitals
         return this
     }
@@ -53,7 +53,7 @@ class Electron(
         remainder = super.absorb(remainder)
         return remainder
     }
-    fun covalentBond(you: symmetrical.physics.subatomic.matter.leptons.Electron) : symmetrical.physics.subatomic.matter.leptons.Electron {
+    fun covalentBond(you: Electron) : Electron {
         you.setElectron(this)
         this.setSpin(Spin.Static.PLUS)
         return this
@@ -61,7 +61,7 @@ class Electron(
     fun flow() : ParticleBeam {
         val result : ParticleBeam = ParticleBeam()
         for (i:Int in 0 until particleBeam.size()) {
-            val electron = particleBeam.get(i) as symmetrical.physics.subatomic.matter.leptons.Electron
+            val electron = particleBeam.get(i) as Electron
             result.add(flow(electron))
         }
 
@@ -75,13 +75,13 @@ class Electron(
         return matterAntiMatter.getClassId()
     }
 
-    fun ionicBond(you: symmetrical.physics.subatomic.matter.leptons.Electron) : symmetrical.physics.subatomic.matter.leptons.Electron {
+    fun ionicBond(you: Electron) : Electron {
         you.setElectron(this)
         this.setSpin(Spin.Static.MINUS)
         return this
     }
 
-    fun setOrbitals(orbitals: Orbitals) : symmetrical.physics.subatomic.matter.leptons.Electron {
+    fun setOrbitals(orbitals: Orbitals) : Electron {
         this.orbitals = orbitals
         return this
     }
@@ -90,30 +90,30 @@ class Electron(
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
-    fun setProton(proton: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton) : symmetrical.physics.subatomic.matter.leptons.Electron {
+    fun setProton(proton: Proton) : Electron {
         this.proton = proton
         return this
     }
-    fun setSpin(spin:Int) : symmetrical.physics.subatomic.matter.leptons.Electron {
+    fun setSpin(spin:Int) : Electron {
         getSpin().setSpin(spin)
         return this
     }
-    private fun flow(electron: symmetrical.physics.subatomic.matter.leptons.Electron) : symmetrical.physics.subatomic.matter.bosons.ZBoson {
-        val terminal: symmetrical.physics.subatomic.matter.hadrons.baryons.Proton? = electron!!.proton
+    private fun flow(electron: Electron) : ZBoson {
+        val terminal: Proton? = electron!!.proton
 
         if (terminal == null)
-            return symmetrical.physics.subatomic.matter.bosons.ZBoson().with(Wavelength.field(proton))
+            return ZBoson().with(Wavelength.field(proton))
         if (electron.getSpin().isPlus()) {
-            return terminal.interact(symmetrical.physics.subatomic.matter.bosons.ZBoson().with(Wavelength.field(proton)))
+            return terminal.interact(ZBoson().with(Wavelength.field(proton)))
         } else {
             val field = Wavelength.field(terminal)
-            return terminal.capacitanceChange(symmetrical.physics.subatomic.matter.bosons.ZBoson().with(Wavelength.field(proton)).setOldValue(field.getContent()))
+            return terminal.capacitanceChange(ZBoson().with(Wavelength.field(proton)).setOldValue(field.getContent()))
         }
 
     }
-    private fun setElectron(electron: symmetrical.physics.subatomic.matter.leptons.Electron) : symmetrical.physics.subatomic.matter.leptons.Electron {
-        val particle: symmetrical.physics.subatomic.balanced.IParticle = electron as symmetrical.physics.subatomic.balanced.IParticle
-        val pos = particleBeam.find(electron as symmetrical.physics.subatomic.balanced.IParticle)
+    private fun setElectron(electron: Electron) : Electron {
+        val particle: IParticle = electron as IParticle
+        val pos = particleBeam.find(electron as IParticle)
         if (pos == -1)
             particleBeam.add(electron)
 
