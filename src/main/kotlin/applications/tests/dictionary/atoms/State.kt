@@ -1,11 +1,7 @@
 package applications.tests.dictionary.atoms
 
-import symmetrical.cosmic.dictionary.protons.AccessLevelProton
-import symmetrical.cosmic.dictionary.protons.FieldNameProton
-import symmetrical.physics.subatomic.matter.quarks.Quark
-import symmetrical.physics.atomic.atoms.Atom
-import symmetrical.physics.atomic.atoms.elements.Helium
-import symmetrical.physics.atomic.atoms.elements.Hydrogen
+import symmetrical.dictionary.protons.AccessLevelProton
+import symmetrical.dictionary.protons.FieldNameProton
 import symmetrical.physics.atomic.atoms.elements.Lithium
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter

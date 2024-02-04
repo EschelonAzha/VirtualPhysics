@@ -1,16 +1,10 @@
 package applications.tests.elements
 
 import applications.tests.dictionary.atoms.Address
-import applications.tests.dictionary.atoms.Capacitor
-import applications.tests.dictionary.atoms.Resistor
 import symmetrical.absorber.Absorber
-import symmetrical.cosmic.dictionary.protons.AccessLevelProton
-import symmetrical.cosmic.dictionary.protons.FieldNameProton
-import symmetrical.physics.atomic.atoms.Atom
-import symmetrical.physics.atomic.atoms.elements.Helium
+import symmetrical.dictionary.protons.AccessLevelProton
 import symmetrical.physics.atomic.atoms.elements.Lithium
-import symmetrical.physics.subatomic.balanced.pairs.TauAntiTauPair
-import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+
 
 class VTestElements {
 

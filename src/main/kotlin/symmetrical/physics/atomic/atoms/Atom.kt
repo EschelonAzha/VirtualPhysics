@@ -31,7 +31,7 @@ import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.physics.atomic.atoms.nucleons.Protons
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.nucleons.INucleons
 import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.physics.subatomic.matter.bosons.ZBoson

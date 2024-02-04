@@ -23,7 +23,7 @@ import symmetrical.physics.subatomic.spacial.ParticleBeam
 import symmetrical.physics.subatomic.matter.quarks.Down
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.physics.subatomic.matter.bosons.ZBoson

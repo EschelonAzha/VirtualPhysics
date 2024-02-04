@@ -1,8 +1,8 @@
 package symmetrical.physics.atomic.atoms
 
-import symmetrical.cosmic.dictionary.protons.AccessLevelProton
-import symmetrical.cosmic.dictionary.protons.FieldNameProton
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.AccessLevelProton
+import symmetrical.dictionary.protons.FieldNameProton
+import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon

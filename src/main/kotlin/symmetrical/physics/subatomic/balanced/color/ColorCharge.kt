@@ -20,7 +20,7 @@ package symmetrical.physics.subatomic.balanced.color
 
 import symmetrical.physics.subatomic.matter.colors.Green
 import symmetrical.physics.atomic.atoms.Atom
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.ValueProton
 
 // For more information visit:   https://en.wikipedia.org/wiki/Color_charge
 

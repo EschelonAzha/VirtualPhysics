@@ -24,7 +24,7 @@ import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.physics.subatomic.matter.quarks.Quark
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass

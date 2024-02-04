@@ -23,7 +23,7 @@ import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.bosons.gluons.*
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.physics.subatomic.balanced.Particle

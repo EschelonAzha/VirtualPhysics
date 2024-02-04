@@ -2,9 +2,9 @@ package symmetrical.absorber.class_groups
 
 import symmetrical.absorber.ClassGroup
 import symmetrical.absorber.EntityId
-import symmetrical.cosmic.dictionary.protons.AccessLevelProton
-import symmetrical.cosmic.dictionary.protons.FieldNameProton
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.AccessLevelProton
+import symmetrical.dictionary.protons.FieldNameProton
+import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Element
 import symmetrical.physics.atomic.atoms.elements.Helium
 import symmetrical.physics.atomic.atoms.elements.Hydrogen
