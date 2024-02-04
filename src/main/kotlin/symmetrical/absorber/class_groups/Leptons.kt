@@ -1,4 +1,4 @@
-package symmetrical.cosmic.absorber.class_groups
+package symmetrical.absorber.class_groups
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,8 +18,8 @@ package symmetrical.cosmic.absorber.class_groups
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.absorber.ClassGroup
-import symmetrical.cosmic.absorber.EntityId
+import symmetrical.absorber.ClassGroup
+import symmetrical.absorber.EntityId
 import symmetrical.cosmic.transpectors.printable_characters.Base52
 import symmetrical.physics.subatomic.balanced.pairs.ElectronPositron
 import symmetrical.physics.subatomic.balanced.pairs.LeptonPair
@@ -28,7 +28,7 @@ import symmetrical.physics.subatomic.matter.beta.BetaPlus
 import symmetrical.physics.subatomic.matter.leptons.*
 import symmetrical.physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.physics.subatomic.anti_matter.anti_leptons.*
-import symmetrical.physics.subatomic.matter.leptons.*
+
 
 class Leptons : ClassGroup() {
     init {

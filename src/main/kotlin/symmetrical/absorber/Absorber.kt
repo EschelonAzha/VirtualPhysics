@@ -1,4 +1,4 @@
-package symmetrical.cosmic.absorber
+package symmetrical.absorber
 /*
  * This file is part of Virtual Physics.
  *
@@ -19,7 +19,7 @@ package symmetrical.cosmic.absorber
  */
 
 import asymmetrical.physics.machine.config.Config
-import symmetrical.cosmic.absorber.class_groups.*
+import symmetrical.absorber.class_groups.*
 import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
@@ -28,42 +28,42 @@ import kotlin.reflect.KClass
 object Absorber : IAbsorber {
     val beam: ClassGroup = ClassGroup()
     init {
-        beam.addAll(AppClasses())
-        beam.addAll(Atoms())
-        beam.addAll(Dimensions())
-        beam.addAll(Charges())
-        beam.addAll(Compounds())
-        beam.addAll(Cosmic())
-        beam.addAll(DictionaryGroup())
-        beam.addAll(Elements())
-        beam.addAll(Encodings())
-        beam.addAll(FundamentalProperties())
-        beam.addAll(Hadrons())
-        beam.addAll(Ions())
-        beam.addAll(Leptons())
-        beam.addAll(Quarks())
-        beam.addAll(Spacial())
+        Absorber.beam.addAll(AppClasses())
+        Absorber.beam.addAll(Atoms())
+        Absorber.beam.addAll(Dimensions())
+        Absorber.beam.addAll(Charges())
+        Absorber.beam.addAll(Compounds())
+        Absorber.beam.addAll(Cosmic())
+        Absorber.beam.addAll(DictionaryGroup())
+        Absorber.beam.addAll(Elements())
+        Absorber.beam.addAll(Encodings())
+        Absorber.beam.addAll(FundamentalProperties())
+        Absorber.beam.addAll(Hadrons())
+        Absorber.beam.addAll(Ions())
+        Absorber.beam.addAll(Leptons())
+        Absorber.beam.addAll(Quarks())
+        Absorber.beam.addAll(Spacial())
 
     }
 
 
-    override fun addAll(group:ClassGroup) : Absorber {
-        beam.addAll(group)
+    override fun addAll(group: ClassGroup) : Absorber {
+        Absorber.beam.addAll(group)
         return this
     }
     override fun createInstance(classId:String) : Any? {
-        for (i in 0 until beam.size()) {
-            val entityId = beam.get(i) as EntityId
+        for (i in 0 until Absorber.beam.size()) {
+            val entityId = Absorber.beam.get(i) as EntityId
             if (entityId.classId == classId) {
-                return newInstance(entityId.classType)
+                return Absorber.newInstance(entityId.classType)
             }
         }
         return null
     }
     override fun getClassId(classType: KClass<*>) : String {
 
-        for (i in 0 until beam.size()) {
-            val entityId = beam.get(i) as EntityId
+        for (i in 0 until Absorber.beam.size()) {
+            val entityId = Absorber.beam.get(i) as EntityId
             if (entityId.classType == classType)
                 return entityId.classId
         }
@@ -75,27 +75,27 @@ object Absorber : IAbsorber {
         return ""
     }
     override fun initialize() : Absorber {
-        beam.print()
+        Absorber.beam.print()
         return this
     }
-    override fun initialize(group:ClassGroup) : Absorber {
-        beam.addAll(group)
-        beam.print()
+    override fun initialize(group: ClassGroup) : Absorber {
+        Absorber.beam.addAll(group)
+        Absorber.beam.print()
         return this
     }
     override fun materialize(emission:String) : Pair<IEmitter, String> {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
-        val clone = createInstance(classId) as IEmitter
+        val clone = Absorber.createInstance(classId) as IEmitter
         val remainderPhoton: Photon = clone.absorb(Photon().with(emission))
         return Pair<IEmitter, String>(clone, remainderPhoton.radiate())
     }
     override fun materialize(photon: Photon) : Pair<IEmitter, String> {
-        return materialize(photon.radiate())
+        return Absorber.materialize(photon.radiate())
     }
 
     override fun newInstance(classType:KClass<*>) : Any? {
-        for (i:Int in 0 until beam.size()) {
-            val entityId:EntityId = beam.get(i) as EntityId
+        for (i:Int in 0 until Absorber.beam.size()) {
+            val entityId: EntityId = Absorber.beam.get(i) as EntityId
             if (entityId.has(classType))
                 return entityId.newInstance()
         }

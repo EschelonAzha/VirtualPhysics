@@ -3,7 +3,7 @@ package applications.tests.radiation
 import symmetrical.physics.atomic.atoms.Atom
 import applications.tests.dictionary.atoms.Resistor
 import applications.tests.dictionary.composites.AddressRow
-import symmetrical.cosmic.absorber.Absorber
+import symmetrical.absorber.Absorber
 
 class VTestRadiation {
     val ATOM1:String = "!!!!!!!!!!!!!!!"

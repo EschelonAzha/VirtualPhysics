@@ -1,4 +1,4 @@
-package symmetrical.cosmic.absorber
+package symmetrical.absorber
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,12 +18,24 @@ package symmetrical.cosmic.absorber
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.physics.subatomic.spacial.Beam
+import asymmetrical.physics.machine.vm.Classes
+import kotlin.reflect.KClass
 
-open class ClassGroup : Beam() {
-
-    init {
-        capacity(500)
+class EntityId() {
+    lateinit var classId:String
+    lateinit var classType:KClass<*>
+    fun with(classId:String, classType: KClass<*>) : EntityId {
+        this.classId    = classId
+        this.classType  = classType
+        return this
     }
-    
+    fun has(classType:KClass<*>) : Boolean {
+        return this.classType == classType
+    }
+    fun newInstance() : Any? {
+        return Classes.createInstance(classType)
+    }
+    override fun toString() : String {
+        return "["+classId+":"+classType.simpleName+"]"
+    }
 }

@@ -18,7 +18,7 @@ package symmetrical.physics.subatomic.balanced.fundamentals.wavelength
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.absorber.Absorber
+import symmetrical.absorber.Absorber
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.matter.quarks.Quark

@@ -1,4 +1,4 @@
-package symmetrical.cosmic.absorber.class_groups
+package symmetrical.absorber
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,15 +18,17 @@ package symmetrical.cosmic.absorber.class_groups
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.absorber.ClassGroup
-import symmetrical.cosmic.absorber.EntityId
-import symmetrical.cosmic.dictionary.protons.AccessLevelProton
-import symmetrical.cosmic.dictionary.protons.FieldNameProton
-import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic.dictionary.protons.ValueProton
+import symmetrical.physics.subatomic.bosons.IEmitter
+import symmetrical.physics.subatomic.bosons.Photon
+import kotlin.reflect.KClass
 
-class DictionaryGroup : ClassGroup() {
-    init {
-
-    }
+interface IAbsorber {
+    fun addAll(group:ClassGroup)            : Absorber
+    fun createInstance(id:String)           : Any?
+    fun getClassId(classType: KClass<*>)    : String
+    fun initialize()                        : Absorber
+    fun initialize(group:ClassGroup)        : Absorber
+    fun materialize(emission:String)        : Pair<IEmitter, String>
+    fun materialize(photon: Photon)         : Pair<IEmitter, String>
+    fun newInstance(classType:KClass<*>)    : Any?
 }

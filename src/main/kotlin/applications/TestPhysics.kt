@@ -5,7 +5,7 @@ import applications.tests.electronics.VTestElectronics
 import applications.tests.elements.VTestElements
 import applications.tests.radiation.VTestRadiation
 import applications.tests.nuclear.VTestNeutrons
-import symmetrical.cosmic.absorber.Absorber
+import symmetrical.absorber.Absorber
 
 object TestPhysics {
     @JvmStatic

@@ -18,7 +18,7 @@ package symmetrical.physics.subatomic.luminescent
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.absorber.Absorber
+import symmetrical.absorber.Absorber
 import symmetrical.cosmic.transpectors.transpectors.Photons
 import symmetrical.cosmic.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.balanced.values.Field

@@ -1,7 +1,7 @@
-package symmetrical.cosmic.absorber.class_groups
+package symmetrical.absorber.class_groups
 
-import symmetrical.cosmic.absorber.ClassGroup
-import symmetrical.cosmic.absorber.EntityId
+import symmetrical.absorber.ClassGroup
+import symmetrical.absorber.EntityId
 import symmetrical.cosmic.dictionary.protons.AccessLevelProton
 import symmetrical.cosmic.dictionary.protons.FieldNameProton
 import symmetrical.cosmic.dictionary.protons.ValueProton

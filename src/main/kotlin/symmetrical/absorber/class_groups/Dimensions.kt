@@ -1,4 +1,4 @@
-package symmetrical.cosmic.absorber.class_groups
+package symmetrical.absorber.class_groups
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,10 +18,21 @@ package symmetrical.cosmic.absorber.class_groups
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.absorber.ClassGroup
+import symmetrical.absorber.ClassGroup
+import symmetrical.absorber.EntityId
+import symmetrical.cosmic.transpectors.printable_characters.Base52
 
-class Templates : ClassGroup() {
+import symmetrical.physics.dimensions.*
+import symmetrical.physics.dimensions.*
+
+class Dimensions : ClassGroup() {
     init {
+
+        add(EntityId().with(Base52.classId(), Charge::class))
+        add(EntityId().with(Base52.classId(), Mass::class))
+        add(EntityId().with(Base52.classId(), Space::class))
+        add(EntityId().with(Base52.classId(), Temperature::class))
+        add(EntityId().with(Base52.classId(), Time::class))
 
     }
 }

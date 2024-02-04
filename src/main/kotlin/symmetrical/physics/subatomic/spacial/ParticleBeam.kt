@@ -19,7 +19,7 @@ package symmetrical.physics.subatomic.spacial
  */
 
 import asymmetrical.physics.machine.config.Config
-import symmetrical.cosmic.absorber.Absorber
+import symmetrical.absorber.Absorber
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.cosmic.transpectors.printable_characters.Base52

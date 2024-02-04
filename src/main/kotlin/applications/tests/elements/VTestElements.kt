@@ -3,7 +3,7 @@ package applications.tests.elements
 import applications.tests.dictionary.atoms.Address
 import applications.tests.dictionary.atoms.Capacitor
 import applications.tests.dictionary.atoms.Resistor
-import symmetrical.cosmic.absorber.Absorber
+import symmetrical.absorber.Absorber
 import symmetrical.cosmic.dictionary.protons.AccessLevelProton
 import symmetrical.cosmic.dictionary.protons.FieldNameProton
 import symmetrical.physics.atomic.atoms.Atom
