@@ -6,12 +6,12 @@ import applications.tests.elements.VTestElements
 import applications.tests.radiation.VTestRadiation
 import applications.tests.nuclear.VTestNeutrons
 import applications.tests.typeConverter.VTestTypeConverter
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 
 object TestPhysics {
     @JvmStatic
     fun main(args: Array<String>) {
-        Absorber.initialize(TestPhysicsEmitters())
+        symmetrical.dictionary.absorber.Absorber.initialize(TestPhysicsEmitters())
 
         // To see Virtual Physics in action, it is best to run thse
         // test cases and step through the code in the debugger to see

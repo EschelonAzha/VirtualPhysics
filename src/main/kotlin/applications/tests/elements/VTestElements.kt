@@ -1,7 +1,7 @@
 package applications.tests.elements
 
 import applications.tests.dictionary.atoms.Address
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 import symmetrical.dictionary.protons.AccessLevelProton
 import symmetrical.physics.atomic.atoms.elements.Lithium
 
@@ -40,7 +40,7 @@ class VTestElements {
 
 
         val emission = lithium.emit()
-        val (clone, _) = Absorber.materialize(emission)
+        val (clone, _) = symmetrical.dictionary.absorber.Absorber.materialize(emission)
 
         val lithiumClone = clone as Lithium
 

@@ -1,4 +1,4 @@
-package symmetrical.absorber.class_groups
+package symmetrical.dictionary.absorber
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,17 +18,24 @@ package symmetrical.absorber.class_groups
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.absorber.ClassGroup
-import symmetrical.absorber.EntityId
-import symmetrical.transpectors.printable_characters.Base52
-import symmetrical.physics.subatomic.spacial.Beam
-import symmetrical.physics.subatomic.spacial.Composition
-import symmetrical.physics.subatomic.spacial.ParticleBeam
+import asymmetrical.physics.machine.vm.Classes
+import kotlin.reflect.KClass
 
-class Spacial : ClassGroup() {
-    init {
-        add(EntityId().with(Base52.classId(), Beam::class))
-        add(EntityId().with(Base52.classId(), Composition::class))
-        add(EntityId().with(Base52.classId(), ParticleBeam::class))
+class EntityId() {
+    lateinit var classId:String
+    lateinit var classType:KClass<*>
+    fun with(classId:String, classType: KClass<*>) : EntityId {
+        this.classId    = classId
+        this.classType  = classType
+        return this
+    }
+    fun has(classType:KClass<*>) : Boolean {
+        return this.classType == classType
+    }
+    fun newInstance() : Any? {
+        return Classes.createInstance(classType)
+    }
+    override fun toString() : String {
+        return "["+classId+":"+classType.simpleName+"]"
     }
 }

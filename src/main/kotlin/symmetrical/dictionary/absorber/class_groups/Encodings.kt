@@ -1,4 +1,4 @@
-package symmetrical.absorber
+package symmetrical.dictionary.absorber.class_groups
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,24 +18,11 @@ package symmetrical.absorber
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import asymmetrical.physics.machine.vm.Classes
-import kotlin.reflect.KClass
+import symmetrical.dictionary.absorber.ClassGroup
 
-class EntityId() {
-    lateinit var classId:String
-    lateinit var classType:KClass<*>
-    fun with(classId:String, classType: KClass<*>) : EntityId {
-        this.classId    = classId
-        this.classType  = classType
-        return this
-    }
-    fun has(classType:KClass<*>) : Boolean {
-        return this.classType == classType
-    }
-    fun newInstance() : Any? {
-        return Classes.createInstance(classType)
-    }
-    override fun toString() : String {
-        return "["+classId+":"+classType.simpleName+"]"
+class Encodings : ClassGroup() {
+    init {
+
+
     }
 }

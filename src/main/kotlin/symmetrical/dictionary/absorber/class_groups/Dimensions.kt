@@ -1,4 +1,4 @@
-package symmetrical.absorber
+package symmetrical.dictionary.absorber.class_groups
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,17 +18,21 @@ package symmetrical.absorber
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.physics.subatomic.bosons.IEmitter
-import symmetrical.physics.subatomic.bosons.Photon
-import kotlin.reflect.KClass
+import symmetrical.dictionary.absorber.ClassGroup
+import symmetrical.dictionary.absorber.EntityId
+import symmetrical.transpectors.printable_characters.Base52
 
-interface IAbsorber {
-    fun addAll(group:ClassGroup)            : Absorber
-    fun createInstance(id:String)           : Any?
-    fun getClassId(classType: KClass<*>)    : String
-    fun initialize()                        : Absorber
-    fun initialize(group:ClassGroup)        : Absorber
-    fun materialize(emission:String)        : Pair<IEmitter, String>
-    fun materialize(photon: Photon)         : Pair<IEmitter, String>
-    fun newInstance(classType:KClass<*>)    : Any?
+import symmetrical.physics.dimensions.*
+import symmetrical.physics.dimensions.*
+
+class Dimensions : ClassGroup() {
+    init {
+
+        add(EntityId().with(Base52.classId(), Charge::class))
+        add(EntityId().with(Base52.classId(), Mass::class))
+        add(EntityId().with(Base52.classId(), Space::class))
+        add(EntityId().with(Base52.classId(), Temperature::class))
+        add(EntityId().with(Base52.classId(), Time::class))
+
+    }
 }

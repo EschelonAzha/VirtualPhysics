@@ -18,7 +18,7 @@ package symmetrical.physics.subatomic.spacial
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 import symmetrical.transpectors.transpectors.Strings
 import kotlin.reflect.KClass
 
@@ -212,7 +212,7 @@ open class Beam() : IBeam {
         return result
     }
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(Beam::class)
+        return symmetrical.dictionary.absorber.Absorber.getClassId(Beam::class)
     }
 
     private fun isOverflow(pos:Int) : Boolean {

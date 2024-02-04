@@ -18,7 +18,7 @@ package symmetrical.physics.atomic.atoms.nucleons
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.matter.quarks.Quark
@@ -140,7 +140,7 @@ class Nucleons(
     private fun cloneQuark(down:Quark) : Down {
 
         val emission: Photon = down.emit()
-        val (clone, _) = Absorber.materialize(emission)
+        val (clone, _) = symmetrical.dictionary.absorber.Absorber.materialize(emission)
         return clone as Down
     }
     private fun crossLink(quark1:Quark, quark2:Quark) : Unit {

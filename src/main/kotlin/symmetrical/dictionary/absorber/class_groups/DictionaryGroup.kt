@@ -1,4 +1,4 @@
-package symmetrical.absorber
+package symmetrical.dictionary.absorber.class_groups
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,12 +18,11 @@ package symmetrical.absorber
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.physics.subatomic.spacial.Beam
+import symmetrical.dictionary.absorber.ClassGroup
 
-open class ClassGroup : Beam() {
 
+class DictionaryGroup : ClassGroup() {
     init {
-        capacity(500)
+
     }
-    
 }

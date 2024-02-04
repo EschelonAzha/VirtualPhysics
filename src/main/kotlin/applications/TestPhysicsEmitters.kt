@@ -2,8 +2,8 @@ package applications
 
 import applications.tests.dictionary.atoms.*
 import applications.tests.dictionary.composites.AddressRow
-import symmetrical.absorber.ClassGroup
-import symmetrical.absorber.EntityId
+import symmetrical.dictionary.absorber.ClassGroup
+import symmetrical.dictionary.absorber.EntityId
 import symmetrical.transpectors.printable_characters.Base52
 
 

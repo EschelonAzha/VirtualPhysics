@@ -18,7 +18,7 @@ package symmetrical.physics.dimensions
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
@@ -60,7 +60,7 @@ class Space (
         return field.getContent()
     }
     private fun getLocalClassId() : String {
-        return Absorber.getClassId(Space::class)
+        return symmetrical.dictionary.absorber.Absorber.getClassId(Space::class)
     }
     private fun radiate() : String {
         return getLocalClassId()+

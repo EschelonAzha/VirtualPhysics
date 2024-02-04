@@ -18,7 +18,7 @@ package symmetrical.physics.subatomic.luminescent
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.spacial.IParticleBeam
 import symmetrical.physics.subatomic.spacial.ParticleBeam
@@ -51,7 +51,7 @@ open class MatterAntiMatter: IMatterAntiMatter {
         return photon
     }
     override fun getClassId() : String {
-        return Absorber.getClassId(this.classType)
+        return symmetrical.dictionary.absorber.Absorber.getClassId(this.classType)
     }
     override fun getIlluminations() : IParticleBeam {
         return Illuminations.beam

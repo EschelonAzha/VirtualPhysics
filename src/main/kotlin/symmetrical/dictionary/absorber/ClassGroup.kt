@@ -1,4 +1,4 @@
-package symmetrical.absorber.class_groups
+package symmetrical.dictionary.absorber
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,18 +18,12 @@ package symmetrical.absorber.class_groups
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.absorber.ClassGroup
-import symmetrical.absorber.EntityId
-import symmetrical.transpectors.printable_characters.Base52
-import symmetrical.physics.atomic.substance.ions.Anion
-import symmetrical.physics.atomic.substance.ions.Cation
-import symmetrical.physics.atomic.substance.ions.Ion
+import symmetrical.physics.subatomic.spacial.Beam
 
-class Ions : ClassGroup() {
+open class ClassGroup : Beam() {
+
     init {
-        add(EntityId().with(Base52.classId(), Anion::class))
-        add(EntityId().with(Base52.classId(), Cation::class))
-        add(EntityId().with(Base52.classId(), Ion::class))
-
+        capacity(500)
     }
+    
 }

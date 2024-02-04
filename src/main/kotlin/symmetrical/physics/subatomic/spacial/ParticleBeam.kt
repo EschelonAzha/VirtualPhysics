@@ -19,7 +19,7 @@ package symmetrical.physics.subatomic.spacial
  */
 
 import asymmetrical.physics.machine.config.Config
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.transpectors.printable_characters.Base52
@@ -60,7 +60,7 @@ open class ParticleBeam(
         var remainder : String              = line
         
         for (i in 0 until size) {
-            val (emitter, line) = Absorber.materialize(remainder)
+            val (emitter, line) = symmetrical.dictionary.absorber.Absorber.materialize(remainder)
             add(emitter)
             remainder = line
         }

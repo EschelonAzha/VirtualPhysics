@@ -3,7 +3,7 @@ package applications.tests.radiation
 import symmetrical.physics.atomic.atoms.Atom
 import applications.tests.dictionary.atoms.Resistor
 import applications.tests.dictionary.composites.AddressRow
-import symmetrical.absorber.Absorber
+import symmetrical.dictionary.absorber.Absorber
 
 class VTestRadiation {
     val ATOM1:String = "!!!!!!!!!!!!!!!"
@@ -28,7 +28,7 @@ class VTestRadiation {
         val address = AddressRow().with("Bob", "main st", "New York", "NY")
         val emission = address.emit()
 
-        val (clone, _) = Absorber.materialize(emission)
+        val (clone, _) = symmetrical.dictionary.absorber.Absorber.materialize(emission)
 
         val restored = clone as AddressRow
 
@@ -44,13 +44,13 @@ class VTestRadiation {
                                                 // and don't need 3rd party parsers such as GSON, or Jackson
 
         val atomEmission = atom.emit()  // Simply emit the particle to a super condensed photon emission
-        val (atomClone, atomRemainder) = Absorber.materialize(atomEmission) // reabsorb it and make an
+        val (atomClone, atomRemainder) = symmetrical.dictionary.absorber.Absorber.materialize(atomEmission) // reabsorb it and make an
                                                                                            // Identical clone
 
                                                 // JSON loses class information and requires parsing and reconstruction
                                                 // of the class hierarchy
         val cityEmission = city.emit()  // Photon emission and absorption is built in and reconstructs
-        val (cityClone, cityRemainder) = Absorber.materialize(cityEmission) // identical clones
+        val (cityClone, cityRemainder) = symmetrical.dictionary.absorber.Absorber.materialize(cityEmission) // identical clones
                                                                                            // with no extra steps
         if ((cityClone as Atom).getField().toString() != city.getField().toString())
             return false
