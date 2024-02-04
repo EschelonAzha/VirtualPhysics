@@ -1,6 +1,7 @@
 package symmetrical.physics.atomic.atoms
 
 import symmetrical.dictionary.protons.AccessLevelProton
+import symmetrical.dictionary.protons.AliasNameProton
 import symmetrical.dictionary.protons.FieldNameProton
 import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.elements.Hydrogen
@@ -47,6 +48,9 @@ open class Element (
         return Photon().with(radiate())
     }
 
+    fun getAliasName() : Field {
+        return getProtonField(AliasNameProton::class)
+    }
     fun getAccessLevel() : Field {
         return getProtonField(AccessLevelProton::class)
     }

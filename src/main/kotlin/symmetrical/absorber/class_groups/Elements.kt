@@ -3,6 +3,7 @@ package symmetrical.absorber.class_groups
 import symmetrical.absorber.ClassGroup
 import symmetrical.absorber.EntityId
 import symmetrical.dictionary.protons.AccessLevelProton
+import symmetrical.dictionary.protons.AliasNameProton
 import symmetrical.dictionary.protons.FieldNameProton
 import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Element
@@ -13,9 +14,11 @@ import symmetrical.transpectors.printable_characters.Base52
 
 class Elements : ClassGroup() {
     init {
-        add(EntityId().with(Base52.classId(), ValueProton::class))
-        add(EntityId().with(Base52.classId(), FieldNameProton::class))
         add(EntityId().with(Base52.classId(), AccessLevelProton::class))
+        add(EntityId().with(Base52.classId(), AliasNameProton::class))
+        add(EntityId().with(Base52.classId(), FieldNameProton::class))
+        add(EntityId().with(Base52.classId(), ValueProton::class))
+
 
         add(EntityId().with(Base52.classId(), Element::class))
 
