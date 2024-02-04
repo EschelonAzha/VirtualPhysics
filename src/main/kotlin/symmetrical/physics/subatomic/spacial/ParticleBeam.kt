@@ -22,8 +22,8 @@ import asymmetrical.physics.machine.config.Config
 import symmetrical.absorber.Absorber
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.balanced.Particle
-import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic.transpectors.transpectors.Strings
+import symmetrical.transpectors.printable_characters.Base52
+import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter

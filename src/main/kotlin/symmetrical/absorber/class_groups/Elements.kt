@@ -9,7 +9,7 @@ import symmetrical.physics.atomic.atoms.Element
 import symmetrical.physics.atomic.atoms.elements.Helium
 import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.atomic.atoms.elements.Lithium
-import symmetrical.cosmic.transpectors.printable_characters.Base52
+import symmetrical.transpectors.printable_characters.Base52
 
 class Elements : ClassGroup() {
     init {

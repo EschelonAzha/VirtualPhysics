@@ -19,8 +19,8 @@ package symmetrical.physics.subatomic.bosons
  */
 
 import asymmetrical.physics.machine.config.Config
-import symmetrical.cosmic.transpectors.printable_characters.Base52
-import symmetrical.cosmic.transpectors.transpectors.Photons
+import symmetrical.transpectors.printable_characters.Base52
+import symmetrical.transpectors.transpectors.Photons
 
 // For more information visit:   https://en.wikipedia.org/wiki/Photon
 

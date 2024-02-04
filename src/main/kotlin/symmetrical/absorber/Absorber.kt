@@ -20,7 +20,7 @@ package symmetrical.absorber
 
 import asymmetrical.physics.machine.config.Config
 import symmetrical.absorber.class_groups.*
-import symmetrical.cosmic.transpectors.transpectors.Strings
+import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass

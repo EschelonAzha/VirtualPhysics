@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.transpectors
+package symmetrical.transpectors.transpectors
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,10 +18,10 @@ package symmetrical.cosmic.transpectors.transpectors
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.transpectors.printable_characters.LowerCase
-import symmetrical.cosmic.transpectors.printable_characters.Numbers
-import symmetrical.cosmic.transpectors.printable_characters.SpecialCharacters
-import symmetrical.cosmic.transpectors.printable_characters.UpperCase
+import symmetrical.transpectors.printable_characters.LowerCase
+import symmetrical.transpectors.printable_characters.Numbers
+import symmetrical.transpectors.printable_characters.SpecialCharacters
+import symmetrical.transpectors.printable_characters.UpperCase
 
 
 object Chars {

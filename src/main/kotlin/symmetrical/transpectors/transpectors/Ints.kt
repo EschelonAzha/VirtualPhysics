@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.printable_characters
+package symmetrical.transpectors.transpectors
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,13 +18,13 @@ package symmetrical.cosmic.transpectors.printable_characters
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-class UpperCase : Characters() {
-
-    init {
-        super.with(UPPERCASE)
-    }
-    companion object {
-        const val UPPERCASE: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+object Ints {
+    fun toByteArray(int: Int): ByteArray {
+        val bytes = ByteArray(4)
+        bytes[0] = (int ushr 24).toByte()
+        bytes[1] = (int ushr 16).toByte()
+        bytes[2] = (int ushr 8).toByte()
+        bytes[3] = int.toByte()
+        return bytes
     }
 }

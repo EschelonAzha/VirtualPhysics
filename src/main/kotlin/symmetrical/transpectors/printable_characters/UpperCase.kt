@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.printable_characters
+package symmetrical.transpectors.printable_characters
 /*
  * This file is part of Virtual Physics.
  *
@@ -19,12 +19,12 @@ package symmetrical.cosmic.transpectors.printable_characters
  */
 
 
-class SpecialCharacters : Characters() {
+class UpperCase : Characters() {
+
     init {
-        super.with(SPECIAL)
+        super.with(UPPERCASE)
     }
     companion object {
-        const val SPECIAL: String = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~"
+        const val UPPERCASE: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
-
 }

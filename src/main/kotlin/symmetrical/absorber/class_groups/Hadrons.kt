@@ -20,7 +20,7 @@ package symmetrical.absorber.class_groups
 
 import symmetrical.absorber.ClassGroup
 import symmetrical.absorber.EntityId
-import symmetrical.cosmic.transpectors.printable_characters.Base52
+import symmetrical.transpectors.printable_characters.Base52
 import symmetrical.physics.subatomic.matter.hadrons.Hadron
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Neutron

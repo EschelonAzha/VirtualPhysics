@@ -18,7 +18,7 @@ package symmetrical.physics.subatomic.balanced.values.strings
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.transpectors.transpectors.Bytes
+import symmetrical.transpectors.transpectors.Bytes
 
 class StringByte {
     var value : String? = null

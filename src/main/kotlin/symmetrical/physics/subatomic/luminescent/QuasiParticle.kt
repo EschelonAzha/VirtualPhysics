@@ -19,8 +19,8 @@ package symmetrical.physics.subatomic.luminescent
  */
 
 import symmetrical.absorber.Absorber
-import symmetrical.cosmic.transpectors.transpectors.Photons
-import symmetrical.cosmic.transpectors.transpectors.Strings
+import symmetrical.transpectors.transpectors.Photons
+import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.balanced.values.IField
 import symmetrical.physics.subatomic.bosons.Photon

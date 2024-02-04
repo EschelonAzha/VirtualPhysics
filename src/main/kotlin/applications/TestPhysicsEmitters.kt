@@ -4,7 +4,7 @@ import applications.tests.dictionary.atoms.*
 import applications.tests.dictionary.composites.AddressRow
 import symmetrical.absorber.ClassGroup
 import symmetrical.absorber.EntityId
-import symmetrical.cosmic.transpectors.printable_characters.Base52
+import symmetrical.transpectors.printable_characters.Base52
 
 
 class TestPhysicsEmitters : ClassGroup() {

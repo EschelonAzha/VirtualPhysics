@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.transpectors
+package symmetrical.transpectors.printable_characters
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,13 +18,13 @@ package symmetrical.cosmic.transpectors.transpectors
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-object Ints {
-    fun toByteArray(int: Int): ByteArray {
-        val bytes = ByteArray(4)
-        bytes[0] = (int ushr 24).toByte()
-        bytes[1] = (int ushr 16).toByte()
-        bytes[2] = (int ushr 8).toByte()
-        bytes[3] = int.toByte()
-        return bytes
+
+class SpecialCharacters : Characters() {
+    init {
+        super.with(SPECIAL)
     }
+    companion object {
+        const val SPECIAL: String = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~"
+    }
+
 }

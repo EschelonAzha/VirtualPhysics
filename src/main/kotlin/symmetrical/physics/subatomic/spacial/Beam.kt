@@ -19,7 +19,7 @@ package symmetrical.physics.subatomic.spacial
  */
 
 import symmetrical.absorber.Absorber
-import symmetrical.cosmic.transpectors.transpectors.Strings
+import symmetrical.transpectors.transpectors.Strings
 import kotlin.reflect.KClass
 
 // For more information visit:   https://en.wikipedia.org/wiki/Particle_beam

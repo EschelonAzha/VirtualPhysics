@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.transpectors
+package symmetrical.transpectors.transpectors
 /*
  * This file is part of Virtual Physics.
  *

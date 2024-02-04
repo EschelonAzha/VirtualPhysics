@@ -18,7 +18,7 @@ package symmetrical.physics.subatomic.balanced.values
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.transpectors.transpectors.Doubles
+import symmetrical.transpectors.transpectors.Doubles
 // For more information visit:   https://en.wikipedia.org/wiki/Scalar_field
 class Field() : IField {
 

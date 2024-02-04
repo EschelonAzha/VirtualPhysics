@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.printable_characters
+package symmetrical.transpectors.printable_characters
 /*
  * This file is part of Virtual Physics.
  *

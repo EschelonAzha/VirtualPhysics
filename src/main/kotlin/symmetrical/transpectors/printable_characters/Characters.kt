@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.printable_characters
+package symmetrical.transpectors.printable_characters
 /*
  * This file is part of Virtual Physics.
  *
@@ -19,14 +19,28 @@ package symmetrical.cosmic.transpectors.printable_characters
  */
 
 
-class LowerCase : Characters() {
 
-    init {
-        super.with(LOWERCASE)
+
+open class Characters() {
+
+    private var _characters:String  = "";
+
+
+    fun with(characters:String) : Characters {
+        this._characters = characters;
+        return this;
     }
-
-    companion object {
-        const val LOWERCASE: String = "abcdefghijklmnopqrstuvwxyz";
+    fun indexOf(pos: Int) : String? {
+        if (pos > this.getCharacters().length-1) {
+            return null
+        }
+        return this.getCharacters()[pos].toString();
     }
-
+    fun getCharacters() : String {
+        return this._characters;
+    }
+    fun valueOf(character:String) : Int {
+        val index = this.getCharacters().indexOf(character);
+        return index;
+    }
 }

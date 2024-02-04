@@ -1,4 +1,4 @@
-package symmetrical.cosmic.transpectors.printable_characters
+package symmetrical.transpectors.printable_characters
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,7 +18,7 @@ package symmetrical.cosmic.transpectors.printable_characters
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.cosmic.transpectors.transpectors.Strings
+import symmetrical.transpectors.transpectors.Strings
 import kotlin.math.floor
 
 

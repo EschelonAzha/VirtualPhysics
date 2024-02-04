@@ -20,10 +20,10 @@ package symmetrical.absorber.class_groups
 
 import symmetrical.absorber.ClassGroup
 import symmetrical.absorber.EntityId
-import symmetrical.cosmic.transpectors.printable_characters.*
 import symmetrical.physics.subatomic.balanced.Monad
 import symmetrical.physics.atomic.substance.metals.Metal
 import symmetrical.chemistry.diatomics.KeyValue
+import symmetrical.transpectors.printable_characters.Base52
 
 class AppClasses : ClassGroup() {
     init  {

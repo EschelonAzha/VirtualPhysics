@@ -19,7 +19,7 @@ package symmetrical.physics.subatomic.balanced
  */
 
 import asymmetrical.physics.machine.vm.Classes
-import symmetrical.cosmic.transpectors.transpectors.Keys
+import symmetrical.transpectors.transpectors.Keys
 import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
@@ -29,7 +29,6 @@ import symmetrical.physics.subatomic.spacial.IParticleBeam
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
-import symmetrical.physics.dimensions.*
 import symmetrical.physics.dimensions.*
 
 
@@ -94,7 +93,7 @@ open class Particle(
         return matterAntiMatter.getClassId()
     }
     override fun createUniqueId(): IParticle {
-        uniqueId.setContent(getClassId()+Keys.getUniqueId())
+        uniqueId.setContent(getClassId()+ Keys.getUniqueId())
         return getSelf()
     }
 

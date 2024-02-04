@@ -21,7 +21,7 @@ package symmetrical.absorber.class_groups
 import symmetrical.absorber.ClassGroup
 import symmetrical.absorber.EntityId
 import symmetrical.physics.subatomic.balanced.Particle
-import symmetrical.cosmic.transpectors.printable_characters.Base52
+import symmetrical.transpectors.printable_characters.Base52
 import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
