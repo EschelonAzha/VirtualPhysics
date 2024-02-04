@@ -124,7 +124,7 @@ class VTestTypeConverter {
             return false
         if (asString != aNull)              // Strings return as is
             return false
-        if (toString != aEmpty)             // Strings reurn as is
+        if (toString != aEmpty)             // convert null to empty string
             return false
 
         return true
