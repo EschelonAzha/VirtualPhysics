@@ -24,10 +24,19 @@ class StringBoolean {
         this.value = value
         return this
     }
-    fun asBoolean() : Boolean {
-        return value != null
+    fun asBoolean() : Boolean? {
+        if (value == null)
+            return null
+
+        if (value == "")
+            return false
+
+        return true
     }
     fun toBoolean(): Boolean {
-        return asBoolean() ?: return false
+        var result = asBoolean()
+        if (result == null)
+            result = false
+        return result
     }
 }

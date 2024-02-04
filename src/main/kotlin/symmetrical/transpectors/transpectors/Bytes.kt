@@ -75,7 +75,7 @@ object Bytes {
         if (character == "")
             return null
 
-        val character = character.single() // Extract the single character from the string
+        val character = character[0] // Extract the single character from the string
         return character.code.toByte()
     }
     fun toByteArray(byte1:Byte, byte2:Byte) : ByteArray {

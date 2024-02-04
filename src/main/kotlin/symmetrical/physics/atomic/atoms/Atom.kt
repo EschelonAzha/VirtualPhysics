@@ -39,6 +39,8 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.physics.subatomic.matter.leptons.Electron
 import symmetrical.electronics.Electronics
 import symmetrical.electronics.IElectronics
+import symmetrical.physics.subatomic.balanced.values.ITypeConverter
+import symmetrical.physics.subatomic.balanced.values.TypeConverter
 import kotlin.reflect.KClass
 
 // For more information visit:  https://en.wikipedia.org/wiki/Atom
@@ -48,13 +50,15 @@ open class Atom(
     private   val matterAntiMatter  : IMatterAntiMatter     = MatterAntiMatter().with(Atom::class),
     private   var orbitals          : Orbitals              = Orbitals(),
     public    var _nucleons         : Nucleons              = Nucleons(),
-    public    var electronics       : Electronics           = Electronics()
+    public    val electronics       : Electronics           = Electronics(),
+    private   val typeConverter     : ITypeConverter        = TypeConverter()
 
 ) : Particle(),
     IMatterAntiMatter by matterAntiMatter,
     IOrbitals           by orbitals,
-    INucleons by _nucleons,
+    INucleons           by _nucleons,
     IElectronics        by electronics,
+    ITypeConverter      by typeConverter,
     IEmitter,
     IAtom
 {
@@ -62,6 +66,7 @@ open class Atom(
         setAtom(this)
         this.orbitals.setAtom(this)
         this._nucleons.setAtom(this)
+        this.typeConverter.setAtom(this)
     }
 
     open fun with(content:Any?) : Atom {
@@ -176,7 +181,6 @@ open class Atom(
     override fun toString() : String {
         return getField().toString()
     }
-
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Atom")

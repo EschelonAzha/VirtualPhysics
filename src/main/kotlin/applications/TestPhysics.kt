@@ -5,6 +5,7 @@ import applications.tests.electronics.VTestElectronics
 import applications.tests.elements.VTestElements
 import applications.tests.radiation.VTestRadiation
 import applications.tests.nuclear.VTestNeutrons
+import applications.tests.typeConverter.VTestTypeConverter
 import symmetrical.absorber.Absorber
 
 object TestPhysics {
@@ -20,6 +21,7 @@ object TestPhysics {
         VTestNeutrons().test()
         VTestChemistry().test()
         VTestElectronics().test()
+        VTestTypeConverter().test()
     }
 
 }
