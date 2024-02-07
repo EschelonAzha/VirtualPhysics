@@ -14,8 +14,8 @@ class VTestTypeConverter {
     private fun testStringConverter() : Boolean {
         // These conversion rules break with conventions are the most useful most of the time!
 
-        // "FooBar"  toInt = 0           ("to" means force it to be that type)
-        // "FooBar"  asInt = null        ("as" means be reasonable or be null)
+        // "I have no money"                            toInt = 0           ("to" means force it to be that type)
+        // "Before the big bang the universe was "      asInt = null        ("as" means be reasonable or be null)
 
         // You can also use atom.getContent() to get the exact value and type as is.
 
