@@ -1,6 +1,7 @@
 package applications
 
 import applications.tests.chemistry.VTestChemistry
+import applications.tests.dictionary.TestPhysicsEmitters
 import applications.tests.electronics.VTestElectronics
 import applications.tests.elements.VTestElements
 import applications.tests.radiation.VTestRadiation
@@ -8,7 +9,7 @@ import applications.tests.nuclear.VTestNeutrons
 import applications.tests.typeConverter.VTestTypeConverter
 import symmetrical.dictionary.absorber.Absorber
 
-object TestPhysics {
+object RunMe {
     @JvmStatic
     fun main(args: Array<String>) {
         Absorber.initialize(TestPhysicsEmitters())

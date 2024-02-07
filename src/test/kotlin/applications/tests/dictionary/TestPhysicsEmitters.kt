@@ -1,4 +1,4 @@
-package applications
+package applications.tests.dictionary
 
 import applications.tests.dictionary.atoms.*
 import applications.tests.dictionary.composites.AddressRow
