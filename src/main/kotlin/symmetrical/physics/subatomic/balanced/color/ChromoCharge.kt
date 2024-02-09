@@ -24,7 +24,7 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 
 // For more information visit:   https://en.wikipedia.org/wiki/Color_charge
 
-open class ChromoCharge : Particle() {
+open class ChromoCharge  {
 
 
     public var _value: Any? = null
