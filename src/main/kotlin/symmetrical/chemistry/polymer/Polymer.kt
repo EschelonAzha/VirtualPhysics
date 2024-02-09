@@ -18,6 +18,9 @@ package symmetrical.chemistry.polymer
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+   This is preliminary work.   More sophisticated query capability is coming soon
+ */
 import symmetrical.chemistry.monomer.IMonomer
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.atomic.substance.ions.Compound

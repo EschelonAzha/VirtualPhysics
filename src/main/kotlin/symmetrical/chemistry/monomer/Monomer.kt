@@ -23,6 +23,10 @@ import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.atomic.substance.ions.Compound
 
 // For more information visit:   https://en.wikipedia.org/wiki/Monomer
+
+/*
+   This is preliminary work.   More sophisticated query capability is coming soon
+ */
 class Monomer() : IMonomer {
     private lateinit var polymer: Polymer
     private lateinit var self: Compound
