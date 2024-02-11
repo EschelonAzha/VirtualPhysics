@@ -237,5 +237,10 @@ Elements serve as runtime interfaces in Virtual Physics, ensuring each element h
 
 **There are many more super-powers coming to VirtualPhysics --so stay tuned!**
 
+## Note:
 
+**Virtual Physics is Ideally used when writing Kotlin on both server and client side**
 
+    If you are using Kotlin with React or Jetpack Compose this can save you a lot of time by elminating the 
+    need for JSON messaging or using Protoncol buffers to send data and/or metadata
+    Simply .emit() and absorb and share the same object on both sides.
