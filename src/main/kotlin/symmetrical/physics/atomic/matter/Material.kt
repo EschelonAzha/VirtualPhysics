@@ -18,17 +18,11 @@ package symmetrical.physics.atomic.matter
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.physics.subatomic.luminescent.IMatter
-import symmetrical.physics.subatomic.luminescent.Matter
+
 
 // For more information visit:  https://en.wikipedia.org/wiki/Material
 
-class Material(
-    private val matterAntiMatter: IMatter = Matter().with(Material::class),
-) :
-    IMatter by matterAntiMatter
-{
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
+interface Material {
+    fun addDerived(material: Material) : Material
+    fun run () : Unit
 }

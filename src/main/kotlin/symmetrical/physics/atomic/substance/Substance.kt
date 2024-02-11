@@ -18,10 +18,34 @@ package symmetrical.physics.atomic.substance
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
-https://en.wikipedia.org/wiki/Chemical_substance
- */
-interface Substance {
-    fun addDerived(substance: Substance) : Substance
-    fun run () : Unit
+import symmetrical.dictionary.protons.AccessLevelProton
+import symmetrical.dictionary.protons.AliasNameProton
+import symmetrical.dictionary.protons.FieldNameProton
+import symmetrical.dictionary.protons.ValueProton
+import symmetrical.physics.atomic.atoms.Element
+import symmetrical.physics.subatomic.balanced.values.Field
+import symmetrical.physics.subatomic.bosons.Photon
+import symmetrical.physics.subatomic.luminescent.IMatter
+import symmetrical.physics.subatomic.luminescent.Matter
+import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+import kotlin.reflect.KClass
+
+// For more information visit:  https://en.wikipedia.org/wiki/Chemical_substance
+
+class Substance(
+    private val matterAntiMatter: IMatter = Matter().with(Substance::class),
+) : Element(),
+    IMatter by matterAntiMatter
+{
+    override fun absorb(photon: Photon) : Photon {
+        return super.absorb(matterAntiMatter.check(photon).propagate())
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+
+
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+super.emit().radiate()
+    }
 }

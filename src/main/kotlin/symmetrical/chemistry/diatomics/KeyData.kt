@@ -24,13 +24,13 @@ import symmetrical.physics.atomic.bonds.covalent.Diatomic
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
-open class KeyValue(
-    private val matterAntiMatter: IMatter = Matter().with(KeyValue::class),
+open class KeyData(
+    private val matterAntiMatter: IMatter = Matter().with(KeyData::class),
 ) : Diatomic(),
     IMatter by matterAntiMatter
 {
 
-    override fun with(key: Atom, value: Atom) : KeyValue {
+    override fun with(key: Atom, value: Atom) : KeyData {
         add(key)
         add(value)
         return this
@@ -64,7 +64,7 @@ open class KeyValue(
             return get(Static.KEY) as Atom
         return null
     }
-    fun getValue() : Atom? {
+    fun getData() : Atom? {
         if (size()>1)
             return get(Static.VALUE) as Atom
         return null

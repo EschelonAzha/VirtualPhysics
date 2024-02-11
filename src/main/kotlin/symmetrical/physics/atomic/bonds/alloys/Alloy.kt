@@ -18,7 +18,7 @@ package symmetrical.physics.atomic.bonds.alloys
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.physics.atomic.substance.Substance
+import symmetrical.physics.atomic.matter.Material
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
@@ -31,15 +31,15 @@ open class Alloy(
     IMatter by matterAntiMatter
 {
 
-    var mixtures: Substance? = null
-    var derived = ArrayList<Substance>()
-    var mixture = ArrayList<Substance>()
+    var mixtures: Material? = null
+    var derived = ArrayList<Material>()
+    var mixture = ArrayList<Material>()
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
 
-    fun getSubstance(pos:Int) : Substance {
+    fun getSubstance(pos:Int) : Material {
         return this.mixture[pos]
     }
 

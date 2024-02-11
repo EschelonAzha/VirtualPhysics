@@ -29,7 +29,7 @@ import symmetrical.physics.atomic.bonds.covalent.Diatomic
 import symmetrical.physics.atomic.bonds.covalent.Molecular
 import symmetrical.physics.atomic.bonds.mixtures.Mixture
 import symmetrical.physics.atomic.bonds.mixtures.Solution
-import symmetrical.physics.atomic.matter.Material
+import symmetrical.physics.atomic.substance.Substance
 import symmetrical.physics.atomic.substance.ions.Compound
 import symmetrical.physics.atomic.substance.molecules.Molecule
 
@@ -41,7 +41,7 @@ open class Compounds : ClassGroup() {
         add(EntityId().with(Base52.classId(), Diatomic::class))
         add(EntityId().with(Base52.classId(), Helium::class))
         add(EntityId().with(Base52.classId(), Hydrogen::class))
-        add(EntityId().with(Base52.classId(), Material::class))
+        add(EntityId().with(Base52.classId(), Substance::class))
         add(EntityId().with(Base52.classId(), Mixture::class))
         add(EntityId().with(Base52.classId(), Molecular::class))
         add(EntityId().with(Base52.classId(), Molecule::class))

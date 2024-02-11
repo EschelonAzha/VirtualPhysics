@@ -153,6 +153,14 @@ open class Atom(
     fun getField(proton:KClass<*>) : Field {
         return Atom.Companion.field(this, proton)
     }
+    open fun getProtonField(kClass: KClass<*>) : Field {
+        val proton: Proton = getProton(kClass)
+        return proton.getValueQuark().getWavelength().getField()
+    }
+    open fun getValue() : Field {
+        return getProtonField(ValueProton::class)
+    }
+
     fun getValueProton() : Proton {
         return getProtons().getProton(ValueProton::class)
     }

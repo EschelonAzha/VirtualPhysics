@@ -29,10 +29,13 @@ import symmetrical.physics.subatomic.luminescent.Matter
 
 open class Hydrogen(
     private val matterAntiMatter: IMatter = Matter().with(Hydrogen::class),
-) : Element(),
+) : Atom(),
     IMatter by matterAntiMatter
 {
-    // Hydrogen is automatically constructed with one Proton (ValueProton) and can have no others
+    // Hydrogen is automatically constructed with one Proton (ValueProton).
+    // An Atom always has at least one proton.  All other atoms add more protons as
+    // they go up the Periodic Table
+
     override fun with(value:Any?) : Hydrogen {
         super.with(value)
         return this

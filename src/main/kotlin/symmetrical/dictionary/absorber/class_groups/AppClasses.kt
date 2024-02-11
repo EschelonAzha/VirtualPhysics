@@ -22,12 +22,12 @@ import symmetrical.dictionary.absorber.ClassGroup
 import symmetrical.dictionary.absorber.EntityId
 import symmetrical.physics.subatomic.balanced.Monad
 import symmetrical.physics.atomic.substance.metals.Metal
-import symmetrical.chemistry.diatomics.KeyValue
+import symmetrical.chemistry.diatomics.KeyData
 import symmetrical.transpectors.printable_characters.Base52
 
 class AppClasses : ClassGroup() {
     init  {
-        add(EntityId().with(Base52.classId(), KeyValue::class))
+        add(EntityId().with(Base52.classId(), KeyData::class))
         add(EntityId().with(Base52.classId(), Metal::class))
         add(EntityId().with(Base52.classId(), Monad::class))
     }

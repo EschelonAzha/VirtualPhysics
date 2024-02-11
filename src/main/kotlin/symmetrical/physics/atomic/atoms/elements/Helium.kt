@@ -30,7 +30,7 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 open class Helium(
     private val matterAntiMatter: IMatter = Matter().with(Helium::class),
-) : Element(),
+) : Atom(),
     IMatter by matterAntiMatter
 {
     override fun with(value:Any?) : Helium {
@@ -39,7 +39,7 @@ open class Helium(
     }
 
     fun protons(proton: Proton) : Helium {   // All Atoms are  automatically constructed with one Proton
-        addProtons(arrayOf(proton))         // To make Helium we must supply the second proton
+        addProtons(arrayOf(proton))         // To make Helium we must supply 1 more proton beyond Hydrogen
         return this
     }
     override fun absorb(photon: Photon) : Photon {

@@ -26,7 +26,7 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 open class Lithium (
     private val matterAntiMatter: IMatter = Matter().with(Lithium::class),
-) : Element(),
+) : Atom(),
     IMatter by matterAntiMatter
 {
     override fun with(value:Any?) : Lithium {
@@ -34,7 +34,7 @@ open class Lithium (
         return this
     }
     fun protons(proton1: Proton, proton2: Proton) : Lithium {    // All Atoms are  automatically constructed with one Proton
-        addProtons(arrayOf(proton1, proton2))                   // To make Lithium we must supply two more protons
+        addProtons(arrayOf(proton1, proton2))  // To make Lithium we must supply 2 more protons beyond Hydrogen
         return this
     }
     override fun absorb(photon: Photon) : Photon {

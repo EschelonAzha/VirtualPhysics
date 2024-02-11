@@ -57,11 +57,11 @@ open class Element (
     fun getFieldName() : Field {
         return getProtonField(FieldNameProton::class)
     }
-    fun getValue() : Field {
+    override fun getValue() : Field {
         return getProtonField(ValueProton::class)
     }
 
-    private fun getProtonField(kClass: KClass<*>) : Field {
+    override fun getProtonField(kClass: KClass<*>) : Field {
         val proton: Proton = getProton(kClass)
         return proton.getValueQuark().getWavelength().getField()
     }
