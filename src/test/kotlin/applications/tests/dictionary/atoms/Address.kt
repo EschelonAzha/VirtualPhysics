@@ -3,6 +3,7 @@ package applications.tests.dictionary.atoms
 import symmetrical.dictionary.protons.AccessLevelProton
 import symmetrical.dictionary.protons.FieldNameProton
 import symmetrical.physics.atomic.atoms.elements.Lithium
+import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
@@ -17,7 +18,7 @@ class Address(
         setContent("", true)
         val fieldName   : Proton = FieldNameProton().with("Address")
         val accessLevel : Proton = AccessLevelProton().with(AccessLevelProton.Static.READ_ONLY)
-        protons(fieldName, accessLevel)
+        protons(fieldName, accessLevel)  //<---- when you add protons, don't forget to add getter functions
     }
 
     fun with(value:String) : Address {
@@ -34,5 +35,14 @@ class Address(
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+
+
+    fun getAccessLevel() : Field {  //<--- Add these functions to easily get the extra protons
+        return getProtonField(AccessLevelProton::class)
+    }
+    fun getFieldName() : Field {  //<--- Add these functions to easily get the extra protons
+        return getProtonField(FieldNameProton::class)
+    }
+
 
 }

@@ -35,14 +35,14 @@ class VTestElements {
  */
 
     private fun testElements() : Boolean {
-        val original : Lithium = Address().with("Elements!") // Address has 3 Protons
+        val original : Address = Address().with("Elements!") // Address has 3 Protons
                                                                   // Value, FieldName, AccessLevel
 
 
         val emission = original.emit()
         val (clone, _) = Absorber.materialize(emission)
 
-        val lithium = clone as Lithium
+        val lithium = clone as Address
 
         val fieldName      : String      = lithium.getFieldName().toString()
         val accessLevel    : Int         = lithium.getAccessLevel().toInt()
