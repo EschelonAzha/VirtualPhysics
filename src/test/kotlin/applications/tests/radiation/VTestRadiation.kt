@@ -27,14 +27,10 @@ class VTestRadiation {
     private fun testAddressEmission() : Boolean {
         val address = AddressRow().with("Bob", "main st", "New York", "NY")
         val emission = address.emit()
+        val (emitter, _) = Absorber.materialize(emission)
+        val clone = emitter as AddressRow
 
-        val (clone, _) = Absorber.materialize(emission)
-
-        val restored = clone as AddressRow
-
-        val clonedName = restored.getName().getContent()
-        val originalName = address.getName().getContent()
-        return clonedName == originalName
+        return address.getName().getContent().toString() == clone.getName().getContent().toString()
 
     }
     private fun testEmissions() : Boolean {
@@ -60,9 +56,4 @@ class VTestRadiation {
 
         return true
     }
-
-    fun breakpoint() : Unit {
-        return
-    }
-
 }

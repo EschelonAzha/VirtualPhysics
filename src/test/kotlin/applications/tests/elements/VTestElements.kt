@@ -38,7 +38,6 @@ class VTestElements {
         val original : Address = Address().with("Elements!") // Address has 3 Protons
                                                                   // Value, FieldName, AccessLevel
 
-
         val emission = original.emit()
         val (clone, _) = Absorber.materialize(emission)
 

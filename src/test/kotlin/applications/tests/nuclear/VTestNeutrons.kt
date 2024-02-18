@@ -71,7 +71,4 @@ class VTestNeutrons {
         return true
     }
 
-    fun breakpoint(): Unit {
-        return
-    }
 }
