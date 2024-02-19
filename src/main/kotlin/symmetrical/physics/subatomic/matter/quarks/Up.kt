@@ -28,7 +28,7 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 
 // For more information visit:   https://en.wikipedia.org/wiki/UpQuark
 
-class Up(
+open class Up(
     private val matterAntiMatter: IMatter = Matter().with(Up::class),
 ) : Quark(),
     IMatter by matterAntiMatter

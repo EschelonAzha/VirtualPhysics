@@ -127,6 +127,10 @@ open class Quark(
         return gluon.color._value
     }
 
+    fun run() : Quark {
+        return this
+    }
+
     fun setBaryon(baryon: Baryon) : Quark {
         this.p_baryon = baryon
         return this
