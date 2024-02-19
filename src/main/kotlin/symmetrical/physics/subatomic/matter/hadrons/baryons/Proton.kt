@@ -50,12 +50,14 @@ open class Proton(
     // +2/3 wavelength(validator),             Spin(isValidationActive),   AngularMomentum(Ptr to Electron),
     // -1/3 wavelength(Type Of Proton),        Spin(?),
     init {
-        _quark = this.add(Down().with(this)) as Quark // type
-        this.add(Up().with(this))    // value
-        this.add(Up().with(this))    // When Up Points to Neutron
+        this.add(Down().with(this))  // value
+        this.add(Up().with(this))    // format
+        this.add(Up().with(this))    // constraints
 
+        _quark = this.get(0) as Quark
         shrink()
     }
+
     fun with(value:Any?) : Proton {
         getValueQuark().setContent(value)
         return this
@@ -64,7 +66,7 @@ open class Proton(
     enum class QuarkType(val value:Int) {
         VALUE(0),
         CONSTRAINTS(1),
-        UP(2),
+        FORMAT(2),
     }
 
     object Static {
@@ -111,8 +113,8 @@ open class Proton(
         return get(Proton.QuarkType.CONSTRAINTS.value) as Up
     }
 
-    fun getUpQuark() : Up {
-        return get(Proton.QuarkType.UP.value) as Up
+    fun getFormatQuark() : Up {
+        return get(Proton.QuarkType.FORMAT.value) as Up
     }
     fun getValueQuark() : Down {
         return get(Proton.QuarkType.VALUE.value) as Down
@@ -152,6 +154,19 @@ open class Proton(
         }
 
         return zBoson  // this returns only the local changes
+    }
+    fun setConstraintsQuark(up:Up) : Proton {
+        set(Proton.QuarkType.CONSTRAINTS.value, up)
+        return this
+    }
+
+    fun setFormatQuark(up:Up) : Proton {
+        set(Proton.QuarkType.FORMAT.value, up)
+        return this
+    }
+    fun setValueQuark(down:Down) : Proton {
+        _quark = set(Proton.QuarkType.VALUE.value, down) as Quark
+        return this
     }
 
     fun setProtons(protons:Protons) : Proton {
