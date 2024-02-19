@@ -23,6 +23,8 @@ import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiNeutron
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
+import symmetrical.physics.subatomic.matter.quarks.Down
+import symmetrical.physics.subatomic.matter.quarks.Up
 
 
 // For more information visit:   https://en.wikipedia.org/wiki/Neutron
@@ -34,16 +36,15 @@ open class Neutron(
 {
     lateinit var __neutrons: Neutrons
 
+    // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
+    // -1/3 wavelength(?),                     Spin(?),                    AngularMomentum(Ptr to Proton),
+    // -1/3 wavelength(?),                     Spin(?),                    AngularMomentum(Ptr to Next Neutron),
     init {
-        this.Neutron()
-        // +2/3 wavelength(value),                 Spin(isFormatted),          AngularMomentum(Format),
-        // -1/3 wavelength(?),                     Spin(?),                    AngularMomentum(Ptr to Proton),
-        // -1/3 wavelength(?),                     Spin(?),                    AngularMomentum(Ptr to Next Neutron),
+        this.add(Up().with(this))    // value
+        this.add(Down().with(this))  // When down Points to Proton
+        this.add(Down().with(this))  // type
+        shrink()
     }
-
-
-
-
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 

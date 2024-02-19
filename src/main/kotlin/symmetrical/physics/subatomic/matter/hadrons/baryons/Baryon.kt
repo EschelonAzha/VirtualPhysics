@@ -100,13 +100,7 @@ open class Baryon(
     fun isProton() : Boolean {
         return (this.get(1) as Quark) is Up
     }
-    fun Neutron() : Baryon {
-        this.add(Up().with(this))    // value
-        this.add(Down().with(this))  // When down Points to Proton
-        this.add(Down().with(this))  // type
-        shrink()
-        return this
-    }
+
 
     // Turn this Neutron into a Proton
     fun betaMinusDecay() : Pair<Baryon, BetaMinus> {
