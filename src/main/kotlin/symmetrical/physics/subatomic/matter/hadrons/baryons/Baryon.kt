@@ -124,7 +124,7 @@ open class Baryon(
     }
     override fun set(pos:Int, quark: IParticle) : IParticle {
         super.set(pos, quark)
-        (quark as Quark).setBaryon(this)
+        (quark as Quark).setHadron(this)
         return quark
     }
     fun setBinding(boundTo: Baryon) : Baryon {

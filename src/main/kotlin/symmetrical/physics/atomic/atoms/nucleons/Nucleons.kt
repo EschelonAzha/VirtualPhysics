@@ -80,7 +80,7 @@ class Nucleons(
         val space       : IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
         val neutronDown :Down       = space as Down
         neutronDown.getSpace().setSpace(null)
-        neutrons.remove(neutronDown.getBaryon())
+        neutrons.remove(neutronDown.getHadron())
         proton.set(0, neutronDown)
 
         return p_atom

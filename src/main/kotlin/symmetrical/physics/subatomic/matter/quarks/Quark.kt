@@ -34,6 +34,7 @@ import symmetrical.physics.subatomic.matter.colors.Green
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.physics.subatomic.bosons.gluons.*
+import symmetrical.physics.subatomic.matter.hadrons.Hadron
 import kotlin.reflect.KClass
 
 // For more information visit:   https://en.wikipedia.org/wiki/Quark
@@ -45,12 +46,12 @@ open class Quark(
 {
 
     lateinit var gluon                  : Gluon
-    protected lateinit var p_baryon     : Baryon
+    protected lateinit var p_hadron     : Hadron
     init {
         this.gluon         = Red_AntiRed()
     }
-    fun with(baryon: Baryon) : Quark {
-        this.p_baryon = baryon
+    fun with(hadron: Hadron) : Quark {
+        this.p_hadron = hadron
         return this
     }
 
@@ -80,8 +81,8 @@ open class Quark(
         return Photon().with(radiate())
     }
 
-    fun getBaryon() : Baryon {
-        return p_baryon
+    fun getHadron() : Hadron {
+        return p_hadron
     }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
@@ -131,8 +132,8 @@ open class Quark(
         return this
     }
 
-    fun setBaryon(baryon: Baryon) : Quark {
-        this.p_baryon = baryon
+    fun setHadron(hadron: Hadron) : Quark {
+        this.p_hadron = hadron
         return this
     }
     fun setContent(content:Any?) : Quark {
