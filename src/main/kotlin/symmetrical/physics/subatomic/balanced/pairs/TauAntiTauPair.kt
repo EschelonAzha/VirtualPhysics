@@ -93,8 +93,8 @@ class TauAntiTauPair(
     fun isAccepted() : Boolean {
         return getSpin().isPlus()
     }
-    fun setAccepted(accepted:Boolean) : TauAntiTauPair {
-        getSpin().setSpin(accepted)
+    private fun setAccepted(accepted:Boolean) : TauAntiTauPair {
+        getSpin().setContent(accepted)
         return this
     }
 

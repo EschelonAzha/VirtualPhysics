@@ -55,7 +55,7 @@ class Electron(
     }
     fun covalentBond(you: Electron) : Electron {
         you.setElectron(this)
-        this.setSpin(Spin.Static.PLUS)
+        this.getSpin().setContent(Spin.Static.PLUS)
         return this
     }
     fun flow() : ParticleBeam {
@@ -77,7 +77,7 @@ class Electron(
 
     fun ionicBond(you: Electron) : Electron {
         you.setElectron(this)
-        this.setSpin(Spin.Static.MINUS)
+        this.getSpin().setContent(Spin.Static.MINUS)
         return this
     }
 
@@ -94,8 +94,8 @@ class Electron(
         this.proton = proton
         return this
     }
-    fun setSpin(spin:Int) : Electron {
-        getSpin().setSpin(spin)
+    private fun setSpin(spin:Int) : Electron {
+        getSpin().setContent(spin)
         return this
     }
     private fun flow(electron: Electron) : ZBoson {

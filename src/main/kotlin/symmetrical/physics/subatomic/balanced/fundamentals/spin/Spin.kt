@@ -133,14 +133,14 @@ class Spin(
         return field.toInt() == 0
     }
 
-    fun setSpin(content:Any?) : Any? {
+
+    override fun setContent(content:Any?) : Any? {
         if (content is Boolean) {
             if (content)
-                return setContent(1)
-            else return setContent(0)
+                return field.setContent(1)
+            else return field.setContent(0)
         }
-
-        return setContent(content)
+        return field.setContent(content)
     }
 
     fun spin() : Field {
