@@ -164,8 +164,8 @@ open class Quark(
         return boson
     }
 
-    open fun run(value: Quark, constraints:Quark) : Quark {
-        return this
+    open fun run(value: Quark, constraints:Quark) : ZBoson {
+        return ZBoson()
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {

@@ -23,6 +23,7 @@ import symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiDown
 import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
+import symmetrical.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 
 
@@ -58,7 +59,9 @@ class Down(
         return matterAntiMatter.getClassId()
     }
 
-
+    override fun run(value: Quark, opposing:Quark) : ZBoson {
+        return ZBoson()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Down")

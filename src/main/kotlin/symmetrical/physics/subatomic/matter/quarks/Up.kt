@@ -24,6 +24,7 @@ import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
+import symmetrical.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 
 
@@ -52,8 +53,8 @@ open class Up(
       //  Recycler.Up_dissipate(this)
     }
 
-    override fun run(value: Quark, constraints:Quark) : Quark {
-        return this
+    override fun run(value: Quark, opposing:Quark) : ZBoson {
+        return ZBoson()
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
