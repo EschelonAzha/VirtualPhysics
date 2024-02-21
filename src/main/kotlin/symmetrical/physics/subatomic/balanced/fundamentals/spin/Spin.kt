@@ -39,10 +39,12 @@ class Spin(
     IQuasiParticle by field
 {
 
-    var quantum : IQuantum? = null
-
+    private var p_quantum : IQuantum? = null
+    init {
+        field.setContent(Spin.Static.ZERO)
+    }
     fun withQuantum(quantum: IQuantum) : Spin {
-        this.quantum = quantum
+        this.p_quantum = quantum
         return this
     }
     fun with(content:Int) : Spin {

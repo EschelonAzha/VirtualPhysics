@@ -69,10 +69,10 @@ open class Molecular(
         }
         return this
     }
-    fun applyQuarkSpin(spin: Spin) : Molecular {
+    fun applyQuarkSpin(spin: Any?) : Molecular {
         for (i in 0 until size()) {
             val atom: Atom = get(i) as Atom
-            Quark.value(this).setSpin(spin)
+            Quark.value(this).getSpin().setContent(spin)
         }
         return this
     }
