@@ -15,7 +15,7 @@ class BookTitle (
     IMatter by matterAntiMatter
 {
     init {
-        getValueProton().setFormatQuark(DoubleQuotedFormat())
+        setFormatQuark(DoubleQuotedFormat())
     }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
