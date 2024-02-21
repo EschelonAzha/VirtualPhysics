@@ -41,6 +41,7 @@ import symmetrical.electronics.Electronics
 import symmetrical.electronics.IElectronics
 import symmetrical.physics.subatomic.balanced.values.ITypeConverter
 import symmetrical.physics.subatomic.balanced.values.TypeConverter
+import symmetrical.physics.subatomic.matter.quarks.Up
 import kotlin.reflect.KClass
 
 // For more information visit:  https://en.wikipedia.org/wiki/Atom
@@ -184,6 +185,10 @@ open class Atom(
     fun setContent(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().interact(
             ZBoson().with(Field().with(value), constructing)).decay()
+    }
+    fun setFormat(format: Up) : Atom {
+        getValueProton().setFormatQuark(format)
+        return this
     }
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         accept(valueQuark, zBoson)

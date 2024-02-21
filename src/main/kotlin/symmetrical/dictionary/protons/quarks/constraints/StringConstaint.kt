@@ -4,7 +4,9 @@ import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
+import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.physics.subatomic.matter.quarks.Up
+import symmetrical.transpectors.transpectors.Strings
 
 class StringConstaint (
     private val matterAntiMatter: IMatter = Matter().with(StringConstaint::class),
@@ -23,6 +25,10 @@ class StringConstaint (
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
+    }
+    override fun run(value: Quark, format: Quark) : Quark {
+        setContent(Strings.crlfTerminated(value.toString()))
+        return this
     }
 
     private fun radiate() : String {
