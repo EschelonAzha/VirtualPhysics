@@ -27,7 +27,7 @@ class StringConstaint (
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun run(value: Quark, format: Quark) : ZBoson {
+    override fun mediate(value: Quark, format: Quark) : ZBoson {
         setContent(Strings.crlfTerminated(value.toString()))
         return ZBoson()
     }

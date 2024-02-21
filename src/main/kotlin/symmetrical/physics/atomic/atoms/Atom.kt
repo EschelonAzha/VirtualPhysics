@@ -139,7 +139,7 @@ open class Atom(
     fun format() : String {
         val value:Proton  = getValueProton()
         val format:Quark  = value.getFormatQuark()
-        format.run(value.getValueQuark(), value.getConstraintsQuark())
+        format.mediate(value.getValueQuark(), value.getConstraintsQuark())
         return format.getWavelength().getField().toString()
     }
     override fun getClassId() : String {

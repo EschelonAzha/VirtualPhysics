@@ -28,7 +28,7 @@ class DoubleQuotedFormat (
         return matterAntiMatter.getClassId()
     }
 
-    override fun run(value: Quark, constraints: Quark) : ZBoson {
+    override fun mediate(value: Quark, constraints: Quark) : ZBoson {
         setContent(Strings.doubleQuoted(value.getWavelength().getField().toString()))
         return ZBoson()
     }

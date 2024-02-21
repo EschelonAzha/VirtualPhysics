@@ -53,7 +53,7 @@ open class Up(
       //  Recycler.Up_dissipate(this)
     }
 
-    override fun run(value: Quark, opposing:Quark) : ZBoson {
+    override fun mediate(value: Quark, opposing:Quark) : ZBoson {
         return ZBoson()
     }
     private fun radiate() : String {

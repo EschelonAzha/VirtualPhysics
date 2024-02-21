@@ -164,7 +164,7 @@ open class Quark(
         return boson
     }
 
-    open fun run(value: Quark, constraints:Quark) : ZBoson {
+    open fun mediate(value: Quark, constraints:Quark) : ZBoson {
         return ZBoson()
     }
     private fun radiate() : String {

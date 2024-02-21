@@ -59,7 +59,7 @@ class Down(
         return matterAntiMatter.getClassId()
     }
 
-    override fun run(value: Quark, opposing:Quark) : ZBoson {
+    override fun mediate(value: Quark, opposing:Quark) : ZBoson {
         return ZBoson()
     }
     private fun radiate() : String {
