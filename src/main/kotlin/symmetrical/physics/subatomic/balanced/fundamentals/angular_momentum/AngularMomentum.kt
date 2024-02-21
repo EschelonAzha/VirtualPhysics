@@ -98,12 +98,14 @@ open class AngularMomentum(
         return field.getContent()
     }
 
+    open fun run(arg: Field) : Field {
+        return arg
+    }
+
     fun setAngularMomentum(content:Any?) : Any? {
         return setContent(content)
     }
 
-    open fun run(arg: Field) : Field {
-        return arg
-    }
+
 
 }

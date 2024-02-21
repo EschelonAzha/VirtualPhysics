@@ -27,6 +27,7 @@ import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.physics.subatomic.balanced.Particle
+import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.gluons.*
 import symmetrical.physics.subatomic.matter.bosons.Gluon
 import symmetrical.physics.subatomic.matter.bosons.ZBoson
@@ -161,6 +162,10 @@ open class Quark(
         setWavelength(boson.value)
 
         return boson
+    }
+
+    open fun run(value: Quark, constraints:Quark) : Quark {
+        return this
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {

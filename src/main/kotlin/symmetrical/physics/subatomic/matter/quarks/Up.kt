@@ -20,6 +20,7 @@ package symmetrical.physics.subatomic.matter.quarks
 
 import symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiUp
 import symmetrical.physics.subatomic.balanced.Particle
+import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
@@ -49,6 +50,10 @@ open class Up(
 
     override fun dissipate() : Unit {
       //  Recycler.Up_dissipate(this)
+    }
+
+    override fun run(value: Quark, constraints:Quark) : Quark {
+        return this
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
