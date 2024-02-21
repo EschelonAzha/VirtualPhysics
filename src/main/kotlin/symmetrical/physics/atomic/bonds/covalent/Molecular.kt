@@ -76,13 +76,7 @@ open class Molecular(
         }
         return this
     }
-    fun applyElectronSpin(spin: Spin) : Molecular {
-        for (i in 0 until size()) {
-            val atom : Atom = get(i) as Atom
-            atom.setElectronSpin(spin)
-        }
-        return this
-    }
+
     override fun betaMinusDecay() : Atom {
         for (i in 0 until size()) {
             val atom: Atom = get(i) as Atom
