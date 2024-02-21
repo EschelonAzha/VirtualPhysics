@@ -26,6 +26,8 @@ import symmetrical.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.subatomic.balanced.IQuantum
+import symmetrical.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 
@@ -34,9 +36,15 @@ import kotlin.reflect.KClass
 class Spin(
     private val field: QuasiParticle = QuasiParticle().with(Static.PLUS)
 ) :
-    IQuasiParticle by field {
+    IQuasiParticle by field
+{
 
+    var quantum : IQuantum? = null
 
+    fun withQuantum(quantum: IQuantum) : Spin {
+        this.quantum = quantum
+        return this
+    }
     fun with(content:Int) : Spin {
         field.setContent(content)
         return this

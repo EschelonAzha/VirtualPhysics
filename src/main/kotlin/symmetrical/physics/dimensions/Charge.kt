@@ -19,6 +19,7 @@ package symmetrical.physics.dimensions
  */
 
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IQuasiParticle
@@ -29,12 +30,18 @@ import symmetrical.physics.subatomic.luminescent.QuasiParticle
 class Charge (
     private val field: QuasiParticle = QuasiParticle()
 ) :
-    IQuasiParticle by field {
-
+    IQuasiParticle by field
+{
+    var quantum : IQuantum? = null
     init {
         setCharge(Static.ZERO)
     }
 
+
+    fun withQuantum(quantum: IQuantum) : Charge {
+        this.quantum = quantum
+        return this
+    }
     object Static {
         const val PLUS:Byte  = +1
         const val ZERO:Byte  = 0

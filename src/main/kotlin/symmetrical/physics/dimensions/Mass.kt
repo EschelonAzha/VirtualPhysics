@@ -19,6 +19,7 @@ package symmetrical.physics.dimensions
  */
 
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IQuasiParticle
@@ -31,11 +32,14 @@ class Mass (
 ) :
     IQuasiParticle by field
 {
-
+    var quantum : IQuantum? = null
     init {
         setMass(Static.PHOTON)
     }
-
+    fun withQuantum(quantum: IQuantum) : Mass {
+        this.quantum = quantum
+        return this
+    }
     object Static {
         const val PHOTON        : Byte = 0
         const val NEUTRINO      : Byte = 1

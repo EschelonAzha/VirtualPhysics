@@ -27,6 +27,7 @@ import symmetrical.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 
@@ -37,7 +38,12 @@ open class AngularMomentum(
 ) :
     IQuasiParticle by field
 {
+    var quantum : IQuantum? = null
 
+    fun withQuantum(quantum: IQuantum) : AngularMomentum {
+        this.quantum = quantum
+        return this
+    }
     companion object {
         fun field(atom: Atom) : Field {
             val proton = atom.getProton(ValueProton::class)

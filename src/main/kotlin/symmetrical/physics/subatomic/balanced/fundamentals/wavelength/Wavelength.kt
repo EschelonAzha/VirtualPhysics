@@ -26,6 +26,8 @@ import symmetrical.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.dimensions.Time
+import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import kotlin.reflect.KClass
 
@@ -35,7 +37,12 @@ class Wavelength(
     private val _field: QuasiParticle = QuasiParticle()
 ) :
     IQuasiParticle by _field {
+    var quantum : IQuantum? = null
 
+    fun withQuantum(quantum: IQuantum) : Wavelength {
+        this.quantum = quantum
+        return this
+    }
     companion object {
         fun content(atom: Atom) : Any? {
             return content(atom.getProton(ValueProton::class))

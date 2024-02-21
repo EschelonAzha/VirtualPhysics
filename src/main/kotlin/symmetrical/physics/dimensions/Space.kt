@@ -20,6 +20,7 @@ package symmetrical.physics.dimensions
 
 import symmetrical.dictionary.absorber.Absorber
 import symmetrical.physics.subatomic.balanced.IParticle
+import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IQuasiParticle
@@ -34,7 +35,12 @@ class Space (
 {
 
     private var space: IParticle? = null   // this may have to change to a Particle UniqueId when emitted
+    var quantum : IQuantum? = null
 
+    fun withQuantum(quantum: IQuantum) : Space {
+        this.quantum = quantum
+        return this
+    }
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)

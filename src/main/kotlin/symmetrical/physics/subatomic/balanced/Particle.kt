@@ -44,20 +44,20 @@ open class Particle(
 {
     private lateinit var self       : IParticle
 
-    private     var uniqueId        : QuasiParticle = QuasiParticle()
+    private     var uniqueId        : QuasiParticle         = QuasiParticle()
 
-    private     val time            : Time = Time()
-    private     val charge          : Charge = Charge()
-    private     val space           : Space = Space()
-    private     val mass            : Mass = Mass()
-    private     val temperature     : Temperature = Temperature()
+    private     val time            : Time                  = Time().withQuantum(this)
+    private     val charge          : Charge                = Charge().withQuantum(this)
+    private     val space           : Space                 = Space().withQuantum(this)
+    private     val mass            : Mass                  = Mass().withQuantum(this)
+    private     val temperature     : Temperature           = Temperature().withQuantum(this)
 
-    private     val _wavelength     : Wavelength            = Wavelength()
-    private     var spin            : Spin                  = Spin()
-    private     var angularMomentum : AngularMomentum       = AngularMomentum()
+    private     val _wavelength     : Wavelength            = Wavelength().withQuantum(this)
+    private     var spin            : Spin                  = Spin().withQuantum(this)
+    private     var angularMomentum : AngularMomentum       = AngularMomentum().withQuantum(this)
 
     init {
-        time.setContent(200)
+        time.setContent(0)
     }
 
     object Static {

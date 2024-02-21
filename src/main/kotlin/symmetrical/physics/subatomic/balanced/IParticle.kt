@@ -30,7 +30,7 @@ import symmetrical.physics.dimensions.*
 https://en.wikipedia.org/wiki/Particle
  */
 
-interface IParticle {
+interface IParticle : IQuantum {
     fun createUniqueId()                                        : IParticle
     fun getUniqueId   ()                                        : String
     fun getClassId    ()                                        : String
