@@ -6,6 +6,7 @@ import applications.tests.electronics.VTestElectronics
 import applications.tests.elements.VTestElements
 import applications.tests.radiation.VTestRadiation
 import applications.tests.nuclear.VTestNeutrons
+import applications.tests.quarks.VTestQuarks
 import applications.tests.typeConverter.VTestTypeConverter
 import symmetrical.dictionary.absorber.Absorber
 
@@ -23,6 +24,7 @@ object RunMe {
         VTestChemistry().test()
         VTestElectronics().test()
         VTestTypeConverter().test()
+        VTestQuarks().test()
     }
 
 }
