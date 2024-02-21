@@ -156,16 +156,16 @@ open class Proton(
         return zBoson  // this returns only the local changes
     }
     fun setConstraintsQuark(up:Up) : Proton {
-        set(Proton.QuarkType.CONSTRAINTS.value, up)
+        setQuark(Proton.QuarkType.CONSTRAINTS.value, up)
         return this
     }
 
     fun setFormatQuark(up:Up) : Proton {
-        set(Proton.QuarkType.FORMAT.value, up)
+        setQuark(Proton.QuarkType.FORMAT.value, up)
         return this
     }
     fun setValueQuark(down:Down) : Proton {
-        _quark = set(Proton.QuarkType.VALUE.value, down) as Quark
+        _quark = setQuark(Proton.QuarkType.VALUE.value, down) as Quark
         return this
     }
 

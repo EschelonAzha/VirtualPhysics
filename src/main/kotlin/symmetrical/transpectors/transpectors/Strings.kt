@@ -29,6 +29,11 @@ object Strings {
     fun crlfTerminated(value:String) : String {
         return value+"\r\n"
     }
+    fun doubleQuoted(value:String) : String {
+        if (value == null)
+            return "\"\""
+        return "\""+value+"\""
+    }
     fun nullTerminated(value:String) : String {
         return value + '\u0000'
     }

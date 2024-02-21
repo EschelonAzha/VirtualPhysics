@@ -142,6 +142,11 @@ open class Baryon(
         down.z(Quark.Args(value))
         return this
     }
+
+    fun setQuark(pos:Int, quark:Quark) : Baryon {
+        set(pos, quark)
+        return this
+    }
     public fun setValue(value:Any?) : Baryon {
         var down: Down = this.get(0) as Down
         //  up.setValue(value)

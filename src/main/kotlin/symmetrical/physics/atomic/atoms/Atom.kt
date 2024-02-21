@@ -80,8 +80,6 @@ open class Atom(
         return this
     }
 
-
-
     companion object {
         fun content(atom: Atom) : Any? {
             return Atom.Companion.content(atom.getProton(ValueProton::class))
@@ -137,6 +135,12 @@ open class Atom(
         return Photon().with(radiate())
     }
 
+    fun format() : String {
+        val value:Proton  = getValueProton()
+        val format:Quark  = value.getFormatQuark()
+        format.run(value.getValueQuark(), value.getConstraintsQuark())
+        return format.getWavelength().getField().toString()
+    }
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

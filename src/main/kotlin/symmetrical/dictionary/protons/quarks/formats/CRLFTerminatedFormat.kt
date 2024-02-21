@@ -1,7 +1,6 @@
 package symmetrical.dictionary.protons.quarks.formats
 
 import symmetrical.physics.subatomic.balanced.Particle
-import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
@@ -9,8 +8,8 @@ import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.physics.subatomic.matter.quarks.Up
 import symmetrical.transpectors.transpectors.Strings
 
-class CRLFTerminated(
-    private val matterAntiMatter: IMatter = Matter().with(CRLFTerminated::class),
+class CRLFTerminatedFormat(
+    private val matterAntiMatter: IMatter = Matter().with(CRLFTerminatedFormat::class),
 ) : Up(),
     IMatter by matterAntiMatter
 {
