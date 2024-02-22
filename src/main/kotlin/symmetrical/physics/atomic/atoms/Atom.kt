@@ -195,6 +195,7 @@ open class Atom(
         return this
     }
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
+        zBoson.mediate(proton)
         accept(valueQuark, zBoson)
         return zBoson
     }

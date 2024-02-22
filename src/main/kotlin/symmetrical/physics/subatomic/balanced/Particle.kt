@@ -110,13 +110,15 @@ open class Particle(
     override fun getMass() : Mass {
         return mass
     }
+    override fun getPhoton() : Photon {
+        return Photon()
+    }
 
     override fun getSelf() : IParticle {
         if (::self.isInitialized)
             return self
         else return this
     }
-
     override fun getSpace() : Space {
         return space
     }
@@ -151,13 +153,6 @@ open class Particle(
         this.uniqueId.setContent(id)
         return getSelf()
     }
-
-    //  FUNDAMENTALS !!!!!!!!!!!!!!!!!!!!!!!
-
-    override fun getPhoton() : Photon {
-        return Photon()
-    }
-
 
     override fun setAngularMomentum(angularMomentum: AngularMomentum) : IParticle {
         this.angularMomentum = angularMomentum

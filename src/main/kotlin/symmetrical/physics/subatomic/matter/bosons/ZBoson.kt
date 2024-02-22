@@ -20,6 +20,8 @@ package symmetrical.physics.subatomic.matter.bosons
 
 import symmetrical.physics.subatomic.balanced.pairs.TauAntiTauPair
 import symmetrical.physics.subatomic.balanced.values.Field
+import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+import symmetrical.physics.subatomic.matter.quarks.Quark
 
 
 // For more information visit:   https://en.wikipedia.org/wiki/W_and_Z_bosons
@@ -59,6 +61,11 @@ open class ZBoson(){
     }
     fun getOldValue() : Any? {
         return getOldField().getContent()
+    }
+    fun mediate(proton: Proton) : ZBoson {
+
+        val constraints: Quark = proton.getConstraintsQuark()
+        return constraints.mediate(proton.getValueQuark(), proton.getConstraintsQuark(), this)
     }
     fun isAccepted() : Boolean {
         return accepted

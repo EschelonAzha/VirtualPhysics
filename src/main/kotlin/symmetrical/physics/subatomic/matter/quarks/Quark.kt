@@ -164,8 +164,8 @@ open class Quark(
         return boson
     }
 
-    open fun mediate(value: Quark, constraints:Quark) : ZBoson {
-        return ZBoson()
+    open fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson=ZBoson()) : ZBoson {
+        return zBoson
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {

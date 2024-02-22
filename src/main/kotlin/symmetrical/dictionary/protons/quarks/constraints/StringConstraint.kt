@@ -7,10 +7,9 @@ import symmetrical.physics.subatomic.luminescent.Matter
 import symmetrical.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.physics.subatomic.matter.quarks.Up
-import symmetrical.transpectors.transpectors.Strings
 
-class StringConstaint (
-    private val matterAntiMatter: IMatter = Matter().with(StringConstaint::class),
+class StringConstraint (
+    private val matterAntiMatter: IMatter = Matter().with(StringConstraint::class),
 ) : Up(),
     IMatter by matterAntiMatter
 {
@@ -27,9 +26,13 @@ class StringConstaint (
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun mediate(value: Quark, format: Quark) : ZBoson {
-        setContent(Strings.crlfTerminated(value.toString()))
-        return ZBoson()
+    override fun mediate(value: Quark, format: Quark, zBoson:ZBoson) : ZBoson {
+        if (value.getWavelength().getContent() == null) {
+            zBoson.setAccepted(false)
+            zBoson.setReason("Must not be null")
+            zBoson.setReasonCode(-1);
+        }
+        return zBoson
     }
 
     private fun radiate() : String {

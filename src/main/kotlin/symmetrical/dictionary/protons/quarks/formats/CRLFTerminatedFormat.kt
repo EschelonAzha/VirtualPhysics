@@ -28,9 +28,9 @@ class CRLFTerminatedFormat(
         return matterAntiMatter.getClassId()
     }
 
-    override fun mediate(value: Quark, constraints:Quark) : ZBoson {
+    override fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
         setContent(Strings.crlfTerminated(value.toString()))
-        return ZBoson()
+        return zBoson
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {

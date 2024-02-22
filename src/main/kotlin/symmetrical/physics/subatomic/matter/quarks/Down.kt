@@ -59,8 +59,8 @@ class Down(
         return matterAntiMatter.getClassId()
     }
 
-    override fun mediate(value: Quark, opposing:Quark) : ZBoson {
-        return ZBoson()
+    override fun mediate(value: Quark, opposing:Quark, zBoson:ZBoson) : ZBoson {
+        return zBoson
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
