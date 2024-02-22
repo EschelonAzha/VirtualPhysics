@@ -190,6 +190,10 @@ open class Atom(
         getValueProton().setFormatQuark(format)
         return this
     }
+    fun setConstraint(constraint:Up) : Atom {
+        getValueProton().setConstraintsQuark(constraint)
+        return this
+    }
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         accept(valueQuark, zBoson)
         return zBoson
