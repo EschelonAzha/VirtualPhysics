@@ -2,6 +2,7 @@ package applications.tests.dictionary.atoms
 
 import symmetrical.dictionary.protons.AccessLevelProton
 import symmetrical.dictionary.protons.FieldNameProton
+import symmetrical.dictionary.protons.quarks.constraints.StringConstraint
 import symmetrical.dictionary.protons.quarks.formats.DoubleQuotedFormat
 import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.subatomic.bosons.Photon
@@ -16,6 +17,7 @@ class BookTitle (
 {
     init {
         setFormat(DoubleQuotedFormat())
+        setConstraint(StringConstraint().setMaxLength(50).setNotNull(false).setMinLength(2))
     }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())

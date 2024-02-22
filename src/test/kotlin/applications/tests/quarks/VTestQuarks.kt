@@ -1,10 +1,9 @@
 package applications.tests.quarks
 
 import applications.tests.dictionary.atoms.BookTitle
-import applications.tests.dictionary.atoms.Capacitor
-import applications.tests.dictionary.atoms.Resistor
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.balanced.pairs.TauAntiTauPair
+import symmetrical.physics.subatomic.matter.leptons.Tau
 
 class VTestQuarks {
     val ATOM1:String = "Atom1"
@@ -24,7 +23,13 @@ class VTestQuarks {
         return true
     }
     private fun testFormat() : Boolean {
-        val atom:Atom = BookTitle().with("Wizard Of Oz")
+        val atom:Atom = BookTitle().with("Dolphins Prefer Kotlin")
+
+        val result: TauAntiTauPair = atom.setContent("Tires Are Not Dead")
+
+        val reason = result.getReason()
+        val code = result.getReasonCode()
+        val accepted = result.isAccepted()
 
         val quoted = atom.format()
 
