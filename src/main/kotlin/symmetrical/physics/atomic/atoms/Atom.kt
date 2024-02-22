@@ -196,6 +196,9 @@ open class Atom(
     }
     open fun valueChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         zBoson.mediate(proton)
+        if (!zBoson.isAccepted()) {
+            return zBoson
+        }
         accept(valueQuark, zBoson)
         return zBoson
     }

@@ -125,11 +125,17 @@ class Spin(
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Spin::class)
     }
-    fun isPlus() : Boolean {
-        return field.toInt() == 1
+    fun isFalse() : Boolean {
+        return isZero()
     }
     fun isMinus() : Boolean {
         return field.toInt() == -1
+    }
+    fun isPlus() : Boolean {
+        return field.toInt() == 1
+    }
+    fun isTrue() : Boolean {
+        return !isZero()
     }
     fun isZero() : Boolean {
         return field.toInt() == 0

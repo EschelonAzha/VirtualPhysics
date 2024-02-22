@@ -62,6 +62,12 @@ open class ZBoson(){
     fun getOldValue() : Any? {
         return getOldField().getContent()
     }
+    fun getReason() : String {
+        return reason
+    }
+    fun getReasonCode() : Int {
+        return reasonCode
+    }
     fun mediate(proton: Proton) : ZBoson {
 
         val constraints: Quark = proton.getConstraintsQuark()

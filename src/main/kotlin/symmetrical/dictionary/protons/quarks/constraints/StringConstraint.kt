@@ -1,6 +1,7 @@
 package symmetrical.dictionary.protons.quarks.constraints
 
 import symmetrical.physics.subatomic.balanced.Particle
+import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
@@ -13,6 +14,11 @@ class StringConstraint (
 ) : Up(),
     IMatter by matterAntiMatter
 {
+    init {
+        setNotNull(false)
+        setMaxLength(999999999)
+        setMinLength(0)
+    }
 
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
@@ -26,13 +32,54 @@ class StringConstraint (
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
+    fun isNotNull() : Boolean {
+        return getSpin().isTrue()
+    }
+    fun getMaxLength() : Int {
+        return getAngularMomentum().getField().toInt()
+    }
+    fun getMinLength() : Int {
+        return getTemperature().getField().toInt()
+    }
     override fun mediate(value: Quark, format: Quark, zBoson:ZBoson) : ZBoson {
-        if (value.getWavelength().getContent() == null) {
+        val field: Field = zBoson.getNewField()
+
+        if (isNotNull()) {
+            if (field.isNull()) {
+                zBoson.setAccepted(false)
+                zBoson.setReason("Must not be null")
+                zBoson.setReasonCode(-1);
+                return zBoson
+            }
+        }
+
+
+        if (field.toString().length  < getMinLength()) {
             zBoson.setAccepted(false)
-            zBoson.setReason("Must not be null")
-            zBoson.setReasonCode(-1);
+            zBoson.setReason("Value must not be less than:"+getMinLength()+" length.")
+            zBoson.setReasonCode(-2);
+        }
+        val debug = field.toString()
+        val max = getMaxLength()
+        if (field.toString().length > getMaxLength()) {
+            zBoson.setAccepted(false)
+            zBoson.setReason("Value must not exceed:"+getMaxLength()+" length.")
+            zBoson.setReasonCode(-3);
         }
         return zBoson
+    }
+
+    fun setNotNull(notNull:Boolean) : StringConstraint {
+        getSpin().setContent(notNull)
+        return this
+    }
+    fun setMaxLength(max:Int) : StringConstraint {
+        getAngularMomentum().setContent(max)
+        return this
+    }
+    fun setMinLength(max:Int) : StringConstraint {
+        getTemperature().setContent(max)
+        return this
     }
 
     private fun radiate() : String {
