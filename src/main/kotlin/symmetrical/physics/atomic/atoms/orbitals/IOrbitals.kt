@@ -28,9 +28,7 @@ https://en.wikipedia.org/wiki/Atomic_orbital
  */
 interface IOrbitals {
 
-    fun electronSpin            ()              : Boolean
     fun electronValue           ()              : Any?
-    fun electronValueStr        ()              : String
     fun getClassId              ()              : String
     fun getValueElectron        ()              : Electron
     fun setAtom                 (atom: Atom)    : Atom
