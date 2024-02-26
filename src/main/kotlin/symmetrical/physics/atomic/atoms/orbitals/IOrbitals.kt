@@ -32,13 +32,7 @@ interface IOrbitals {
     fun electronValue           ()              : Any?
     fun electronValueStr        ()              : String
     fun getClassId              ()              : String
-    fun getElectronPhoton       ()              : Photon
-    fun getElectronSpin         ()              : Spin
-    fun getElectronValue        ()              : Electron
-    fun getElectronWavelength   ()              : Any?
-
+    fun getValueElectron        ()              : Electron
     fun setAtom                 (atom: Atom)    : Atom
-    fun setElectronSpin         (spin: Spin)    : Atom
-    fun setElectronValue        (value:Any?)    : ZBoson
 
 }

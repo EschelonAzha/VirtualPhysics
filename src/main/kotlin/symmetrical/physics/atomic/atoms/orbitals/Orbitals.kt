@@ -69,7 +69,18 @@ open class Orbitals(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getElectronValue() : Electron {
+
+    override fun electronSpin() : Boolean {
+
+        return getValueElectron().spin()
+    }
+    override fun electronValue() : Any? {
+        return getValueElectron().wavelength()
+    }
+    override fun electronValueStr() : String {
+        return getValueElectron().wavelengthStr()
+    }
+    override fun getValueElectron() : Electron {
         if (size() == 0) {
             val electron = Electron()
             electron.setOrbitals(this)
@@ -77,40 +88,12 @@ open class Orbitals(
         }
         return get(Static.VALUE) as Electron
     }
-    override fun electronSpin() : Boolean {
-
-        return getElectronValue().spin()
-    }
-    override fun electronValue() : Any? {
-        return getElectronValue().wavelength()
-    }
-    override fun electronValueStr() : String {
-        return getElectronValue().wavelengthStr()
-    }
-    override fun getElectronPhoton() : Photon {
-        return getElectronValue().getPhoton()
-    }
-    override fun getElectronSpin() : Spin {
-        return getElectronValue().getSpin()
-    }
-    override fun getElectronWavelength() : Any? {
-        return getElectronValue().getWavelength()
-    }
     override fun setAtom(atom: Atom) : Atom {
         //   add(Electron().i(atom))
         this.p_atom = atom
         return atom
     }
 
-    override fun setElectronSpin(spin: Spin) : Atom {
-        getElectronValue().setSpin(spin)
-        return p_atom
-    }
-    override fun setElectronValue(value:Any?) : ZBoson {
-        val zBoson = Quark.Args(value)
-        getElectronValue().setWavelength(value)
-        return zBoson
-    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Orbitals")

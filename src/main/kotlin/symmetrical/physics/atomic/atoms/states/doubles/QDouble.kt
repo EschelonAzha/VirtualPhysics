@@ -36,9 +36,6 @@ class QDouble(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getElectronWavelength() : Double {
-        return super.getElectronWavelength() as Double
-    }
     fun setDouble(value:Double) : QDouble {
         Quark.value(this).setWavelength(value)
         return this
