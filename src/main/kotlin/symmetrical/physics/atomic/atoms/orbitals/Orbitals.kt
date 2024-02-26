@@ -70,10 +70,6 @@ open class Orbitals(
         return matterAntiMatter.getClassId()
     }
 
-    override fun electronValue() : Any? {
-        return getValueElectron().wavelength()
-    }
-
     override fun getValueElectron() : Electron {
         if (size() == 0) {
             val electron = Electron()

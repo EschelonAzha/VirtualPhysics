@@ -28,7 +28,6 @@ https://en.wikipedia.org/wiki/Atomic_orbital
  */
 interface IOrbitals {
 
-    fun electronValue           ()              : Any?
     fun getClassId              ()              : String
     fun getValueElectron        ()              : Electron
     fun setAtom                 (atom: Atom)    : Atom
