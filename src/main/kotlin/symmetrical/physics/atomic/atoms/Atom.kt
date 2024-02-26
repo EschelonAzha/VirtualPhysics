@@ -166,6 +166,9 @@ open class Atom(
         return getProtonField(ValueProton::class)
     }
 
+    override fun getValueElectron() : Electron {
+        return orbitals.getValueElectron()
+    }
     fun getValueProton() : Proton {
         return getProtons().getProton(ValueProton::class)
     }
