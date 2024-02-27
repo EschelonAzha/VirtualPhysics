@@ -50,7 +50,6 @@ interface IParticle : IQuantum {
 
     fun getPhoton()                                             : Photon
     fun setAngularMomentum(angularMomentum: AngularMomentum)    : IParticle
-    fun setSpin(spin: Spin)                                     : IParticle
     fun setWavelength(value:Any?)                               : IParticle
     fun spin()                                                  : Boolean
     fun wavelength()                                            : Any?

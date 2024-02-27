@@ -145,10 +145,6 @@ open class Particle(
         this.self = self
         return getSelf()
     }
-    override fun setSpin(spin:Spin) : IParticle {
-        this.spin = spin
-        return this
-    }
     fun setUniqueId(id:String) : IParticle {
         this.uniqueId.setContent(id)
         return getSelf()
