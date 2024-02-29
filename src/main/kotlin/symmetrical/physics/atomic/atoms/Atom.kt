@@ -28,7 +28,6 @@ import symmetrical.physics.atomic.atoms.orbitals.IOrbitals
 import symmetrical.physics.atomic.atoms.orbitals.Orbitals
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.matter.quarks.Quark
-import symmetrical.physics.atomic.atoms.nucleons.Protons
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.dictionary.protons.ValueProton
@@ -139,7 +138,7 @@ open class Atom(
     fun format() : String {
         val value:Proton  = getValueProton()
         val format:Quark  = value.getFormatQuark()
-        format.mediate(value.getValueQuark(), value.getConstraintsQuark())
+        format.mediate(value.getValueQuark(), value.getConstraintsQuark(), ZBoson())
         return format.getWavelength().getField().toString()
     }
     override fun getClassId() : String {

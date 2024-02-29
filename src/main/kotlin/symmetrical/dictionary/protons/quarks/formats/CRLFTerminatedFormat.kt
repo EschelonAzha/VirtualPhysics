@@ -29,7 +29,7 @@ class CRLFTerminatedFormat(
     }
 
     override fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
-        setContent(Strings.crlfTerminated(value.toString()))
+        setContent(Strings.crlfTerminated(value.getWavelength().getField().toString()))
         return zBoson
     }
     private fun radiate() : String {

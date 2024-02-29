@@ -25,16 +25,11 @@ import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 import symmetrical.dictionary.protons.ValueProton
 import symmetrical.physics.atomic.atoms.Atom
-import symmetrical.physics.subatomic.anti_matter.anti_quarks.AntiQuark
 import symmetrical.physics.subatomic.balanced.Particle
-import symmetrical.physics.subatomic.balanced.values.Field
-import symmetrical.physics.subatomic.bosons.gluons.*
 import symmetrical.physics.subatomic.matter.bosons.Gluon
 import symmetrical.physics.subatomic.matter.bosons.ZBoson
 import symmetrical.physics.subatomic.matter.colors.Green
-import symmetrical.physics.subatomic.matter.hadrons.baryons.Baryon
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
-import symmetrical.physics.subatomic.bosons.gluons.*
 import symmetrical.physics.subatomic.matter.hadrons.Hadron
 import kotlin.reflect.KClass
 
@@ -164,7 +159,8 @@ open class Quark(
         return boson
     }
 
-    open fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson=ZBoson()) : ZBoson {
+    open fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
+        setContent(value.getWavelength().getField().toString())
         return zBoson
     }
     private fun radiate() : String {

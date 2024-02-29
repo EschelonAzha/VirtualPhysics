@@ -19,8 +19,6 @@ package symmetrical.physics.atomic.bonds.covalent
  */
 
 import symmetrical.physics.atomic.atoms.Atom
-import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
-import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.physics.subatomic.spacial.IParticleBeam
@@ -29,6 +27,7 @@ import symmetrical.physics.atomic.atoms.states.strings.QString
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
+import symmetrical.physics.subatomic.matter.quarks.Up
 
 
 // For more information visit:  https://en.wikipedia.org/wiki/Molecule
@@ -61,11 +60,17 @@ open class Molecular(
         shrink()
         return remainder
     }
-
-    fun applyQuarkMomentum(momentum: AngularMomentum) : Molecular {
+    fun applyConstraints(constraint: Up) : Molecular {
         for (i in 0 until size()) {
             val atom: Atom = get(i) as Atom
-            Quark.value(this).setAngularMomentum(momentum)
+            atom.setConstraint(constraint)
+        }
+        return this
+    }
+    fun applyFormats(format: Up) : Molecular {
+        for (i in 0 until size()) {
+            val atom: Atom = get(i) as Atom
+            atom.setFormat(format)
         }
         return this
     }
@@ -111,6 +116,8 @@ open class Molecular(
         shrink()
         return this
     }
+
+
     private fun radiate() : String {
         val classId = matterAntiMatter.getClassId()
         val atom = super.emit().radiate()
