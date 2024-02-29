@@ -154,7 +154,7 @@ open class Quark(
 
 
         gluon.setValue(boson.value)
-        setWavelength(boson.value)
+        getWavelength().setContent(boson.value)
 
         return boson
     }

@@ -150,10 +150,10 @@ open class Particle(
         return getSelf()
     }
 
-    override fun setWavelength(value:Any?) : IParticle {
-        this.getWavelength().setContent(value)
-        return this
-    }
+//    override fun setWavelength(value:Any?) : IParticle {
+//        this.getWavelength().setContent(value)
+//        return this
+//    }
     override fun spin() : Boolean {
         return getSpin().isPlus()
     }

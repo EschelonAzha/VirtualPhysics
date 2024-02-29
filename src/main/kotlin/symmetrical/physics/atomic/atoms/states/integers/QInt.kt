@@ -36,7 +36,7 @@ class QInt(
         return matterAntiMatter.getClassId()
     }
     fun setInt(value:Int) : QInt {
-        Quark.value(this).setWavelength(value)
+        Quark.value(this).getWavelength().setContent(value)
         return this
     }
 }

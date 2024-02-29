@@ -53,8 +53,8 @@ class BetaPlus(
         var positron: Positron = Positron()
         var neutrino: Neutrino = Neutrino()
 
-        positron.setWavelength(up.red())
-        neutrino.setWavelength((proton.get(2)as Quark).red())
+        positron.getWavelength().setContent(up.red())
+        neutrino.getWavelength().setContent((proton.get(2)as Quark).red())
 
         setPositron(positron)
         setNeutrino(neutrino)

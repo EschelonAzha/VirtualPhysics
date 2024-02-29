@@ -43,8 +43,8 @@ class AntiBetaMinus(
         var electron        : Electron = Electron()
         var antiNeutrino    : AntiNeutrino = AntiNeutrino()
 
-        electron.setWavelength(down.red())
-        antiNeutrino.setWavelength(baryon)
+        electron.getWavelength().setContent(down.red())
+        antiNeutrino.getWavelength().setContent(baryon)
 
         setElectron(electron)
         setAntiNeutrino(antiNeutrino)
