@@ -150,12 +150,6 @@ open class Particle(
         return getSelf()
     }
 
-    override fun setAngularMomentum(angularMomentum: AngularMomentum) : IParticle {
-        this.angularMomentum = angularMomentum
-        return this;
-    }
-
-
     override fun setWavelength(value:Any?) : IParticle {
         this.getWavelength().setContent(value)
         return this
