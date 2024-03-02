@@ -153,12 +153,8 @@ open class Particle(
     override fun spin() : Boolean {
         return getSpin().isPlus()
     }
-    override fun wavelength() : Any? {
-        return getWavelength().getContent()
-    }
-//    override fun wavelengthStr() : String {
-//        val result = wavelength() ?: return ""
-//        return result.toString()
+//    override fun wavelength() : Any? {
+//        return getWavelength().getContent()
 //    }
 
     private fun radiate() : String {

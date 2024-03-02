@@ -41,8 +41,8 @@ class BetaPlus(
     fun absorb(neutron: Baryon) : Up {
         var down    : Down = neutron.get(1) as Down
 
-        (neutron.get(0)as Quark).gluon.setValue(getPositron().wavelength())
-        (neutron.get(2)as Quark).gluon.setValue(getNeutrino().wavelength())
+        (neutron.get(0)as Quark).gluon.setValue(getPositron().getWavelength().getContent())
+        (neutron.get(2)as Quark).gluon.setValue(getNeutrino().getWavelength().getContent())
 
         return Up()
     }

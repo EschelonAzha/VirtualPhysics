@@ -60,7 +60,7 @@ open class Baryon(
 
         set(1, Down())
         val up: Up = get(0) as Up
-        up.z(Quark.Args(beta.getElectron().wavelength()))
+        up.z(Quark.Args(beta.getElectron().getWavelength().getContent()))
 
         beta.getAntiNeutrino()  // points to proton
 
@@ -73,8 +73,8 @@ open class Baryon(
 
         var up     = get(0) as Up
         var down = get(2) as Down
-        up.z(Quark.Args(beta.getPositron().wavelength()))
-        down.z(Quark.Args(beta.getNeutrino().wavelength()))
+        up.z(Quark.Args(beta.getPositron().getWavelength().getContent()))
+        down.z(Quark.Args(beta.getNeutrino().getWavelength().getContent()))
 
         return this
     }

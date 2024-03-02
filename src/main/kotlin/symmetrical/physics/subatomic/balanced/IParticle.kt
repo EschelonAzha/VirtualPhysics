@@ -50,6 +50,4 @@ interface IParticle : IQuantum {
 
     fun getPhoton()                                             : Photon
     fun spin()                                                  : Boolean
-    fun wavelength()                                            : Any?
-//    fun wavelengthStr()                                         : String
 }
