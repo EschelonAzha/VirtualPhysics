@@ -151,11 +151,8 @@ open class Particle(
     }
 
     override fun spin() : Boolean {
-        return getSpin().isPlus()
+        return !getSpin().isZero()
     }
-//    override fun wavelength() : Any? {
-//        return getWavelength().getContent()
-//    }
 
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
