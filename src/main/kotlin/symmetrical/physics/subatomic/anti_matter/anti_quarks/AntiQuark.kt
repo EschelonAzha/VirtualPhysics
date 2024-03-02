@@ -39,7 +39,6 @@ open class AntiQuark(
 {
 
     private var gluon       : Gluon = Red_AntiRed()
-
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
         this.gluon                                 = Red_AntiRed()  // this is need for JS Bug
@@ -61,24 +60,10 @@ open class AntiQuark(
     }
 
 
-    class Args(val value:Any?) : ZBoson()
-    fun z(boson: AntiQuark.Args) : AntiQuark.Args {
-        red()
-
-        // need a way to transmit errors back
-        // should I use a return code or something more
-        // elaborate like electrons, neutrinos, etc
-        // Args should be Z or W Bosons
-
-
-        gluon.setValue(boson.value)
-        getWavelength().setContent(boson.value)
-
-        return boson
+    fun z(value:Any?) : AntiQuark {
+        getWavelength().setContent(value)
+        return this
     }
-
-
-
 
     fun blue() : String {
         if (gluon.color.isBlue())

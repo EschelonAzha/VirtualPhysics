@@ -46,9 +46,8 @@ open class NeutralUpPion(
 
         val up0 = get(0) as Up
         val up1 = get(1) as AntiUp
-        //up0.z(Quark.Args(proton))
         up0.z(proton)
-        up1.z(AntiQuark.Args(neutron))
+        up1.z(neutron)
 
         nuclearForce()
         return this
