@@ -156,10 +156,10 @@ open class Particle(
     override fun wavelength() : Any? {
         return getWavelength().getContent()
     }
-    override fun wavelengthStr() : String {
-        val result = wavelength() ?: return ""
-        return result.toString()
-    }
+//    override fun wavelengthStr() : String {
+//        val result = wavelength() ?: return ""
+//        return result.toString()
+//    }
 
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
