@@ -36,7 +36,7 @@ import symmetrical.physics.subatomic.balanced.values.strings.*
         const val STRING1   = "s"
         const val STRING2   = "S"
         const val STRING3   = "!"
-        const val VECTOR    = "V"
+        const val VECTOR    = "A"
  */
 class Converter() {
     lateinit var field : Field
