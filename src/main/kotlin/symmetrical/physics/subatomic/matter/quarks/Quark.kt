@@ -146,10 +146,6 @@ open class Quark(
         return super.toString()
     }
 
-//    fun z(value:Any?) : Quark {
-//        getWavelength().setContent(value)
-//        return this
-//    }
 
     open fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
         setContent(value.getWavelength().getField().toString())

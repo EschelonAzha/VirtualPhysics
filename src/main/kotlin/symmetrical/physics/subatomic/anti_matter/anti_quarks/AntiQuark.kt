@@ -59,12 +59,6 @@ open class AntiQuark(
                 super.emit().radiate()
     }
 
-
-//    fun z(value:Any?) : AntiQuark {
-//        getWavelength().setContent(value)
-//        return this
-//    }
-
     fun blue() : String {
         if (gluon.color.isBlue())
             return gluon.color._value as String
