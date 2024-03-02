@@ -62,7 +62,7 @@ class Converter() {
             return StringVector().with(field.getContent() as String).asArray() as Array<Any>
         if (field.getType() == Field.Static.STRING3)
             return StringVector().with(field.getContent() as String).asArray() as Array<Any>
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorVector().with(field.getContent() as Array<Any>).asArray() as Array<Any>
 
         println("Converter::asArray:  UnknownType")
@@ -86,7 +86,7 @@ class Converter() {
             return StringVector().with(field.getContent() as String).toArray() as Array<Any>
         if (field.getType() == Field.Static.STRING3)
             return StringVector().with(field.getContent() as String).toArray() as Array<Any>
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorVector().with(field.getContent() as Array<Any>).toArray() as Array<Any>
         println("Converter::toArray:  UnknownType")
         return Array<Any>(0){false}
@@ -109,7 +109,7 @@ class Converter() {
             return StringBoolean().with(field.getContent() as String).asBoolean()
         if (field.getType() == Field.Static.STRING3)
             return StringBoolean().with(field.getContent() as String).asBoolean()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorBoolean().with(field.getContent() as Array<Any>).asBoolean()
         println("Converter::asBoolean:  UnknownType")
         return null
@@ -132,7 +132,7 @@ class Converter() {
             return StringBoolean().with(field.getContent()as String).toBoolean()
         if (field.getType() == Field.Static.STRING3)
             return StringBoolean().with(field.getContent() as String).toBoolean()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorBoolean().with(field.getContent() as Array<Any>).toBoolean()
         println("Converter::toBoolean:  UnknownType")
         return false
@@ -154,7 +154,7 @@ class Converter() {
             return StringByte().with(field.getContent() as String).asByte()
         if (field.getType() == Field.Static.STRING3)
             return StringByte().with(field.getContent() as String).asByte()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorByte().with(field.getContent() as Array<Any>).asByte()
         println("Converter::asByte:  UnknownType")
         return null
@@ -177,7 +177,7 @@ class Converter() {
             return StringByte().with(field.getContent() as String).toByte()
         if (field.getType() == Field.Static.STRING3)
             return StringByte().with(field.getContent() as String).toByte()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorByte().with(field.getContent() as Array<Any>).toByte()
         println("Converter::toByte:  UnknownType")
         return 0
@@ -199,7 +199,7 @@ class Converter() {
             return StringInt().with(field.getContent() as String).asInt()
         if (field.getType() == Field.Static.STRING3)
             return StringInt().with(field.getContent() as String).asInt()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorInt().with(field.getContent() as Array<Any>).asInt()
         println("Converter::asInt:  UnknownType")
         return null
@@ -222,7 +222,7 @@ class Converter() {
             return StringInt().with(field.getContent() as String).toInt()
         if (field.getType() == Field.Static.STRING3)
             return StringInt().with(field.getContent() as String).toInt()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorInt().with(field.getContent() as Array<Any>).toInt()
         println("Converter::toInt:  UnknownType")
         return 0
@@ -244,7 +244,7 @@ class Converter() {
             return StringDouble().with(field.getContent() as String).asDouble()
         if (field.getType() == Field.Static.STRING3)
             return StringDouble().with(field.getContent() as String).asDouble()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorDouble().with(field.getContent() as Array<Any>).asDouble()
         println("Converter::asDouble:  UnknownType")
         return null
@@ -267,7 +267,7 @@ class Converter() {
             return StringDouble().with(field.getContent() as String).toDouble()
         if (field.getType() == Field.Static.STRING3)
             return StringDouble().with(field.getContent() as String).toDouble()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorDouble().with(field.getContent() as Array<Any>).toDouble()
         println("Converter::toDouble:  UnknownType")
         return 0.0
@@ -290,7 +290,7 @@ class Converter() {
             return StringString().with(field.getContent() as String).asString()
         if (field.getType() == Field.Static.STRING3)
             return StringString().with(field.getContent() as String).asString()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorString().with(field.getContent() as Array<Any>).asString()
         println("Converter::asString:  UnknownType")
         return null
@@ -313,7 +313,7 @@ class Converter() {
             return StringString().with(field.getContent() as String).toString()
         if (field.getType() == Field.Static.STRING3)
             return StringString().with(field.getContent() as String).toString()
-        if (field.getType() == Field.Static.VECTOR)
+        if (field.getType() == Field.Static.ARRAY)
             return VectorString().with(field.getContent() as Array<Any>).toString()
         println("Converter::toString:  UnknownType")
         return ""

@@ -81,8 +81,8 @@ class QuasiParticle(
             _field.setContent(content)
             return Photon().with(remainder)
         }
-        if (type == Field.Static.VECTOR) {
-            var (content, remainder) = Photons.parse(Field.Static.VECTOR_LTH, leftover)
+        if (type == Field.Static.ARRAY) {
+            var (content, remainder) = Photons.parse(Field.Static.ARRAY_LTH, leftover)
             _field.setContent(content)
             return Photon().with(remainder)
         }

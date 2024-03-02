@@ -38,14 +38,14 @@ class Field() : IField {
         const val STRING1   = "s"
         const val STRING2   = "S"
         const val STRING3   = "!"
-        const val VECTOR    = "V"
+        const val ARRAY     = "A"
 
         const val TYPE_LTH    = 1
         const val NUMBERS_LTH = 1
         const val STRING1_LTH = 1
         const val STRING2_LTH = 2
         const val STRING3_LTH = 3
-        const val VECTOR_LTH  = 3
+        const val ARRAY_LTH   = 3
 
     }
     override fun asArray() : Array<Any> {
@@ -148,6 +148,6 @@ class Field() : IField {
         if (value is Byte)
             return Static.BYTE
 
-        return Static.VECTOR
+        return Static.ARRAY
     }
 }
