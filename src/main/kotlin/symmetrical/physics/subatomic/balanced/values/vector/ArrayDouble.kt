@@ -18,9 +18,9 @@ package symmetrical.physics.subatomic.balanced.values.vector
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class VectorDouble {
+class ArrayDouble {
     lateinit var value : Array<Any>
-    fun with(value:Array<Any>) : VectorDouble {
+    fun with(value:Array<Any>) : ArrayDouble {
         this.value = value
         return this
     }

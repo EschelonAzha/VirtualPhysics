@@ -18,18 +18,19 @@ package symmetrical.physics.subatomic.balanced.values.vector
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class VectorString {
+
+class ArrayByte {
     lateinit var value : Array<Any>
-    fun with(value:Array<Any>) : VectorString {
+    fun with(value:Array<Any>) : ArrayByte {
         this.value = value
         return this
     }
-    fun asString() : String? {
+    fun asByte() : Byte? {
         if (value.isEmpty())
             return null
-        return value!![0] as String
+        return value!![0] as Byte
     }
-    override fun toString(): String {
-        return asString() ?: return ""
+    fun toByte(): Byte {
+        return asByte() ?: return 0
     }
 }

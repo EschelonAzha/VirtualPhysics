@@ -18,18 +18,18 @@ package symmetrical.physics.subatomic.balanced.values.vector
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class VectorBoolean {
+class ArrayString {
     lateinit var value : Array<Any>
-    fun with(value:Array<Any>) : VectorBoolean {
+    fun with(value:Array<Any>) : ArrayString {
         this.value = value
         return this
     }
-    fun asBoolean() : Boolean? {
+    fun asString() : String? {
         if (value.isEmpty())
             return null
-        return value!![0] as Boolean
+        return value!![0] as String
     }
-    fun toBoolean(): Boolean {
-        return asBoolean() ?: return false
+    override fun toString(): String {
+        return asString() ?: return ""
     }
 }
