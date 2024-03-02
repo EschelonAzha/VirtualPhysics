@@ -1,4 +1,4 @@
-package symmetrical.physics.subatomic.balanced.values.vector
+package symmetrical.physics.subatomic.balanced.values.array
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,18 +18,18 @@ package symmetrical.physics.subatomic.balanced.values.vector
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class ArrayInt {
+class ArrayString {
     lateinit var value : Array<Any>
-    fun with(value:Array<Any>) : ArrayInt {
+    fun with(value:Array<Any>) : ArrayString {
         this.value = value
         return this
     }
-    fun asInt() : Int? {
+    fun asString() : String? {
         if (value.isEmpty())
             return null
-        return value!![0] as Int
+        return value!![0] as String
     }
-    fun toInt(): Int {
-        return asInt() ?: return 0
+    override fun toString(): String {
+        return asString() ?: return ""
     }
 }

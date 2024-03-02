@@ -1,4 +1,4 @@
-package symmetrical.physics.subatomic.balanced.values.vector
+package symmetrical.physics.subatomic.balanced.values.array
 /*
  * This file is part of Virtual Physics.
  *

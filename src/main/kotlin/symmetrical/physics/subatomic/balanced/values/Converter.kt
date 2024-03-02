@@ -19,13 +19,13 @@ package symmetrical.physics.subatomic.balanced.values
  */
 
 
+import symmetrical.physics.subatomic.balanced.values.array.*
 import symmetrical.physics.subatomic.balanced.values.booleans.*
 import symmetrical.physics.subatomic.balanced.values.bytes.*
 import symmetrical.physics.subatomic.balanced.values.doubles.*
 import symmetrical.physics.subatomic.balanced.values.ints.*
 import symmetrical.physics.subatomic.balanced.values.nil.*
 import symmetrical.physics.subatomic.balanced.values.strings.*
-import symmetrical.physics.subatomic.balanced.values.vector.*
 
 /*
         const val NULL      = "0"
