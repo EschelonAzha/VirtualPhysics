@@ -64,6 +64,9 @@ open class Quark(
             return proton.getValueQuark()
         }
     }
+
+//    class Args(val value:Any?) : ZBoson()
+
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
         this.gluon              = Red_AntiRed()  // this is need for JS Bug
@@ -83,7 +86,7 @@ open class Quark(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    class Args(val value:Any?) : ZBoson()
+
 
     fun blue() : String {
         if (gluon.color.isBlue())
@@ -144,20 +147,25 @@ open class Quark(
     override fun toString() : String {
         return super.toString()
     }
-    fun z(boson: Args) : Args {
-        red()
 
-        // need a way to transmit errors back
-        // should I use a return code or something more
-        // elaborate like electrons, neutrinos, etc
-        // Args should be Z or W Bosons
-
-
-        gluon.setValue(boson.value)
-        getWavelength().setContent(boson.value)
-
-        return boson
+    fun z(value:Any?) : Quark {
+        getWavelength().setContent(value)
+        return this
     }
+//    fun z(boson: Args) : Args {
+//        red()
+//
+//        // need a way to transmit errors back
+//        // should I use a return code or something more
+//        // elaborate like electrons, neutrinos, etc
+//        // Args should be Z or W Bosons
+//
+//
+//        gluon.setValue(boson.value)
+//        getWavelength().setContent(boson.value)
+//
+//        return boson
+//    }
 
     open fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
         setContent(value.getWavelength().getField().toString())

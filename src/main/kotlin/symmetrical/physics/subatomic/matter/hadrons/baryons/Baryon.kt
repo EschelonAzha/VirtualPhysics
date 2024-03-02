@@ -60,7 +60,8 @@ open class Baryon(
 
         set(1, Down())
         val up: Up = get(0) as Up
-        up.z(Quark.Args(beta.getElectron().getWavelength().getContent()))
+     //   up.z(Quark.Args(beta.getElectron().getWavelength().getContent()))
+        up.z(beta.getElectron().getWavelength().getContent())
 
         beta.getAntiNeutrino()  // points to proton
 
@@ -73,8 +74,10 @@ open class Baryon(
 
         var up     = get(0) as Up
         var down = get(2) as Down
-        up.z(Quark.Args(beta.getPositron().getWavelength().getContent()))
-        down.z(Quark.Args(beta.getNeutrino().getWavelength().getContent()))
+     //   up.z(Quark.Args(beta.getPositron().getWavelength().getContent()))
+        up.z(beta.getPositron().getWavelength().getContent())
+     //   down.z(Quark.Args(beta.getNeutrino().getWavelength().getContent()))
+        down.z(beta.getNeutrino().getWavelength().getContent())
 
         return this
     }
@@ -129,7 +132,8 @@ open class Baryon(
     }
     fun setBinding(boundTo: Baryon) : Baryon {
         val up: Quark = this.get(1) as Quark
-        (this.get(1) as Quark).z(Quark.Args(boundTo))
+        // (this.get(1) as Quark).z(Quark.Args(boundTo))
+        (this.get(1) as Quark).z(boundTo)
         return this
     }
     fun setGreen(green: Green) : Baryon {
@@ -139,7 +143,8 @@ open class Baryon(
     fun setPurpose(value:Any?) : Baryon {
         var item = this.get(0)
         var down: Down = this.get(0) as Down
-        down.z(Quark.Args(value))
+        // down.z(Quark.Args(value))
+        down.z(value)
         return this
     }
 
@@ -149,8 +154,8 @@ open class Baryon(
     }
     public fun setValue(value:Any?) : Baryon {
         var down: Down = this.get(0) as Down
-        //  up.setValue(value)
-        down.z(Quark.Args(value))
+        //down.z(Quark.Args(value))
+        down.z(value)
         return this
     }
 
