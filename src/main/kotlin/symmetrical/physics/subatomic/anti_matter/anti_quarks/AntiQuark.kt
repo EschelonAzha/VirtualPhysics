@@ -60,10 +60,10 @@ open class AntiQuark(
     }
 
 
-    fun z(value:Any?) : AntiQuark {
-        getWavelength().setContent(value)
-        return this
-    }
+//    fun z(value:Any?) : AntiQuark {
+//        getWavelength().setContent(value)
+//        return this
+//    }
 
     fun blue() : String {
         if (gluon.color.isBlue())
