@@ -98,9 +98,9 @@ class Wavelength(
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Wavelength::class)
     }
-    fun setWavelength(value:Any?) : Any? {
-        return setContent(value)
-    }
+//    fun setWavelength(value:Any?) : Any? {
+//        return setContent(value)
+//    }
     fun wavelength() : Any? {
         return _field.getContent()
     }

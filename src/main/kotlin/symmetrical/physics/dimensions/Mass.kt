@@ -33,7 +33,7 @@ class Mass (
     IQuasiParticle by field
 {
     init {
-        setMass(Static.PHOTON)
+        setContent(Static.PHOTON)
     }
     fun withQuantum(quantum: IQuantum) : Mass {
         this.field.setQuantum(quantum)
@@ -74,9 +74,9 @@ class Mass (
         return field.getContent()
     }
 
-    fun setMass(content:Any?) : Any? {
-        return setContent(content)
-    }
+//    fun setMass(content:Any?) : Any? {
+//        return setContent(content)
+//    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Mass::class)
     }

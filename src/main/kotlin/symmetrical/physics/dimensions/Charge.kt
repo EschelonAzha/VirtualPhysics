@@ -33,7 +33,7 @@ class Charge (
     IQuasiParticle by field
 {
     init {
-        setCharge(Static.ZERO)
+        setContent(Static.ZERO)
     }
 
 
@@ -64,9 +64,9 @@ class Charge (
     fun getField() : Field {
         return field.getField()
     }
-    fun setCharge(content:Any?) : Any? {
-        return setContent(content)
-    }
+//    fun setCharge(content:Any?) : Any? {
+//        return setContent(content)
+//    }
 
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Charge::class)

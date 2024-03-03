@@ -51,12 +51,12 @@ class Temperature  (
     fun getField() : Field {
         return field.getField()
     }
-    fun setTemperature(value:Any?) : Any? {
-        return setContent(value)
-    }
-    fun temperature() : Any? {
-        return field.getContent()
-    }
+//    fun setTemperature(value:Any?) : Any? {
+//        return setContent(value)
+//    }
+//    fun temperature() : Any? {
+//        return field.getContent()
+//    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Temperature::class)
     }
