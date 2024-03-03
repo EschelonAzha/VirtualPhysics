@@ -32,10 +32,8 @@ class Time(
 ) :
     IQuasiParticle by field
 {
-    var quantum : IQuantum? = null
-
     fun withQuantum(quantum:IQuantum) : Time {
-        this.quantum = quantum
+        this.field.setQuantum(quantum)
         return this
     }
     override fun absorb(photon: Photon) : Photon {

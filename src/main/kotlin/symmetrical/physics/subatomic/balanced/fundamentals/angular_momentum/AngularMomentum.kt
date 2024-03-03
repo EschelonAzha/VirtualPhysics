@@ -38,10 +38,8 @@ open class AngularMomentum(
 ) :
     IQuasiParticle by field
 {
-    var quantum : IQuantum? = null
-
     fun withQuantum(quantum: IQuantum) : AngularMomentum {
-        this.quantum = quantum
+        this.field.setQuantum(quantum)
         return this
     }
     companion object {

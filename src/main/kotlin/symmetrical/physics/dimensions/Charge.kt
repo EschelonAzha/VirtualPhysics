@@ -32,14 +32,13 @@ class Charge (
 ) :
     IQuasiParticle by field
 {
-    var quantum : IQuantum? = null
     init {
         setCharge(Static.ZERO)
     }
 
 
     fun withQuantum(quantum: IQuantum) : Charge {
-        this.quantum = quantum
+        this.field.setQuantum(quantum)
         return this
     }
     object Static {

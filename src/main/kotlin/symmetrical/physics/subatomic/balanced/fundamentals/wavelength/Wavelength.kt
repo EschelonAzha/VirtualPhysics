@@ -37,10 +37,10 @@ class Wavelength(
     private val _field: QuasiParticle = QuasiParticle()
 ) :
     IQuasiParticle by _field {
-    var quantum : IQuantum? = null
+
 
     fun withQuantum(quantum: IQuantum) : Wavelength {
-        this.quantum = quantum
+        this._field.setQuantum(quantum)
         return this
     }
     companion object {

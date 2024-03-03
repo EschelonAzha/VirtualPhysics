@@ -35,10 +35,9 @@ class Space (
 {
 
     private var space: IParticle? = null   // this may have to change to a Particle UniqueId when emitted
-    var quantum : IQuantum? = null
 
     fun withQuantum(quantum: IQuantum) : Space {
-        this.quantum = quantum
+        this.field.setQuantum(quantum)
         return this
     }
     override fun absorb(photon: Photon) : Photon {

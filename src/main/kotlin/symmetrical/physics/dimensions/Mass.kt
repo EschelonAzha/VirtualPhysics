@@ -32,12 +32,11 @@ class Mass (
 ) :
     IQuasiParticle by field
 {
-    var quantum : IQuantum? = null
     init {
         setMass(Static.PHOTON)
     }
     fun withQuantum(quantum: IQuantum) : Mass {
-        this.quantum = quantum
+        this.field.setQuantum(quantum)
         return this
     }
     object Static {

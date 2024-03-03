@@ -18,12 +18,15 @@ package symmetrical.physics.subatomic.balanced.values
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.transpectors.transpectors.Doubles
 // For more information visit:   https://en.wikipedia.org/wiki/Scalar_field
 class Field() : IField {
 
-    private var type   :String = "0"
-    private var content:Any?   = null
+    private var type        :   String      = "0"
+    private var content     :   Any?        = null
+    private var ptr_quantum :   IQuantum?   = null
+
 
     fun with(content:Any?) : Field {
         setContent(content)
@@ -85,11 +88,6 @@ class Field() : IField {
     override fun isNull() : Boolean {
         return content == null
     }
-    override fun setField(field:Field) : Field {
-        content = field.getContent()
-        type    = field.getType()
-        return this
-    }
     override fun setContent(content:Any?) : Any? {
         val previous = this.content
         this.content = content
@@ -97,6 +95,17 @@ class Field() : IField {
         type = getTypeStr(content)
         return previous
     }
+    override fun setField(field:Field) : Field {
+        content = field.getContent()
+        type    = field.getType()
+        return this
+    }
+
+    override fun setQuantum(quantum:IQuantum) : Field {
+        this.ptr_quantum = quantum
+        return this
+    }
+
     override fun toArray() : Array<Any> {
         return Converter().with(this).toArray()
     }
