@@ -137,12 +137,6 @@ open class Baryon(
         (get(0) as Quark).setGreen(green)
         return this
     }
-    fun setPurpose(value:Any?) : Baryon {
-        var item = this.get(0)
-        var down: Down = this.get(0) as Down
-        down.getWavelength().setContent(value)
-        return this
-    }
 
     fun setQuark(pos:Int, quark:Quark) : Baryon {
         set(pos, quark)

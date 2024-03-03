@@ -133,9 +133,8 @@ open class Quark(
         this.p_hadron = hadron
         return this
     }
-    fun setContent(content:Any?) : Quark {
-        getWavelength().setContent(content)
-        return this
+    fun setContent(content:Any?) : Any? {
+        return getWavelength().setContent(content)
     }
 
     fun setGreen(green: Green) : Quark {

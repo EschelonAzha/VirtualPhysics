@@ -95,15 +95,7 @@ open class AngularMomentum(
     fun momentum() : Any? {
         return field.getContent()
     }
-
     open fun run(arg: Field) : Field {
         return arg
     }
-
-    fun setAngularMomentum(content:Any?) : Any? {
-        return setContent(content)
-    }
-
-
-
 }
