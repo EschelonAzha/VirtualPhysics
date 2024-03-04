@@ -35,7 +35,4 @@ open class Strong: Energy() {
         }
     }
 
-//    fun run() : Unit {
-//        println("StrongForce")
-//    }
 }

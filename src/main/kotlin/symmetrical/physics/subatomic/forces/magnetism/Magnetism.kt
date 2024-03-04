@@ -37,7 +37,4 @@ open class Magnetism: Energy() {
         }
     }
 
-//    fun run() : Unit {
-//        println("Magnetism")
-//    }
 }
