@@ -42,20 +42,7 @@ open class AngularMomentum(
         this.field.setQuantum(quantum)
         return this
     }
-    companion object {
-        fun run(atom: Atom) : Field {
-            val proton = atom.getProton(ValueProton::class)
-            return run(proton)
-        }
-        fun run(atom : Atom, classType:KClass<*>) : Field {
-            val proton = atom.getProton(classType)
-            return run(proton)
-        }
-        fun run(proton: Proton) : Field {
-            var quark  : Quark = proton.getValueQuark()
-            return quark.getAngularMomentum().run(Wavelength.field(proton))
-        }
-    }
+
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = field.absorb(remainder)
