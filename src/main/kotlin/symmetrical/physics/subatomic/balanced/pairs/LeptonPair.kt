@@ -41,14 +41,6 @@ open class LeptonPair(
         this._antiLepton = antiLepton
         return this
     }
-    companion object {
-        fun field(pair:LeptonPair) : Field {
-            return pair._lepton.getWavelength().getField()
-        }
-        fun _field(pair:LeptonPair) : Field {
-            return pair._antiLepton.getWavelength().getField()
-        }
-    }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
