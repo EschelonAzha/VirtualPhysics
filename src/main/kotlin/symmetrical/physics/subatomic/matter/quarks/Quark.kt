@@ -51,20 +51,6 @@ open class Quark(
         return this
     }
 
-    companion object {
-        fun value(atom: Atom) : Quark {
-            val proton = atom.getProton(ValueProton::class)
-            return value(proton)
-        }
-        fun value(atom: Atom, classType: KClass<*>) : Quark {
-            val proton = atom.getProton(classType)
-            return value(proton)
-        }
-        fun value(proton: Proton) : Quark {
-            return proton.getValueQuark()
-        }
-    }
-
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
         this.gluon              = Red_AntiRed()  // this is need for JS Bug

@@ -36,7 +36,7 @@ class QBoolean(
         return matterAntiMatter.getClassId()
     }
     fun setBoolean(value:Boolean) : QBoolean {
-        Quark.value(this).getWavelength().setContent(value)
+        getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
 }

@@ -38,7 +38,7 @@ open class QMass(
         return matterAntiMatter.getClassId()
     }
     fun setMass(value: IBeam) : QMass {
-        Quark.value(this).getWavelength().setContent(value)
+        getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
 }

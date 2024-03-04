@@ -52,8 +52,7 @@ open class QString(
         return matterAntiMatter.getClassId()
     }
     fun setString(value:String) : QString {
-
-        Quark.value(this).getWavelength().setContent(value)
+        getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
     private fun radiate() : String {

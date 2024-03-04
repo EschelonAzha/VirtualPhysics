@@ -37,7 +37,7 @@ class QDouble(
         return matterAntiMatter.getClassId()
     }
     fun setDouble(value:Double) : QDouble {
-        Quark.value(this).getWavelength().setContent(value)
+        getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
 }

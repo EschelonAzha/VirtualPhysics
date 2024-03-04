@@ -36,7 +36,7 @@ class QByte(
         return matterAntiMatter.getClassId()
     }
     fun setByte(value:Byte) : QByte {
-        Quark.value(this).getWavelength().setContent(value)
+        getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
 }
