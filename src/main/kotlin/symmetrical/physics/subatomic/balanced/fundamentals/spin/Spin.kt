@@ -57,50 +57,6 @@ class Spin(
         const val MINUS:Int      = -1
     }
 
-    companion object {
-        fun isMinus(atom: Atom) : Boolean {
-            return isMinus(atom.getProton(ValueProton::class))
-        }
-        fun isMinus(atom: Atom, classType: KClass<*>) : Boolean {
-            return isMinus(atom.getProton(classType))
-        }
-        fun isMinus(proton: Proton) : Boolean {
-            var quark  : Quark = proton.getValueQuark()
-            return isMinus(quark)
-        }
-        fun isMinus(quark: Quark) : Boolean {
-            return quark.getSpin().spin().toBoolean()
-        }
-        fun isPlus(atom: Atom) : Boolean {
-            return isPlus(atom.getProton(ValueProton::class))
-        }
-        fun isPlus(atom: Atom, classType: KClass<*>) : Boolean {
-            return isPlus(atom.getProton(classType))
-        }
-        fun isPlus(proton: Proton) : Boolean {
-            var quark  : Quark = proton.getValueQuark()
-            return isPlus(quark)
-        }
-        fun isPlus(quark: Quark) : Boolean {
-            return quark.getSpin().spin().toBoolean()
-        }
-        //
-        fun isZero(atom: Atom) : Boolean {
-            return isZero(atom.getProton(ValueProton::class))
-        }
-        fun isZero(atom: Atom, classType: KClass<*>) : Boolean {
-            return isZero(atom.getProton(classType))
-        }
-        fun isZero(proton: Proton) : Boolean {
-            var quark  : Quark = proton.getValueQuark()
-            return isZero(quark)
-        }
-        fun isZero(quark: Quark) : Boolean {
-            return quark.getSpin().spin().toBoolean()
-        }
-    }
-
-
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = field.absorb(remainder)
