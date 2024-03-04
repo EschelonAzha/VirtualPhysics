@@ -102,12 +102,12 @@ class Electron(
         val terminal: Proton? = electron!!.proton
 
         if (terminal == null)
-            return ZBoson().with(Wavelength.field(proton))
+            return ZBoson().with(proton.getValueQuark().getWavelength().getField())
         if (electron.getSpin().isPlus()) {
-            return terminal.interact(ZBoson().with(Wavelength.field(proton)))
+            return terminal.interact(ZBoson().with(proton.getValueQuark().getWavelength().getField()))
         } else {
-            val field = Wavelength.field(terminal)
-            return terminal.capacitanceChange(ZBoson().with(Wavelength.field(proton)).setOldValue(field.getContent()))
+            val field = terminal.getValueQuark().getWavelength().getField()
+            return terminal.capacitanceChange(ZBoson().with(proton.getValueQuark().getWavelength().getField()).setOldValue(field.getContent()))
         }
 
     }
