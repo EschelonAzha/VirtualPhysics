@@ -14,14 +14,14 @@ class State(
     IMatter by matterAntiMatter
 {
     init {
-        setContent("", true)
+        setAtomicValue("", true)
         val fieldName   : Proton = FieldNameProton().with("State")
         val accessLevel : Proton = AccessLevelProton().with(AccessLevelProton.Static.READ_ONLY)
         protons(fieldName, accessLevel)
     }
 
     fun with(value:String) : State {
-        setContent("", true)
+        setAtomicValue("", true)
         return this
     }
     override fun absorb(photon: Photon) : Photon {

@@ -25,7 +25,7 @@ class VTestQuarks {
     private fun testFormat() : Boolean {
         val atom:Atom = BookTitle().with("Dolphins Prefer Kotlin")
 
-        val result: TauAntiTauPair = atom.setContent("Tires Are Not Dead")
+        val result: TauAntiTauPair = atom.setAtomicValue("Tires Are Not Dead")
 
         val reason = result.getReason()
         val code = result.getReasonCode()

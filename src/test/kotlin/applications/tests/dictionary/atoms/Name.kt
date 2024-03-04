@@ -14,7 +14,7 @@ class Name (
     IMatter by matterAntiMatter
 {
     init {
-        setContent("", true)
+        setAtomicValue("", true)
 
         val fieldName   : Proton = FieldNameProton().with("Name")
         val accessLevel : Proton = AccessLevelProton().with(AccessLevelProton.Static.READ_ONLY)
@@ -22,7 +22,7 @@ class Name (
     }
 
     fun with(value:String) : Name {
-        setContent("", true)
+        setAtomicValue("", true)
         return this
     }
     override fun absorb(photon: Photon) : Photon {

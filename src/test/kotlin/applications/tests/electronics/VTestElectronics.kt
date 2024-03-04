@@ -40,8 +40,8 @@ class VTestElectronics {
 
         atom1.diode_(atom2).diode(atom3)  // diodes act like one-way data-binding.  Note atom1 is a resistor
 
-        val pair1 : TauAntiTauPair = atom3.setContent(ATOM3NEW) // New value being set
-        val pair2 : TauAntiTauPair = atom1.setContent(ATOM1NEW) // New value being set
+        val pair1 : TauAntiTauPair = atom3.setAtomicValue(ATOM3NEW) // New value being set
+        val pair2 : TauAntiTauPair = atom1.setAtomicValue(ATOM1NEW) // New value being set
                                                                 // Tau contains the new Value
                                                                 // AntiTau contains previous value
                                                                 // TauAntiTauPair returns success/fail and
@@ -97,7 +97,7 @@ class VTestElectronics {
         atom1.conductor_(atom2).conductor(atom3)    // Conductors are the equivalent of two-way data binding
                                                     // Diodes control electrical flow to one way flow, conductors
                                                     // can flow both directions
-        val pair : TauAntiTauPair = atom1.setContent(ATOM1NEW)
+        val pair : TauAntiTauPair = atom1.setAtomicValue(ATOM1NEW)
 
         val atom1Val1 = atom1.getField().toString()
         val atom2Val1 = atom2.getField().toString()
@@ -130,7 +130,7 @@ class VTestElectronics {
 
         receiver.capacitor(atom)
 
-        atom.setContent("GoodBye")
+        atom.setAtomicValue("GoodBye")
 
         return true
     }

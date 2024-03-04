@@ -14,7 +14,7 @@ class City(
     IMatter by matterAntiMatter
 {
     init {
-        setContent("", true)
+        setAtomicValue("", true)
 
         val fieldName   : Proton = FieldNameProton().with("City")
         val accessLevel : Proton = AccessLevelProton().with(AccessLevelProton.Static.READ_ONLY)
@@ -22,7 +22,7 @@ class City(
     }
 
     fun with(value:String) : City {
-        setContent(value, true)
+        setAtomicValue(value, true)
         return this
     }
 

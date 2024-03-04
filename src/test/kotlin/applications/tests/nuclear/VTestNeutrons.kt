@@ -57,10 +57,10 @@ class VTestNeutrons {
         row.print()
 
 
-        row.getName().setContent("Name2")
-        row.getAddress().setContent("address2")
-        row.getCity().setContent("city2")
-        row.getState().setContent("state2")
+        row.getName().setAtomicValue("Name2")
+        row.getAddress().setAtomicValue("address2")
+        row.getCity().setAtomicValue("city2")
+        row.getState().setAtomicValue("state2")
         row.print()
 
         row.betaMinusDecay()    // and can be rolled back as a complete record by decaying their neutrons and restoring

@@ -70,7 +70,7 @@ open class Atom(
     }
 
     open fun with(content:Any?) : Atom {
-        setContent(content, true)
+        setAtomicValue(content, true)
         return this
     }
     open fun addProtons(protons:Array<Proton>) : Atom {
@@ -184,10 +184,11 @@ open class Atom(
         electronics.setAtom(this)
         return this
     }
-    fun setContent(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
+    fun setAtomicValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
         return getProtons().interact(
             ZBoson().with(Field().with(value), constructing)).decay()
     }
+
     fun setFormat(format: Up) : Atom {
         getValueProton().setFormatQuark(format)
         return this

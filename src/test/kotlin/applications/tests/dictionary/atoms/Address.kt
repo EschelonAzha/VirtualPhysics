@@ -15,14 +15,14 @@ class Address(
     IMatter by matterAntiMatter
 {
     init {
-        setContent("", true)
+        setAtomicValue("", true)
         val fieldName   : Proton = FieldNameProton().with("Address")
         val accessLevel : Proton = AccessLevelProton().with(AccessLevelProton.Static.READ_ONLY)
         protons(fieldName, accessLevel)  //<---- when you add protons, don't forget to add getter functions
     }
 
     fun with(value:String) : Address {
-        setContent(value, true)
+        setAtomicValue(value, true)
         return this
     }
 
