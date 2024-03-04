@@ -53,16 +53,6 @@ class TauAntiTauPair(
         setReason(reason)
         return this
     }
-
-    companion object {
-        fun field(pair:LeptonPair) : Field {
-            return pair._lepton.getWavelength().getField()
-        }
-        fun _field(pair:LeptonPair) : Field {
-            return pair._antiLepton.getWavelength().getField()
-        }
-    }
-
     fun decay(pion: PlusPion) : TauAntiTauPair {
         return this
     }
@@ -73,10 +63,10 @@ class TauAntiTauPair(
         return _lepton as Electron
     }
     fun getField() : Field {
-        return TauAntiTauPair.field(this)
+        return _lepton.getWavelength().getField()
     }
     fun getAntiField() : Field {
-        return TauAntiTauPair._field(this)
+       return _antiLepton.getWavelength().getField()
     }
     fun getPositron() : Positron {
         return _antiLepton as Positron
