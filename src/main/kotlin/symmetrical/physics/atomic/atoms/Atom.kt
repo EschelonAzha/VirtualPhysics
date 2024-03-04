@@ -80,20 +80,6 @@ open class Atom(
         return this
     }
 
-    companion object {
-        fun field(atom: Atom) : Field {
-            return Atom.Companion.field(atom.getProton(ValueProton::class))
-        }
-        fun field(atom: Atom, classType: KClass<*>) : Field {
-            return Atom.Companion.field(atom.getProton(classType))
-        }
-        fun field(proton: Proton) : Field {
-            var quark  : Quark = proton.getValueQuark()
-            return quark.getWavelength().getField()
-        }
-    }
-
-
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -137,10 +123,11 @@ open class Atom(
         return orbitals.get(pos) as Electron
     }
     fun getField() : Field {
-        return Atom.Companion.field(this)
+        return getProton(ValueProton::class).getValueQuark().getWavelength().getField()
     }
-    fun getField(proton:KClass<*>) : Field {
-        return Atom.Companion.field(this, proton)
+    fun getField(protonClass:KClass<*>) : Field {
+        val proton : Proton  = getProton(protonClass)
+        return proton.getValueQuark().getWavelength().getField()
     }
     open fun getProtonField(kClass: KClass<*>) : Field {
         val proton: Proton = getProton(kClass)
