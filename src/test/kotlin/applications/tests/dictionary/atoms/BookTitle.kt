@@ -17,7 +17,7 @@ class BookTitle (
 {
     init {
         setFormat(DoubleQuotedFormat())
-        setConstraint(StringConstraint().setMaxLength(50).setNotNull(false).setMinLength(2))
+        setConstraint(StringConstraint().setMaxLength(25).setNotNull(false).setMinLength(2))
     }
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())

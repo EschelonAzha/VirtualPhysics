@@ -25,18 +25,31 @@ class VTestQuarks {
     private fun testFormat() : Boolean {
         val atom:Atom = BookTitle().with("Dolphins Prefer Kotlin")
 
-        val result: TauAntiTauPair = atom.setAtomicValue("Tires Are Not Dead")
+        val quoted = atom.format()
+
+        if (!quoted.startsWith("\""))
+            return false
+        if (!quoted.endsWith("\""))
+            return false
+        return true
+    }
+    private fun testConstraints() : Boolean {
+        val atom:Atom = BookTitle().with("Dolphins Prefer Kotlin")
+
+        val result: TauAntiTauPair = atom.setAtomicValue("How to Know you are always right, without being wrong")
 
         val reason = result.getReason()
         val code = result.getReasonCode()
         val accepted = result.isAccepted()
 
-        val quoted = atom.format()
-
-        return true
-    }
-    private fun testConstraints() : Boolean {
-
+        if (code != -3) {
+            return false
+        }
+        if (accepted) {
+            return false
+        }
+        if (reason != "Value must not exceed: 25 characters.")
+            return false
 
         return true
     }

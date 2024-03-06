@@ -86,7 +86,7 @@ class QuasiParticle(
             _field.setContent(content)
             return Photon().with(remainder)
         }
-        println("!!!!!!!!!!!!!!!!!!!!!ERROR OCCURED IN QuantumPhotonicField:ABSORB!!!!!!!!!!!!!!!!!!!!!")
+        println("!!!!!!!!!!!!!!!!!!!!!ERROR OCCURED IN QuasiParticle:absorb!!!!!!!!!!!!!!!!!!!!!")
         return Photon().with("")
     }
 
