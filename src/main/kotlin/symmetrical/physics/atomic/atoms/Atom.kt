@@ -64,9 +64,6 @@ open class Atom(
 {
     init {
         setAtom(this)
-        this.orbitals.setAtom(this)
-        this._nucleons.setAtom(this)
-        this.typeConverter.setAtom(this)
     }
 
     open fun with(content:Any?) : Atom {
@@ -154,6 +151,7 @@ open class Atom(
         orbitals.setAtom(this)
         _nucleons.setAtom(this)
         electronics.setAtom(this)
+        this.typeConverter.setAtom(this)
         return this
     }
     fun setAtomicValue(value:Any?, constructing:Boolean=false) : TauAntiTauPair {
