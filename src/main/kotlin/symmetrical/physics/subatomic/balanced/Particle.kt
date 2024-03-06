@@ -30,6 +30,7 @@ import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.physics.dimensions.*
+import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 
 // For more information visit:   https://en.wikipedia.org/wiki/Particle
@@ -84,6 +85,11 @@ open class Particle(
 
     override fun getQuantum() : IQuantum? {
         return ptr_quantum
+    }
+    override fun getQuantumProton() : Proton? {
+        if (ptr_quantum == null)
+            return null
+        return ptr_quantum!!.getQuantumProton()
     }
 
     override fun getQuantumRoot() : IQuantum {

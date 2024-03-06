@@ -116,6 +116,9 @@ open class Proton(
     fun getFormatQuark() : Up {
         return get(Proton.QuarkType.FORMAT.value) as Up
     }
+    override fun getQuantumProton() : Proton? {
+        return this
+    }
     fun getValueQuark() : Down {
         return get(Proton.QuarkType.VALUE.value) as Down
     }

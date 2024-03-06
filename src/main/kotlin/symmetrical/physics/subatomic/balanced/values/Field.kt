@@ -19,6 +19,7 @@ package symmetrical.physics.subatomic.balanced.values
  */
 
 import symmetrical.physics.subatomic.balanced.IQuantum
+import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.transpectors.transpectors.Doubles
 // For more information visit:   https://en.wikipedia.org/wiki/Scalar_field
 class Field() : IField {
@@ -70,7 +71,9 @@ class Field() : IField {
         return Converter().with(this).asString()
     }
 
-
+    fun breakpoint() {
+        return
+    }
     override fun equals(field:Field) : Boolean {
         if (type != field.type)
             return false
@@ -82,6 +85,12 @@ class Field() : IField {
 
     override fun getQuantum() : IQuantum? {
         return ptr_quantum
+    }
+
+    override fun getQuantumProton() : Proton? {
+        if (ptr_quantum == null)
+            return null
+        return ptr_quantum!!.getQuantumProton()
     }
     override fun getQuantumRoot() : IQuantum {
         if (ptr_quantum  == null)
@@ -99,8 +108,11 @@ class Field() : IField {
         return content == null
     }
     override fun setContent(content:Any?) : Any? {
-        val root = getQuantumRoot()
-        // XXXR:
+        val proton = getQuantumProton()
+        if (proton is Proton) {
+            breakpoint()
+        }
+
 
         val previous = this.content
         this.content = content
