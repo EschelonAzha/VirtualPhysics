@@ -18,6 +18,8 @@ package symmetrical.physics.subatomic.balanced.values
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import symmetrical.dictionary.protons.ValueProton
+import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 import symmetrical.transpectors.transpectors.Doubles
@@ -109,7 +111,11 @@ class Field() : IField {
     }
     override fun setContent(content:Any?) : Any? {
         val proton = getQuantumProton()
-        if (proton is Proton) {
+        if (proton is ValueProton) {
+            breakpoint()
+        }
+        val root : IQuantum? = getQuantumRoot()
+        if (root is Atom) {
             breakpoint()
         }
 
