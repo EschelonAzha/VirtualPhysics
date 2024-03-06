@@ -24,13 +24,14 @@ import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.physics.subatomic.balanced.fundamentals.wavelength.Wavelength
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.dimensions.*
+import symmetrical.physics.subatomic.bosons.IEmitter
 
 
 /*
 https://en.wikipedia.org/wiki/Particle
  */
 
-interface IParticle : IQuantum {
+interface IParticle : IQuantum, IEmitter {
     fun createUniqueId()                                        : IParticle
     fun getUniqueId   ()                                        : String
     fun getClassId    ()                                        : String

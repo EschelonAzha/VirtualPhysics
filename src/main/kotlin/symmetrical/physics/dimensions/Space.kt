@@ -19,9 +19,11 @@ package symmetrical.physics.dimensions
  */
 
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.balanced.values.Field
+import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
@@ -43,7 +45,13 @@ class Space (
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)
-        return remainder
+        if (remainder.radiation.startsWith("aa")) {
+            return remainder.propagate()
+        } else {
+            val (emitter, spaceRemainder) = Absorber.materialize(remainder)
+            space = emitter as IParticle
+            return Photon().with(spaceRemainder)
+        }
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
@@ -57,9 +65,13 @@ class Space (
     fun getSpace() : IParticle? {
         return space
     }
-    fun setSpace(particle: IParticle?) : Any? {
+    override fun setContent(any:Any?) : Any? {
+        return setSpace(any as IParticle)
+    }
+
+    fun setSpace(particle: IParticle?) : Space {
         this.space = particle
-        return null
+        return this
     }
     fun space() : Any? {
         return field.getContent()
@@ -68,7 +80,11 @@ class Space (
         return Absorber.getClassId(Space::class)
     }
     private fun radiate() : String {
-        return getLocalClassId()+
-                field.emit().radiate()
+        val classId         :String = getLocalClassId()
+        val quasi           :String = field.emit().radiate()
+        var spaceRadiation  :String = "aa"
+        if (space != null)
+            spaceRadiation = space!!.emit().radiate()
+        return classId+quasi+spaceRadiation
     }
 }

@@ -36,6 +36,7 @@ class VTestRadiation {
     private fun testEmissions() : Boolean {
         val atom : Atom = Atom().with(ATOM1)
         val city : Atom = Resistor().with(CITY)
+        atom.getSpace().setSpace(city)
                                                 // Particles don't need JSON or XML to serialize themselves
                                                 // and don't need 3rd party parsers such as GSON, or Jackson
 
@@ -54,6 +55,7 @@ class VTestRadiation {
         if ((atomClone as Atom).getField().toString() != atom.getField().toString())
             return false
 
+        val citySpace : Resistor = atomClone.getSpace().getSpace() as Resistor
         return true
     }
 }
