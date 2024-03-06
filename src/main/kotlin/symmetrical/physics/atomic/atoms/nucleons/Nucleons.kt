@@ -128,6 +128,7 @@ class Nucleons(
     }
 
     override fun setAtom(atom: Atom) : Atom {
+     //   setQuantum(atom)
         this.p_atom = atom
         return atom
     }

@@ -19,6 +19,7 @@ package symmetrical.physics.atomic.atoms.orbitals
  */
 
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.IAtom
 import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
 import symmetrical.physics.subatomic.bosons.Photon
@@ -79,8 +80,8 @@ open class Orbitals(
         return get(Static.VALUE) as Electron
     }
     override fun setAtom(atom: Atom) : Atom {
-        //   add(Electron().i(atom))
         this.p_atom = atom
+        setQuantum(atom)
         return atom
     }
 

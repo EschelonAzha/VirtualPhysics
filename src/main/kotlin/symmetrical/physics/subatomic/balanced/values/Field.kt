@@ -76,12 +76,22 @@ class Field() : IField {
             return false
         return content == field.getContent()
     }
-    override fun getType() : String {
-        return type
-    }
     override fun getContent() : Any? {
         return content
     }
+
+    override fun getQuantum() : IQuantum? {
+        return ptr_quantum
+    }
+    override fun getQuantumRoot() : IQuantum {
+        if (ptr_quantum  == null)
+            return this
+        return ptr_quantum!!.getQuantumRoot() as IQuantum
+    }
+    override fun getType() : String {
+        return type
+    }
+
     override fun isChange(content:Any?)    : Boolean {
         return this.content != content
     }
@@ -89,6 +99,9 @@ class Field() : IField {
         return content == null
     }
     override fun setContent(content:Any?) : Any? {
+        val root = getQuantumRoot()
+        // XXXR:
+
         val previous = this.content
         this.content = content
 
@@ -159,4 +172,5 @@ class Field() : IField {
 
         return Static.ARRAY
     }
+
 }

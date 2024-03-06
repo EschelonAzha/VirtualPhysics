@@ -22,7 +22,7 @@ import symmetrical.physics.subatomic.balanced.IQuantum
  */
 
 
-interface IField {
+interface IField : IQuantum {
     fun asArray()                       : Array<Any>
     fun asBoolean()                     : Boolean?
     fun asByte()                        : Byte?
@@ -32,13 +32,13 @@ interface IField {
 
     fun equals(field:Field)             : Boolean
     fun getContent()                    : Any?
+
     fun getType()                       : String
 
     fun isChange(value:Any?)            : Boolean
     fun isNull()                        : Boolean
     fun setContent(content:Any?)        : Any?
     fun setField(field:Field)           : Field
-    fun setQuantum(quantum: IQuantum)   : Field
     fun toArray()                       : Array<Any>
     fun toBoolean()                     : Boolean
     fun toByte()                        : Byte

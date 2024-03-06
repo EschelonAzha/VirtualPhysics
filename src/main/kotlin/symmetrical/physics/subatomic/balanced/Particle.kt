@@ -42,8 +42,9 @@ open class Particle(
     IParticle,
     IEmitter
 {
-    private lateinit var self       : IParticle
 
+    private lateinit var self       : IParticle
+    private     var ptr_quantum     : IQuantum?   = null
     private     var uniqueId        : QuasiParticle         = QuasiParticle()
 
     private     val time            : Time                  = Time().withQuantum(this)
@@ -81,6 +82,15 @@ open class Particle(
         return
     }
 
+    override fun getQuantum() : IQuantum? {
+        return ptr_quantum
+    }
+
+    override fun getQuantumRoot() : IQuantum {
+        if (ptr_quantum  == null)
+            return this
+        return ptr_quantum!!.getQuantumRoot()
+    }
     fun getSimpleName() : String {
         return Classes.getSimpleName(this)
     }
@@ -139,6 +149,11 @@ open class Particle(
 
     override fun getWavelength() : Wavelength {
         return _wavelength
+    }
+
+    override fun setQuantum(quantum:IQuantum) : IQuantum {
+        this.ptr_quantum = quantum
+        return this
     }
 
     override fun setSelf(self: IParticle) : IParticle {
