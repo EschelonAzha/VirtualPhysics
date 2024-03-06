@@ -41,7 +41,7 @@ class Nucleons(
     private var _protons         : Protons  = Protons(),
     private var neutrons         : Neutrons = Neutrons(),
 
-    ) :
+    ) : Particle(),
         IMatterAntiMatter by matterAntiMatter,
         IProtons by _protons,
         INeutrons by neutrons,
