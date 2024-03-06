@@ -56,14 +56,14 @@ class StringConstraint (
 
         if (field.toString().length  < getMinLength()) {
             zBoson.setAccepted(false)
-            zBoson.setReason("Value must not be less than:"+getMinLength()+" length.")
+            zBoson.setReason("Value must not be less than: "+getMinLength()+" characters.")
             zBoson.setReasonCode(-2);
         }
         val debug = field.toString()
         val max = getMaxLength()
         if (field.toString().length > getMaxLength()) {
             zBoson.setAccepted(false)
-            zBoson.setReason("Value must not exceed:"+getMaxLength()+" length.")
+            zBoson.setReason("Value must not exceed: "+getMaxLength()+" characters.")
             zBoson.setReasonCode(-3);
         }
         return zBoson

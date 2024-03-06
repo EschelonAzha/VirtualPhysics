@@ -19,10 +19,12 @@ package symmetrical.dictionary.absorber
  */
 
 import asymmetrical.physics.machine.config.Config
+import symmetrical.chemistry.diatomics.KeyData
 import symmetrical.dictionary.absorber.class_groups.*
 import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
+import symmetrical.transpectors.printable_characters.Base52
 import kotlin.reflect.KClass
 
 object Absorber : IAbsorber {
