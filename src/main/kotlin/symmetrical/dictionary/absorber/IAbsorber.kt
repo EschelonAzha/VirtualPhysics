@@ -28,7 +28,7 @@ interface IAbsorber {
     fun getClassId(classType: KClass<*>)    : String
     fun initialize()                        : Absorber
     fun initialize(group:ClassGroup)        : Absorber
-    fun materialize(emission:String)        : Pair<IEmitter, String>
-    fun materialize(photon: Photon)         : Pair<IEmitter, String>
+    fun materialize(emission:String)        : Pair<IEmitter?, String>
+    fun materialize(photon: Photon)         : Pair<IEmitter?, String>
     fun newInstance(classType:KClass<*>)    : Any?
 }

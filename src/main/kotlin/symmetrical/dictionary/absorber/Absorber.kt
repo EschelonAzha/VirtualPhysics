@@ -71,7 +71,7 @@ object Absorber : IAbsorber {
         }
         println("")
         println("!!!!!!!!!!!!!!!!!!!")
-        println("PhotonDetector::getClassId(classType:KClass could not find: $classType")
+        println("Absorber::getClassId(classType:KClass could not find: $classType")
         println("!!!!!!!!!!!!!!!!!!!")
         println("")
         return ""
@@ -85,13 +85,16 @@ object Absorber : IAbsorber {
         Absorber.beam.print()
         return this
     }
-    override fun materialize(emission:String) : Pair<IEmitter, String> {
+    override fun materialize(emission:String) : Pair<IEmitter?, String> {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
+        if (classId == "aa") {
+            return Pair<IEmitter?, String>(null, remainder)
+        }
         val clone = Absorber.createInstance(classId) as IEmitter
         val remainderPhoton: Photon = clone.absorb(Photon().with(emission))
         return Pair<IEmitter, String>(clone, remainderPhoton.radiate())
     }
-    override fun materialize(photon: Photon) : Pair<IEmitter, String> {
+    override fun materialize(photon: Photon) : Pair<IEmitter?, String> {
         return Absorber.materialize(photon.radiate())
     }
 
