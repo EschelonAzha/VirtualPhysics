@@ -77,9 +77,9 @@ class Nucleons(
     override fun betaMinusDecay() : Atom {
         val proton      : Proton = getProton(ValueProton::class)
         val protonDown  : Down      = proton.getValueQuark()
-        val space       : IParticle = protonDown.getSpace().getSpace()  ?: return p_atom
+        val space       : IParticle = protonDown.getSpace().getContent()  ?: return p_atom
         val neutronDown :Down       = space as Down
-        neutronDown.getSpace().setSpace(null)
+        neutronDown.getSpace().setContent(null)
         neutrons.remove(neutronDown.getHadron())
         proton.set(0, neutronDown)
 
@@ -145,8 +145,8 @@ class Nucleons(
         return clone as Down
     }
     private fun crossLink(quark1:Quark, quark2:Quark) : Unit {
-        quark1.getSpace().setSpace(quark2)
-        quark2.getSpace().setSpace(quark1)
+        quark1.getSpace().setContent(quark2)
+        quark2.getSpace().setContent(quark1)
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {

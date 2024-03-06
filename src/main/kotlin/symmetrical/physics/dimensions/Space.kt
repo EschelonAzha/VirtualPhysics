@@ -62,17 +62,13 @@ class Space (
     fun getField() : Field {
         return field.getField()
     }
-    fun getSpace() : IParticle? {
+    override fun getContent() : IParticle? {
         return space
     }
     override fun setContent(any:Any?) : Any? {
-        return setSpace(any as IParticle)
+        return setSpace(any as IParticle?)
     }
 
-    fun setSpace(particle: IParticle?) : Space {
-        this.space = particle
-        return this
-    }
     fun space() : Any? {
         return field.getContent()
     }
@@ -86,5 +82,9 @@ class Space (
         if (space != null)
             spaceRadiation = space!!.emit().radiate()
         return classId+quasi+spaceRadiation
+    }
+    private fun setSpace(particle: IParticle?) : Space {
+        this.space = particle
+        return this
     }
 }
