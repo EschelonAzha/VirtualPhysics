@@ -52,17 +52,6 @@ class Space (
 
         return Photon().with(spaceRemainder)
     }
-     fun absorbx(photon: Photon) : Photon {
-        var remainder : Photon = photon.propagate()
-        remainder = field.absorb(remainder)
-        if (remainder.radiation.startsWith("aa")) {
-            return remainder.propagate()
-        } else {
-            val (emitter, spaceRemainder) = Absorber.materialize(remainder)
-            space = emitter as IParticle
-            return Photon().with(spaceRemainder)
-        }
-    }
     fun breakpoint() : Unit {
         return
     }
