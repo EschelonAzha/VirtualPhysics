@@ -19,6 +19,7 @@ package symmetrical.physics.dimensions
  */
 
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.electronics.components.Resistor
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.balanced.IQuantum
@@ -45,6 +46,15 @@ class Space (
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)
+
+        val (emitter, spaceRemainder) = Absorber.materialize(remainder)
+        space = emitter?.manifest() as IParticle?
+
+        return Photon().with(spaceRemainder)
+    }
+     fun absorbx(photon: Photon) : Photon {
+        var remainder : Photon = photon.propagate()
+        remainder = field.absorb(remainder)
         if (remainder.radiation.startsWith("aa")) {
             return remainder.propagate()
         } else {
@@ -52,6 +62,9 @@ class Space (
             space = emitter as IParticle
             return Photon().with(spaceRemainder)
         }
+    }
+    fun breakpoint() : Unit {
+        return
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
@@ -78,7 +91,7 @@ class Space (
     private fun radiate() : String {
         val classId         :String = getLocalClassId()
         val quasi           :String = field.emit().radiate()
-        var spaceRadiation  :String = "aa"
+        var spaceRadiation  :String = Vacuum().emit().radiate()
         if (space != null)
             spaceRadiation = space!!.emit().radiate()
         return classId+quasi+spaceRadiation

@@ -11,16 +11,14 @@ class VTestRadiation {
 
 
     fun test() : Boolean {
-
-        if (!testAddressEmission()) {
-            println("VTestEmissions::testAddressEmission FAILED!!!!!!!!!!!!!!!!!!!!")
-            return false
-        }
         if (!testEmissions()) {
             println("VTestEmissions::testEmissions FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
         }
-
+        if (!testAddressEmission()) {
+            println("VTestEmissions::testAddressEmission FAILED!!!!!!!!!!!!!!!!!!!!")
+            return false
+        }
         return true
     }
 

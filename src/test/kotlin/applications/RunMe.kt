@@ -18,9 +18,9 @@ object RunMe {
         // To see Virtual Physics in action, it is best to run thse
         // test cases and step through the code in the debugger to see
         // some of the inner workings of physics
+        VTestRadiation().test()
         VTestQuarks().test()
         VTestElements().test()
-        VTestRadiation().test()
         VTestNeutrons().test()
         VTestChemistry().test()
         VTestElectronics().test()
