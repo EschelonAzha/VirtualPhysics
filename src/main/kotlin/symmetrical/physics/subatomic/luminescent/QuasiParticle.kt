@@ -19,6 +19,7 @@ package symmetrical.physics.subatomic.luminescent
  */
 
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.transpectors.transpectors.Photons
 import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.balanced.values.Field
@@ -103,7 +104,7 @@ class QuasiParticle(
         return _field
     }
 
-    override fun manifest() : IEmitter {
+    override fun manifest() : IEmitter? {
         return this
     }
 

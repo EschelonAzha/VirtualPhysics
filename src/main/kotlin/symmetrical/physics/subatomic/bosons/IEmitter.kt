@@ -1,4 +1,7 @@
 package symmetrical.physics.subatomic.bosons
+
+import symmetrical.physics.subatomic.balanced.IParticle
+
 /*
  * This file is part of Virtual Physics.
  *
@@ -25,5 +28,5 @@ interface IEmitter {
     fun absorb    (photon: Photon)      : Photon
     fun emit      ()                    : Photon
 
-    fun manifest  ()                    : IEmitter
+    fun manifest  ()                    : IEmitter?
 }

@@ -3,6 +3,7 @@ package symmetrical.physics.dimensions
 import asymmetrical.physics.machine.config.Config
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.bosons.IEmitter
+import symmetrical.physics.subatomic.bosons.Photon
 
 /*
  * This file is part of Virtual Physics.
@@ -22,7 +23,7 @@ import symmetrical.physics.subatomic.bosons.IEmitter
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-class Vacuum {
+class Vacuum : IEmitter {
 
     companion object{
 
@@ -33,11 +34,22 @@ class Vacuum {
         }
     }
 
+    override fun absorb(photon: Photon) : Photon {
+        return photon.propagate()
+    }
+
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
     fun getClassId() : String {
         return Vacuum.getClassId()
     }
-    fun manifest() : IParticle? {
+    override fun manifest() : IParticle? {
         return null
+    }
+
+    private fun radiate() : String {
+        return getClassId()
     }
 
 }
