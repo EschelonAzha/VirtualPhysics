@@ -27,12 +27,10 @@ import symmetrical.physics.dimensions.*
 
 class Dimensions : ClassGroup() {
     init {
-
         add(EntityId().with(Base52.classId(), Charge::class))
         add(EntityId().with(Base52.classId(), Mass::class))
         add(EntityId().with(Base52.classId(), Space::class))
         add(EntityId().with(Base52.classId(), Temperature::class))
         add(EntityId().with(Base52.classId(), Time::class))
-
     }
 }

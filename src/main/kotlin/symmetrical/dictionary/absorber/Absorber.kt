@@ -21,6 +21,7 @@ package symmetrical.dictionary.absorber
 import asymmetrical.physics.machine.config.Config
 import symmetrical.chemistry.diatomics.KeyData
 import symmetrical.dictionary.absorber.class_groups.*
+import symmetrical.physics.dimensions.Vacuum
 import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
@@ -30,6 +31,7 @@ import kotlin.reflect.KClass
 object Absorber : IAbsorber {
     val beam: ClassGroup = ClassGroup()
     init {
+        Absorber.beam.add(EntityId().with(Vacuum.getClassId(), Vacuum::class))
         Absorber.beam.addAll(AppClasses())
         Absorber.beam.addAll(Atoms())
         Absorber.beam.addAll(Dimensions())

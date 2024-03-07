@@ -23,6 +23,7 @@ import symmetrical.transpectors.transpectors.Photons
 import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.balanced.values.IField
+import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 
 
@@ -101,6 +102,11 @@ class QuasiParticle(
     fun getField() : Field {
         return _field
     }
+
+    override fun manifest() : IEmitter {
+        return this
+    }
+
 
     fun radiate() : String {
         val prefix = getLocalClassId()+_field.getType()

@@ -1,4 +1,9 @@
-package symmetrical.physics.subatomic.bosons
+package symmetrical.physics.dimensions
+
+import asymmetrical.physics.machine.config.Config
+import symmetrical.physics.subatomic.balanced.IParticle
+import symmetrical.physics.subatomic.bosons.IEmitter
+
 /*
  * This file is part of Virtual Physics.
  *
@@ -17,13 +22,22 @@ package symmetrical.physics.subatomic.bosons
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+class Vacuum {
 
-/*
-https://en.wikipedia.org/wiki/Emission_spectrum
- */
-interface IEmitter {
-    fun absorb    (photon: Photon)      : Photon
-    fun emit      ()                    : Photon
+    companion object{
 
-    fun manifest  ()                    : IEmitter
+         fun getClassId() : String {
+            if (Config.getClassIdLth() == 2)
+                return "aa"
+            else return "aaa"
+        }
+    }
+
+    fun getClassId() : String {
+        return Vacuum.getClassId()
+    }
+    fun manifest() : IParticle? {
+        return null
+    }
+
 }

@@ -156,7 +156,9 @@ open class Particle(
     override fun getWavelength() : Wavelength {
         return _wavelength
     }
-
+    override fun manifest() : IEmitter {
+        return this
+    }
     override fun setQuantum(quantum:IQuantum) : IQuantum {
         this.ptr_quantum = quantum
         return this
