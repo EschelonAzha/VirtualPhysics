@@ -114,21 +114,21 @@ class QuasiParticle(
         if (_field.getType() == Field.Static.NULL)
             return prefix
         if (_field.getType() == Field.Static.BOOLEAN)
-            return prefix+ Photon.toPhoton(_field.getContent(), 1)
+            return prefix+ Strings.prefixBase52LthToString(1, _field.getContent())
         if (_field.getType() == Field.Static.BYTE)
-            return prefix+ Photon.toPhoton(_field.getContent(), 1)
+            return prefix+ Strings.prefixBase52LthToString(1, _field.getContent())
         if (_field.getType() == Field.Static.INT)
-            return prefix+ Photon.toPhoton(_field.getContent(), 1)
+            return prefix+ Strings.prefixBase52LthToString(1, _field.getContent())
         if (_field.getType() == Field.Static.DOUBLE)
-            return prefix+ Photon.toPhoton(_field.getContent(), 1)
+            return prefix+ Strings.prefixBase52LthToString(1, _field.getContent())
         if (_field.getType() == Field.Static.STRING1)
-            return prefix+ Photon.toPhoton(_field.getContent(), 1)
+            return prefix+ Strings.prefixBase52LthToString(1, _field.getContent())
         if (_field.getType() == Field.Static.STRING2)
-            return prefix+ Photon.toPhoton(_field.getContent(), 2)
+            return prefix+ Strings.prefixBase52LthToString(2, _field.getContent())
         if (_field.getType() == Field.Static.STRING3)
-            return prefix+ Photon.toPhoton3(_field.getContent())
+            return prefix+ Strings.prefixBase52LthToString(3,_field.getContent())
 
-        return prefix+ Photon.toPhoton3(_field.getContent())
+        return prefix+ Strings.prefixBase52LthToString(3, _field.getContent())
     }
 
     override fun toString() : String {

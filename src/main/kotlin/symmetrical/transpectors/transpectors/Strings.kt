@@ -19,6 +19,7 @@ package symmetrical.transpectors.transpectors
  */
 
 import asymmetrical.physics.machine.transpectors.ABytes
+import symmetrical.transpectors.printable_characters.Base52
 
 
 object Strings {
@@ -36,6 +37,13 @@ object Strings {
     }
     fun nullTerminated(value:String) : String {
         return value + '\u0000'
+    }
+    fun prefixBase52LthToString(lth:Int, value:Any?) : String {
+        if (value == null)
+            return Base52.toFixedBase52(lth, 0)
+        val str = value.toString()
+        val lth = Base52.toFixedBase52(lth, str.length)
+        return lth+str
     }
     fun remainder(number:Int, str:String) : Pair<String, String> {
         val leading:String = str.substring(0, number)
