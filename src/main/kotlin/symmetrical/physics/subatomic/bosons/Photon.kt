@@ -34,13 +34,6 @@ open class Photon(){
         return this
     }
     companion object {
-        fun toPhoton(value:Any?, lth:Int= Config.getPhotonLength()) : String {
-            if (value == null)
-                return Base52.toFixedBase52(lth, 0)
-            val str = value.toString()
-            val lth = Base52.toFixedBase52(lth, str.length)
-            return lth+str
-        }
         fun toPhoton1(value:Any?, lth:Int=1) : String {
             if (value == null)
                 return Base52.toFixedBase52(lth, 0)
