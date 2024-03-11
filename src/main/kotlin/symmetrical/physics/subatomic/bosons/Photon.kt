@@ -41,20 +41,14 @@ open class Photon(){
             val lth = Base52.toFixedBase52(lth, str.length)
             return lth+str
         }
-//        fun toPhoton1(value:Any?, lth:Int=1) : String {
+
+//        fun toPhoton2(value:Any?, lth:Int=2) : String {
 //            if (value == null)
 //                return Base52.toFixedBase52(lth, 0)
 //            val str = value.toString()
 //            val lth = Base52.toFixedBase52(lth, str.length)
 //            return lth+str
 //        }
-        fun toPhoton2(value:Any?, lth:Int=2) : String {
-            if (value == null)
-                return Base52.toFixedBase52(lth, 0)
-            val str = value.toString()
-            val lth = Base52.toFixedBase52(lth, str.length)
-            return lth+str
-        }
         fun toPhoton3(value:Any?, lth:Int=3) : String {
             if (value == null)
                 return Base52.toFixedBase52(lth, 0)

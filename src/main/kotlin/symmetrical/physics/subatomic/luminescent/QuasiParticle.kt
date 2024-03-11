@@ -124,7 +124,7 @@ class QuasiParticle(
         if (_field.getType() == Field.Static.STRING1)
             return prefix+ Photon.toPhoton(_field.getContent(), 1)
         if (_field.getType() == Field.Static.STRING2)
-            return prefix+ Photon.toPhoton2(_field.getContent())
+            return prefix+ Photon.toPhoton(_field.getContent(), 2)
         if (_field.getType() == Field.Static.STRING3)
             return prefix+ Photon.toPhoton3(_field.getContent())
 
