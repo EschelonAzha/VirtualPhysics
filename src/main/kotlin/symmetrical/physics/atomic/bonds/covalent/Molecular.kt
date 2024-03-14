@@ -20,14 +20,13 @@ package symmetrical.physics.atomic.bonds.covalent
 
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.bosons.Photon
-import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.physics.subatomic.spacial.IParticleBeam
 import symmetrical.physics.subatomic.spacial.ParticleBeam
-import symmetrical.physics.atomic.atoms.states.strings.QString
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.physics.subatomic.matter.quarks.Up
+import symmetrical.dictionary.atoms.CRLFTerminatedString
 
 
 // For more information visit:  https://en.wikipedia.org/wiki/Molecule
@@ -111,7 +110,7 @@ open class Molecular(
 
     fun materialize(strings:List<String>) : Molecular {
         for (item in strings) {
-            add(QString().with(item))
+            add(CRLFTerminatedString().with(item))
         }
         shrink()
         return this
