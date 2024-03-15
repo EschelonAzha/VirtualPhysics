@@ -20,15 +20,17 @@ package symmetrical.transpectors.transpectors
 
 import symmetrical.transpectors.printable_characters.Base52
 import kotlinx.datetime.Clock
+import symmetrical.dictionary.absorber.Absorber
 
 object Keys {
     private var currentInstance = 1
     fun getUniqueId() : String {
+        val galaxyId  :String  = Absorber.getGalaxyId()
         val longNumber:String  = Clock.System.now().toEpochMilliseconds().toString()
         val frontHalf :String  = Base52.toBase52(longNumber.substring(0, 7).toInt())
         val backHalf  :String  = Base52.toBase52(longNumber.substring(7).toInt())
         val instance  :String  = Base52.toBase52(nextInstance())
-        val result = frontHalf+backHalf+instance
+        val result    : String = galaxyId+frontHalf+backHalf+instance
         return result
     }
     private fun nextInstance() : Int {
