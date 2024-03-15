@@ -18,6 +18,7 @@ package symmetrical.dictionary.absorber
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import symmetrical.dictionary.quasiparticles.GalaxyId
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
@@ -32,5 +33,7 @@ interface IAbsorber {
     fun materialize(emission:String)        : Pair<IEmitter?, String>
     fun materialize(photon: Photon)         : Pair<IEmitter?, String>
     fun newInstance(classType:KClass<*>)    : Any?
-    fun setGalaxyId(galaxyId:String)        : Unit
+
+    fun nextGalaxyId()                      : GalaxyId
+    fun setGalaxyId(galaxyId:GalaxyId)      : Unit
 }

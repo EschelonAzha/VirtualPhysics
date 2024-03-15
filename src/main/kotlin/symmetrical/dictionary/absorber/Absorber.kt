@@ -21,6 +21,7 @@ package symmetrical.dictionary.absorber
 import asymmetrical.physics.machine.config.Config
 import symmetrical.chemistry.diatomics.KeyData
 import symmetrical.dictionary.absorber.class_groups.*
+import symmetrical.dictionary.quasiparticles.GalaxyId
 import symmetrical.physics.dimensions.Vacuum
 import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
@@ -112,9 +113,12 @@ object Absorber : IAbsorber {
         }
         return null
     }
-
-    override fun setGalaxyId(galaxyId:String) : Unit {
-        Absorber.galaxyId = galaxyId
+    override fun nextGalaxyId() : GalaxyId {
+        return GalaxyId().with(Base52.galaxyId())
+    }
+    override fun setGalaxyId(galaxyId:GalaxyId) : Unit {
+        val id = galaxyId.toString()
+        Absorber.galaxyId = id
     }
 
 }
