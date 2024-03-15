@@ -67,8 +67,8 @@ open class ParticleBeam(
         shrink()
         return Photon().with(remainder)
     }
-    override fun add(particle: IParticle) : IParticle {
-        return _beam.add(particle) as IParticle
+    override fun add(particle: IEmitter) : IEmitter {
+        return _beam.add(particle) as IEmitter
     }
 
     override fun emit() : Photon {
@@ -87,15 +87,15 @@ open class ParticleBeam(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override operator fun get(pos:Int): IParticle {
+    override operator fun get(pos:Int): IEmitter {
         val result = _beam.get(pos)
-        return result as IParticle
+        return result as IEmitter
     }
-    override fun getParticleCore() : Array<IParticle> {
-        return getCore() as Array<IParticle>
+    override fun getParticleCore() : Array<IEmitter> {
+        return getCore() as Array<IEmitter>
     }
-    override fun set(pos:Int, particle: IParticle) : IParticle {
-        return _beam.set(pos, particle) as IParticle
+    override fun set(pos:Int, particle: IEmitter) : IEmitter {
+        return _beam.set(pos, particle) as IEmitter
     }
 
     private fun radiate() : String {

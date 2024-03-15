@@ -19,16 +19,17 @@ package symmetrical.physics.subatomic.spacial
  */
 
 import symmetrical.physics.subatomic.balanced.IParticle
+import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 
 /*
 https://en.wikipedia.org/wiki/Particle_beam
  */
 interface IParticleBeam : IBeam {
-                        fun add                 (particle: IParticle)           : IParticle
+                        fun add                 (particle: IEmitter)            : IEmitter
                         fun emit                ()                              : Photon
-    override operator   fun get                 (pos:Int)                       : IParticle
+    override operator   fun get                 (pos:Int)                       : IEmitter
         override        fun getClassId          ()                              : String
-                        fun getParticleCore     ()                              : Array<IParticle>
-                        fun set                 (pos:Int, particle: IParticle)  : IParticle
+                        fun getParticleCore     ()                              : Array<IEmitter>
+                        fun set                 (pos:Int, particle: IEmitter)   : IEmitter
 }

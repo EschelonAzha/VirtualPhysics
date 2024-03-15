@@ -21,6 +21,7 @@ package symmetrical.physics.dimensions
 import symmetrical.dictionary.absorber.Absorber
 import symmetrical.physics.subatomic.balanced.IQuantum
 import symmetrical.physics.subatomic.balanced.values.Field
+import symmetrical.physics.subatomic.balanced.values.IField
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
@@ -30,7 +31,7 @@ import symmetrical.physics.subatomic.luminescent.QuasiParticle
 class Time(
     private val field: QuasiParticle = QuasiParticle()
 ) :
-    IQuasiParticle by field
+    IQuasiParticle  by field
 {
     fun withQuantum(quantum:IQuantum) : Time {
         this.field.setQuantum(quantum)

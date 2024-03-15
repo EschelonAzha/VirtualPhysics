@@ -25,6 +25,7 @@ import symmetrical.physics.subatomic.matter.quarks.Up
 import symmetrical.physics.subatomic.anti_matter.anti_hadrons.anti_baryons.AntiBaryon
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.physics.subatomic.balanced.Particle
+import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 import symmetrical.physics.subatomic.matter.beta.BetaMinus
@@ -123,7 +124,7 @@ open class Baryon(
     fun red() : Any? {
         return (this.get(0) as Quark).red()
     }
-    override fun set(pos:Int, quark: IParticle) : IParticle {
+    override fun set(pos:Int, quark: IEmitter) : IEmitter {
         super.set(pos, quark)
         (quark as Quark).setHadron(this)
         return quark

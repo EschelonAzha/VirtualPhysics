@@ -31,6 +31,7 @@ import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.physics.dimensions.*
+import symmetrical.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 
