@@ -25,15 +25,21 @@ import kotlin.math.floor
 class Base52() {
 
     object Static {
-        public var current:String = "ba"
+        public var currentClassId   :String = "ba"
+        public var currentGalaxyId  :String = "baa"
     }
     companion object {
         private val characters = Characters().with(LowerCase.LOWERCASE + UpperCase.UPPERCASE);
 
 
         fun classId() : String {
-            var current     : String = Static.current
-            Static.current = next(Static.current)
+            var current     : String = Static.currentClassId
+            Static.currentClassId = next(Static.currentClassId)
+            return current
+        }
+        fun galaxyId() : String {
+            var current     : String = Static.currentGalaxyId
+            Static.currentGalaxyId = next(Static.currentGalaxyId)
             return current
         }
         fun next(base52: String): String {

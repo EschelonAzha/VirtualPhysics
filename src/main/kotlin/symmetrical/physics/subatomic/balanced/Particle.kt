@@ -19,6 +19,7 @@ package symmetrical.physics.subatomic.balanced
  */
 
 import asymmetrical.physics.machine.vm.Classes
+import symmetrical.dictionary.absorber.Absorber
 import symmetrical.transpectors.transpectors.Keys
 import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
@@ -45,8 +46,10 @@ open class Particle(
 {
 
     private lateinit var self       : IParticle
-    private     var ptr_quantum     : IQuantum?   = null
+    private     var ptr_quantum     : IQuantum?             = null
+    private     var galaxyId        : QuasiParticle         = QuasiParticle()
     private     var uniqueId        : QuasiParticle         = QuasiParticle()
+
 
     private     val time            : Time                  = Time().withQuantum(this)
     private     val charge          : Charge                = Charge().withQuantum(this)
@@ -67,6 +70,7 @@ open class Particle(
     }
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
+        remainder = galaxyId.absorb(remainder)
         remainder = uniqueId.absorb(remainder)
         remainder = time.absorb(remainder)
         remainder = charge.absorb(remainder)
@@ -81,6 +85,15 @@ open class Particle(
     }
     fun breakpoint() : Unit {
         return
+    }
+    override fun createGalaxyId(): IParticle {
+        galaxyId.setContent(Absorber.getGalaxyId())
+        return getSelf()
+    }
+    override fun createUniqueId(): IParticle {
+        uniqueId.setContent(getClassId()+ Keys.getUniqueId())
+        createGalaxyId()
+        return getSelf()
     }
 
     override fun getQuantum() : IQuantum? {
@@ -108,16 +121,16 @@ open class Particle(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun createUniqueId(): IParticle {
-        uniqueId.setContent(getClassId()+ Keys.getUniqueId())
-        return getSelf()
-    }
+
 
     override fun getAngularMomentum() : AngularMomentum {
         return angularMomentum
     }
     override fun getCharge() : Charge {
         return charge
+    }
+    override fun getGalaxyId(): String {
+        return galaxyId.getContent() as String
     }
     override fun getIlluminations() : IParticleBeam {
         return matterAntiMatter.getIlluminations()
@@ -182,6 +195,7 @@ open class Particle(
             println("Particle")
         }
         val classId         : String = matterAntiMatter.getClassId()
+        val galaxyId        : String = galaxyId.emit().radiate()
         val uniqueId        : String = uniqueId.emit().radiate()
         val time            : String = time.emit().radiate()
         val charge          : String = charge.emit().radiate()
@@ -192,7 +206,7 @@ open class Particle(
         val spin            : String = spin.emit().radiate()
         val angularMomentum : String = angularMomentum.emit().radiate()
 
-        return classId+uniqueId+time+charge+mass+temperature+space+wavelength+spin+angularMomentum
+        return classId+galaxyId+uniqueId+time+charge+mass+temperature+space+wavelength+spin+angularMomentum
     }
 
 }

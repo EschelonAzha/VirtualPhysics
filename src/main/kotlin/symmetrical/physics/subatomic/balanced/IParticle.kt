@@ -32,10 +32,14 @@ https://en.wikipedia.org/wiki/Particle
  */
 
 interface IParticle : IQuantum, IEmitter {
+    fun createGalaxyId()                                        : IParticle
     fun createUniqueId()                                        : IParticle
-    fun getUniqueId   ()                                        : String
     fun getClassId    ()                                        : String
+    fun getGalaxyId   ()                                        : String
     fun getSelf       ()                                        : IParticle
+    fun getUniqueId   ()                                        : String
+
+
     fun setSelf       (self: IParticle)                         : IParticle
 
     fun getAngularMomentum()                                    : AngularMomentum

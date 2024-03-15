@@ -29,7 +29,9 @@ import symmetrical.transpectors.printable_characters.Base52
 import kotlin.reflect.KClass
 
 object Absorber : IAbsorber {
-    val beam: ClassGroup = ClassGroup()
+    private var galaxyId    : String            = Base52.galaxyId()
+            val beam        : ClassGroup        = ClassGroup()
+
     init {
         Absorber.beam.add(EntityId().with(Vacuum.getClassId(), Vacuum::class))
         Absorber.beam.addAll(AppClasses())
@@ -78,6 +80,10 @@ object Absorber : IAbsorber {
         println("")
         return ""
     }
+
+    override fun getGalaxyId() : String {
+        return galaxyId
+    }
     override fun initialize() : Absorber {
         Absorber.beam.print()
         return this
@@ -104,6 +110,10 @@ object Absorber : IAbsorber {
                 return entityId.newInstance()
         }
         return null
+    }
+
+    override fun setGalaxyId(galaxyId:String) : Unit {
+        Absorber.galaxyId = galaxyId
     }
 
 }
