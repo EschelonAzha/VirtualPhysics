@@ -19,6 +19,7 @@ package symmetrical.physics.subatomic.luminescent
  */
 
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.dictionary.quasiparticles.GalaxyId
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.transpectors.transpectors.Photons
 import symmetrical.transpectors.transpectors.Strings
@@ -30,9 +31,11 @@ import symmetrical.physics.subatomic.bosons.Photon
 
 // For more information visit:   https://en.wikipedia.org/wiki/Quasiparticle
 
-class QuasiParticle(
-    private val _field:Field=Field()
+open class QuasiParticle(
+    private val _field:Field=Field(),
+    private val matterAntiMatter: IMatter = Matter().with(QuasiParticle::class)
 ) : IField by _field,
+    IMatterAntiMatter by matterAntiMatter,
     IQuasiParticle
 {
 
@@ -96,8 +99,8 @@ class QuasiParticle(
         return Photon().with(radiate())
     }
 
-    public fun getClassId() : String {
-        return getLocalClassId()
+     override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
     }
 
     fun getField() : Field {
@@ -109,8 +112,8 @@ class QuasiParticle(
     }
 
 
-    fun radiate() : String {
-        val prefix = getLocalClassId()+_field.getType()
+    private fun radiate() : String {
+        val prefix = matterAntiMatter.getClassId()+_field.getType()
         if (_field.getType() == Field.Static.NULL)
             return prefix
         if (_field.getType() == Field.Static.BOOLEAN)

@@ -46,6 +46,7 @@ object Absorber : IAbsorber {
         Absorber.beam.addAll(FundamentalProperties())
         Absorber.beam.addAll(Hadrons())
         Absorber.beam.addAll(Ions())
+        Absorber.beam.addAll(QuasiParticles())
         Absorber.beam.addAll(Leptons())
         Absorber.beam.addAll(Quarks())
         Absorber.beam.addAll(Spacial())

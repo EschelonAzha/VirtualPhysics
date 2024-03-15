@@ -7,6 +7,7 @@ import applications.tests.elements.VTestElements
 import applications.tests.radiation.VTestRadiation
 import applications.tests.nuclear.VTestNeutrons
 import applications.tests.quarks.VTestQuarks
+import applications.tests.quasiparticles.VTestQuasiParticles
 import applications.tests.typeConverter.VTestTypeConverter
 import symmetrical.dictionary.absorber.Absorber
 
@@ -18,6 +19,8 @@ object RunMe {
         // To see Virtual Physics in action, it is best to run thse
         // test cases and step through the code in the debugger to see
         // some of the inner workings of physics
+
+        VTestQuasiParticles().test()
         VTestRadiation().test()
         VTestQuarks().test()
         VTestElements().test()
