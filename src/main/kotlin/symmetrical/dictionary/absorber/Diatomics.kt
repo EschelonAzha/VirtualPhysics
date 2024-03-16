@@ -6,8 +6,10 @@ object Diatomics {
     val beam : ParticleBeam = ParticleBeam()
 
     fun illuminate(particle: IParticle) : Unit {
+        val debug = particle.getUniqueId()
         val pos = beam.findByUniqueId(particle.getUniqueId())
         if (pos == -1) {
+            println("Illumination Id: $debug")
             beam.add(particle)
         }
     }
