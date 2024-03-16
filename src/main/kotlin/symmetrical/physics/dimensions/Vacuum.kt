@@ -44,6 +44,10 @@ class Vacuum : IEmitter {
     fun getClassId() : String {
         return Vacuum.getClassId()
     }
+
+    override fun isIlluminated(): Boolean {
+        return false
+    }
     override fun manifest() : IParticle? {
         return null
     }

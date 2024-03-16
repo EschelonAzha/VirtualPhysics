@@ -39,7 +39,6 @@ interface IParticle : IQuantum, IEmitter {
     fun getUniqueId   ()                                        : String?
 
     fun illuminate    ()                                        : IParticle
-    fun isIlluminated ()                                        : Boolean
     fun setSelf       (self: IParticle)                         : IParticle
 
     fun getAngularMomentum()                                    : AngularMomentum

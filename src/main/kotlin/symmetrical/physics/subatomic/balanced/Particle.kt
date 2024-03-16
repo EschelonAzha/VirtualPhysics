@@ -43,8 +43,8 @@ open class Particle(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Particle::class),
 ) :
     IMatterAntiMatter by matterAntiMatter,
-    IParticle,
-    IEmitter
+    IParticle
+
 {
 
     private lateinit var self       : IParticle

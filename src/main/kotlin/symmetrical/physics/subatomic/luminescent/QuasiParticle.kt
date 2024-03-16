@@ -107,6 +107,9 @@ open class QuasiParticle(
         return _field
     }
 
+    override fun isIlluminated(): Boolean {
+        return false
+    }
     override fun manifest() : IEmitter? {
         return this
     }

@@ -23,6 +23,7 @@ import symmetrical.chemistry.diatomics.KeyData
 import symmetrical.dictionary.absorber.class_groups.*
 import symmetrical.dictionary.quasiparticles.GalaxyId
 import symmetrical.physics.dimensions.Vacuum
+import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
@@ -101,6 +102,9 @@ object Absorber : IAbsorber {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
         val clone = Absorber.createInstance(classId) as IEmitter
         val remainderPhoton: Photon = clone.absorb(Photon().with(emission))
+
+        illuminate(clone)
+
         return Pair<IEmitter, String>(clone, remainderPhoton.radiate())
     }
     override fun materialize(photon: Photon) : Pair<IEmitter?, String> {
@@ -121,6 +125,11 @@ object Absorber : IAbsorber {
     override fun setGalaxyId(galaxyId:GalaxyId) : Unit {
         val id = galaxyId.toString()
         Absorber.galaxyId = id
+    }
+
+    private fun illuminate(clone:IEmitter) : Unit {
+        if (clone.isIlluminated())
+            Diatomics.illuminate(clone as IParticle)
     }
 
 }
