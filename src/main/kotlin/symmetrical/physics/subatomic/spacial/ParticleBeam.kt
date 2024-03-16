@@ -84,6 +84,15 @@ open class ParticleBeam(
         return _beam.findByType(classType)
     }
 
+    fun findByUniqueId(uniqueId:String) : Int {
+        for (i in 0 until _beam.size()) {
+            val particle:Particle = get(0) as Particle
+            if (particle.getUniqueId()== uniqueId)
+                return i
+        }
+        return -1
+    }
+
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }

@@ -20,6 +20,7 @@ package symmetrical.physics.subatomic.balanced
 
 import asymmetrical.physics.machine.vm.Classes
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.dictionary.absorber.Diatomics
 import symmetrical.transpectors.transpectors.Keys
 import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
@@ -49,6 +50,7 @@ open class Particle(
     private lateinit var self       : IParticle
     private     var ptr_quantum     : IQuantum?             = null
     private     var uniqueId        : QuasiParticle         = QuasiParticle()
+    private     var illuminated     : QuasiParticle         = QuasiParticle()
 
 
     private     val time            : Time                  = Time().withQuantum(this)
@@ -63,6 +65,7 @@ open class Particle(
 
     init {
         time.setContent(0)
+        illuminated.setContent(false)
     }
 
     object Static {
@@ -70,6 +73,7 @@ open class Particle(
     }
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
+        remainder = illuminated.absorb(remainder)
         remainder = uniqueId.absorb(remainder)
         remainder = time.absorb(remainder)
         remainder = charge.absorb(remainder)
@@ -87,10 +91,29 @@ open class Particle(
     }
 
     override fun createUniqueId(): IParticle {
-        uniqueId.setContent(getClassId()+ Keys.getUniqueId())
+        if (!uniqueId.isNull())
+            uniqueId.setContent(getClassId()+ Keys.getUniqueId())
         return getSelf()
     }
+    override fun emit() : Photon {
+        if (isIlluminated()) {
+            Diatomics.illuminate(getSelf())
+        }
+        return Photon().with(radiate())
+    }
+    override fun getAngularMomentum() : AngularMomentum {
+        return angularMomentum
+    }
+    override fun getCharge() : Charge {
+        return charge
+    }
 
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+    override fun getIlluminations() : IParticleBeam {
+        return matterAntiMatter.getIlluminations()
+    }
     override fun getQuantum() : IQuantum? {
         return ptr_quantum
     }
@@ -105,36 +128,16 @@ open class Particle(
             return this
         return ptr_quantum!!.getQuantumRoot()
     }
-    fun getSimpleName() : String {
-        return Classes.getSimpleName(this)
-    }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
-
-    override fun getAngularMomentum() : AngularMomentum {
-        return angularMomentum
-    }
-    override fun getCharge() : Charge {
-        return charge
-    }
-
-    override fun getIlluminations() : IParticleBeam {
-        return matterAntiMatter.getIlluminations()
-    }
-
     override fun getMass() : Mass {
         return mass
     }
     override fun getPhoton() : Photon {
         return Photon()
     }
+    fun getSimpleName() : String {
+        return Classes.getSimpleName(this)
+    }
+
 
     override fun getSelf() : IParticle {
         if (::self.isInitialized)
@@ -162,6 +165,14 @@ open class Particle(
     override fun getWavelength() : Wavelength {
         return _wavelength
     }
+    override fun illuminate() : Particle {
+        createUniqueId()
+        illuminated.setContent(true)
+        return this
+    }
+    override fun isIlluminated() : Boolean {
+        return illuminated.toBoolean()
+    }
     override fun manifest() : IEmitter {
         return this
     }
@@ -188,6 +199,7 @@ open class Particle(
             println("Particle")
         }
         val classId         : String = matterAntiMatter.getClassId()
+        val illuminated     : String = illuminated.emit().radiate()
         val uniqueId        : String = uniqueId.emit().radiate()
         val time            : String = time.emit().radiate()
         val charge          : String = charge.emit().radiate()
@@ -198,7 +210,7 @@ open class Particle(
         val spin            : String = spin.emit().radiate()
         val angularMomentum : String = angularMomentum.emit().radiate()
 
-        return classId+uniqueId+time+charge+mass+temperature+space+wavelength+spin+angularMomentum
+        return classId+illuminated+uniqueId+time+charge+mass+temperature+space+wavelength+spin+angularMomentum
     }
 
 }

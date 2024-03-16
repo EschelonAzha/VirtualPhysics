@@ -31,7 +31,9 @@ import kotlin.reflect.KClass
 
 object Absorber : IAbsorber {
     private var galaxyId    : String            = Base52.galaxyId()
-            val beam        : ClassGroup        = ClassGroup()
+    private val beam        : ClassGroup        = ClassGroup()
+
+    private val diatomics   : Diatomics         = Diatomics
 
     init {
         Absorber.beam.add(EntityId().with(Vacuum.getClassId(), Vacuum::class))
