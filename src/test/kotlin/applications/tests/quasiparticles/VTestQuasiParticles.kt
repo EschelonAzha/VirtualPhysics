@@ -44,7 +44,7 @@ class VTestQuasiParticles  {
     private fun testParticles() : Boolean {
         val galaxyId: QuasiParticle = GalaxyId().with("quasi")
 
-        val radiation = galaxyId.emit()
+        val radiation = galaxyId.emit().radiate()
 
         val (emitter: IEmitter?, remainder:String) = Absorber.materialize(radiation)
 
