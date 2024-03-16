@@ -18,13 +18,11 @@ package symmetrical.physics.subatomic.forces.magnetism
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import asymmetrical.physics.machine.threads.Energy
-
 
 // For more information visit:   https://en.wikipedia.org/wiki/Magnetism
 
 
-open class Magnetism: Energy() {
+open class Magnetism {
 
 
     // Spin 2

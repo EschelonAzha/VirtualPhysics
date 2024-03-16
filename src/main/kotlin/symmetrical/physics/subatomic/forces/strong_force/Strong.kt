@@ -18,13 +18,11 @@ package symmetrical.physics.subatomic.forces.strong_force
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import asymmetrical.physics.machine.threads.Energy
-
 
 // For more information visit:   https://en.wikipedia.org/wiki/Strong_interaction
 
 
-open class Strong: Energy() {
+open class Strong {
 
     companion object {
         lateinit var strong : Strong
