@@ -1,6 +1,7 @@
 package applications
 
 import applications.tests.chemistry.VTestChemistry
+import applications.tests.diatomics.VTestDiatomics
 import applications.tests.dictionary.TestPhysicsEmitters
 import applications.tests.electronics.VTestElectronics
 import applications.tests.elements.VTestElements
@@ -20,6 +21,7 @@ object RunMe {
         // test cases and step through the code in the debugger to see
         // some of the inner workings of physics
 
+        VTestDiatomics().test()
         VTestQuasiParticles().test()
         VTestRadiation().test()
         VTestQuarks().test()

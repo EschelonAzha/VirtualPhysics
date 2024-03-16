@@ -11,4 +11,8 @@ object Diatomics {
             beam.add(particle)
         }
     }
+
+    fun dim(particle: IParticle) : Unit {
+        beam.remove(particle)
+    }
 }

@@ -1,44 +1,39 @@
-package applications.tests.quasiparticles
+package applications.tests.diatomics
 
 
+import applications.tests.dictionary.atoms.Address
 import symmetrical.dictionary.absorber.Absorber
 import symmetrical.dictionary.quasiparticles.GalaxyId
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
-import symmetrical.physics.subatomic.spacial.ParticleBeam
 
-class VTestQuasiParticles  {
+
+class VTestDiatomics  {
 
     fun test() : Boolean {
-        if (!testParticleBeam()) {
+        if (!testDiatomics()) {
             println("VTestQuasiParticles::testParticleBeam FAILED!!!!!!!!!!!!!!!!!!!!")
             return false
         }
 
-        if (!testParticles()) {
-            println("VTestQuasiParticles::testParticles FAILED!!!!!!!!!!!!!!!!!!!!")
-            return false
-        }
+
 
         return true
     }
 
 
-    private fun testParticleBeam() : Boolean {
-        val galaxyId: QuasiParticle = GalaxyId().with("quasi")
+    private fun testDiatomics() : Boolean {
+        val address: Address = Address().with("Here I am")
+        address.illuminate()
+        val debug:Boolean = address.isIlluminated()
 
-        val beam = ParticleBeam()
-        beam.add(galaxyId)
+        val emission = address.illuminate().emit()
 
-        val radiation = beam.emit()
-        val (emitter, remainder) = Absorber.materialize(radiation)
+        address.dim()
 
-        val clone = emitter as ParticleBeam
 
-        val idClone = clone.get(0) as GalaxyId
-        if (idClone.toString() == "quasi")
-            return true
-        return false
+
+        return true
     }
 
     private fun testParticles() : Boolean {

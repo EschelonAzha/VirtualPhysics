@@ -84,7 +84,9 @@ open class ParticleBeam(
         return _beam.findByType(classType)
     }
 
-    fun findByUniqueId(uniqueId:String) : Int {
+    fun findByUniqueId(uniqueId:String?) : Int {
+        if (uniqueId == null)
+            return -1
         for (i in 0 until _beam.size()) {
             val particle:Particle = get(0) as Particle
             if (particle.getUniqueId()== uniqueId)

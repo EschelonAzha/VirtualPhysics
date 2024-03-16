@@ -91,9 +91,17 @@ open class Particle(
     }
 
     override fun createUniqueId(): IParticle {
-        if (!uniqueId.isNull())
-            uniqueId.setContent(getClassId()+ Keys.getUniqueId())
+        if (uniqueId.isNull())
+            uniqueId.setContent(getClassId() + Keys.getUniqueId())
         return getSelf()
+    }
+
+    override fun dim() : IParticle {
+        if (isIlluminated()) {
+            Diatomics.dim(getSelf())
+            illuminated.setContent(false)
+        }
+        return this
     }
     override fun emit() : Photon {
         if (isIlluminated()) {
@@ -158,7 +166,7 @@ open class Particle(
         return time
     }
 
-    override fun getUniqueId(): String {
+    override fun getUniqueId(): String? {
         return uniqueId.getContent() as String
     }
 

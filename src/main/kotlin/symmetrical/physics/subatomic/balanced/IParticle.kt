@@ -33,9 +33,10 @@ https://en.wikipedia.org/wiki/Particle
 
 interface IParticle : IQuantum, IEmitter {
     fun createUniqueId()                                        : IParticle
+    fun dim           ()                                        : IParticle
     fun getClassId    ()                                        : String
     fun getSelf       ()                                        : IParticle
-    fun getUniqueId   ()                                        : String
+    fun getUniqueId   ()                                        : String?
 
     fun illuminate    ()                                        : IParticle
     fun isIlluminated ()                                        : Boolean
