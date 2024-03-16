@@ -21,16 +21,17 @@ package symmetrical.chemistry.diatomics
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.atomic.bonds.covalent.Diatomic
+import symmetrical.physics.atomic.substance.ions.Compound
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
 open class KeyData(
     private val matterAntiMatter: IMatter = Matter().with(KeyData::class),
-) : Diatomic(),
+) : Compound(),
     IMatter by matterAntiMatter
 {
 
-    override fun with(key: Atom, value: Atom) : KeyData {
+    fun with(key: Atom, value: Atom) : KeyData {
         add(key)
         add(value)
         return this
@@ -38,9 +39,9 @@ open class KeyData(
 
     object Static {
         const val KEY       : Int = Diatomic.Static.LAST+1
-        const val VALUE     : Int = Diatomic.Static.LAST+2
+        const val DATA      : Int = Diatomic.Static.LAST+2
 
-        const val LAST      : Int = VALUE
+        const val LAST      : Int = DATA
     }
 
     override fun absorb(photon: Photon) : Photon {
@@ -66,7 +67,7 @@ open class KeyData(
     }
     fun getData() : Atom? {
         if (size()>1)
-            return get(Static.VALUE) as Atom
+            return get(Static.DATA) as Atom
         return null
     }
     private fun radiate() : String {
