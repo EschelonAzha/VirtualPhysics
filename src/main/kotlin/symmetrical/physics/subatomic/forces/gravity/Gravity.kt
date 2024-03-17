@@ -2,8 +2,8 @@ package symmetrical.physics.subatomic.forces.gravity
 
 class Gravity : IGravity {
     private lateinit var parent:IGravity
-    override fun setGravitationalField(gravitationalField:IGravity) : IGravity {
-        this.parent = gravitationalField
+    override fun setGravity(gravity:IGravity) : IGravity {
+        this.parent = gravity
         return this
     }
 }
