@@ -1,4 +1,8 @@
 package symmetrical.physics.subatomic.bosons
+
+import symmetrical.physics.subatomic.balanced.IParticle
+import kotlin.reflect.KClass
+
 /*
  * This file is part of Virtual Physics.
  *
@@ -23,20 +27,6 @@ package symmetrical.physics.subatomic.bosons
 
 
 class Graviton() {
+    private lateinit var center      : IParticle
 
-
-    var center      : Graviton? = null
-    var _attract    : Unit?     = null
-    var radial      : Graviton? = null
-
-    fun with(center: Graviton, attract:Unit, radial: Graviton) : Graviton {
-        this.center     = center
-        this._attract   = attract
-        this.radial     = radial
-        return this
-    }
-
-    fun attract() : Graviton {
-        return this
-    }
 }

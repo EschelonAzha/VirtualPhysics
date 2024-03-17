@@ -19,18 +19,28 @@ package symmetrical.physics.subatomic.forces.gravity
  */
 
 import symmetrical.physics.subatomic.bosons.Graviton
+import symmetrical.physics.subatomic.spacial.Beam
 
 
 // For more information visit:   https://en.wikipedia.org/wiki/Gravity
 
 
 open class Gravity() {
+    private var center      : Gravity? = null
+    private val gravitons   : Beam = Beam()
 
-    private val gravitons : ArrayList<Graviton> = ArrayList<Graviton>()
-
-    fun graviton(center: Graviton, attract:Unit, radial: Graviton) : Unit {
-        val graviton = Graviton().with(center, attract, radial)
+    fun with(center:Gravity) : Gravity {
+        this.center = center
+        return this
+    }
+    fun orbit() : Gravity {
+        return Gravity().with(this)
+    }
+    fun add(graviton:Graviton) : Graviton {
         gravitons.add(graviton)
-        return attract
+        return graviton
+    }
+    fun remove(graviton:Graviton) : Graviton {
+        return gravitons.remove(graviton) as Graviton
     }
 }
