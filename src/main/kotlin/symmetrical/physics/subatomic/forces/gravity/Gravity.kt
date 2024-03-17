@@ -28,17 +28,6 @@ open class Gravity() {
 
     private val gravitons : ArrayList<Graviton> = ArrayList<Graviton>()
 
-    companion object {
-        private lateinit var gravity : Gravity
-
-        fun setForce(gravity: Gravity) : Gravity {
-            Companion.gravity = gravity
-            return gravity
-        }
-    }
-
-
-
     fun graviton(center: Graviton, attract:Unit, radial: Graviton) : Unit {
         val graviton = Graviton().with(center, attract, radial)
         gravitons.add(graviton)
