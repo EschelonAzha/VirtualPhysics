@@ -88,7 +88,7 @@ open class ParticleBeam(
         if (uniqueId == null)
             return -1
         for (i in 0 until _beam.size()) {
-            val particle:Particle = get(0) as Particle
+            val particle:Particle = get(i) as Particle
             if (particle.getUniqueId()== uniqueId)
                 return i
         }
