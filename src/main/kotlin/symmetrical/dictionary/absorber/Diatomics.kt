@@ -9,7 +9,6 @@ object Diatomics {
         val debug = particle.getUniqueId()
         val pos = beam.findByUniqueId(particle.getUniqueId())
         if (pos == -1) {
-            println("Illumination Id: $debug")
             beam.add(particle)
         }
     }
