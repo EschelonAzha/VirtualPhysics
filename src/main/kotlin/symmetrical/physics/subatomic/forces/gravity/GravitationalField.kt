@@ -25,22 +25,18 @@ import symmetrical.physics.subatomic.spacial.Beam
 // For more information visit:   https://en.wikipedia.org/wiki/Gravity
 
 
-open class GravitationalField() {
-    private var center      : GravitationalField? = null
-    private val gravitons   : Beam = Beam()
+open class GravitationalField : IGravitationalField {
+    private var gravity     : IGravity?            = null
+    private var orbits      : IGravitationalField? = null
 
-    fun with(center:GravitationalField) : GravitationalField {
-        this.center = center
+    override fun orbit(orbits:IGravitationalField) : GravitationalField {
+        this.orbits = orbits
         return this
     }
-    fun orbit() : GravitationalField {
-        return GravitationalField().with(this)
+
+    override fun setGravity(gravity:IGravity) : GravitationalField {
+        this.gravity = gravity
+        return this
     }
-    fun add(graviton:Graviton) : Graviton {
-        gravitons.add(graviton)
-        return graviton
-    }
-    fun remove(graviton:Graviton) : Graviton {
-        return gravitons.remove(graviton) as Graviton
-    }
+
 }
