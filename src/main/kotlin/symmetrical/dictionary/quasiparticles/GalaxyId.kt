@@ -26,6 +26,10 @@ class GalaxyId (
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
+    fun setGalaxyId(galaxyId:GalaxyId) : GalaxyId {
+        setContent(galaxyId.toString())
+        return this
+    }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }

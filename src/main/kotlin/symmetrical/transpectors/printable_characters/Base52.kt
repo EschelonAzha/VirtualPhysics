@@ -25,8 +25,9 @@ import kotlin.math.floor
 class Base52() {
 
     object Static {
+        public var UNIVERSE_ID       :String = "baa"
         public var currentClassId   :String = "ba"
-        public var currentGalaxyId  :String = "baa"
+        public var currentGalaxyId  :String = UNIVERSE_ID
     }
     companion object {
         private val characters = Characters().with(LowerCase.LOWERCASE + UpperCase.UPPERCASE);
