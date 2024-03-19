@@ -20,17 +20,39 @@ package symmetrical.physics.subatomic.forces.gravity
 
 import symmetrical.physics.subatomic.bosons.Graviton
 import symmetrical.physics.subatomic.spacial.Beam
+import kotlin.reflect.KClass
 
 
 // For more information visit:   https://en.wikipedia.org/wiki/Gravity
 
 
 open class GravitationalField : IGravitationalField {
+    private var beam        : Beam                 = Beam()
     private var gravity     : IGravity?            = null
     private var orbits      : IGravitationalField? = null
 
+
+    override fun attract(item:Any) : GravitationalField {
+        beam.add(item)
+        return this
+    }
+    override fun gravitateTo(kClass: KClass<*>) : Any? {
+        val pos = beam.findByType(kClass)
+        if (pos != -1)
+            return beam.get(pos)
+        if (gravity!!::class == kClass)
+            return gravity
+        if (orbits == null)
+            return null
+        return orbits!!.gravitateTo(kClass)
+    }
     override fun orbit(orbits:IGravitationalField) : GravitationalField {
         this.orbits = orbits
+        return this
+    }
+
+    override fun remove(item:Any) : GravitationalField {
+        beam.remove(item)
         return this
     }
 
