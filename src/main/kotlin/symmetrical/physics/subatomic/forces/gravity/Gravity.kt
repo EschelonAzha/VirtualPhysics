@@ -15,6 +15,11 @@ class Gravity : IGravity {
         return this
     }
 
+    override fun eject(item:Any) : IGravity {
+        gravitationalField.eject(item)
+        return this
+    }
+
     override fun getGravitationalField() : IGravitationalField {
         return gravitationalField
     }
@@ -30,10 +35,7 @@ class Gravity : IGravity {
         return this
     }
 
-    override fun remove(item:Any) : IGravity {
-        gravitationalField.remove(item)
-        return this
-    }
+
 
     override fun setSelf(gravity:IGravity) : IGravity {
         this.self = gravity

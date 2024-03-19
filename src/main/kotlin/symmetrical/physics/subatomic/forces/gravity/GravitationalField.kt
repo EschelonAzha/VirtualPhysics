@@ -36,6 +36,10 @@ open class GravitationalField : IGravitationalField {
         beam.add(item)
         return this
     }
+    override fun eject(item:Any) : GravitationalField {
+        beam.remove(item)
+        return this
+    }
     override fun gravitateTo(kClass: KClass<*>) : Any? {
         val pos = beam.findByType(kClass)
         if (pos != -1)
@@ -51,10 +55,7 @@ open class GravitationalField : IGravitationalField {
         return this
     }
 
-    override fun remove(item:Any) : GravitationalField {
-        beam.remove(item)
-        return this
-    }
+
 
     override fun setGravity(gravity:IGravity) : GravitationalField {
         this.gravity = gravity
