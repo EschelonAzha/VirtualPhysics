@@ -27,7 +27,8 @@ object Config {
     private const val  _ClassIdLth            = 2;
     private const val  _THREAD_SLEEP:Long     = 8;  // Milliseconds
     private const val  _UPDATE_SLEEP:Long     = 2;
-    private const val BASE52_ARRAY_SIZE:Int   = 3
+    private const val BASE52_ARRAY_SIZE:Int   = 3;
+    private const val PING:Long               = 200;
 
     fun getBase52ArraySize() : Int {
         return BASE52_ARRAY_SIZE
@@ -40,6 +41,9 @@ object Config {
 
     fun getPhotonLength() : Int {
         return _PhotonLth
+    }
+    fun getPing() : Long {
+        return PING;
     }
 
     fun getThreadSleep() : Long {
