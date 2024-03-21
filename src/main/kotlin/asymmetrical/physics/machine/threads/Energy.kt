@@ -60,4 +60,15 @@ open class Energy : Thread()  {
         updating = false
         return
     }
+
+    override fun run() : Unit {
+        var continueRunning = true
+        while (continueRunning) {
+            continueRunning = spin()
+        }
+    }
+
+    open fun spin() : Boolean {
+        return false
+    }
 }
