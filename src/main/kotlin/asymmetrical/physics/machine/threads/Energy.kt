@@ -19,7 +19,7 @@ package asymmetrical.physics.machine.threads
  */
 
 import asymmetrical.physics.machine.config.Config
-import cosmology.dimensions.charge.IEnergy
+import symmetrical.physics.dimensions.IEnergy
 
 open class Energy : Thread(), IEnergy {
     @Volatile protected var running     = false
