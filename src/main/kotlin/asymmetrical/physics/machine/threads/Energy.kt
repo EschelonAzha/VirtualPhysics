@@ -19,8 +19,9 @@ package asymmetrical.physics.machine.threads
  */
 
 import asymmetrical.physics.machine.config.Config
+import cosmology.dimensions.charge.IEnergy
 
-open class Energy : Thread()  {
+open class Energy : Thread(), IEnergy {
     @Volatile protected var running     = false
     @Volatile protected var updating    = false
 
@@ -64,11 +65,11 @@ open class Energy : Thread()  {
     override fun run() : Unit {
         var continueRunning = true
         while (continueRunning) {
-            continueRunning = spin()
+            continueRunning = spin(0.toDouble())
         }
     }
 
-    open fun spin() : Boolean {
+    override fun spin(timestamp:Double) : Boolean {
         return false
     }
 }
