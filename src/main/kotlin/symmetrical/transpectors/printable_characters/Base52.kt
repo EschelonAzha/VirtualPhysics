@@ -25,7 +25,7 @@ import kotlin.math.floor
 class Base52() {
 
     object Static {
-        public var UNIVERSE_ID       :String = "baa"
+        public var UNIVERSE_ID      :String = "aaa"
         public var currentClassId   :String = "ba"
         public var currentGalaxyId  :String = UNIVERSE_ID
     }
@@ -34,13 +34,13 @@ class Base52() {
 
 
         fun classId() : String {
-            var current     : String = Static.currentClassId
+            var current  : String = Static.currentClassId
             Static.currentClassId = next(Static.currentClassId)
             return current
         }
         fun galaxyId() : String {
-            var current     : String = Static.currentGalaxyId
-            Static.currentGalaxyId = next(Static.currentGalaxyId)
+            var current   : String = Static.currentGalaxyId
+            Static.currentGalaxyId = Strings.toFixedLength(3, "a", next(Static.currentGalaxyId))
             return current
         }
         fun next(base52: String): String {
