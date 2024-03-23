@@ -19,6 +19,7 @@ package symmetrical.dictionary.absorber
  */
 
 import symmetrical.dictionary.quasiparticles.GalaxyId
+import symmetrical.dictionary.quasiparticles.RemoteId
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
 import kotlin.reflect.KClass
@@ -28,6 +29,7 @@ interface IAbsorber {
     fun createInstance(id:String)           : Any?
     fun getClassId(classType: KClass<*>)    : String
     fun getGalaxyId()                       : String
+    fun getRemoteId()                       : String
     fun initialize()                        : Absorber
     fun initialize(group:ClassGroup)        : Absorber
     fun materialize(emission:String)        : Pair<IEmitter?, String>
@@ -36,4 +38,5 @@ interface IAbsorber {
 
     fun nextGalaxyId()                      : GalaxyId
     fun setGalaxyId(galaxyId:GalaxyId)      : Unit
+    fun setRemoteId(remoteId: RemoteId)     : Unit
 }

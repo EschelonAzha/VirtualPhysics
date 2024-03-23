@@ -22,12 +22,16 @@ import symmetrical.transpectors.transpectors.Strings
 import kotlin.math.floor
 
 
+
 class Base52() {
 
     object Static {
         public var UNIVERSE_ID      :String = "aaa"
+        public var REMOTE_ID        :String = "Aaa"
+        public var MAX_SESSIONS     :Int    = 70304
         public var currentClassId   :String = "ba"
         public var currentGalaxyId  :String = UNIVERSE_ID
+        public var currentRemoteId  :String = REMOTE_ID
     }
     companion object {
         private val characters = Characters().with(LowerCase.LOWERCASE + UpperCase.UPPERCASE);
@@ -41,8 +45,22 @@ class Base52() {
         fun galaxyId() : String {
             var current   : String = Static.currentGalaxyId
             Static.currentGalaxyId = Strings.toFixedLength(3, "a", next(Static.currentGalaxyId))
+            if (Static.currentGalaxyId == Static.REMOTE_ID) {
+                println("Base52.galaxyId() *************** exceeded max sessions!!!!!!!!!!!!!!!!!!!!!!!")
+                println("Base52.galaxyId() *************** exceeded max sessions!!!!!!!!!!!!!!!!!!!!!!!")
+            }
+            if (toInt(Static.currentGalaxyId)>Static.MAX_SESSIONS) {
+                println("Base52.galaxyId() *************** exceeded max sessions!!!!!!!!!!!!!!!!!!!!!!!")
+                println("Base52.galaxyId() *************** exceeded max sessions!!!!!!!!!!!!!!!!!!!!!!!")
+            }
             return current
         }
+        fun remoteId() : String {
+            var current   : String = Static.currentRemoteId
+            Static.currentRemoteId = Strings.toFixedLength(3, "a", next(Static.currentRemoteId))
+            return current
+        }
+
         fun next(base52: String): String {
             var value: Int = toInt(base52)
             return toBase52(++value)

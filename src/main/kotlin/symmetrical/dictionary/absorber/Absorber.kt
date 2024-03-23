@@ -22,6 +22,7 @@ import asymmetrical.physics.machine.config.Config
 import symmetrical.chemistry.diatomics.KeyData
 import symmetrical.dictionary.absorber.class_groups.*
 import symmetrical.dictionary.quasiparticles.GalaxyId
+import symmetrical.dictionary.quasiparticles.RemoteId
 import symmetrical.physics.dimensions.Vacuum
 import symmetrical.physics.subatomic.balanced.IParticle
 import symmetrical.transpectors.transpectors.Strings
@@ -31,7 +32,8 @@ import symmetrical.transpectors.printable_characters.Base52
 import kotlin.reflect.KClass
 
 object Absorber : IAbsorber {
-    private var galaxyId    : String            = Base52.galaxyId()
+    private var galaxyId    : String            = "aaa"
+    private var remoteId    : String            = "Aaa"
     private val beam        : ClassGroup        = ClassGroup()
 
     private val diatomics   : Diatomics         = Diatomics
@@ -89,6 +91,9 @@ object Absorber : IAbsorber {
     override fun getGalaxyId() : String {
         return galaxyId
     }
+    override fun getRemoteId() : String {
+        return remoteId
+    }
     override fun initialize() : Absorber {
         Absorber.beam.print()
         return this
@@ -126,7 +131,10 @@ object Absorber : IAbsorber {
         val id = galaxyId.toString()
         Absorber.galaxyId = id
     }
-
+    override fun setRemoteId(remoteId: RemoteId) : Unit {
+        val id = remoteId.toString()
+        Absorber.remoteId = id
+    }
     private fun illuminate(clone:IEmitter) : Unit {
         if (clone.isIlluminated())
             Diatomics.illuminate(clone as IParticle)
