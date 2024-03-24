@@ -32,11 +32,15 @@ interface IAbsorber {
     fun getRemoteId()                       : String
     fun initialize()                        : Absorber
     fun initialize(group:ClassGroup)        : Absorber
-    fun materialize(emission:String)        : Pair<IEmitter?, String>
-    fun materialize(photon: Photon)         : Pair<IEmitter?, String>
-    fun newInstance(classType:KClass<*>)    : Any?
 
-    fun nextGalaxyId()                      : GalaxyId
-    fun setGalaxyId(galaxyId:GalaxyId)      : Unit
-    fun setRemoteId(remoteId: RemoteId)     : Unit
+    fun isMonoGalactic()                        : Boolean
+    fun materialize(emission:String)            : Pair<IEmitter?, String>
+    fun materialize(photon: Photon)             : Pair<IEmitter?, String>
+    fun newInstance(classType:KClass<*>)        : Any?
+
+    fun nextGalaxyId()                          : GalaxyId
+    fun setGalaxyId(galaxyId:GalaxyId)          : Unit
+
+    fun setMonoGalactic(isMonoGalactic:Boolean) : IAbsorber
+    fun setRemoteId(remoteId: RemoteId)         : Unit
 }

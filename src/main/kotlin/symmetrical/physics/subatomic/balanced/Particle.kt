@@ -21,6 +21,7 @@ package symmetrical.physics.subatomic.balanced
 import asymmetrical.physics.machine.vm.Classes
 import symmetrical.dictionary.absorber.Absorber
 import symmetrical.dictionary.absorber.Diatomics
+import symmetrical.dictionary.quasiparticles.GalaxyId
 import symmetrical.transpectors.transpectors.Keys
 import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
 import symmetrical.physics.subatomic.balanced.fundamentals.spin.Spin
@@ -32,6 +33,8 @@ import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
 import symmetrical.physics.dimensions.*
+import symmetrical.physics.subatomic.forces.gravity.Gravity
+import symmetrical.physics.subatomic.forces.gravity.IGravity
 import symmetrical.physics.subatomic.luminescent.IQuasiParticle
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
@@ -41,8 +44,10 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 open class Particle(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Particle::class),
+    private val gravity         : Gravity           = Gravity()
 ) :
-    IMatterAntiMatter by matterAntiMatter,
+    IMatterAntiMatter   by matterAntiMatter,
+    IGravity            by gravity,
     IParticle
 
 {
@@ -64,6 +69,7 @@ open class Particle(
     private     var angularMomentum : AngularMomentum       = AngularMomentum().withQuantum(this)
 
     init {
+        gravity.setSelf(this)
         time.setContent(0)
         illuminated.setContent(false)
     }
@@ -91,6 +97,13 @@ open class Particle(
     }
 
     override fun createUniqueId(): IParticle {
+        var galaxyId:String = Absorber.getGalaxyId()
+        if (!Absorber.isMonoGalactic()) {
+            val id : GalaxyId? = gravitateTo(GalaxyId::class) as GalaxyId?
+            if (id != null)
+                galaxyId = id.toString()
+        }
+
         if (uniqueId.isNull())
             uniqueId.setContent(getClassId() + Keys.getUniqueId())
         return getSelf()

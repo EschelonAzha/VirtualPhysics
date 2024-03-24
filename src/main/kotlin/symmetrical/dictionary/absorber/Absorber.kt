@@ -32,11 +32,12 @@ import symmetrical.transpectors.printable_characters.Base52
 import kotlin.reflect.KClass
 
 object Absorber : IAbsorber {
-    private var galaxyId    : String            = "aaa"
-    private var remoteId    : String            = "Aaa"
-    private val beam        : ClassGroup        = ClassGroup()
+    private var monoGalactic    : Boolean           = true;
+    private var galaxyId        : String            = "aaa"
+    private var remoteId        : String            = "Aaa"
+    private val beam            : ClassGroup        = ClassGroup()
 
-    private val diatomics   : Diatomics         = Diatomics
+    private val diatomics       : Diatomics         = Diatomics
 
     init {
         Absorber.beam.add(EntityId().with(Vacuum.getClassId(), Vacuum::class))
@@ -103,6 +104,9 @@ object Absorber : IAbsorber {
         Absorber.beam.print()
         return this
     }
+    override fun isMonoGalactic() : Boolean {
+        return monoGalactic
+    }
     override fun materialize(emission:String) : Pair<IEmitter?, String> {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
         val clone = Absorber.createInstance(classId) as IEmitter
@@ -130,6 +134,11 @@ object Absorber : IAbsorber {
     override fun setGalaxyId(galaxyId:GalaxyId) : Unit {
         val id = galaxyId.toString()
         Absorber.galaxyId = id
+    }
+
+    override fun setMonoGalactic(isMonoGalactic:Boolean) : IAbsorber {
+        this.monoGalactic = isMonoGalactic
+        return this
     }
     override fun setRemoteId(remoteId: RemoteId) : Unit {
         val id = remoteId.toString()

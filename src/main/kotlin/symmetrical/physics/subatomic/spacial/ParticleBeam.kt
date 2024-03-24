@@ -26,6 +26,8 @@ import symmetrical.transpectors.printable_characters.Base52
 import symmetrical.transpectors.transpectors.Strings
 import symmetrical.physics.subatomic.bosons.IEmitter
 import symmetrical.physics.subatomic.bosons.Photon
+import symmetrical.physics.subatomic.forces.gravity.Gravity
+import symmetrical.physics.subatomic.forces.gravity.IGravity
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 import kotlin.reflect.KClass
@@ -104,6 +106,15 @@ open class ParticleBeam(
     }
     override fun getParticleCore() : Array<IEmitter> {
         return getCore() as Array<IEmitter>
+    }
+    override fun orbit(gravity: IGravity) : IGravity {
+        super.orbit(gravity)
+        for (i in 0 until size()) {
+            val particle:Particle = get(i) as Particle
+            particle.orbit(this)
+        }
+        return this
+
     }
     override fun set(pos:Int, particle: IEmitter) : IEmitter {
         return _beam.set(pos, particle) as IEmitter
