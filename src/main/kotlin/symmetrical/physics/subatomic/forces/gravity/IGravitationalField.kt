@@ -5,6 +5,7 @@ import kotlin.reflect.KClass
 interface IGravitationalField {
 
     fun attract         (item:Any)                      : GravitationalField
+    fun deorbit         ()                              : GravitationalField
     fun eject           (item:Any)                      : GravitationalField
     fun gravitate       (kClass: KClass<*>)             : Any?
     fun orbit           (orbits:IGravitationalField)    : GravitationalField

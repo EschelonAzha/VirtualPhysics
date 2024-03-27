@@ -15,6 +15,12 @@ class Gravity : IGravity {
         return this
     }
 
+    override fun deorbit() : Gravity {
+        gravitationalField.deorbit()
+        return this
+    }
+
+
     override fun eject(item:Any) : IGravity {
         gravitationalField.eject(item)
         return this

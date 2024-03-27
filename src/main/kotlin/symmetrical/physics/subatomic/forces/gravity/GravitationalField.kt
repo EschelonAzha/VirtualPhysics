@@ -36,6 +36,10 @@ open class GravitationalField : IGravitationalField {
         beam.add(item)
         return this
     }
+    override fun deorbit() : GravitationalField {
+        this.orbits = null
+        return this
+    }
     override fun eject(item:Any) : GravitationalField {
         beam.remove(item)
         return this

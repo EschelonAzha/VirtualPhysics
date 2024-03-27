@@ -4,6 +4,7 @@ import kotlin.reflect.KClass
 
 interface IGravity {
     fun attract                 (item:Any)              : IGravity
+    fun deorbit                 ()                      : IGravity
     fun eject                   (item:Any)              : IGravity
     fun getGravitationalField   ()                      : IGravitationalField
     fun getGravity              ()                      : IGravity
