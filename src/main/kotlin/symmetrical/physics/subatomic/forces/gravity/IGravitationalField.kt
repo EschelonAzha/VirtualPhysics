@@ -11,4 +11,5 @@ interface IGravitationalField {
     fun orbit           (orbits:IGravitationalField)    : GravitationalField
 
     fun setGravity      (gravity:IGravity)              : GravitationalField
+
 }

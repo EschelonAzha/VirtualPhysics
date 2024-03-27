@@ -32,6 +32,7 @@ open class GravitationalField : IGravitationalField {
     private var orbits      : IGravitationalField? = null
 
 
+
     override fun attract(item:Any) : GravitationalField {
         beam.add(item)
         return this
@@ -59,11 +60,10 @@ open class GravitationalField : IGravitationalField {
         return this
     }
 
-
-
     override fun setGravity(gravity:IGravity) : GravitationalField {
         this.gravity = gravity
         return this
     }
+
 
 }
