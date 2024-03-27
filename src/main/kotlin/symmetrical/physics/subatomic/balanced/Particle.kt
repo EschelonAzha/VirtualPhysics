@@ -99,7 +99,7 @@ open class Particle(
     override fun createUniqueId(): IParticle {
         var galaxyId:String = Absorber.getGalaxyId()
         if (!Absorber.isMonoGalactic()) {
-            val id : GalaxyId? = gravitateTo(GalaxyId::class) as GalaxyId?
+            val id : GalaxyId? = gravitate(GalaxyId::class) as GalaxyId?
             if (id != null)
                 galaxyId = id.toString()
         }

@@ -27,8 +27,8 @@ class Gravity : IGravity {
         return this
     }
 
-    override fun gravitateTo(kClass: KClass<*>) : Any? {
-        return gravitationalField.gravitateTo(kClass)
+    override fun gravitate(kClass: KClass<*>) : Any? {
+        return gravitationalField.gravitate(kClass)
     }
     override fun orbit(gravity:IGravity) : Gravity {
         gravitationalField.orbit(gravity.getGravitationalField())
