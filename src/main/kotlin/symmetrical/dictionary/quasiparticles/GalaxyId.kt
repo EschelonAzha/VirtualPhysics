@@ -5,6 +5,7 @@ import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
+import symmetrical.transpectors.printable_characters.Base52
 
 class GalaxyId (
     private val matterAntiMatter: IMatter = Matter().with(GalaxyId::class)
@@ -26,9 +27,16 @@ class GalaxyId (
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
+
+
     fun setGalaxyId(galaxyId:GalaxyId) : GalaxyId {
         setContent(galaxyId.toString())
         return this
+    }
+
+    override fun toInt() : Int {
+        val id = toString()
+        return Base52.toInt(id)
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
