@@ -44,6 +44,8 @@ open class ParticleBeam(
     IEmitter
 {
 
+    var orbitting:Boolean = false
+
     open fun capacity(initialCapacity:Int=1) : ParticleBeam {
         _beam.capacity(initialCapacity)
         return this
@@ -70,7 +72,25 @@ open class ParticleBeam(
         return Photon().with(remainder)
     }
     override fun add(particle: IEmitter) : IEmitter {
+        if (orbitting) {
+            if (particle is Particle) {
+                particle.orbit(this)
+            }
+        }
         return _beam.add(particle) as IEmitter
+    }
+
+    override fun deorbit() : IGravity {
+        super.deorbit()
+        for (i in 0 until size()) {
+            val particle:IEmitter = get(i) as IEmitter
+            if (particle is Particle) {
+                particle.deorbit()
+            }
+        }
+        this.orbitting = false
+        return this
+
     }
 
     override fun emit() : Photon {
@@ -113,6 +133,7 @@ open class ParticleBeam(
             val particle:Particle = get(i) as Particle
             particle.orbit(this)
         }
+        this.orbitting = true
         return this
 
     }
