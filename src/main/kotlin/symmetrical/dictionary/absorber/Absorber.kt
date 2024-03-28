@@ -128,9 +128,7 @@ object Absorber : IAbsorber {
         }
         return null
     }
-    override fun nextGalaxyId() : GalaxyId {
-        return GalaxyId().with(Base52.galaxyId())
-    }
+
     override fun setGalaxyId(galaxyId:GalaxyId) : Unit {
         val id = galaxyId.toString()
         Absorber.galaxyId = id

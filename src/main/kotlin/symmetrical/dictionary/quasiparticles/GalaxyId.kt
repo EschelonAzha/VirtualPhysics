@@ -1,5 +1,7 @@
 package symmetrical.dictionary.quasiparticles
 
+
+import asymmetrical.physics.machine.config.Config
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
@@ -28,6 +30,10 @@ class GalaxyId (
         return matterAntiMatter.getClassId()
     }
 
+    fun getRemoteId() : RemoteId {
+        val id = Base52.toFixedBase52(Config.getGalaxyIdLth(), toInt() + Base52.Static.MAX_SESSIONS)
+        return RemoteId().with(id) as RemoteId
+    }
 
     fun setGalaxyId(galaxyId:GalaxyId) : GalaxyId {
         setContent(galaxyId.toString())

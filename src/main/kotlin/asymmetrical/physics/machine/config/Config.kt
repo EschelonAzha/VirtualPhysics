@@ -30,6 +30,8 @@ object Config {
     private const val BASE52_ARRAY_SIZE:Int   = 3;
     private const val PING:Long               = 200;
 
+    private const val GALAXY_ID_LTH           = 3
+
     fun getBase52ArraySize() : Int {
         return BASE52_ARRAY_SIZE
     }
@@ -37,6 +39,10 @@ object Config {
 
     fun getClassIdLth() : Int {
         return _ClassIdLth
+    }
+
+    fun getGalaxyIdLth() : Int {
+        return GALAXY_ID_LTH
     }
 
     fun getPhotonLength() : Int {

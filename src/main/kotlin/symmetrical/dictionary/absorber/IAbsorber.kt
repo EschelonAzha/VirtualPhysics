@@ -38,7 +38,6 @@ interface IAbsorber {
     fun materialize(photon: Photon)             : Pair<IEmitter?, String>
     fun newInstance(classType:KClass<*>)        : Any?
 
-    fun nextGalaxyId()                          : GalaxyId
     fun setGalaxyId(galaxyId:GalaxyId)          : Unit
 
     fun setMonoGalactic(isMonoGalactic:Boolean) : IAbsorber
