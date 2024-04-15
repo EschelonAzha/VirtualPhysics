@@ -30,6 +30,7 @@ class Base52() {
     object Static {
         public var UNIVERSE_ID      :String = "aaa"
         public var MAX_SESSIONS     :Int    = 70304
+      //  public var MAX_SESSIONS     :Int    = 10
         public var currentClassId   :String = "ba"
         public var currentGalaxyId  :String = UNIVERSE_ID
     }
