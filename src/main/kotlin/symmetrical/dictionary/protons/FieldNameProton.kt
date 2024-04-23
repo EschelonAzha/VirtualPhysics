@@ -30,6 +30,13 @@ class FieldNameProton(
 ) : Proton(),
     IMatter by matterAntiMatter
 {
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -41,7 +48,6 @@ class FieldNameProton(
         val classId = matterAntiMatter.getClassId()
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
@@ -52,7 +58,7 @@ class FieldNameProton(
         val classId : String = matterAntiMatter.getClassId()
         val proton  : String = super.emit().radiate()
         return classId+proton
-
     }
+    // ########################### EMISSIONS ###########################
 
 }

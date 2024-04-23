@@ -20,18 +20,6 @@ class StringConstraint (
         setMinLength(0)
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
-    }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
     fun isNotNull() : Boolean {
         return getSpin().isTrue()
     }
@@ -82,6 +70,22 @@ class StringConstraint (
         return this
     }
 
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("StringConstraint")
@@ -90,4 +94,5 @@ class StringConstraint (
         val quark  :String = super.emit().radiate()
         return classId+quark
     }
+    // ########################### EMISSIONS ###########################
 }

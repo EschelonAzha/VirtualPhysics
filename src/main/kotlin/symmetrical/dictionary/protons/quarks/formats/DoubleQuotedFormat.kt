@@ -14,7 +14,15 @@ class DoubleQuotedFormat (
 ) : Up(),
     IMatter by matterAntiMatter
 {
+    override fun mediate(value: Quark, constraints: Quark, zBoson:ZBoson) : ZBoson {
+        setContent(Strings.doubleQuoted(value.getWavelength().getField().toString()))
+        return zBoson
+    }
 
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -23,14 +31,8 @@ class DoubleQuotedFormat (
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
-    }
-
-    override fun mediate(value: Quark, constraints: Quark, zBoson:ZBoson) : ZBoson {
-        setContent(Strings.doubleQuoted(value.getWavelength().getField().toString()))
-        return zBoson
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
@@ -40,4 +42,5 @@ class DoubleQuotedFormat (
         val quark  :String = super.emit().radiate()
         return classId+quark
     }
+    // ########################### EMISSIONS ###########################
 }

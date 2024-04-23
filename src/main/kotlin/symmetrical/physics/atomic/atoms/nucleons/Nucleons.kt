@@ -54,19 +54,6 @@ class Nucleons(
         setNucleons(this)
     }
 
-
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        var remainder = photon.propagate()
-        remainder = _protons.absorb(remainder)
-        remainder = neutrons.absorb(remainder)
-
-        setNucleons(this)
-
-        return remainder
-    }
-
     override fun betaPlusDecay(content:Any?) : Atom {
         betaPlusDecay()
         _protons.getProton(ValueProton::class).getValueQuark().setContent(content)
@@ -108,17 +95,9 @@ class Nucleons(
 //
         return this
     }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
     fun getAtom() : Atom {
         return this.p_atom
     }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
     override fun getNeutrons() : Neutrons {
         return neutrons
     }
@@ -137,7 +116,6 @@ class Nucleons(
         _protons.setNucleons(nucleons)
         return nucleons
     }
-
     private fun cloneQuark(down:Quark) : Down {
 
         val emission: Photon = down.emit()
@@ -148,6 +126,29 @@ class Nucleons(
         quark1.getSpace().setContent(quark2)
         quark2.getSpace().setContent(quark1)
     }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        var remainder = photon.propagate()
+        remainder = _protons.absorb(remainder)
+        remainder = neutrons.absorb(remainder)
+
+        setNucleons(this)
+
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Nucleons")
@@ -157,4 +158,5 @@ class Nucleons(
         val neutrons:String = neutrons.emit().radiate()
         return classId+protons+neutrons
     }
+    // ########################### EMISSIONS ###########################
 }

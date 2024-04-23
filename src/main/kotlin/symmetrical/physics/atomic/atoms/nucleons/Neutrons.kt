@@ -37,6 +37,25 @@ class Neutrons(
 {
     lateinit var p_nucleons: Nucleons
 
+
+    override fun addNeutron(neutron: Neutron) : Neutron {
+        add(neutron)
+        return neutron
+    }
+    override fun getNeutron(pos:Int) : Neutron {
+        return get(pos) as Neutron
+    }
+    final override fun setNucleons(nucleons: Nucleons) : Nucleons {
+        this.p_nucleons = nucleons
+        return nucleons
+    }
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -50,30 +69,16 @@ class Neutrons(
         }
         return remainder
     }
-    override fun addNeutron(neutron: Neutron) : Neutron {
-        add(neutron)
-        return neutron
-    }
-
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getNeutron(pos:Int) : Neutron {
-        return get(pos) as Neutron
-    }
-
-    final override fun setNucleons(nucleons: Nucleons) : Nucleons {
-        this.p_nucleons = nucleons
-        return nucleons
-    }
-
     private fun radiate() : String {
         val classId : String = matterAntiMatter.getClassId()
         val particleBeam : String = super.emit().radiate()
         return classId+particleBeam
     }
+    // ########################### EMISSIONS ###########################
 }

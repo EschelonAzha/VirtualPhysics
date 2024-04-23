@@ -19,8 +19,17 @@ class Carbon (
         addProtons(arrayOf(proton1, proton2, proton3, proton4, proton5))   // To make Carbon we must supply 5 more protons beyond Hydrogen
         return this
     }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
@@ -28,4 +37,5 @@ class Carbon (
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

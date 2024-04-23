@@ -44,6 +44,24 @@ open class KeyData(
         const val LAST      : Int = DATA
     }
 
+    fun getKey() : Atom? {
+        if (size()>0)
+            return get(Static.KEY) as Atom
+        return null
+    }
+    fun getData() : Atom? {
+        if (size()>1)
+            return get(Static.DATA) as Atom
+        return null
+    }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -55,23 +73,12 @@ open class KeyData(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
-    }
-
-    fun getKey() : Atom? {
-        if (size()>0)
-            return get(Static.KEY) as Atom
-        return null
-    }
-    fun getData() : Atom? {
-        if (size()>1)
-            return get(Static.DATA) as Atom
-        return null
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

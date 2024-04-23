@@ -20,6 +20,24 @@ class GalaxyId (
         return this
     }
 
+    fun getRemoteId() : RemoteId {
+        val id = Base52.toFixedBase52(Config.getGalaxyIdLth(), toInt() + Base52.Static.MAX_SESSIONS)
+        return RemoteId().with(id) as RemoteId
+    }
+    fun setGalaxyId(galaxyId:GalaxyId) : GalaxyId {
+        setContent(galaxyId.toString())
+        return this
+    }
+    override fun toInt() : Int {
+        val id = toString()
+        return Base52.toInt(id)
+    }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }
@@ -29,22 +47,8 @@ class GalaxyId (
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
-    fun getRemoteId() : RemoteId {
-        val id = Base52.toFixedBase52(Config.getGalaxyIdLth(), toInt() + Base52.Static.MAX_SESSIONS)
-        return RemoteId().with(id) as RemoteId
-    }
-
-    fun setGalaxyId(galaxyId:GalaxyId) : GalaxyId {
-        setContent(galaxyId.toString())
-        return this
-    }
-
-    override fun toInt() : Int {
-        val id = toString()
-        return Base52.toInt(id)
-    }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

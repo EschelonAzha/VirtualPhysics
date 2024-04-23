@@ -43,7 +43,19 @@ open class Polymer(
     object Static {
         const val LAST      : Int = -1
     }
+    fun bind(monomer: IMonomer) : IMonomer {
+        this.add(monomer)
+        monomer.setPolymer(this)
+        return monomer
+    }
+    fun getMonomer(pos:Int) : IMonomer {
+        return get(pos) as IMonomer
+    }
 
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -51,28 +63,15 @@ open class Polymer(
         remainder = super.absorb(remainder)
         return remainder
     }
-
-    fun bind(monomer: IMonomer) : IMonomer {
-        this.add(monomer)
-        monomer.setPolymer(this)
-        return monomer
-    }
-
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
-    fun getMonomer(pos:Int) : IMonomer {
-        return get(pos) as IMonomer
-    }
-
-
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

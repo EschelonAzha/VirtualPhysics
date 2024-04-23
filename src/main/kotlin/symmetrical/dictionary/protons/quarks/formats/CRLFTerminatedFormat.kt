@@ -15,6 +15,16 @@ class CRLFTerminatedFormat(
     IMatter by matterAntiMatter
 {
 
+    override fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
+        setContent(Strings.crlfTerminated(value.getWavelength().getField().toString()))
+        return zBoson
+    }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -23,14 +33,8 @@ class CRLFTerminatedFormat(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
-    }
-
-    override fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
-        setContent(Strings.crlfTerminated(value.getWavelength().getField().toString()))
-        return zBoson
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
@@ -40,4 +44,5 @@ class CRLFTerminatedFormat(
         val quark  :String = super.emit().radiate()
         return classId+quark
     }
+    // ########################### EMISSIONS ###########################
 }

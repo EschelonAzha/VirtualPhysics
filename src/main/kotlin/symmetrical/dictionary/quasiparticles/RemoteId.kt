@@ -17,6 +17,16 @@ class RemoteId (
         return this
     }
 
+    fun setRemoteId(remoteId:RemoteId) : RemoteId {
+        setContent(remoteId.toString())
+        return this
+    }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }
@@ -26,11 +36,8 @@ class RemoteId (
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun setRemoteId(remoteId:RemoteId) : RemoteId {
-        setContent(remoteId.toString())
-        return this
-    }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

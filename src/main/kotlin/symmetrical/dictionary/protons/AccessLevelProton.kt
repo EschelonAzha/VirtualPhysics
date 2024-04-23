@@ -33,6 +33,12 @@ class AccessLevelProton (
         const val READ_ONLY = 0
         const val UPDATE    = 1
     }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -44,7 +50,6 @@ class AccessLevelProton (
         val classId = matterAntiMatter.getClassId()
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
@@ -55,7 +60,7 @@ class AccessLevelProton (
         val classId : String = matterAntiMatter.getClassId()
         val proton  : String = super.emit().radiate()
         return classId+proton
-
     }
+    // ########################### EMISSIONS ###########################
 
 }

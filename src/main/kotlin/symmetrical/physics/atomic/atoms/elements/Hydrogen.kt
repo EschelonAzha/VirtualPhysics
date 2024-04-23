@@ -40,8 +40,17 @@ open class Hydrogen(
         super.with(value)
         return this
     }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
@@ -49,4 +58,5 @@ open class Hydrogen(
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

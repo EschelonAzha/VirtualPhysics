@@ -47,19 +47,6 @@ class Protons(
         _valueProton = add(ValueProton().setProtons(this)) as ValueProton
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        clear()
-
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-
-        for (i in 0 until size()) {
-            (get(i) as Proton).setProtons(this)
-        }
-        return remainder
-    }
     override fun addProton(proton: Proton) : Proton {
         add(proton)
         return proton
@@ -67,16 +54,6 @@ class Protons(
     fun capacitanceChange(proton: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return getAtom().capacitanceChange(proton, valueQuark, zBoson)
     }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
-
     fun getAtom() : Atom {
         return p_nucleons.getAtom()
     }
@@ -104,6 +81,31 @@ class Protons(
         return getAtom().valueChange(proton, valueQuark, zBoson)
     }
 
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        clear()
+
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+
+        for (i in 0 until size()) {
+            (get(i) as Proton).setProtons(this)
+        }
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Protons")
@@ -112,4 +114,5 @@ class Protons(
         val particleBeam:String = super.emit().radiate()
         return classId+particleBeam
     }
+    // ########################### EMISSIONS ###########################
 }

@@ -37,8 +37,15 @@ open class Lithium (
         addProtons(arrayOf(proton1, proton2))  // To make Lithium we must supply 2 more protons beyond Hydrogen
         return this
     }
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
@@ -46,4 +53,5 @@ open class Lithium (
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }
