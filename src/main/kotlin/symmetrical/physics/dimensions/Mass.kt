@@ -54,18 +54,6 @@ class Mass (
         const val PROTON        : Byte = 11
         const val NEUTRON       : Byte = 12
     }
-    override fun absorb(photon: Photon) : Photon {
-        var remainder : Photon = photon.propagate()
-        remainder = field.absorb(remainder)
-        return remainder
-    }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    fun getClassId() : String {
-        return getLocalClassId()
-    }
     fun getField() : Field {
         return field.getField()
     }
@@ -77,6 +65,24 @@ class Mass (
 //    fun setMass(content:Any?) : Any? {
 //        return setContent(content)
 //    }
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        var remainder : Photon = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    fun getClassId() : String {
+        return getLocalClassId()
+    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Mass::class)
     }
@@ -84,4 +90,5 @@ class Mass (
         return getLocalClassId()+
                 field.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

@@ -37,6 +37,24 @@ class Time(
         this.field.setQuantum(quantum)
         return this
     }
+
+    fun getField() : Field {
+        return field.getField()
+    }
+//    fun setTime(content:Any?) : Any? {
+//        return setContent(content)
+//    }
+//    fun time() : Any? {
+//        return field.getContent()
+//    }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)
@@ -48,15 +66,6 @@ class Time(
     public fun getClassId() : String {
         return getLocalClassId()
     }
-    fun getField() : Field {
-        return field.getField()
-    }
-//    fun setTime(content:Any?) : Any? {
-//        return setContent(content)
-//    }
-//    fun time() : Any? {
-//        return field.getContent()
-//    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Time::class)
     }
@@ -64,4 +73,5 @@ class Time(
         return getLocalClassId()+
                 field.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

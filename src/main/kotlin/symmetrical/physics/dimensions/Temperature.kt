@@ -37,6 +37,23 @@ class Temperature  (
         this.field.setQuantum(quantum)
         return this
     }
+    fun getField() : Field {
+        return field.getField()
+    }
+//    fun setTemperature(value:Any?) : Any? {
+//        return setContent(value)
+//    }
+//    fun temperature() : Any? {
+//        return field.getContent()
+//    }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder : Photon = photon.propagate()
         remainder = field.absorb(remainder)
@@ -48,15 +65,7 @@ class Temperature  (
     fun getClassId() : String {
         return getLocalClassId()
     }
-    fun getField() : Field {
-        return field.getField()
-    }
-//    fun setTemperature(value:Any?) : Any? {
-//        return setContent(value)
-//    }
-//    fun temperature() : Any? {
-//        return field.getContent()
-//    }
+
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Temperature::class)
     }
@@ -64,4 +73,5 @@ class Temperature  (
         return getLocalClassId()+
                 field.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

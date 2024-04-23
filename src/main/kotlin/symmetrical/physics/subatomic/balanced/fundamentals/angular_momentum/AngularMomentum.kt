@@ -42,28 +42,6 @@ open class AngularMomentum(
         this.field.setQuantum(quantum)
         return this
     }
-
-    override fun absorb(photon: Photon) : Photon {
-        var remainder = photon.propagate()
-        remainder = field.absorb(remainder)
-        return remainder
-    }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    private fun radiate() : String {
-        return getLocalClassId()+
-                field.emit().radiate()
-    }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(AngularMomentum::class)
-    }
-
-    public open fun getClassId() : String {
-        return getLocalClassId()
-    }
     fun getField() : Field {
         return field.getField()
     }
@@ -74,4 +52,31 @@ open class AngularMomentum(
     open fun run(arg: Field) : Field {
         return arg
     }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        var remainder = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    public open fun getClassId() : String {
+        return getLocalClassId()
+    }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(AngularMomentum::class)
+    }
+    private fun radiate() : String {
+        return getLocalClassId()+
+                field.emit().radiate()
+    }
+    // ########################### EMISSIONS ###########################
 }

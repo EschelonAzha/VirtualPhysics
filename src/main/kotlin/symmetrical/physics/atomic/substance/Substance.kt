@@ -37,15 +37,25 @@ class Substance(
 ) : Element(),
     IMatter by matterAntiMatter
 {
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         return super.absorb(matterAntiMatter.check(photon).propagate())
     }
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
-
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

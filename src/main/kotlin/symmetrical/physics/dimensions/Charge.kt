@@ -46,20 +46,8 @@ class Charge (
         const val ZERO:Byte  = 0
         const val MINUS:Byte = -1
     }
-
-    override fun absorb(photon: Photon) : Photon {
-        var remainder : Photon = photon.propagate()
-        remainder = field.absorb(remainder)
-        return remainder
-    }
     fun charge() : Any? {
         return field.getContent()
-    }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-    public fun getClassId() : String {
-        return getLocalClassId()
     }
     fun getField() : Field {
         return field.getField()
@@ -68,6 +56,20 @@ class Charge (
 //        return setContent(content)
 //    }
 
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        var remainder : Photon = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Charge::class)
     }
@@ -75,4 +77,5 @@ class Charge (
         return getLocalClassId()+
                 field.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

@@ -57,29 +57,10 @@ class Spin(
         const val MINUS:Int      = -1
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        var remainder = photon.propagate()
-        remainder = field.absorb(remainder)
-        return remainder
-    }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-    public fun getClassId() : String {
-        return getLocalClassId()
-    }
     fun getField() : Field {
         return field.getField()
     }
 
-    private fun radiate() : String {
-        return getLocalClassId()+
-                field.emit().radiate()
-    }
-
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Spin::class)
-    }
     fun isFalse() : Boolean {
         return isZero()
     }
@@ -95,7 +76,6 @@ class Spin(
     fun isZero() : Boolean {
         return field.toInt() == 0
     }
-
 
     override fun setContent(content:Any?) : Any? {
         if (content is Boolean) {
@@ -124,4 +104,28 @@ class Spin(
     }
 
 
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        var remainder = photon.propagate()
+        remainder = field.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    public fun getClassId() : String {
+        return getLocalClassId()
+    }
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Spin::class)
+    }
+    private fun radiate() : String {
+        return getLocalClassId()+
+                field.emit().radiate()
+    }
+    // ########################### EMISSIONS ###########################
 }

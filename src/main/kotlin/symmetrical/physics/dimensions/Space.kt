@@ -43,23 +43,9 @@ class Space (
         this.field.setQuantum(quantum)
         return this
     }
-    override fun absorb(photon: Photon) : Photon {
-        var remainder : Photon = photon.propagate()
-        remainder = field.absorb(remainder)
 
-        val (emitter, spaceRemainder) = Absorber.materialize(remainder)
-        space = emitter?.manifest() as IParticle?
-
-        return Photon().with(spaceRemainder)
-    }
     fun breakpoint() : Unit {
         return
-    }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-    public fun getClassId() : String {
-        return getLocalClassId()
     }
     fun getField() : Field {
         return field.getField()
@@ -70,9 +56,35 @@ class Space (
     override fun setContent(any:Any?) : Any? {
         return setSpace(any as IParticle?)
     }
-
     fun space() : Any? {
         return field.getContent()
+    }
+    private fun setSpace(particle: IParticle?) : Space {
+        this.space = particle
+        return this
+    }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        var remainder : Photon = photon.propagate()
+        remainder = field.absorb(remainder)
+
+        val (emitter, spaceRemainder) = Absorber.materialize(remainder)
+        space = emitter?.manifest() as IParticle?
+
+        return Photon().with(spaceRemainder)
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    public fun getClassId() : String {
+        return getLocalClassId()
     }
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Space::class)
@@ -85,8 +97,6 @@ class Space (
             spaceRadiation = space!!.emit().radiate()
         return classId+quasi+spaceRadiation
     }
-    private fun setSpace(particle: IParticle?) : Space {
-        this.space = particle
-        return this
-    }
+    // ########################### EMISSIONS ###########################
+
 }

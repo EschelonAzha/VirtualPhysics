@@ -50,15 +50,7 @@ open class Molecular(
         const val LAST      : Int = -1
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-        clear();
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        remainder = this._particleBeam.absorb(remainder)
-        shrink()
-        return remainder
-    }
+
     fun applyConstraints(constraint: Up) : Molecular {
         for (i in 0 until size()) {
             val atom: Atom = get(i) as Atom
@@ -80,7 +72,6 @@ open class Molecular(
         }
         return this
     }
-
     override fun betaMinusDecay() : Atom {
         for (i in 0 until size()) {
             val atom: Atom = get(i) as Atom
@@ -95,18 +86,9 @@ open class Molecular(
         }
         return this
     }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-
     open fun getAtom(pos:Int) : Atom {
         return get(pos) as Atom
     }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
 
     fun materialize(strings:List<String>) : Molecular {
         for (item in strings) {
@@ -117,6 +99,27 @@ open class Molecular(
     }
 
 
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+        clear();
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        remainder = this._particleBeam.absorb(remainder)
+        shrink()
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         val classId = matterAntiMatter.getClassId()
         val atom = super.emit().radiate()
@@ -124,4 +127,5 @@ open class Molecular(
         return classId+atom+beam
 
     }
+    // ########################### EMISSIONS ###########################
 }

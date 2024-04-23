@@ -44,6 +44,24 @@ class Wavelength(
         return this
     }
 
+    fun getField() : Field {
+        return _field.getField()
+    }
+    fun getQuantumField() : QuasiParticle {
+        return _field
+    }
+//    fun setWavelength(value:Any?) : Any? {
+//        return setContent(value)
+//    }
+    fun wavelength() : Any? {
+        return _field.getContent()
+    }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = _field.absorb(remainder)
@@ -55,28 +73,17 @@ class Wavelength(
     public fun getClassId() : String {
         return getLocalClassId()
     }
-    fun getField() : Field {
-        return _field.getField()
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(Wavelength::class)
     }
-
-    fun getQuantumField() : QuasiParticle {
-        return _field
-    }
-
     private fun radiate() : String {
         return getLocalClassId()+
                 _field.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(Wavelength::class)
-    }
-//    fun setWavelength(value:Any?) : Any? {
-//        return setContent(value)
-//    }
-    fun wavelength() : Any? {
-        return _field.getContent()
-    }
+
+
 
 
 }

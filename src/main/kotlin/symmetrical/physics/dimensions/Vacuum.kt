@@ -34,17 +34,6 @@ class Vacuum : IEmitter {
         }
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        return photon.propagate()
-    }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-    fun getClassId() : String {
-        return Vacuum.getClassId()
-    }
-
     override fun isIlluminated(): Boolean {
         return false
     }
@@ -52,8 +41,23 @@ class Vacuum : IEmitter {
         return null
     }
 
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        return photon.propagate()
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    fun getClassId() : String {
+        return Vacuum.getClassId()
+    }
     private fun radiate() : String {
         return getClassId()
     }
+    // ########################### EMISSIONS ###########################
 
 }
