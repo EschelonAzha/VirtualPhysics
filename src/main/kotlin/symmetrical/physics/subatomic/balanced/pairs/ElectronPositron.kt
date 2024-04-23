@@ -39,24 +39,19 @@ class ElectronPositron(
         super.with(lepton, antiLepton)
         return this
     }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
 //    fun decay(pion: PlusPion) : ElectronPositron<PlusPion> {
 //        return this
 //    }
-    fun decay(pion: PlusPion) : ElectronPositron {
-        return this
-    }
-
+fun decay(pion: PlusPion) : ElectronPositron {
+    return this
+}
     fun getElectron() : Electron {
         return _lepton as Electron
     }
     fun getPositron() : Positron {
         return _antiLepton as Positron
     }
-//    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
+    //    private fun setElectron(electron: Electron) : ElectronPositron<PlusPion> {
 //        this.leptons[0] = electron
 //        return this
 //    }
@@ -73,4 +68,10 @@ class ElectronPositron(
         return this
     }
 
+
+
+
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
 }

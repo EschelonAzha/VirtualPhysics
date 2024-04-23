@@ -36,23 +36,6 @@ open class Lepton(
     IMatter by matterAntiMatter,
     IEmitter
 {
-
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
-    }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
 //    fun getValue() : Any? {
 //        val wavelength:Wavelength = getWavelength()
 //        return wavelength.wavelength()
@@ -60,9 +43,28 @@ open class Lepton(
     override fun getIlluminations() : IParticleBeam {
         return matterAntiMatter.getIlluminations()
     }
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 
 }

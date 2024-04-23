@@ -44,6 +44,14 @@ open class Hadron(
         const val LAST : Int = ParticleBeam.Static.LAST
     }
 
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -52,15 +60,12 @@ open class Hadron(
 
         return remainder
     }
-
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Hadron")
@@ -69,4 +74,5 @@ open class Hadron(
         val particleBeam : String = super.emit().radiate()
         return classId+particleBeam
     }
+    // ########################### EMISSIONS ###########################
 }

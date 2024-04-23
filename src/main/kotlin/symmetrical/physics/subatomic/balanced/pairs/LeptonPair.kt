@@ -41,11 +41,17 @@ open class LeptonPair(
         this._antiLepton = antiLepton
         return this
     }
+    override fun getIlluminations() : IParticleBeam {
+        return matterAntiMatter.getIlluminations()
+    }
+
+
+
+
+
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    override fun getIlluminations() : IParticleBeam {
-        return matterAntiMatter.getIlluminations()
-    }
+
 }

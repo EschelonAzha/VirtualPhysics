@@ -56,9 +56,7 @@ class TauAntiTauPair(
     fun decay(pion: PlusPion) : TauAntiTauPair {
         return this
     }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
+
     fun getElectron() : Electron {
         return _lepton as Electron
     }
@@ -103,6 +101,13 @@ class TauAntiTauPair(
     private fun setPositron(positron: Positron) : TauAntiTauPair {
         this._antiLepton = positron
         return this
+    }
+
+
+
+
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
     }
 
 }

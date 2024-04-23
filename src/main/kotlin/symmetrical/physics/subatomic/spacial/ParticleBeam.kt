@@ -54,23 +54,6 @@ open class ParticleBeam(
     object Static {
         const val LAST      : Int = -1
     }
-
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        val particleRemainder : Photon = super.absorb(photon.propagate())
-        val (size52:String, line:String)    = Strings.remainder(3, particleRemainder.radiate())
-        val size:Int                        = Base52.toInt(size52)
-        var remainder : String              = line
-        
-        for (i in 0 until size) {
-            val (emitter, line) = Absorber.materialize(remainder)
-            add(emitter)
-            remainder = line
-        }
-        shrink()
-        return Photon().with(remainder)
-    }
     override fun add(particle: IEmitter) : IEmitter {
         if (orbitting) {
             if (particle is Particle) {
@@ -90,11 +73,6 @@ open class ParticleBeam(
         }
         this.orbitting = false
         return this
-
-    }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
     }
     fun find(particle: IParticle) : Int {
         return _beam.find(particle)
@@ -105,7 +83,6 @@ open class ParticleBeam(
     override fun findByType(classType: KClass<*>) : Int {
         return _beam.findByType(classType)
     }
-
     fun findByUniqueId(uniqueId:String?) : Int {
         if (uniqueId == null)
             return -1
@@ -115,10 +92,6 @@ open class ParticleBeam(
                 return i
         }
         return -1
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
     }
     override operator fun get(pos:Int): IEmitter {
         val result = _beam.get(pos)
@@ -135,12 +108,40 @@ open class ParticleBeam(
         }
         this.orbitting = true
         return this
-
     }
     override fun set(pos:Int, particle: IEmitter) : IEmitter {
         return _beam.set(pos, particle) as IEmitter
     }
 
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        val particleRemainder : Photon = super.absorb(photon.propagate())
+        val (size52:String, line:String)    = Strings.remainder(3, particleRemainder.radiate())
+        val size:Int                        = Base52.toInt(size52)
+        var remainder : String              = line
+        
+        for (i in 0 until size) {
+            val (emitter, line) = Absorber.materialize(remainder)
+            add(emitter)
+            remainder = line
+        }
+        shrink()
+        return Photon().with(remainder)
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("ParticleBeam")
@@ -159,8 +160,8 @@ open class ParticleBeam(
             val emitter: IEmitter = get(i) as IEmitter
             emission+=emitter.emit().radiate()
         }
-
         return emission
     }
+    // ########################### EMISSIONS ###########################
 
 }

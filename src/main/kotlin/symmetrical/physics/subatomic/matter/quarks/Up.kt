@@ -36,6 +36,19 @@ open class Up(
     IMatter by matterAntiMatter
 {
 
+    override fun dissipate() : Unit {
+        //  Recycler.Up_dissipate(this)
+    }
+
+    override fun mediate(value: Quark, opposing:Quark, zBoson:ZBoson) : ZBoson {
+        return zBoson
+    }
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -44,17 +57,8 @@ open class Up(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
-    }
-
-    override fun dissipate() : Unit {
-      //  Recycler.Up_dissipate(this)
-    }
-
-    override fun mediate(value: Quark, opposing:Quark, zBoson:ZBoson) : ZBoson {
-        return zBoson
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
@@ -64,4 +68,5 @@ open class Up(
         val quark  :String = super.emit().radiate()
         return classId+quark
     }
+    // ########################### EMISSIONS ###########################
 }

@@ -31,6 +31,12 @@ open class Monad(
     IEmitter
 {
 
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -46,9 +52,9 @@ open class Monad(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

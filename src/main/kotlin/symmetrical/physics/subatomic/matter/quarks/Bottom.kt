@@ -31,6 +31,11 @@ class Bottom(
     IMatter by matterAntiMatter
 {
 
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -48,4 +53,5 @@ class Bottom(
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

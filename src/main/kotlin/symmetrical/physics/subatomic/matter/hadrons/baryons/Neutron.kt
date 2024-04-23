@@ -45,6 +45,18 @@ open class Neutron(
         this.add(Down().with(this))  // type
         shrink()
     }
+    fun setNeutrons(neutrons: Neutrons) : Neutron {
+        this.__neutrons = neutrons
+        return this
+    }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
 
@@ -55,18 +67,12 @@ open class Neutron(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
-    fun setNeutrons(neutrons: Neutrons) : Neutron {
-        this.__neutrons = neutrons
-        return this
-    }
-
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

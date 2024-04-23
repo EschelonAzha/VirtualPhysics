@@ -77,25 +77,10 @@ open class Particle(
     object Static {
         public val debuggingOn :Boolean = false
     }
-    override fun absorb(photon: Photon) : Photon {
-        var remainder = photon.propagate()
-        remainder = illuminated.absorb(remainder)
-        remainder = uniqueId.absorb(remainder)
-        remainder = time.absorb(remainder)
-        remainder = charge.absorb(remainder)
-        remainder = mass.absorb(remainder)
-        remainder = temperature.absorb(remainder)
-        remainder = space.absorb(remainder)
-        remainder = _wavelength.absorb(remainder)
-        remainder = spin.absorb(remainder)
-        remainder = angularMomentum.absorb(remainder)
 
-        return remainder
-    }
     fun breakpoint() : Unit {
         return
     }
-
     override fun createUniqueId(): IParticle {
         var galaxyId:String = Absorber.getGalaxyId()
         if (!Absorber.isMonoGalactic()) {
@@ -116,21 +101,11 @@ open class Particle(
         }
         return this
     }
-    override fun emit() : Photon {
-        if (isIlluminated()) {
-            Diatomics.illuminate(getSelf())
-        }
-        return Photon().with(radiate())
-    }
     override fun getAngularMomentum() : AngularMomentum {
         return angularMomentum
     }
     override fun getCharge() : Charge {
         return charge
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
     }
     override fun getIlluminations() : IParticleBeam {
         return matterAntiMatter.getIlluminations()
@@ -143,7 +118,6 @@ open class Particle(
             return null
         return ptr_quantum!!.getQuantumProton()
     }
-
     override fun getQuantumRoot() : IQuantum {
         if (ptr_quantum  == null)
             return this
@@ -158,8 +132,6 @@ open class Particle(
     fun getSimpleName() : String {
         return Classes.getSimpleName(this)
     }
-
-
     override fun getSelf() : IParticle {
         if (::self.isInitialized)
             return self
@@ -171,18 +143,15 @@ open class Particle(
     override fun getSpin() : Spin {
         return spin
     }
-
     override fun getTemperature() : Temperature {
         return temperature
     }
     override fun getTime() : Time {
         return time
     }
-
     override fun getUniqueId(): String? {
         return uniqueId.getContent() as String
     }
-
     override fun getWavelength() : Wavelength {
         return _wavelength
     }
@@ -201,7 +170,6 @@ open class Particle(
         this.ptr_quantum = quantum
         return this
     }
-
     override fun setSelf(self: IParticle) : IParticle {
         this.self = self
         return getSelf()
@@ -210,11 +178,41 @@ open class Particle(
         this.uniqueId.setContent(id)
         return getSelf()
     }
-
     override fun spin() : Boolean {
         return !getSpin().isZero()
     }
 
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        var remainder = photon.propagate()
+        remainder = illuminated.absorb(remainder)
+        remainder = uniqueId.absorb(remainder)
+        remainder = time.absorb(remainder)
+        remainder = charge.absorb(remainder)
+        remainder = mass.absorb(remainder)
+        remainder = temperature.absorb(remainder)
+        remainder = space.absorb(remainder)
+        remainder = _wavelength.absorb(remainder)
+        remainder = spin.absorb(remainder)
+        remainder = angularMomentum.absorb(remainder)
+
+        return remainder
+    }
+    override fun emit() : Photon {
+        if (isIlluminated()) {
+            Diatomics.illuminate(getSelf())
+        }
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Particle")
@@ -233,5 +231,6 @@ open class Particle(
 
         return classId+illuminated+uniqueId+time+charge+mass+temperature+space+wavelength+spin+angularMomentum
     }
+    // ########################### EMISSIONS ###########################
 
 }

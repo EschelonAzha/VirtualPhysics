@@ -39,7 +39,19 @@ open class Composition(
         const val FIRST  = ParticleBeam.Static.LAST + 1
         const val LAST  = ParticleBeam.Static.LAST + 2
     }
+    fun getFirst() : IParticle {
+        return get(Static.FIRST) as IParticle
+    }
+    fun getLast() : IParticle {
+        return get(Static.LAST) as IParticle
+    }
 
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -48,18 +60,11 @@ open class Composition(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun getFirst() : IParticle {
-        return get(Static.FIRST) as IParticle
-    }
-    fun getLast() : IParticle {
-        return get(Static.LAST) as IParticle
-    }
-
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

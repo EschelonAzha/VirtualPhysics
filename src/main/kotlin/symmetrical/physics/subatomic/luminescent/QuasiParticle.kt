@@ -43,7 +43,26 @@ open class QuasiParticle(
         _field.setContent(value)
         return this
     }
+    fun getField() : Field {
+        return _field
+    }
+    override fun isIlluminated(): Boolean {
+        return false
+    }
+    override fun manifest() : IEmitter? {
+        return this
+    }
+    override fun toString() : String {
+        return _field.toString()
+    }
 
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
 
         var (type, leftover) = Strings.remainder(Field.Static.TYPE_LTH, photon.propagate().radiate())
@@ -94,27 +113,15 @@ open class QuasiParticle(
         println("!!!!!!!!!!!!!!!!!!!!!ERROR OCCURED IN QuasiParticle:absorb!!!!!!!!!!!!!!!!!!!!!")
         return Photon().with("")
     }
-
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
-     override fun getClassId() : String {
+    override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
-    fun getField() : Field {
-        return _field
+    private fun getLocalClassId() : String {
+        return Absorber.getClassId(QuasiParticle::class)
     }
-
-    override fun isIlluminated(): Boolean {
-        return false
-    }
-    override fun manifest() : IEmitter? {
-        return this
-    }
-
-
     private fun radiate() : String {
         val prefix = matterAntiMatter.getClassId()+_field.getType()
         if (_field.getType() == Field.Static.NULL)
@@ -136,12 +143,7 @@ open class QuasiParticle(
 
         return prefix+ Strings.prefixBase52LthToString(3, _field.getContent())
     }
+    // ########################### EMISSIONS ###########################
 
-    override fun toString() : String {
-        return _field.toString()
-    }
 
-    private fun getLocalClassId() : String {
-        return Absorber.getClassId(QuasiParticle::class)
-    }
 }

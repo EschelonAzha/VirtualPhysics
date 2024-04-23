@@ -41,26 +41,27 @@ class Down(
         const val FIELD_NAME       = "FIELD-NAME"
         const val TEST_PROPERTY    = "TEST_PROPERTY"
     }
+    override fun dissipate() : Unit {
+        // Recycler.Down_dissipate(this)
+    }
+    override fun mediate(value: Quark, opposing:Quark, zBoson:ZBoson) : ZBoson {
+        return zBoson
+    }
 
 
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
         return remainder
     }
-    override fun dissipate() : Unit {
-        // Recycler.Down_dissipate(this)
-    }
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
-    }
-
-    override fun mediate(value: Quark, opposing:Quark, zBoson:ZBoson) : ZBoson {
-        return zBoson
     }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
@@ -69,6 +70,6 @@ class Down(
         val classId : String = matterAntiMatter.getClassId()
         val quark   : String = super.emit().radiate()
         return classId+quark
-
     }
+    // ########################### EMISSIONS ###########################
 }

@@ -50,28 +50,9 @@ open class Quark(
         this.p_hadron = hadron
         return this
     }
-
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-        this.gluon              = Red_AntiRed()  // this is need for JS Bug
-
-        var remainder : Photon = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
-    }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
     fun getHadron() : Hadron {
         return p_hadron
     }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
-
     fun blue() : String {
         if (gluon.color.isBlue())
             return gluon.color._value as String
@@ -122,7 +103,6 @@ open class Quark(
     fun setContent(content:Any?) : Any? {
         return getWavelength().setContent(content)
     }
-
     fun setGreen(green: Green) : Quark {
         gluon.setGreen(green)
         return this
@@ -130,12 +110,33 @@ open class Quark(
     override fun toString() : String {
         return super.toString()
     }
-
-
     open fun mediate(value: Quark, constraints:Quark, zBoson:ZBoson) : ZBoson {
         setContent(value.getWavelength().getField().toString())
         return zBoson
     }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+        this.gluon              = Red_AntiRed()  // this is need for JS Bug
+
+        var remainder : Photon = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Quark")
@@ -145,4 +146,5 @@ open class Quark(
         val particle : String = super.emit().radiate()
         return classId+particle
     }
+    // ########################### EMISSIONS ###########################
 }

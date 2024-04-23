@@ -30,6 +30,13 @@ class Top(
 ) : Quark(),
     IMatter by matterAntiMatter
 {
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         var remainder = photon.propagate()
         remainder = super.absorb(remainder)
@@ -38,13 +45,12 @@ class Top(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

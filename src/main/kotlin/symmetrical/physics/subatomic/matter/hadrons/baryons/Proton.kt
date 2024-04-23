@@ -71,18 +71,6 @@ open class Proton(
 
     object Static {
     }
-
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        clear()
-        var remainder = photon.propagate()
-
-        remainder = super.absorb(remainder)
-
-        _quark    = get(0) as Quark
-        return remainder
-    }
     fun capacitanceChange(zBoson: ZBoson) : ZBoson {
         if (p_protons != null)
             p_protons!!.capacitanceChange(this, getValueQuark(), zBoson)
@@ -99,15 +87,6 @@ open class Proton(
             return this
         myElectron.covalentBond(youElectron)
         return this
-    }
-
-    override fun emit() : Photon {
-        val classId = matterAntiMatter.getClassId()
-        return Photon().with(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
     }
     fun getConstraintsQuark() : Up {
         return get(Proton.QuarkType.CONSTRAINTS.value) as Up
@@ -176,8 +155,6 @@ open class Proton(
         this.p_protons = protons
         return this
     }
-
-
     private fun flow() : ParticleBeam {
         val electron: Electron = getElectron() ?: return ParticleBeam()
         return electron.flow()
@@ -189,8 +166,6 @@ open class Proton(
 
         return electron
     }
-
-
     private fun noChange(zBoson: ZBoson) : ZBoson {
         val newValue  : Field                   = zBoson.getNewField()
         val valueQuark: Down                    = getValueQuark()
@@ -201,6 +176,36 @@ open class Proton(
         zBoson.setAccepted(true)
         return zBoson
     }
+    private fun valueChange(valueQuark:Down, zBoson: ZBoson) : ZBoson {
+        if (p_protons != null)
+            p_protons!!.valueChange(this, valueQuark, zBoson)
+        return zBoson
+    }
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        clear()
+        var remainder = photon.propagate()
+
+        remainder = super.absorb(remainder)
+
+        _quark    = get(0) as Quark
+        return remainder
+    }
+    override fun emit() : Photon {
+        val classId = matterAntiMatter.getClassId()
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Proton")
@@ -210,11 +215,8 @@ open class Proton(
         val baryon  : String = super.emit().radiate()
         return classId+baryon
     }
-    private fun valueChange(valueQuark:Down, zBoson: ZBoson) : ZBoson {
-        if (p_protons != null)
-            p_protons!!.valueChange(this, valueQuark, zBoson)
-        return zBoson
-    }
+    // ########################### EMISSIONS ###########################
+
 
 
 }

@@ -49,13 +49,7 @@ open class Baryon(
         const val LAST : Int = Hadron.Static.LAST
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
 
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
-    }
     // Proton absorbs BetaMinus and becomes Neutron
     fun absorb(beta: BetaMinus) : Baryon {
 
@@ -80,21 +74,13 @@ open class Baryon(
 
         return this
     }
-
     fun betaPlusDecay() : Pair<Baryon, BetaPlus> {
         var beta        = BetaPlus()
         this.set(1, beta.decay(this))
         return Pair(this, beta)
     }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
     fun exchange(baryon: Baryon) : Baryon {
         return this
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
     }
     fun isNeutron() : Boolean {
         return (this.get(1) as Quark) is Down
@@ -102,8 +88,6 @@ open class Baryon(
     fun isProton() : Boolean {
         return (this.get(1) as Quark) is Up
     }
-
-
     // Turn this Neutron into a Proton
     fun betaMinusDecay() : Pair<Baryon, BetaMinus> {
         var beta        = BetaMinus()
@@ -138,7 +122,6 @@ open class Baryon(
         (get(0) as Quark).setGreen(green)
         return this
     }
-
     fun setQuark(pos:Int, quark:Quark) : Baryon {
         set(pos, quark)
         return this
@@ -149,6 +132,29 @@ open class Baryon(
         return this
     }
 
+
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Baryon")
@@ -157,4 +163,5 @@ open class Baryon(
         val hadron :String = super.emit().radiate()
         return classId+hadron
     }
+    // ########################### EMISSIONS ###########################
 }

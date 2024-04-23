@@ -47,12 +47,6 @@ class Electron(
         this.orbitals = orbitals
         return this
     }
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        return remainder
-    }
     fun covalentBond(you: Electron) : Electron {
         you.setElectron(this)
         this.getSpin().setContent(Spin.Static.PLUS)
@@ -67,14 +61,6 @@ class Electron(
 
         return result
     }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
     fun ionicBond(you: Electron) : Electron {
         you.setElectron(this)
         this.getSpin().setContent(Spin.Static.MINUS)
@@ -84,11 +70,6 @@ class Electron(
     fun setOrbitals(orbitals: Orbitals) : Electron {
         this.orbitals = orbitals
         return this
-    }
-
-    private fun radiate() : String {
-        return matterAntiMatter.getClassId()+
-                super.emit().radiate()
     }
     fun setProton(proton: Proton) : Electron {
         this.proton = proton
@@ -119,4 +100,30 @@ class Electron(
 
         return this
     }
+
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+
+                super.emit().radiate()
+    }
+    // ########################### EMISSIONS ###########################
+
 }
