@@ -76,20 +76,6 @@ open class Atom(
         }
         return this
     }
-
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-        remainder = orbitals.absorb(remainder)
-        remainder = _nucleons.absorb(remainder)
-
-
-        setAtom(this)
-        return remainder
-    }
-
     fun accept(valueQuark: Down, zBoson: ZBoson) : Atom {
         valueQuark.getWavelength().setContent(zBoson.getNewValue())
         zBoson.setAccepted(true)
@@ -98,19 +84,11 @@ open class Atom(
     open fun capacitanceChange(me: Proton, valueQuark: Down, zBoson: ZBoson) : ZBoson {
         return zBoson
     }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
     fun format() : String {
         val value:Proton  = getValueProton()
         val format:Quark  = value.getFormatQuark()
         format.mediate(value.getValueQuark(), value.getConstraintsQuark(), ZBoson())
         return format.getWavelength().getField().toString()
-    }
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
     }
     fun getContent() : Any? {
         return getField().getContent()
@@ -179,6 +157,30 @@ open class Atom(
     override fun toString() : String {
         return getField().toString()
     }
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        remainder = orbitals.absorb(remainder)
+        remainder = _nucleons.absorb(remainder)
+
+        setAtom(this)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Atom")
@@ -190,4 +192,5 @@ open class Atom(
 
         return classId+particle+orbitals+nucleons
     }
+    // ########################### EMISSIONS ###########################
 }

@@ -50,27 +50,6 @@ open class Orbitals(
         const val LAST      : Int = VALUE
     }
 
-    override fun absorb(photon: Photon) : Photon {
-        matterAntiMatter.check(photon);
-
-        clear()
-        var remainder = photon.propagate()
-        remainder = super.absorb(remainder)
-
-        for (i in 0 until size()) {
-            (get(i) as Electron).setOrbitals(this)
-        }
-        return remainder
-    }
-
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
-
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
-    }
-
     override fun getValueElectron() : Electron {
         if (size() == 0) {
             val electron = Electron()
@@ -85,6 +64,29 @@ open class Orbitals(
         return atom
     }
 
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon);
+
+        clear()
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+
+        for (i in 0 until size()) {
+            (get(i) as Electron).setOrbitals(this)
+        }
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
     private fun radiate() : String {
         if (Particle.Static.debuggingOn) {
             println("Orbitals")
@@ -92,4 +94,5 @@ open class Orbitals(
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }

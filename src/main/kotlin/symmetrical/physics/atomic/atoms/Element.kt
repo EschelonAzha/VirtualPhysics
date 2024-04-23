@@ -41,12 +41,6 @@ open class Element (
 ) : Atom(),
     IMatter by matterAntiMatter
 {
-    override fun absorb(photon: Photon) : Photon {
-        return super.absorb(matterAntiMatter.check(photon).propagate())
-    }
-    override fun emit() : Photon {
-        return Photon().with(radiate())
-    }
 
     fun getAliasName() : Field {
         return getProtonField(AliasNameProton::class)
@@ -64,6 +58,20 @@ open class Element (
     override fun getProtonField(kClass: KClass<*>) : Field {
         val proton: Proton = getProton(kClass)
         return proton.getValueQuark().getWavelength().getField()
+    }
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        return super.absorb(matterAntiMatter.check(photon).propagate())
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+super.emit().radiate()

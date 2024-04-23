@@ -38,6 +38,17 @@ open class QString(
         setString(value)
         return this
     }
+    fun setString(value:String) : QString {
+        getValueProton().getValueQuark().getWavelength().setContent(value)
+        return this
+    }
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon)
         var remainder = photon.propagate()
@@ -47,16 +58,12 @@ open class QString(
     override fun emit() : Photon {
         return Photon().with(radiate())
     }
-
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
-    }
-    fun setString(value:String) : QString {
-        getValueProton().getValueQuark().getWavelength().setContent(value)
-        return this
     }
     private fun radiate() : String {
         return matterAntiMatter.getClassId()+
                 super.emit().radiate()
     }
+    // ########################### EMISSIONS ###########################
 }
