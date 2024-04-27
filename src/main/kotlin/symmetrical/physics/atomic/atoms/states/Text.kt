@@ -40,7 +40,8 @@ open class Text(
         return this
     }
     fun setString(value:String) : Text {
-        getValueProton().getValueQuark().getWavelength().setContent(value)
+        getField().setContent(value)
+    //    getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
 
