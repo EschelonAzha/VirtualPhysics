@@ -1,4 +1,4 @@
-package symmetrical.physics.atomic.atoms.states.bytes
+package symmetrical.physics.atomic.atoms.states
 /*
  * This file is part of Virtual Physics.
  *
@@ -19,25 +19,52 @@ package symmetrical.physics.atomic.atoms.states.bytes
  */
 
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
-// Octet
+// Text
+// Character
 
-class Octet(
-    private val matterAntiMatter: IMatter = Matter().with(Octet::class),
+open class Text(
+    private val matterAntiMatter: IMatter = Matter().with(Text::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
     init {
-        setByte(" ".toByte())
+        setString("")
     }
 
-    override fun getClassId() : String {
-        return matterAntiMatter.getClassId()
+    open fun with(value:String) : Text {
+        setString(value)
+        return this
     }
-    fun setByte(value:Byte) : Octet {
+    fun setString(value:String) : Text {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
+
+
+
+
+
+
+    // ########################### EMISSIONS ###########################
+    override fun absorb(photon: Photon) : Photon {
+        matterAntiMatter.check(photon)
+        var remainder = photon.propagate()
+        remainder = super.absorb(remainder)
+        return remainder
+    }
+    override fun emit() : Photon {
+        return Photon().with(radiate())
+    }
+    override fun getClassId() : String {
+        return matterAntiMatter.getClassId()
+    }
+    private fun radiate() : String {
+        return matterAntiMatter.getClassId()+
+                super.emit().radiate()
+    }
+    // ########################### EMISSIONS ###########################
 }

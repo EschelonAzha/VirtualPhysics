@@ -1,4 +1,4 @@
-package symmetrical.physics.atomic.atoms.states.integers
+package symmetrical.physics.atomic.atoms.states
 /*
  * This file is part of Virtual Physics.
  *
@@ -22,20 +22,20 @@ import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
-// Numeric
-class Numeric(
-    private val matterAntiMatter: IMatter = Matter().with(Numeric::class),
+// Real
+class Real(
+    private val matterAntiMatter: IMatter = Matter().with(Real::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
     init {
-        setInt(0)
+        setDouble(0.0)
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun setInt(value:Int) : Numeric {
+    fun setDouble(value:Double) : Real {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }

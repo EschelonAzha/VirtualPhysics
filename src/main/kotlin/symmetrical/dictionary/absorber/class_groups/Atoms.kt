@@ -21,12 +21,12 @@ package symmetrical.dictionary.absorber.class_groups
 import symmetrical.dictionary.absorber.ClassGroup
 import symmetrical.dictionary.absorber.EntityId
 import symmetrical.transpectors.printable_characters.Base52
-import symmetrical.physics.atomic.atoms.states.booleans.Binary
-import symmetrical.physics.atomic.atoms.states.bytes.Octet
-import symmetrical.physics.atomic.atoms.states.doubles.Real
-import symmetrical.physics.atomic.atoms.states.integers.Numeric
-import symmetrical.physics.atomic.atoms.states.strings.Text
-import symmetrical.physics.atomic.atoms.states.vectors.Sequence
+import symmetrical.physics.atomic.atoms.states.Binary
+import symmetrical.physics.atomic.atoms.states.Octet
+import symmetrical.physics.atomic.atoms.states.Real
+import symmetrical.physics.atomic.atoms.states.Numeric
+import symmetrical.physics.atomic.atoms.states.Text
+import symmetrical.physics.atomic.atoms.states.Sequence
 
 class Atoms : ClassGroup() {
     init {

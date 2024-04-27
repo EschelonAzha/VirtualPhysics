@@ -1,4 +1,4 @@
-package symmetrical.physics.atomic.atoms.states.vectors
+package symmetrical.physics.atomic.atoms.states
 /*
  * This file is part of Virtual Physics.
  *
@@ -19,24 +19,24 @@ package symmetrical.physics.atomic.atoms.states.vectors
  */
 
 import symmetrical.physics.atomic.atoms.Atom
-import symmetrical.physics.subatomic.spacial.Beam
-import symmetrical.physics.subatomic.spacial.IBeam
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
-open class Sequence(
-    private val matterAntiMatter: IMatter = Matter().with(Sequence::class),
+// Octet
+
+class Octet(
+    private val matterAntiMatter: IMatter = Matter().with(Octet::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
     init {
-        setSequence(Beam().capacity(0))
+        setByte(" ".toByte())
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun setSequence(value: IBeam) : Sequence {
+    fun setByte(value:Byte) : Octet {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
