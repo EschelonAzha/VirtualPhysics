@@ -19,6 +19,7 @@ package symmetrical.physics.atomic.atoms.states
  */
 
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
@@ -26,7 +27,7 @@ import symmetrical.physics.subatomic.luminescent.Matter
 
 class Octet(
     private val matterAntiMatter: IMatter = Matter().with(Octet::class),
-) : Atom(),
+) : Hydrogen(),
     IMatter by matterAntiMatter
 {
     init {
@@ -37,7 +38,7 @@ class Octet(
         return matterAntiMatter.getClassId()
     }
     fun setByte(value:Byte) : Octet {
-        getValueProton().getValueQuark().getWavelength().setContent(value)
+        getField().setContent(value)
         return this
     }
 }

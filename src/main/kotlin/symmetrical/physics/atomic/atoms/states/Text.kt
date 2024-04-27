@@ -19,6 +19,7 @@ package symmetrical.physics.atomic.atoms.states
  */
 
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
@@ -28,7 +29,7 @@ import symmetrical.physics.subatomic.luminescent.Matter
 
 open class Text(
     private val matterAntiMatter: IMatter = Matter().with(Text::class),
-) : Atom(),
+) : Hydrogen(),
     IMatter by matterAntiMatter
 {
     init {
@@ -41,7 +42,6 @@ open class Text(
     }
     fun setString(value:String) : Text {
         getField().setContent(value)
-    //    getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
 

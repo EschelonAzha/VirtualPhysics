@@ -19,6 +19,7 @@ package symmetrical.physics.atomic.atoms.states
  */
 
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.subatomic.spacial.Beam
 import symmetrical.physics.subatomic.spacial.IBeam
 import symmetrical.physics.subatomic.luminescent.IMatter
@@ -26,7 +27,7 @@ import symmetrical.physics.subatomic.luminescent.Matter
 
 open class Sequence(
     private val matterAntiMatter: IMatter = Matter().with(Sequence::class),
-) : Atom(),
+) : Hydrogen(),
     IMatter by matterAntiMatter
 {
     init {
@@ -37,7 +38,7 @@ open class Sequence(
         return matterAntiMatter.getClassId()
     }
     fun setSequence(value: IBeam) : Sequence {
-        getValueProton().getValueQuark().getWavelength().setContent(value)
+        getField().setContent(value)
         return this
     }
 }

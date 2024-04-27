@@ -19,13 +19,14 @@ package symmetrical.physics.atomic.atoms.states
  */
 
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
 // Numeric
 class Numeric(
     private val matterAntiMatter: IMatter = Matter().with(Numeric::class),
-) : Atom(),
+) : Hydrogen(),
     IMatter by matterAntiMatter
 {
     init {
@@ -36,7 +37,7 @@ class Numeric(
         return matterAntiMatter.getClassId()
     }
     fun setInt(value:Int) : Numeric {
-        getValueProton().getValueQuark().getWavelength().setContent(value)
+        getField().setContent(value)
         return this
     }
 }

@@ -19,13 +19,14 @@ package symmetrical.physics.atomic.atoms.states
  */
 
 import symmetrical.physics.atomic.atoms.Atom
+import symmetrical.physics.atomic.atoms.elements.Hydrogen
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
 // Binary
 
 class Binary(
     private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Binary::class),
-) : Atom(),
+) : Hydrogen(),
     IMatterAntiMatter by matterAntiMatter
 {
     init {
@@ -36,7 +37,7 @@ class Binary(
         return matterAntiMatter.getClassId()
     }
     fun setBoolean(value:Boolean) : Binary {
-        getValueProton().getValueQuark().getWavelength().setContent(value)
+        getField().setContent(value)
         return this
     }
 }
