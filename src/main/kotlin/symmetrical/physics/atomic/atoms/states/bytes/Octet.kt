@@ -1,4 +1,4 @@
-package symmetrical.physics.atomic.atoms.states.integers
+package symmetrical.physics.atomic.atoms.states.bytes
 /*
  * This file is part of Virtual Physics.
  *
@@ -21,21 +21,22 @@ package symmetrical.physics.atomic.atoms.states.integers
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
-import symmetrical.physics.subatomic.matter.quarks.Quark
 
-class QInt(
-    private val matterAntiMatter: IMatter = Matter().with(QInt::class),
+// Octet
+
+class Octet(
+    private val matterAntiMatter: IMatter = Matter().with(Octet::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
     init {
-        setInt(0)
+        setByte(" ".toByte())
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun setInt(value:Int) : QInt {
+    fun setByte(value:Byte) : Octet {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }

@@ -21,20 +21,20 @@ package symmetrical.dictionary.absorber.class_groups
 import symmetrical.dictionary.absorber.ClassGroup
 import symmetrical.dictionary.absorber.EntityId
 import symmetrical.transpectors.printable_characters.Base52
-import symmetrical.physics.atomic.atoms.states.booleans.QBoolean
-import symmetrical.physics.atomic.atoms.states.bytes.QByte
-import symmetrical.physics.atomic.atoms.states.doubles.QDouble
-import symmetrical.physics.atomic.atoms.states.integers.QInt
-import symmetrical.physics.atomic.atoms.states.strings.QString
+import symmetrical.physics.atomic.atoms.states.booleans.Binary
+import symmetrical.physics.atomic.atoms.states.bytes.Octet
+import symmetrical.physics.atomic.atoms.states.doubles.Real
+import symmetrical.physics.atomic.atoms.states.integers.Numeric
+import symmetrical.physics.atomic.atoms.states.strings.Text
 import symmetrical.physics.atomic.atoms.states.vectors.QMass
 
 class Atoms : ClassGroup() {
     init {
-        add(EntityId().with(Base52.classId(), QBoolean::class))
-        add(EntityId().with(Base52.classId(), QByte::class))
-        add(EntityId().with(Base52.classId(), QDouble::class))
-        add(EntityId().with(Base52.classId(), QInt::class))
+        add(EntityId().with(Base52.classId(), Binary::class))
+        add(EntityId().with(Base52.classId(), Octet::class))
+        add(EntityId().with(Base52.classId(), Real::class))
+        add(EntityId().with(Base52.classId(), Numeric::class))
         add(EntityId().with(Base52.classId(), QMass::class))
-        add(EntityId().with(Base52.classId(), QString::class))
+        add(EntityId().with(Base52.classId(), Text::class))
     }
 }

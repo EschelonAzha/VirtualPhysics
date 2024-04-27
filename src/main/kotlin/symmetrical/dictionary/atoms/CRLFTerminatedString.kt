@@ -2,7 +2,6 @@ package symmetrical.dictionary.atoms
 
 import symmetrical.dictionary.protons.quarks.formats.CRLFTerminatedFormat
 import symmetrical.physics.atomic.atoms.elements.Hydrogen
-import symmetrical.physics.atomic.atoms.states.strings.QString
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 

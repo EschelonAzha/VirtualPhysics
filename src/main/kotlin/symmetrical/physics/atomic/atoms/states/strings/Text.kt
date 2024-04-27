@@ -22,11 +22,12 @@ import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
-import symmetrical.physics.subatomic.matter.quarks.Quark
 
+// Text
+// Character
 
-open class QString(
-    private val matterAntiMatter: IMatter = Matter().with(QString::class),
+open class Text(
+    private val matterAntiMatter: IMatter = Matter().with(Text::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
@@ -34,11 +35,11 @@ open class QString(
         setString("")
     }
 
-    open fun with(value:String) : QString {
+    open fun with(value:String) : Text {
         setString(value)
         return this
     }
-    fun setString(value:String) : QString {
+    fun setString(value:String) : Text {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }

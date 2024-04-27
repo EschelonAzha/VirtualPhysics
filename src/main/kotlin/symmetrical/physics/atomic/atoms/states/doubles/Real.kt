@@ -1,4 +1,4 @@
-package symmetrical.physics.atomic.atoms.states.bytes
+package symmetrical.physics.atomic.atoms.states.doubles
 /*
  * This file is part of Virtual Physics.
  *
@@ -21,21 +21,21 @@ package symmetrical.physics.atomic.atoms.states.bytes
 import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
-import symmetrical.physics.subatomic.matter.quarks.Quark
 
-class QByte(
-    private val matterAntiMatter: IMatter = Matter().with(QByte::class),
+// Real
+class Real(
+    private val matterAntiMatter: IMatter = Matter().with(Real::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
     init {
-        setByte(" ".toByte())
+        setDouble(0.0)
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun setByte(value:Byte) : QByte {
+    fun setDouble(value:Double) : Real {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }

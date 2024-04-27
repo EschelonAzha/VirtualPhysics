@@ -19,12 +19,12 @@ package symmetrical.physics.atomic.atoms.states.booleans
  */
 
 import symmetrical.physics.atomic.atoms.Atom
-import symmetrical.physics.subatomic.matter.quarks.Quark
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
+// Binary
 
-class QBoolean(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(QBoolean::class),
+class Binary(
+    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Binary::class),
 ) : Atom(),
     IMatterAntiMatter by matterAntiMatter
 {
@@ -35,7 +35,7 @@ class QBoolean(
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun setBoolean(value:Boolean) : QBoolean {
+    fun setBoolean(value:Boolean) : Binary {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }
