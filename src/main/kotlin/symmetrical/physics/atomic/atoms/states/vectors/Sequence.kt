@@ -23,21 +23,20 @@ import symmetrical.physics.subatomic.spacial.Beam
 import symmetrical.physics.subatomic.spacial.IBeam
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
-import symmetrical.physics.subatomic.matter.quarks.Quark
 
-open class QMass(
-    private val matterAntiMatter: IMatter = Matter().with(QMass::class),
+open class Sequence(
+    private val matterAntiMatter: IMatter = Matter().with(Sequence::class),
 ) : Atom(),
     IMatter by matterAntiMatter
 {
     init {
-        setMass(Beam().capacity(0))
+        setSequence(Beam().capacity(0))
     }
 
     override fun getClassId() : String {
         return matterAntiMatter.getClassId()
     }
-    fun setMass(value: IBeam) : QMass {
+    fun setSequence(value: IBeam) : Sequence {
         getValueProton().getValueQuark().getWavelength().setContent(value)
         return this
     }

@@ -26,7 +26,7 @@ import symmetrical.physics.atomic.atoms.states.bytes.Octet
 import symmetrical.physics.atomic.atoms.states.doubles.Real
 import symmetrical.physics.atomic.atoms.states.integers.Numeric
 import symmetrical.physics.atomic.atoms.states.strings.Text
-import symmetrical.physics.atomic.atoms.states.vectors.QMass
+import symmetrical.physics.atomic.atoms.states.vectors.Sequence
 
 class Atoms : ClassGroup() {
     init {
@@ -34,7 +34,7 @@ class Atoms : ClassGroup() {
         add(EntityId().with(Base52.classId(), Octet::class))
         add(EntityId().with(Base52.classId(), Real::class))
         add(EntityId().with(Base52.classId(), Numeric::class))
-        add(EntityId().with(Base52.classId(), QMass::class))
+        add(EntityId().with(Base52.classId(), Sequence::class))
         add(EntityId().with(Base52.classId(), Text::class))
     }
 }
