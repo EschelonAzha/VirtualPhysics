@@ -127,6 +127,7 @@ open class ParticleBeam(
     // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {
         matterAntiMatter.check(photon);
+        clear()
 
         val particleRemainder : Photon = super.absorb(photon.propagate())
         val (size52:String, line:String)    = Strings.remainder(3, particleRemainder.radiate())
