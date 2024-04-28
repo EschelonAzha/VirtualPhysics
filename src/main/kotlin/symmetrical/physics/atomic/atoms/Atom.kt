@@ -137,6 +137,10 @@ open class Atom(
             ZBoson().with(Field().with(value), constructing)).decay()
     }
 
+    fun setContent(content:Any?) : Any? {
+        getField().setContent(content)
+        return content
+    }
     fun setFormat(format: Up) : Atom {
         getValueProton().setFormatQuark(format)
         return this

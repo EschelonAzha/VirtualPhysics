@@ -31,7 +31,7 @@ open class Beam() : IBeam {
     private lateinit var _memoryBlock   :Array<Any?>
     private var expandMode              :Int = Static.NORMAL
 
-    private var _capacity                :Int = 0
+    private var _capacity               :Int = 0
     init {
         capacity(1)
     }
@@ -154,15 +154,17 @@ open class Beam() : IBeam {
         return this
     }
 
-    override fun remove(item:Any) : Any {
+    override fun remove(item:Any) : Any? {
         for (i in 0 until count) {
             if (item == get(i)) {
                 set(i, null)
+                count--
+                compress()
+                return item
             }
         }
-        count--
-        compress()
-        return item
+
+        return null
     }
     override fun removeAt(pos:Int) : Any? {
         val item = get(pos)
@@ -189,6 +191,11 @@ open class Beam() : IBeam {
     }
     override fun toString() : String {
         return Strings.toDelimitedString("::", _memoryBlock)
+    }
+    override fun transfer(beam:IBeam) : IBeam {
+        clear()
+        addAll(beam)
+        return this
     }
     private fun createBlock(size:Int) : Array<Any?> {
         return Array(size){}

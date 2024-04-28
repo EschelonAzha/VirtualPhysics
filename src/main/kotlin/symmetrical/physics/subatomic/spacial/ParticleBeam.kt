@@ -113,6 +113,11 @@ open class ParticleBeam(
         return _beam.set(pos, particle) as IEmitter
     }
 
+    override fun transfer(beam:IBeam) : IBeam {
+        _beam.transfer(beam)
+        return this
+    }
+
 
 
 

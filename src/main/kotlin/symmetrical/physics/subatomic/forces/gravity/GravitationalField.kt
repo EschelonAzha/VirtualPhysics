@@ -42,8 +42,14 @@ open class GravitationalField : IGravitationalField {
         return this
     }
     override fun eject(item:Any) : GravitationalField {
-        beam.remove(item)
-        return this
+        val removed:Any? = beam.remove(item)
+        if (removed != null) {
+            return this
+        }
+        if (orbits == null) {
+            return this
+        }
+        return orbits!!.eject(item)
     }
     override fun gravitate(kClass: KClass<*>) : Any? {
         val pos = beam.findByType(kClass)

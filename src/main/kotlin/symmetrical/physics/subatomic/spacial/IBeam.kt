@@ -33,13 +33,14 @@ interface IBeam {
     fun getClassId      ()                              : String
     fun getCore         ()                              : Array<Any?>
     fun find            (item:Any)                      : Int
-    fun findByType      (classType: KClass<*>)             : Int
+    fun findByType      (classType: KClass<*>)          : Int
     fun isEmpty         ()                              : Boolean
     fun isNotEmpty      ()                              : Boolean
     fun popLeft         ()                              : Any?
-    fun remove          (item:Any)                      : Any
+    fun remove          (item:Any)                      : Any?
     fun removeAt        (pos:Int)                       : Any?
     fun set             (pos:Int, any: Any?)            : Any?
     fun shrink          ()                              : IBeam
     fun size            ()                              : Int
+    fun transfer        (beam:IBeam)                    : IBeam
 }
