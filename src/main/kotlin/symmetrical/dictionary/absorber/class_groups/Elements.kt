@@ -2,10 +2,7 @@ package symmetrical.dictionary.absorber.class_groups
 
 import symmetrical.dictionary.absorber.ClassGroup
 import symmetrical.dictionary.absorber.EntityId
-import symmetrical.dictionary.protons.AccessLevelProton
-import symmetrical.dictionary.protons.AliasNameProton
-import symmetrical.dictionary.protons.FieldNameProton
-import symmetrical.dictionary.protons.ValueProton
+import symmetrical.dictionary.protons.*
 import symmetrical.physics.atomic.atoms.Element
 import symmetrical.physics.atomic.atoms.elements.Helium
 import symmetrical.physics.atomic.atoms.elements.Hydrogen
@@ -16,6 +13,7 @@ class Elements : ClassGroup() {
     init {
         add(EntityId().with(Base52.classId(), AccessLevelProton::class))
         add(EntityId().with(Base52.classId(), AliasNameProton::class))
+        add(EntityId().with(Base52.classId(), CrudProton::class))
         add(EntityId().with(Base52.classId(), FieldNameProton::class))
         add(EntityId().with(Base52.classId(), ValueProton::class))
 

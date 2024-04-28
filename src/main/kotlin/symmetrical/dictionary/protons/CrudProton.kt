@@ -12,7 +12,12 @@ class CrudProton (
     IMatter by matterAntiMatter
 {
 
-
+    object Static {
+        const val CREATE    = 1
+        const val READ      = 0
+        const val UPDATE    = 2
+        const val DELETE    = -1
+    }
 
 
 
