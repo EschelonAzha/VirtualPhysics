@@ -41,6 +41,14 @@ class Gravity : IGravity {
         return this
     }
 
+    override fun pull(kClass: KClass<*>) : Any? {
+        // pull is Gravitate + Eject
+        val result = gravitationalField.gravitate(kClass)
+        if (result != null) {
+            eject(result)
+        }
+        return result
+    }
 
 
     override fun setSelf(gravity:IGravity) : IGravity {

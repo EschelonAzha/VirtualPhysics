@@ -10,6 +10,7 @@ interface IGravity {
     fun getGravity              ()                      : IGravity
     fun gravitate               (kClass: KClass<*>)     : Any?
     fun orbit                   (gravity:IGravity)      : IGravity
+    fun pull                    (kClass: KClass<*>)     : Any?
 
     fun setSelf                 (gravity:IGravity)      : IGravity
 }
