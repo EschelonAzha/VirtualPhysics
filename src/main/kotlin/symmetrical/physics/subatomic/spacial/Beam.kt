@@ -77,7 +77,8 @@ open class Beam() : IBeam {
         var result = createBlock(_memoryBlock.size)
         var pos :Int = 0
         for (i in _memoryBlock.indices) {
-            if (_memoryBlock[i] == Unit) {
+            val obj : Any? = _memoryBlock[i]
+            if (obj is Unit) {
                 continue
             }
             if (_memoryBlock[i] != null) {
