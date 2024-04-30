@@ -13,7 +13,7 @@ class Elements : ClassGroup() {
     init {
         add(EntityId().with(Base52.classId(), AccessLevelProton::class))
         add(EntityId().with(Base52.classId(), AliasNameProton::class))
-        add(EntityId().with(Base52.classId(), CrudProton::class))
+        add(EntityId().with(Base52.classId(), CRUDProton::class))
         add(EntityId().with(Base52.classId(), FieldNameProton::class))
         add(EntityId().with(Base52.classId(), ValueProton::class))
 

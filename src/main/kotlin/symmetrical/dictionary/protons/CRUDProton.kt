@@ -22,9 +22,10 @@ import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
+import kotlin.reflect.KClass
 
-class CrudProton (
-    private val matterAntiMatter: IMatter = Matter().with(CrudProton::class),
+class CRUDProton (
+    private val matterAntiMatter: IMatter = Matter().with(CRUDProton::class),
 ) : Proton(),
     IMatter by matterAntiMatter
 {
@@ -35,9 +36,6 @@ class CrudProton (
         const val UPDATE    = 2
         const val DELETE    = -1
     }
-
-
-
 
     // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {

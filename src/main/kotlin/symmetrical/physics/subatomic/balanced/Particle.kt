@@ -43,8 +43,8 @@ import symmetrical.physics.subatomic.matter.hadrons.baryons.Proton
 
 
 open class Particle(
-    private val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Particle::class),
-    private val gravity         : Gravity           = Gravity()
+    private   val matterAntiMatter: IMatterAntiMatter = MatterAntiMatter().with(Particle::class),
+    protected val gravity         : Gravity           = Gravity()
 ) :
     IMatterAntiMatter   by matterAntiMatter,
     IGravity            by gravity,
