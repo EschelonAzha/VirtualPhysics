@@ -18,6 +18,7 @@ package symmetrical.dictionary.protons
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import symmetrical.physics.subatomic.balanced.Particle
+import symmetrical.physics.subatomic.balanced.values.Field
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
@@ -36,6 +37,37 @@ class CRUDProton (
         const val UPDATE    = 2
         const val DELETE    = -1
     }
+
+    fun isCreate() : Boolean {
+        return getField().toInt() == Static.CREATE
+    }
+    fun isDelete() : Boolean {
+        return getField().toInt() == Static.DELETE
+    }
+    fun isRead() : Boolean {
+        return getField().toInt() == Static.READ
+    }
+    fun isUpdate() : Boolean {
+        return getField().toInt() == Static.UPDATE
+    }
+
+    fun setCreate() : CRUDProton {
+        setContent(CRUDProton.Static.CREATE)
+        return this
+    }
+    fun setDelete() : CRUDProton {
+        setContent(CRUDProton.Static.DELETE)
+        return this
+    }
+    fun setRead() : CRUDProton {
+        setContent(CRUDProton.Static.READ)
+        return this
+    }
+    fun setUpdate() : CRUDProton {
+        setContent(CRUDProton.Static.UPDATE)
+        return this
+    }
+
 
     // ########################### EMISSIONS ###########################
     override fun absorb(photon: Photon) : Photon {

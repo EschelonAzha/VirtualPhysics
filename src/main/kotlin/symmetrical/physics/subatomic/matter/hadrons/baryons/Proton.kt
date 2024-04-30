@@ -92,6 +92,10 @@ open class Proton(
         return get(Proton.QuarkType.CONSTRAINTS.value) as Up
     }
 
+    fun getField() : Field {
+        return getValueQuark().getWavelength().getField()
+    }
+
     fun getFormatQuark() : Up {
         return get(Proton.QuarkType.FORMAT.value) as Up
     }
@@ -100,6 +104,11 @@ open class Proton(
     }
     fun getValueQuark() : Down {
         return get(Proton.QuarkType.VALUE.value) as Down
+    }
+
+    fun setContent(value:Any?) : Proton {
+        getValueQuark().getWavelength().setContent(value)
+        return this
     }
 
     fun ionicBond(proton: Proton) : Proton {

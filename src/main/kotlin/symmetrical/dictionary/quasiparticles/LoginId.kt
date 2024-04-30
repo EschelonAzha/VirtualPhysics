@@ -36,7 +36,9 @@ class LoginId (
         return this
     }
 
-
+    fun equals(loginId:LoginId) : Boolean {
+        return loginId.toString() == toString()
+    }
 
 
 
