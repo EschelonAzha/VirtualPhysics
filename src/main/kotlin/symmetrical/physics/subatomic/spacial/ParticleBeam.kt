@@ -30,6 +30,7 @@ import symmetrical.physics.subatomic.forces.gravity.Gravity
 import symmetrical.physics.subatomic.forces.gravity.IGravity
 import symmetrical.physics.subatomic.luminescent.IMatterAntiMatter
 import symmetrical.physics.subatomic.luminescent.MatterAntiMatter
+import kotlin.jvm.Synchronized
 import kotlin.reflect.KClass
 
 // For more information visit:   https://en.wikipedia.org/wiki/Particle_beam
@@ -54,6 +55,7 @@ open class ParticleBeam(
     object Static {
         const val LAST      : Int = -1
     }
+    @Synchronized
     override fun add(particle: IEmitter) : IEmitter {
         if (orbitting) {
             if (particle is Particle) {
@@ -62,7 +64,7 @@ open class ParticleBeam(
         }
         return _beam.add(particle) as IEmitter
     }
-
+    @Synchronized
     override fun deorbit() : IGravity {
         super.deorbit()
         for (i in 0 until size()) {
@@ -74,15 +76,19 @@ open class ParticleBeam(
         this.orbitting = false
         return this
     }
+    @Synchronized
     fun find(particle: IParticle) : Int {
         return _beam.find(particle)
     }
+    @Synchronized
     override fun find(item:Any) : Int {
         return _beam.find(item)
     }
+    @Synchronized
     override fun findByType(classType: KClass<*>) : Int {
         return _beam.findByType(classType)
     }
+    @Synchronized
     fun findByUniqueId(uniqueId:String?) : Int {
         if (uniqueId == null)
             return -1
@@ -93,13 +99,16 @@ open class ParticleBeam(
         }
         return -1
     }
+    @Synchronized
     override operator fun get(pos:Int): IEmitter {
         val result = _beam.get(pos)
         return result as IEmitter
     }
+    @Synchronized
     override fun getParticleCore() : Array<IEmitter> {
         return getCore() as Array<IEmitter>
     }
+    @Synchronized
     override fun orbit(gravity: IGravity) : IGravity {
         super.orbit(gravity)
         for (i in 0 until size()) {
@@ -109,10 +118,11 @@ open class ParticleBeam(
         this.orbitting = true
         return this
     }
+    @Synchronized
     override fun set(pos:Int, particle: IEmitter) : IEmitter {
         return _beam.set(pos, particle) as IEmitter
     }
-
+    @Synchronized
     override fun transfer(beam:IBeam) : IBeam {
         _beam.transfer(beam)
         return this

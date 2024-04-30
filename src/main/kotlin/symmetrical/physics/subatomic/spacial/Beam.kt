@@ -20,6 +20,7 @@ package symmetrical.physics.subatomic.spacial
 
 import symmetrical.dictionary.absorber.Absorber
 import symmetrical.transpectors.transpectors.Strings
+import kotlin.jvm.Synchronized
 import kotlin.reflect.KClass
 
 // For more information visit:   https://en.wikipedia.org/wiki/Particle_beam
@@ -47,7 +48,7 @@ open class Beam() : IBeam {
 
         const val LAST      : Int = -1
     }
-
+    @Synchronized
     override fun add(obj:Any?) : Any? {
         if (obj == null)
             return null
@@ -57,18 +58,20 @@ open class Beam() : IBeam {
         set(count++, obj)
         return obj
     }
+    @Synchronized
     override fun addAll(beam: IBeam) : IBeam {
         for (i in 0 until beam.size()) {
             add(beam.get(i))
         }
         return this
     }
+    @Synchronized
     override fun clear() : IBeam {
         _memoryBlock = createBlock(_capacity)
         count = 0
         return this
     }
-
+    @Synchronized
     override fun compress() : IBeam {
         count = 0
         var result = createBlock(_memoryBlock.size)
@@ -85,7 +88,7 @@ open class Beam() : IBeam {
         _memoryBlock = result
         return this
     }
-
+    @Synchronized
     override fun contract(newSize:Int) : IBeam {
         var result = createBlock(newSize)
         for (i in result.indices) {
@@ -94,6 +97,7 @@ open class Beam() : IBeam {
         _memoryBlock = result
         return this
     }
+    @Synchronized
     override fun expand(size:Int) : IBeam {
         var result = createBlock(size)
         for (i in _memoryBlock.indices) {
@@ -102,6 +106,7 @@ open class Beam() : IBeam {
         _memoryBlock = result
         return this
     }
+    @Synchronized
     override fun find(item:Any) : Int {
         for (i:Int in 0 until count) {
             if (get(i)==item) {
@@ -110,6 +115,7 @@ open class Beam() : IBeam {
         }
         return -1
     }
+    @Synchronized
     override fun findByType(classType: KClass<*>) : Int {
         for (i:Int in 0 until count) {
             if (get(i)!!::class==classType) {
@@ -118,26 +124,30 @@ open class Beam() : IBeam {
         }
         return -1
     }
-
+    @Synchronized
     override fun get(pos:Int) : Any? {
         if (isOverflow(pos)) {
             return null
         }
         return _memoryBlock[pos]
     }
+    @Synchronized
     override fun getClassId() : String {
         return getLocalClassId()
     }
+    @Synchronized
     override fun getCore() : Array<Any?> {
         return _memoryBlock
     }
-
+    @Synchronized
     override fun isEmpty() : Boolean {
         return count == 0
     }
+    @Synchronized
     override fun isNotEmpty() : Boolean {
         return !isEmpty()
     }
+    @Synchronized
     override fun popLeft() : Any? {
         if (count == 0)
             return null
@@ -146,14 +156,14 @@ open class Beam() : IBeam {
         compress()
         return value
     }
-
+    @Synchronized
     fun print() : Beam {
         for (i:Int in 0 until count) {
             println(get(i).toString())
         }
         return this
     }
-
+    @Synchronized
     override fun remove(item:Any) : Any? {
         for (i in 0 until count) {
             if (item == get(i)) {
@@ -166,6 +176,7 @@ open class Beam() : IBeam {
 
         return null
     }
+    @Synchronized
     override fun removeAt(pos:Int) : Any? {
         val item = get(pos)
         if (item == null)
@@ -173,6 +184,7 @@ open class Beam() : IBeam {
 
         return remove(item)
     }
+    @Synchronized
     override fun set(pos:Int, any:Any?) : Any? {
         if (isOverflow(pos))
             expand(pos+1)
@@ -182,24 +194,30 @@ open class Beam() : IBeam {
             count = pos+1
         return any
     }
+    @Synchronized
     override fun shrink() : IBeam {
         contract(count)
         return this;
     }
+    @Synchronized
     override fun size() : Int {
         return count
     }
+    @Synchronized
     override fun toString() : String {
         return Strings.toDelimitedString("::", _memoryBlock)
     }
+    @Synchronized
     override fun transfer(beam:IBeam) : IBeam {
         clear()
         addAll(beam)
         return this
     }
+    @Synchronized
     private fun createBlock(size:Int) : Array<Any?> {
         return Array(size){}
     }
+    @Synchronized
     private fun executeExpandMode() : Unit {
         if (expandMode == Static.NORMAL) {
             expand(_memoryBlock.size * 2)
@@ -208,6 +226,7 @@ open class Beam() : IBeam {
 
         expand(_memoryBlock.size + 1)
     }
+    @Synchronized
     private fun expandSizeTo() : Int {
         var result:Int = count + 1
         if (expandMode == Static.NORMAL) {
@@ -218,10 +237,11 @@ open class Beam() : IBeam {
         }
         return result
     }
+    @Synchronized
     private fun getLocalClassId() : String {
         return Absorber.getClassId(Beam::class)
     }
-
+    @Synchronized
     private fun isOverflow(pos:Int) : Boolean {
         return pos >= _memoryBlock.size
     }
