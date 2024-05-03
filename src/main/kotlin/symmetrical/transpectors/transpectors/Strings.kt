@@ -35,6 +35,10 @@ object Strings {
             return "\"\""
         return "\""+value+"\""
     }
+    fun isAlpha(value:String) : Boolean {
+        return value.all(Char::isLetter)
+
+    }
     fun nullTerminated(value:String) : String {
         return value + '\u0000'
     }

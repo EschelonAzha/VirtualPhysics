@@ -109,8 +109,16 @@ object Absorber : IAbsorber {
     }
     override fun materialize(emission:String) : Pair<IEmitter?, String> {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
-        val clone = Absorber.createInstance(classId) as IEmitter
-        val remainderPhoton: Photon = clone.absorb(Photon().with(emission))
+        val emitter = Absorber.createInstance(classId) as IEmitter?
+        if (emitter == null) {
+            println("@ Absorber Materialize failed :$emission")
+            if (Strings.isAlpha(classId)) {
+                println("ClassId not Alpha")
+            }
+            return Pair<IEmitter?, String>(emitter, Photon().with(emission).radiate())
+        }
+        val clone           : IEmitter  = emitter as IEmitter
+        val remainderPhoton : Photon    = clone.absorb(Photon().with(emission))
 
         illuminate(clone)
 
