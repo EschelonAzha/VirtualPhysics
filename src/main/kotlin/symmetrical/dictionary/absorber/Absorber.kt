@@ -111,9 +111,9 @@ object Absorber : IAbsorber {
         var (classId, remainder) = Strings.remainder(Config.getClassIdLth(), emission)
         val emitter = Absorber.createInstance(classId) as IEmitter?
         if (emitter == null) {
-            println("@ Absorber Materialize failed :$emission")
+            println("!!!!!!! Absorber Materialize Failed !!!!!!!! :$emission")
             if (Strings.isAlpha(classId)) {
-                println("ClassId not Alpha")
+                println("!!!!!!! ClassId not Alpha !!!!!!!!")
             }
             return Pair<IEmitter?, String>(emitter, Photon().with(emission).radiate())
         }
