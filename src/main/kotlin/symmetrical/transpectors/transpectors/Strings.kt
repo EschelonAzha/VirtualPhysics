@@ -28,7 +28,7 @@ object Strings {
         return str.substring(number)
     }
     fun crlfTerminated(value:String) : String {
-        return value+"\r\n"
+        return value+CRLF()
     }
     fun doubleQuoted(value:String) : String {
         if (value == null)
@@ -37,7 +37,15 @@ object Strings {
     }
     fun isAlpha(value:String) : Boolean {
         return value.all(Char::isLetter)
-
+    }
+    fun isCrLfTerminated(value:String) : Boolean {
+        return value.endsWith(CRLF())
+    }
+    fun isDoubleCrLfTerminated(value:String) : Boolean {
+        return value.endsWith(CRLF()+CRLF())
+    }
+    fun CRLF() : String {
+        return "\r\n"
     }
     fun nullTerminated(value:String) : String {
         return value + '\u0000'
