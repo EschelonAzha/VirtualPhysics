@@ -63,8 +63,8 @@ object Bytes {
     }
 
     fun popLeft(zeroToHere:Int, byteArray:ByteArray) : Pair<ByteArray, ByteArray> {
-        val extractedBytes  :ByteArray = byteArray.copyOfRange(0, zeroToHere+4)
-        val remainder       :ByteArray = byteArray.copyOfRange(zeroToHere+4, byteArray.size)
+        val extractedBytes  :ByteArray = byteArray.copyOfRange(0, zeroToHere)
+        val remainder       :ByteArray = byteArray.copyOfRange(zeroToHere, byteArray.size)
         return Pair(extractedBytes, remainder)
     }
     fun selectBytes(from:Int, length:Int, bytes:ByteArray) : ByteArray {
