@@ -1,4 +1,8 @@
 package symmetrical.physics.subatomic.balanced.values.strings
+
+import symmetrical.transpectors.transpectors.Bytes
+
+
 /*
  * This file is part of Virtual Physics.
  *
@@ -18,7 +22,6 @@ package symmetrical.physics.subatomic.balanced.values.strings
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import symmetrical.transpectors.transpectors.Bytes
 
 class StringByte {
     var value : String? = null

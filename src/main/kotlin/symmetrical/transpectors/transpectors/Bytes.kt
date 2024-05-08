@@ -26,7 +26,7 @@ object Bytes {
         for (i in first.indices) {
             result[i] = first[i]
         }
-        var next = result.size
+        var next = first.size
         for (i in second.indices) {
             result[next++] = second[i]
         }
@@ -60,6 +60,12 @@ object Bytes {
         val new1 = (byte1Top+byte2Bot).toByte()
         val new2 = (byte2Top+byte1Bot).toByte()
         return Pair(new1, new2)
+    }
+
+    fun popLeft(zeroToHere:Int, byteArray:ByteArray) : Pair<ByteArray, ByteArray> {
+        val extractedBytes  :ByteArray = byteArray.copyOfRange(0, zeroToHere+4)
+        val remainder       :ByteArray = byteArray.copyOfRange(zeroToHere+4, byteArray.size)
+        return Pair(extractedBytes, remainder)
     }
     fun selectBytes(from:Int, length:Int, bytes:ByteArray) : ByteArray {
         var result = ByteArray(length)
