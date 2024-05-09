@@ -206,7 +206,7 @@ open class Beam() : IBeam {
     }
     @Synchronized
     override fun toString() : String {
-        return Strings.toDelimitedString("::", _memoryBlock)
+        return Strings.toDelimitedString("", _memoryBlock)
     }
     @Synchronized
     override fun transfer(beam:IBeam) : IBeam {
