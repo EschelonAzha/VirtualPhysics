@@ -39,6 +39,25 @@ object Bytes {
         return ((highNibble or lowNibble).toByte())
     }
 
+    fun contains(value:Int, byteArray:ByteArray) : Int {
+        for (i in 0 until byteArray.size) {
+            if (byteArray[i].toInt() == value) {
+                return i
+            }
+        }
+        return -1
+    }
+
+    fun isZeros(byteArray:ByteArray) : Boolean {
+        for (i in 0 until byteArray.size) {
+            if (byteArray[i].toInt() != 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+
     fun mangleBytes53(byte1: Byte, byte2: Byte): Pair<Byte, Byte> {
         val byte1Top = zeroBottom3Nibble(byte1)
         val byte2Top = zeroBottom3Nibble(byte2)
@@ -97,6 +116,15 @@ object Bytes {
     }
     fun toString(byteArray:ByteArray) : String {
         return ABytes.toString(byteArray)
+    }
+
+    fun trimTrailing(value:Int, byteArray:ByteArray) : ByteArray {
+        val length = byteArray.size
+        for (i in length until 0) {
+            if (byteArray[i].toInt() != value)
+                break
+        }
+        return selectBytes(0, length, byteArray)
     }
     private fun zeroBottom3Nibble(byte:Byte) : Byte {
         val topNibbleMask: Byte = (0xF8).toByte()

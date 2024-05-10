@@ -58,8 +58,12 @@ object Strings {
         return lth+str
     }
     fun remainder(number:Int, str:String) : Pair<String, String> {
-        val leading:String = str.substring(0, number)
-        val remaining:String = str.substring(number)
+        var select = number
+        if (number > str.length) {
+            select = str.length
+        }
+        val leading:String = str.substring(0, select)
+        val remaining:String = str.substring(select)
         return  Pair<String, String>(leading, remaining)
     }
     fun removeCharacter(characterToRemove: Char, value: String): String {
