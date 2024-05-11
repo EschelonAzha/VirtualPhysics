@@ -48,6 +48,10 @@ object Bytes {
         return -1
     }
 
+    fun endsWith(value:Int, byteArray:ByteArray) : Boolean {
+        return byteArray[byteArray.lastIndex].toInt()==value
+    }
+
     fun isZeros(byteArray:ByteArray) : Boolean {
         for (i in 0 until byteArray.size) {
             if (byteArray[i].toInt() != 0) {
@@ -119,12 +123,13 @@ object Bytes {
     }
 
     fun trimTrailing(value:Int, byteArray:ByteArray) : ByteArray {
-        val length = byteArray.size
-        for (i in length until 0) {
+        var newLth : Int = byteArray.size
+        for (i in byteArray.size -1 downTo 0) {
             if (byteArray[i].toInt() != value)
                 break
+            newLth--
         }
-        return selectBytes(0, length, byteArray)
+        return selectBytes(0, newLth, byteArray)
     }
     private fun zeroBottom3Nibble(byte:Byte) : Byte {
         val topNibbleMask: Byte = (0xF8).toByte()
