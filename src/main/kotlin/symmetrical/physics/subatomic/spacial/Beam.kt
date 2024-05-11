@@ -19,6 +19,7 @@ package symmetrical.physics.subatomic.spacial
  */
 
 import symmetrical.dictionary.absorber.Absorber
+import symmetrical.physics.atomic.atoms.states.Text
 import symmetrical.transpectors.transpectors.Strings
 import kotlin.jvm.Synchronized
 import kotlin.reflect.KClass
@@ -64,6 +65,9 @@ open class Beam() : IBeam {
             add(beam.get(i))
         }
         return this
+    }
+    protected fun breakpoint() : Unit {
+        return
     }
     @Synchronized
     override fun clear() : IBeam {
@@ -153,6 +157,9 @@ open class Beam() : IBeam {
         if (count == 0)
             return null
         val value:Any = _memoryBlock[0] as Any
+        if (value is Text) {
+            breakpoint()
+        }
         _memoryBlock[0] = null
         compress()
         return value
