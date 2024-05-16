@@ -30,6 +30,7 @@ object Config {
     private const val BASE52_ARRAY_SIZE:Int   = 3;
     private const val PING:Long               = 200;
 
+
     private const val GALAXY_ID_LTH           = 3
 
     fun getBase52ArraySize() : Int {
