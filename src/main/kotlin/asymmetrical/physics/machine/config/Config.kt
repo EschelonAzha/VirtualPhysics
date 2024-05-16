@@ -28,7 +28,7 @@ object Config {
     private const val  _THREAD_SLEEP:Long     = 8;  // Milliseconds
     private const val  _UPDATE_SLEEP:Long     = 2;
     private const val BASE52_ARRAY_SIZE:Int   = 3;
-    private const val PING:Long               = 700;
+    private const val PING:Long               = 200;
 
     private const val GALAXY_ID_LTH           = 3
 

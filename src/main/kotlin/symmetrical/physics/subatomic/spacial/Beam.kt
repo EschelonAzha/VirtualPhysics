@@ -213,6 +213,7 @@ open class Beam() : IBeam {
     }
     @Synchronized
     override fun toString() : String {
+        shrink()
         return Strings.toDelimitedString("", _memoryBlock)
     }
     @Synchronized
