@@ -33,6 +33,7 @@ interface IBeam {
     fun getClassId      ()                              : String
     fun getCore         ()                              : Array<Any?>
     fun find            (item:Any)                      : Int
+    fun findAllByType   (classType: KClass<*>)          : Beam
     fun findByType      (classType: KClass<*>)          : Int
     fun isEmpty         ()                              : Boolean
     fun isNotEmpty      ()                              : Boolean

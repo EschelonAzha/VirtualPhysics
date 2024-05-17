@@ -120,6 +120,16 @@ open class Beam() : IBeam {
         }
         return -1
     }
+
+    override fun findAllByType(classType: KClass<*>) : Beam {
+        val result:Beam = Beam()
+        for (i:Int in 0 until count) {
+            if (get(i)!!::class==classType) {
+                result.add(get(i))
+            }
+        }
+        return result
+    }
     @Synchronized
     override fun findByType(classType: KClass<*>) : Int {
         for (i:Int in 0 until count) {

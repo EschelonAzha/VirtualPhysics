@@ -1,5 +1,7 @@
 package symmetrical.physics.subatomic.forces.gravity
 
+import symmetrical.physics.subatomic.spacial.Beam
+
 import kotlin.reflect.KClass
 
 class Gravity : IGravity {
@@ -35,6 +37,9 @@ class Gravity : IGravity {
 
     override fun gravitate(kClass: KClass<*>) : Any? {
         return gravitationalField.gravitate(kClass)
+    }
+    override fun gravitateAll(kClass: KClass<*>) : Beam {
+        return gravitationalField.gravitateAll(kClass, Beam())
     }
     override fun orbit(gravity:IGravity) : Gravity {
         gravitationalField.orbit(gravity.getGravitationalField())

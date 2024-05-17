@@ -5,6 +5,7 @@ import applications.tests.diatomics.VTestDiatomics
 import applications.tests.dictionary.TestPhysicsEmitters
 import applications.tests.electronics.VTestElectronics
 import applications.tests.elements.VTestElements
+import applications.tests.gravity.VTestGravity
 import applications.tests.radiation.VTestRadiation
 import applications.tests.nuclear.VTestNeutrons
 import applications.tests.quarks.VTestQuarks
@@ -21,6 +22,7 @@ object RunMe {
         // test cases and step through the code in the debugger to see
         // some of the inner workings of physics
 
+        VTestGravity()
         VTestDiatomics().test()
         VTestQuasiParticles().test()
         VTestRadiation().test()

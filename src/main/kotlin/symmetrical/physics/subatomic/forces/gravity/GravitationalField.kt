@@ -20,6 +20,7 @@ package symmetrical.physics.subatomic.forces.gravity
 
 import symmetrical.physics.subatomic.bosons.Graviton
 import symmetrical.physics.subatomic.spacial.Beam
+import symmetrical.physics.subatomic.spacial.ParticleBeam
 import kotlin.reflect.KClass
 
 
@@ -60,6 +61,15 @@ open class GravitationalField : IGravitationalField {
         if (orbits == null)
             return null
         return orbits!!.gravitate(kClass)
+    }
+    override fun gravitateAll(kClass: KClass<*>, result:Beam) : Beam {
+        val found:Beam = beam.findAllByType(kClass)
+        result.addAll(found)
+        if (gravity!!::class == kClass)
+            result.add(gravity)
+        if (orbits == null)
+            return result
+        return orbits!!.gravitateAll(kClass, result)
     }
     override fun orbit(orbits:IGravitationalField) : GravitationalField {
         this.orbits = orbits

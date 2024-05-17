@@ -210,6 +210,21 @@ Elements serve as runtime interfaces in Virtual Physics, ensuring each element h
 * **Transmissible and Absorbable:** Atoms can be emitted and absorbed, facilitating data exchange and communication between different parts of your application.
 * **Seamless Integration:** Works directly within your Virtual Physics environment, offering a natural and efficient way to represent and manipulate physical entities.
 
+
+
+**-------USING GRAVITY-------**
+
+To better understand the concept of gravity in the context of object-oriented programming, consider the following analogy using celestial bodies:
+Imagine you have four objects representing the Sun, Mars, Phobos, and Deimos. 
+
+The goal is to share information between these objects without polluting them with unnecessary data. In this case, the city field of the Sun is needed by the two moons (Phobos and Deimos) but not by Mars. 
+
+Without using a gravitational field concept, you would need to modify Mars to accept the city field and pass it through to its moons.
+
+By using gravity as a metaphor for variable sharing, each moon can directly access the city field, pulling it into its scope when needed. This simplifies programming by reducing unnecessary modifications and data transfers between objects.
+
+Any object that extends Particle can feel the effects of Gravity
+
 * ** Examples and sample code are coming soon **  
 ## Get Started:
 
