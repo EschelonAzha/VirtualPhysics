@@ -22,6 +22,7 @@ import symmetrical.physics.atomic.atoms.Atom
 import symmetrical.physics.subatomic.bosons.Photon
 import symmetrical.physics.atomic.bonds.covalent.Diatomic
 import symmetrical.physics.atomic.substance.ions.Compound
+import symmetrical.physics.atomic.substance.molecules.Molecule
 import symmetrical.physics.subatomic.luminescent.IMatter
 import symmetrical.physics.subatomic.luminescent.Matter
 
@@ -32,6 +33,12 @@ open class KeyData(
 {
 
     fun with(key: Atom, value: Atom) : KeyData {
+        add(key)
+        add(value)
+        return this
+    }
+
+    fun with(key:Atom, value: Molecule) : KeyData {
         add(key)
         add(value)
         return this
@@ -49,7 +56,7 @@ open class KeyData(
             return get(Static.KEY) as Atom
         return null
     }
-    fun getData() : Atom? {
+    open fun getData() : Atom? {
         if (size()>1)
             return get(Static.DATA) as Atom
         return null
