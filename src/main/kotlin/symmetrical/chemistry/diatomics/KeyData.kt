@@ -52,8 +52,10 @@ open class KeyData(
     }
 
     fun getKey() : Atom? {
-        if (size()>0)
-            return get(Static.KEY) as Atom
+        if (size()>0) {
+            val result = get(Static.KEY)
+            return result as Atom
+        }
         return null
     }
     open fun getData() : Atom? {

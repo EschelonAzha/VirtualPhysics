@@ -38,6 +38,8 @@ open class Text(
 
     open fun with(value:String) : Text {
         setString(value)
+
+        val debug = toString()
         return this
     }
     fun setString(value:String) : Text {
