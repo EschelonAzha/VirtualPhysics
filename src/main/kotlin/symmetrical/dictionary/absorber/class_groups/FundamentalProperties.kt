@@ -20,6 +20,7 @@ package symmetrical.dictionary.absorber.class_groups
 
 import symmetrical.dictionary.absorber.ClassGroup
 import symmetrical.dictionary.absorber.EntityId
+import symmetrical.physics.quasi_particles.Polariton
 import symmetrical.physics.subatomic.balanced.Particle
 import symmetrical.transpectors.printable_characters.Base52
 import symmetrical.physics.subatomic.balanced.fundamentals.angular_momentum.AngularMomentum
@@ -31,6 +32,7 @@ class FundamentalProperties : ClassGroup() {
     init {
         add(EntityId().with(Base52.classId(), AngularMomentum::class))
         add(EntityId().with(Base52.classId(), Particle::class))
+        add(EntityId().with(Base52.classId(), Polariton::class))
         add(EntityId().with(Base52.classId(), QuasiParticle::class))
         add(EntityId().with(Base52.classId(), Spin::class))
         add(EntityId().with(Base52.classId(), Wavelength::class))
