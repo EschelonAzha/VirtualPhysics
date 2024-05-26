@@ -43,6 +43,10 @@ open class QuasiParticle(
         _field.setContent(value)
         return this
     }
+    fun update(quasi:QuasiParticle) : QuasiParticle {
+        setContent(quasi.getContent())
+        return this
+    }
     fun getField() : Field {
         return _field
     }

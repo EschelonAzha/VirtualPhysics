@@ -12,7 +12,7 @@ import symmetrical.physics.subatomic.luminescent.Matter
 import symmetrical.physics.subatomic.luminescent.QuasiParticle
 
 
-class Polariton (
+open class Polariton (
     private val matterAntiMatter: IMatter = Matter().with(Polariton::class)
 ) :
     IMatterAntiMatter by matterAntiMatter,
@@ -31,6 +31,14 @@ class Polariton (
     }
     fun getValue() : QuasiParticle {
         return value
+    }
+    fun setKey(key:String) : Polariton {
+        this.key.setContent(key)
+        return this
+    }
+    fun setValue(value:Any?) : Polariton {
+        this.value.setContent(value)
+        return this
     }
     override fun isIlluminated ()                : Boolean {
         return false
